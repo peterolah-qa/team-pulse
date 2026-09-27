@@ -14,6 +14,8 @@ import pandas as pd
 
 OUT = Path("data/raw/games.parquet")
 SEASON_TYPES = {"Regular Season": False, "Playoffs": True}
+# COVID bublina v Orlande: bez divákov a cestovania → žiadna domáca výhoda
+BUBBLE = (pd.Timestamp("2020-07-30"), pd.Timestamp("2020-10-11"))
 
 
 def season_label(end_year: int) -> str:
@@ -26,6 +28,12 @@ def current_abbr() -> dict[int, str]:
     from nba_api.stats.static import teams
 
     return {t["id"]: t["abbreviation"] for t in teams.get_teams()}
+
+
+def fix_franchise(team: str, end_year: int) -> str:
+    """NBA v roku 2014 pripísala históriu Charlotte Hornets (1988–2002) dnešnému Charlotte (CHA).
+    Pre model je však team z rokov 2001–2002 ten istý, ktorý sa v 2002 presťahoval do New Orleans."""
+    return "NOP" if team == "CHA" and end_year <= 2002 else team
 
 
 def normalize(raw: pd.DataFrame, end_year: int, playoff: bool, abbr: dict[int, str]) -> pd.DataFrame:
@@ -48,7 +56,16 @@ def normalize(raw: pd.DataFrame, end_year: int, playoff: bool, abbr: dict[int, s
             "pts_away": away["PTS"].astype(int).values,
         }
     )
+    out["home"] = [fix_franchise(t, end_year) for t in out["home"]]
+    out["away"] = [fix_franchise(t, end_year) for t in out["away"]]
     return out.sort_values(["date", "game_id"]).reset_index(drop=True)
+
+
+def mark_neutral(games: pd.DataFrame) -> pd.DataFrame:
+    """Označí zápasy bez domácej výhody (bublina 2020)."""
+    out = games.copy()
+    out["neutral"] = out["date"].between(*BUBBLE)
+    return out
 
 
 def fetch_season(end_year: int, season_type: str, retries: int = 3) -> pd.DataFrame:
@@ -85,6 +102,7 @@ def main(first: int, last: int, out: Path = OUT) -> pd.DataFrame:
             print(f"{season_label(year)} {stype:<14} {len(games):>5} zápasov")
             time.sleep(1.0)  # šetrný limit na stats.nba.com
     all_games = pd.concat(parts, ignore_index=True).sort_values(["date", "game_id"]).reset_index(drop=True)
+    all_games = mark_neutral(all_games)
     out.parent.mkdir(parents=True, exist_ok=True)
     all_games.to_parquet(out, index=False)
     print(f"\nUložené: {out}  ({len(all_games)} zápasov, {all_games['home'].nunique()} teamov)")
