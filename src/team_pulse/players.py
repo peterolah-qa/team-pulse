@@ -17,6 +17,10 @@ Vlastnosti:
   * prestup: hráč, ktorý nastúpil za iný team, sa v starom teame nepočíta ako chýbajúci
   * nová sezóna: rotácia teamu sa vynuluje (odchody, draft, prestupy cez leto)
 
+Sila súpisky (`strength`): súčet kvality hráčov, ktorí dnes nastúpili, vážený ich typickými
+minútami z predchádzajúcich zápasov (aj za iný team). Rieši začiatok sezóny: Elo o letnom
+prestupe hviezdy ešte nevie, súpiska áno.
+
 Poznámka: kto nenastúpil, berieme z box score. V ostrej prevádzke to isté povie
 oficiálny Injury Report pred zápasom – preto to nie je únik dát.
 """
@@ -33,6 +37,9 @@ REPLACEMENT = 0.07 - LEAGUE_AVG_PIE
 VALUE_WINDOW = 40  # zápasov hráča na výpočet hodnoty
 MIN_GAMES = 5  # menej odohraných zápasov → hodnota = náhradník
 ROTATION_WINDOW = 10  # zápasov teamu na očakávané minúty
+CAREER_MIN_WINDOW = 20  # zápasov hráča (za akýkoľvek team) na jeho typické minúty
+ROOKIE_MIN = 12.0  # hráč bez histórie
+MAX_MIN = 40.0
 
 
 def pie_parts(players: pd.DataFrame) -> pd.DataFrame:
@@ -72,13 +79,15 @@ def player_values(players: pd.DataFrame) -> pd.DataFrame:
 
 
 def missing_by_team_game(players: pd.DataFrame) -> pd.DataFrame:
-    """Vráti riadok na (game_id, team): missing, n_missing."""
+    """Vráti riadok na (game_id, team): missing, n_missing, strength, games_played."""
     p = player_values(players)
     # pre chýbajúceho hráča použijeme hodnotu po jeho poslednom odohranom zápase
     last_value: dict[int, float] = {}
     current_team: dict[int, str] = {}
     rosters: dict[str, dict[int, deque[float]]] = {}
     team_season: dict[str, int] = {}
+    career_min: dict[int, deque[float]] = {}
+    team_games: dict[str, int] = {}
     rows = []
 
     for (_date, game_id, team), grp in p.groupby(["date", "game_id", "team"], sort=True):
@@ -86,6 +95,7 @@ def missing_by_team_game(players: pd.DataFrame) -> pd.DataFrame:
         if team_season.get(team) != season:
             rosters[team] = {}
             team_season[team] = season
+            team_games[team] = 0
         roster = rosters[team]
 
         played = dict(zip(grp["player_id"], grp["min"], strict=True))
@@ -100,7 +110,13 @@ def missing_by_team_game(players: pd.DataFrame) -> pd.DataFrame:
             above_replacement = max(last_value.get(pid, REPLACEMENT) - REPLACEMENT, 0.0)
             missing += expected / 48 * above_replacement
             n_missing += 1
-        rows.append((game_id, team, missing, n_missing))
+        strength = 0.0
+        for pid in played:
+            hist = career_min.get(pid)
+            typical = min(float(np.mean(hist)) if hist else ROOKIE_MIN, MAX_MIN)
+            strength += typical / 48 * max(last_value.get(pid, REPLACEMENT) - REPLACEMENT, 0.0)
+        rows.append((game_id, team, missing, n_missing, strength, team_games[team]))
+        team_games[team] += 1
 
         # aktualizácia po zápase
         for pid in list(roster):
@@ -110,20 +126,22 @@ def missing_by_team_game(players: pd.DataFrame) -> pd.DataFrame:
                     del roster[pid]
         for pid, mins in played.items():
             roster.setdefault(pid, deque(maxlen=ROTATION_WINDOW)).append(float(mins))
+            career_min.setdefault(pid, deque(maxlen=CAREER_MIN_WINDOW)).append(float(mins))
             current_team[pid] = team
         for pid, v in zip(grp["player_id"], grp["value"], strict=True):
             last_value[pid] = float(v)
 
-    return pd.DataFrame(rows, columns=["game_id", "team", "missing", "n_missing"])
+    return pd.DataFrame(rows, columns=["game_id", "team", "missing", "n_missing", "strength", "games_played"])
 
 
 def add_features(games: pd.DataFrame, players: pd.DataFrame) -> pd.DataFrame:
-    """Doplní k zápasom home_missing, away_missing (a počty chýbajúcich)."""
+    """Doplní k zápasom pre home_/away_: missing, n_missing, strength, games_played."""
     m = missing_by_team_game(players)
+    cols = ["missing", "n_missing", "strength", "games_played"]
     out = games.copy()
     for side in ("home", "away"):
-        mm = m.rename(columns={"team": side, "missing": f"{side}_missing", "n_missing": f"{side}_n_missing"})
+        mm = m.rename(columns={"team": side, **{c: f"{side}_{c}" for c in cols}})
         out = out.merge(mm, on=["game_id", side], how="left")
-        out[f"{side}_missing"] = out[f"{side}_missing"].fillna(0.0)
-        out[f"{side}_n_missing"] = out[f"{side}_n_missing"].fillna(0).astype(int)
+        for c in cols:
+            out[f"{side}_{c}"] = out[f"{side}_{c}"].fillna(0)
     return out

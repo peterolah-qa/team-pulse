@@ -31,6 +31,9 @@ BASE_COLS = ["elo_diff", "home"]
 # výška sa týka len hostí (domáci sú na svoju halu zvyknutí)
 FATIGUE_COLS = [f"home_{f}" for f in FEATURES if f != "altitude"] + [f"away_{f}" for f in FEATURES]
 PLAYER_COLS = ["home_missing", "away_missing"]  # v bodoch PIE × podiel minút
+# sila súpisky: rozdiel domáci − hostia a jeho váha na začiatku sezóny (kým Elo „nevie“ o prestupoch)
+ROSTER_COLS = ["strength_diff"]
+EARLY_GAMES = 20
 
 
 def build_dataset(games: pd.DataFrame, players: pd.DataFrame | None = None) -> pd.DataFrame:
@@ -56,6 +59,11 @@ def build_dataset(games: pd.DataFrame, players: pd.DataFrame | None = None) -> p
     if players is not None:
         for c in PLAYER_COLS:
             out[c] = df[c] * 100
+        diff = (df["home_strength"] - df["away_strength"]) * 100
+        played = (df["home_games_played"] + df["away_games_played"]) / 2
+        early = (1 - played / EARLY_GAMES).clip(lower=0)
+        out["strength_diff"] = diff
+        out["strength_diff_early"] = diff * early
         out["has_players"] = df["game_id"].isin(set(players["game_id"])).to_numpy()
     return out
 
@@ -94,6 +102,7 @@ def evaluate(games: pd.DataFrame, players: pd.DataFrame | None = None) -> dict[s
     }
     if players is not None:
         variants["A + B + C (+ chýbajúci hráči)"] = BASE_COLS + PLAYER_COLS + FATIGUE_COLS
+        variants["A + B + C + sila súpisky"] = BASE_COLS + PLAYER_COLS + ROSTER_COLS + FATIGUE_COLS
 
     rows = [{"model": "A: Elo (HCA 70)", **metrics(test["elo_prob"], y)}]
     models, preds = {}, {}

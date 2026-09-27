@@ -104,3 +104,35 @@ def test_missing_does_not_depend_on_future_games(k, seed):
     merged = cut.merge(full, on=["game_id", "team"], suffixes=("_cut", "_full"))
     assert len(merged) == len(cut)
     np.testing.assert_allclose(merged["missing_cut"], merged["missing_full"])
+    np.testing.assert_allclose(merged["strength_cut"], merged["strength_full"])
+
+
+def strength(df, game, team="AAA"):
+    return missing(df, game, team)["strength"]
+
+
+def test_strength_counts_only_players_who_played():
+    full = strength(season_of_games(12), "G011")
+    without_star = strength(season_of_games(12, star_plays_until=11), "G011")
+    assert full > without_star > 0
+
+
+def test_strength_knows_new_season_roster_from_last_season():
+    old = season_of_games(12)
+    new = season_of_games(1)
+    new["game_id"], new["date"], new["season"] = "N000", pd.Timestamp("2025-10-22"), 2026
+    df = pd.concat([old, new])
+    assert strength(df, "N000") > 0  # hneď prvý zápas sezóny
+    assert missing(df, "N000")["games_played"] == 0
+
+
+def test_traded_star_raises_new_team_strength():
+    df = season_of_games(12)
+    before = strength(df, "G010", "BBB")
+    df.loc[(df["player_id"] == 1) & (df["game_id"] >= "G010"), "team"] = "BBB"
+    assert strength(df, "G010", "BBB") > before
+
+
+def test_games_played_counts_within_season():
+    m = missing_by_team_game(season_of_games(5))
+    assert m[m["team"] == "AAA"]["games_played"].tolist() == [0, 1, 2, 3, 4]

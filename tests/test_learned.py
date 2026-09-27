@@ -110,7 +110,9 @@ def test_dataset_with_players_adds_layer_b():
                     }
                 )
     ds = build_dataset(g, pd.DataFrame(rows))
-    assert set(PLAYER_COLS) <= set(ds.columns)
+    from team_pulse.learned import ROSTER_COLS
+
+    assert set(PLAYER_COLS + ROSTER_COLS) <= set(ds.columns)
     assert ds["has_players"].all()
     assert (ds[PLAYER_COLS] >= 0).all().all()
     assert (ds[PLAYER_COLS] > 0).any().any()
