@@ -1,4 +1,4 @@
-"""Naučené váhy: logistická regresia nad Elo (vrstva A) a únavou (vrstva C).
+"""Naučené váhy: logistická regresia nad Elo (A), hráčmi (B) a únavou (C).
 
 Namiesto ručne odhadnutých penalizácií (napr. back-to-back = −40 Elo) sa model
 naučí váhy z histórie. Tréning na starších sezónach, test na novších, ktoré model nevidel.
@@ -15,11 +15,13 @@ from pathlib import Path
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 
+from team_pulse import players as layer_b
 from team_pulse.backtest import calibration, metrics
 from team_pulse.elo import EloParams, run
 from team_pulse.schedule import FEATURES, add_features
 
 GAMES = Path("data/raw/games.parquet")
+PLAYERS = Path("data/raw/players.parquet")
 REPORT = Path("reports/learned.md")
 TRAIN = (2004, 2023)  # 2001–2003 = rozbeh Ela
 TEST = (2024, 2026)
@@ -28,13 +30,16 @@ ELO_PARAMS = EloParams(hca=70)
 BASE_COLS = ["elo_diff", "home"]
 # výška sa týka len hostí (domáci sú na svoju halu zvyknutí)
 FATIGUE_COLS = [f"home_{f}" for f in FEATURES if f != "altitude"] + [f"away_{f}" for f in FEATURES]
+PLAYER_COLS = ["home_missing", "away_missing"]  # v bodoch PIE × podiel minút
 
 
-def build_dataset(games: pd.DataFrame) -> pd.DataFrame:
+def build_dataset(games: pd.DataFrame, players: pd.DataFrame | None = None) -> pd.DataFrame:
     """Jeden riadok na zápas: vstupy modelu (len dáta pred zápasom) + cieľ home_won."""
     teams = set(games["home"]) | set(games["away"])
     elo = run(games, ELO_PARAMS, initial={t: ELO_PARAMS.mean for t in teams})
     df = add_features(elo)
+    if players is not None:
+        df = layer_b.add_features(df, players)
     neutral = df["neutral"].astype(bool) if "neutral" in df else pd.Series(False, index=df.index)
     out = pd.DataFrame(
         {
@@ -48,6 +53,10 @@ def build_dataset(games: pd.DataFrame) -> pd.DataFrame:
     )
     for c in FATIGUE_COLS:
         out[c] = df[c] / 1000 if c.endswith("_km") else df[c]
+    if players is not None:
+        for c in PLAYER_COLS:
+            out[c] = df[c] * 100
+        out["has_players"] = df["game_id"].isin(set(players["game_id"])).to_numpy()
     return out
 
 
@@ -70,28 +79,39 @@ def elo_equivalents(model: LogisticRegression, cols: list[str]) -> pd.Series:
     return (coef / per_elo).drop("elo_diff")
 
 
-def evaluate(games: pd.DataFrame) -> dict[str, object]:
-    ds = build_dataset(games)
+def predict(model: LogisticRegression, df: pd.DataFrame, cols: list[str]) -> pd.Series:
+    return pd.Series(model.predict_proba(df[cols])[:, 1], index=df.index)
+
+
+def evaluate(games: pd.DataFrame, players: pd.DataFrame | None = None) -> dict[str, object]:
+    ds = build_dataset(games, players)
     train, test = split(ds)
     y = test["home_won"]
 
-    m_base = fit(train, BASE_COLS)
-    m_full = fit(train, BASE_COLS + FATIGUE_COLS)
-    p_base = pd.Series(m_base.predict_proba(test[BASE_COLS])[:, 1], index=test.index)
-    p_full = pd.Series(m_full.predict_proba(test[BASE_COLS + FATIGUE_COLS])[:, 1], index=test.index)
+    variants = {
+        "A kalibrované (naučené Elo + domáci)": BASE_COLS,
+        "A + C (naučené Elo + únava)": BASE_COLS + FATIGUE_COLS,
+    }
+    if players is not None:
+        variants["A + B + C (+ chýbajúci hráči)"] = BASE_COLS + PLAYER_COLS + FATIGUE_COLS
 
-    rows = [
-        {"model": "A: Elo (HCA 70)", **metrics(test["elo_prob"], y)},
-        {"model": "A kalibrované (naučené Elo + domáci)", **metrics(p_base, y)},
-        {"model": "A + C (naučené Elo + únava)", **metrics(p_full, y)},
-    ]
+    rows = [{"model": "A: Elo (HCA 70)", **metrics(test["elo_prob"], y)}]
+    models, preds = {}, {}
+    for name, cols in variants.items():
+        models[name] = fit(train, cols)
+        preds[name] = predict(models[name], test, cols)
+        rows.append({"model": name, **metrics(preds[name], y)})
+
+    best = list(variants)[-1]
     return {
         "summary": pd.DataFrame(rows),
-        "weights": elo_equivalents(m_full, BASE_COLS + FATIGUE_COLS),
+        "weights": elo_equivalents(models[best], variants[best]),
+        "best": best,
         "cal_before": calibration(test["elo_prob"], y.astype(bool)),
-        "cal_after": calibration(p_full, y.astype(bool)),
+        "cal_after": calibration(preds[best], y.astype(bool)),
         "n_train": len(train),
         "n_test": len(test),
+        "player_coverage": float(ds["has_players"].mean()) if "has_players" in ds else None,
     }
 
 
@@ -115,22 +135,24 @@ def to_markdown(r: dict[str, object]) -> str:
     s["brier"] = s["brier"].map("{:.4f}".format)
     w = r["weights"].round(1).rename("Elo").to_frame()
     return (
-        f"# Naučené váhy – vrstva A + C\n\n"
+        f"# Naučené váhy\n\n"
         f"Tréning: sezóny {_season(TRAIN[0])} – {_season(TRAIN[1])} ({r['n_train']} zápasov). "
         f"Test: {_season(TEST[0])} – {_season(TEST[1])} "
         f"({r['n_test']} zápasov), ktoré model pri učení nevidel.\n\n"
         f"## Porovnanie na testovacích sezónach\n\n{s.to_markdown(index=False)}\n\n"
-        f"## Naučené váhy v Elo bodoch\n\n"
+        f"## Naučené váhy v Elo bodoch – {r['best']}\n\n"
         f"Kladné = pomáha domácim, záporné = pomáha hosťom. `home_*` sa týka domácich, `away_*` hostí.\n"
-        f"Príklad: `away_b2b = +20` znamená, že back-to-back hostí dá domácim výhodu 20 Elo.\n\n"
+        f"Príklad: `away_b2b = +20` znamená, že back-to-back hostí dá domácim výhodu 20 Elo.\n"
+        f"`*_missing` = Elo za 1 bod PIE chýbajúcej kvality (hviezda na 36 min. ≈ 5–7 bodov).\n\n"
         f"{w.to_markdown()}\n\n"
         f"## Kalibrácia pred (čisté Elo)\n\n{_fmt_cal(r['cal_before'])}\n\n"
-        f"## Kalibrácia po (A + C)\n\n{_fmt_cal(r['cal_after'])}\n"
+        f"## Kalibrácia po ({r['best']})\n\n{_fmt_cal(r['cal_after'])}\n"
     )
 
 
 def main(path: Path = GAMES, out: Path = REPORT) -> None:
-    r = evaluate(pd.read_parquet(path))
+    players = pd.read_parquet(PLAYERS) if PLAYERS.exists() else None
+    r = evaluate(pd.read_parquet(path), players)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(to_markdown(r), encoding="utf-8")
     for row in r["summary"].itertuples(index=False):
@@ -140,6 +162,8 @@ def main(path: Path = GAMES, out: Path = REPORT) -> None:
         )
     print("\nNaučené váhy (Elo body):")
     print(r["weights"].round(1).to_string())
+    if r["player_coverage"] is not None:
+        print(f"\nZápasy s box score hráčov: {r['player_coverage']:.1%}")
     print(f"\nReport: {out}")
 
 

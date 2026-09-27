@@ -73,3 +73,44 @@ def test_elo_equivalents_conversion():
     eq = elo_equivalents(m, cols)
     assert eq["home"] == pytest.approx(70)
     assert eq["away_b2b"] == pytest.approx(20)
+
+
+def test_dataset_with_players_adds_layer_b():
+    from team_pulse.learned import PLAYER_COLS
+
+    g = random_games(n=120).reset_index(drop=True)
+    g["game_id"] = [f"G{i:04d}" for i in range(len(g))]
+    rows = []
+    for r in g.itertuples():
+        for team in (r.home, r.away):
+            base = TEAMS.index(team) * 10
+            for k in range(3):
+                if k == 0 and r.Index % 7 == 0:
+                    continue  # hviezda občas chýba
+                rows.append(
+                    {
+                        "game_id": r.game_id,
+                        "date": r.date,
+                        "season": r.season,
+                        "team": team,
+                        "player_id": base + k,
+                        "min": 30.0,
+                        "pts": 20 - 5 * k,
+                        "fgm": 7,
+                        "fga": 14,
+                        "ftm": 3,
+                        "fta": 4,
+                        "oreb": 1,
+                        "dreb": 5,
+                        "ast": 4,
+                        "stl": 1,
+                        "blk": 1,
+                        "tov": 2,
+                        "pf": 2,
+                    }
+                )
+    ds = build_dataset(g, pd.DataFrame(rows))
+    assert set(PLAYER_COLS) <= set(ds.columns)
+    assert ds["has_players"].all()
+    assert (ds[PLAYER_COLS] >= 0).all().all()
+    assert (ds[PLAYER_COLS] > 0).any().any()
