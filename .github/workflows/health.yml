@@ -1,0 +1,26 @@
+name: Kontrola zdrojov
+
+# Raz denne (po rannej aktualizácii z Macu) skontroluje živé zdroje a čerstvosť stavu.
+# Pri probléme beh zlyhá → GitHub pošle e-mail.
+on:
+  schedule:
+    - cron: "30 11 * * *"  # 13:30 v lete / 12:30 v zime (SK)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inštalácia uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Python a knižnice podľa uv.lock
+        run: uv sync --locked
+
+      - name: Kontrola zdrojov a stavu
+        run: uv run python -m team_pulse.health
