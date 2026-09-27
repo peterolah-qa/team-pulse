@@ -31,10 +31,26 @@ a porovnané s archívom FiveThirtyEight:
 
 Celý report vrátane kalibrácie: [reports/backtest.md](reports/backtest.md)
 
+## Výsledky – fáza 0b (vrstvy B + C, naučené váhy)
+
+Logistická regresia sa učí na sezónach 2003/04 – 2022/23 a testuje na 2023/24 – 2025/26
+(3 931 zápasov, ktoré pri učení nevidela):
+
+| Model | Presnosť | Log loss | Brier |
+|---|---|---|---|
+| A: Elo (FiveThirtyEight, HCA 70) | 66,4 % | 0,6108 | 0,2116 |
+| + C: únava (back-to-back, časové pásma, výška…) | 66,8 % | 0,6081 | 0,2104 |
+| + B: chýbajúci hráči | 67,3 % | 0,6039 | 0,2087 |
+| **+ sila súpisky** | **67,3 %** | **0,5996** | **0,2068** |
+
+Zamietnuté vylepšenia a ich dôvody sú v [docs/gate-G1.md](docs/gate-G1.md),
+naučené váhy v [reports/learned.md](reports/learned.md).
+
 ## Ako je to otestované
 
 | Test | Čo stráži |
 |---|---|
+| Test úniku dát pre každú vrstvu | Únava, hráči aj sila súpisky nezávisia od budúcich zápasov |
 | Unit testy | Vzorce proti ručne spočítaným príkladom a skutočným číslam z archívu |
 | Property-based (Hypothesis) | Pravdepodobnosť 0–1, súčet Elo sa nemení, víťaz vždy získa |
 | Replikácia | Zhoda s archívom FiveThirtyEight na 33 094 zápasoch |
@@ -54,7 +70,7 @@ uv run pytest                                                        # všetky t
 ## Roadmapa
 
 - [x] **0a** – Elo (vrstva A), replikácia, backtest, CI → brána G0 ✅
-- [ ] **0b** – Dostupnosť hráčov, únava, vylepšenia Ela → brána G1
+- [x] **0b** – Dostupnosť hráčov, únava, sila súpisky, naučené váhy → brána G1 ✅
 - [ ] **1** – Dátový agent + databáza → brána G2
 - [ ] **2** – Web appka (PWA, cyberpunk dizajn) → brána G3
 - [ ] **3** – Portfólio
