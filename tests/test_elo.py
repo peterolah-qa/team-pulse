@@ -74,3 +74,36 @@ def test_run_resets_ratings_between_seasons():
     res = run(games, p, initial={"AAA": 1505, "BBB": 1505})
     post_first = res.loc[0, "elo_home_post"]
     assert res.loc[1, "elo_home_pre"] == pytest.approx(season_reset(post_first, p))
+
+
+def test_early_multiplier_default_is_off():
+    from team_pulse.elo import early_multiplier
+
+    assert early_multiplier(0, EloParams()) == 1.0
+
+
+def test_early_multiplier_decays_to_one():
+    from team_pulse.elo import early_multiplier
+
+    p = EloParams(early_boost=1.0, early_games=20)
+    assert early_multiplier(0, p) == pytest.approx(2.0)
+    assert early_multiplier(10, p) == pytest.approx(1.5)
+    assert early_multiplier(20, p) == pytest.approx(1.0)
+    assert early_multiplier(50, p) == pytest.approx(1.0)
+
+
+def test_dynamic_k_moves_ratings_more_at_season_start():
+    games = pd.DataFrame(
+        {
+            "date": pd.to_datetime(["2024-10-22"]),
+            "season": [2025],
+            "home": ["AAA"],
+            "away": ["BBB"],
+            "pts_home": [120],
+            "pts_away": [100],
+        }
+    )
+    init = {"AAA": 1505, "BBB": 1505}
+    plain = run(games, EloParams(), initial=init).loc[0, "elo_home_post"]
+    boosted = run(games, EloParams(early_boost=1.0), initial=init).loc[0, "elo_home_post"]
+    assert boosted - 1505 == pytest.approx(2 * (plain - 1505))

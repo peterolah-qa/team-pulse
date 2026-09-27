@@ -12,7 +12,7 @@ takže predpoveď nikdy nevidí výsledok zápasu, ktorý predpovedá.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 import pandas as pd
 
@@ -26,6 +26,8 @@ class EloParams:
     new_team: float = 1300.0  # nový team (expanzia)
     mean: float = 1505.0  # priemer ligy, k nemu sa ratingy vracajú medzi sezónami
     carryover: float = 0.75  # podiel ratingu, ktorý prejde do novej sezóny
+    early_boost: float = 0.0  # dynamický K: o koľko vyšší K na začiatku sezóny (0 = FiveThirtyEight)
+    early_games: int = 20  # počet zápasov, počas ktorých zvýšenie K klesne na nulu
 
 
 DEFAULT_PARAMS = EloParams()
@@ -71,6 +73,13 @@ def spread(elo_home: float, elo_away: float, hca: float, neutral: bool = False) 
     return (elo_home - elo_away + (0.0 if neutral else hca)) / ELO_PER_POINT
 
 
+def early_multiplier(games_played: float, p: EloParams) -> float:
+    """Násobok K: na začiatku sezóny 1 + early_boost, po early_games zápasoch 1."""
+    if p.early_boost == 0:
+        return 1.0
+    return 1.0 + p.early_boost * max(0.0, 1.0 - games_played / p.early_games)
+
+
 def run(
     games: pd.DataFrame, p: EloParams = DEFAULT_PARAMS, initial: dict[str, float] | None = None
 ) -> pd.DataFrame:
@@ -87,6 +96,7 @@ def run(
     neutral = g["neutral"].astype(bool) if "neutral" in g else pd.Series(False, index=g.index)
     ratings: dict[str, float] = dict(initial or {})
     last_season: dict[str, int] = {}
+    played: dict[str, int] = {}
     pre_h, pre_a, prob, post_h, post_a = [], [], [], [], []
 
     for i, row in enumerate(g.itertuples(index=False)):
@@ -95,6 +105,8 @@ def run(
                 ratings[team] = p.new_team
             elif last_season.get(team) is not None and last_season[team] != row.season:
                 ratings[team] = season_reset(ratings[team], p)
+            if last_season.get(team) != row.season:
+                played[team] = 0
             last_season[team] = row.season
 
         rh, ra = ratings[row.home], ratings[row.away]
@@ -102,7 +114,11 @@ def run(
         pre_h.append(rh)
         pre_a.append(ra)
         prob.append(expected_home(rh, ra, p.hca, nt))
-        nh, na = update(rh, ra, int(row.pts_home), int(row.pts_away), p, nt)
+        mult = early_multiplier((played[row.home] + played[row.away]) / 2, p)
+        pk = p if mult == 1.0 else replace(p, k=p.k * mult)
+        nh, na = update(rh, ra, int(row.pts_home), int(row.pts_away), pk, nt)
+        played[row.home] += 1
+        played[row.away] += 1
         ratings[row.home], ratings[row.away] = nh, na
         post_h.append(nh)
         post_a.append(na)
