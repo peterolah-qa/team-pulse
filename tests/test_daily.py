@@ -68,3 +68,15 @@ def test_commit_only_when_state_changes(tmp_path):
     state.write_text('{"a": 2}\n')
     assert git_commit_if_changed(state.name, "zmena", push=False, cwd=tmp_path)
     assert git(tmp_path, "log", "--oneline").count("\n") == 2
+
+
+def test_same_state_ignores_generated_at(tmp_path):
+    import json
+
+    from team_pulse.daily import same_state
+
+    path = tmp_path / "state.json"
+    assert not same_state(path, {"a": 1})  # súbor ešte neexistuje
+    path.write_text(json.dumps({"generated_at": "2026-09-27T10:00:00", "a": 1}))
+    assert same_state(path, {"generated_at": "2026-09-28T10:00:00", "a": 1})
+    assert not same_state(path, {"generated_at": "2026-09-28T10:00:00", "a": 2})

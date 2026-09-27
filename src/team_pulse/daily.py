@@ -12,6 +12,7 @@ Automaticky každé ráno o 10:00: bash scripts/install_daily.sh
 from __future__ import annotations
 
 import argparse
+import json
 import subprocess
 from datetime import date
 from pathlib import Path
@@ -51,6 +52,14 @@ def fetch_current_season(season: int) -> tuple[pd.DataFrame, pd.DataFrame]:
     return g, p
 
 
+def same_state(path: Path, state: dict) -> bool:
+    """Je nový stav rovnaký ako uložený? Čas vytvorenia (generated_at) sa neporovnáva."""
+    if not path.exists():
+        return False
+    strip = lambda d: {k: v for k, v in json.loads(json.dumps(d)).items() if k != "generated_at"}  # noqa: E731
+    return strip(json.loads(path.read_text(encoding="utf-8"))) == strip(state)
+
+
 def git_commit_if_changed(path: Path, message: str, push: bool = True, cwd: Path | None = None) -> bool:
     """Commitne súbor len ak sa zmenil. Vráti True, ak vznikol commit."""
     run = lambda *a: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True)  # noqa: E731
@@ -85,6 +94,9 @@ def main(push: bool) -> None:
     ROSTER.parent.mkdir(parents=True, exist_ok=True)
     roster.to_parquet(ROSTER, index=False)
     state = build_state(games, players, roster, schedule, load(MODEL).elo_params)
+    if same_state(STATE, state):
+        print("Stav sa nezmenil, nič sa neukladá ani necommituje")
+        return
     save_state(state)
     print(f"Stav: {len(state['elo'])} teamov, posledný výsledok {state['last_result']} → {STATE}")
 
