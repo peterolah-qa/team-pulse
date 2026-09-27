@@ -1,0 +1,1369 @@
+{
+ "timestamp": "2026-09-27T18:16:40Z",
+ "status": "success",
+ "season": {
+  "year": 2027,
+  "type": 1,
+  "name": "Preseason",
+  "displayName": "2026-27"
+ },
+ "injuries": [
+  {
+   "id": "1",
+   "displayName": "Atlanta Hawks",
+   "injuries": [
+    {
+     "id": "-57577",
+     "longComment": "Veesaar suffered the injury during a workout on Sept. 15, and an MRI confirmed the diagnosis. The No. 52 overall pick in the 2026 NBA Draft, Veesaar was expected to spend a lot of time with Atlanta's G League affiliate this season.",
+     "shortComment": "Veesaar was diagnosed with a torn right ACL and is expected to miss the 2026-27 season, the Hawks announced Monday.",
+     "status": "Out",
+     "date": "2026-09-21T19:50Z",
+     "athlete": {
+      "firstName": "Henri",
+      "lastName": "Veesaar",
+      "displayName": "Henri Veesaar",
+      "shortName": "H. Veesaar",
+      "links": [
+       {
+        "language": "en-US",
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/_/id/5105571/henri-veesaar",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/stats/_/id/5105571/henri-veesaar",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "sportscenter",
+         "app"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:5105571&section=stats",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nba/players/full/5105571.png",
+       "alt": "Henri Veesaar"
+      },
+      "position": {
+       "id": "9",
+       "name": "Center",
+       "displayName": "Center",
+       "abbreviation": "C",
+       "leaf": false
+      },
+      "team": {
+       "id": "1",
+       "uid": "s:40~l:46~t:1",
+       "slug": "atlanta-hawks",
+       "name": "Hawks",
+       "abbreviation": "ATL",
+       "displayName": "Atlanta Hawks",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T21:17Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/atl.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T21:13Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/atl.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T21:18Z"
+        }
+       ],
+       "links": [
+        {
+         "language": "en-US",
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/_/name/atl/atlanta-hawks",
+         "text": "Clubhouse",
+         "shortText": "Clubhouse",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/roster/_/name/atl/atlanta-hawks",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "sportscenter",
+          "app"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:1&section=roster",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        }
+       ]
+      },
+      "notes": {
+       "items": [
+        {
+         "id": "-57577",
+         "type": "news",
+         "date": "2026-09-21T19:50Z",
+         "headline": "Veesaar was diagnosed with a torn right ACL and is expected to miss the 2026-27 season, the Hawks announced Monday.",
+         "text": "Veesaar suffered the injury during a workout on Sept. 15, and an MRI confirmed the diagnosis. The No. 52 overall pick in the 2026 NBA Draft, Veesaar was expected to spend a lot of time with Atlanta's G League affiliate this season.",
+         "source": "RotoWire",
+         "injury": {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/5105571/injuries/-57577?lang=en&region=us"
+         }
+        }
+       ]
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "source": {
+      "id": "1",
+      "description": "basic/manual",
+      "state": "basic"
+     },
+     "type": {
+      "id": "4",
+      "name": "INJURY_STATUS_OUT",
+      "description": "out",
+      "abbreviation": "O"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "OFS",
+       "abbreviation": "OFS"
+      },
+      "type": "Knee",
+      "location": "Leg",
+      "side": "Right",
+      "returnDate": "2027-07-01"
+     }
+    },
+    {
+     "id": "-56292",
+     "longComment": "Gueye will be re-evaluated by medical staff in 3-to-4 months, which means he'll miss all of training camp and preseason and likely the start of the 2026-27 regular season. It's a brutal blow for the fourth-year big man, given that the Hawks used the No. 23 overall pick of the 2026 NBA Draft to select St. John's product Zuby Ejiofor. Gueye's absence means Ejiofor will have more opportunities in the preseason, and the rookie could establish a key role off the bench behind Onyeka Okongwu and projected backup center Jock Landale (ankle).",
+     "shortComment": "Gueye underwent surgery Tuesday to repair a fractured left foot that he suffered during a workout last week, Brad Rowland of the Locked On Podcast Network reports.",
+     "status": "Day-To-Day",
+     "date": "2026-07-19T00:14Z",
+     "athlete": {
+      "firstName": "Mouhamed",
+      "lastName": "Gueye",
+      "displayName": "Mouhamed Gueye",
+      "shortName": "M. Gueye",
+      "links": [
+       {
+        "language": "en-US",
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/_/id/4712863/mouhamed-gueye",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/stats/_/id/4712863/mouhamed-gueye",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "sportscenter",
+         "app"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:4712863&section=stats",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nba/players/full/4712863.png",
+       "alt": "Mouhamed Gueye"
+      },
+      "position": {
+       "id": "7",
+       "name": "Forward",
+       "displayName": "Forward",
+       "abbreviation": "F",
+       "leaf": false
+      },
+      "team": {
+       "id": "1",
+       "uid": "s:40~l:46~t:1",
+       "slug": "atlanta-hawks",
+       "name": "Hawks",
+       "abbreviation": "ATL",
+       "displayName": "Atlanta Hawks",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T21:17Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/atl.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T21:13Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/atl.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T21:18Z"
+        }
+       ],
+       "links": [
+        {
+         "language": "en-US",
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/_/name/atl/atlanta-hawks",
+         "text": "Clubhouse",
+         "shortText": "Clubhouse",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/roster/_/name/atl/atlanta-hawks",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "sportscenter",
+          "app"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:1&section=roster",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        }
+       ]
+      },
+      "notes": {
+       "items": [
+        {
+         "id": "-56292",
+         "type": "news",
+         "date": "2026-07-19T00:14Z",
+         "headline": "Gueye underwent surgery Tuesday to repair a fractured left foot that he suffered during a workout last week, Brad Rowland of the Locked On Podcast Network reports.",
+         "text": "Gueye will be re-evaluated by medical staff in 3-to-4 months, which means he'll miss all of training camp and preseason and likely the start of the 2026-27 regular season. It's a brutal blow for the fourth-year big man, given that the Hawks used the No. 23 overall pick of the 2026 NBA Draft to select St. John's product Zuby Ejiofor. Gueye's absence means Ejiofor will have more opportunities in the preseason, and the rookie could establish a key role off the bench behind Onyeka Okongwu and projected backup center Jock Landale (ankle).",
+         "source": "RotoWire",
+         "injury": {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4712863/injuries/-56292?lang=en&region=us"
+         }
+        }
+       ]
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "source": {
+      "id": "1",
+      "description": "basic/manual",
+      "state": "basic"
+     },
+     "type": {
+      "id": "6",
+      "name": "INJURY_STATUS_DAYTODAY",
+      "description": "day-to-day",
+      "abbreviation": "DD"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "GTD",
+       "abbreviation": "GTD"
+      },
+      "type": "Foot",
+      "location": "Leg",
+      "detail": "Fracture",
+      "side": "Left",
+      "returnDate": "2026-10-15"
+     }
+    },
+    {
+     "id": "532102",
+     "longComment": "A hip injury cost Gilbert his final three games in Las Vegas. In his one appearance for the Hawks at Summer League, he finished with 10 points, five rebounds, five assists and two steals in 20 minutes off the bench.",
+     "shortComment": "Gilbert (hip) won't play in Saturday's Las Vegas Summer League game against the Wizards, Brad Rowland of the Locked On Podcast Network reports.",
+     "status": "Day-To-Day",
+     "date": "2026-07-18T23:19Z",
+     "athlete": {
+      "firstName": "Keshon",
+      "lastName": "Gilbert",
+      "displayName": "Keshon Gilbert",
+      "shortName": "K. Gilbert",
+      "links": [
+       {
+        "language": "en-US",
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/_/id/4585618/keshon-gilbert",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/stats/_/id/4585618/keshon-gilbert",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "sportscenter",
+         "app"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:4585618&section=stats",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nba/players/full/4585618.png",
+       "alt": "Keshon Gilbert"
+      },
+      "position": {
+       "id": "3",
+       "name": "Guard",
+       "displayName": "Guard",
+       "abbreviation": "G",
+       "leaf": false
+      },
+      "team": {
+       "id": "1",
+       "uid": "s:40~l:46~t:1",
+       "slug": "atlanta-hawks",
+       "name": "Hawks",
+       "abbreviation": "ATL",
+       "displayName": "Atlanta Hawks",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T21:17Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/atl.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T21:13Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/atl.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T21:18Z"
+        }
+       ],
+       "links": [
+        {
+         "language": "en-US",
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/_/name/atl/atlanta-hawks",
+         "text": "Clubhouse",
+         "shortText": "Clubhouse",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/roster/_/name/atl/atlanta-hawks",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "sportscenter",
+          "app"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:1&section=roster",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        }
+       ]
+      },
+      "notes": {
+       "items": [
+        {
+         "id": "532102",
+         "type": "news",
+         "date": "2026-07-18T23:19Z",
+         "headline": "Gilbert (hip) won't play in Saturday's Las Vegas Summer League game against the Wizards, Brad Rowland of the Locked On Podcast Network reports.",
+         "text": "A hip injury cost Gilbert his final three games in Las Vegas. In his one appearance for the Hawks at Summer League, he finished with 10 points, five rebounds, five assists and two steals in 20 minutes off the bench.",
+         "source": "RotoWire",
+         "injury": {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4585618/injuries/532102?lang=en&region=us"
+         }
+        }
+       ]
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "source": {
+      "id": "1",
+      "description": "basic/manual",
+      "state": "basic"
+     },
+     "type": {
+      "id": "6",
+      "name": "INJURY_STATUS_DAYTODAY",
+      "description": "day-to-day",
+      "abbreviation": "DD"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "GTD",
+       "abbreviation": "GTD"
+      },
+      "type": "Hip",
+      "location": "Torso",
+      "returnDate": "2026-10-01"
+     }
+    }
+   ]
+  },
+  {
+   "id": "17",
+   "displayName": "Brooklyn Nets",
+   "injuries": [
+    {
+     "id": "-55021",
+     "longComment": "Although Traore won't play in Summer League, he's expected to be 100 percent by training camp. During his rookie campaign, Traore averaged 8.9 points, 3.8 assists and 1.8 rebounds while shooting 38.0 percent from the field in 22.2 minutes per showing across 56 regular-season games (31 starts).",
+     "shortComment": "Brooklyn general manager Sean Marks announced Monday that Traore underwent right knee surgery and won't play in Summer League, C.J. Holmes of the New York Daily News reports.",
+     "status": "Day-To-Day",
+     "date": "2026-06-30T13:28Z",
+     "athlete": {
+      "firstName": "Nolan",
+      "lastName": "Traore",
+      "displayName": "Nolan Traore",
+      "shortName": "N. Traore",
+      "links": [
+       {
+        "language": "en-US",
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/_/id/5279130/nolan-traore",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/stats/_/id/5279130/nolan-traore",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "sportscenter",
+         "app"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:5279130&section=stats",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nba/players/full/5279130.png",
+       "alt": "Nolan Traore"
+      },
+      "position": {
+       "id": "3",
+       "name": "Guard",
+       "displayName": "Guard",
+       "abbreviation": "G",
+       "leaf": false
+      },
+      "team": {
+       "id": "17",
+       "uid": "s:40~l:46~t:17",
+       "slug": "brooklyn-nets",
+       "name": "Nets",
+       "abbreviation": "BKN",
+       "displayName": "Brooklyn Nets",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T21:17Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/bkn.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T21:13Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bkn.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T21:18Z"
+        }
+       ],
+       "links": [
+        {
+         "language": "en-US",
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/_/name/bkn/brooklyn-nets",
+         "text": "Clubhouse",
+         "shortText": "Clubhouse",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/roster/_/name/bkn/brooklyn-nets",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "sportscenter",
+          "app"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:17&section=roster",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        }
+       ]
+      },
+      "notes": {
+       "items": [
+        {
+         "id": "-55021",
+         "type": "news",
+         "date": "2026-06-30T13:28Z",
+         "headline": "Brooklyn general manager Sean Marks announced Monday that Traore underwent right knee surgery and won't play in Summer League, C.J. Holmes of the New York Daily News reports.",
+         "text": "Although Traore won't play in Summer League, he's expected to be 100 percent by training camp. During his rookie campaign, Traore averaged 8.9 points, 3.8 assists and 1.8 rebounds while shooting 38.0 percent from the field in 22.2 minutes per showing across 56 regular-season games (31 starts).",
+         "source": "RotoWire",
+         "injury": {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/5279130/injuries/-55021?lang=en&region=us"
+         }
+        }
+       ]
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "source": {
+      "id": "1",
+      "description": "basic/manual",
+      "state": "basic"
+     },
+     "type": {
+      "id": "6",
+      "name": "INJURY_STATUS_DAYTODAY",
+      "description": "day-to-day",
+      "abbreviation": "DD"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "GTD",
+       "abbreviation": "GTD"
+      },
+      "type": "Knee",
+      "location": "Leg",
+      "detail": "Surgery",
+      "side": "Right",
+      "returnDate": "2026-10-01"
+     }
+    }
+   ]
+  },
+  {
+   "id": "30",
+   "displayName": "Charlotte Hornets",
+   "injuries": [
+    {
+     "id": "532824",
+     "longComment": "Dillingham, the 2024 No. 8 overall pick, has appeared in 114 regular-season games for the Timberwolves and Bulls throughout his career, averaging 5.5 points, 1.6 rebounds and 2.1 assists over 13.0 minutes per contest. It's unknown what kind of role he will have in Charlotte, though it may not be a meaningful one, considering the Hornets have plenty of backcourt depth. Dillingham had minor surgery in April to remove a ganglion cyst but is expected to be ready to go to begin the 2026-27 campaign.",
+     "shortComment": "The Hornets acquired Dillingham (wrist) from the Bulls on Saturday in exchange for Buddy Hield and cash, Shams Charania of ESPN reports.",
+     "status": "Day-To-Day",
+     "date": "2026-09-26T21:48Z",
+     "athlete": {
+      "firstName": "Rob",
+      "lastName": "Dillingham",
+      "displayName": "Rob Dillingham",
+      "shortName": "R. Dillingham",
+      "links": [
+       {
+        "language": "en-US",
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/_/id/4684275/rob-dillingham",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/stats/_/id/4684275/rob-dillingham",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "sportscenter",
+         "app"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:4684275&section=stats",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nba/players/full/4684275.png",
+       "alt": "Rob Dillingham"
+      },
+      "position": {
+       "id": "3",
+       "name": "Guard",
+       "displayName": "Guard",
+       "abbreviation": "G",
+       "leaf": false
+      },
+      "team": {
+       "id": "30",
+       "uid": "s:40~l:46~t:30",
+       "slug": "charlotte-hornets",
+       "name": "Hornets",
+       "abbreviation": "CHA",
+       "displayName": "Charlotte Hornets",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T21:17Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cha.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T21:13Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cha.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T21:18Z"
+        }
+       ],
+       "links": [
+        {
+         "language": "en-US",
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/_/name/cha/charlotte-hornets",
+         "text": "Clubhouse",
+         "shortText": "Clubhouse",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/roster/_/name/cha/charlotte-hornets",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "sportscenter",
+          "app"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:30&section=roster",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        }
+       ]
+      },
+      "notes": {
+       "items": [
+        {
+         "id": "532824",
+         "type": "news",
+         "date": "2026-09-26T21:48Z",
+         "headline": "The Hornets acquired Dillingham (wrist) from the Bulls on Saturday in exchange for Buddy Hield and cash, Shams Charania of ESPN reports.",
+         "text": "Dillingham, the 2024 No. 8 overall pick, has appeared in 114 regular-season games for the Timberwolves and Bulls throughout his career, averaging 5.5 points, 1.6 rebounds and 2.1 assists over 13.0 minutes per contest. It's unknown what kind of role he will have in Charlotte, though it may not be a meaningful one, considering the Hornets have plenty of backcourt depth. Dillingham had minor surgery in April to remove a ganglion cyst but is expected to be ready to go to begin the 2026-27 campaign.",
+         "source": "RotoWire",
+         "injury": {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4684275/injuries/532824?lang=en&region=us"
+         }
+        }
+       ]
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "source": {
+      "id": "1",
+      "description": "basic/manual",
+      "state": "basic"
+     },
+     "type": {
+      "id": "6",
+      "name": "INJURY_STATUS_DAYTODAY",
+      "description": "day-to-day",
+      "abbreviation": "DD"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "GTD",
+       "abbreviation": "GTD"
+      },
+      "type": "Wrist",
+      "location": "Arm",
+      "detail": "Surgery",
+      "side": "Right",
+      "returnDate": "2026-10-01"
+     }
+    },
+    {
+     "id": "-57590",
+     "longComment": "The Hornets say that Knueppel will be re-evaluated during the first week of the regular season, putting his status for Opening Night on Oct. 21 in jeopardy. Knueppel is coming off a dominant rookie campaign with regular-season averages of 18.5 points, 5.3 rebounds and 3.4 assists on 47.5 percent shooting from the field.",
+     "shortComment": "Knueppel will miss the preseason after suffering a left hamstring injury during an offseason workout, the Hornets announced Friday.",
+     "status": "Day-To-Day",
+     "date": "2026-09-25T23:04Z",
+     "athlete": {
+      "firstName": "Kon",
+      "lastName": "Knueppel",
+      "displayName": "Kon Knueppel",
+      "shortName": "K. Knueppel",
+      "links": [
+       {
+        "language": "en-US",
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/_/id/5061575/kon-knueppel",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/stats/_/id/5061575/kon-knueppel",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "sportscenter",
+         "app"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:5061575&section=stats",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nba/players/full/5061575.png",
+       "alt": "Kon Knueppel"
+      },
+      "position": {
+       "id": "3",
+       "name": "Guard",
+       "displayName": "Guard",
+       "abbreviation": "G",
+       "leaf": false
+      },
+      "team": {
+       "id": "30",
+       "uid": "s:40~l:46~t:30",
+       "slug": "charlotte-hornets",
+       "name": "Hornets",
+       "abbreviation": "CHA",
+       "displayName": "Charlotte Hornets",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T21:17Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cha.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T21:13Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cha.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T21:18Z"
+        }
+       ],
+       "links": [
+        {
+         "language": "en-US",
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/_/name/cha/charlotte-hornets",
+         "text": "Clubhouse",
+         "shortText": "Clubhouse",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/roster/_/name/cha/charlotte-hornets",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "sportscenter",
+          "app"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:30&section=roster",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        }
+       ]
+      },
+      "notes": {
+       "items": [
+        {
+         "id": "-57590",
+         "type": "news",
+         "date": "2026-09-25T23:04Z",
+         "headline": "Knueppel will miss the preseason after suffering a left hamstring injury during an offseason workout, the Hornets announced Friday.",
+         "text": "The Hornets say that Knueppel will be re-evaluated during the first week of the regular season, putting his status for Opening Night on Oct. 21 in jeopardy. Knueppel is coming off a dominant rookie campaign with regular-season averages of 18.5 points, 5.3 rebounds and 3.4 assists on 47.5 percent shooting from the field.",
+         "source": "RotoWire",
+         "injury": {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/5061575/injuries/-57590?lang=en&region=us"
+         }
+        }
+       ]
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "source": {
+      "id": "1",
+      "description": "basic/manual",
+      "state": "basic"
+     },
+     "type": {
+      "id": "6",
+      "name": "INJURY_STATUS_DAYTODAY",
+      "description": "day-to-day",
+      "abbreviation": "DD"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "GTD",
+       "abbreviation": "GTD"
+      },
+      "type": "Hamstring",
+      "location": "Leg",
+      "side": "Left",
+      "returnDate": "2026-10-21"
+     }
+    },
+    {
+     "id": "-57589",
+     "longComment": "Williams will be re-evaluated the first week of the regular season, putting his status for Opening Night in the air. Williams will have a difficult path to minutes this season as he competes with the likes of Naz Reid, Royce O'Neale and Tidjane Salaun.",
+     "shortComment": "Williams will miss the preseason after suffering a right hamstring injury, the Hornets announced Friday.",
+     "status": "Day-To-Day",
+     "date": "2026-09-25T23:03Z",
+     "athlete": {
+      "firstName": "Grant",
+      "lastName": "Williams",
+      "displayName": "Grant Williams",
+      "shortName": "G. Williams",
+      "links": [
+       {
+        "language": "en-US",
+        "rel": [
+         "playercard",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/_/id/4066218/grant-williams",
+        "text": "Player Card",
+        "shortText": "Player Card",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "desktop",
+         "athlete"
+        ],
+        "href": "https://www.espn.com/nba/player/stats/_/id/4066218/grant-williams",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       },
+       {
+        "language": "en-US",
+        "rel": [
+         "stats",
+         "sportscenter",
+         "app"
+        ],
+        "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~a:4066218&section=stats",
+        "text": "Stats",
+        "shortText": "Stats",
+        "isExternal": false,
+        "isPremium": false
+       }
+      ],
+      "headshot": {
+       "href": "https://a.espncdn.com/i/headshots/nba/players/full/4066218.png",
+       "alt": "Grant Williams"
+      },
+      "position": {
+       "id": "7",
+       "name": "Forward",
+       "displayName": "Forward",
+       "abbreviation": "F",
+       "leaf": false
+      },
+      "team": {
+       "id": "30",
+       "uid": "s:40~l:46~t:30",
+       "slug": "charlotte-hornets",
+       "name": "Hornets",
+       "abbreviation": "CHA",
+       "displayName": "Charlotte Hornets",
+       "logos": [
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "default"
+         ],
+         "lastUpdated": "2024-06-25T21:17Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cha.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "dark"
+         ],
+         "lastUpdated": "2024-06-25T21:13Z"
+        },
+        {
+         "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cha.png",
+         "width": 500,
+         "height": 500,
+         "alt": "",
+         "rel": [
+          "full",
+          "scoreboard"
+         ],
+         "lastUpdated": "2024-06-25T21:18Z"
+        }
+       ],
+       "links": [
+        {
+         "language": "en-US",
+         "rel": [
+          "clubhouse",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/_/name/cha/charlotte-hornets",
+         "text": "Clubhouse",
+         "shortText": "Clubhouse",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "desktop",
+          "team"
+         ],
+         "href": "https://www.espn.com/nba/team/roster/_/name/cha/charlotte-hornets",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        },
+        {
+         "language": "en-US",
+         "rel": [
+          "roster",
+          "sportscenter",
+          "app"
+         ],
+         "href": "sportscenter://x-callback-url/showClubhouse?uid=s:40~l:46~t:30&section=roster",
+         "text": "Roster",
+         "shortText": "Roster",
+         "isExternal": false,
+         "isPremium": false
+        }
+       ]
+      },
+      "notes": {
+       "items": [
+        {
+         "id": "-57589",
+         "type": "news",
+         "date": "2026-09-25T23:03Z",
+         "headline": "Williams will miss the preseason after suffering a right hamstring injury, the Hornets announced Friday.",
+         "text": "Williams will be re-evaluated the first week of the regular season, putting his status for Opening Night in the air. Williams will have a difficult path to minutes this season as he competes with the likes of Naz Reid, Royce O'Neale and Tidjane Salaun.",
+         "source": "RotoWire",
+         "injury": {
+          "$ref": "http://sports.core.api.espn.pvt/v2/sports/basketball/leagues/nba/seasons/2026/athletes/4066218/injuries/-57589?lang=en&region=us"
+         }
+        }
+       ]
+      },
+      "status": {
+       "id": "1",
+       "name": "Active",
+       "type": "active",
+       "abbreviation": "Active"
+      }
+     },
+     "source": {
+      "id": "1",
+      "description": "basic/manual",
+      "state": "basic"
+     },
+     "type": {
+      "id": "6",
+      "name": "INJURY_STATUS_DAYTODAY",
+      "description": "day-to-day",
+      "abbreviation": "DD"
+     },
+     "details": {
+      "fantasyStatus": {
+       "description": "GTD",
+       "abbreviation": "GTD"
+      },
+      "type": "Hamstring",
+      "location": "Leg",
+      "side": "Right",
+      "returnDate": "2026-10-21"
+     }
+    }
+   ]
+  }
+ ]
+}
