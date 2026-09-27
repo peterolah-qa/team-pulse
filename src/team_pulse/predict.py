@@ -6,8 +6,10 @@ Spája všetky vrstvy:
   C  únava z rozpisu (vrátane zápasov v Mexiku a Európe)
 a finálny model models/v1.json.
 
-Spustenie (z Macu):  uv run python -m team_pulse.predict [--date 2026-10-20]
-Výstup:              data/live/predictions_<dátum>.json
+Predikcia pracuje zo stavu (state/state.json, pripraví ho Mac), takže beží aj v cloude.
+
+Spustenie:  uv run python -m team_pulse.predict [--date 2026-10-20] [--days 3]
+Výstup:     site/data/predictions.json
 """
 
 from __future__ import annotations
@@ -15,19 +17,29 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from datetime import UTC, datetime
 from pathlib import Path
 
 import pandas as pd
 
-from team_pulse.elo import ELO_PER_POINT, EloParams, current_ratings, rating_for_season
-from team_pulse.live.availability import p_out_for_game, player_snapshot, season_rotation, team_availability
+from team_pulse.elo import ELO_PER_POINT
+from team_pulse.live.availability import p_out_for_game, team_availability
 from team_pulse.model_store import StoredModel, load
 from team_pulse.pulse import confidence, team_state
 from team_pulse.schedule import FEATURES, add_features
+from team_pulse.state import (
+    build_state,
+    load_state,
+    roster_frame,
+    rosters_from_state,
+    rotation_from_state,
+    schedule_frame,
+    snapshot_from_state,
+)
 
 MODEL = Path("models/v1.json")
-OUT_DIR = Path("data/live")
-SCHEDULE_COLS = ["game_id", "date", "season", "home", "away", "neutral"]
+SITE_DATA = Path("site/data/predictions.json")
+FATIGUE_COLS = ["game_id", "date", "season", "home", "away", "neutral", "arena_city"]
 
 REASON_TEXT = {
     "b2b": "2. zápas za 2 dni",
@@ -44,17 +56,14 @@ def _fatigue_text(feature: str, value: float) -> str:
     return REASON_TEXT[feature].format(v=value, km=value * 1000)
 
 
-def upcoming_fatigue(
-    history: pd.DataFrame, schedule: pd.DataFrame, target_date: pd.Timestamp
-) -> pd.DataFrame:
-    """Únava pre zápasy v target_date: história + naplánované zápasy od poslednej odohranej po target."""
-    last = history["date"].max()
-    ahead = schedule[(schedule["date"] > last) & (schedule["date"] <= target_date)].copy()
-    ahead["pts_home"], ahead["pts_away"] = 0, 0
-    cols = SCHEDULE_COLS + ["pts_home", "pts_away"]
-    hist = history.assign(neutral=history.get("neutral", False))[cols]
-    combo = pd.concat([hist, ahead[cols + ["arena_city"]]], ignore_index=True)
-    feats = add_features(combo)
+def season_fatigue(schedule: pd.DataFrame, target_date: pd.Timestamp) -> pd.DataFrame:
+    """Únava pre zápasy v target_date z rozpisu sezóny (odohrané aj naplánované zápasy).
+
+    Pri učení sa únava na začiatku sezóny tiež nulovala, takže stačí rozpis aktuálnej sezóny.
+    """
+    upto = schedule[schedule["date"] <= target_date][FATIGUE_COLS].copy()
+    upto["pts_home"], upto["pts_away"] = 0, 0  # výsledky únava nepoužíva
+    feats = add_features(upto)
     return feats[feats["date"] == target_date].reset_index(drop=True)
 
 
@@ -87,24 +96,31 @@ def predict_games(
     model: StoredModel,
     data_age_hours: float = 0.0,
 ) -> list[dict]:
+    """Predikcia priamo z histórie (Mac, testy): najprv zostaví stav, potom predpovedá."""
+    state = build_state(history, players, roster, schedule, model.elo_params)
+    return predict_from_state(state, injuries, model, target_date, data_age_hours)
+
+
+def predict_from_state(
+    state: dict,
+    injuries: pd.DataFrame,
+    model: StoredModel,
+    target_date: pd.Timestamp,
+    data_age_hours: float = 0.0,
+) -> list[dict]:
     target_date = pd.Timestamp(target_date).normalize()
-    games = schedule[schedule["date"] == target_date]
+    schedule = schedule_frame(state)
+    games = schedule[schedule["date"] == target_date] if not schedule.empty else schedule
     if games.empty:
         return []
-    season = int(games["season"].iat[0])
     w = model.elo_weights
-    p = EloParams(**model.elo_params)
-
-    # A: Elo
-    teams = set(history["home"]) | set(history["away"])
-    state = current_ratings(history, p, initial={t: p.mean for t in teams})
-    elo = {t: rating_for_season(state.get(t, (p.mean, season)), season, p) for t in set(roster["team"])}
+    elo = state["elo"]
 
     # B: dostupnosť hráčov
-    snap = player_snapshot(players)
-    rotation = season_rotation(players, season)
+    snap = snapshot_from_state(state)
+    rotation = rotation_from_state(state)
+    rosters = rosters_from_state(state)
     p_out = p_out_for_game(injuries, target_date)
-    rosters = {t: set(g["player_id"].astype(int)) for t, g in roster.groupby("team")}
 
     def avail(team: str, override: dict[int, float] | None = None) -> dict:
         po = {**p_out, **(override or {})}
@@ -114,7 +130,7 @@ def predict_games(
     avg_strength = sum(a["strength"] for a in league.values()) / max(len(league), 1)
 
     # C: únava
-    fat = upcoming_fatigue(history, schedule, target_date).set_index("game_id")
+    fat = season_fatigue(schedule, target_date).set_index("game_id")
 
     per_elo = model.coef[model.features.index("elo_diff")] / 100
     results = []
@@ -186,44 +202,60 @@ def predict_games(
     return results
 
 
-def main(date: str | None) -> None:
-    from team_pulse.learned import GAMES, PLAYERS
+def upcoming_dates(state: dict, today: pd.Timestamp, days: int) -> list[pd.Timestamp]:
+    sched = schedule_frame(state)
+    if sched.empty:
+        return []
+    dates = sorted(d for d in sched["date"].unique() if d >= today.normalize())
+    return [pd.Timestamp(d) for d in dates[:days]]
+
+
+def main(date: str | None, days: int) -> None:
     from team_pulse.live.injuries import fetch_injuries, parse_injuries
-    from team_pulse.live.roster import ROSTER, match_injuries
-    from team_pulse.live.schedule import fetch_schedule, parse_schedule
+    from team_pulse.live.roster import match_injuries
 
-    history = pd.read_parquet(GAMES)
-    players = pd.read_parquet(PLAYERS)
-    roster = pd.read_parquet(ROSTER)
-    schedule = parse_schedule(fetch_schedule())
-    raw_inj = fetch_injuries()
-    injuries = match_injuries(parse_injuries(raw_inj), roster)
-    age = (pd.Timestamp.now(tz="UTC") - pd.Timestamp(raw_inj["timestamp"])).total_seconds() / 3600
+    state = load_state()
     model = load(MODEL)
+    raw_inj = fetch_injuries()
+    injuries = match_injuries(parse_injuries(raw_inj), roster_frame(state))
+    age = (pd.Timestamp.now(tz="UTC") - pd.Timestamp(raw_inj["timestamp"])).total_seconds() / 3600
 
-    today = pd.Timestamp.now().normalize()
-    target = pd.Timestamp(date) if date else schedule.loc[schedule["date"] >= today, "date"].min()
-    preds = predict_games(target, history, players, schedule, roster, injuries, model, age)
+    targets = [pd.Timestamp(date)] if date else upcoming_dates(state, pd.Timestamp.now(), days)
+    by_date = {str(t.date()): predict_from_state(state, injuries, model, t, age) for t in targets}
 
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out = OUT_DIR / f"predictions_{target.date()}.json"
-    out.write_text(json.dumps(preds, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    payload = {
+        "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
+        "model": model.version,
+        "state_generated_at": state["generated_at"],
+        "last_result": state["last_result"],
+        "injuries_timestamp": raw_inj.get("timestamp"),
+        "injuries_matched": f"{int(injuries['player_id'].notna().sum())}/{len(injuries)}",
+        "days": by_date,
+    }
+    SITE_DATA.parent.mkdir(parents=True, exist_ok=True)
+    SITE_DATA.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
-    print(f"{target.date()} · {len(preds)} zápasov · model {model.version} · zranenia pred {age:.1f} h\n")
-    for r in preds:
-        h, a = r["home"], r["away"]
-        head = f"{a['team']} @ {h['team']}   výhra {h['team']} {r['p_home']:.0%}"
-        print(f"{head}   rozdiel {r['margin_home']:+.1f}")
-        for s in (h, a):
-            drop = f" (normálne {s['normal_tier']})" if s["dropped"] else ""
-            print(f"  {s['team']}  Pulse {s['pulse']:5.1f}  {s['tier']:<9}{drop}  istota {s['confidence']}")
-            for text, elo in s["reasons"]:
-                print(f"        {elo:+4d}  {text}")
+    print(f"Model {model.version} · stav z {state['generated_at']} · zranenia pred {age:.1f} h\n")
+    for day, preds in by_date.items():
+        print(f"=== {day} · {len(preds)} zápasov ===")
+        for r in preds:
+            h, a = r["home"], r["away"]
+            head = f"{a['team']} @ {h['team']}   výhra {h['team']} {r['p_home']:.0%}"
+            print(f"{head}   rozdiel {r['margin_home']:+.1f}")
+            for s in (h, a):
+                drop = f" (normálne {s['normal_tier']})" if s["dropped"] else ""
+                print(
+                    f"  {s['team']}  Pulse {s['pulse']:5.1f}  {s['tier']:<9}{drop}  istota {s['confidence']}"
+                )
+                for text, elo_pts in s["reasons"]:
+                    print(f"        {elo_pts:+4d}  {text}")
         print()
-    print(f"Uložené: {out}")
+    print(f"Uložené: {SITE_DATA}")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--date", default=None, help="YYYY-MM-DD, predvolene najbližší hrací deň")
-    main(ap.parse_args().date)
+    ap.add_argument("--date", default=None, help="YYYY-MM-DD; predvolene najbližšie hracie dni")
+    ap.add_argument("--days", type=int, default=3, help="koľko najbližších hracích dní")
+    a = ap.parse_args()
+    main(a.date, a.days)

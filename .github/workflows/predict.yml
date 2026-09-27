@@ -1,0 +1,48 @@
+name: Predikcie
+
+# Každých 15 minút počas amerického dňa a večera (UTC 14:00 – 06:59): zranenia ESPN
+# + stav z Macu (state/state.json) → predpovede → GitHub Pages. Spustí sa aj po novom stave.
+on:
+  schedule:
+    - cron: "*/15 14-23 * * *"
+    - cron: "*/15 0-6 * * *"
+  push:
+    branches: [main]
+    paths: ["state/state.json", "models/**", "site/**", "src/team_pulse/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inštalácia uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Python a knižnice podľa uv.lock
+        run: uv sync --locked
+
+      - name: Predpovede na 3 najbližšie hracie dni
+        run: uv run python -m team_pulse.predict --days 3
+
+      - name: Príprava stránky
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Zverejnenie na GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
