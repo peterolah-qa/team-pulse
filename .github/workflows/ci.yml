@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inštalácia uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Python a knižnice podľa uv.lock
+        run: uv sync --locked
+
+      - name: Kontrola kódu (ruff)
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+
+      - name: Archív FiveThirtyEight pre replikačný test
+        run: |
+          mkdir -p data/ref
+          curl -sSfL -o data/ref/nba_elo.csv https://raw.githubusercontent.com/Neil-Paine-1/NBA-elo/main/nba_elo.csv
+
+      - name: Testy
+        run: uv run pytest -v
