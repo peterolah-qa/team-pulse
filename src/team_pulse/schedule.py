@@ -19,9 +19,10 @@ from typing import NamedTuple
 
 import pandas as pd
 
-from team_pulse.arenas import Arena, distance_km, location
+from team_pulse.arenas import Arena, distance_km, location, neutral_site
 
 MAX_REST = 7
+MAX_TZ = 3  # v histórii najviac 3 h (pobrežie–pobrežie); Európa by bola mimo naučeného rozsahu
 HIGH_ALTITUDE_M = 1000
 BUBBLE_HOST = "ORL"  # zápasy bubliny 2020 sa hrali pri Orlande
 
@@ -36,20 +37,27 @@ class _State(NamedTuple):
     recent: tuple[pd.Timestamp, ...]
 
 
-def game_location(home: str, season: int, neutral: bool) -> Arena:
-    return location(BUBBLE_HOST if neutral else home, season)
+def game_location(home: str, season: int, neutral: bool, city: str | None = None) -> Arena:
+    """Kde sa zápas hrá: domáca hala, neutrálne mesto (Mexiko, Európa) alebo bublina 2020."""
+    if not neutral:
+        return location(home, season)
+    site = neutral_site(city)
+    if site is not None:
+        return site
+    return location(BUBBLE_HOST if season == 2020 else home, season)
 
 
 def add_features(games: pd.DataFrame) -> pd.DataFrame:
     """Vráti zápasy (chronologicky) doplnené o stĺpce home_<príznak> a away_<príznak>."""
     g = games.sort_values(["date"], kind="stable").reset_index(drop=True).copy()
     neutral = g["neutral"].astype(bool) if "neutral" in g else pd.Series(False, index=g.index)
+    cities = g["arena_city"] if "arena_city" in g else pd.Series(None, index=g.index)
     last: dict[str, _State] = {}
     cols: dict[str, list[float]] = {f"{s}_{f}": [] for s in ("home", "away") for f in FEATURES}
 
     for i, r in enumerate(g.itertuples(index=False)):
         nt = bool(neutral.iat[i])
-        where = game_location(r.home, r.season, nt)
+        where = game_location(r.home, r.season, nt, cities.iat[i])
         updates = {}
         for side, team in (("home", r.home), ("away", r.away)):
             prev = last.get(team)
@@ -57,7 +65,7 @@ def add_features(games: pd.DataFrame) -> pd.DataFrame:
             if same_season:
                 rest = min((r.date - prev.date).days, MAX_REST)
                 km = distance_km(prev.where, where)
-                tz_east = max(where.utc_offset - prev.where.utc_offset, 0)
+                tz_east = min(max(where.utc_offset - prev.where.utc_offset, 0), MAX_TZ)
                 recent = tuple(d for d in prev.recent if (r.date - d).days <= 3)
             else:
                 rest, km, tz_east, recent = MAX_REST, 0.0, 0, ()

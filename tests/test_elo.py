@@ -107,3 +107,23 @@ def test_dynamic_k_moves_ratings_more_at_season_start():
     plain = run(games, EloParams(), initial=init).loc[0, "elo_home_post"]
     boosted = run(games, EloParams(early_boost=1.0), initial=init).loc[0, "elo_home_post"]
     assert boosted - 1505 == pytest.approx(2 * (plain - 1505))
+
+
+def test_current_ratings_and_new_season_reset():
+    from team_pulse.elo import current_ratings, rating_for_season
+
+    games = pd.DataFrame(
+        {
+            "date": pd.to_datetime(["2026-04-10"]),
+            "season": [2026],
+            "home": ["AAA"],
+            "away": ["BBB"],
+            "pts_home": [120],
+            "pts_away": [100],
+        }
+    )
+    state = current_ratings(games, EloParams(), initial={"AAA": 1600, "BBB": 1500})
+    elo_a, season = state["AAA"]
+    assert season == 2026 and elo_a > 1600
+    assert rating_for_season(state["AAA"], 2026) == elo_a
+    assert rating_for_season(state["AAA"], 2027) == pytest.approx(season_reset(elo_a))

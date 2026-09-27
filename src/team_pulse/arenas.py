@@ -39,6 +39,21 @@ def location(team: str, season: int) -> Arena:
     return Arena(r["city"], float(r["lat"]), float(r["lon"]), int(r["utc_offset"]), int(r["altitude_m"]))
 
 
+# zápasy základnej časti na neutrálnej pôde (NBA Global Games, Mexiko)
+NEUTRAL_SITES = {
+    "Mexico City": Arena("Mexico City", 19.404, -99.096, -6, 2240),
+    "Paris": Arena("Paris", 48.839, 2.378, 1, 35),
+    "London": Arena("London", 51.508, 0.003, 0, 10),
+    "Manchester": Arena("Manchester", 53.488, -2.244, 0, 40),
+    "Berlin": Arena("Berlin", 52.507, 13.443, 1, 35),
+    "Abu Dhabi": Arena("Abu Dhabi", 24.470, 54.600, 4, 5),
+}
+
+
+def neutral_site(city: str | None) -> Arena | None:
+    return NEUTRAL_SITES.get(city) if city else None
+
+
 def distance_km(a: Arena, b: Arena) -> float:
     """Vzdušná vzdialenosť (haversine)."""
     p1, p2 = math.radians(a.lat), math.radians(b.lat)

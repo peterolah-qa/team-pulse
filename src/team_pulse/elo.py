@@ -127,3 +127,21 @@ def run(
     g["prob_home"] = prob
     g["elo_home_post"], g["elo_away_post"] = post_h, post_a
     return g
+
+
+def current_ratings(
+    games: pd.DataFrame, p: EloParams = DEFAULT_PARAMS, initial: dict[str, float] | None = None
+) -> dict[str, tuple[float, int]]:
+    """Rating každého teamu po jeho poslednom odohranom zápase: team → (Elo, sezóna)."""
+    res = run(games, p, initial)
+    out: dict[str, tuple[float, int]] = {}
+    for r in res.itertuples(index=False):
+        out[r.home] = (r.elo_home_post, int(r.season))
+        out[r.away] = (r.elo_away_post, int(r.season))
+    return out
+
+
+def rating_for_season(state: tuple[float, int], season: int, p: EloParams = DEFAULT_PARAMS) -> float:
+    """Rating pre zápas v sezóne `season` – s letným návratom k priemeru, ak ide o novú sezónu."""
+    elo, last_season = state
+    return season_reset(elo, p) if season > last_season else elo

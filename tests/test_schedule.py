@@ -134,3 +134,44 @@ def test_features_do_not_depend_on_results(seed):
     flipped = games_.assign(pts_home=games_["pts_away"], pts_away=games_["pts_home"])
     cols = [f"{s}_{f}" for s in ("home", "away") for f in FEATURES]
     pd.testing.assert_frame_equal(add_features(games_)[cols], add_features(flipped)[cols])
+
+
+def test_neutral_game_in_mexico_city_uses_its_location():
+    df = pd.DataFrame(
+        {
+            "date": pd.to_datetime(["2026-11-05", "2026-11-07"]),
+            "season": [2027, 2027],
+            "home": ["IND", "IND"],
+            "away": ["BOS", "DEN"],
+            "pts_home": [100, 100],
+            "pts_away": [90, 90],
+            "neutral": [False, True],
+            "arena_city": ["Indianapolis", "Mexico City"],
+        }
+    )
+    g = add_features(df)
+    assert g.loc[1, "home_km"] > 2500  # Indianapolis → Mexico City
+    assert g.loc[1, "away_road"] == 0  # neutrálny zápas nie je výjazd
+
+
+def test_time_zone_shift_is_capped_for_europe():
+    df = pd.DataFrame(
+        {
+            "date": pd.to_datetime(["2027-01-10", "2027-01-14"]),
+            "season": [2027, 2027],
+            "home": ["SAS", "SAS"],
+            "away": ["LAL", "NOP"],
+            "pts_home": [100, 100],
+            "pts_away": [90, 90],
+            "neutral": [False, True],
+            "arena_city": ["San Antonio", "Paris"],
+        }
+    )
+    g = add_features(df)
+    assert g.loc[1, "home_tz_east"] == 3  # skutočne 7 h, obmedzené na naučený rozsah
+
+
+def test_bubble_without_city_is_still_orlando():
+    from team_pulse.schedule import game_location
+
+    assert game_location("LAL", 2020, True).city == "Orlando"
