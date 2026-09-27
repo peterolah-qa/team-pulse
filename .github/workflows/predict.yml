@@ -1,14 +1,14 @@
 name: Predikcie
 
 # Každých 15 minút počas amerického dňa a večera (UTC 14:00 – 06:59): zranenia ESPN
-# + stav z Macu (state/state.json) → predpovede → GitHub Pages. Spustí sa aj po novom stave.
+# + stav z Macu (state/state.json) → predpovede (JSON) → build appky → GitHub Pages.
 on:
   schedule:
     - cron: "*/15 14-23 * * *"
     - cron: "*/15 0-6 * * *"
   push:
     branches: [main]
-    paths: ["state/state.json", "models/**", "site/**", "src/team_pulse/**"]
+    paths: ["state/state.json", "models/**", "app/**", "src/team_pulse/**", ".github/workflows/predict.yml"]
   workflow_dispatch:
 
 permissions:
@@ -35,13 +35,26 @@ jobs:
       - name: Python a knižnice podľa uv.lock
         run: uv sync --locked
 
-      - name: Predpovede na 3 najbližšie hracie dni
-        run: uv run python -m team_pulse.predict --days 3
+      - name: Predpovede na 3 najbližšie hracie dni → app/public/data
+        run: uv run python -m team_pulse.predict --days 3 --out app/public/data
+
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Build appky
+        working-directory: app
+        run: |
+          npm ci
+          npm run build
 
       - name: Príprava stránky
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: app/dist
 
       - name: Zverejnenie na GitHub Pages
         id: deploy

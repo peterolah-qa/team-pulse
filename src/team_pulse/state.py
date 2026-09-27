@@ -16,11 +16,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from team_pulse.elo import EloParams, current_ratings, rating_for_season
+from team_pulse.elo import EloParams, rating_for_season, run
 from team_pulse.live.availability import Snapshot, player_snapshot, season_rotation
 
 STATE = Path("state/state.json")
 STATE_VERSION = 1
+TREND_GAMES = 10
 SCHEDULE_FIELDS = ["game_id", "date", "tipoff_utc", "season", "kind", "home", "away", "neutral", "arena_city"]
 
 
@@ -34,7 +35,19 @@ def build_state(
     season = int(schedule["season"].max())
     p = EloParams(**elo_params)
     teams = set(history["home"]) | set(history["away"])
-    ratings = current_ratings(history, p, initial={t: p.mean for t in teams})
+    res = run(history, p, initial={t: p.mean for t in teams})
+    ratings: dict[str, tuple[float, int]] = {}
+    games_of: dict[str, list[dict]] = {}
+    for r in res.itertuples(index=False):
+        ratings[r.home] = (r.elo_home_post, int(r.season))
+        ratings[r.away] = (r.elo_away_post, int(r.season))
+        for team, opp, home, pts, opp_pts, e in (
+            (r.home, r.away, True, r.pts_home, r.pts_away, r.elo_home_post),
+            (r.away, r.home, False, r.pts_away, r.pts_home, r.elo_away_post),
+        ):
+            entry = {"date": str(r.date.date()), "opp": opp, "home": home, "pts": int(pts)}
+            entry.update(opp_pts=int(opp_pts), elo=round(float(e), 1))
+            games_of.setdefault(team, []).append(entry)
     rosters = {t: sorted(int(x) for x in g["player_id"]) for t, g in roster.groupby("team")}
     elo = {t: round(rating_for_season(ratings.get(t, (p.mean, season)), season, p), 2) for t in rosters}
 
@@ -59,6 +72,7 @@ def build_state(
         "season": season,
         "last_result": str(history["date"].max().date()),
         "elo": elo,
+        "elo_history": {t: games_of.get(t, [])[-TREND_GAMES:] for t in rosters},
         "rosters": rosters,
         "players": player_info,
         "rotation": {t: {str(pid): round(m, 2) for pid, m in r.items()} for t, r in rotation.items()},

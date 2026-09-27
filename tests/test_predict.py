@@ -148,3 +148,62 @@ def test_margin_sign_matches_probability(p):
 
     margin = math.log(p / (1 - p)) / 0.0055 / 28
     assert (margin > 0) == (p > 0.5) or p == 0.5
+
+
+def questionable_star():
+    return pd.DataFrame(
+        {
+            "team": ["BOS"],
+            "player": ["BOS-0"],
+            "player_id": pd.array([0], dtype="Int64"),
+            "p_out": [0.5],
+            "return_date": [pd.NaT],
+            "status": ["QUESTIONABLE"],
+        }
+    )
+
+
+def test_layers_and_contributions_for_game_screen():
+    g = run()[0]
+    assert g["home_adv"] > 0
+    for side in ("home", "away"):
+        assert set(g[side]["layers"]) == {"strength", "roster", "players", "fatigue"}
+        assert "Sila súpisky" in g[side]["contributions"]
+
+
+def test_what_if_for_questionable_player():
+    g = run(questionable_star())[0]
+    wi = g["what_if"]
+    assert len(wi) == 1 and wi[0]["player"] == "BOS-0" and wi[0]["side"] == "home"
+    assert wi[0]["plays"]["p_home"] > wi[0]["out"]["p_home"]
+    assert wi[0]["plays"]["pulse"] > wi[0]["out"]["pulse"]
+    assert run()[0]["what_if"] == []
+
+
+def test_what_if_hides_scenario_without_effect():
+    # BOS-2 má malú hodnotu: šanca sa zmení o menej ako 1 p. b. a úroveň ostane → scenár sa neukáže
+    injuries = questionable_star().assign(player=["BOS-2"], player_id=pd.array([2], dtype="Int64"))
+    assert run(injuries)[0]["what_if"] == []
+
+
+def test_build_teams_for_team_screen():
+    from team_pulse.predict import build_teams
+    from team_pulse.state import build_state
+
+    hist, players = history_and_players()
+    state = build_state(hist, players, roster(), schedule(), model().elo_params)
+    teams = build_teams(state, questionable_star(), model(), pd.Timestamp("2026-10-01"))
+    assert set(teams) == set(TEAMS)
+    bos = teams["BOS"]
+    assert bos["rank"] == 1  # najsilnejší team v syntetických dátach
+    assert 0 < len(bos["trend"]) <= 10 and "pulse" in bos["trend"][0]
+    assert bos["roster"][0]["player"] == "BOS-0"
+    assert bos["roster"][0]["status"] == "QUESTIONABLE"
+    assert bos["upcoming"][0]["opp"] == "NYK" and bos["upcoming"][0]["home"]
+
+
+def test_model_info_for_model_screen():
+    from team_pulse.predict import model_info
+
+    info = model_info(model())
+    assert {"version", "test_metrics", "calibration", "versions", "elo_weights"} <= set(info)

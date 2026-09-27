@@ -1,4 +1,4 @@
-"""Predikcia pre nadchádzajúce zápasy: pravdepodobnosť, rozdiel skóre a Pulse oboch teamov.
+"""Predikcia pre nadchádzajúce zápasy a dáta pre appku.
 
 Spája všetky vrstvy:
   A  Elo z výsledkov (s letným návratom k priemeru v novej sezóne)
@@ -6,10 +6,13 @@ Spája všetky vrstvy:
   C  únava z rozpisu (vrátane zápasov v Mexiku a Európe)
 a finálny model models/v1.json.
 
-Predikcia pracuje zo stavu (state/state.json, pripraví ho Mac), takže beží aj v cloude.
+Pracuje zo stavu (state/state.json, pripraví ho Mac), takže beží aj v cloude.
+Zapíše tri súbory pre appku:
+  predictions.json  zápasy najbližších dní: šanca, rozdiel, Pulse, vrstvy, dôvody, „čo keby“
+  teams.json        30 teamov: Pulse dnes, trend, súpiska so stavom hráčov, najbližšie zápasy
+  model.json        presnosť, kalibrácia, porovnanie verzií, naučené váhy
 
-Spustenie:  uv run python -m team_pulse.predict [--date 2026-10-20] [--days 3]
-Výstup:     site/data/predictions.json
+Spustenie:  uv run python -m team_pulse.predict [--date 2026-10-20] [--days 3] [--out app/public/data]
 """
 
 from __future__ import annotations
@@ -17,15 +20,23 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
 
 import pandas as pd
 
 from team_pulse.elo import ELO_PER_POINT
-from team_pulse.live.availability import p_out_for_game, team_availability
+from team_pulse.live.availability import (
+    MAX_MIN,
+    REPLACEMENT,
+    ROOKIE_MIN,
+    Snapshot,
+    p_out_for_game,
+    team_availability,
+)
 from team_pulse.model_store import StoredModel, load
-from team_pulse.pulse import confidence, team_state
+from team_pulse.pulse import LEAGUE_MEAN, confidence, pulse_from_elo, team_state
 from team_pulse.schedule import FEATURES, add_features
 from team_pulse.state import (
     build_state,
@@ -38,8 +49,11 @@ from team_pulse.state import (
 )
 
 MODEL = Path("models/v1.json")
-SITE_DATA = Path("site/data/predictions.json")
+OUT = Path("app/public/data")
 FATIGUE_COLS = ["game_id", "date", "season", "home", "away", "neutral", "arena_city"]
+ROSTER_KEY = "Sila súpisky"
+MAX_WHAT_IF = 4
+MIN_WHAT_IF_SWING = 0.01  # scenár bez zmeny šance aspoň o 1 p. b. (a bez zmeny úrovne) sa neukáže
 
 REASON_TEXT = {
     "b2b": "2. zápas za 2 dni",
@@ -86,6 +100,180 @@ def _absent_text(absent: list[dict]) -> str:
     return "Bez " + ", ".join(names) if names else "Chýbajúci hráči"
 
 
+def _above(pid: int, snap: Snapshot) -> float:
+    return max(snap.value.get(pid, REPLACEMENT) - REPLACEMENT, 0.0)
+
+
+@dataclass
+class Context:
+    """Všetko, čo sa počíta raz na deň; jednotlivé zápasy a scenáre „čo keby“ z neho čerpajú."""
+
+    state: dict
+    model: StoredModel
+    target_date: pd.Timestamp
+    p_out: dict[int, float]
+    data_age_hours: float
+    snap: Snapshot = field(init=False)
+    rotation: dict = field(init=False)
+    rosters: dict = field(init=False)
+    avg_strength: float = field(init=False)
+
+    def __post_init__(self) -> None:
+        self.snap = snapshot_from_state(self.state)
+        self.rotation = rotation_from_state(self.state)
+        self.rosters = rosters_from_state(self.state)
+        league = [self.avail(t) for t in self.rosters]
+        self.avg_strength = sum(a["strength"] for a in league) / max(len(league), 1)
+
+    @property
+    def w(self) -> dict:
+        return self.model.elo_weights
+
+    def avail(self, team: str, override: dict[int, float] | None = None) -> dict:
+        po = {**self.p_out, **(override or {})}
+        return team_availability(team, self.rosters.get(team, set()), po, self.snap, self.rotation)
+
+    def roster_elo(self, a: dict) -> float:
+        return self.w["strength_diff"] * (a["strength"] - self.avg_strength) * 100
+
+    def team_contrib(self, team: str, side: str | None, override: dict[int, float] | None = None) -> dict:
+        """Príspevky súpisky a chýbajúcich hráčov v Elo. side=None: priemer domáci/hostia (stránka teamu)."""
+        a = self.avail(team, override)
+        full = self.avail(team, dict.fromkeys(self.rosters.get(team, set()), 0.0))
+        if side is None:
+            w_missing = (self.w["home_missing"] - self.w["away_missing"]) / 2
+        else:
+            w_missing = self.w[f"{side}_missing"] * (1.0 if side == "home" else -1.0)
+        injury = (
+            w_missing * a["missing"] * 100
+            + self.w["strength_diff"] * (a["strength"] - full["strength"]) * 100
+        )
+        contrib = {ROSTER_KEY: self.roster_elo(full)}
+        if a["absent"] and abs(injury) > 0.5:
+            contrib[_absent_text(a["absent"])] = injury
+        return {"contrib": contrib, "avail": a, "injury": injury, "roster": contrib[ROSTER_KEY]}
+
+
+def _game(ctx: Context, g, fat: pd.Series, override: dict[int, float] | None = None) -> dict:
+    w, elo, model = ctx.w, ctx.state["elo"], ctx.model
+    parts = {
+        "home": ctx.team_contrib(g.home, "home", override),
+        "away": ctx.team_contrib(g.away, "away", override),
+    }
+    ah, aa = parts["home"]["avail"], parts["away"]["avail"]
+    row = {
+        "elo_diff": (elo[g.home] - elo[g.away]) / 100,
+        "home": 0 if g.neutral else 1,
+        "home_missing": ah["missing"] * 100,
+        "away_missing": aa["missing"] * 100,
+        "strength_diff": (ah["strength"] - aa["strength"]) * 100,
+    }
+    for c in model.features:
+        if c not in row:
+            row[c] = float(fat[c]) / 1000 if c.endswith("_km") else float(fat[c])
+    prob = float(model.predict_proba(pd.DataFrame([row]))[0])
+    per_elo = model.coef[model.features.index("elo_diff")] / 100
+    margin = math.log(prob / (1 - prob)) / per_elo / ELO_PER_POINT
+
+    po = {**ctx.p_out, **(override or {})}
+    teams_out = {}
+    for side, team, sign in (("home", g.home, 1.0), ("away", g.away, -1.0)):
+        fatigue = _side_contrib(side, fat, w, sign)
+        contrib = {**parts[side]["contrib"], **fatigue}
+        st = team_state(elo[team], contrib)
+
+        # istota: otázni hráči všetci nastúpia vs. nikto nenastúpi
+        questionable = {pid for pid, p in po.items() if 0 < p < 1 and pid in ctx.rosters.get(team, set())}
+        if questionable:
+            best = ctx.team_contrib(team, side, {**(override or {}), **dict.fromkeys(questionable, 0.0)})
+            worst = ctx.team_contrib(team, side, {**(override or {}), **dict.fromkeys(questionable, 1.0)})
+            fat_sum = sum(fatigue.values())
+            elo_best = best["injury"] + best["roster"] + fat_sum
+            elo_worst = worst["injury"] + worst["roster"] + fat_sum
+            swing = abs(elo_best - elo_worst)
+            t_best = team_state(elo[team], {"x": elo_best})["tier"]
+            t_worst = team_state(elo[team], {"x": elo_worst})["tier"]
+        else:
+            swing, t_best, t_worst = 0.0, st["tier"], st["tier"]
+        st["confidence"] = confidence(t_best, t_worst, swing, ctx.data_age_hours)
+        st["team"] = team
+        st["layers"] = {
+            "strength": round(elo[team] - LEAGUE_MEAN, 1),
+            "roster": round(parts[side]["roster"], 1),
+            "players": round(parts[side]["injury"], 1),
+            "fatigue": round(sum(fatigue.values()), 1),
+        }
+        st["contributions"] = {k: round(v, 1) for k, v in contrib.items()}
+        teams_out[side] = st
+
+    return {
+        "game_id": g.game_id,
+        "date": str(ctx.target_date.date()),
+        "tipoff_utc": str(getattr(g, "tipoff_utc", "")),
+        "neutral": bool(g.neutral),
+        "home_adv": 0.0 if g.neutral else round(w["home"], 1),
+        "p_home": round(prob, 3),
+        "margin_home": round(margin, 1),
+        "home": teams_out["home"],
+        "away": teams_out["away"],
+    }
+
+
+def _scenario(pred: dict, side: str) -> dict:
+    return {"p_home": pred["p_home"], "pulse": pred[side]["pulse"], "tier": pred[side]["tier"]}
+
+
+def _what_if(ctx: Context, g, fat: pd.Series) -> list[dict]:
+    """Scenáre pre otáznych hráčov: čo ak nastúpi / nenastúpi."""
+    out = []
+    for side, team in (("home", g.home), ("away", g.away)):
+        for pid in ctx.rosters.get(team, set()):
+            p = ctx.p_out.get(pid, 0.0)
+            if not 0 < p < 1 or _above(pid, ctx.snap) <= 0:
+                continue
+            plays, sits = _game(ctx, g, fat, {pid: 0.0}), _game(ctx, g, fat, {pid: 1.0})
+            swing = abs(plays["p_home"] - sits["p_home"])
+            if swing < MIN_WHAT_IF_SWING and plays[side]["tier"] == sits[side]["tier"]:
+                continue
+            impact = abs(plays[side]["elo_today"] - sits[side]["elo_today"])
+            out.append(
+                {
+                    "player_id": pid,
+                    "player": ctx.snap.name.get(pid, str(pid)),
+                    "team": team,
+                    "side": side,
+                    "p_out": p,
+                    "impact_elo": round(impact),
+                    "plays": _scenario(plays, side),
+                    "out": _scenario(sits, side),
+                }
+            )
+    out.sort(key=lambda x: -x["impact_elo"])
+    return out[:MAX_WHAT_IF]
+
+
+def predict_from_state(
+    state: dict,
+    injuries: pd.DataFrame,
+    model: StoredModel,
+    target_date: pd.Timestamp,
+    data_age_hours: float = 0.0,
+) -> list[dict]:
+    target_date = pd.Timestamp(target_date).normalize()
+    schedule = schedule_frame(state)
+    games = schedule[schedule["date"] == target_date] if not schedule.empty else schedule
+    if games.empty:
+        return []
+    ctx = Context(state, model, target_date, p_out_for_game(injuries, target_date), data_age_hours)
+    fat = season_fatigue(schedule, target_date).set_index("game_id")
+    results = []
+    for g in games.itertuples():
+        res = _game(ctx, g, fat.loc[g.game_id])
+        res["what_if"] = _what_if(ctx, g, fat.loc[g.game_id])
+        results.append(res)
+    return results
+
+
 def predict_games(
     target_date: pd.Timestamp,
     history: pd.DataFrame,
@@ -101,105 +289,77 @@ def predict_games(
     return predict_from_state(state, injuries, model, target_date, data_age_hours)
 
 
-def predict_from_state(
-    state: dict,
-    injuries: pd.DataFrame,
-    model: StoredModel,
-    target_date: pd.Timestamp,
-    data_age_hours: float = 0.0,
-) -> list[dict]:
-    target_date = pd.Timestamp(target_date).normalize()
-    schedule = schedule_frame(state)
-    games = schedule[schedule["date"] == target_date] if not schedule.empty else schedule
-    if games.empty:
-        return []
-    w = model.elo_weights
-    elo = state["elo"]
+# --- stránka teamu a stránka modelu ------------------------------------------------
 
-    # B: dostupnosť hráčov
-    snap = snapshot_from_state(state)
-    rotation = rotation_from_state(state)
-    rosters = rosters_from_state(state)
-    p_out = p_out_for_game(injuries, target_date)
 
-    def avail(team: str, override: dict[int, float] | None = None) -> dict:
-        po = {**p_out, **(override or {})}
-        return team_availability(team, rosters.get(team, set()), po, snap, rotation)
-
-    league = {t: avail(t) for t in rosters}
-    avg_strength = sum(a["strength"] for a in league.values()) / max(len(league), 1)
-
-    # C: únava
-    fat = season_fatigue(schedule, target_date).set_index("game_id")
-
-    per_elo = model.coef[model.features.index("elo_diff")] / 100
-    results = []
-    for g in games.itertuples():
-        f = fat.loc[g.game_id]
-        ah, aa = league[g.home], league[g.away]
-        row = {
-            "elo_diff": (elo[g.home] - elo[g.away]) / 100,
-            "home": 0 if g.neutral else 1,
-            "home_missing": ah["missing"] * 100,
-            "away_missing": aa["missing"] * 100,
-            "strength_diff": (ah["strength"] - aa["strength"]) * 100,
+def build_teams(
+    state: dict, injuries: pd.DataFrame, model: StoredModel, today: pd.Timestamp, data_age_hours: float = 0.0
+) -> dict:
+    """Stav každého teamu dnes (bez únavy konkrétneho zápasu), trend, súpiska, najbližšie zápasy."""
+    today = pd.Timestamp(today).normalize()
+    ctx = Context(state, model, today, p_out_for_game(injuries, today), data_age_hours)
+    status_by_pid = {int(r.player_id): r.status for r in injuries.dropna(subset=["player_id"]).itertuples()}
+    sched = schedule_frame(state)
+    ranking = sorted(state["elo"], key=lambda t: -state["elo"][t])
+    teams = {}
+    for team in state["rosters"]:
+        tc = ctx.team_contrib(team, None)
+        st = team_state(state["elo"][team], tc["contrib"])
+        roster = []
+        for pid in state["rosters"][team]:
+            typical = min(ctx.snap.typical_min.get(pid, ROOKIE_MIN), MAX_MIN)
+            impact = model.elo_weights["strength_diff"] * typical / 48 * _above(pid, ctx.snap) * 100
+            p = ctx.p_out.get(pid, 0.0)
+            roster.append(
+                {
+                    "player_id": pid,
+                    "player": ctx.snap.name.get(pid, str(pid)),
+                    "status": status_by_pid.get(pid, "HRÁ") if p > 0 else "HRÁ",
+                    "p_out": p,
+                    "typical_min": round(typical, 1),
+                    "impact_elo": round(impact),
+                }
+            )
+        roster.sort(key=lambda r: -r["impact_elo"])
+        upcoming = []
+        if not sched.empty:
+            mine = sched[((sched["home"] == team) | (sched["away"] == team)) & (sched["date"] >= today)]
+            for g in mine.head(3).itertuples():
+                home = g.home == team
+                upcoming.append(
+                    {
+                        "game_id": g.game_id,
+                        "date": str(g.date.date()),
+                        "opp": g.away if home else g.home,
+                        "home": home,
+                    }
+                )
+        trend = [
+            {**h, "pulse": round(pulse_from_elo(h["elo"]), 1)}
+            for h in state.get("elo_history", {}).get(team, [])
+        ]
+        teams[team] = {
+            **st,
+            "team": team,
+            "rank": ranking.index(team) + 1,
+            "trend": trend,
+            "roster": roster[:13],
+            "upcoming": upcoming,
         }
-        for c in model.features:
-            if c not in row:
-                row[c] = float(f[c]) / 1000 if c.endswith("_km") else float(f[c])
-        prob = float(model.predict_proba(pd.DataFrame([row]))[0])
-        margin = math.log(prob / (1 - prob)) / per_elo / ELO_PER_POINT
+    return teams
 
-        teams_out = {}
-        for side, team, a, sign in (("home", g.home, ah, 1.0), ("away", g.away, aa, -1.0)):
-            # plná súpiska (nikto nechýba) vs. dnešná: rozdiel pripíšeme chýbajúcim hráčom
-            team_ids = rosters.get(team, set())
-            full = avail(team, {pid: 0.0 for pid in team_ids})
-            injury_elo = sign * w[f"{side}_missing"] * a["missing"] * 100
-            injury_elo += w["strength_diff"] * (a["strength"] - full["strength"]) * 100
-            contrib = {"Sila súpisky": w["strength_diff"] * (full["strength"] - avg_strength) * 100}
-            if a["absent"] and abs(injury_elo) > 0.5:
-                contrib[_absent_text(a["absent"])] = injury_elo
-            contrib.update(_side_contrib(side, f, w, sign))
-            st = team_state(elo[team], contrib)
 
-            # istota: otázni hráči všetci nastúpia vs. nikto nenastúpi
-            questionable = {
-                pid for pid, po in p_out.items() if 0 < po < 1 and pid in rosters.get(team, set())
-            }
-            if questionable:
-                best = avail(team, dict.fromkeys(questionable, 0.0))
-                worst = avail(team, dict.fromkeys(questionable, 1.0))
-
-                def elo_of(x: dict, side: str = side, sign: float = sign) -> float:
-                    return (
-                        sign * w[f"{side}_missing"] * x["missing"] * 100
-                        + w["strength_diff"] * (x["strength"] - avg_strength) * 100
-                    )
-
-                swing = abs(elo_of(best) - elo_of(worst))
-                base = sum(v for k, v in contrib.items() if not k.startswith("Bez") and k != "Sila súpisky")
-                t_best = team_state(elo[team], {"x": elo_of(best) + base})["tier"]
-                t_worst = team_state(elo[team], {"x": elo_of(worst) + base})["tier"]
-            else:
-                swing, t_best, t_worst = 0.0, st["tier"], st["tier"]
-            st["confidence"] = confidence(t_best, t_worst, swing, data_age_hours)
-            st["team"] = team
-            teams_out[side] = st
-
-        results.append(
-            {
-                "game_id": g.game_id,
-                "date": str(target_date.date()),
-                "tipoff_utc": str(getattr(g, "tipoff_utc", "")),
-                "neutral": bool(g.neutral),
-                "p_home": round(prob, 3),
-                "margin_home": round(margin, 1),
-                "home": teams_out["home"],
-                "away": teams_out["away"],
-            }
-        )
-    return results
+def model_info(model: StoredModel) -> dict:
+    return {
+        "version": model.version,
+        "created": model.created,
+        "train_seasons": model.train_seasons,
+        "n_games": model.n_games,
+        "test_metrics": model.test_metrics,
+        "calibration": model.calibration,
+        "versions": model.versions,
+        "elo_weights": model.elo_weights,
+    }
 
 
 def upcoming_dates(state: dict, today: pd.Timestamp, days: int) -> list[pd.Timestamp]:
@@ -210,7 +370,12 @@ def upcoming_dates(state: dict, today: pd.Timestamp, days: int) -> list[pd.Times
     return [pd.Timestamp(d) for d in dates[:days]]
 
 
-def main(date: str | None, days: int) -> None:
+def write_json(path: Path, data: object) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+
+
+def main(date: str | None, days: int, out: Path) -> None:
     from team_pulse.live.injuries import fetch_injuries, parse_injuries
     from team_pulse.live.roster import match_injuries
 
@@ -219,21 +384,21 @@ def main(date: str | None, days: int) -> None:
     raw_inj = fetch_injuries()
     injuries = match_injuries(parse_injuries(raw_inj), roster_frame(state))
     age = (pd.Timestamp.now(tz="UTC") - pd.Timestamp(raw_inj["timestamp"])).total_seconds() / 3600
+    today = pd.Timestamp.now()
 
-    targets = [pd.Timestamp(date)] if date else upcoming_dates(state, pd.Timestamp.now(), days)
+    targets = [pd.Timestamp(date)] if date else upcoming_dates(state, today, days)
     by_date = {str(t.date()): predict_from_state(state, injuries, model, t, age) for t in targets}
-
-    payload = {
+    meta = {
         "generated_at": datetime.now(UTC).isoformat(timespec="seconds"),
         "model": model.version,
         "state_generated_at": state["generated_at"],
         "last_result": state["last_result"],
         "injuries_timestamp": raw_inj.get("timestamp"),
         "injuries_matched": f"{int(injuries['player_id'].notna().sum())}/{len(injuries)}",
-        "days": by_date,
     }
-    SITE_DATA.parent.mkdir(parents=True, exist_ok=True)
-    SITE_DATA.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    write_json(out / "predictions.json", {**meta, "days": by_date})
+    write_json(out / "teams.json", {**meta, "teams": build_teams(state, injuries, model, today, age)})
+    write_json(out / "model.json", model_info(model))
 
     print(f"Model {model.version} · stav z {state['generated_at']} · zranenia pred {age:.1f} h\n")
     for day, preds in by_date.items():
@@ -244,18 +409,21 @@ def main(date: str | None, days: int) -> None:
             print(f"{head}   rozdiel {r['margin_home']:+.1f}")
             for s in (h, a):
                 drop = f" (normálne {s['normal_tier']})" if s["dropped"] else ""
-                print(
-                    f"  {s['team']}  Pulse {s['pulse']:5.1f}  {s['tier']:<9}{drop}  istota {s['confidence']}"
-                )
+                line = f"  {s['team']}  Pulse {s['pulse']:5.1f}  {s['tier']:<9}{drop}"
+                print(f"{line}  istota {s['confidence']}")
                 for text, elo_pts in s["reasons"]:
                     print(f"        {elo_pts:+4d}  {text}")
+            for wi in r["what_if"]:
+                plays, sits = wi["plays"]["p_home"], wi["out"]["p_home"]
+                print(f"    čo keby {wi['player']}: hrá {plays:.0%} / nehrá {sits:.0%}")
         print()
-    print(f"Uložené: {SITE_DATA}")
+    print(f"Uložené: {out}/predictions.json, teams.json, model.json")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=None, help="YYYY-MM-DD; predvolene najbližšie hracie dni")
     ap.add_argument("--days", type=int, default=3, help="koľko najbližších hracích dní")
+    ap.add_argument("--out", type=Path, default=OUT, help="priečinok pre JSON súbory appky")
     a = ap.parse_args()
-    main(a.date, a.days)
+    main(a.date, a.days, a.out)

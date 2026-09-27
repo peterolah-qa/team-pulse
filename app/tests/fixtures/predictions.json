@@ -1,0 +1,461 @@
+{
+ "generated_at": "2026-10-20T15:00:00+00:00",
+ "model": "v1",
+ "state_generated_at": "2026-10-20T08:00:00+00:00",
+ "last_result": "2026-06-13",
+ "injuries_timestamp": "2026-10-20T14:45:00Z",
+ "injuries_matched": "3/3",
+ "days": {
+  "2026-10-20": [
+   {
+    "game_id": "0022600001",
+    "date": "2026-10-20",
+    "tipoff_utc": "2026-10-20 23:00:00+00:00",
+    "neutral": false,
+    "home_adv": 43.8,
+    "p_home": 0.616,
+    "margin_home": 3.1,
+    "home": {
+     "elo": 1481.1,
+     "elo_today": 1501.7,
+     "pulse": 49.5,
+     "tier": "Oslabený",
+     "normal_tier": "Oslabený",
+     "dropped": false,
+     "reasons": [
+      [
+       "Sila súpisky",
+       14
+      ]
+     ],
+     "confidence": "vysoká",
+     "team": "DET",
+     "layers": {
+      "strength": -23.9,
+      "roster": 13.6,
+      "players": 0.0,
+      "fatigue": 7.0
+     },
+     "contributions": {
+      "Sila súpisky": 13.6,
+      "7 dni voľna": 7.0
+     }
+    },
+    "away": {
+     "elo": 1459.7,
+     "elo_today": 1459.8,
+     "pulse": 42.5,
+     "tier": "Oslabený",
+     "normal_tier": "Oslabený",
+     "dropped": false,
+     "reasons": [
+      [
+       "Bez I. Varga (?)",
+       -12
+      ]
+     ],
+     "confidence": "stredná",
+     "team": "BOS",
+     "layers": {
+      "strength": -45.3,
+      "roster": 9.1,
+      "players": -12.4,
+      "fatigue": 3.3
+     },
+     "contributions": {
+      "Sila súpisky": 9.1,
+      "Bez I. Varga (?)": -12.4,
+      "7 dni voľna": -1.4,
+      "1. zápas výjazdu": 4.7
+     }
+    },
+    "what_if": [
+     {
+      "player_id": 81,
+      "player": "I. Varga",
+      "team": "BOS",
+      "side": "away",
+      "p_out": 0.5,
+      "impact_elo": 25,
+      "plays": {
+       "p_home": 0.6,
+       "pulse": 44.5,
+       "tier": "Oslabený"
+      },
+      "out": {
+       "p_home": 0.632,
+       "pulse": 40.4,
+       "tier": "Oslabený"
+      }
+     }
+    ]
+   },
+   {
+    "game_id": "0022600002",
+    "date": "2026-10-20",
+    "tipoff_utc": "2026-10-21 00:00:00+00:00",
+    "neutral": false,
+    "home_adv": 43.8,
+    "p_home": 0.836,
+    "margin_home": 10.6,
+    "home": {
+     "elo": 1642.3,
+     "elo_today": 1665.0,
+     "pulse": 76.7,
+     "tier": "Silný",
+     "normal_tier": "Silný",
+     "dropped": false,
+     "reasons": [
+      [
+       "Sila súpisky",
+       16
+      ]
+     ],
+     "confidence": "vysoká",
+     "team": "NYK",
+     "layers": {
+      "strength": 137.3,
+      "roster": 15.7,
+      "players": 0.0,
+      "fatigue": 7.0
+     },
+     "contributions": {
+      "Sila súpisky": 15.7,
+      "7 dni voľna": 7.0
+     }
+    },
+    "away": {
+     "elo": 1445.9,
+     "elo_today": 1412.3,
+     "pulse": 34.5,
+     "tier": "Oslabený",
+     "normal_tier": "Oslabený",
+     "dropped": false,
+     "reasons": [
+      [
+       "Bez O. Costa",
+       -32
+      ]
+     ],
+     "confidence": "vysoká",
+     "team": "PHI",
+     "layers": {
+      "strength": -59.1,
+      "roster": -4.6,
+      "players": -32.3,
+      "fatigue": 3.3
+     },
+     "contributions": {
+      "Sila súpisky": -4.6,
+      "Bez O. Costa": -32.3,
+      "7 dni voľna": -1.4,
+      "1. zápas výjazdu": 4.7
+     }
+    },
+    "what_if": []
+   },
+   {
+    "game_id": "0022600003",
+    "date": "2026-10-20",
+    "tipoff_utc": "2026-10-21 02:30:00+00:00",
+    "neutral": false,
+    "home_adv": 43.8,
+    "p_home": 0.535,
+    "margin_home": 0.9,
+    "home": {
+     "elo": 1560.1,
+     "elo_today": 1588.2,
+     "pulse": 63.9,
+     "tier": "Stabilný",
+     "normal_tier": "Stabilný",
+     "dropped": false,
+     "reasons": [
+      [
+       "Sila súpisky",
+       21
+      ]
+     ],
+     "confidence": "vysoká",
+     "team": "SAS",
+     "layers": {
+      "strength": 55.1,
+      "roster": 21.1,
+      "players": 0.0,
+      "fatigue": 7.0
+     },
+     "contributions": {
+      "Sila súpisky": 21.1,
+      "7 dni voľna": 7.0
+     }
+    },
+    "away": {
+     "elo": 1597.7,
+     "elo_today": 1606.7,
+     "pulse": 67.0,
+     "tier": "Stabilný",
+     "normal_tier": "Stabilný",
+     "dropped": false,
+     "reasons": [],
+     "confidence": "vysoká",
+     "team": "OKC",
+     "layers": {
+      "strength": 92.7,
+      "roster": 5.8,
+      "players": 0.0,
+      "fatigue": 3.3
+     },
+     "contributions": {
+      "Sila súpisky": 5.8,
+      "7 dni voľna": -1.4,
+      "1. zápas výjazdu": 4.7
+     }
+    },
+    "what_if": []
+   }
+  ],
+  "2026-10-21": [
+   {
+    "game_id": "0022600004",
+    "date": "2026-10-21",
+    "tipoff_utc": "2026-10-22 01:00:00+00:00",
+    "neutral": false,
+    "home_adv": 43.8,
+    "p_home": 0.731,
+    "margin_home": 6.5,
+    "home": {
+     "elo": 1459.6,
+     "elo_today": 1472.4,
+     "pulse": 44.6,
+     "tier": "Oslabený",
+     "normal_tier": "Oslabený",
+     "dropped": false,
+     "reasons": [],
+     "confidence": "vysoká",
+     "team": "DEN",
+     "layers": {
+      "strength": -45.4,
+      "roster": 5.8,
+      "players": 0.0,
+      "fatigue": 7.0
+     },
+     "contributions": {
+      "Sila súpisky": 5.8,
+      "7 dni voľna": 7.0
+     }
+    },
+    "away": {
+     "elo": 1393.6,
+     "elo_today": 1334.5,
+     "pulse": 21.6,
+     "tier": "Kritický",
+     "normal_tier": "Oslabený",
+     "dropped": false,
+     "reasons": [
+      [
+       "Hrá vo výške",
+       -40
+      ],
+      [
+       "Bez A. Park (?)",
+       -20
+      ]
+     ],
+     "confidence": "stredná",
+     "team": "LAL",
+     "layers": {
+      "strength": -111.4,
+      "roster": -2.4,
+      "players": -19.5,
+      "fatigue": -37.2
+     },
+     "contributions": {
+      "Sila súpisky": -2.4,
+      "Bez A. Park (?)": -19.5,
+      "7 dni voľna": -1.4,
+      "1. zápas výjazdu": 4.7,
+      "Hrá vo výške": -40.5
+     }
+    },
+    "what_if": [
+     {
+      "player_id": 140,
+      "player": "A. Park",
+      "team": "LAL",
+      "side": "away",
+      "p_out": 0.5,
+      "impact_elo": 39,
+      "plays": {
+       "p_home": 0.709,
+       "pulse": 24.8,
+       "tier": "Kritický"
+      },
+      "out": {
+       "p_home": 0.751,
+       "pulse": 18.3,
+       "tier": "Kritický"
+      }
+     }
+    ]
+   },
+   {
+    "game_id": "0022600005",
+    "date": "2026-10-21",
+    "tipoff_utc": "2026-10-21 23:30:00+00:00",
+    "neutral": false,
+    "home_adv": 43.8,
+    "p_home": 0.301,
+    "margin_home": -5.5,
+    "home": {
+     "elo": 1459.7,
+     "elo_today": 1416.3,
+     "pulse": 35.2,
+     "tier": "Oslabený",
+     "normal_tier": "Oslabený",
+     "dropped": false,
+     "reasons": [
+      [
+       "2. zápas za 2 dni",
+       -43
+      ],
+      [
+       "Bez I. Varga (?)",
+       -12
+      ]
+     ],
+     "confidence": "stredná",
+     "team": "BOS",
+     "layers": {
+      "strength": -45.3,
+      "roster": 9.1,
+      "players": -12.4,
+      "fatigue": -40.2
+     },
+     "contributions": {
+      "Sila súpisky": 9.1,
+      "Bez I. Varga (?)": -12.4,
+      "1 dni voľna": 1.0,
+      "2. zápas za 2 dni": -43.0,
+      "Cestovanie 991 km": 1.8
+     }
+    },
+    "away": {
+     "elo": 1642.3,
+     "elo_today": 1613.5,
+     "pulse": 68.1,
+     "tier": "Stabilný",
+     "normal_tier": "Silný",
+     "dropped": false,
+     "reasons": [
+      [
+       "2. zápas za 2 dni",
+       -49
+      ],
+      [
+       "Sila súpisky",
+       16
+      ]
+     ],
+     "confidence": "vysoká",
+     "team": "NYK",
+     "layers": {
+      "strength": 137.3,
+      "roster": 15.7,
+      "players": 0.0,
+      "fatigue": -44.5
+     },
+     "contributions": {
+      "Sila súpisky": 15.7,
+      "2. zápas za 2 dni": -49.2,
+      "1. zápas výjazdu": 4.7
+     }
+    },
+    "what_if": [
+     {
+      "player_id": 81,
+      "player": "I. Varga",
+      "team": "BOS",
+      "side": "home",
+      "p_out": 0.5,
+      "impact_elo": 25,
+      "plays": {
+       "p_home": 0.316,
+       "pulse": 37.3,
+       "tier": "Oslabený"
+      },
+      "out": {
+       "p_home": 0.287,
+       "pulse": 33.2,
+       "tier": "Oslabený"
+      }
+     }
+    ]
+   }
+  ],
+  "2026-10-22": [
+   {
+    "game_id": "0022600006",
+    "date": "2026-10-22",
+    "tipoff_utc": "2026-10-22 23:00:00+00:00",
+    "neutral": false,
+    "home_adv": 43.8,
+    "p_home": 0.441,
+    "margin_home": -1.5,
+    "home": {
+     "elo": 1445.9,
+     "elo_today": 1411.0,
+     "pulse": 34.3,
+     "tier": "Oslabený",
+     "normal_tier": "Oslabený",
+     "dropped": false,
+     "reasons": [
+      [
+       "Bez O. Costa",
+       -32
+      ]
+     ],
+     "confidence": "vysoká",
+     "team": "PHI",
+     "layers": {
+      "strength": -59.1,
+      "roster": -4.6,
+      "players": -32.3,
+      "fatigue": 2.0
+     },
+     "contributions": {
+      "Sila súpisky": -4.6,
+      "Bez O. Costa": -32.3,
+      "2 dni voľna": 2.0
+     }
+    },
+    "away": {
+     "elo": 1481.1,
+     "elo_today": 1498.6,
+     "pulse": 48.9,
+     "tier": "Oslabený",
+     "normal_tier": "Oslabený",
+     "dropped": false,
+     "reasons": [
+      [
+       "Sila súpisky",
+       14
+      ]
+     ],
+     "confidence": "vysoká",
+     "team": "DET",
+     "layers": {
+      "strength": -23.9,
+      "roster": 13.6,
+      "players": 0.0,
+      "fatigue": 3.9
+     },
+     "contributions": {
+      "Sila súpisky": 13.6,
+      "Cestovanie 727 km": -0.8,
+      "1. zápas výjazdu": 4.7
+     }
+    },
+    "what_if": []
+   }
+  ]
+ }
+}

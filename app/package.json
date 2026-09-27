@@ -1,0 +1,24 @@
+{
+  "name": "team-pulse-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173 --strictPort",
+    "test": "playwright test",
+    "test:visual": "VISUAL=1 playwright test --project=visual-mobile --project=visual-desktop",
+    "test:update-snapshots": "VISUAL=1 playwright test --project=visual-mobile --project=visual-desktop --update-snapshots"
+  },
+  "dependencies": {
+    "@fontsource/chakra-petch": "^5.2.0",
+    "@fontsource/rajdhani": "^5.2.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "1.56.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.0"
+  }
+}

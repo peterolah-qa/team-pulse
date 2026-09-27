@@ -1,0 +1,51 @@
+name: Appka
+
+# Pri zmene appky: typová kontrola + build, potom Playwright testy
+# (E2E na mobile aj desktope, prístupnosť cez axe, vizuálna regresia 6 obrazoviek).
+on:
+  push:
+    branches: [main]
+    paths: ["app/**", ".github/workflows/app.yml"]
+  pull_request:
+    paths: ["app/**", ".github/workflows/app.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Knižnice
+        run: npm ci
+
+      - name: Prehliadač pre testy
+        run: npx playwright install --with-deps chromium
+
+      - name: Testy (E2E + a11y + vizuálne)
+        run: npx playwright test
+        env:
+          VISUAL: "1"
+
+      - name: Report pri chybe
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            app/playwright-report
+            app/test-results
+          retention-days: 7

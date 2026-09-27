@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from datetime import date
 from pathlib import Path
 
@@ -50,6 +50,8 @@ class StoredModel:
     created: str
     test_metrics: dict
     elo_weights: dict
+    calibration: list = field(default_factory=list)  # kalibrácia na testovacích sezónach
+    versions: list = field(default_factory=list)  # porovnanie vrstiev na testovacích sezónach
 
     def predict_proba(self, df: pd.DataFrame) -> np.ndarray:
         """Pravdepodobnosť výhry domácich (rovnaký výpočet ako scikit-learn)."""
@@ -70,7 +72,12 @@ def load(path: Path) -> StoredModel:
 
 
 def train_final(
-    games: pd.DataFrame, players: pd.DataFrame, version: str = "v1", test_metrics: dict | None = None
+    games: pd.DataFrame,
+    players: pd.DataFrame,
+    version: str = "v1",
+    test_metrics: dict | None = None,
+    calibration: list | None = None,
+    versions: list | None = None,
 ) -> StoredModel:
     """Tréning na všetkých sezónach od konca rozbehu Ela po poslednú odohranú."""
     ds = build_dataset(games, players)
@@ -88,6 +95,8 @@ def train_final(
         created=str(date.today()),
         test_metrics=test_metrics or {},
         elo_weights={k: round(float(v), 1) for k, v in elo_equivalents(model, FEATURES_V1).items()},
+        calibration=calibration or [],
+        versions=versions or [],
     )
 
 
@@ -99,7 +108,25 @@ def main(version: str) -> None:
     best = r["summary"].iloc[-1]
     metrics = {k: round(float(best[k]), 4) for k in ("accuracy", "log_loss", "brier")}
     metrics["test_seasons"] = "2023/24 – 2025/26"
-    m = train_final(games, players, version, metrics)
+    calibration = [
+        {
+            "band": str(c.band),
+            "n": int(c.zapasy),
+            "pred": round(float(c.predpoved), 4),
+            "actual": round(float(c.skutocnost), 4),
+        }
+        for c in r["cal_after"].itertuples()
+    ]
+    versions = [
+        {
+            "model": row.model,
+            "accuracy": round(float(row.accuracy), 4),
+            "log_loss": round(float(row.log_loss), 4),
+            "brier": round(float(row.brier), 4),
+        }
+        for row in r["summary"].itertuples()
+    ]
+    m = train_final(games, players, version, metrics, calibration, versions)
     path = m.save(MODELS / f"{version}.json")
     print(f"Model {version}: {m.n_games} zápasov, sezóny {m.train_seasons[0]}–{m.train_seasons[1]}")
     print(f"Testovacie metriky: {metrics}")

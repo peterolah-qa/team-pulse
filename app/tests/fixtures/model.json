@@ -1,0 +1,98 @@
+{
+ "version": "v1",
+ "created": "2026-09-27",
+ "train_seasons": [
+  2004,
+  2026
+ ],
+ "n_games": 29603,
+ "test_metrics": {
+  "accuracy": 0.6729,
+  "log_loss": 0.5996,
+  "brier": 0.2068,
+  "test_seasons": "2023/24 – 2025/26"
+ },
+ "calibration": [
+  {
+   "band": "(0.499, 0.6]",
+   "n": 1236,
+   "pred": 0.55,
+   "actual": 0.562
+  },
+  {
+   "band": "(0.6, 0.7]",
+   "n": 1121,
+   "pred": 0.649,
+   "actual": 0.628
+  },
+  {
+   "band": "(0.7, 0.8]",
+   "n": 918,
+   "pred": 0.749,
+   "actual": 0.741
+  },
+  {
+   "band": "(0.8, 0.9]",
+   "n": 551,
+   "pred": 0.842,
+   "actual": 0.853
+  },
+  {
+   "band": "(0.9, 1.0]",
+   "n": 105,
+   "pred": 0.925,
+   "actual": 0.924
+  }
+ ],
+ "versions": [
+  {
+   "model": "A: Elo (HCA 70)",
+   "accuracy": 0.664,
+   "log_loss": 0.6108,
+   "brier": 0.2116
+  },
+  {
+   "model": "A kalibrované (naučené Elo + domáci)",
+   "accuracy": 0.663,
+   "log_loss": 0.6115,
+   "brier": 0.2119
+  },
+  {
+   "model": "A + C (naučené Elo + únava)",
+   "accuracy": 0.668,
+   "log_loss": 0.6081,
+   "brier": 0.2104
+  },
+  {
+   "model": "A + B + C (+ chýbajúci hráči)",
+   "accuracy": 0.673,
+   "log_loss": 0.6039,
+   "brier": 0.2087
+  },
+  {
+   "model": "A + B + C + sila súpisky",
+   "accuracy": 0.6729,
+   "log_loss": 0.5996,
+   "brier": 0.2068
+  }
+ ],
+ "elo_weights": {
+  "home": 43.8,
+  "home_missing": -24.0,
+  "away_missing": 20.9,
+  "strength_diff": 11.4,
+  "home_rest": 1.0,
+  "home_b2b": -43.0,
+  "home_three_in4": -6.0,
+  "home_km": 1.8,
+  "home_tz_east": -14.7,
+  "home_road": 0.0,
+  "away_rest": 0.2,
+  "away_b2b": 49.2,
+  "away_three_in4": 7.7,
+  "away_km": 1.1,
+  "away_tz_east": -4.4,
+  "away_road": -4.7,
+  "away_altitude": 40.5
+ }
+}

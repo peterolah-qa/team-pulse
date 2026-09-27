@@ -80,5 +80,69 @@
     "away_tz_east": -4.4,
     "away_road": -4.7,
     "away_altitude": 40.5
-  }
+  },
+  "calibration": [
+    {
+      "band": "(0.499, 0.6]",
+      "n": 1168,
+      "pred": 0.5484,
+      "actual": 0.5514
+    },
+    {
+      "band": "(0.6, 0.7]",
+      "n": 1114,
+      "pred": 0.6486,
+      "actual": 0.6266
+    },
+    {
+      "band": "(0.7, 0.8]",
+      "n": 924,
+      "pred": 0.7464,
+      "actual": 0.7457
+    },
+    {
+      "band": "(0.8, 0.9]",
+      "n": 608,
+      "pred": 0.8429,
+      "actual": 0.8289
+    },
+    {
+      "band": "(0.9, 1.0]",
+      "n": 117,
+      "pred": 0.9185,
+      "actual": 0.9402
+    }
+  ],
+  "versions": [
+    {
+      "model": "A: Elo (HCA 70)",
+      "accuracy": 0.664,
+      "log_loss": 0.6108,
+      "brier": 0.2116
+    },
+    {
+      "model": "A kalibrované (naučené Elo + domáci)",
+      "accuracy": 0.6629,
+      "log_loss": 0.6115,
+      "brier": 0.2119
+    },
+    {
+      "model": "A + C (naučené Elo + únava)",
+      "accuracy": 0.668,
+      "log_loss": 0.6081,
+      "brier": 0.2104
+    },
+    {
+      "model": "A + B + C (+ chýbajúci hráči)",
+      "accuracy": 0.6729,
+      "log_loss": 0.6039,
+      "brier": 0.2087
+    },
+    {
+      "model": "A + B + C + sila súpisky",
+      "accuracy": 0.6729,
+      "log_loss": 0.5996,
+      "brier": 0.2068
+    }
+  ]
 }

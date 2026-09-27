@@ -7,4 +7,10 @@ __pycache__/
 .env
 /data/
 .DS_Store
-site/data/
+
+# appka
+app/node_modules/
+app/dist/
+app/public/data/
+app/test-results/
+app/playwright-report/

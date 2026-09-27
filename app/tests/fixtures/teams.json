@@ -1,0 +1,1556 @@
+{
+ "generated_at": "2026-10-20T15:00:00+00:00",
+ "model": "v1",
+ "state_generated_at": "2026-10-20T08:00:00+00:00",
+ "last_result": "2026-06-13",
+ "injuries_timestamp": "2026-10-20T14:45:00Z",
+ "injuries_matched": "3/3",
+ "teams": {
+  "BOS": {
+   "elo": 1459.7,
+   "elo_today": 1456.5,
+   "pulse": 41.9,
+   "tier": "Oslabený",
+   "normal_tier": "Oslabený",
+   "dropped": false,
+   "reasons": [
+    [
+     "Bez I. Varga (?)",
+     -12
+    ]
+   ],
+   "team": "BOS",
+   "rank": 5,
+   "trend": [
+    {
+     "date": "2026-03-06",
+     "opp": "LAL",
+     "home": true,
+     "pts": 119,
+     "opp_pts": 105,
+     "elo": 1477.7,
+     "pulse": 45.5
+    },
+    {
+     "date": "2026-03-10",
+     "opp": "DET",
+     "home": false,
+     "pts": 111,
+     "opp_pts": 114,
+     "elo": 1473.1,
+     "pulse": 44.7
+    },
+    {
+     "date": "2026-03-10",
+     "opp": "DET",
+     "home": true,
+     "pts": 119,
+     "opp_pts": 105,
+     "elo": 1482.6,
+     "pulse": 46.3
+    },
+    {
+     "date": "2026-03-12",
+     "opp": "OKC",
+     "home": false,
+     "pts": 105,
+     "opp_pts": 119,
+     "elo": 1477.0,
+     "pulse": 45.3
+    },
+    {
+     "date": "2026-03-13",
+     "opp": "LAL",
+     "home": false,
+     "pts": 117,
+     "opp_pts": 108,
+     "elo": 1485.1,
+     "pulse": 46.7
+    },
+    {
+     "date": "2026-03-15",
+     "opp": "PHI",
+     "home": true,
+     "pts": 119,
+     "opp_pts": 105,
+     "elo": 1493.0,
+     "pulse": 48.0
+    },
+    {
+     "date": "2026-03-18",
+     "opp": "DET",
+     "home": false,
+     "pts": 107,
+     "opp_pts": 116,
+     "elo": 1483.8,
+     "pulse": 46.5
+    },
+    {
+     "date": "2026-03-21",
+     "opp": "LAL",
+     "home": false,
+     "pts": 105,
+     "opp_pts": 120,
+     "elo": 1467.1,
+     "pulse": 43.7
+    },
+    {
+     "date": "2026-03-23",
+     "opp": "LAL",
+     "home": false,
+     "pts": 106,
+     "opp_pts": 118,
+     "elo": 1454.1,
+     "pulse": 41.5
+    },
+    {
+     "date": "2026-03-25",
+     "opp": "DET",
+     "home": true,
+     "pts": 109,
+     "opp_pts": 115,
+     "elo": 1444.6,
+     "pulse": 39.9
+    }
+   ],
+   "roster": [
+    {
+     "player_id": 80,
+     "player": "M. Petrov",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 36.0,
+     "impact_elo": 34
+    },
+    {
+     "player_id": 81,
+     "player": "I. Varga",
+     "status": "QUESTIONABLE",
+     "p_out": 0.5,
+     "typical_min": 33.0,
+     "impact_elo": 25
+    },
+    {
+     "player_id": 82,
+     "player": "M. Hale",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 30.0,
+     "impact_elo": 13
+    },
+    {
+     "player_id": 83,
+     "player": "A. Doe",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 27.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 84,
+     "player": "N. Novak",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 24.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 85,
+     "player": "J. Ruiz",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 20.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 86,
+     "player": "K. Keller",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 16.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 87,
+     "player": "S. Adeyemi",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 12.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 88,
+     "player": "T. Sato",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 8.0,
+     "impact_elo": 0
+    }
+   ],
+   "upcoming": [
+    {
+     "game_id": "0022600001",
+     "date": "2026-10-20",
+     "opp": "DET",
+     "home": false
+    },
+    {
+     "game_id": "0022600005",
+     "date": "2026-10-21",
+     "opp": "NYK",
+     "home": true
+    }
+   ]
+  },
+  "DEN": {
+   "elo": 1459.6,
+   "elo_today": 1465.4,
+   "pulse": 43.4,
+   "tier": "Oslabený",
+   "normal_tier": "Oslabený",
+   "dropped": false,
+   "reasons": [],
+   "team": "DEN",
+   "rank": 6,
+   "trend": [
+    {
+     "date": "2026-02-27",
+     "opp": "SAS",
+     "home": true,
+     "pts": 106,
+     "opp_pts": 118,
+     "elo": 1466.7,
+     "pulse": 43.6
+    },
+    {
+     "date": "2026-02-28",
+     "opp": "DET",
+     "home": false,
+     "pts": 111,
+     "opp_pts": 114,
+     "elo": 1462.6,
+     "pulse": 42.9
+    },
+    {
+     "date": "2026-03-01",
+     "opp": "OKC",
+     "home": false,
+     "pts": 113,
+     "opp_pts": 111,
+     "elo": 1471.5,
+     "pulse": 44.4
+    },
+    {
+     "date": "2026-03-03",
+     "opp": "LAL",
+     "home": false,
+     "pts": 109,
+     "opp_pts": 115,
+     "elo": 1463.0,
+     "pulse": 43.0
+    },
+    {
+     "date": "2026-03-11",
+     "opp": "SAS",
+     "home": false,
+     "pts": 111,
+     "opp_pts": 112,
+     "elo": 1461.1,
+     "pulse": 42.7
+    },
+    {
+     "date": "2026-03-13",
+     "opp": "NYK",
+     "home": false,
+     "pts": 106,
+     "opp_pts": 118,
+     "elo": 1458.0,
+     "pulse": 42.2
+    },
+    {
+     "date": "2026-03-14",
+     "opp": "SAS",
+     "home": false,
+     "pts": 99,
+     "opp_pts": 125,
+     "elo": 1449.0,
+     "pulse": 40.7
+    },
+    {
+     "date": "2026-03-19",
+     "opp": "LAL",
+     "home": false,
+     "pts": 114,
+     "opp_pts": 110,
+     "elo": 1455.0,
+     "pulse": 41.7
+    },
+    {
+     "date": "2026-03-20",
+     "opp": "OKC",
+     "home": false,
+     "pts": 108,
+     "opp_pts": 117,
+     "elo": 1451.4,
+     "pulse": 41.1
+    },
+    {
+     "date": "2026-03-25",
+     "opp": "OKC",
+     "home": true,
+     "pts": 107,
+     "opp_pts": 117,
+     "elo": 1444.5,
+     "pulse": 39.9
+    }
+   ],
+   "roster": [
+    {
+     "player_id": 120,
+     "player": "K. Rossi",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 36.0,
+     "impact_elo": 38
+    },
+    {
+     "player_id": 121,
+     "player": "S. Laine",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 33.0,
+     "impact_elo": 23
+    },
+    {
+     "player_id": 122,
+     "player": "T. Okafor",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 30.0,
+     "impact_elo": 8
+    },
+    {
+     "player_id": 123,
+     "player": "O. Fischer",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 27.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 124,
+     "player": "L. Jensen",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 24.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 125,
+     "player": "R. Kaya",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 20.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 126,
+     "player": "M. Morales",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 16.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 127,
+     "player": "I. Nagy",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 12.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 128,
+     "player": "M. Olsen",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 8.0,
+     "impact_elo": 0
+    }
+   ],
+   "upcoming": [
+    {
+     "game_id": "0022600004",
+     "date": "2026-10-21",
+     "opp": "LAL",
+     "home": true
+    },
+    {
+     "game_id": "0022600007",
+     "date": "2026-11-07",
+     "opp": "OKC",
+     "home": false
+    }
+   ]
+  },
+  "DET": {
+   "elo": 1481.1,
+   "elo_today": 1494.7,
+   "pulse": 48.3,
+   "tier": "Oslabený",
+   "normal_tier": "Oslabený",
+   "dropped": false,
+   "reasons": [
+    [
+     "Sila súpisky",
+     14
+    ]
+   ],
+   "team": "DET",
+   "rank": 4,
+   "trend": [
+    {
+     "date": "2026-03-09",
+     "opp": "OKC",
+     "home": true,
+     "pts": 111,
+     "opp_pts": 112,
+     "elo": 1468.0,
+     "pulse": 43.8
+    },
+    {
+     "date": "2026-03-09",
+     "opp": "SAS",
+     "home": true,
+     "pts": 109,
+     "opp_pts": 114,
+     "elo": 1461.6,
+     "pulse": 42.8
+    },
+    {
+     "date": "2026-03-10",
+     "opp": "BOS",
+     "home": true,
+     "pts": 114,
+     "opp_pts": 111,
+     "elo": 1466.1,
+     "pulse": 43.5
+    },
+    {
+     "date": "2026-03-10",
+     "opp": "BOS",
+     "home": false,
+     "pts": 105,
+     "opp_pts": 119,
+     "elo": 1456.6,
+     "pulse": 41.9
+    },
+    {
+     "date": "2026-03-14",
+     "opp": "LAL",
+     "home": false,
+     "pts": 109,
+     "opp_pts": 115,
+     "elo": 1447.8,
+     "pulse": 40.5
+    },
+    {
+     "date": "2026-03-17",
+     "opp": "LAL",
+     "home": true,
+     "pts": 111,
+     "opp_pts": 113,
+     "elo": 1439.8,
+     "pulse": 39.1
+    },
+    {
+     "date": "2026-03-18",
+     "opp": "BOS",
+     "home": true,
+     "pts": 116,
+     "opp_pts": 107,
+     "elo": 1449.0,
+     "pulse": 40.7
+    },
+    {
+     "date": "2026-03-19",
+     "opp": "LAL",
+     "home": false,
+     "pts": 114,
+     "opp_pts": 110,
+     "elo": 1454.8,
+     "pulse": 41.6
+    },
+    {
+     "date": "2026-03-21",
+     "opp": "PHI",
+     "home": false,
+     "pts": 115,
+     "opp_pts": 109,
+     "elo": 1463.6,
+     "pulse": 43.1
+    },
+    {
+     "date": "2026-03-25",
+     "opp": "BOS",
+     "home": false,
+     "pts": 115,
+     "opp_pts": 109,
+     "elo": 1473.2,
+     "pulse": 44.7
+    }
+   ],
+   "roster": [
+    {
+     "player_id": 60,
+     "player": "A. Kaya",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 36.0,
+     "impact_elo": 41
+    },
+    {
+     "player_id": 61,
+     "player": "N. Morales",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 33.0,
+     "impact_elo": 24
+    },
+    {
+     "player_id": 62,
+     "player": "J. Nagy",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 30.0,
+     "impact_elo": 11
+    },
+    {
+     "player_id": 63,
+     "player": "K. Olsen",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 27.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 64,
+     "player": "S. Park",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 24.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 65,
+     "player": "T. Lindqvist",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 20.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 66,
+     "player": "O. Brandt",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 16.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 67,
+     "player": "L. Osei",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 12.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 68,
+     "player": "R. Moreau",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 8.0,
+     "impact_elo": 0
+    }
+   ],
+   "upcoming": [
+    {
+     "game_id": "0022600001",
+     "date": "2026-10-20",
+     "opp": "BOS",
+     "home": true
+    },
+    {
+     "game_id": "0022600006",
+     "date": "2026-10-22",
+     "opp": "PHI",
+     "home": false
+    }
+   ]
+  },
+  "LAL": {
+   "elo": 1393.6,
+   "elo_today": 1371.7,
+   "pulse": 27.8,
+   "tier": "Kritický",
+   "normal_tier": "Oslabený",
+   "dropped": false,
+   "reasons": [
+    [
+     "Bez A. Park (?)",
+     -20
+    ]
+   ],
+   "team": "LAL",
+   "rank": 8,
+   "trend": [
+    {
+     "date": "2026-03-15",
+     "opp": "SAS",
+     "home": false,
+     "pts": 108,
+     "opp_pts": 117,
+     "elo": 1356.9,
+     "pulse": 25.3
+    },
+    {
+     "date": "2026-03-16",
+     "opp": "SAS",
+     "home": false,
+     "pts": 107,
+     "opp_pts": 117,
+     "elo": 1354.3,
+     "pulse": 24.9
+    },
+    {
+     "date": "2026-03-17",
+     "opp": "DET",
+     "home": false,
+     "pts": 113,
+     "opp_pts": 111,
+     "elo": 1362.3,
+     "pulse": 26.2
+    },
+    {
+     "date": "2026-03-19",
+     "opp": "DEN",
+     "home": true,
+     "pts": 110,
+     "opp_pts": 114,
+     "elo": 1356.3,
+     "pulse": 25.2
+    },
+    {
+     "date": "2026-03-19",
+     "opp": "DET",
+     "home": true,
+     "pts": 110,
+     "opp_pts": 114,
+     "elo": 1350.5,
+     "pulse": 24.2
+    },
+    {
+     "date": "2026-03-21",
+     "opp": "BOS",
+     "home": true,
+     "pts": 120,
+     "opp_pts": 105,
+     "elo": 1367.2,
+     "pulse": 27.0
+    },
+    {
+     "date": "2026-03-23",
+     "opp": "BOS",
+     "home": true,
+     "pts": 118,
+     "opp_pts": 106,
+     "elo": 1380.2,
+     "pulse": 29.2
+    },
+    {
+     "date": "2026-03-23",
+     "opp": "OKC",
+     "home": false,
+     "pts": 102,
+     "opp_pts": 123,
+     "elo": 1376.2,
+     "pulse": 28.5
+    },
+    {
+     "date": "2026-03-24",
+     "opp": "PHI",
+     "home": true,
+     "pts": 104,
+     "opp_pts": 120,
+     "elo": 1360.3,
+     "pulse": 25.9
+    },
+    {
+     "date": "2026-03-24",
+     "opp": "SAS",
+     "home": true,
+     "pts": 110,
+     "opp_pts": 115,
+     "elo": 1356.4,
+     "pulse": 25.2
+    }
+   ],
+   "roster": [
+    {
+     "player_id": 140,
+     "player": "A. Park",
+     "status": "QUESTIONABLE",
+     "p_out": 0.5,
+     "typical_min": 36.0,
+     "impact_elo": 39
+    },
+    {
+     "player_id": 141,
+     "player": "N. Lindqvist",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 33.0,
+     "impact_elo": 20
+    },
+    {
+     "player_id": 142,
+     "player": "J. Brandt",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 30.0,
+     "impact_elo": 1
+    },
+    {
+     "player_id": 143,
+     "player": "K. Osei",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 27.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 144,
+     "player": "S. Moreau",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 24.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 145,
+     "player": "T. Petrov",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 20.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 146,
+     "player": "O. Varga",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 16.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 147,
+     "player": "L. Hale",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 12.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 148,
+     "player": "R. Doe",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 8.0,
+     "impact_elo": 0
+    }
+   ],
+   "upcoming": [
+    {
+     "game_id": "0022600004",
+     "date": "2026-10-21",
+     "opp": "DEN",
+     "home": false
+    }
+   ]
+  },
+  "NYK": {
+   "elo": 1642.3,
+   "elo_today": 1658.0,
+   "pulse": 75.5,
+   "tier": "Silný",
+   "normal_tier": "Silný",
+   "dropped": false,
+   "reasons": [
+    [
+     "Sila súpisky",
+     16
+    ]
+   ],
+   "team": "NYK",
+   "rank": 1,
+   "trend": [
+    {
+     "date": "2026-02-28",
+     "opp": "DET",
+     "home": true,
+     "pts": 119,
+     "opp_pts": 106,
+     "elo": 1632.1,
+     "pulse": 71.2
+    },
+    {
+     "date": "2026-03-01",
+     "opp": "OKC",
+     "home": false,
+     "pts": 118,
+     "opp_pts": 107,
+     "elo": 1645.3,
+     "pulse": 73.4
+    },
+    {
+     "date": "2026-03-02",
+     "opp": "BOS",
+     "home": false,
+     "pts": 121,
+     "opp_pts": 104,
+     "elo": 1655.5,
+     "pulse": 75.1
+    },
+    {
+     "date": "2026-03-02",
+     "opp": "BOS",
+     "home": true,
+     "pts": 119,
+     "opp_pts": 105,
+     "elo": 1659.6,
+     "pulse": 75.8
+    },
+    {
+     "date": "2026-03-07",
+     "opp": "LAL",
+     "home": false,
+     "pts": 119,
+     "opp_pts": 105,
+     "elo": 1664.8,
+     "pulse": 76.6
+    },
+    {
+     "date": "2026-03-08",
+     "opp": "LAL",
+     "home": true,
+     "pts": 122,
+     "opp_pts": 102,
+     "elo": 1667.7,
+     "pulse": 77.1
+    },
+    {
+     "date": "2026-03-08",
+     "opp": "PHI",
+     "home": false,
+     "pts": 117,
+     "opp_pts": 108,
+     "elo": 1672.5,
+     "pulse": 77.9
+    },
+    {
+     "date": "2026-03-13",
+     "opp": "DEN",
+     "home": true,
+     "pts": 118,
+     "opp_pts": 106,
+     "elo": 1675.6,
+     "pulse": 78.4
+    },
+    {
+     "date": "2026-03-17",
+     "opp": "OKC",
+     "home": true,
+     "pts": 121,
+     "opp_pts": 102,
+     "elo": 1684.8,
+     "pulse": 80.0
+    },
+    {
+     "date": "2026-03-18",
+     "opp": "PHI",
+     "home": true,
+     "pts": 122,
+     "opp_pts": 102,
+     "elo": 1688.1,
+     "pulse": 80.5
+    }
+   ],
+   "roster": [
+    {
+     "player_id": 0,
+     "player": "M. Lindqvist",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 36.0,
+     "impact_elo": 39
+    },
+    {
+     "player_id": 1,
+     "player": "I. Brandt",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 33.0,
+     "impact_elo": 22
+    },
+    {
+     "player_id": 2,
+     "player": "M. Osei",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 30.0,
+     "impact_elo": 12
+    },
+    {
+     "player_id": 3,
+     "player": "A. Moreau",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 27.0,
+     "impact_elo": 5
+    },
+    {
+     "player_id": 4,
+     "player": "N. Petrov",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 24.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 5,
+     "player": "J. Varga",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 20.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 6,
+     "player": "K. Hale",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 16.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 7,
+     "player": "S. Doe",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 12.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 8,
+     "player": "T. Novak",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 8.0,
+     "impact_elo": 0
+    }
+   ],
+   "upcoming": [
+    {
+     "game_id": "0022600002",
+     "date": "2026-10-20",
+     "opp": "PHI",
+     "home": true
+    },
+    {
+     "game_id": "0022600005",
+     "date": "2026-10-21",
+     "opp": "BOS",
+     "home": false
+    }
+   ]
+  },
+  "OKC": {
+   "elo": 1597.7,
+   "elo_today": 1603.4,
+   "pulse": 66.4,
+   "tier": "Stabilný",
+   "normal_tier": "Stabilný",
+   "dropped": false,
+   "reasons": [],
+   "team": "OKC",
+   "rank": 2,
+   "trend": [
+    {
+     "date": "2026-03-07",
+     "opp": "DET",
+     "home": false,
+     "pts": 117,
+     "opp_pts": 107,
+     "elo": 1591.6,
+     "pulse": 64.4
+    },
+    {
+     "date": "2026-03-09",
+     "opp": "DET",
+     "home": false,
+     "pts": 112,
+     "opp_pts": 111,
+     "elo": 1594.9,
+     "pulse": 65.0
+    },
+    {
+     "date": "2026-03-12",
+     "opp": "LAL",
+     "home": false,
+     "pts": 121,
+     "opp_pts": 102,
+     "elo": 1602.9,
+     "pulse": 66.3
+    },
+    {
+     "date": "2026-03-12",
+     "opp": "BOS",
+     "home": true,
+     "pts": 119,
+     "opp_pts": 105,
+     "elo": 1608.5,
+     "pulse": 67.2
+    },
+    {
+     "date": "2026-03-16",
+     "opp": "PHI",
+     "home": false,
+     "pts": 118,
+     "opp_pts": 106,
+     "elo": 1615.9,
+     "pulse": 68.5
+    },
+    {
+     "date": "2026-03-17",
+     "opp": "NYK",
+     "home": false,
+     "pts": 102,
+     "opp_pts": 121,
+     "elo": 1606.7,
+     "pulse": 67.0
+    },
+    {
+     "date": "2026-03-20",
+     "opp": "DEN",
+     "home": true,
+     "pts": 117,
+     "opp_pts": 108,
+     "elo": 1610.3,
+     "pulse": 67.5
+    },
+    {
+     "date": "2026-03-22",
+     "opp": "SAS",
+     "home": true,
+     "pts": 117,
+     "opp_pts": 106,
+     "elo": 1617.7,
+     "pulse": 68.8
+    },
+    {
+     "date": "2026-03-23",
+     "opp": "LAL",
+     "home": true,
+     "pts": 123,
+     "opp_pts": 102,
+     "elo": 1621.7,
+     "pulse": 69.5
+    },
+    {
+     "date": "2026-03-25",
+     "opp": "DEN",
+     "home": false,
+     "pts": 117,
+     "opp_pts": 107,
+     "elo": 1628.6,
+     "pulse": 70.6
+    }
+   ],
+   "roster": [
+    {
+     "player_id": 40,
+     "player": "K. Silva",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 36.0,
+     "impact_elo": 39
+    },
+    {
+     "player_id": 41,
+     "player": "S. Kowal",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 33.0,
+     "impact_elo": 20
+    },
+    {
+     "player_id": 42,
+     "player": "T. Berg",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 30.0,
+     "impact_elo": 8
+    },
+    {
+     "player_id": 43,
+     "player": "O. Mensah",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 27.0,
+     "impact_elo": 1
+    },
+    {
+     "player_id": 44,
+     "player": "L. Rossi",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 24.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 45,
+     "player": "R. Laine",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 20.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 46,
+     "player": "M. Okafor",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 16.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 47,
+     "player": "I. Fischer",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 12.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 48,
+     "player": "M. Jensen",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 8.0,
+     "impact_elo": 0
+    }
+   ],
+   "upcoming": [
+    {
+     "game_id": "0022600003",
+     "date": "2026-10-20",
+     "opp": "SAS",
+     "home": false
+    },
+    {
+     "game_id": "0022600007",
+     "date": "2026-11-07",
+     "opp": "DEN",
+     "home": true
+    }
+   ]
+  },
+  "PHI": {
+   "elo": 1445.9,
+   "elo_today": 1409.0,
+   "pulse": 34.0,
+   "tier": "Oslabený",
+   "normal_tier": "Oslabený",
+   "dropped": false,
+   "reasons": [
+    [
+     "Bez O. Costa",
+     -32
+    ]
+   ],
+   "team": "PHI",
+   "rank": 7,
+   "trend": [
+    {
+     "date": "2026-03-06",
+     "opp": "DET",
+     "home": true,
+     "pts": 112,
+     "opp_pts": 111,
+     "elo": 1431.7,
+     "pulse": 37.8
+    },
+    {
+     "date": "2026-03-08",
+     "opp": "NYK",
+     "home": true,
+     "pts": 108,
+     "opp_pts": 117,
+     "elo": 1427.0,
+     "pulse": 37.0
+    },
+    {
+     "date": "2026-03-11",
+     "opp": "LAL",
+     "home": true,
+     "pts": 120,
+     "opp_pts": 103,
+     "elo": 1435.8,
+     "pulse": 38.5
+    },
+    {
+     "date": "2026-03-15",
+     "opp": "BOS",
+     "home": false,
+     "pts": 105,
+     "opp_pts": 119,
+     "elo": 1428.0,
+     "pulse": 37.2
+    },
+    {
+     "date": "2026-03-16",
+     "opp": "OKC",
+     "home": true,
+     "pts": 106,
+     "opp_pts": 118,
+     "elo": 1420.6,
+     "pulse": 35.9
+    },
+    {
+     "date": "2026-03-18",
+     "opp": "NYK",
+     "home": false,
+     "pts": 102,
+     "opp_pts": 122,
+     "elo": 1417.3,
+     "pulse": 35.4
+    },
+    {
+     "date": "2026-03-20",
+     "opp": "SAS",
+     "home": true,
+     "pts": 112,
+     "opp_pts": 111,
+     "elo": 1422.8,
+     "pulse": 36.3
+    },
+    {
+     "date": "2026-03-21",
+     "opp": "DET",
+     "home": true,
+     "pts": 109,
+     "opp_pts": 115,
+     "elo": 1414.0,
+     "pulse": 34.8
+    },
+    {
+     "date": "2026-03-22",
+     "opp": "SAS",
+     "home": false,
+     "pts": 107,
+     "opp_pts": 118,
+     "elo": 1410.2,
+     "pulse": 34.2
+    },
+    {
+     "date": "2026-03-24",
+     "opp": "LAL",
+     "home": false,
+     "pts": 120,
+     "opp_pts": 104,
+     "elo": 1426.1,
+     "pulse": 36.8
+    }
+   ],
+   "roster": [
+    {
+     "player_id": 100,
+     "player": "O. Costa",
+     "status": "OUT",
+     "p_out": 1.0,
+     "typical_min": 36.0,
+     "impact_elo": 32
+    },
+    {
+     "player_id": 101,
+     "player": "L. Weber",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 33.0,
+     "impact_elo": 20
+    },
+    {
+     "player_id": 102,
+     "player": "R. Ivanov",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 30.0,
+     "impact_elo": 6
+    },
+    {
+     "player_id": 103,
+     "player": "M. Dubois",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 27.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 104,
+     "player": "I. Horvat",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 24.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 105,
+     "player": "M. Silva",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 20.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 106,
+     "player": "A. Kowal",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 16.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 107,
+     "player": "N. Berg",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 12.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 108,
+     "player": "J. Mensah",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 8.0,
+     "impact_elo": 0
+    }
+   ],
+   "upcoming": [
+    {
+     "game_id": "0022600002",
+     "date": "2026-10-20",
+     "opp": "NYK",
+     "home": false
+    },
+    {
+     "game_id": "0022600006",
+     "date": "2026-10-22",
+     "opp": "DET",
+     "home": true
+    }
+   ]
+  },
+  "SAS": {
+   "elo": 1560.1,
+   "elo_today": 1581.2,
+   "pulse": 62.7,
+   "tier": "Stabilný",
+   "normal_tier": "Stabilný",
+   "dropped": false,
+   "reasons": [
+    [
+     "Sila súpisky",
+     21
+    ]
+   ],
+   "team": "SAS",
+   "rank": 3,
+   "trend": [
+    {
+     "date": "2026-03-05",
+     "opp": "LAL",
+     "home": false,
+     "pts": 108,
+     "opp_pts": 115,
+     "elo": 1561.4,
+     "pulse": 59.4
+    },
+    {
+     "date": "2026-03-09",
+     "opp": "DET",
+     "home": false,
+     "pts": 114,
+     "opp_pts": 109,
+     "elo": 1567.9,
+     "pulse": 60.5
+    },
+    {
+     "date": "2026-03-11",
+     "opp": "DEN",
+     "home": true,
+     "pts": 112,
+     "opp_pts": 111,
+     "elo": 1569.8,
+     "pulse": 60.8
+    },
+    {
+     "date": "2026-03-14",
+     "opp": "DEN",
+     "home": true,
+     "pts": 125,
+     "opp_pts": 99,
+     "elo": 1578.7,
+     "pulse": 62.3
+    },
+    {
+     "date": "2026-03-15",
+     "opp": "LAL",
+     "home": true,
+     "pts": 117,
+     "opp_pts": 108,
+     "elo": 1581.2,
+     "pulse": 62.7
+    },
+    {
+     "date": "2026-03-16",
+     "opp": "LAL",
+     "home": true,
+     "pts": 117,
+     "opp_pts": 107,
+     "elo": 1583.8,
+     "pulse": 63.1
+    },
+    {
+     "date": "2026-03-20",
+     "opp": "PHI",
+     "home": false,
+     "pts": 111,
+     "opp_pts": 112,
+     "elo": 1578.3,
+     "pulse": 62.2
+    },
+    {
+     "date": "2026-03-22",
+     "opp": "PHI",
+     "home": true,
+     "pts": 118,
+     "opp_pts": 107,
+     "elo": 1582.1,
+     "pulse": 62.8
+    },
+    {
+     "date": "2026-03-22",
+     "opp": "OKC",
+     "home": false,
+     "pts": 106,
+     "opp_pts": 117,
+     "elo": 1574.7,
+     "pulse": 61.6
+    },
+    {
+     "date": "2026-03-24",
+     "opp": "LAL",
+     "home": false,
+     "pts": 115,
+     "opp_pts": 110,
+     "elo": 1578.5,
+     "pulse": 62.2
+    }
+   ],
+   "roster": [
+    {
+     "player_id": 20,
+     "player": "O. Ruiz",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 36.0,
+     "impact_elo": 40
+    },
+    {
+     "player_id": 21,
+     "player": "L. Keller",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 33.0,
+     "impact_elo": 21
+    },
+    {
+     "player_id": 22,
+     "player": "R. Adeyemi",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 30.0,
+     "impact_elo": 17
+    },
+    {
+     "player_id": 23,
+     "player": "M. Sato",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 27.0,
+     "impact_elo": 6
+    },
+    {
+     "player_id": 24,
+     "player": "I. Costa",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 24.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 25,
+     "player": "M. Weber",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 20.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 26,
+     "player": "A. Ivanov",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 16.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 27,
+     "player": "N. Dubois",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 12.0,
+     "impact_elo": 0
+    },
+    {
+     "player_id": 28,
+     "player": "J. Horvat",
+     "status": "HRÁ",
+     "p_out": 0.0,
+     "typical_min": 8.0,
+     "impact_elo": 0
+    }
+   ],
+   "upcoming": [
+    {
+     "game_id": "0022600003",
+     "date": "2026-10-20",
+     "opp": "OKC",
+     "home": true
+    }
+   ]
+  }
+ }
+}
