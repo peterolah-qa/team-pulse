@@ -57,6 +57,7 @@ FATIGUE_COLS = ["game_id", "date", "season", "home", "away", "neutral", "arena_c
 ROSTER_KEY = "Sila súpisky"
 MAX_WHAT_IF = 4
 MIN_WHAT_IF_SWING = 0.01  # scenár bez zmeny šance aspoň o 1 p. b. (a bez zmeny úrovne) sa neukáže
+PRESEASON = "preseason"
 
 REASON_TEXT = {
     "b2b": "2. zápas za 2 dni",
@@ -80,11 +81,23 @@ def _fatigue_text(feature: str, value: float) -> str:
     return REASON_TEXT[feature].format(v=value, km=value * 1000, days=days_word(round(value)))
 
 
+def is_preseason(schedule: pd.DataFrame) -> pd.Series:
+    if "kind" not in schedule:
+        return pd.Series(False, index=schedule.index)
+    return schedule["kind"].eq(PRESEASON)
+
+
 def season_fatigue(schedule: pd.DataFrame, target_date: pd.Timestamp) -> pd.DataFrame:
     """Únava pre zápasy v target_date z rozpisu sezóny (odohrané aj naplánované zápasy).
 
     Pri učení sa únava na začiatku sezóny tiež nulovala, takže stačí rozpis aktuálnej sezóny.
+    Príprava a základná časť sa počítajú oddelene: pri učení príprava v dátach nebola, takže
+    na prvý zápas sezóny má team plné voľno, aj keď pár dní predtým hral prípravu.
     """
+    pre = is_preseason(schedule)
+    if pre.any() and (~pre).any():
+        parts = [season_fatigue(schedule[mask], target_date) for mask in (pre, ~pre)]
+        return pd.concat(parts, ignore_index=True)
     upto = schedule[schedule["date"] <= target_date][FATIGUE_COLS].copy()
     upto["pts_home"], upto["pts_away"] = 0, 0  # výsledky únava nepoužíva
     feats = add_features(upto)
@@ -220,6 +233,7 @@ def _game(ctx: Context, g, fat: pd.Series, override: dict[int, float] | None = N
         "game_id": g.game_id,
         "date": str(ctx.target_date.date()),
         "tipoff_utc": str(getattr(g, "tipoff_utc", "")),
+        "kind": str(getattr(g, "kind", "regular")),
         "neutral": bool(g.neutral),
         "home_adv": 0.0 if g.neutral else round(w["home"], 1),
         "p_home": round(prob, 3),
@@ -342,6 +356,7 @@ def build_teams(
                         "date": str(g.date.date()),
                         "opp": g.away if home else g.home,
                         "home": home,
+                        "kind": str(getattr(g, "kind", "regular")),
                     }
                 )
         trend = [

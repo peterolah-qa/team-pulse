@@ -225,3 +225,41 @@ def test_today_is_us_date():
     assert today_et(pd.Timestamp("2026-10-21 01:00", tz="UTC")) == pd.Timestamp("2026-10-20")
     assert today_et(pd.Timestamp("2026-10-21 05:00", tz="UTC")) == pd.Timestamp("2026-10-21")
     assert today_et(pd.Timestamp("2026-12-02 04:30", tz="UTC")) == pd.Timestamp("2026-12-01")  # zimný čas
+
+
+def with_preseason():
+    """Príprava 18. 10. (BOS – NYK), potom 1. zápas sezóny 20. 10."""
+    pre = pd.DataFrame(
+        {
+            "game_id": ["P1"],
+            "date": pd.to_datetime(["2026-10-18"]),
+            "tipoff_utc": pd.to_datetime(["2026-10-18T23:00Z"]),
+            "season": [2027],
+            "kind": ["preseason"],
+            "home": ["BOS"],
+            "away": ["NYK"],
+            "neutral": [False],
+            "arena_city": ["Boston"],
+        }
+    )
+    return pd.concat([pre, schedule()], ignore_index=True)
+
+
+def run_on(day, sched):
+    hist, players = history_and_players()
+    return predict_games(pd.Timestamp(day), hist, players, sched, roster(), no_injuries(), model(), 0.5)
+
+
+def test_preseason_game_is_predicted_and_marked():
+    games = run_on("2026-10-18", with_preseason())
+    assert [g["game_id"] for g in games] == ["P1"]
+    assert games[0]["kind"] == "preseason" and 0 < games[0]["p_home"] < 1
+
+
+def test_preseason_does_not_change_fatigue_of_season_opener():
+    """Pri učení príprava v dátach nebola: 1. zápas sezóny má plné voľno aj po príprave."""
+    with_pre = {g["game_id"]: g for g in run_on("2026-10-20", with_preseason())}
+    without = {g["game_id"]: g for g in run_on("2026-10-20", schedule())}
+    assert with_pre["N1"]["p_home"] == without["N1"]["p_home"]
+    assert with_pre["N1"]["home"]["contributions"] == without["N1"]["home"]["contributions"]
+    assert with_pre["N1"]["kind"] == "regular"

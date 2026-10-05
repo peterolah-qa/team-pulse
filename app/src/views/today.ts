@@ -19,7 +19,7 @@ export function gameCard(g: Game): string {
       : "";
   return `<article class="card game" data-game="${esc(g.game_id)}">
     <a class="stretch" href="#/zapas/${esc(g.game_id)}" aria-label="Detail zápasu ${esc(g.away.team)} na palubovke ${esc(g.home.team)}"></a>
-    <div class="row small"><span>${tipoff(g.tipoff_utc, g.date)}${g.neutral ? " · neutrálne ihrisko" : ""}</span><span>istota: <b>${conf}</b></span></div>
+    <div class="row small"><span>${tipoff(g.tipoff_utc, g.date)}${g.neutral ? " · neutrálne ihrisko" : ""}${g.kind === "preseason" ? ` · <b class="pre">PRÍPRAVA</b>` : ""}</span><span>istota: <b>${conf}</b></span></div>
     ${row(g.home, g.neutral ? "" : "DOMA")}${row(g.away, g.neutral ? "" : "VONKU")}
     <div class="bar" role="img" aria-label="Šanca na výhru ${esc(g.home.team)} ${pct(g.p_home)}"><i style="width:${Math.round(g.p_home * 100)}%"></i></div>
     <div class="row small"><span>${esc(g.home.team)} <b>${pct(g.p_home)}</b></span><span>${flag}</span><span><b>${pct(1 - g.p_home)}</b> ${esc(g.away.team)}</span></div>

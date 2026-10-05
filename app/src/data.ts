@@ -37,6 +37,7 @@ export interface Game {
   game_id: string;
   date: string;
   tipoff_utc: string;
+  kind?: string; // "preseason" = prípravný zápas
   neutral: boolean;
   home_adv: number;
   p_home: number;
@@ -81,7 +82,7 @@ export interface TeamPage extends TeamState {
   rank: number;
   trend: TrendPoint[];
   roster: RosterPlayer[];
-  upcoming: { game_id: string; date: string; opp: string; home: boolean }[];
+  upcoming: { game_id: string; date: string; opp: string; home: boolean; kind?: string }[];
 }
 
 export interface Teams extends Meta {

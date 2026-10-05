@@ -153,7 +153,7 @@ def test_report_waits_for_results(tmp_path):
 
 
 def test_report_empty_archive(tmp_path):
-    assert "Archív je zatiaľ prázdny" in report(load_archive(tmp_path / "x", tmp_path / "y"), BACKTEST)
+    assert "Sezóna začína 20. 10." in report(load_archive(tmp_path / "x", tmp_path / "y"), BACKTEST)
 
 
 def test_missing_games_listed(tmp_path):
@@ -226,3 +226,26 @@ def test_pull_with_push_from_cloud(tmp_path):
     git_pull(cwd=cloud)
     assert (cloud / "state.json").read_text() == '{"a": 1}\n'
     assert (mac / "archive" / "a.json").exists()
+
+
+def test_preseason_kept_apart_from_g2(tmp_path):
+    preds, results = tmp_path / "pred", tmp_path / "res"
+    pre = {**game(gid="0012600001", p=0.8, tip="2026-10-10 23:30:00+00:00"), "kind": "preseason"}
+    lock_games({"2026-10-10": [pre]}, META, at("2026-10-10 23:00"), preds)
+    reg = {**game(p=0.7), "kind": "regular"}
+    lock_games({"2026-10-20": [reg]}, META, at("2026-10-20 23:00"), preds)
+    hist = history([("0022600001", "2026-10-20", "DET", "CHI", 110, 100)])
+    pre_res = history([("0012600001", "2026-10-10", "DET", "CHI", 90, 100)])  # z rozpisu, nie z histórie
+    out = tmp_path / "live.md"
+    assert update(hist, BACKTEST, out, preds, results, preseason=pre_res) == 2
+    md = out.read_text(encoding="utf-8")
+    assert "| Presnosť | 100,0 %" in md  # len základná časť
+    assert "## Príprava (skúška archívu, mimo G2)" in md and "presnosť 0,0 %" in md
+    assert "bez uloženej predpovede: **0**" in md
+
+
+def test_only_preseason_in_archive(tmp_path):
+    pre = {**game(gid="0012600001"), "kind": "preseason"}
+    lock_games({"2026-10-20": [pre]}, META, at("2026-10-20 23:00"), tmp_path / "p")
+    md = report(load_archive(tmp_path / "p", tmp_path / "r"), BACKTEST)
+    assert "Sezóna začína 20. 10." in md and "Uložené predpovede 1 · s výsledkom 0" in md

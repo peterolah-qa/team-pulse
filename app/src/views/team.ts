@@ -42,7 +42,7 @@ export function teamView(d: AppData, abbr: string): string {
       ${impact(r.status, r.impact_elo)}</span></div>`)
     .join("");
   const upcoming = t.upcoming.length
-    ? t.upcoming.map((u) => `<a class="reason link" href="#/zapas/${esc(u.game_id)}"><span>${esc(dayLabel(u.date))}</span><span>${u.home ? "vs" : "@"} ${esc(u.opp)}</span></a>`).join("")
+    ? t.upcoming.map((u) => `<a class="reason link" href="#/zapas/${esc(u.game_id)}"><span>${esc(dayLabel(u.date))}</span><span>${u.home ? "vs" : "@"} ${esc(u.opp)}${u.kind === "preseason" ? " · príprava" : ""}</span></a>`).join("")
     : `<p class="small muted">Žiadne naplánované zápasy.</p>`;
   const reasons = t.reasons.length
     ? t.reasons.map(([txt, e]) => `<div class="reason"><span>${esc(txt)}</span><span class="num ${e >= 0 ? "pos" : "neg"}">${signed(e)}</span></div>`).join("")

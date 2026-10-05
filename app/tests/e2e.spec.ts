@@ -158,3 +158,28 @@ test("PWA: manifest a ikony sú dostupné", async ({ page, request }) => {
   for (const icon of manifest.icons) expect((await request.get(`/${icon.src}`)).ok(), icon.src).toBeTruthy();
   expect((await request.get("/sw.js")).ok()).toBeTruthy();
 });
+
+test("príprava: štítok na karte, poznámka v detaile a v najbližších zápasoch teamu", async ({ page }) => {
+  await page.unrouteAll();
+  const first = (p: any) => Object.values(p.days as Record<string, any[]>).find((g) => g.length)![0];
+  let abbr = "";
+  await serveData(page, {
+    predictions: (p) => {
+      first(p).kind = "preseason";
+      return p;
+    },
+    teams: (t) => {
+      [abbr] = Object.entries(t.teams as Record<string, any>).find(([, x]) => x.upcoming.length)!;
+      t.teams[abbr].upcoming[0].kind = "preseason";
+      return t;
+    },
+  });
+  await open(page);
+  const card = page.locator("article.game").first();
+  await expect(card).toContainText("PRÍPRAVA");
+  await expect(page.locator("article.game").nth(1)).not.toContainText("PRÍPRAVA");
+  await card.locator("a.stretch").click();
+  await expect(page.locator(".pre-note")).toContainText("do vyhodnotenia sa neráta");
+  await open(page, `#/team/${abbr}`);
+  await expect(page.locator("a.reason.link").first()).toContainText("príprava");
+});

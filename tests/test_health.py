@@ -68,3 +68,10 @@ def test_state_stale_when_daily_update_missed():
 def test_state_before_season_is_not_stale():
     s = state("2026-06-13", ["2026-10-20", "2026-10-22"])
     assert check_state(s, pd.Timestamp("2026-09-27")) == []
+
+
+def test_preseason_games_do_not_make_state_stale():
+    """Výsledky prípravy v histórii nie sú, takže odohraná príprava nesmie hlásiť výpadok Macu."""
+    s = state("2026-06-13", ["2026-10-08", "2026-10-20"])
+    s["schedule"][0]["kind"] = "preseason"
+    assert check_state(s, pd.Timestamp("2026-10-12")) == []

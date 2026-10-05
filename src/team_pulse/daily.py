@@ -101,7 +101,7 @@ def main(push: bool) -> None:
 
     if push:
         git_pull()
-    schedule = parse_schedule(fetch_schedule())
+    schedule = parse_schedule(fetch_schedule(), include_preseason=True)
     season = int(schedule["season"].max())
 
     new_games, new_box = fetch_current_season(season)
@@ -110,7 +110,8 @@ def main(push: bool) -> None:
     games.to_parquet(GAMES, index=False)
     players.to_parquet(PLAYERS, index=False)
     print(f"Sezóna {season}: +{n_games} zápasov, +{n_rows} riadkov box score (spolu {len(games)} zápasov)")
-    n_results = update(games, load(MODEL).test_metrics)
+    pre = schedule[(schedule["kind"] == "preseason") & (schedule["status"] == 3)]
+    n_results = update(games, load(MODEL).test_metrics, preseason=pre)
     print(f"Archív: +{n_results} výsledkov → {LIVE_REPORT}")
 
     roster = fetch_roster()

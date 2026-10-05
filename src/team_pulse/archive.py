@@ -7,7 +7,9 @@ Cloud (predict.yml, každých 15 minút večer a v noci, predict --archive):
                posledná predpoveď pred zápasom a nič z priebehu zápasu.
 Mac (daily, ráno):
   fill_results k uloženým zápasom doplní výsledok z histórie → archive/results/<dátum>.json
-  write_report reports/live.md: presnosť, log loss, Brier, kalibrácia, porovnanie s backtestom
+  update       reports/live.md: presnosť, log loss, Brier, kalibrácia, porovnanie s backtestom
+
+Zápasy prípravy sa ukladajú tiež (skúška archívu pred sezónou), ale v reporte sú zvlášť a do G2 sa nerátajú.
 
 <dátum> je dátum zápasu v USA (ET), rovnako ako v rozpise a v appke.
 """
@@ -26,6 +28,7 @@ PRED_DIR = Path("archive/predictions")
 RESULT_DIR = Path("archive/results")
 LIVE_REPORT = Path("reports/live.md")
 LOCK_BEFORE = pd.Timedelta(hours=2)
+PRESEASON = "preseason"
 VOLATILE = {"locked_at", "injuries_timestamp"}  # zmena len v týchto poliach nie je nová predpoveď
 SIDE_KEYS = [
     "team",
@@ -59,6 +62,7 @@ def record(game: dict, meta: dict, now: pd.Timestamp) -> dict:
     """Záznam do archívu: šanca a stav oboch teamov, bez scenárov „čo keby“."""
     return {
         "game_id": game["game_id"],
+        "kind": game.get("kind", "regular"),
         "tipoff_utc": game["tipoff_utc"],
         "locked_at": now.isoformat(timespec="seconds"),
         "model": meta.get("model"),
@@ -135,25 +139,22 @@ def load_archive(pred_dir: Path = PRED_DIR, result_dir: Path = RESULT_DIR) -> pd
         for gid, p in _read(path)["games"].items():
             res = results.get(gid)
             conf = {p["home"].get("confidence"), p["away"].get("confidence")}
+            level = "nízka" if "nízka" in conf else "stredná" if "stredná" in conf else "vysoká"
             rows.append(
                 {
                     "game_id": gid,
                     "date": path.stem,
+                    "kind": p.get("kind", "regular"),
                     "home": p["home"]["team"],
                     "away": p["away"]["team"],
                     "p_home": float(p["p_home"]),
-                    "confidence": "nízka"
-                    if "nízka" in conf
-                    else "stredná"
-                    if "stredná" in conf
-                    else "vysoká",
+                    "confidence": level,
                     "pts_home": res["pts_home"] if res else None,
                     "pts_away": res["pts_away"] if res else None,
                 }
             )
-    df = pd.DataFrame(
-        rows, columns=["game_id", "date", "home", "away", "p_home", "confidence", "pts_home", "pts_away"]
-    )
+    cols = ["game_id", "date", "kind", "home", "away", "p_home", "confidence", "pts_home", "pts_away"]
+    df = pd.DataFrame(rows, columns=cols)
     df["home_won"] = pd.Series(
         [pd.NA if pd.isna(h) else h > a for h, a in zip(df["pts_home"], df["pts_away"], strict=True)],
         dtype="boolean",
@@ -169,16 +170,50 @@ def _num(x: float) -> str:
     return f"{x:.4f}".replace(".", ",")
 
 
+def _hits(done: pd.DataFrame) -> pd.Series:
+    return (done["p_home"] > 0.5) == done["home_won"].astype(bool)
+
+
+def _last_games(done: pd.DataFrame, n: int = 20) -> list[str]:
+    lines = ["| Dátum | Zápas | Šanca domácich | Skóre | Tip |", "|:--|:--|--:|:--|:--|"]
+    for r, ok in list(zip(done.itertuples(), _hits(done), strict=True))[::-1][:n]:
+        lines.append(
+            f"| {r.date} | {r.away} @ {r.home} | {_pct(r.p_home)} | {int(r.pts_away)} : {int(r.pts_home)} "
+            f"| {'✓' if ok else '✗'} |"
+        )
+    return lines
+
+
+def _preseason(pre: pd.DataFrame) -> list[str]:
+    """Príprava: len skúška archívu a orientačné čísla, do brány G2 sa neráta."""
+    done = pre[pre["home_won"].notna()]
+    lines = [
+        "",
+        "## Príprava (skúška archívu, mimo G2)",
+        "",
+        f"Uložené predpovede {len(pre)} · s výsledkom {len(done)}"
+        + (f" · presnosť {_pct(float(_hits(done).mean()))}" if len(done) else ""),
+        "",
+        "Hviezdy v príprave hrajú menej a model je naučený na základnú časť, takže tieto čísla nič nehovoria "
+        "o kvalite modelu. Overujú len, že sa predpovede ukladajú a výsledky dopĺňajú.",
+    ]
+    if len(done):
+        lines += ["", *_last_games(done, 10)]
+    return lines
+
+
 def report(df: pd.DataFrame, backtest: dict, missing: list[str] | None = None) -> str:
     """Markdown report ostrej prevádzky. Nemá v sebe aktuálny čas, takže bez nových dát sa nemení."""
+    is_pre = df["kind"] == PRESEASON
+    pre, df = df[is_pre], df[~is_pre]
+    tail = _preseason(pre) if len(pre) else []
     done = df[df["home_won"].notna()]
     lines = ["# Ostrá prevádzka: vyhodnotenie predpovedí", ""]
     if df.empty:
-        return "\n".join(
-            [*lines, "Archív je zatiaľ prázdny. Prvé predpovede sa uložia pred zápasmi 20. 10.", ""]
-        )
+        lines.append("Zo základnej časti zatiaľ nie je uložená žiadna predpoveď. Sezóna začína 20. 10.")
+        return "\n".join([*lines, *tail, ""])
     lines += [
-        f"Archív: {df['date'].min()} – {df['date'].max()} · uložené predpovede {len(df)} · "
+        f"Základná časť: {df['date'].min()} – {df['date'].max()} · uložené predpovede {len(df)} · "
         f"s výsledkom {len(done)} · čaká na výsledok {len(df) - len(done)}",
         "",
     ]
@@ -189,7 +224,7 @@ def report(df: pd.DataFrame, backtest: dict, missing: list[str] | None = None) -
             "",
         ]
     if done.empty:
-        return "\n".join([*lines, "Zatiaľ žiadny zápas s výsledkom.", ""])
+        return "\n".join([*lines, "Zatiaľ žiadny zápas s výsledkom.", *tail, ""])
 
     m = metrics(done["p_home"], done["home_won"].astype(bool))
     n = len(done)
@@ -219,29 +254,19 @@ def report(df: pd.DataFrame, backtest: dict, missing: list[str] | None = None) -
         lines.append(f"| {max(lo, 50)} – {hi} % | {r.zapasy} | {_pct(r.predpoved)} | {_pct(r.skutocnost)} |")
 
     lines += ["", "## Podľa istoty", "", "| Istota | Zápasy | Presnosť |", "|:--|--:|--:|"]
-    hit = (done["p_home"] > 0.5) == done["home_won"].astype(bool)
+    hit = _hits(done)
     for level in ("vysoká", "stredná", "nízka"):
         sel = done["confidence"] == level
         if sel.any():
             lines.append(f"| {level} | {int(sel.sum())} | {_pct(float(hit[sel].mean()))} |")
 
-    lines += [
-        "",
-        "## Posledné zápasy",
-        "",
-        "| Dátum | Zápas | Šanca domácich | Skóre | Tip |",
-        "|:--|:--|--:|:--|:--|",
-    ]
-    for r, ok in list(zip(done.itertuples(), hit, strict=True))[::-1][:20]:
-        lines.append(
-            f"| {r.date} | {r.away} @ {r.home} | {_pct(r.p_home)} | {int(r.pts_away)} : {int(r.pts_home)} "
-            f"| {'✓' if ok else '✗'} |"
-        )
-    return "\n".join([*lines, ""])
+    lines += ["", "## Posledné zápasy", "", *_last_games(done)]
+    return "\n".join([*lines, *tail, ""])
 
 
 def missing_games(games: pd.DataFrame, archived: pd.DataFrame) -> list[str]:
-    """Odohrané zápasy od začiatku archívu, ku ktorým sa neuložila predpoveď."""
+    """Odohrané zápasy (základná časť, playoff) od začiatku archívu, ku ktorým sa neuložila predpoveď."""
+    archived = archived[archived["kind"] != PRESEASON]
     if archived.empty:
         return []
     start = pd.Timestamp(archived["date"].min())
@@ -259,9 +284,17 @@ def update(
     out: Path = LIVE_REPORT,
     pred_dir: Path = PRED_DIR,
     result_dir: Path = RESULT_DIR,
+    preseason: pd.DataFrame | None = None,
 ) -> int:
-    """Denný krok na Macu: výsledky do archívu a nový report. Vráti počet nových výsledkov."""
-    added = fill_results(games, pred_dir, result_dir)
+    """Denný krok na Macu: výsledky do archívu a nový report. Vráti počet nových výsledkov.
+
+    games      história (základná časť, playoff) z data/raw/games.parquet
+    preseason  dohrané zápasy prípravy z rozpisu (v histórii nie sú, Elo ich nepoužíva)
+    """
+    results = (
+        games if preseason is None or preseason.empty else pd.concat([games, preseason], ignore_index=True)
+    )
+    added = fill_results(results, pred_dir, result_dir)
     archived = load_archive(pred_dir, result_dir)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(report(archived, backtest, missing_games(games, archived)), encoding="utf-8")

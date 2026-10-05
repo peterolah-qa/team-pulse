@@ -151,7 +151,7 @@ def main() -> None:
         pd.read_parquet(GAMES),
         pd.read_parquet(PLAYERS),
         roster,
-        parse_schedule(fetch_schedule()),
+        parse_schedule(fetch_schedule(), include_preseason=True),
         load(MODEL).elo_params,
     )
     path = save_state(state)

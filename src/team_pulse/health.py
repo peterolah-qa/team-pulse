@@ -55,6 +55,8 @@ def check_state(state: dict, today: pd.Timestamp) -> list[str]:
     sched = schedule_frame(state)
     if sched.empty:
         return []
+    if "kind" in sched:
+        sched = sched[sched["kind"] != "preseason"]  # výsledky prípravy v histórii nie sú
     cutoff = today.normalize() - pd.Timedelta(days=RESULT_LAG_DAYS)
     played = sched[sched["date"] <= cutoff]
     if played.empty:

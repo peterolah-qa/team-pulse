@@ -56,6 +56,7 @@ h1 .vs { font-size: 16px; color: var(--muted); text-shadow: none; }
 .flag { font: 700 11px var(--display); letter-spacing: .5px; }
 .flag.q { color: var(--yel); }
 .flag.drop { color: var(--t2); }
+.pre, .note b.pre { color: var(--yel); font: 700 11px var(--display); letter-spacing: .5px; }
 .pulse-num { font-size: 22px; }
 .abbr { color: var(--text); }
 .pos { color: var(--t0); }

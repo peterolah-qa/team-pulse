@@ -50,6 +50,7 @@ export function gameView(d: AppData, id: string): string {
         <div class="mid num">${signed1(g.margin_home)}</div><div class="small muted">očakávaný rozdiel</div></div>
       ${side(g.away)}
     </section>
+    ${g.kind === "preseason" ? `<p class="small note pre-note"><b class="pre">PRÍPRAVA</b> · hviezdy hrajú menej minút a model je naučený na základnú časť, šanca je len orientačná a do vyhodnotenia sa neráta</p>` : ""}
     ${dropped.map((s) => `<p class="small note">${esc(s.team)} normálne: <b>${esc(s.normal_tier.toUpperCase())}</b> – dnes o úroveň nižšie</p>`).join("")}
     <div class="cols"><div>
     <h2 class="section">// VRSTVY MODELU (ELO) · ${esc(g.home.team)} ◂ ▸ ${esc(g.away.team)}</h2>
