@@ -28,7 +28,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from team_pulse.archive import lock_games
+from team_pulse.archive import PRED_DIR, lock_games
 from team_pulse.elo import ELO_PER_POINT
 from team_pulse.live.availability import (
     MAX_MIN,
@@ -395,6 +395,18 @@ def upcoming_dates(state: dict, today: pd.Timestamp, days: int) -> list[pd.Times
     return [pd.Timestamp(d) for d in dates[:days]]
 
 
+def results_for_app(state: dict, pred_dir: Path = PRED_DIR) -> list[dict]:
+    """Výsledky posledných dní (zo stavu) doplnené o našu poslednú predpoveď pred zápasom z archívu."""
+    out, cache = [], {}
+    for r in state.get("results", []):
+        if r["date"] not in cache:
+            path = pred_dir / f"{r['date']}.json"
+            cache[r["date"]] = json.loads(path.read_text(encoding="utf-8"))["games"] if path.exists() else {}
+        rec = cache[r["date"]].get(r["game_id"])
+        out.append({**r, "p_home": rec["p_home"] if rec else None})
+    return out
+
+
 def write_json(path: Path, data: object) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
@@ -427,7 +439,7 @@ def main(date: str | None, days: int, out: Path, archive: bool = False) -> None:
         "injuries_timestamp": raw_inj.get("timestamp"),
         "injuries_matched": f"{int(injuries['player_id'].notna().sum())}/{len(injuries)}",
     }
-    write_json(out / "predictions.json", {**meta, "days": by_date})
+    write_json(out / "predictions.json", {**meta, "days": by_date, "results": results_for_app(state)})
     write_json(out / "teams.json", {**meta, "teams": build_teams(state, injuries, model, today, age)})
     write_json(out / "model.json", model_info(model))
 

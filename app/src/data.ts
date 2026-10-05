@@ -55,8 +55,32 @@ export interface Meta {
   injuries_matched?: string;
 }
 
+export interface BoxRow {
+  player: string;
+  min: number;
+  pts: number;
+  reb: number;
+  ast: number;
+  blk: number;
+  stl: number;
+}
+
+/* Dohraný zápas z posledných dní: skóre, náš tip pred zápasom (z archívu) a štatistiky hráčov. */
+export interface Result {
+  game_id: string;
+  date: string;
+  kind?: string;
+  home: string;
+  away: string;
+  pts_home: number;
+  pts_away: number;
+  p_home: number | null;
+  box: Record<string, BoxRow[]>;
+}
+
 export interface Predictions extends Meta {
   days: Record<string, Game[]>;
+  results?: Result[];
 }
 
 export interface RosterPlayer {

@@ -17,6 +17,7 @@ import { gameView } from "./views/game";
 import { modelView } from "./views/model";
 import { teamsView, teamView } from "./views/team";
 import { todayView } from "./views/today";
+import { resultView } from "./views/result";
 import { bindWhatIf, whatIfView } from "./views/whatif";
 
 const app = document.getElementById("app")!;
@@ -28,6 +29,8 @@ function route(): { tab: string; html: string; title: string } {
   switch (page) {
     case "zapas":
       return { tab: "dnes", html: gameView(d, decodeURIComponent(arg)), title: "Zápas" };
+    case "vysledok":
+      return { tab: "dnes", html: resultView(d, decodeURIComponent(arg)), title: "Výsledok" };
     case "teamy":
       return { tab: "teamy", html: teamsView(d), title: "Teamy" };
     case "team":

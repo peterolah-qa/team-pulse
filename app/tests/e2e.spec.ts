@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { fixture, open, serveData } from "./helpers";
+import { fixture, open, serveData, withResults } from "./helpers";
 
 test.beforeEach(async ({ page }) => {
   await serveData(page);
@@ -182,4 +182,31 @@ test("príprava: štítok na karte, poznámka v detaile a v najbližších zápa
   await expect(page.locator(".pre-note")).toContainText("do vyhodnotenia sa neráta");
   await open(page, `#/team/${abbr}`);
   await expect(page.locator("a.reason.link").first()).toContainText("príprava");
+});
+
+test("výsledky: skóre, náš tip a štatistiky hráčov podľa súpisky", async ({ page }) => {
+  await page.unrouteAll();
+  await serveData(page, { predictions: withResults });
+  await open(page);
+  const cards = page.locator("article.result");
+  await expect(cards).toHaveCount(2);
+  await expect(cards.first()).toContainText("tip DET 62 %");
+  await expect(cards.first().locator(".hit")).toHaveText("✓");
+  await expect(cards.nth(1)).toContainText("PRÍPRAVA");
+  await expect(cards.nth(1)).toContainText("tip neuložený");
+
+  await cards.first().locator("a.stretch").click();
+  await expect(page.locator("h1")).toContainText("110 : 104");
+  await expect(page.locator(".note")).toContainText("✓ trafený");
+  const det = page.locator("table.box").first();
+  await expect(det.locator("thead")).toContainText("MIN");
+  await expect(det.locator("tbody tr").first()).toContainText("Cade Cunningham");
+  await expect(det.locator("tbody tr").first().locator("td")).toHaveText(["Cade Cunningham", "36", "31", "7", "5", "1", "2"]);
+  const width = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(width).toBeLessThanOrEqual(0);
+
+  await open(page, "#/vysledok/0012600050");
+  await expect(page.locator(".empty")).toContainText("Z prípravy máme len skóre");
+  await open(page, "#/vysledok/neznamy");
+  await expect(page.locator(".empty")).toContainText("Výsledok sa nenašiel");
 });

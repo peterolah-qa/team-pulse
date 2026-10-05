@@ -22,6 +22,7 @@ from team_pulse.live.availability import Snapshot, player_snapshot, season_rotat
 STATE = Path("state/state.json")
 STATE_VERSION = 1
 TREND_GAMES = 10
+RESULT_DAYS = 3  # výsledky a štatistiky hráčov z posledných 3 hracích dní (pre appku)
 SCHEDULE_FIELDS = ["game_id", "date", "tipoff_utc", "season", "kind", "home", "away", "neutral", "arena_city"]
 
 
@@ -77,7 +78,67 @@ def build_state(
         "players": player_info,
         "rotation": {t: {str(pid): round(m, 2) for pid, m in r.items()} for t, r in rotation.items()},
         "schedule": sched.to_dict(orient="records"),
+        "results": recent_results(history, players, schedule),
     }
+
+
+def _box(rows: pd.DataFrame) -> list[dict]:
+    """Štatistiky hráčov jedného teamu, zoradené podľa minút."""
+    rows = rows.sort_values(["min", "pts"], ascending=False)
+    return [
+        {
+            "player": r.player,
+            "min": round(float(r.min)),
+            "pts": int(r.pts),
+            "reb": int(r.oreb) + int(r.dreb),
+            "ast": int(r.ast),
+            "blk": int(r.blk),
+            "stl": int(r.stl),
+        }
+        for r in rows.itertuples()
+    ]
+
+
+def recent_results(
+    history: pd.DataFrame, players: pd.DataFrame, schedule: pd.DataFrame, days: int = RESULT_DAYS
+) -> list[dict]:
+    """Dohrané zápasy aktuálnej sezóny z posledných hracích dní: skóre a štatistiky hráčov.
+
+    Základná časť a playoff sú z histórie (box score z nba_api). Príprava len zo skóre v rozpise,
+    štatistiky hráčov z prípravy nesťahujeme (do histórie ani do Ela nepatria).
+    """
+    season = int(schedule["season"].max())
+    kinds = schedule["kind"] if "kind" in schedule else pd.Series("regular", index=schedule.index)
+    kind_of = dict(zip(schedule["game_id"].astype(str), kinds, strict=True))
+    cols = ["game_id", "date", "home", "away", "pts_home", "pts_away"]
+    done = history[history["season"] == season][cols].assign(game_id=lambda d: d["game_id"].astype(str))
+    done["kind"] = done["game_id"].map(kind_of).fillna("regular")
+    if {"kind", "status", "pts_home"} <= set(schedule.columns):
+        pre = schedule[(schedule["kind"] == "preseason") & (schedule["status"] == 3)][cols]
+        done = pd.concat([done, pre.assign(kind="preseason", game_id=pre["game_id"].astype(str))])
+    if done.empty:
+        return []
+    done["date"] = pd.to_datetime(done["date"])
+    last = sorted(done["date"].unique())[-days:]
+    done = done[done["date"].isin(last)].sort_values(["date", "game_id"])
+    box = players[players["game_id"].astype(str).isin(set(done["game_id"]))]
+    by_game = {gid: g for gid, g in box.groupby(box["game_id"].astype(str))}
+    out = []
+    for r in done.itertuples():
+        g = by_game.get(r.game_id)
+        out.append(
+            {
+                "game_id": r.game_id,
+                "date": str(pd.Timestamp(r.date).date()),
+                "kind": r.kind,
+                "home": r.home,
+                "away": r.away,
+                "pts_home": int(r.pts_home),
+                "pts_away": int(r.pts_away),
+                "box": {} if g is None else {t: _box(g[g["team"] == t]) for t in (r.home, r.away)},
+            }
+        )
+    return out
 
 
 def save_state(state: dict, path: Path = STATE) -> Path:

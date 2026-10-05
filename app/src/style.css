@@ -132,6 +132,16 @@ h1 .vs { font-size: 16px; color: var(--muted); text-shadow: none; }
 .table .n { text-align: right; padding-left: 10px; white-space: nowrap; }
 .table td { padding: 5px 0; border-top: 1px dashed var(--line); }
 .table tr.best td { color: var(--t0); font-weight: 700; }
+.box { table-layout: fixed; font-size: 13px; }
+.box th:first-child { width: auto; }
+.box th.n { width: 34px; padding-left: 4px; }
+.box td.n { padding-left: 4px; font-variant-numeric: tabular-nums; }
+.box td.p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.box abbr { text-decoration: none; }
+.result .score { font-size: 20px; }
+.result .won .abbr, .result .won .score { color: var(--cyan); }
+.hit { color: var(--t0); }
+.miss { color: var(--t2); }
 .metrics { display: flex; justify-content: space-between; align-items: center; }
 .right { text-align: right; }
 

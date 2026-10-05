@@ -249,3 +249,17 @@ def test_only_preseason_in_archive(tmp_path):
     lock_games({"2026-10-20": [pre]}, META, at("2026-10-20 23:00"), tmp_path / "p")
     md = report(load_archive(tmp_path / "p", tmp_path / "r"), BACKTEST)
     assert "Sezóna začína 20. 10." in md and "Uložené predpovede 1 · s výsledkom 0" in md
+
+
+def test_results_for_app_add_our_prediction(tmp_path):
+    from team_pulse.predict import results_for_app
+
+    lock_games({"2026-10-20": [game(p=0.62)]}, META, at("2026-10-20 23:00"), tmp_path)
+    state = {
+        "results": [
+            {"game_id": "0022600001", "date": "2026-10-20", "home": "DET", "away": "CHI"},
+            {"game_id": "0022600005", "date": "2026-10-20", "home": "MIA", "away": "ORL"},
+            {"game_id": "0022600009", "date": "2026-10-19", "home": "LAL", "away": "GSW"},
+        ]
+    }
+    assert [r["p_home"] for r in results_for_app(state, tmp_path)] == [0.62, None, None]

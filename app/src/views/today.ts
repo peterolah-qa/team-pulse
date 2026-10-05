@@ -1,4 +1,5 @@
 import type { AppData, Game, TeamState } from "../data";
+import { resultCard } from "./result";
 import { chip, dayLabel, esc, header, pct, pulseNum, signed1, tierClass, tipoff, when } from "../ui";
 
 function row(s: TeamState, where: string): string {
@@ -34,7 +35,10 @@ export function todayView(d: AppData): string {
   const body = days.length
     ? days.map(([day, games]) => `<h2 class="section">// ${esc(dayLabel(day))} · ${games.length} ${games.length === 1 ? "zápas" : games.length < 5 ? "zápasy" : "zápasov"}</h2><div class="games">${games.map(gameCard).join("")}</div>`).join("")
     : `<p class="empty">Žiadne naplánované zápasy v najbližších dňoch.</p>`;
+  const results = [...(p.results ?? [])].reverse();
+  const done = results.length ? `<h2 class="section">// VÝSLEDKY · ŠTATISTIKY HRÁČOV</h2><div class="games">${results.map(resultCard).join("")}</div>` : "";
   return `${header("TEAM PULSE", "DNES", `${total} ${total === 1 ? "zápas" : total < 5 && total > 0 ? "zápasy" : "zápasov"}`)}
     ${body}
+    ${done}
     <p class="meta">dni podľa amerického kalendára, časy začiatku v našom čase<br>aktualizované ${esc(when(p.generated_at))} · model ${esc(p.model)} · zranenia ${esc(p.injuries_matched ?? "")}</p>`;
 }

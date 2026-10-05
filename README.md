@@ -57,6 +57,7 @@ flowchart LR
 - **Mac** robí ťažkú prácu, lebo stats.nba.com často blokuje požiadavky z cloudových serverov. Výsledkom je malý súbor stavu.
 - **GitHub Actions** každých 15 minút stiahne zranenia, prepočíta predpovede a nasadí appku.
 - **Archív predpovedí:** 2 hodiny pred zápasom cloud uloží predpoveď do `archive/predictions/`, kým zápas nezačne, prepisuje ju novšou; po začiatku sa už nemení. Mac ráno doplní výsledky (`archive/results/`) a prepíše [reports/live.md](reports/live.md) s presnosťou, log loss a kalibráciou ostrej prevádzky.
+- **Výsledky:** na obrazovke Dnes sú dohrané zápasy posledných 3 hracích dní so skóre a naším tipom pred zápasom; v detaile štatistiky hráčov (minúty, body, doskoky, asistencie, bloky, zisky) z box score, ktoré ráno sťahuje Mac.
 - **Príprava:** prípravné zápasy appka ukazuje so štítkom PRÍPRAVA. Do Ela, únavy v sezóne ani do vyhodnotenia sa nerátajú; v archíve slúžia ako skúška pred sezónou.
 - **Náklady: 0 €.** Repo je verejné, Pages a Actions sú zadarmo a všetky zdroje dát sú voľné.
 
