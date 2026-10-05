@@ -5,7 +5,7 @@ import pandas as pd
 import pytest
 
 from team_pulse.model_store import FEATURES_V1, StoredModel
-from team_pulse.predict import predict_games
+from team_pulse.predict import _fatigue_text, days_word, predict_games, today_et
 
 TEAMS = ["BOS", "NYK", "LAL", "DEN"]
 STAT_COLS = ["pts", "fgm", "fga", "ftm", "fta", "oreb", "dreb", "ast", "stl", "blk", "tov", "pf"]
@@ -207,3 +207,21 @@ def test_model_info_for_model_screen():
 
     info = model_info(model())
     assert {"version", "test_metrics", "calibration", "versions", "elo_weights"} <= set(info)
+
+
+@pytest.mark.parametrize("n,word", [(0, "dní"), (1, "deň"), (2, "dni"), (4, "dni"), (5, "dní"), (6, "dní")])
+def test_days_word(n, word):
+    assert days_word(n) == word
+
+
+def test_rest_reason_text():
+    assert _fatigue_text("rest", 3) == "3 dni voľna"
+    assert _fatigue_text("rest", 5) == "5 dní voľna"
+    assert _fatigue_text("rest", 7) == "Bez zápasu 7+ dní"  # 1. zápas sezóny alebo dlhá prestávka
+
+
+def test_today_is_us_date():
+    """O 01:00 UTC je v USA ešte predchádzajúci večer a jeho zápasy musia ostať v predpovediach."""
+    assert today_et(pd.Timestamp("2026-10-21 01:00", tz="UTC")) == pd.Timestamp("2026-10-20")
+    assert today_et(pd.Timestamp("2026-10-21 05:00", tz="UTC")) == pd.Timestamp("2026-10-21")
+    assert today_et(pd.Timestamp("2026-12-02 04:30", tz="UTC")) == pd.Timestamp("2026-12-01")  # zimný čas

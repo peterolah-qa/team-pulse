@@ -2,8 +2,11 @@
 
   1. stiahne výsledky a box score aktuálnej sezóny (nba_api, funguje len z Macu)
   2. doplní ich do data/raw/games.parquet a players.parquet (bez duplicít)
-  3. stiahne súpisky a rozpis, zostaví state/state.json
-  4. ak sa stav zmenil, commitne ho a pošle na GitHub → cloud prepočíta predpovede
+  3. k predpovediam v archíve doplní výsledky a prepíše reports/live.md
+  4. stiahne súpisky a rozpis, zostaví state/state.json
+  5. čo sa zmenilo (stav, výsledky, report), commitne a pošle na GitHub → cloud prepočíta predpovede
+
+Pred začiatkom aj pred odoslaním si stiahne novinky z GitHubu (archív predpovedí commituje cloud).
 
 Spustenie:  uv run python -m team_pulse.daily [--no-push]
 Automaticky každé ráno o 10:00: bash scripts/install_daily.sh
@@ -60,19 +63,35 @@ def same_state(path: Path, state: dict) -> bool:
     return strip(json.loads(path.read_text(encoding="utf-8"))) == strip(state)
 
 
-def git_commit_if_changed(path: Path, message: str, push: bool = True, cwd: Path | None = None) -> bool:
-    """Commitne súbor len ak sa zmenil. Vráti True, ak vznikol commit."""
-    run = lambda *a: subprocess.run(["git", *a], cwd=cwd, check=True, capture_output=True, text=True)  # noqa: E731
-    run("add", str(path))
-    if subprocess.run(["git", "diff", "--cached", "--quiet", "--", str(path)], cwd=cwd).returncode == 0:
+def _git(*args: str, cwd: Path | None = None) -> None:
+    subprocess.run(["git", *args], cwd=cwd, check=True, capture_output=True, text=True)
+
+
+def git_pull(cwd: Path | None = None) -> None:
+    """Stiahne novinky (napr. archív z cloudu). Neuložené lokálne zmeny odloží a vráti späť."""
+    _git("pull", "--rebase", "--autostash", cwd=cwd)
+
+
+def git_commit_if_changed(
+    paths: str | Path | list[str | Path], message: str, push: bool = True, cwd: Path | None = None
+) -> bool:
+    """Commitne súbory len ak sa zmenili. Vráti True, ak vznikol commit."""
+    items = [paths] if isinstance(paths, str | Path) else paths
+    names = [str(p) for p in items if (Path(cwd or ".") / p).exists()]
+    if not names:
         return False
-    run("commit", "-m", message, "--", str(path))
+    _git("add", "--", *names, cwd=cwd)
+    if subprocess.run(["git", "diff", "--cached", "--quiet", "--", *names], cwd=cwd).returncode == 0:
+        return False
+    _git("commit", "-m", message, "--", *names, cwd=cwd)
     if push:
-        run("push")
+        git_pull(cwd)
+        _git("push", cwd=cwd)
     return True
 
 
 def main(push: bool) -> None:
+    from team_pulse.archive import LIVE_REPORT, RESULT_DIR, update
     from team_pulse.learned import GAMES, PLAYERS
     from team_pulse.live.roster import ROSTER, fetch_roster
     from team_pulse.live.schedule import fetch_schedule, parse_schedule
@@ -80,6 +99,8 @@ def main(push: bool) -> None:
     from team_pulse.predict import MODEL
     from team_pulse.state import STATE, build_state, save_state
 
+    if push:
+        git_pull()
     schedule = parse_schedule(fetch_schedule())
     season = int(schedule["season"].max())
 
@@ -89,23 +110,28 @@ def main(push: bool) -> None:
     games.to_parquet(GAMES, index=False)
     players.to_parquet(PLAYERS, index=False)
     print(f"Sezóna {season}: +{n_games} zápasov, +{n_rows} riadkov box score (spolu {len(games)} zápasov)")
+    n_results = update(games, load(MODEL).test_metrics)
+    print(f"Archív: +{n_results} výsledkov → {LIVE_REPORT}")
 
     roster = fetch_roster()
     ROSTER.parent.mkdir(parents=True, exist_ok=True)
     roster.to_parquet(ROSTER, index=False)
     state = build_state(games, players, roster, schedule, load(MODEL).elo_params)
     if same_state(STATE, state):
-        print("Stav sa nezmenil, nič sa neukladá ani necommituje")
-        return
-    save_state(state)
-    print(f"Stav: {len(state['elo'])} teamov, posledný výsledok {state['last_result']} → {STATE}")
-
-    if not push:
-        print("--no-push: stav je len lokálne, necommitoval sa")
-    elif git_commit_if_changed(STATE, f"Stav {date.today()}: posledný výsledok {state['last_result']}"):
-        print("Stav commitnutý a poslaný na GitHub → cloud prepočíta predpovede")
+        print("Stav sa nezmenil")
     else:
-        print("Stav sa nezmenil, nič sa necommitovalo")
+        save_state(state)
+        print(f"Stav: {len(state['elo'])} teamov, posledný výsledok {state['last_result']} → {STATE}")
+
+    message = f"Stav {date.today()}: posledný výsledok {state['last_result']}"
+    if n_results:
+        message += f", archív +{n_results} výsledkov"
+    if not push:
+        print("--no-push: zmeny sú len lokálne, necommitovali sa")
+    elif git_commit_if_changed([STATE, RESULT_DIR, LIVE_REPORT], message):
+        print("Commitnuté a poslané na GitHub → cloud prepočíta predpovede")
+    else:
+        print("Nič sa nezmenilo, nič sa necommitovalo")
 
 
 if __name__ == "__main__":

@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write # commit archívu predpovedí
   pages: write
   id-token: write
 
@@ -35,8 +35,8 @@ jobs:
       - name: Python a knižnice podľa uv.lock
         run: uv sync --locked
 
-      - name: Predpovede na 3 najbližšie hracie dni → app/public/data
-        run: uv run python -m team_pulse.predict --days 3 --out app/public/data
+      - name: Predpovede na 3 najbližšie hracie dni → app/public/data (+ archív pred začiatkom zápasov)
+        run: uv run python -m team_pulse.predict --days 3 --out app/public/data --archive
 
       - name: Node.js
         uses: actions/setup-node@v4
@@ -59,3 +59,18 @@ jobs:
       - name: Zverejnenie na GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
+
+      - name: Archív predpovedí → repo (len keď pribudol alebo sa zmenil zápas pred začiatkom)
+        run: |
+          [ -d archive/predictions ] || { echo "Archív zatiaľ prázdny"; exit 0; }
+          git add archive/predictions
+          if git diff --cached --quiet; then echo "Archív bez zmeny"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Archív predpovedí $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash && git push -q && exit 0
+            sleep $((i * 10))
+          done
+          echo "::error::Archív sa nepodarilo poslať na GitHub"
+          exit 1

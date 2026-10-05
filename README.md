@@ -56,6 +56,7 @@ flowchart LR
 
 - **Mac** robí ťažkú prácu, lebo stats.nba.com často blokuje požiadavky z cloudových serverov. Výsledkom je malý súbor stavu.
 - **GitHub Actions** každých 15 minút stiahne zranenia, prepočíta predpovede a nasadí appku.
+- **Archív predpovedí:** 2 hodiny pred zápasom cloud uloží predpoveď do `archive/predictions/`, kým zápas nezačne, prepisuje ju novšou; po začiatku sa už nemení. Mac ráno doplní výsledky (`archive/results/`) a prepíše [reports/live.md](reports/live.md) s presnosťou, log loss a kalibráciou ostrej prevádzky.
 - **Náklady: 0 €.** Repo je verejné, Pages a Actions sú zadarmo a všetky zdroje dát sú voľné.
 
 ## Model
@@ -134,6 +135,7 @@ tests/              pytest + Hypothesis + fixtures živých zdrojov
 app/                PWA: Vite + TypeScript bez frameworku, Playwright testy
 models/v1.json      naučený model (váhy, kalibrácia, metriky)
 state/state.json    denný stav z Macu
+archive/            posledné predpovede pred zápasmi (cloud) a ich výsledky (Mac)
 reports/, docs/     backtest, naučené váhy, vyhodnotenia brán
 ```
 

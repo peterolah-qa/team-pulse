@@ -13,6 +13,8 @@ Zapíše tri súbory pre appku:
   model.json        presnosť, kalibrácia, porovnanie verzií, naučené váhy
 
 Spustenie:  uv run python -m team_pulse.predict [--date 2026-10-20] [--days 3] [--out app/public/data]
+                                                 [--archive]
+  --archive  zápasy, ktoré začínajú do 2 h, uloží do archive/predictions (len v cloude, predict.yml)
 """
 
 from __future__ import annotations
@@ -26,6 +28,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from team_pulse.archive import lock_games
 from team_pulse.elo import ELO_PER_POINT
 from team_pulse.live.availability import (
     MAX_MIN,
@@ -37,7 +40,7 @@ from team_pulse.live.availability import (
 )
 from team_pulse.model_store import StoredModel, load
 from team_pulse.pulse import LEAGUE_MEAN, confidence, pulse_from_elo, team_state
-from team_pulse.schedule import FEATURES, add_features
+from team_pulse.schedule import FEATURES, MAX_REST, add_features
 from team_pulse.state import (
     build_state,
     load_state,
@@ -61,13 +64,20 @@ REASON_TEXT = {
     "tz_east": "Posun na východ o {v:.0f} h",
     "altitude": "Hrá vo výške",
     "road": "{v:.0f}. zápas výjazdu",
-    "rest": "{v:.0f} dni voľna",
+    "rest": "{v:.0f} {days} voľna",
     "km": "Cestovanie {km:.0f} km",
 }
 
 
+def days_word(n: int) -> str:
+    """1 deň, 2 – 4 dni, 0 a 5+ dní."""
+    return "deň" if n == 1 else "dni" if 2 <= n <= 4 else "dní"
+
+
 def _fatigue_text(feature: str, value: float) -> str:
-    return REASON_TEXT[feature].format(v=value, km=value * 1000)
+    if feature == "rest" and value >= MAX_REST:
+        return f"Bez zápasu {MAX_REST}+ dní"  # 1. zápas sezóny alebo dlhá prestávka (strop únavy)
+    return REASON_TEXT[feature].format(v=value, km=value * 1000, days=days_word(round(value)))
 
 
 def season_fatigue(schedule: pd.DataFrame, target_date: pd.Timestamp) -> pd.DataFrame:
@@ -375,7 +385,13 @@ def write_json(path: Path, data: object) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
 
 
-def main(date: str | None, days: int, out: Path) -> None:
+def today_et(now: pd.Timestamp | None = None) -> pd.Timestamp:
+    """Dnešný dátum v USA (ET). Dátumy zápasov sú v ET; zápas o 22:00 ET je v UTC už ďalší deň."""
+    now = pd.Timestamp.now(tz="UTC") if now is None else now
+    return now.tz_convert("America/New_York").tz_localize(None).normalize()
+
+
+def main(date: str | None, days: int, out: Path, archive: bool = False) -> None:
     from team_pulse.live.injuries import fetch_injuries, parse_injuries
     from team_pulse.live.roster import match_injuries
 
@@ -384,7 +400,7 @@ def main(date: str | None, days: int, out: Path) -> None:
     raw_inj = fetch_injuries()
     injuries = match_injuries(parse_injuries(raw_inj), roster_frame(state))
     age = (pd.Timestamp.now(tz="UTC") - pd.Timestamp(raw_inj["timestamp"])).total_seconds() / 3600
-    today = pd.Timestamp.now()
+    today = today_et()
 
     targets = [pd.Timestamp(date)] if date else upcoming_dates(state, today, days)
     by_date = {str(t.date()): predict_from_state(state, injuries, model, t, age) for t in targets}
@@ -419,11 +435,21 @@ def main(date: str | None, days: int, out: Path) -> None:
         print()
     print(f"Uložené: {out}/predictions.json, teams.json, model.json")
 
+    if archive:
+        changed = lock_games(by_date, meta, pd.Timestamp.now(tz="UTC"))
+        print(
+            f"Archív: {len(changed)} zápasov uložených alebo zmenených"
+            + (f" ({', '.join(changed)})" if changed else "")
+        )
+
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=None, help="YYYY-MM-DD; predvolene najbližšie hracie dni")
     ap.add_argument("--days", type=int, default=3, help="koľko najbližších hracích dní")
     ap.add_argument("--out", type=Path, default=OUT, help="priečinok pre JSON súbory appky")
+    ap.add_argument(
+        "--archive", action="store_true", help="uložiť predpovede pred začiatkom zápasov do archívu"
+    )
     a = ap.parse_args()
-    main(a.date, a.days, a.out)
+    main(a.date, a.days, a.out, a.archive)
