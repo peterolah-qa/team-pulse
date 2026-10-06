@@ -1,0 +1,113 @@
+{
+ "date": "2026-10-06",
+ "games": {
+  "0012600026": {
+   "game_id": "0012600026",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-07 00:00:00+00:00",
+   "locked_at": "2026-10-06T23:12:05+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-06T23:11:58Z",
+   "neutral": false,
+   "p_home": 0.811,
+   "margin_home": 10.5,
+   "home": {
+    "team": "OKC",
+    "elo": 1687.3,
+    "elo_today": 1653.3,
+    "pulse": 74.7,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 182.3,
+     "roster": 27.4,
+     "players": -68.3,
+     "fatigue": 7.0
+    },
+    "reasons": [
+     [
+      "Bez Shai Gilgeous-Alexander, Chet Holmgren",
+      -68
+     ],
+     [
+      "Sila súpisky",
+      27
+     ]
+    ]
+   },
+   "away": {
+    "team": "NOP",
+    "elo": 1429.0,
+    "elo_today": 1437.0,
+    "pulse": 38.7,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -76.0,
+     "roster": 4.7,
+     "players": 0.0,
+     "fatigue": 3.3
+    },
+    "reasons": []
+   }
+  },
+  "0012600027": {
+   "game_id": "0012600027",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-07 01:00:00+00:00",
+   "locked_at": "2026-10-06T23:12:05+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-06T23:11:58Z",
+   "neutral": false,
+   "p_home": 0.245,
+   "margin_home": -8.1,
+   "home": {
+    "team": "UTA",
+    "elo": 1341.5,
+    "elo_today": 1335.6,
+    "pulse": 21.8,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -163.5,
+     "roster": -9.0,
+     "players": 0.0,
+     "fatigue": 3.1
+    },
+    "reasons": []
+   },
+   "away": {
+    "team": "DEN",
+    "elo": 1596.1,
+    "elo_today": 1641.7,
+    "pulse": 72.8,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "stredná",
+    "layers": {
+     "strength": 91.1,
+     "roster": 54.7,
+     "players": -13.2,
+     "fatigue": 4.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      55
+     ],
+     [
+      "Bez Jamal Murray (?)",
+      -13
+     ]
+    ]
+   }
+  }
+ }
+}
