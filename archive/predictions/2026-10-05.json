@@ -168,6 +168,65 @@
      ]
     ]
    }
+  },
+  "0012600028": {
+   "game_id": "0012600028",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-06 02:00:00+00:00",
+   "locked_at": "2026-10-06T01:51:31+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-06T01:51:24Z",
+   "neutral": false,
+   "p_home": 0.315,
+   "margin_home": -5.6,
+   "home": {
+    "team": "SAC",
+    "elo": 1374.4,
+    "elo_today": 1361.0,
+    "pulse": 26.0,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -130.6,
+     "roster": -20.4,
+     "players": 0.0,
+     "fatigue": 7.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -20
+     ]
+    ]
+   },
+   "away": {
+    "team": "LAL",
+    "elo": 1569.2,
+    "elo_today": 1596.3,
+    "pulse": 65.2,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 64.2,
+     "roster": 42.1,
+     "players": -18.3,
+     "fatigue": 3.3
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      42
+     ],
+     [
+      "Bez Austin Reaves, Walker Kessler",
+      -18
+     ]
+    ]
+   }
   }
  }
 }
