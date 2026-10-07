@@ -1,0 +1,287 @@
+{
+ "date": "2026-10-07",
+ "games": {
+  "0012600029": {
+   "game_id": "0012600029",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-07 23:00:00+00:00",
+   "locked_at": "2026-10-07T06:11:59+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-07T06:11:51Z",
+   "neutral": false,
+   "p_home": 0.4,
+   "margin_home": -2.9,
+   "home": {
+    "team": "IND",
+    "elo": 1379.3,
+    "elo_today": 1401.7,
+    "pulse": 32.8,
+    "tier": "Oslabený",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -125.7,
+     "roster": 15.4,
+     "players": 0.0,
+     "fatigue": 7.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      15
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIN",
+    "elo": 1557.7,
+    "elo_today": 1563.0,
+    "pulse": 59.7,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 52.7,
+     "roster": -8.5,
+     "players": 0.0,
+     "fatigue": 13.8
+    },
+    "reasons": []
+   }
+  },
+  "0012600030": {
+   "game_id": "0012600030",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-08 00:00:00+00:00",
+   "locked_at": "2026-10-07T06:11:59+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-07T06:11:51Z",
+   "neutral": false,
+   "p_home": 0.414,
+   "margin_home": -2.5,
+   "home": {
+    "team": "CHI",
+    "elo": 1384.0,
+    "elo_today": 1370.9,
+    "pulse": 27.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -121.0,
+     "roster": -20.2,
+     "players": 0.0,
+     "fatigue": 7.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -20
+     ]
+    ]
+   },
+   "away": {
+    "team": "PHX",
+    "elo": 1528.3,
+    "elo_today": 1520.0,
+    "pulse": 52.5,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 23.3,
+     "roster": -17.7,
+     "players": 0.0,
+     "fatigue": 9.4
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -18
+     ]
+    ]
+   }
+  },
+  "0012600031": {
+   "game_id": "0012600031",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-08 00:00:00+00:00",
+   "locked_at": "2026-10-07T06:11:59+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-07T06:11:51Z",
+   "neutral": false,
+   "p_home": 0.289,
+   "margin_home": -6.5,
+   "home": {
+    "team": "MEM",
+    "elo": 1334.6,
+    "elo_today": 1298.7,
+    "pulse": 15.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -170.4,
+     "roster": -38.9,
+     "players": 0.0,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -39
+     ]
+    ]
+   },
+   "away": {
+    "team": "ORL",
+    "elo": 1542.7,
+    "elo_today": 1559.4,
+    "pulse": 59.1,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 37.7,
+     "roster": 13.4,
+     "players": 0.0,
+     "fatigue": 3.3
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      13
+     ]
+    ]
+   }
+  },
+  "0012600032": {
+   "game_id": "0012600032",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-08 00:00:00+00:00",
+   "locked_at": "2026-10-07T06:11:59+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-07T06:11:51Z",
+   "neutral": false,
+   "p_home": 0.845,
+   "margin_home": 12.2,
+   "home": {
+    "team": "OKC",
+    "elo": 1687.3,
+    "elo_today": 1640.6,
+    "pulse": 72.6,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 182.3,
+     "roster": 29.5,
+     "players": -34.2,
+     "fatigue": -42.0
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -43
+     ],
+     [
+      "Bez Shai Gilgeous-Alexander (?), Chet Holmgren (?)",
+      -34
+     ],
+     [
+      "Sila súpisky",
+      29
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIL",
+    "elo": 1387.8,
+    "elo_today": 1376.5,
+    "pulse": 28.6,
+    "tier": "Kritický",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -117.2,
+     "roster": -14.7,
+     "players": 0.0,
+     "fatigue": 3.4
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -15
+     ]
+    ]
+   }
+  },
+  "0012600033": {
+   "game_id": "0012600033",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-08 02:00:00+00:00",
+   "locked_at": "2026-10-07T06:11:59+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-07T06:11:51Z",
+   "neutral": false,
+   "p_home": 0.797,
+   "margin_home": 9.9,
+   "home": {
+    "team": "POR",
+    "elo": 1515.8,
+    "elo_today": 1555.2,
+    "pulse": 58.4,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 10.8,
+     "roster": 32.5,
+     "players": 0.0,
+     "fatigue": 7.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      32
+     ]
+    ]
+   },
+   "away": {
+    "team": "GSW",
+    "elo": 1446.7,
+    "elo_today": 1357.2,
+    "pulse": 25.4,
+    "tier": "Kritický",
+    "normal_tier": "Oslabený",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -58.3,
+     "roster": 1.7,
+     "players": -38.1,
+     "fatigue": -53.1
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Bez Jimmy Butler III, Stephen Curry",
+      -38
+     ]
+    ]
+   }
+  }
+ }
+}
