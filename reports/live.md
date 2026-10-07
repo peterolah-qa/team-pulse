@@ -4,7 +4,7 @@ Zo základnej časti zatiaľ nie je uložená žiadna predpoveď. Sezóna začí
 
 ## Príprava (skúška archívu, mimo G2)
 
-Uložené predpovede 6 · s výsledkom 6 · presnosť 50,0 %
+Uložené predpovede 11 · s výsledkom 6 · presnosť 50,0 %
 
 Hviezdy v príprave hrajú menej a model je naučený na základnú časť, takže tieto čísla nič nehovoria o kvalite modelu. Overujú len, že sa predpovede ukladajú a výsledky dopĺňajú.
 
