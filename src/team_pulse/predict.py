@@ -28,7 +28,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from team_pulse.archive import PRED_DIR, lock_games
+from team_pulse.archive import BOX_DIR, PRED_DIR, live_results, lock_games, update_live_results
 from team_pulse.elo import ELO_PER_POINT
 from team_pulse.live.availability import (
     MAX_MIN,
@@ -395,10 +395,29 @@ def upcoming_dates(state: dict, today: pd.Timestamp, days: int) -> list[pd.Times
     return [pd.Timestamp(d) for d in dates[:days]]
 
 
-def results_for_app(state: dict, pred_dir: Path = PRED_DIR) -> list[dict]:
-    """Výsledky posledných dní (zo stavu) doplnené o našu poslednú predpoveď pred zápasom z archívu."""
-    out, cache = [], {}
+RESULT_DAYS = 3
+
+
+def results_for_app(state: dict, pred_dir: Path = PRED_DIR, box_dir: Path = BOX_DIR) -> list[dict]:
+    """Dohrané zápasy posledných 3 hracích dní pre appku a naša posledná predpoveď pred zápasom z archívu.
+
+    Zdroje: ESPN z cloudu (hneď po zápase, aj príprava) a ranný stav z Macu (box score z nba_api).
+    Štatistiky hráčov z Macu majú prednosť, ESPN doplní, čo chýba.
+    """
+    merged: dict[str, dict] = {}
+    for r in live_results(box_dir):
+        merged[r["game_id"]] = {
+            k: r[k] for k in ("game_id", "date", "kind", "home", "away", "pts_home", "pts_away", "box")
+        }
     for r in state.get("results", []):
+        cloud = merged.get(r["game_id"])
+        merged[r["game_id"]] = {**r, "box": r["box"] or (cloud["box"] if cloud else {})}
+    last = sorted({r["date"] for r in merged.values()})[-RESULT_DAYS:]
+    chosen = sorted(
+        (r for r in merged.values() if r["date"] in last), key=lambda r: (r["date"], r["game_id"])
+    )
+    out, cache = [], {}
+    for r in chosen:
         if r["date"] not in cache:
             path = pred_dir / f"{r['date']}.json"
             cache[r["date"]] = json.loads(path.read_text(encoding="utf-8"))["games"] if path.exists() else {}
@@ -428,6 +447,16 @@ def main(date: str | None, days: int, out: Path, archive: bool = False) -> None:
     injuries = match_injuries(parse_injuries(raw_inj), roster_frame(state))
     age = (pd.Timestamp.now(tz="UTC") - pd.Timestamp(raw_inj["timestamp"])).total_seconds() / 3600
     today = today_et()
+
+    if archive:  # cloud: výsledky a štatistiky hráčov z ESPN hneď po zápasoch
+        from team_pulse.live.boxscore import fetch_summary
+        from team_pulse.live.scoreboard import fetch_scoreboard
+
+        try:
+            done = update_live_results(schedule_frame(state), today, fetch_scoreboard, fetch_summary)
+            print(f"Výsledky z ESPN: +{len(done)}" + (f" ({', '.join(done)})" if done else ""))
+        except Exception as e:  # predpovede nesmú spadnúť kvôli výsledkom
+            print(f"Výsledky z ESPN nedostupné: {e.__class__.__name__}: {e}")
 
     targets = [pd.Timestamp(date)] if date else upcoming_dates(state, today, days)
     by_date = {str(t.date()): predict_from_state(state, injuries, model, t, age) for t in targets}

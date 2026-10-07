@@ -61,8 +61,13 @@ def test_lock_inside_window(tmp_path):
 
 
 def test_no_lock_too_early(tmp_path):
-    assert lock_games({"2026-10-20": [game()]}, META, at("2026-10-20 21:29"), tmp_path) == []
+    assert lock_games({"2026-10-20": [game()]}, META, at("2026-10-19 23:29"), tmp_path) == []
     assert not (tmp_path / "2026-10-20.json").exists()
+
+
+def test_lock_a_day_ahead(tmp_path):
+    """GitHub plánované behy vynecháva, preto sa ukladá už 24 h vopred a prepisuje až do začiatku."""
+    assert lock_games({"2026-10-20": [game()]}, META, at("2026-10-19 23:31"), tmp_path) == ["CHI @ DET"]
 
 
 def test_no_lock_after_tipoff(tmp_path):
@@ -94,7 +99,7 @@ def test_late_game_keeps_us_date(tmp_path):
     """Zápas z 20. 10. o 22:00 ET je v UTC už 21. 10.; súbor má dátum zápasu v USA."""
     late = game(gid="0022600002", tip="2026-10-21 02:00:00+00:00", home="LAL", away="GSW")
     lock_games({"2026-10-20": [game(), late]}, META, at("2026-10-21 01:00"), tmp_path)
-    assert list(saved(tmp_path)) == ["0022600002"]
+    assert list(saved(tmp_path)) == ["0022600002"]  # 1. zápas už začal, ten neskorý ešte nie
 
 
 def test_missing_tipoff_is_skipped(tmp_path):
@@ -257,9 +262,155 @@ def test_results_for_app_add_our_prediction(tmp_path):
     lock_games({"2026-10-20": [game(p=0.62)]}, META, at("2026-10-20 23:00"), tmp_path)
     state = {
         "results": [
-            {"game_id": "0022600001", "date": "2026-10-20", "home": "DET", "away": "CHI"},
-            {"game_id": "0022600005", "date": "2026-10-20", "home": "MIA", "away": "ORL"},
-            {"game_id": "0022600009", "date": "2026-10-19", "home": "LAL", "away": "GSW"},
+            {"game_id": "0022600001", "date": "2026-10-20", "home": "DET", "away": "CHI", "box": {}},
+            {"game_id": "0022600005", "date": "2026-10-20", "home": "MIA", "away": "ORL", "box": {}},
+            {"game_id": "0022600009", "date": "2026-10-19", "home": "LAL", "away": "GSW", "box": {}},
         ]
     }
-    assert [r["p_home"] for r in results_for_app(state, tmp_path)] == [0.62, None, None]
+    assert [r["p_home"] for r in results_for_app(state, tmp_path, tmp_path / "box")] == [None, 0.62, None]
+
+
+# --- výsledky a štatistiky hráčov z ESPN (cloud) -------------------------------------------
+
+
+def espn_event(eid, home, away, completed=True, pts=(100, 90), slug="regular-season"):
+    return {
+        "id": eid,
+        "date": "2026-10-20T23:00Z",
+        "season": {"year": 2027, "type": 2, "slug": slug},
+        "competitions": [
+            {
+                "neutralSite": False,
+                "status": {"type": {"state": "post" if completed else "in", "completed": completed}},
+                "competitors": [
+                    {"homeAway": "home", "team": {"abbreviation": home}, "score": str(pts[0])},
+                    {"homeAway": "away", "team": {"abbreviation": away}, "score": str(pts[1])},
+                ],
+            }
+        ],
+    }
+
+
+def our_schedule():
+    return pd.DataFrame(
+        {
+            "game_id": ["0022600001"],
+            "date": pd.to_datetime(["2026-10-20"]),
+            "kind": ["regular"],
+            "home": ["UTA"],
+            "away": ["DEN"],
+        }
+    )
+
+
+class Espn:
+    def __init__(self, events):
+        self.events, self.summaries = events, []
+
+    def scoreboard(self, day):
+        return {"events": self.events if day == "20261020" else []}
+
+    def summary(self, espn_id):
+        self.summaries.append(espn_id)
+        return json.loads(open("tests/fixtures/espn_summary.json", encoding="utf-8").read())
+
+
+def test_parse_boxscore_from_espn_summary():
+    from team_pulse.live.boxscore import parse_boxscore
+
+    box = parse_boxscore(json.loads(open("tests/fixtures/espn_summary.json", encoding="utf-8").read()))
+    assert set(box) == {"UTA", "DEN"}  # ESPN „UTAH“ → UTA
+    assert box["UTA"][0] == {
+        "player": "Jaren Jackson Jr.",
+        "min": 18,
+        "pts": 11,
+        "reb": 6,
+        "ast": 1,
+        "blk": 2,
+        "stl": 0,
+    }
+    assert [p["player"] for p in box["UTA"]] == [
+        "Jaren Jackson Jr.",
+        "Lauri Markkanen",
+    ]  # bez DNP, podľa minút
+    assert box["DEN"][0]["player"] == "Nikola Jokić" and box["DEN"][0]["reb"] == 9
+
+
+def test_live_results_saved_once_per_game(tmp_path):
+    from team_pulse.archive import update_live_results
+
+    espn = Espn(
+        [
+            espn_event("1", "UTAH", "DEN"),  # dohraný, v našom rozpise
+            espn_event("2", "BOS", "NY", completed=False),  # ešte sa hrá
+            espn_event("3", "PHX", "XYZ"),  # klub mimo NBA
+            espn_event("4", "MIA", "ORL", slug="preseason"),  # dohraný, nie je v rozpise
+        ]
+    )
+    today = pd.Timestamp("2026-10-21")
+    added = update_live_results(our_schedule(), today, espn.scoreboard, espn.summary, tmp_path)
+    assert added == ["DEN @ UTA", "ORL @ MIA"] and espn.summaries == ["1", "4"]
+    games = json.loads((tmp_path / "2026-10-20.json").read_text(encoding="utf-8"))["games"]
+    assert games["0022600001"]["kind"] == "regular" and games["0022600001"]["pts_home"] == 100
+    assert games["0022600001"]["box"]["UTA"][0]["player"] == "Jaren Jackson Jr."
+    assert games["espn-4"]["kind"] == "preseason"
+
+    assert update_live_results(our_schedule(), today, espn.scoreboard, espn.summary, tmp_path) == []
+    assert espn.summaries == ["1", "4"]  # box score sa druhýkrát nesťahuje
+
+    espn.events[0] = espn_event("1", "UTAH", "DEN", pts=(101, 90))  # opravené skóre
+    assert update_live_results(our_schedule(), today, espn.scoreboard, espn.summary, tmp_path) == [
+        "DEN @ UTA"
+    ]
+
+
+def test_live_results_survive_box_score_error(tmp_path):
+    from team_pulse.archive import update_live_results
+
+    espn = Espn([espn_event("1", "UTAH", "DEN")])
+
+    def broken(_):
+        raise ConnectionError("ESPN nedostupné")
+
+    today = pd.Timestamp("2026-10-21")
+    assert update_live_results(our_schedule(), today, espn.scoreboard, broken, tmp_path) == ["DEN @ UTA"]
+    assert saved(tmp_path)["0022600001"]["box"] == {}  # skóre je, štatistiky sa skúsia znova
+    assert update_live_results(our_schedule(), today, espn.scoreboard, espn.summary, tmp_path) == [
+        "DEN @ UTA"
+    ]
+    assert saved(tmp_path)["0022600001"]["box"]
+
+
+def test_results_for_app_merge_cloud_and_mac(tmp_path):
+    from team_pulse.archive import update_live_results
+    from team_pulse.predict import results_for_app
+
+    box_dir = tmp_path / "box"
+    espn = Espn([espn_event("1", "UTAH", "DEN"), espn_event("4", "MIA", "ORL", slug="preseason")])
+    update_live_results(our_schedule(), pd.Timestamp("2026-10-21"), espn.scoreboard, espn.summary, box_dir)
+    mac_box = {
+        "UTA": [{"player": "Mac", "min": 30, "pts": 1, "reb": 1, "ast": 1, "blk": 1, "stl": 1}],
+        "DEN": [],
+    }
+    state = {
+        "results": [
+            {"game_id": "0022600001", "date": "2026-10-20", "kind": "regular", "home": "UTA", "away": "DEN",
+             "pts_home": 100, "pts_away": 90, "box": mac_box},
+            {"game_id": "0012600001", "date": "2026-10-16", "kind": "preseason", "home": "LAL", "away": "GSW",
+             "pts_home": 99, "pts_away": 98, "box": {}},
+            {"game_id": "0012600002", "date": "2026-10-15", "kind": "preseason", "home": "LAL", "away": "GSW",
+             "pts_home": 99, "pts_away": 98, "box": {}},
+            {"game_id": "0012600003", "date": "2026-10-14", "kind": "preseason", "home": "LAL", "away": "GSW",
+             "pts_home": 99, "pts_away": 98, "box": {}},
+        ]
+    }  # fmt: skip
+    res = results_for_app(state, tmp_path / "pred", box_dir)
+    assert [r["game_id"] for r in res] == [
+        "0012600002",
+        "0012600001",
+        "0022600001",
+        "espn-4",
+    ]  # posledné 3 dni
+    by_id = {r["game_id"]: r for r in res}
+    assert by_id["0022600001"]["box"] == mac_box  # Mac má prednosť
+    assert by_id["espn-4"]["box"]["UTA"]  # príprava len z ESPN, aj so štatistikami

@@ -206,7 +206,7 @@ test("výsledky: skóre, náš tip a štatistiky hráčov podľa súpisky", asyn
   expect(width).toBeLessThanOrEqual(0);
 
   await open(page, "#/vysledok/0012600050");
-  await expect(page.locator(".empty")).toContainText("Z prípravy máme len skóre");
+  await expect(page.locator(".empty")).toContainText("Štatistiky hráčov zatiaľ nie sú");
   await open(page, "#/vysledok/neznamy");
   await expect(page.locator(".empty")).toContainText("Výsledok sa nenašiel");
 });

@@ -80,3 +80,40 @@ def test_same_state_ignores_generated_at(tmp_path):
     path.write_text(json.dumps({"generated_at": "2026-09-27T10:00:00", "a": 1}))
     assert same_state(path, {"generated_at": "2026-09-28T10:00:00", "a": 1})
     assert not same_state(path, {"generated_at": "2026-09-28T10:00:00", "a": 2})
+
+
+def test_git_error_shows_message(tmp_path):
+    import pytest
+
+    from team_pulse.daily import _git
+
+    with pytest.raises(RuntimeError, match="not a git repository"):
+        _git("status", cwd=tmp_path)
+
+
+def test_git_pull_retries_then_succeeds(monkeypatch):
+    import team_pulse.daily as daily
+
+    calls = []
+
+    def flaky(*args, cwd=None):
+        calls.append(args)
+        if len(calls) < 3:
+            raise RuntimeError("git pull: Could not resolve host: github.com")
+
+    monkeypatch.setattr(daily, "_git", flaky)
+    daily.git_pull(tries=5, wait_s=0)
+    assert len(calls) == 3
+
+
+def test_git_pull_gives_up_after_last_try(monkeypatch):
+    import pytest
+
+    import team_pulse.daily as daily
+
+    def down(*args, cwd=None):
+        raise RuntimeError("git pull: Could not resolve host: github.com")
+
+    monkeypatch.setattr(daily, "_git", down)
+    with pytest.raises(RuntimeError, match="resolve host"):
+        daily.git_pull(tries=2, wait_s=0)

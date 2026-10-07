@@ -1,10 +1,12 @@
 """Archív predpovedí a vyhodnotenie ostrej prevádzky (brána G2).
 
-Cloud (predict.yml, každých 15 minút večer a v noci, predict --archive):
-  lock_games   zápasy, ktoré začínajú do 2 hodín, uloží do archive/predictions/<dátum>.json.
+Cloud (predict.yml, večer a v noci, predict --archive):
+  lock_games   zápasy, ktoré začínajú do 24 hodín, uloží do archive/predictions/<dátum>.json.
                Kým zápas nezačal, záznam prepíše novšia predpoveď (len ak sa zmenila).
                Po začiatku zápasu sa záznam už nikdy nemení, takže v archíve ostane
                posledná predpoveď pred zápasom a nič z priebehu zápasu.
+               Okno je 24 h, lebo GitHub plánované behy často vynechá a zápas nesmie ostať bez predpovede.
+  update_live_results  dohrané zápasy z ESPN (skóre + štatistiky hráčov) → archive/boxscores/<dátum>.json
 Mac (daily, ráno):
   fill_results k uloženým zápasom doplní výsledok z histórie → archive/results/<dátum>.json
   update       reports/live.md: presnosť, log loss, Brier, kalibrácia, porovnanie s backtestom
@@ -27,7 +29,9 @@ from team_pulse.backtest import calibration, metrics
 PRED_DIR = Path("archive/predictions")
 RESULT_DIR = Path("archive/results")
 LIVE_REPORT = Path("reports/live.md")
-LOCK_BEFORE = pd.Timedelta(hours=2)
+LOCK_BEFORE = pd.Timedelta(hours=24)
+BOX_DIR = Path("archive/boxscores")
+LIVE_DAYS = 3  # koľko posledných dní (ET) kontrolovať na ESPN
 PRESEASON = "preseason"
 VOLATILE = {"locked_at", "injuries_timestamp"}  # zmena len v týchto poliach nie je nová predpoveď
 SIDE_KEYS = [
@@ -299,3 +303,77 @@ def update(
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(report(archived, backtest, missing_games(games, archived)), encoding="utf-8")
     return added
+
+
+def update_live_results(
+    schedule: pd.DataFrame,
+    today: pd.Timestamp,
+    fetch_scoreboard,
+    fetch_summary,
+    box_dir: Path = BOX_DIR,
+    days: int = LIVE_DAYS,
+) -> list[str]:
+    """Cloud: dohrané zápasy posledných dní z ESPN → archive/boxscores/<dátum>.json.
+
+    Uloží skóre a štatistiky hráčov. Box score každého zápasu sa stiahne len raz
+    (znova len keď ešte chýbal alebo sa zmenilo skóre). Vráti zápasy, ktoré pribudli.
+    """
+    from team_pulse.live.boxscore import parse_boxscore
+    from team_pulse.live.scoreboard import parse_scoreboard
+
+    ours = {}
+    for r in schedule.itertuples():
+        ours[(str(pd.Timestamp(r.date).date()), r.home, r.away)] = (
+            str(r.game_id),
+            getattr(r, "kind", "regular"),
+        )
+    added = []
+    for back in range(days - 1, -1, -1):
+        day = pd.Timestamp(today).normalize() - pd.Timedelta(days=back)
+        iso = str(day.date())
+        path = box_dir / f"{iso}.json"
+        data = _read(path) or {"date": iso, "games": {}}
+        dirty = False
+        for ev in fetch_scoreboard(day.strftime("%Y%m%d")).get("events", []):
+            try:
+                r = parse_scoreboard({"events": [ev]}).iloc[0]
+            except KeyError:
+                continue  # príprava proti klubu mimo NBA
+            if not r.completed:
+                continue
+            espn_kind = "preseason" if ev.get("season", {}).get("slug") == "preseason" else "regular"
+            gid, kind = ours.get((iso, r.home, r.away), (f"espn-{r.espn_id}", espn_kind))
+            score = (int(r.pts_home), int(r.pts_away))
+            old = data["games"].get(gid)
+            if old and old["box"] and (old["pts_home"], old["pts_away"]) == score:
+                continue
+            try:
+                box = parse_boxscore(fetch_summary(str(r.espn_id)))
+            except Exception as e:  # skúsi sa znova pri ďalšom behu
+                print(f"Box score {r.away} @ {r.home}: {e.__class__.__name__}: {e}")
+                box = {}
+            data["games"][gid] = {
+                "game_id": gid,
+                "espn_id": str(r.espn_id),
+                "date": iso,
+                "kind": kind,
+                "home": r.home,
+                "away": r.away,
+                "pts_home": score[0],
+                "pts_away": score[1],
+                "box": box,
+            }
+            added.append(f"{r.away} @ {r.home}")
+            dirty = True
+        if dirty:
+            data["games"] = dict(sorted(data["games"].items()))
+            _write(path, data)
+    return added
+
+
+def live_results(box_dir: Path = BOX_DIR, files: int = 5) -> list[dict]:
+    """Výsledky z ESPN uložené v archíve (posledné dni)."""
+    out = []
+    for path in sorted(box_dir.glob("*.json"))[-files:]:
+        out.extend(_read(path)["games"].values())
+    return out

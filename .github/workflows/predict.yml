@@ -4,8 +4,9 @@ name: Predikcie
 # + stav z Macu (state/state.json) → predpovede (JSON) → build appky → GitHub Pages.
 on:
   schedule:
-    - cron: "*/15 14-23 * * *"
-    - cron: "*/15 0-6 * * *"
+    # minúty mimo celých štvrťhodín: GitHub v špičke (začiatok hodiny) plánované behy odkladá alebo vynecháva
+    - cron: "7,22,37,52 14-23 * * *"
+    - cron: "7,22,37,52 0-6 * * *"
   push:
     branches: [main]
     paths: ["state/state.json", "models/**", "app/**", "src/team_pulse/**", ".github/workflows/predict.yml"]
@@ -35,7 +36,7 @@ jobs:
       - name: Python a knižnice podľa uv.lock
         run: uv sync --locked
 
-      - name: Predpovede na 3 najbližšie hracie dni → app/public/data (+ archív pred začiatkom zápasov)
+      - name: Predpovede na 3 najbližšie hracie dni → app/public/data (+ archív, výsledky z ESPN)
         run: uv run python -m team_pulse.predict --days 3 --out app/public/data --archive
 
       - name: Node.js
@@ -60,10 +61,10 @@ jobs:
         id: deploy
         uses: actions/deploy-pages@v4
 
-      - name: Archív predpovedí → repo (len keď pribudol alebo sa zmenil zápas pred začiatkom)
+      - name: Archív predpovedí a výsledkov z ESPN → repo (len keď sa niečo zmenilo)
         run: |
-          [ -d archive/predictions ] || { echo "Archív zatiaľ prázdny"; exit 0; }
-          git add archive/predictions
+          [ -d archive ] || { echo "Archív zatiaľ prázdny"; exit 0; }
+          git add archive
           if git diff --cached --quiet; then echo "Archív bez zmeny"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

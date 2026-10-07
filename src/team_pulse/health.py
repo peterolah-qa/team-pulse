@@ -3,7 +3,8 @@
 Kontroluje:
   * ESPN zranenia: dostupné, známe teamy a typy zranení, nie staršie ako 12 h
   * ESPN scoreboard: dostupný a čitateľný
-  * state/state.json: ak sa odohrali zápasy a stav o nich nevie → denná aktualizácia z Macu neprebehla
+  * state/state.json: ak sa odohrali zápasy (aj príprava) a stav o nich nevie
+    → denná aktualizácia z Macu neprebehla
 
 Spustenie:  uv run python -m team_pulse.health
 """
@@ -55,14 +56,15 @@ def check_state(state: dict, today: pd.Timestamp) -> list[str]:
     sched = schedule_frame(state)
     if sched.empty:
         return []
-    if "kind" in sched:
-        sched = sched[sched["kind"] != "preseason"]  # výsledky prípravy v histórii nie sú
     cutoff = today.normalize() - pd.Timedelta(days=RESULT_LAG_DAYS)
     played = sched[sched["date"] <= cutoff]
     if played.empty:
         return []
     expected = played["date"].max()
-    last = pd.Timestamp(state["last_result"])
+    # výsledky prípravy nie sú v histórii (last_result), ale Mac ich dáva do state["results"]
+    last = max(
+        pd.Timestamp(d) for d in [state["last_result"], *(r["date"] for r in state.get("results", []))]
+    )
     if expected > last:
         return [
             f"Stav: posledný výsledok {last.date()}, ale zápasy sa hrali aj {expected.date()} "

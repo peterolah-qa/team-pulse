@@ -56,8 +56,8 @@ flowchart LR
 
 - **Mac** robí ťažkú prácu, lebo stats.nba.com často blokuje požiadavky z cloudových serverov. Výsledkom je malý súbor stavu.
 - **GitHub Actions** každých 15 minút stiahne zranenia, prepočíta predpovede a nasadí appku.
-- **Archív predpovedí:** 2 hodiny pred zápasom cloud uloží predpoveď do `archive/predictions/`, kým zápas nezačne, prepisuje ju novšou; po začiatku sa už nemení. Mac ráno doplní výsledky (`archive/results/`) a prepíše [reports/live.md](reports/live.md) s presnosťou, log loss a kalibráciou ostrej prevádzky.
-- **Výsledky:** na obrazovke Dnes sú dohrané zápasy posledných 3 hracích dní so skóre a naším tipom pred zápasom; v detaile štatistiky hráčov (minúty, body, doskoky, asistencie, bloky, zisky) z box score, ktoré ráno sťahuje Mac.
+- **Archív predpovedí:** do 24 hodín pred zápasom cloud uloží predpoveď do `archive/predictions/`, kým zápas nezačne, prepisuje ju novšou; po začiatku sa už nemení. (GitHub plánované behy často vynecháva, preto široké okno.) Mac ráno doplní výsledky (`archive/results/`) a prepíše [reports/live.md](reports/live.md) s presnosťou, log loss a kalibráciou ostrej prevádzky.
+- **Výsledky:** na obrazovke Dnes sú dohrané zápasy posledných 3 hracích dní so skóre a naším tipom pred zápasom; v detaile štatistiky hráčov (minúty, body, doskoky, asistencie, bloky, zisky). Cloud ich berie z ESPN hneď po zápase (aj z prípravy) a ukladá do `archive/boxscores/`; ranný box score z Macu (nba_api) má prednosť.
 - **Príprava:** prípravné zápasy appka ukazuje so štítkom PRÍPRAVA. Do Ela, únavy v sezóne ani do vyhodnotenia sa nerátajú; v archíve slúžia ako skúška pred sezónou.
 - **Náklady: 0 €.** Repo je verejné, Pages a Actions sú zadarmo a všetky zdroje dát sú voľné.
 
@@ -137,7 +137,7 @@ tests/              pytest + Hypothesis + fixtures živých zdrojov
 app/                PWA: Vite + TypeScript bez frameworku, Playwright testy
 models/v1.json      naučený model (váhy, kalibrácia, metriky)
 state/state.json    denný stav z Macu
-archive/            posledné predpovede pred zápasmi (cloud) a ich výsledky (Mac)
+archive/            posledné predpovede pred zápasmi a výsledky z ESPN (cloud), výsledky pre report (Mac)
 reports/, docs/     backtest, naučené váhy, vyhodnotenia brán
 ```
 

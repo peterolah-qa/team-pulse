@@ -17,7 +17,8 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
-from datetime import date
+import time
+from datetime import date, datetime
 from pathlib import Path
 
 import pandas as pd
@@ -63,13 +64,30 @@ def same_state(path: Path, state: dict) -> bool:
     return strip(json.loads(path.read_text(encoding="utf-8"))) == strip(state)
 
 
+PULL_TRIES = 5
+PULL_WAIT_S = 30  # po prebudení Macu sa Wi-Fi pripája niekoľko sekúnd
+
+
 def _git(*args: str, cwd: Path | None = None) -> None:
-    subprocess.run(["git", *args], cwd=cwd, check=True, capture_output=True, text=True)
+    r = subprocess.run(["git", *args], cwd=cwd, capture_output=True, text=True)
+    if r.returncode != 0:  # chybu gitu vypíš do logu, nie len „exit status 1“
+        raise RuntimeError(f"git {' '.join(args)}: {(r.stderr or r.stdout).strip()}")
 
 
-def git_pull(cwd: Path | None = None) -> None:
-    """Stiahne novinky (napr. archív z cloudu). Neuložené lokálne zmeny odloží a vráti späť."""
-    _git("pull", "--rebase", "--autostash", cwd=cwd)
+def git_pull(cwd: Path | None = None, tries: int = PULL_TRIES, wait_s: float = PULL_WAIT_S) -> None:
+    """Stiahne novinky (napr. archív z cloudu). Neuložené lokálne zmeny odloží a vráti späť.
+
+    Pri chybe to skúsi znova (sieť po prebudení Macu); po poslednom pokuse vyhodí chybu.
+    """
+    for attempt in range(1, tries + 1):
+        try:
+            _git("pull", "--rebase", "--autostash", cwd=cwd)
+            return
+        except RuntimeError as e:
+            if attempt == tries:
+                raise
+            print(f"{e} → pokus {attempt}/{tries}, ďalší o {wait_s:.0f} s")
+            time.sleep(wait_s)
 
 
 def git_commit_if_changed(
@@ -99,8 +117,12 @@ def main(push: bool) -> None:
     from team_pulse.predict import MODEL
     from team_pulse.state import STATE, build_state, save_state
 
+    print(f"=== {datetime.now():%Y-%m-%d %H:%M} ===")
     if push:
-        git_pull()
+        try:
+            git_pull()
+        except RuntimeError as e:  # pokračuj, pred odoslaním sa pull skúsi znova
+            print(f"Stiahnutie noviniek zlyhalo, pokračujem: {e}")
     schedule = parse_schedule(fetch_schedule(), include_preseason=True)
     season = int(schedule["season"].max())
 

@@ -54,7 +54,7 @@ export function resultView(d: AppData, id: string): string {
   const teams = [r.home, r.away];
   const box = teams.every((x) => r.box[x]?.length)
     ? teams.map((x) => boxTable(x, r.box[x])).join("")
-    : `<p class="empty">${r.kind === "preseason" ? "Z prípravy máme len skóre, štatistiky hráčov nesťahujeme." : "Štatistiky hráčov zatiaľ nie sú, doplnia sa pri rannej aktualizácii."}</p>`;
+    : `<p class="empty">Štatistiky hráčov zatiaľ nie sú, doplnia sa pri ďalšej aktualizácii.</p>`;
   return `${header(`${dayLabel(r.date)} · VÝSLEDOK${r.kind === "preseason" ? " · PRÍPRAVA" : ""}`, `${teamLink(r.home)} <span class="num">${r.pts_home} : ${r.pts_away}</span> ${teamLink(r.away)}`, `doma<br>${esc(TEAM_NAMES[r.home] ?? r.home)}`)}
     <p class="small note">${tip}</p>
     ${box}

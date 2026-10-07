@@ -70,8 +70,16 @@ def test_state_before_season_is_not_stale():
     assert check_state(s, pd.Timestamp("2026-09-27")) == []
 
 
-def test_preseason_games_do_not_make_state_stale():
-    """Výsledky prípravy v histórii nie sú, takže odohraná príprava nesmie hlásiť výpadok Macu."""
+def test_preseason_results_from_mac_keep_state_fresh():
+    """Výsledky prípravy nie sú v histórii, Mac ich dáva do state["results"]."""
     s = state("2026-06-13", ["2026-10-08", "2026-10-20"])
     s["schedule"][0]["kind"] = "preseason"
+    s["results"] = [{"date": "2026-10-08"}]
     assert check_state(s, pd.Timestamp("2026-10-12")) == []
+
+
+def test_missed_mac_run_detected_in_preseason():
+    s = state("2026-06-13", ["2026-10-05", "2026-10-06", "2026-10-20"])
+    s["results"] = [{"date": "2026-10-04"}]
+    problems = check_state(s, pd.Timestamp("2026-10-09"))
+    assert problems and "neprebehla" in problems[0]
