@@ -219,107 +219,112 @@
    "game_id": "0012600005",
    "kind": "preseason",
    "tipoff_utc": "2026-10-09 00:00:00+00:00",
-   "locked_at": "2026-10-08T19:48:39+00:00",
+   "locked_at": "2026-10-08T23:59:06+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-08T19:48:32Z",
+   "injuries_timestamp": "2026-10-08T23:58:56Z",
    "neutral": false,
-   "p_home": 0.798,
-   "margin_home": 9.9,
+   "p_home": 0.823,
+   "margin_home": 11.1,
    "home": {
     "team": "SAS",
     "elo": 1702.5,
-    "elo_today": 1732.3,
-    "pulse": 87.9,
+    "elo_today": 1735.5,
+    "pulse": 88.4,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 197.5,
-     "roster": 26.3,
-     "players": -3.5,
+     "roster": 30.0,
+     "players": -4.1,
      "fatigue": 7.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      26
+      30
      ]
     ]
    },
    "away": {
     "team": "ATL",
     "elo": 1531.2,
-    "elo_today": 1533.1,
-    "pulse": 54.7,
-    "tier": "Stabilný",
+    "elo_today": 1503.3,
+    "pulse": 49.7,
+    "tier": "Oslabený",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 26.2,
-     "roster": -0.7,
-     "players": 0.0,
+     "roster": 3.1,
+     "players": -33.6,
      "fatigue": 2.5
     },
-    "reasons": []
+    "reasons": [
+     [
+      "Bez Jalen Johnson",
+      -34
+     ]
+    ]
    }
   },
   "0012600036": {
    "game_id": "0012600036",
    "kind": "preseason",
    "tipoff_utc": "2026-10-09 02:30:00+00:00",
-   "locked_at": "2026-10-08T19:48:39+00:00",
+   "locked_at": "2026-10-08T23:59:06+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-08T19:48:32Z",
+   "injuries_timestamp": "2026-10-08T23:58:56Z",
    "neutral": false,
    "p_home": 0.806,
    "margin_home": 10.3,
    "home": {
     "team": "LAL",
     "elo": 1569.2,
-    "elo_today": 1563.9,
-    "pulse": 59.8,
+    "elo_today": 1567.7,
+    "pulse": 60.5,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "nízka",
     "layers": {
      "strength": 64.2,
-     "roster": 38.6,
+     "roster": 42.4,
      "players": -40.9,
      "fatigue": -3.0
     },
     "reasons": [
      [
-      "Bez Luka Dončić (?), Austin Reaves (?)",
-      -41
+      "Sila súpisky",
+      42
      ],
      [
-      "Sila súpisky",
-      39
+      "Bez Luka Dončić (?), Austin Reaves (?)",
+      -41
      ]
     ]
    },
    "away": {
     "team": "SAC",
     "elo": 1374.4,
-    "elo_today": 1354.0,
-    "pulse": 24.8,
+    "elo_today": 1357.8,
+    "pulse": 25.5,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -130.6,
-     "roster": -23.9,
+     "roster": -20.1,
      "players": 0.0,
      "fatigue": 3.5
     },
     "reasons": [
      [
       "Sila súpisky",
-      -24
+      -20
      ]
     ]
    }
