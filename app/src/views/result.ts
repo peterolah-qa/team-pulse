@@ -1,6 +1,6 @@
 /* Výsledky: dohrané zápasy po dňoch v našom čase, náš tip (nevyšiel = celý červený) a štatistiky hráčov. */
 import type { AppData, BoxRow, Result } from "../data";
-import { dayHeading, esc, groupBy, header, localDay, longDate, parseUtc, split, TEAM_NAMES, time } from "../ui";
+import { coin, dayHeading, esc, groupBy, header, localDay, longDate, parseUtc, split, TEAM_NAMES, time } from "../ui";
 import { isPre } from "./games";
 
 const COLS: [keyof BoxRow, string, string][] = [
@@ -34,7 +34,7 @@ function verdict(r: Result): string {
 export function resultRow(r: Result): string {
   const homeWon = r.pts_home > r.pts_away;
   const line = (team: string, pts: number, won: boolean, home: boolean) => `<div class="tl${won ? " won" : ""}">
-      <span class="abbr">${esc(team)}</span>${home ? `<span class="home">doma</span>` : ""}<span class="val">${pts}</span></div>`;
+      ${coin(team)}<span class="abbr">${esc(team)}</span>${home ? `<span class="home">doma</span>` : ""}<span class="val">${pts}</span></div>`;
   return `<li><a class="match result ${resultClass(r)}" href="#/vysledok/${esc(r.game_id)}">
     <div class="when"><span class="clock">${time(r.tipoff_utc)}</span>${isPre(r) ? `<span class="tag">príprava</span>` : ""}</div>
     <div class="teams">${line(r.away, r.pts_away, !homeWon, false)}${line(r.home, r.pts_home, homeWon, true)}</div>
@@ -84,8 +84,8 @@ export function resultView(d: AppData, id: string): string {
   return `${header(`${esc(r.away)} <span class="at">@</span> ${esc(r.home)}`, `${esc(day)}${time(r.tipoff_utc) ? `, ${time(r.tipoff_utc)}` : ""}${isPre(r) ? " · príprava" : ""}`, back)}
     <section class="card hero score ${resultClass(r)}">
       <div class="duel">
-        <div class="side${!homeWon ? " won" : ""}"><a class="abbr big" href="#/team/${esc(r.away)}">${esc(r.away)}</a><span class="small muted">hostia</span><span class="pct num">${r.pts_away}</span></div>
-        <div class="side${homeWon ? " won" : ""}"><a class="abbr big" href="#/team/${esc(r.home)}">${esc(r.home)}</a><span class="small muted">doma</span><span class="pct num">${r.pts_home}</span></div>
+        <div class="side${!homeWon ? " won" : ""}">${coin(r.away, true)}<a class="tname" href="#/team/${esc(r.away)}">${esc(TEAM_NAMES[r.away] ?? r.away)}</a><span class="small muted">hostia</span><span class="pct num">${r.pts_away}</span></div>
+        <div class="side${homeWon ? " won" : ""}">${coin(r.home, true)}<a class="tname" href="#/team/${esc(r.home)}">${esc(TEAM_NAMES[r.home] ?? r.home)}</a><span class="small muted">doma</span><span class="pct num">${r.pts_home}</span></div>
       </div>
       <p class="verdict">${t ? `Náš tip pred zápasom: <b>${esc(t.fav)} ${t.p} %</b> · <b class="${t.hit ? "pos" : "neg"}">${t.hit ? "vyšiel" : "nevyšiel"}</b>` : "Tip pred týmto zápasom sa neuložil."}</p>
     </section>

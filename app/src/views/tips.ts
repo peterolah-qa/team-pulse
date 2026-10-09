@@ -2,7 +2,7 @@
    Pri každom riadku je aj šanca, že vyjdú všetky tipy od prvého po tento (šance sa násobia). */
 import type { AppData, Game } from "../data";
 import { allGames } from "../data";
-import { esc, header, localDay, parseUtc, shortDate, split, time, when } from "../ui";
+import { coin, esc, header, localDay, parseUtc, shortDate, split, time, when } from "../ui";
 import { isPre } from "./games";
 
 export interface Tip {
@@ -35,7 +35,7 @@ export function tipsView(d: AppData): string {
     const where = g.neutral ? "proti" : t.home ? "doma s" : "@";
     return `<li><a class="tiprow" href="#/zapas/${esc(g.game_id)}">
       <span class="rank num">${i + 1}</span>
-      <span class="tipmain"><span class="abbr">${esc(t.team)}</span> <span class="muted">${where} ${esc(t.opp)}</span>
+      <span class="tipmain">${coin(t.team)}<span class="abbr">${esc(t.team)}</span> <span class="muted">${where} ${esc(t.opp)}</span>
         <span class="tipmeta">${esc(shortDate(localDay(g.tipoff_utc, g.date)))} ${time(g.tipoff_utc)}${isPre(g) ? ` <span class="tag">príprava</span>` : ""}</span></span>
       <span class="tipp num">${t.home ? split(g.p_home).home : split(g.p_home).away} %</span>
       ${i ? `<span class="acc">tipy 1 – ${i + 1} spolu: <b class="num">${Math.round(all * 100)} %</b></span>` : `<span class="acc">najistejší tip</span>`}

@@ -12,6 +12,24 @@ export const TEAM_NAMES: Record<string, string> = {
   UTA: "Utah Jazz", WAS: "Washington Wizards",
 };
 
+/* Farby teamov (dve hlavné farby dresu) – len farby, žiadne logá. */
+export const TEAM_COLORS: Record<string, [string, string]> = {
+  ATL: ["#e03a3e", "#c4d600"], BOS: ["#007a33", "#ba9653"], BKN: ["#1b1b1b", "#ffffff"], CHA: ["#1d1160", "#00788c"],
+  CHI: ["#ce1141", "#1b1b1b"], CLE: ["#860038", "#fdbb30"], DAL: ["#00538c", "#b8c4ca"], DEN: ["#0e2240", "#fec524"],
+  DET: ["#c8102e", "#1d42ba"], GSW: ["#1d428a", "#ffc72c"], HOU: ["#ce1141", "#c4ced4"], IND: ["#002d62", "#fdbb30"],
+  LAC: ["#c8102e", "#1d428a"], LAL: ["#552583", "#fdb927"], MEM: ["#5d76a9", "#12173f"], MIA: ["#98002e", "#f9a01b"],
+  MIL: ["#00471b", "#eee1c6"], MIN: ["#0c2340", "#78be20"], NOP: ["#0c2340", "#c8102e"], NYK: ["#006bb6", "#f58426"],
+  OKC: ["#007ac1", "#ef3b24"], ORL: ["#0077c0", "#c4ced4"], PHI: ["#006bb6", "#ed174c"], PHX: ["#1d1160", "#e56020"],
+  POR: ["#e03a3e", "#1b1b1b"], SAC: ["#5a2d81", "#63727a"], SAS: ["#c4ced4", "#1b1b1b"], TOR: ["#ce1141", "#a1a1a4"],
+  UTA: ["#4b2a87", "#f9a01b"], WAS: ["#002b5c", "#e31837"],
+};
+
+/* 3D minca vo farbách teamu (dvojfarebný dres, lesk a hĺbka). S textom = veľká minca v detaile. */
+export function coin(abbr: string, label = false): string {
+  const [c1, c2] = TEAM_COLORS[abbr] ?? ["#3a3f55", "#8a90a8"];
+  return `<span class="coin${label ? " big" : ""}" style="--c1:${c1};--c2:${c2}" aria-hidden="true">${label ? esc(abbr) : ""}</span>`;
+}
+
 export const TIERS: Tier[] = ["Silný", "Stabilný", "Oslabený", "Kritický"];
 const TIER_CLASS: Record<Tier, string> = { Silný: "t0", Stabilný: "t1", Oslabený: "t2", Kritický: "t3" };
 export const tierClass = (t: Tier): string => TIER_CLASS[t];

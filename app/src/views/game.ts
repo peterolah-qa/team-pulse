@@ -1,7 +1,7 @@
 /* Detail zápasu: tip a šanca, prečo, čo ak otázny hráč nenastúpi, forma teamov, podrobnosti modelu. */
 import type { AppData, Game, TeamState } from "../data";
 import { allGames } from "../data";
-import { chip, esc, header, localDay, longDate, pulseNum, signed, split, TEAM_NAMES, time } from "../ui";
+import { chip, coin, esc, header, localDay, longDate, pulseNum, signed, split, TEAM_NAMES, time } from "../ui";
 import { isPre } from "./games";
 
 const LAYERS: [keyof NonNullable<TeamState["layers"]>, string][] = [
@@ -44,7 +44,7 @@ function points(margin: number): string {
 
 function form(s: TeamState): string {
   return `<a class="formrow" href="#/team/${esc(s.team)}">
-      <span class="abbr">${esc(s.team)}</span><span class="name">${esc(TEAM_NAMES[s.team] ?? s.team)}</span>
+      ${coin(s.team)}<span class="abbr">${esc(s.team)}</span><span class="name">${esc(TEAM_NAMES[s.team] ?? s.team)}</span>
       <span class="pulse">Pulse <b class="num">${pulseNum(s.pulse)}</b></span>${chip(s.tier)}
       ${s.dropped ? `<span class="small muted">normálne ${esc(s.normal_tier)}</span>` : ""}<span class="chev" aria-hidden="true">›</span></a>`;
 }
@@ -72,7 +72,7 @@ export function gameView(d: AppData, id: string): string {
   const margin = Math.abs(g.margin_home);
   const day = longDate(localDay(g.tipoff_utc, g.date));
   const side = (s: TeamState, p: number, isFav: boolean, where: string) => `<div class="side${isFav ? " fav" : ""}">
-      <a class="abbr big" href="#/team/${esc(s.team)}">${esc(s.team)}</a>
+      ${coin(s.team, true)}<a class="tname" href="#/team/${esc(s.team)}">${esc(TEAM_NAMES[s.team] ?? s.team)}</a>
       <span class="small muted">${where}</span>
       <span class="pct num">${p} %</span>${isFav ? `<span class="tip">tip</span>` : ""}</div>`;
   return `${header(`${esc(g.away.team)} <span class="at">@</span> ${esc(g.home.team)}`, `${esc(day)}, ${time(g.tipoff_utc)}${isPre(g) ? " · príprava" : ""}${g.neutral ? " · neutrálne ihrisko" : ""}`, { href: "#/", label: "Zápasy" })}

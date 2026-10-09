@@ -15,7 +15,7 @@ a čo sa zmení, ak otázny hráč nenastúpi.
 > player availability, fatigue and roster strength. Everything runs on free data and free infrastructure.
 > The project also serves as a QA-automation portfolio piece: see [Testing](#testovanie).
 
-![Mobilné obrazovky: Zápasy, Výsledky, Zápas, Team, Teamy](docs/screenshots/mobile.png)
+![Mobilné obrazovky: Zápasy, Tipy, Výsledky, Zápas, Team](docs/screenshots/mobile.jpg)
 
 Team Pulse je len na orientáciu. **Neukazuje kurzy a neodkazuje na stávkové kancelárie.** „Tip“ v appke
 je team, ktorému model dáva väčšiu šancu na výhru; karta Tipy ich len zoradí podľa šance a ukáže,

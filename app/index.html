@@ -11,14 +11,28 @@
     <title>Team Pulse</title>
   </head>
   <body>
+    <div class="arena" aria-hidden="true">
+      <svg class="court" viewBox="0 0 500 470" preserveAspectRatio="xMidYMin meet">
+        <rect x="10" y="10" width="480" height="450" rx="4"/>
+        <path d="M10 235h480"/>
+        <circle cx="250" cy="235" r="60"/>
+        <circle cx="250" cy="235" r="20"/>
+        <rect x="170" y="10" width="160" height="190"/>
+        <path d="M190 200a60 60 0 0 0 120 0"/>
+        <path d="M40 10v140a210 210 0 0 0 420 0V10"/>
+        <rect x="170" y="270" width="160" height="190"/>
+        <path d="M190 270a60 60 0 0 1 120 0"/>
+        <path d="M40 460V320a210 210 0 0 1 420 0v140"/>
+      </svg>
+    </div>
     <div class="shell">
       <main id="app" tabindex="-1"></main>
       <nav class="tabbar" aria-label="Hlavná navigácia">
-        <a href="#/" data-tab="zapasy">Zápasy</a>
-        <a href="#/tipy" data-tab="tipy">Tipy</a>
-        <a href="#/vysledky" data-tab="vysledky">Výsledky</a>
-        <a href="#/teamy" data-tab="teamy">Teamy</a>
-        <a href="#/model" data-tab="model">Model</a>
+        <a href="#/" data-tab="zapasy"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Zápasy</span></a>
+        <a href="#/tipy" data-tab="tipy"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" class="fill"/></svg><span>Tipy</span></a>
+        <a href="#/vysledky" data-tab="vysledky"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="3"/><path d="M12 5v14M7 10.5v3M17 10.5v3"/></svg><span>Výsledky</span></a>
+        <a href="#/teamy" data-tab="teamy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l7 2.6v5.4c0 4.3-2.9 7.6-7 9-4.1-1.4-7-4.7-7-9V6.1z"/><path d="M9 12l2 2 4-4"/></svg><span>Teamy</span></a>
+        <a href="#/model" data-tab="model"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5h16"/><path d="M5 16l4.5-5 3.5 3 6-7"/><circle cx="19" cy="7" r="1.2" class="fill"/></svg><span>Model</span></a>
       </nav>
     </div>
     <script type="module" src="/src/main.ts"></script>

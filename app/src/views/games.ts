@@ -1,7 +1,7 @@
 /* Zápasy: najbližšie zápasy po dňoch v našom čase. Jeden zápas = hostia a domáci pod sebou, vpravo šanca. */
 import type { AppData, Game, TeamState } from "../data";
 import { allGames } from "../data";
-import { dayHeading, esc, groupBy, header, localDay, parseUtc, split, tierClass, time, when } from "../ui";
+import { coin, dayHeading, esc, groupBy, header, localDay, parseUtc, split, time, when } from "../ui";
 
 export const isPre = (g: { kind?: string }): boolean => g.kind === "preseason";
 
@@ -15,8 +15,7 @@ function absences(g: Game): string[] {
 
 function line(s: TeamState, p: number, fav: boolean, home: boolean): string {
   return `<div class="tl${fav ? " fav" : ""}">
-      <span class="dot ${tierClass(s.tier)}" title="${esc(s.tier)}"></span>
-      <span class="abbr">${esc(s.team)}</span>${home ? `<span class="home">doma</span>` : ""}
+      ${coin(s.team)}<span class="abbr">${esc(s.team)}</span>${home ? `<span class="home">doma</span>` : ""}
       ${fav ? `<span class="tip">tip</span>` : ""}
       <span class="val">${p} %</span></div>`;
 }
@@ -55,5 +54,5 @@ export function gamesView(d: AppData): string {
     : `<p class="empty">Žiadne naplánované zápasy v najbližších dňoch.</p>`;
   return `${header("Zápasy", `aktualizované ${esc(when(p.generated_at))}`)}
     ${body}
-    <p class="meta">Časy sú v našom čase. Tip = team, ktorému model dáva väčšiu šancu na výhru. Bodka pri teame = jeho forma (Silný, Stabilný, Oslabený, Kritický).</p>`;
+    <p class="meta">Časy sú v našom čase. Tip = team, ktorému model dáva väčšiu šancu na výhru.</p>`;
 }

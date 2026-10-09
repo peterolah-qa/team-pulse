@@ -1,7 +1,7 @@
 /* Team: forma dnes, najbližšie zápasy s naším tipom, posledné výsledky, súpiska. Teamy: liga podľa formy. */
 import type { AppData, Result, TeamPage, Tier } from "../data";
 import { allGames } from "../data";
-import { chip, esc, header, localDay, parseUtc, pulseNum, ring, shortDate, signed, split, TEAM_NAMES, TIERS, tierClass, time } from "../ui";
+import { chip, coin, esc, header, localDay, parseUtc, pulseNum, ring, shortDate, signed, split, TEAM_NAMES, TIERS, tierClass, time } from "../ui";
 
 const STATUS: Record<string, [string, string]> = {
   OUT: ["nehrá", "t3"],
@@ -78,7 +78,7 @@ export function teamView(d: AppData, abbr: string): string {
   const reasons = t.reasons.length
     ? `<ul class="rows">${t.reasons.map(([txt, e]) => `<li><span>${esc(txt)}</span><span class="${e >= 0 ? "pos" : "neg"}">${e >= 0 ? "pomáha" : "oslabuje"} <span class="num">${signed(e)}</span></span></li>`).join("")}</ul>`
     : `<p class="muted">Žiadny výrazný faktor: zdraví hráči, bez únavy.</p>`;
-  return `${header(esc(TEAM_NAMES[abbr] ?? abbr), "", back)}
+  return `${header(`${coin(abbr)} ${esc(TEAM_NAMES[abbr] ?? abbr)}`, "", back)}
     <section class="card hero teamhero">${ring(t.pulse, t.tier)}
       <div><p class="big-l">Pulse ${pulseNum(t.pulse)} ${chip(t.tier)}</p>
       <p class="muted">${rank}. v lige podľa formy${t.dropped ? ` · normálne ${esc(t.normal_tier)}` : ""}</p></div></section>
@@ -98,7 +98,7 @@ export function teamsView(d: AppData): string {
     ${groups
       .map(([tier, ts]) => `<section><h2 class="day"><span>${GROUP[tier]}</span><span class="day-n">${ts.length}</span></h2><ul class="list tight">${ts
         .map((t) => `<li><a class="teamrow" href="#/team/${esc(t.team)}">
-          <span class="rank num">${list.indexOf(t) + 1}</span><span class="abbr">${esc(t.team)}</span><span class="name">${esc(TEAM_NAMES[t.team] ?? t.team)}</span>
+          <span class="rank num">${list.indexOf(t) + 1}</span><span class="abbr">${coin(t.team)}${esc(t.team)}</span><span class="name">${esc(TEAM_NAMES[t.team] ?? t.team)}</span>
           <span class="meter ${tierClass(t.tier)}" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, t.pulse))}%"></i></span>
           <span class="pulse num ${tierClass(t.tier)}">${pulseNum(t.pulse)}</span></a></li>`)
         .join("")}</ul></section>`)

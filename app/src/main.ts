@@ -70,7 +70,36 @@ async function start(): Promise<void> {
   }
 }
 
+/* Jemné 3D naklonenie karty za myšou (len počítač s myšou, nie pri obmedzení pohybu). Jeden poslucháč, nič na mobile. */
+function tilt(): void {
+  if (!matchMedia("(hover: hover) and (pointer: fine)").matches || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let card: HTMLElement | null = null;
+  let frame = 0;
+  app.addEventListener("pointermove", (e) => {
+    const el = (e.target as HTMLElement).closest<HTMLElement>(".match, .tiprow, .teamrow");
+    if (card && card !== el) {
+      card.style.removeProperty("--rx");
+      card.style.removeProperty("--ry");
+    }
+    card = el;
+    if (!el || frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.setProperty("--rx", `${(-y * 5).toFixed(2)}deg`);
+      el.style.setProperty("--ry", `${(x * 6).toFixed(2)}deg`);
+    });
+  });
+  app.addEventListener("pointerleave", () => {
+    card?.style.removeProperty("--rx");
+    card?.style.removeProperty("--ry");
+    card = null;
+  });
+}
+
 window.addEventListener("hashchange", render);
+tilt();
 start();
 
 if (import.meta.env.PROD && "serviceWorker" in navigator) {

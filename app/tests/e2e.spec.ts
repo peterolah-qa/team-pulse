@@ -110,9 +110,11 @@ test("Výsledky: po dňoch, súhrn tipov a nevyšiel = celý červený", async (
   await expect(rows.nth(2)).toHaveClass(/none/);
   await expect(rows.nth(2)).toContainText("príprava");
   await expect(rows.nth(2).locator(".tipline")).toHaveText("Tip pred zápasom sa neuložil");
-  const red = await rows.nth(0).evaluate((el) => getComputedStyle(el).backgroundColor);
-  const normal = await rows.nth(1).evaluate((el) => getComputedStyle(el).backgroundColor);
-  expect(red).not.toBe(normal);
+  const style = (i: number) => rows.nth(i).evaluate((el) => ({ border: getComputedStyle(el).borderTopColor, bg: getComputedStyle(el).backgroundImage }));
+  const [miss, hit] = [await style(0), await style(1)];
+  expect(miss.border).toBe("rgb(251, 90, 114)"); // červený okraj
+  expect(miss.bg).toContain("rgb(52, 22, 42)"); // červené pozadie celej karty
+  expect(hit.bg).not.toContain("rgb(52, 22, 42)");
 });
 
 test("Výsledok: skóre, tip a štatistiky hráčov (MIN, B, D, A, BL)", async ({ page }) => {
@@ -122,7 +124,8 @@ test("Výsledok: skóre, tip a štatistiky hráčov (MIN, B, D, A, BL)", async (
   await expect(page.locator("h1")).toHaveText("BOS @ DET");
   await expect(page.locator(".sub")).toHaveText("utorok 20. 10., 01:00");
   await expect(page.locator(".score .side").nth(0)).toContainText("104");
-  await expect(page.locator(".score .side.won")).toContainText("DETdoma110");
+  await expect(page.locator(".score .side.won")).toContainText("Detroit Pistons");
+  await expect(page.locator(".score .side.won .pct")).toHaveText("110");
   await expect(page.locator(".score .verdict")).toContainText("DET 62 % · vyšiel");
   await expect(page.locator("h2.sec")).toHaveText(["Boston Celtics", "Detroit Pistons víťaz"]); // hostia, potom domáci
   const det = page.locator("h2.sec:has-text('Detroit Pistons') + section table.box").first();
