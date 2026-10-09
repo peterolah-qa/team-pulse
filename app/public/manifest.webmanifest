@@ -1,18 +1,19 @@
 {
   "name": "Team Pulse",
   "short_name": "Team Pulse",
-  "description": "Stav NBA teamov pred zápasom: Pulse, úroveň, istota a dôvody.",
+  "description": "NBA zápasy s tipom na víťaza, výsledky so štatistikami hráčov a forma teamov.",
   "lang": "sk",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#050407",
-  "theme_color": "#050407",
+  "background_color": "#070910",
+  "theme_color": "#070910",
   "icons": [
-    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
-    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ]
 }

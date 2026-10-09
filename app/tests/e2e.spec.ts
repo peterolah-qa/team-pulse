@@ -98,23 +98,41 @@ test("Výsledky: po dňoch, súhrn tipov a nevyšiel = celý červený", async (
   await open(page, "#/vysledky");
   await expect(page.locator(".tabbar a[aria-current=page]")).toHaveText("Výsledky");
   await expect(page.locator(".sub")).toHaveText("tipy vyšli v 1 z 2 zápasov");
-  await expect(page.locator("h2.day > span:first-child")).toHaveText(["Včera", "Sobota 17. 10."]);
+  await expect(page.locator("h2.day > span:first-child")).toHaveText(["Včera"]); // sobota 17. 10. je už stará
   const rows = page.locator("a.match");
-  await expect(rows).toHaveCount(3);
+  await expect(rows).toHaveCount(2);
+  await expect(page.locator("main")).not.toContainText("ORL");
   // najnovší hore: PHI @ NYK (02:00), potom BOS @ DET (01:00)
   await expect(rows.nth(0)).toHaveClass(/miss/);
   await expect(rows.nth(0).locator(".tipline")).toHaveText("Tip NYK 70 % · nevyšiel");
   await expect(rows.nth(0).locator(".tl.won")).toContainText("PHI104");
   await expect(rows.nth(1)).toHaveClass(/hit/);
   await expect(rows.nth(1).locator(".tipline")).toHaveText("Tip DET 62 % · vyšiel");
-  await expect(rows.nth(2)).toHaveClass(/none/);
-  await expect(rows.nth(2)).toContainText("príprava");
-  await expect(rows.nth(2).locator(".tipline")).toHaveText("Tip pred zápasom sa neuložil");
   const style = (i: number) => rows.nth(i).evaluate((el) => ({ border: getComputedStyle(el).borderTopColor, bg: getComputedStyle(el).backgroundImage }));
   const [miss, hit] = [await style(0), await style(1)];
   expect(miss.border).toBe("rgb(251, 90, 114)"); // červený okraj
   expect(miss.bg).toContain("rgb(52, 22, 42)"); // červené pozadie celej karty
   expect(hit.bg).not.toContain("rgb(52, 22, 42)");
+});
+
+test("Výsledky: zápas zo včera bez uloženého tipu, prázdny stav bez včerajších zápasov", async ({ page }) => {
+  await page.unrouteAll();
+  await serveData(page, {
+    predictions: (p) => {
+      withResults(p);
+      p.results[0].tipoff_utc = "2026-10-20 18:00:00+00:00"; // príprava ORL @ MIA v utorok 20:00
+      return p;
+    },
+  });
+  await open(page, "#/vysledky");
+  const pre = page.locator("a.match", { hasText: "ORL" });
+  await expect(pre).toHaveClass(/none/);
+  await expect(pre).toContainText("príprava");
+  await expect(pre.locator(".tipline")).toHaveText("Tip pred zápasom sa neuložil");
+  await expect(page.locator(".sub")).toHaveText("tipy vyšli v 1 z 2 zápasov"); // bez tipu sa neráta
+  await page.clock.setFixedTime(new Date("2026-10-23T12:00:00+02:00")); // o dva dni neskôr
+  await page.reload();
+  await expect(page.locator(".empty")).toContainText("Včera ani dnes sa ešte nedohral žiadny zápas");
 });
 
 test("Výsledok: skóre, tip a štatistiky hráčov (MIN, B, D, A, BL)", async ({ page }) => {
@@ -227,7 +245,7 @@ test("prázdne stavy: žiadne zápasy, žiadne výsledky", async ({ page }) => {
   await page.locator(".tabbar a", { hasText: "Tipy" }).click();
   await expect(page.locator(".empty")).toContainText("Žiadne zápasy, ktoré ešte nezačali");
   await page.locator(".tabbar a", { hasText: "Výsledky" }).click();
-  await expect(page.locator(".empty")).toContainText("Zatiaľ žiadne dohrané zápasy");
+  await expect(page.locator(".empty")).toContainText("Včera ani dnes sa ešte nedohral žiadny zápas");
 });
 
 test("neznámy zápas, výsledok a team", async ({ page }) => {

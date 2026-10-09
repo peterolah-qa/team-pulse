@@ -3,7 +3,7 @@
    - ostatné súbory (assets s hashom v názve, fonty, ikony): najprv cache
    VERSION prepíše build (vite.config.ts), takže po novom deployi sa stará cache zmaže. */
 const VERSION = "tp-__BUILD__";
-const SHELL = ["./", "./manifest.webmanifest", "./icon.svg", "./icon-192.png"];
+const SHELL = ["./", "./manifest.webmanifest", "./icon.svg", "./icon-192.png", "./apple-touch-icon.png"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));

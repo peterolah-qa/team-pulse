@@ -45,15 +45,22 @@ export function resultRow(r: Result): string {
 const byNewest = (a: Result, b: Result): number =>
   (parseUtc(b.tipoff_utc)?.getTime() ?? 0) - (parseUtc(a.tipoff_utc)?.getTime() ?? 0) || b.date.localeCompare(a.date) || b.game_id.localeCompare(a.game_id);
 
+/* Na obrazovke Výsledky len zápasy, ktoré u nás začali včera alebo dnes. */
+export function recentResults(d: AppData, now: Date = new Date()): Result[] {
+  const key = (n: number) => new Date(now.getFullYear(), now.getMonth(), now.getDate() + n, 12).toLocaleDateString("sv-SE");
+  const keep = new Set([key(0), key(-1)]);
+  return (d.predictions.results ?? []).filter((r) => keep.has(localDay(r.tipoff_utc, r.date))).sort(byNewest);
+}
+
 export function resultsView(d: AppData): string {
-  const results = [...(d.predictions.results ?? [])].sort(byNewest);
-  if (!results.length) return `${header("Výsledky")}<p class="empty">Zatiaľ žiadne dohrané zápasy. Výsledky sa objavia po skončení prvých zápasov.</p>`;
+  const results = recentResults(d);
+  if (!results.length) return `${header("Výsledky")}<p class="empty">Včera ani dnes sa ešte nedohral žiadny zápas. Výsledky sa objavia hneď po skončení zápasov.</p>`;
   const tips = results.map(tipResult).filter((t) => t !== null);
   const hits = tips.filter((t) => t.hit).length;
   const days = groupBy(results, (r) => localDay(r.tipoff_utc, r.date));
   return `${header("Výsledky", tips.length ? `tipy vyšli v <b>${hits} z ${tips.length}</b> zápasov` : "")}
     ${days.map(([day, rs]) => `<section>${dayHeading(day, rs.length, ["zápas", "zápasy", "zápasov"])}<ul class="list">${rs.map(resultRow).join("")}</ul></section>`).join("")}
-    <p class="meta">Červený zápas = náš tip nevyšiel. Tip je posledná predpoveď modelu uložená pred začiatkom zápasu.</p>`;
+    <p class="meta">Výsledky zo včera a z dneška. Červený zápas = náš tip nevyšiel. Tip je posledná predpoveď modelu uložená pred začiatkom zápasu.</p>`;
 }
 
 function rowsOf(rows: BoxRow[]): string {
