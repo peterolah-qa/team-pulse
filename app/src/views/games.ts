@@ -24,7 +24,7 @@ function line(s: TeamState, p: number, fav: boolean, home: boolean): string {
 function liveTag(g: Game, now: number): string {
   const tip = parseUtc(g.tipoff_utc)?.getTime();
   if (!tip || now < tip) return "";
-  return now - tip < 3 * 3600_000 ? `<span class="tag live">hrá sa</span>` : `<span class="tag">čaká na výsledok</span>`;
+  return now - tip < 3 * 3600_000 ? `<span class="tag live">hrá sa</span>` : `<span class="tag">po zápase</span>`;
 }
 
 export function gameRow(g: Game, now: number = Date.now()): string {

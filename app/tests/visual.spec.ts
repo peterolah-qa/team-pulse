@@ -20,7 +20,7 @@ for (const [name, hash] of Object.entries(SCREENS)) {
     await open(page, hash);
     await page.evaluate(() => document.fonts.ready);
     // spodná lišta je fixed – pri screenshote celej stránky ju dáme na koniec, nech neprekrýva obsah
-    await page.addStyleTag({ content: ".tabbar { position: static !important; }" });
+    await page.addStyleTag({ content: ".tabbar { position: static !important; transform: none !important; margin: 16px auto 0; }" });
     await expect(page).toHaveScreenshot(`${name}.png`, { fullPage: true });
   });
 }

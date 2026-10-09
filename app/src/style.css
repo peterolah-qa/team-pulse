@@ -1,18 +1,18 @@
-/* Team Pulse – „Aréna“: večerný zápas pod reflektormi. Hĺbka len cez CSS (tiene, svetlo, perspektíva),
+/* Team Pulse – „Aréna“, farby Fialová a zlatá: večerný zápas pod reflektormi. Hĺbka len cez CSS (tiene, svetlo, perspektíva),
    žiadne obrázky ani 3D knižnice, takže appka ostáva rýchla aj na slabšom telefóne.
    Rozloženie: jeden stĺpec ako výsledková tabuľa – čas vľavo, teamy pod sebou, čísla vpravo. */
 :root {
-  --bg: #070910;
-  --bg-2: #0d1020;
-  --panel-hi: #1a1e2e;
-  --panel-lo: #11131e;
-  --line: #272c3f;
-  --line-hi: #3a405a;
-  --text: #f2f4fa;
-  --muted: #9aa1b8;
-  --accent: #2de2e6;
-  --accent-deep: #0c7f86;
-  --brand: #ff3d9a;
+  --bg: #0e0718;
+  --bg-2: #160d26;
+  --panel-hi: #1d1230;
+  --panel-lo: #140c22;
+  --line: #33224f;
+  --line-hi: #4a3470;
+  --text: #f7f2ff;
+  --muted: #b0a2c9;
+  --accent: #fdb927;
+  --accent-deep: #a3700a;
+  --brand: #a26bff;
   --hit: #34d399;
   --miss: #fb5a72;
   --miss-bg: #2a1220;
@@ -22,6 +22,22 @@
   --t3: #fb5a72;
   --display: "Chakra Petch", system-ui, sans-serif;
   --body: "Barlow", system-ui, sans-serif;
+  --glow: #3a1d63;
+  --accent-hi: #ffe08a;
+  --on-accent: #2a1a00;
+  --track: #33224f;
+  --chip-hi: #2a1b45;
+  --chip-lo: #1d1230;
+  --bar-bg: rgba(20, 12, 34, 0.86);
+  --bar-border: rgba(255, 255, 255, 0.08);
+  --thead: rgba(255, 255, 255, 0.025);
+  --miss-hi: #34162a;
+  --miss-line: #5a2433;
+  --title-shadow: 0 2px 0 rgba(0, 0, 0, 0.6), 0 10px 30px color-mix(in srgb, var(--accent) 12%, transparent);
+  --num-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), 0 2px 0 rgba(0, 0, 0, 0.4), 0 3px 0 rgba(0, 0, 0, 0.25), 0 8px 14px rgba(0, 0, 0, 0.6);
+  --num-shadow-accent: 0 1px 0 color-mix(in srgb, var(--accent) 50%, #000), 0 2px 0 color-mix(in srgb, var(--accent) 38%, #000),
+    0 3px 0 color-mix(in srgb, var(--accent) 26%, #000), 0 8px 16px color-mix(in srgb, var(--accent) 25%, transparent);
+  --press: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 10px -6px #000;
   --depth: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 1px 0 rgba(0, 0, 0, 0.7), 0 14px 28px -18px rgba(0, 0, 0, 0.95);
   --depth-up: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 2px 0 rgba(0, 0, 0, 0.7), 0 22px 36px -18px rgba(0, 0, 0, 1);
   color-scheme: dark;
@@ -29,7 +45,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { background: var(--bg); }
 body {
-  background: radial-gradient(120% 60% at 50% -10%, #1b2146 0%, rgba(13, 16, 32, 0.6) 45%, transparent 70%), var(--bg);
+  background: radial-gradient(120% 60% at 50% -10%, var(--glow) 0%, color-mix(in srgb, var(--glow) 40%, transparent) 45%, transparent 70%), var(--bg);
   background-attachment: fixed;
   color: var(--text); font: 400 16px/1.45 var(--body); min-height: 100vh; -webkit-text-size-adjust: 100%;
 }
@@ -51,7 +67,7 @@ main:focus { outline: none; }
 .arena { position: absolute; top: 0; left: 0; right: 0; height: 260px; overflow: hidden; perspective: 520px; pointer-events: none;
   -webkit-mask-image: linear-gradient(#000 30%, transparent); mask-image: linear-gradient(#000 30%, transparent); }
 .court { position: absolute; left: 50%; top: -40px; width: min(760px, 170vw); transform: translateX(-50%) rotateX(64deg); transform-origin: 50% 0;
-  fill: none; stroke: rgba(45, 226, 230, 0.16); stroke-width: 2; }
+  fill: none; stroke: color-mix(in srgb, var(--accent) 18%, transparent); stroke-width: 2; }
 
 /* hlavička */
 .top { padding: 18px 0 8px; }
@@ -61,14 +77,14 @@ main:focus { outline: none; }
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 10'%3E%3Cpath d='M0 5h4l2-4 3 8 2-4h7' fill='none' stroke='%23000' stroke-width='1.8'/%3E%3C/svg%3E") center / contain no-repeat; }
 .back { display: inline-block; font-size: 15px; text-decoration: none; padding: 4px 0; }
 h1 { display: flex; align-items: center; gap: 10px; font: 700 30px/1.15 var(--display); margin-top: 4px; text-wrap: balance;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.6), 0 10px 30px rgba(45, 226, 230, 0.12); }
+  text-shadow: var(--title-shadow); }
 h1 .at { color: var(--muted); font-size: 20px; }
 .sub { color: var(--muted); font-size: 15px; margin-top: 4px; }
 .sub b { color: var(--text); }
 
 /* nadpis dňa – lepí sa hore pri posúvaní */
 .day { position: sticky; top: 0; z-index: 3; display: flex; align-items: baseline; gap: 8px; margin: 14px -16px 4px; padding: 12px 16px 10px;
-  font: 700 18px var(--display); background: linear-gradient(var(--bg) 65%, rgba(7, 9, 16, 0)); }
+  font: 700 18px var(--display); background: linear-gradient(var(--bg) 65%, color-mix(in srgb, var(--bg) 0%, transparent)); }
 .day-date { font: 400 15px var(--body); color: var(--muted); }
 .day-n { margin-left: auto; font: 400 14px var(--body); color: var(--muted); }
 .sec { font: 700 17px var(--display); margin: 26px 0 10px; }
@@ -79,7 +95,7 @@ h1 .at { color: var(--muted); font-size: 20px; }
 }
 .match, .tiprow, .teamrow { color: var(--text); text-decoration: none; transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
   transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
-.match:active, .tiprow:active, .teamrow:active { transform: perspective(900px) translateY(1px) scale(0.992); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 4px 10px -6px #000; }
+.match:active, .tiprow:active, .teamrow:active { transform: perspective(900px) translateY(1px) scale(0.992); box-shadow: var(--press); }
 @media (hover: hover) {
   .match:hover, .tiprow:hover, .teamrow:hover { border-color: var(--line-hi); box-shadow: var(--depth-up);
     transform: perspective(900px) translateY(-2px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
@@ -96,10 +112,10 @@ h1 .coin { width: 30px; height: 30px; }
 
 /* plastické čísla */
 .tl .val, .tipp, .side .pct, .big-n, .tl.won .val {
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.55), 0 2px 0 rgba(0, 0, 0, 0.4), 0 3px 0 rgba(0, 0, 0, 0.25), 0 8px 14px rgba(0, 0, 0, 0.6);
+  text-shadow: var(--num-shadow);
 }
 .tl.fav .val, .tipp, .side.fav .pct, .big-n {
-  text-shadow: 0 1px 0 var(--accent-deep), 0 2px 0 #0a646a, 0 3px 0 #08494e, 0 8px 16px rgba(45, 226, 230, 0.25);
+  text-shadow: var(--num-shadow-accent);
 }
 
 /* zoznam zápasov a výsledkov */
@@ -110,7 +126,7 @@ h1 .coin { width: 30px; height: 30px; }
 .clock { font-size: 15px; }
 .tag { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line-hi); border-radius: 999px; padding: 0 7px; width: max-content;
   background: rgba(255, 255, 255, 0.03); }
-.tag.live { color: var(--accent); border-color: var(--accent); box-shadow: 0 0 10px rgba(45, 226, 230, 0.35); }
+.tag.live { color: var(--accent); border-color: var(--accent); box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 35%, transparent); }
 .teams { display: grid; gap: 4px; min-width: 0; }
 .tl { display: flex; align-items: center; gap: 8px; min-height: 30px; color: var(--muted); }
 .tl .abbr { font-size: 17px; }
@@ -118,8 +134,8 @@ h1 .coin { width: 30px; height: 30px; }
 .tl.fav, .tl.won { color: var(--text); }
 .tl.fav .val { color: var(--accent); }
 .home { font-size: 13px; color: var(--muted); }
-.tip { font: 700 11px var(--display); letter-spacing: 0.04em; color: #06272a; background: linear-gradient(180deg, #6ff3f5, var(--accent));
-  border-radius: 6px; padding: 1px 6px; box-shadow: 0 0 12px rgba(45, 226, 230, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+.tip { font: 700 11px var(--display); letter-spacing: 0.04em; color: var(--on-accent); background: linear-gradient(180deg, var(--accent-hi), var(--accent));
+  border-radius: 6px; padding: 1px 6px; box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 45%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
 .note { grid-column: 1 / -1; font-size: 14px; color: var(--muted); margin-top: 8px; }
 .match > .note { padding-top: 8px; border-top: 1px solid var(--line); }
 
@@ -127,9 +143,9 @@ h1 .coin { width: 30px; height: 30px; }
 .tipline { grid-column: 1 / -1; font-size: 14px; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
 .result.hit { border-left: 4px solid var(--hit); }
 .result.hit .tipline b { color: var(--hit); }
-.result.miss { background: linear-gradient(180deg, #34162a, var(--miss-bg)); border-color: var(--miss); border-left-width: 4px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 14px 28px -18px rgba(251, 90, 114, 0.5); }
-.result.miss .tipline { border-top-color: #5a2433; }
+.result.miss { background: linear-gradient(180deg, var(--miss-hi), var(--miss-bg)); border-color: var(--miss); border-left-width: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 14px 28px -18px color-mix(in srgb, var(--miss) 50%, transparent); }
+.result.miss .tipline { border-top-color: var(--miss-line); }
 .result.miss .tipline b { color: var(--miss); }
 
 /* karty a riadky */
@@ -145,7 +161,7 @@ h1 .coin { width: 30px; height: 30px; }
 ul.card.rows { padding-block: 0; }
 .chip { display: inline-block; font: 600 13px var(--body); color: var(--c); border: 1px solid var(--c); border-radius: 999px; padding: 0 8px; line-height: 20px;
   vertical-align: middle; background: color-mix(in srgb, var(--c) 12%, transparent); }
-.wl { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; font: 700 13px var(--display); color: var(--bg); margin-right: 6px;
+.wl { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; font: 700 13px var(--display); color: #0b0d12; margin-right: 6px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 2px 4px rgba(0, 0, 0, 0.6); }
 .wl.w { background: var(--hit); } .wl.l { background: var(--miss); }
 .sub-h { margin: 10px 0 0; }
@@ -166,14 +182,14 @@ ul.card.rows { padding-block: 0; }
 .side.fav .pct { color: var(--accent); }
 .side.won .pct { color: var(--text); }
 .bar { position: relative; height: 10px; border-radius: 6px; margin: 14px 0 12px; overflow: hidden; display: flex;
-  background: #2a2f44; box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.6); }
-.bar i { display: block; height: 100%; background: #2a2f44; }
-.bar.away-fav i, .bar.home-fav { background: linear-gradient(180deg, #7ff6f8, var(--accent) 45%, var(--accent-deep)); }
-.bar.home-fav i { background: #2a2f44; box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.6); }
+  background: var(--track); box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.35); }
+.bar i { display: block; height: 100%; background: var(--track); }
+.bar.away-fav i, .bar.home-fav { background: linear-gradient(180deg, var(--accent-hi), var(--accent) 45%, var(--accent-deep)); }
+.bar.home-fav i { background: var(--track); box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.35); }
 .bar::after { content: ""; position: absolute; inset: 0 0 50% 0; background: linear-gradient(rgba(255, 255, 255, 0.25), transparent); border-radius: 6px 6px 0 0; }
 .verdict { font-size: 16px; }
-.score.miss { background: linear-gradient(180deg, #34162a, var(--miss-bg)); border-color: var(--miss); }
-.score.hit { border-color: var(--hit); box-shadow: var(--depth), 0 0 24px -8px rgba(52, 211, 153, 0.45); }
+.score.miss { background: linear-gradient(180deg, var(--miss-hi), var(--miss-bg)); border-color: var(--miss); }
+.score.hit { border-color: var(--hit); box-shadow: var(--depth), 0 0 24px -8px color-mix(in srgb, var(--hit) 45%, transparent); }
 .won-tag { font: 600 13px var(--body); color: var(--hit); }
 .formrow { display: flex; align-items: center; gap: 10px; padding: 11px 0; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); }
 .formrow:last-child { border-bottom: 0; }
@@ -184,7 +200,7 @@ ul.card.rows { padding-block: 0; }
 .big-l { font: 700 22px var(--display); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .big-n { font-size: 48px; color: var(--accent); line-height: 1.1; }
 .ring { filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7)); }
-.ring-bg { stroke: #262b40; }
+.ring-bg { stroke: var(--track); }
 .ring-fg { stroke: var(--c); filter: drop-shadow(0 0 4px var(--c)); }
 .ring-num { fill: var(--text); font-family: var(--display); font-weight: 700; }
 
@@ -200,7 +216,7 @@ details.more.inner { margin: 0; border: 0; border-top: 1px solid var(--line); bo
 .table td { padding: 9px 6px; border-top: 1px solid var(--line); }
 .table .n { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .table tr.best td { color: var(--hit); font-weight: 600; }
-.card.flush .table thead { background: rgba(255, 255, 255, 0.025); }
+.card.flush .table thead { background: var(--thead); }
 .card.flush .table th:first-child, .card.flush .table td:first-child { padding-left: 14px; }
 .card.flush .table th:last-child, .card.flush .table td:last-child { padding-right: 14px; }
 .box { table-layout: fixed; }
@@ -216,15 +232,16 @@ details.more.inner { margin: 0; border: 0; border-top: 1px solid var(--line); bo
 .teamrow .rank { color: var(--muted); font-size: 14px; }
 .teamrow .abbr { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; }
 .teamrow .name { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 15px; }
-.meter { height: 8px; border-radius: 4px; background: #262b40; overflow: hidden; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6); }
+.meter { height: 8px; border-radius: 4px; background: var(--track); overflow: hidden; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.6); }
 .meter i { display: block; height: 100%; background: linear-gradient(180deg, color-mix(in srgb, var(--c) 70%, #fff), var(--c)); box-shadow: 0 0 8px var(--c); }
 .teamrow .pulse { text-align: right; color: var(--c); font-size: 17px; }
 
 /* tipy */
 .tiprow { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; column-gap: 10px; row-gap: 4px; align-items: center; padding: 11px 14px; }
 .tiprow .rank { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; font-size: 14px; color: var(--muted);
-  background: linear-gradient(180deg, #252a3d, #181b29); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 4px rgba(0, 0, 0, 0.6); }
-.list li:first-child .tiprow .rank { color: #06272a; background: linear-gradient(180deg, #7ff6f8, var(--accent)); box-shadow: 0 0 12px rgba(45, 226, 230, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
+  background: linear-gradient(180deg, var(--chip-hi), var(--chip-lo)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 4px rgba(0, 0, 0, 0.35); }
+.list li:first-child .tiprow .rank { color: var(--on-accent); background: linear-gradient(180deg, var(--accent-hi), var(--accent));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 45%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.6); }
 .tipmain { min-width: 0; display: flex; flex-wrap: wrap; align-items: center; column-gap: 6px; }
 .tipmain .abbr { font-size: 18px; }
 .tipmeta { flex-basis: 100%; font-size: 14px; color: var(--muted); }
@@ -237,24 +254,24 @@ details.more.inner { margin: 0; border: 0; border-top: 1px solid var(--line); bo
 .cal .grid { stroke: var(--line); stroke-width: 1; }
 .cal .axis-lbl { fill: var(--muted); font: 400 10px var(--body); }
 .cal .diag { stroke: var(--muted); stroke-dasharray: 4 4; stroke-width: 1; }
-.cal .trend { fill: none; stroke: var(--accent); stroke-width: 2.5; filter: drop-shadow(0 0 4px rgba(45, 226, 230, 0.6)); }
+.cal .trend { fill: none; stroke: var(--accent); stroke-width: 2.5; filter: drop-shadow(0 0 4px color-mix(in srgb, var(--accent) 60%, transparent)); }
 .cal .dot { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
 .card > p.small { margin: 6px 0 8px; }
 
 /* plávajúca spodná lišta so sklom */
 .tabbar { position: fixed; left: 50%; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); z-index: 5; transform: translateX(-50%);
   width: min(608px, calc(100% - 20px)); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2px; padding: 6px;
-  background: rgba(16, 19, 31, 0.82); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 18px; box-shadow: 0 12px 34px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
+  background: var(--bar-bg); -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--bar-border); border-radius: 18px; box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
 .tabbar a { display: grid; justify-items: center; gap: 2px; padding: 7px 2px 6px; color: var(--muted); text-decoration: none;
   font: 700 12px var(--display); border-radius: 12px; white-space: nowrap; }
 .tabbar svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .tabbar svg .fill { fill: currentColor; stroke: none; }
-.tabbar a[aria-current="page"] { color: var(--text); background: linear-gradient(180deg, #262b40, #1b1f2f);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 -2px 0 var(--brand), 0 4px 10px -4px rgba(255, 61, 154, 0.5); }
-.tabbar a[aria-current="page"] svg { color: var(--brand); filter: drop-shadow(0 0 4px rgba(255, 61, 154, 0.6)); }
-.button { margin-top: 12px; font: 600 16px var(--body); color: #06272a; background: linear-gradient(180deg, #7ff6f8, var(--accent)); border: 0; border-radius: 10px;
-  padding: 10px 16px; cursor: pointer; box-shadow: 0 6px 16px -6px rgba(45, 226, 230, 0.6); }
+.tabbar a[aria-current="page"] { color: var(--text); background: linear-gradient(180deg, var(--chip-hi), var(--chip-lo));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 -2px 0 var(--brand), 0 4px 10px -4px color-mix(in srgb, var(--brand) 50%, transparent); }
+.tabbar a[aria-current="page"] svg { color: var(--brand); filter: drop-shadow(0 0 4px color-mix(in srgb, var(--brand) 60%, transparent)); }
+.button { margin-top: 12px; font: 600 16px var(--body); color: var(--on-accent); background: linear-gradient(180deg, var(--accent-hi), var(--accent)); border: 0; border-radius: 10px;
+  padding: 10px 16px; cursor: pointer; box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--accent) 60%, transparent); }
 
 @media (max-width: 380px) {
   .teamrow { grid-template-columns: 22px 66px minmax(0, 1fr) 30px; }
