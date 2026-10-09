@@ -1,70 +1,107 @@
-import type { AppData, TeamPage } from "../data";
-import { chip, dayLabel, esc, header, pulseNum, ring, signed, TEAM_NAMES } from "../ui";
+/* Team: forma dnes, najbližšie zápasy s naším tipom, posledné výsledky, súpiska. Teamy: liga podľa formy. */
+import type { AppData, Result, TeamPage, Tier } from "../data";
+import { allGames } from "../data";
+import { chip, esc, header, localDay, parseUtc, pulseNum, ring, shortDate, signed, split, TEAM_NAMES, TIERS, tierClass, time } from "../ui";
 
-function spark(t: TeamPage): string {
-  const pts = t.trend;
-  if (pts.length < 2) return `<p class="small muted">Trend sa zobrazí po prvých zápasoch.</p>`;
-  const W = 340, H = 96, pad = 10;
-  const ys = pts.map((p) => p.pulse);
-  const lo = Math.min(...ys, 30) - 5, hi = Math.max(...ys, 70) + 5;
-  const x = (i: number) => pad + (i * (W - 2 * pad)) / (pts.length - 1);
-  const y = (v: number) => H - pad - ((v - lo) * (H - 2 * pad)) / (hi - lo);
-  const line = pts.map((p, i) => `${x(i).toFixed(1)},${y(p.pulse).toFixed(1)}`).join(" ");
-  const dots = pts
-    .map((p, i) => `<circle cx="${x(i).toFixed(1)}" cy="${y(p.pulse).toFixed(1)}" r="3.5" class="${p.pts > p.opp_pts ? "win" : "loss"}"><title>${esc(p.date)} ${p.home ? "vs" : "@"} ${esc(p.opp)} ${p.pts}:${p.opp_pts}</title></circle>`)
-    .join("");
-  const g70 = y(70).toFixed(1);
-  const last = pts[pts.length - 1];
-  const wins = pts.filter((p) => p.pts > p.opp_pts).length;
-  return `<svg class="spark" viewBox="0 0 ${W} ${H}" role="img" aria-label="Pulse v posledných ${pts.length} zápasoch, bilancia ${wins}–${pts.length - wins}, posledný ${pulseNum(last.pulse)}">
-      <line x1="0" x2="${W}" y1="${g70}" y2="${g70}" class="guide"/><text x="${W - 4}" y="${Number(g70) - 4}" text-anchor="end" class="guide-lbl">SILNÝ</text>
-      <polyline points="${line}" class="trend"/>${dots}</svg>
-    <div class="row small muted"><span>bilancia ${wins}–${pts.length - wins}</span><span><span class="lg win">●</span> výhra <span class="lg">○</span> prehra</span></div>`;
+const STATUS: Record<string, [string, string]> = {
+  OUT: ["nehrá", "t3"],
+  DOUBTFUL: ["skôr nie", "t2"],
+  QUESTIONABLE: ["otázny", "t1"],
+  PROBABLE: ["skôr áno", "t0"],
+};
+const SHOWN = 8;
+
+/* Poradie podľa Pulse (rovnaké číslo ako na obrazovke, takže poradie vždy sedí). */
+export function ranked(d: AppData): TeamPage[] {
+  return Object.values(d.teams.teams).sort((a, b) => b.pulse - a.pulse || a.team.localeCompare(b.team));
 }
 
-const STATUS_CLASS: Record<string, string> = { HRÁ: "t0", QUESTIONABLE: "t1", DOUBTFUL: "t2", OUT: "t3", PROBABLE: "t0" };
-const STATUS_TEXT: Record<string, string> = { HRÁ: "HRÁ", QUESTIONABLE: "OTÁZNY", DOUBTFUL: "SKÔR NIE", OUT: "OUT", PROBABLE: "SKÔR ÁNO" };
+function upcoming(d: AppData, t: TeamPage): string {
+  if (!t.upcoming.length) return `<p class="muted">Žiadne naplánované zápasy.</p>`;
+  const preds = new Map(allGames(d.predictions).map((g) => [g.game_id, g]));
+  return `<ul class="rows">${t.upcoming
+    .map((u) => {
+      const g = preds.get(u.game_id);
+      const tip = g ? split(g.p_home) : null;
+      const mine = tip ? (u.home ? tip.home : tip.away) : null;
+      const favMine = g ? (g.p_home > 0.5) === u.home : false;
+      const day = shortDate(localDay(u.tipoff_utc ?? g?.tipoff_utc, u.date));
+      const inner = `<span><span class="muted">${esc(day)} ${time(u.tipoff_utc ?? g?.tipoff_utc)}</span> ${g?.neutral ? "proti" : u.home ? "doma s" : "@"} <b>${esc(u.opp)}</b>${u.kind === "preseason" ? ` <span class="tag">príprava</span>` : ""}</span>
+        <span class="nowrap">${mine === null ? `<span class="muted">tip zatiaľ nie je</span>` : `šanca <b class="num${favMine ? " pos" : ""}">${mine} %</b>`}</span>`;
+      return g ? `<li><a href="#/zapas/${esc(u.game_id)}">${inner}<span class="chev" aria-hidden="true">›</span></a></li>` : `<li>${inner}</li>`;
+    })
+    .join("")}</ul>`;
+}
 
-/* Dopad hráča: koľko Elo team stráca, keď chýba (OUT = −x), pri otáznom ±x, inak +x. */
-function impact(status: string, elo: number): string {
-  if (!elo) return `<span class="num w3 muted">0</span>`;
-  if (status === "OUT") return `<span class="num w3 neg">−${elo}</span>`;
-  if (status === "QUESTIONABLE" || status === "DOUBTFUL") return `<span class="num w3 q">±${elo}</span>`;
-  return `<span class="num w3">+${elo}</span>`;
+function recent(d: AppData, t: TeamPage): string {
+  const mine = (d.predictions.results ?? [])
+    .filter((r) => r.home === t.team || r.away === t.team)
+    .sort((a, b) => (parseUtc(b.tipoff_utc)?.getTime() ?? 0) - (parseUtc(a.tipoff_utc)?.getTime() ?? 0));
+  const row = (r: Result) => {
+    const home = r.home === t.team;
+    const us = home ? r.pts_home : r.pts_away, them = home ? r.pts_away : r.pts_home;
+    return `<li><a href="#/vysledok/${esc(r.game_id)}"><span><span class="wl ${us > them ? "w" : "l"}">${us > them ? "V" : "P"}</span>
+      <span class="muted">${esc(shortDate(localDay(r.tipoff_utc, r.date)))}</span> ${home ? "doma s" : "@"} <b>${esc(home ? r.away : r.home)}</b>${r.kind === "preseason" ? ` <span class="tag">príprava</span>` : ""}</span>
+      <b class="num">${us} : ${them}</b><span class="chev" aria-hidden="true">›</span></a></li>`;
+  };
+  const older = t.trend.slice(-5).reverse();
+  const old = older
+    .map((p) => `<li><span><span class="wl ${p.pts > p.opp_pts ? "w" : "l"}">${p.pts > p.opp_pts ? "V" : "P"}</span>
+      <span class="muted">${esc(shortDate(p.date))}</span> ${p.home ? "doma s" : "@"} <b>${esc(p.opp)}</b></span><b class="num">${p.pts} : ${p.opp_pts}</b></li>`)
+    .join("");
+  const season = mine.length ? `<ul class="rows">${mine.map(row).join("")}</ul>` : "";
+  const last = older.length && mine.length < 5 ? `<p class="small muted sub-h">${mine.length ? "Predtým, " : ""}koniec minulej sezóny</p><ul class="rows">${old}</ul>` : "";
+  return season || last ? season + last : `<p class="muted">Zatiaľ žiadne odohrané zápasy.</p>`;
+}
+
+function roster(t: TeamPage): string {
+  const order = (s: string) => (s in STATUS ? ["OUT", "DOUBTFUL", "QUESTIONABLE", "PROBABLE"].indexOf(s) : 9);
+  const list = [...t.roster].sort((a, b) => order(a.status) - order(b.status) || b.impact_elo - a.impact_elo || b.typical_min - a.typical_min);
+  const row = (r: (typeof list)[number]) => {
+    const st = STATUS[r.status];
+    return `<tr><td class="p">${esc(r.player)}${st ? ` <span class="chip ${st[1]}">${st[0]}</span>` : ""}</td>
+      <td class="n">${Math.round(r.typical_min)}</td><td class="n">${r.impact_elo ? signed(r.impact_elo) : "–"}</td></tr>`;
+  };
+  const shown = Math.max(SHOWN, list.filter((r) => r.status in STATUS).length);
+  const head = `<thead><tr><th scope="col">Hráč</th><th class="n" scope="col"><abbr title="očakávané minúty v zápase">MIN</abbr></th><th class="n wide" scope="col"><abbr title="o koľko Elo bodov team oslabí, keď hráč chýba">hodnota</abbr></th></tr></thead>`;
+  const rest = list.slice(shown);
+  return `<section class="card flush"><table class="table box"><caption class="sr-only">Súpiska ${esc(t.team)}</caption>${head}<tbody>${list.slice(0, shown).map(row).join("")}</tbody></table>
+    ${rest.length ? `<details class="more inner"><summary>Ďalší hráči (${rest.length})</summary><table class="table box"><caption class="sr-only">Ďalší hráči ${esc(t.team)}</caption>${head.replace("<thead>", '<thead class="sr-only">')}<tbody>${rest.map(row).join("")}</tbody></table></details>` : ""}
+    </section><p class="meta">Hodnota = o koľko Elo bodov team oslabí, keď hráč chýba. Nováčikovia a hráči bez minút majú hodnotu až po pár zápasoch.</p>`;
 }
 
 export function teamView(d: AppData, abbr: string): string {
   const t = d.teams.teams[abbr];
-  if (!t) return `${header("TEAM", "NENÁJDENÝ")}<p class="empty">Team sa nenašiel. <a href="#/teamy">Všetky teamy</a></p>`;
-  const roster = t.roster
-    .map((r) => `<div class="reason"><span>${esc(r.player)} <span class="small muted">${Math.round(r.typical_min)} min</span></span>
-      <span class="right"><span class="chip ${STATUS_CLASS[r.status] ?? "t1"}">${esc(STATUS_TEXT[r.status] ?? r.status)}</span>
-      ${impact(r.status, r.impact_elo)}</span></div>`)
-    .join("");
-  const upcoming = t.upcoming.length
-    ? t.upcoming.map((u) => `<a class="reason link" href="#/zapas/${esc(u.game_id)}"><span>${esc(dayLabel(u.date))}</span><span>${u.home ? "vs" : "@"} ${esc(u.opp)}${u.kind === "preseason" ? " · príprava" : ""}</span></a>`).join("")
-    : `<p class="small muted">Žiadne naplánované zápasy.</p>`;
+  const back = { href: "#/teamy", label: "Teamy" };
+  if (!t) return `${header("Team sa nenašiel", "", back)}<p class="empty">Taký team nepoznáme. <a href="#/teamy">Všetky teamy</a></p>`;
+  const rank = ranked(d).findIndex((x) => x.team === abbr) + 1;
   const reasons = t.reasons.length
-    ? t.reasons.map(([txt, e]) => `<div class="reason"><span>${esc(txt)}</span><span class="num ${e >= 0 ? "pos" : "neg"}">${signed(e)}</span></div>`).join("")
-    : `<p class="small muted">Bez výrazných faktorov.</p>`;
-  return `${header("TEAM", `${esc(TEAM_NAMES[abbr] ?? abbr)}`, `Elo ${Math.round(t.elo)}<br>#${t.rank} v lige`)}
-    <section class="card duel single">${ring(t.pulse, t.tier, 120)}
-      <div class="stack">${chip(t.tier)}${t.dropped ? `<div class="small note">normálne ${esc(t.normal_tier.toUpperCase())}</div>` : ""}
-        <div class="small muted">stav dnes, bez únavy konkrétneho zápasu</div></div></section>
-    <div class="cols"><div>
-    <h2 class="section">// PREČO</h2><section class="card">${reasons}</section>
-    <h2 class="section">// TREND · POSLEDNÝCH ${t.trend.length} ZÁPASOV</h2><section class="card">${spark(t)}</section>
-    <h2 class="section">// NAJBLIŽŠIE ZÁPASY</h2><section class="card">${upcoming}</section>
-    </div><div>
-    <h2 class="section">// SÚPISKA · HODNOTA HRÁČA V ELO</h2><section class="card">${roster}</section>
-    </div></div>`;
+    ? `<ul class="rows">${t.reasons.map(([txt, e]) => `<li><span>${esc(txt)}</span><span class="${e >= 0 ? "pos" : "neg"}">${e >= 0 ? "pomáha" : "oslabuje"} <span class="num">${signed(e)}</span></span></li>`).join("")}</ul>`
+    : `<p class="muted">Žiadny výrazný faktor: zdraví hráči, bez únavy.</p>`;
+  return `${header(esc(TEAM_NAMES[abbr] ?? abbr), "", back)}
+    <section class="card hero teamhero">${ring(t.pulse, t.tier)}
+      <div><p class="big-l">Pulse ${pulseNum(t.pulse)} ${chip(t.tier)}</p>
+      <p class="muted">${rank}. v lige podľa formy${t.dropped ? ` · normálne ${esc(t.normal_tier)}` : ""}</p></div></section>
+    <p class="hint">Forma dnes, bez únavy z konkrétneho zápasu. Pri zápase sa k nej pripočíta únava a cestovanie, preto sa tam Pulse môže o pár bodov líšiť.</p>
+    <h2 class="sec">Prečo</h2><section class="card">${reasons}</section>
+    <h2 class="sec">Najbližšie zápasy</h2><section class="card">${upcoming(d, t)}</section>
+    <h2 class="sec">Posledné zápasy</h2><section class="card">${recent(d, t)}</section>
+    <h2 class="sec">Súpiska</h2>${roster(t)}`;
 }
 
+const GROUP: Record<Tier, string> = { Silný: "Silní", Stabilný: "Stabilní", Oslabený: "Oslabení", Kritický: "Kritickí" };
+
 export function teamsView(d: AppData): string {
-  const list = Object.values(d.teams.teams).sort((a, b) => a.rank - b.rank);
-  return `${header("LIGA", "TEAMY", `${list.length} teamov`)}
-    <section class="grid">${list
-      .map((t) => `<a class="card tile" href="#/team/${esc(t.team)}" aria-label="${esc(TEAM_NAMES[t.team] ?? t.team)}, Pulse ${pulseNum(t.pulse)}, ${esc(t.tier)}">
-        ${ring(t.pulse, t.tier, 54, false)}<div><div class="abbr">${esc(t.team)}</div>${chip(t.tier)}<div class="small muted">#${t.rank}</div></div></a>`)
-      .join("")}</section>`;
+  const list = ranked(d);
+  const groups = TIERS.map((tier) => [tier, list.filter((t) => t.tier === tier)] as const).filter(([, ts]) => ts.length);
+  return `${header("Teamy", "forma dnes, od najlepšieho")}
+    ${groups
+      .map(([tier, ts]) => `<section><h2 class="day"><span>${GROUP[tier]}</span><span class="day-n">${ts.length}</span></h2><ul class="list tight">${ts
+        .map((t) => `<li><a class="teamrow" href="#/team/${esc(t.team)}">
+          <span class="rank num">${list.indexOf(t) + 1}</span><span class="abbr">${esc(t.team)}</span><span class="name">${esc(TEAM_NAMES[t.team] ?? t.team)}</span>
+          <span class="meter ${tierClass(t.tier)}" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, t.pulse))}%"></i></span>
+          <span class="pulse num ${tierClass(t.tier)}">${pulseNum(t.pulse)}</span></a></li>`)
+        .join("")}</ul></section>`)
+      .join("")}
+    <p class="meta">Pulse 0 – 100 je forma teamu dnes: sila z výsledkov, súpiska a chýbajúci hráči. Silný 70+, Stabilný 50 – 69, Oslabený 30 – 49, Kritický pod 30.</p>`;
 }

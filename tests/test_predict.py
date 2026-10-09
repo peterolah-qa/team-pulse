@@ -200,6 +200,7 @@ def test_build_teams_for_team_screen():
     assert bos["roster"][0]["player"] == "BOS-0"
     assert bos["roster"][0]["status"] == "QUESTIONABLE"
     assert bos["upcoming"][0]["opp"] == "NYK" and bos["upcoming"][0]["home"]
+    assert bos["upcoming"][0]["tipoff_utc"] == "2026-10-20 23:00:00+00:00"  # appka ukáže deň a čas u nás
 
 
 def test_model_info_for_model_screen():

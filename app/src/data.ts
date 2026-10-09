@@ -74,6 +74,7 @@ export interface Result {
   away: string;
   pts_home: number;
   pts_away: number;
+  tipoff_utc?: string;
   p_home: number | null;
   box: Record<string, BoxRow[]>;
 }
@@ -106,7 +107,7 @@ export interface TeamPage extends TeamState {
   rank: number;
   trend: TrendPoint[];
   roster: RosterPlayer[];
-  upcoming: { game_id: string; date: string; opp: string; home: boolean; kind?: string }[];
+  upcoming: { game_id: string; date: string; opp: string; home: boolean; kind?: string; tipoff_utc?: string }[];
 }
 
 export interface Teams extends Meta {

@@ -357,6 +357,7 @@ def build_teams(
                         "opp": g.away if home else g.home,
                         "home": home,
                         "kind": str(getattr(g, "kind", "regular")),
+                        "tipoff_utc": str(g.tipoff_utc),
                     }
                 )
         trend = [
@@ -416,13 +417,14 @@ def results_for_app(state: dict, pred_dir: Path = PRED_DIR, box_dir: Path = BOX_
     chosen = sorted(
         (r for r in merged.values() if r["date"] in last), key=lambda r: (r["date"], r["game_id"])
     )
+    tip = {str(g["game_id"]): g.get("tipoff_utc", "") for g in state.get("schedule", [])}
     out, cache = [], {}
     for r in chosen:
         if r["date"] not in cache:
             path = pred_dir / f"{r['date']}.json"
             cache[r["date"]] = json.loads(path.read_text(encoding="utf-8"))["games"] if path.exists() else {}
         rec = cache[r["date"]].get(r["game_id"])
-        out.append({**r, "p_home": rec["p_home"] if rec else None})
+        out.append({**r, "tipoff_utc": tip.get(r["game_id"], ""), "p_home": rec["p_home"] if rec else None})
     return out
 
 

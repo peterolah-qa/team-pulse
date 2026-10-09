@@ -15,10 +15,11 @@ a čo sa zmení, ak otázny hráč nenastúpi.
 > player availability, fatigue and roster strength. Everything runs on free data and free infrastructure.
 > The project also serves as a QA-automation portfolio piece: see [Testing](#testovanie).
 
-![Mobilné obrazovky: Dnes, Zápas, Team, Čo keby, Model](docs/screenshots/mobile.png)
+![Mobilné obrazovky: Zápasy, Výsledky, Zápas, Team, Teamy](docs/screenshots/mobile.png)
 
-Team Pulse je len na orientáciu. **Neukazuje kurzy, nedáva tipy na stávky a neodkazuje na stávkové
-kancelárie.** Nie je spojený s NBA ani s jej klubmi a nepoužíva ich logá.
+Team Pulse je len na orientáciu. **Neukazuje kurzy a neodkazuje na stávkové kancelárie.** „Tip“ v appke
+je team, ktorému model dáva väčšiu šancu na výhru; karta Tipy ich len zoradí podľa šance a ukáže,
+s akou šancou vyjdú všetky naraz. Nie je spojený s NBA ani s jej klubmi a nepoužíva ich logá.
 
 ---
 
@@ -26,11 +27,13 @@ kancelárie.** Nie je spojený s NBA ani s jej klubmi a nepoužíva ich logá.
 
 | Obrazovka | Obsah |
 |---|---|
-| **Dnes** | zápasy na 3 najbližšie hracie dni: Pulse oboch teamov, úroveň, šanca na výhru, istota |
-| **Zápas** | rozklad podľa vrstiev modelu (sila, súpiska, hráči, únava, prostredie) a top dôvody |
-| **Team** | Pulse, trend za posledných 10 zápasov, súpiska so zraneniami a hodnotou hráčov |
-| **Čo keby** | prepínač HRÁ / NEHRÁ pre otáznych hráčov, varovanie pri hraničnom prípade |
-| **Model** | presnosť na neznámych zápasoch, kalibrácia, čo každá vrstva pridala, naučené váhy |
+| **Zápasy** | najbližšie zápasy po dňoch v našom čase: tip na víťaza, šanca oboch teamov, forma (bodka), chýbajúci hráči |
+| **Tipy** | favoriti zápasov, ktoré ešte nezačali, od najväčšej šance nadol; pri každom riadku šanca, že vyjdú všetky tipy od prvého po daný (súčin šancí) |
+| **Výsledky** | dohrané zápasy posledných dní so skóre a naším tipom pred zápasom (nevyšiel = červený); v detaile štatistiky hráčov |
+| **Zápas** | tip a šanca, prečo (najviac 4 dôvody), čo ak otázny hráč nenastúpi, forma teamov; vrstvy modelu po rozkliknutí |
+| **Team** | Pulse a poradie podľa formy, najbližšie zápasy s našou šancou, posledné výsledky, súpiska so zranenými navrchu |
+| **Teamy** | liga rozdelená na Silní / Stabilní / Oslabení / Kritickí, poradie podľa Pulse |
+| **Model** | presnosť na neznámych zápasoch a kalibrácia; ako sa model učil po rozkliknutí |
 
 **Pulse** = 50 + (Elo dnes − 1505) / 6, teda 50 znamená priemerný team. Hranice úrovní sú 70 / 50 / 30.
 Team, ktorý je dnes aspoň o 60 Elo pod svojím normálom (napr. mu chýba hviezda), padne o úroveň nižšie.
@@ -98,9 +101,9 @@ Projekt je zároveň ukážka QA automatizácie. Testuje sa model, dáta aj appk
 | Únik dát z budúcnosti | žiadny vstup nesmie byť novší ako začiatok zápasu | `tests/test_no_leakage.py` |
 | Živé zdroje | kontraktové testy ESPN a NBA na uložených odpovediach, test, že sa nikdy nepoužijú kurzy | `tests/test_live_contracts.py` |
 | Prevádzka | denná kontrola zdrojov a čerstvosti stavu, pri chybe príde e-mail | `.github/workflows/health.yml` |
-| Appka E2E | Playwright na mobile (Pixel 7) aj desktope: navigácia, Čo keby, prázdne a chybové stavy, vodorovné posúvanie na 360 px | `app/tests/e2e.spec.ts` |
+| Appka E2E | Playwright na mobile (Pixel 7) aj desktope: dni v našom čase, tip a percentá spolu 100 %, výsledky (nevyšiel = červený), navigácia, prázdne a chybové stavy, vodorovné posúvanie na 360 px | `app/tests/e2e.spec.ts` |
 | Prístupnosť | axe-core, WCAG 2.1 A + AA, na každej obrazovke 0 porušení; ovládanie klávesnicou | `app/tests/a11y.spec.ts` |
-| Vizuálna regresia | screenshoty 6 obrazoviek × 2 zariadenia | `app/tests/visual.spec.ts` |
+| Vizuálna regresia | screenshoty 8 obrazoviek × 2 zariadenia, pevný čas testu | `app/tests/visual.spec.ts` |
 
 Lighthouse (mobil): **Performance 100 · Accessibility 100 · Best Practices 100 · SEO 100.**
 

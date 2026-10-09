@@ -1,177 +1,205 @@
-/* Cyberpunk téma (štýl C z draftu). Farby úrovní sú vždy doplnené textom. */
+/* Team Pulse – pokojná tmavá téma. Jeden akcent (tyrkysová) = náš tip a odkazy; ružová len značka a aktívna záložka.
+   Rozloženie: jeden stĺpec ako výsledková tabuľa – čas vľavo, teamy pod sebou, čísla zarovnané vpravo. */
 :root {
-  --bg: #050407;
-  --card: #120f17;
-  --card2: #0d0b11;
-  --line: #3a2f45;
-  --text: #ece8f2;
-  --muted: #a39bb0;
-  --mag: #ff2fb9;
-  --cyan: #00f0ff;
-  --yel: #f0ff00;
-  --t0: #39ff14;
-  --t1: #f0ff00;
-  --t2: #ff8a1f;
-  --t3: #ff3b5c;
+  --bg: #0b0a10;
+  --surface: #15131c;
+  --surface-2: #211d2b;
+  --line: #2e2939;
+  --text: #f1eef6;
+  --muted: #a69fb4;
+  --accent: #22e3ee;
+  --brand: #ff3dbf;
+  --hit: #3ddc84;
+  --miss: #ff5c78;
+  --miss-bg: #2b141d;
+  --t0: #3ddc84;
+  --t1: #e6ec4a;
+  --t2: #ff9d42;
+  --t3: #ff5c78;
   --display: "Chakra Petch", system-ui, sans-serif;
-  --body: "Rajdhani", system-ui, sans-serif;
+  --body: "Barlow", system-ui, sans-serif;
+  color-scheme: dark;
 }
-* { box-sizing: border-box; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 html { background: var(--bg); }
-body {
-  background: var(--bg) repeating-linear-gradient(135deg, #ff00a80a 0 1px, transparent 1px 18px);
-  color: var(--text); font: 500 16px/1.4 var(--body); min-height: 100vh;
-}
-a { color: var(--cyan); }
-.shell { max-width: 560px; margin: 0 auto; padding: 12px 16px 96px; }
+body { background: var(--bg); color: var(--text); font: 400 16px/1.45 var(--body); min-height: 100vh; -webkit-text-size-adjust: 100%; }
+a { color: var(--accent); }
+ul { list-style: none; }
+b { font-weight: 600; }
+.shell { max-width: 640px; margin: 0 auto; padding: 8px 16px calc(84px + env(safe-area-inset-bottom, 0px)); }
 main:focus { outline: none; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-
-/* hlavička */
-.top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; margin: 10px 0 14px; padding-bottom: 10px;
-  border-bottom: 2px solid; border-image: linear-gradient(90deg, var(--mag) 0 38%, transparent 38% 41%, var(--cyan) 41% 52%, transparent 52% 55%, var(--yel) 55% 58%, transparent 58%) 1; }
-.kicker { font: 700 11px var(--display); letter-spacing: 4px; color: var(--yel); }
-h1 { font: italic 700 26px/1.1 var(--display); text-transform: uppercase; letter-spacing: 1px;
-  text-shadow: 2px 0 var(--cyan), -2px 0 var(--mag); }
-h1 .abbr { color: inherit; text-decoration: none; }
-h1 .vs { font-size: 16px; color: var(--muted); text-shadow: none; }
-.aside { text-align: right; color: var(--muted); font-size: 13px; line-height: 1.3; }
-.section { font: 700 11px var(--display); letter-spacing: 2px; text-transform: uppercase; color: var(--cyan); margin: 18px 0 8px; }
-
-/* karty */
-.card { position: relative; display: block; background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--mag);
-  padding: 12px 14px; margin-bottom: 10px; color: inherit; text-decoration: none;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px)); }
-.card::before { content: ""; position: absolute; top: 0; right: 0; width: 14px; height: 14px; background: linear-gradient(225deg, var(--cyan) 0 50%, transparent 50%); }
-.stretch { position: absolute; inset: 0; z-index: 1; }
-.stretch:focus-visible { outline: 2px solid var(--cyan); outline-offset: -4px; }
-.row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.small { font-size: 13px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.num, .clock, .val, .abbr { font-family: var(--display); font-weight: 700; font-variant-numeric: tabular-nums; }
 .muted { color: var(--muted); }
-.num { font-family: var(--display); font-weight: 700; }
-.team-row { margin: 6px 0; }
-.team-row .abbr { font: 700 18px var(--display); width: 50px; }
-.team-row .chip { margin-right: auto; }
-.where { font: 700 9px var(--display); letter-spacing: 1.5px; color: var(--muted); width: 44px; }
-.flag { font: 700 11px var(--display); letter-spacing: .5px; }
-.flag.q { color: var(--yel); }
-.flag.drop { color: var(--t2); }
-.pre, .note b.pre { color: var(--yel); font: 700 11px var(--display); letter-spacing: .5px; }
-.pulse-num { font-size: 22px; }
-.abbr { color: var(--text); }
-.pos { color: var(--t0); }
-.neg { color: var(--t3); }
-.meta, .empty { color: var(--muted); font-size: 13px; margin: 16px 0; }
-.empty { font-size: 15px; }
-.note { color: var(--muted); margin: -4px 0 10px; }
-.note b { color: var(--t0); }
-.warn { font: 700 12px var(--display); letter-spacing: 1px; color: var(--t1); margin-top: 8px; }
-
-/* úrovne */
-.chip { display: inline-block; font: 700 11px var(--display); letter-spacing: 1px; padding: 2px 10px;
-  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%); }
+.small { font-size: 14px; }
+.pos { color: var(--hit); }
+.neg { color: var(--miss); }
 .t0 { --c: var(--t0); } .t1 { --c: var(--t1); } .t2 { --c: var(--t2); } .t3 { --c: var(--t3); }
-.chip { color: var(--c); background: color-mix(in srgb, var(--c) 16%, transparent); }
-.pulse-num { color: var(--c); }
-.ring-bg { stroke: #1f1a26; }
-.ring-fg { stroke: var(--c); filter: drop-shadow(0 0 5px var(--c)); }
-.ring-num { fill: #fff; font-family: var(--display); font-weight: 700; }
-.ring-lbl { fill: var(--cyan); font-family: var(--display); letter-spacing: 2px; }
 
-/* pruh šance */
-.bar { height: 6px; background: #1f1a26; margin: 10px 0 5px; }
-.bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--mag), var(--cyan)); }
+/* hlavička obrazovky */
+.top { padding: 14px 0 6px; }
+.brand { font: 700 13px var(--display); color: var(--brand); letter-spacing: .03em; }
+.back { display: inline-block; font-size: 15px; text-decoration: none; padding: 4px 0; }
+h1 { font: 700 28px/1.15 var(--display); margin-top: 2px; text-wrap: balance; }
+h1 .at { color: var(--muted); font-size: 20px; }
+.sub { color: var(--muted); font-size: 15px; margin-top: 2px; }
+.sub b { color: var(--text); }
 
-/* obrazovka zápasu */
-.duel { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
-.duel .side, .duel .center { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; }
-.duel.single { justify-content: flex-start; gap: 18px; }
-.big { font: 700 34px var(--display); text-shadow: 0 0 14px color-mix(in srgb, var(--mag) 60%, transparent); }
-.mid { font-size: 18px; color: var(--cyan); margin-top: 8px; }
-.layer { margin-bottom: 12px; }
-.layer .lbl { color: var(--muted); letter-spacing: 2px; text-align: center; font-family: var(--display); font-size: 11px; margin-bottom: 3px; }
-.diverge { display: flex; align-items: center; gap: 8px; }
-.diverge .v { width: 36px; font-size: 15px; }
-.diverge .v.r { text-align: right; }
-.legend { margin-top: 4px; text-align: center; }
-.half { flex: 1; display: flex; }
-.half.l { justify-content: flex-end; }
-.half i { display: block; height: 8px; }
-.half i.pos { background: var(--t0); } .half i.neg { background: var(--t3); }
-.axis { width: 2px; height: 12px; background: var(--line); }
-.reason { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px dashed var(--line); font-size: 15px; }
-.reason:last-child { border-bottom: 0; }
-.reason.link { color: inherit; text-decoration: none; }
-.reason .right { display: flex; gap: 10px; align-items: center; }
-.w3 { width: 40px; text-align: right; }
-.q { color: var(--yel); }
-.lg.win { color: var(--mag); }
-.button { display: inline-block; font: 700 13px var(--display); letter-spacing: 1px; color: var(--bg); background: var(--mag);
-  padding: 10px 16px; border: 0; cursor: pointer; text-decoration: none; margin: 6px 0;
-  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); }
-.stack { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+/* nadpis dňa / skupiny */
+.day { display: flex; align-items: baseline; gap: 8px; margin: 22px 0 8px; font: 700 18px var(--display); }
+.day-date { font: 400 15px var(--body); color: var(--muted); }
+.day-n { margin-left: auto; font: 400 14px var(--body); color: var(--muted); }
+.sec { font: 700 17px var(--display); margin: 24px 0 8px; }
 
-/* teamy */
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-.tile { display: flex; gap: 8px; align-items: center; margin: 0; padding: 10px 8px 10px 10px; }
-.tile svg { flex: none; }
-.tile .abbr { font: 700 18px var(--display); }
+/* zoznam zápasov a výsledkov */
+.list { display: grid; gap: 8px; }
+.list.tight { gap: 4px; }
+.match { display: grid; grid-template-columns: 56px minmax(0, 1fr); column-gap: 10px; align-items: center;
+  padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; color: var(--text); text-decoration: none; }
+.match:hover { border-color: #4a4458; }
+.when { display: flex; flex-direction: column; gap: 4px; align-self: start; padding-top: 4px; }
+.clock { font-size: 15px; }
+.tag { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 7px; width: max-content; }
+.teams { display: grid; gap: 2px; min-width: 0; }
+.tl { display: flex; align-items: center; gap: 8px; min-height: 30px; color: var(--muted); }
+.tl .abbr { font-size: 17px; }
+.tl .val { margin-left: auto; font-size: 18px; }
+.tl.fav, .tl.won { color: var(--text); }
+.tl.fav .val { color: var(--accent); }
+.home { font-size: 13px; color: var(--muted); }
+.tip { font: 600 12px var(--body); color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 0 7px; line-height: 18px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); flex: none; }
+.note { grid-column: 1 / -1; font-size: 14px; color: var(--muted); margin-top: 6px; }
+.match > .note { padding-top: 6px; border-top: 1px solid var(--line); }
 
-/* grafy */
-.spark, .cal { width: 100%; height: auto; display: block; }
-.spark .guide, .cal .grid { stroke: #2a2233; }
-.spark .guide { stroke: color-mix(in srgb, var(--t0) 40%, transparent); stroke-dasharray: 3 4; }
-.guide-lbl { fill: var(--t0); font: 700 9px var(--display); letter-spacing: 1px; }
-.trend { fill: none; stroke: var(--mag); stroke-width: 2.5; filter: drop-shadow(0 0 4px var(--mag)); }
-.spark .win { fill: var(--mag); } .spark .loss { fill: var(--bg); stroke: var(--mag); stroke-width: 2; }
-.cal .diag { stroke: var(--cyan); stroke-dasharray: 4 4; opacity: .6; }
-.cal .dot { fill: var(--bg); stroke: var(--mag); stroke-width: 2; }
-.axis-lbl { fill: var(--muted); font: 600 9px var(--body); }
-.table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 8px; }
-.table th { text-align: left; color: var(--muted); font: 700 10px var(--display); letter-spacing: 1px; text-transform: uppercase; padding: 4px 0; }
-.table .n { text-align: right; padding-left: 10px; white-space: nowrap; }
-.table td { padding: 5px 0; border-top: 1px dashed var(--line); }
-.table tr.best td { color: var(--t0); font-weight: 700; }
-.box { table-layout: fixed; font-size: 13px; }
-.box th:first-child { width: auto; }
-.box th.n { width: 34px; padding-left: 4px; }
-.box td.n { padding-left: 4px; font-variant-numeric: tabular-nums; }
+/* výsledok: tip vyšiel = zelený okraj, nevyšiel = celý červený */
+.tipline { grid-column: 1 / -1; font-size: 14px; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
+.result.hit { border-left: 4px solid var(--hit); }
+.result.hit .tipline b { color: var(--hit); }
+.result.miss { background: var(--miss-bg); border-color: var(--miss); border-left-width: 4px; }
+.result.miss .tipline { border-top-color: #5a2433; }
+.result.miss .tipline b { color: var(--miss); }
+
+/* karty a riadky */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 6px 14px; }
+.card.flush { padding: 0; overflow: hidden; }
+.rows li { border-bottom: 1px solid var(--line); }
+.rows li:last-child { border-bottom: 0; }
+.rows li, .rows li > a { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; }
+.rows li:has(> a) { padding: 0; }
+.rows li > a { flex: 1; color: var(--text); text-decoration: none; }
+.rows li > a > span:first-child, .rows li > span:first-child { min-width: 0; }
+.chev { color: var(--muted); font-size: 20px; line-height: 1; }
+ul.card.rows { padding-block: 0; }
+.chip { display: inline-block; font: 600 13px var(--body); color: var(--c); border: 1px solid var(--c); border-radius: 999px; padding: 0 8px; line-height: 20px; vertical-align: middle; }
+.wl { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; font: 700 13px var(--display); color: var(--bg); margin-right: 6px; }
+.wl.w { background: var(--hit); } .wl.l { background: var(--miss); }
+.sub-h { margin: 10px 0 0; }
+.meta, .empty { color: var(--muted); font-size: 14px; margin: 18px 0; }
+.empty { font-size: 16px; }
+
+/* hlavná karta detailu */
+.hero { padding: 16px; }
+.duel { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.side { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: var(--muted); }
+.side:last-child { align-items: flex-end; text-align: right; }
+.abbr.big { font-size: 26px; color: var(--text); text-decoration: none; }
+.side .pct { font-size: 36px; line-height: 1.1; color: var(--muted); }
+.side.fav .pct { color: var(--accent); }
+.side.won .pct { color: var(--text); }
+.bar { height: 6px; border-radius: 3px; background: var(--surface-2); margin: 12px 0 10px; overflow: hidden; display: flex; }
+.bar i { display: block; height: 100%; background: var(--surface-2); }
+.bar.away-fav i { background: var(--accent); }
+.bar.home-fav { background: var(--accent); }
+.bar.home-fav i { background: #3a3548; }
+.verdict { font-size: 16px; }
+.score.miss { background: var(--miss-bg); border-color: var(--miss); }
+.score.hit { border-color: var(--hit); }
+.won-tag { font: 600 13px var(--body); color: var(--hit); }
+.formrow { display: flex; align-items: center; gap: 10px; padding: 10px 0; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); }
+.formrow:last-child { border-bottom: 0; }
+.formrow .name { flex: 1; min-width: 0; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.formrow .pulse { color: var(--muted); font-size: 15px; }
+.formrow .pulse b { color: var(--text); }
+.teamhero { display: flex; align-items: center; gap: 16px; }
+.big-l { font: 700 22px var(--display); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.big-n { font-size: 44px; color: var(--accent); line-height: 1.1; }
+.ring-bg { stroke: var(--surface-2); }
+.ring-fg { stroke: var(--c); }
+.ring-num { fill: var(--text); font-family: var(--display); font-weight: 700; }
+
+/* rozbaľovacie podrobnosti */
+details.more { margin-top: 18px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 0 14px; }
+details.more > summary { cursor: pointer; padding: 12px 0; color: var(--accent); font-weight: 600; list-style-position: inside; }
+details.more[open] { padding-bottom: 12px; }
+details.more.inner { margin: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; }
+
+/* tabuľky */
+.table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.table th { text-align: left; color: var(--muted); font: 600 13px var(--body); padding: 8px 6px; }
+.table td { padding: 8px 6px; border-top: 1px solid var(--line); }
+.table .n { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.table tr.best td { color: var(--hit); font-weight: 600; }
+.card.flush .table th:first-child, .card.flush .table td:first-child { padding-left: 14px; }
+.card.flush .table th:last-child, .card.flush .table td:last-child { padding-right: 14px; }
+.box { table-layout: fixed; }
+.box th.n { width: 46px; }
+.box th.n.wide { width: 76px; }
+.nowrap { white-space: nowrap; }
+.tag.live { color: var(--accent); border-color: var(--accent); }
+.hint { font-size: 14px; color: var(--muted); margin: 10px 2px 0; }
 .box td.p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .box abbr { text-decoration: none; }
-.result .score { font-size: 20px; }
-.result .won .abbr, .result .won .score { color: var(--cyan); }
-.hit { color: var(--t0); }
-.miss { color: var(--t2); }
-.metrics { display: flex; justify-content: space-between; align-items: center; }
-.right { text-align: right; }
+.box .chip { font-size: 12px; line-height: 18px; }
 
-/* čo keby */
-.player { font: 700 17px var(--display); }
-.toggle-row { display: flex; gap: 8px; margin: 10px 0; }
-.toggle { flex: 1; font: 700 13px var(--display); letter-spacing: 1px; padding: 9px; cursor: pointer; background: #1f1a26; color: var(--muted);
-  border: 1px solid var(--line); clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%); }
-.toggle[aria-pressed="true"] { background: var(--cyan); color: var(--bg); border-color: var(--cyan); }
-.toggle:focus-visible, .tabbar a:focus-visible, .button:focus-visible, .tile:focus-visible { outline: 2px solid var(--yel); outline-offset: 2px; }
-.scenario { justify-content: flex-start; gap: 16px; }
+/* teamy */
+.teamrow { display: grid; grid-template-columns: 24px 44px minmax(0, 1fr) 64px 30px; align-items: center; gap: 10px;
+  padding: 9px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; color: var(--text); text-decoration: none; }
+.teamrow .rank { color: var(--muted); font-size: 14px; }
+.teamrow .abbr { font-size: 16px; }
+.teamrow .name { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 15px; }
+.meter { height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.meter i { display: block; height: 100%; background: var(--c); }
+.teamrow .pulse { text-align: right; color: var(--c); font-size: 17px; }
+
+/* tipy */
+.tiprow { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; column-gap: 10px; row-gap: 4px; align-items: center;
+  padding: 10px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; color: var(--text); text-decoration: none; }
+.tiprow:hover { border-color: #4a4458; }
+.tiprow .rank { color: var(--muted); font-size: 15px; }
+.tipmain { min-width: 0; }
+.tipmain .abbr { font-size: 18px; }
+.tipmeta { display: block; font-size: 14px; color: var(--muted); }
+.tipp { font-size: 22px; color: var(--accent); }
+.acc { grid-column: 2 / -1; font-size: 14px; color: var(--muted); padding-top: 6px; border-top: 1px solid var(--line); }
+.acc b { color: var(--text); }
+.hint.lead { margin: 4px 2px 14px; }
+
+/* graf kalibrácie */
+.cal { width: 100%; height: auto; margin: 8px 0 4px; }
+.cal .grid { stroke: var(--line); stroke-width: 1; }
+.cal .axis-lbl { fill: var(--muted); font: 400 10px var(--body); }
+.cal .diag { stroke: var(--muted); stroke-dasharray: 4 4; stroke-width: 1; }
+.cal .trend { fill: none; stroke: var(--accent); stroke-width: 2; }
+.cal .dot { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
+.card > p.small { margin: 6px 0 8px; }
 
 /* spodná lišta */
-.tabbar { position: fixed; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; gap: 4px;
-  background: #08070bf2; border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); z-index: 5; }
-.tabbar a { flex: 0 1 120px; text-align: center; font: 700 11px var(--display); letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--muted); text-decoration: none; padding: 10px 4px; }
-.tabbar a[aria-current="page"] { color: var(--bg); background: var(--mag); clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%); }
+.tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+  background: #0b0a10f2; border-top: 1px solid var(--line); padding: 6px max(8px, calc((100% - 680px) / 2)) calc(6px + env(safe-area-inset-bottom, 0px)); }
+.tabbar a { text-align: center; padding: 10px 2px; color: var(--muted); text-decoration: none; font: 700 14px var(--display); border-radius: 8px; white-space: nowrap; }
+.tabbar a[aria-current="page"] { color: var(--text); background: var(--surface-2); box-shadow: inset 0 -2px 0 var(--brand); }
+.button { margin-top: 12px; font: 600 16px var(--body); color: var(--bg); background: var(--accent); border: 0; border-radius: 8px; padding: 10px 16px; cursor: pointer; }
 
-/* desktop: širší layout, zápasy v dvoch stĺpcoch */
-@media (min-width: 900px) {
-  .shell { max-width: 1040px; padding: 16px 32px 96px; }
-  .games { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px; }
-  .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; align-items: start; }
-  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .duel:not(.single) { justify-content: space-evenly; }
-  h1 { font-size: 34px; }
+@media (max-width: 380px) {
+  .tabbar a { font-size: 13px; }
+  .teamrow { grid-template-columns: 22px 42px minmax(0, 1fr) 30px; }
+  .teamrow .meter { display: none; }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .card { transition: border-color .15s; }
-  .card:hover { border-color: var(--mag); }
+@media (min-width: 900px) {
+  .shell { max-width: 680px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
 }

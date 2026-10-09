@@ -2,23 +2,19 @@
 // Len latinka + latin-ext (slovenské znaky), nie thai/devanagari – menší download.
 import "@fontsource/chakra-petch/latin-700.css";
 import "@fontsource/chakra-petch/latin-ext-700.css";
-import "@fontsource/chakra-petch/latin-700-italic.css";
-import "@fontsource/chakra-petch/latin-ext-700-italic.css";
-import "@fontsource/rajdhani/latin-500.css";
-import "@fontsource/rajdhani/latin-ext-500.css";
-import "@fontsource/rajdhani/latin-600.css";
-import "@fontsource/rajdhani/latin-ext-600.css";
-import "@fontsource/rajdhani/latin-700.css";
-import "@fontsource/rajdhani/latin-ext-700.css";
+import "@fontsource/barlow/latin-400.css";
+import "@fontsource/barlow/latin-ext-400.css";
+import "@fontsource/barlow/latin-600.css";
+import "@fontsource/barlow/latin-ext-600.css";
 import "./style.css";
 
 import { loadData, type AppData } from "./data";
 import { gameView } from "./views/game";
+import { gamesView } from "./views/games";
 import { modelView } from "./views/model";
+import { resultsView, resultView } from "./views/result";
 import { teamsView, teamView } from "./views/team";
-import { todayView } from "./views/today";
-import { resultView } from "./views/result";
-import { bindWhatIf, whatIfView } from "./views/whatif";
+import { tipsView } from "./views/tips";
 
 const app = document.getElementById("app")!;
 let data: AppData | null = null;
@@ -26,21 +22,26 @@ let data: AppData | null = null;
 function route(): { tab: string; html: string; title: string } {
   const [, page = "", arg = ""] = (location.hash || "#/").split("/");
   const d = data!;
+  const id = decodeURIComponent(arg);
   switch (page) {
     case "zapas":
-      return { tab: "dnes", html: gameView(d, decodeURIComponent(arg)), title: "Zápas" };
+      return { tab: "zapasy", html: gameView(d, id), title: "Zápas" };
+    case "cokeby": // staré odkazy na „Čo keby“ vedú na detail zápasu
+      return arg ? { tab: "zapasy", html: gameView(d, id), title: "Zápas" } : { tab: "zapasy", html: gamesView(d), title: "Zápasy" };
+    case "tipy":
+      return { tab: "tipy", html: tipsView(d), title: "Tipy" };
+    case "vysledky":
+      return { tab: "vysledky", html: resultsView(d), title: "Výsledky" };
     case "vysledok":
-      return { tab: "dnes", html: resultView(d, decodeURIComponent(arg)), title: "Výsledok" };
+      return { tab: "vysledky", html: resultView(d, id), title: "Výsledok" };
     case "teamy":
       return { tab: "teamy", html: teamsView(d), title: "Teamy" };
     case "team":
-      return { tab: "teamy", html: teamView(d, decodeURIComponent(arg)), title: arg };
-    case "cokeby":
-      return { tab: "cokeby", html: whatIfView(d, arg ? decodeURIComponent(arg) : undefined), title: "Čo keby" };
+      return { tab: "teamy", html: teamView(d, id), title: id };
     case "model":
       return { tab: "model", html: modelView(d), title: "Model" };
     default:
-      return { tab: "dnes", html: todayView(d), title: "Dnes" };
+      return { tab: "zapasy", html: gamesView(d), title: "Zápasy" };
   }
 }
 
@@ -53,7 +54,6 @@ function render(): void {
     if (a.dataset.tab === r.tab) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   });
-  bindWhatIf(app);
   window.scrollTo(0, 0);
 }
 

@@ -4,13 +4,14 @@ import { open, serveData, withResults } from "./helpers";
 
 /* Automatická kontrola prístupnosti (WCAG 2.1 A + AA) na každej obrazovke. */
 const SCREENS = {
-  dnes: "#/",
+  zapasy: "#/",
+  tipy: "#/tipy",
+  vysledky: "#/vysledky",
+  vysledok: "#/vysledok/0022600900",
   zapas: "#/zapas/0022600001",
   team: "#/team/PHI",
   teamy: "#/teamy",
-  cokeby: "#/cokeby",
   model: "#/model",
-  vysledok: "#/vysledok/0022600900",
 };
 
 for (const [name, hash] of Object.entries(SCREENS)) {
@@ -24,11 +25,11 @@ for (const [name, hash] of Object.entries(SCREENS)) {
   });
 }
 
-test("a11y: prepínač Čo keby je ovládateľný klávesnicou", async ({ page }) => {
-  await serveData(page);
-  await open(page, "#/cokeby/0022600001");
-  const out = page.getByRole("button", { name: "NEHRÁ" });
-  await out.focus();
+test("a11y: rozbaľovacie podrobnosti sa ovládajú klávesnicou", async ({ page }) => {
+  await serveData(page, { predictions: withResults });
+  await open(page, "#/zapas/0022600001");
+  const summary = page.locator("details.more summary");
+  await summary.focus();
   await page.keyboard.press("Enter");
-  await expect(out).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("details.more")).toHaveAttribute("open", "");
 });

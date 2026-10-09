@@ -1,63 +1,89 @@
+/* Detail zápasu: tip a šanca, prečo, čo ak otázny hráč nenastúpi, forma teamov, podrobnosti modelu. */
 import type { AppData, Game, TeamState } from "../data";
 import { allGames } from "../data";
-import { chip, dayLabel, esc, header, pct, ring, signed, signed1, teamLink, TEAM_NAMES, tipoff } from "../ui";
+import { chip, esc, header, localDay, longDate, pulseNum, signed, split, TEAM_NAMES, time } from "../ui";
+import { isPre } from "./games";
 
-const LAYERS: [keyof NonNullable<TeamState["layers"]> | "home_adv", string][] = [
-  ["strength", "SILA (ELO)"],
-  ["roster", "SÚPISKA"],
-  ["players", "HRÁČI"],
-  ["fatigue", "ÚNAVA"],
-  ["home_adv", "PROSTREDIE"],
+const LAYERS: [keyof NonNullable<TeamState["layers"]>, string][] = [
+  ["strength", "Sila teamu"],
+  ["roster", "Súpiska"],
+  ["players", "Chýbajúci hráči"],
+  ["fatigue", "Únava a cestovanie"],
 ];
 
-function half(v: number, side: "l" | "r"): string {
-  const w = Math.min((Math.abs(v) / 80) * 100, 100); // 80 Elo ≈ plná polovica
-  const cls = v >= 0 ? "pos" : "neg";
-  return `<div class="half ${side}"><i class="${cls}" style="width:${w}%"></i></div>`;
-}
-
-function layerRows(g: Game): string {
-  return LAYERS.map(([key, label]) => {
-    const h = key === "home_adv" ? g.home_adv : (g.home.layers?.[key] ?? 0);
-    const a = key === "home_adv" ? 0 : (g.away.layers?.[key] ?? 0);
-    return `<div class="layer">
-      <div class="lbl small">${label}</div>
-      <div class="diverge"><span class="num v">${signed(Math.round(h))}</span>${half(h, "l")}<span class="axis"></span>${half(a, "r")}<span class="num v r">${signed(Math.round(a))}</span></div></div>`;
-  }).join("");
-}
-
 function reasons(g: Game): string {
-  const items = [g.home, g.away].flatMap((s) => s.reasons.map(([t, e]) => ({ team: s.team, t, e })));
-  if (!items.length) return `<p class="small muted">Žiadne výrazné faktory – oba teamy v bežnom stave.</p>`;
-  return items
-    .map((r) => `<div class="reason"><span>${esc(r.team)}: ${esc(r.t)}</span><span class="num ${r.e >= 0 ? "pos" : "neg"}">${signed(r.e)}</span></div>`)
-    .join("");
+  const all = [g.away, g.home]
+    .flatMap((s) => s.reasons.map(([t, e]) => ({ team: s.team, t, e })))
+    .sort((a, b) => Math.abs(b.e) - Math.abs(a.e))
+    .slice(0, 4);
+  if (!all.length) return `<p class="muted">Žiadny výrazný faktor, rozhoduje najmä sila teamov.</p>`;
+  return `<ul class="rows">${all
+    .map((r) => `<li><span><b>${esc(r.team)}</b> ${esc(r.t)}</span><span class="${r.e >= 0 ? "pos" : "neg"}">${r.e >= 0 ? "pomáha" : "oslabuje"} <span class="num">${signed(r.e)}</span></span></li>`)
+    .join("")}</ul>`;
 }
 
-function side(s: TeamState): string {
-  return `<div class="side">${ring(s.pulse, s.tier, 104)}<div>${chip(s.tier)}</div>
-    <div class="small muted">istota ${esc(s.confidence ?? "")}</div></div>`;
+function whatIf(g: Game): string {
+  if (!g.what_if.length) return "";
+  const homeNow = split(g.p_home).home;
+  const rows = g.what_if.map((w) => {
+    const out = split(w.out.p_home).home;
+    const homeFav = g.p_home > 0.5;
+    const fav = homeFav ? g.home.team : g.away.team;
+    const now = homeFav ? homeNow : 100 - homeNow;
+    const then = homeFav ? out : 100 - out;
+    return `<li><span>Ak <b>${esc(w.player)}</b> (${esc(w.team)}) nenastúpi</span><span class="num">${esc(fav)} ${now} % → ${then} %</span></li>`;
+  });
+  return `<h2 class="sec">Otázni hráči</h2><ul class="rows card">${rows.join("")}</ul>`;
+}
+
+function points(margin: number): string {
+  const n = Math.round(margin);
+  if (n < 1) return "vyrovnaný zápas";
+  return `očakávaný rozdiel asi ${n} ${n === 1 ? "bod" : n < 5 ? "body" : "bodov"}`;
+}
+
+function form(s: TeamState): string {
+  return `<a class="formrow" href="#/team/${esc(s.team)}">
+      <span class="abbr">${esc(s.team)}</span><span class="name">${esc(TEAM_NAMES[s.team] ?? s.team)}</span>
+      <span class="pulse">Pulse <b class="num">${pulseNum(s.pulse)}</b></span>${chip(s.tier)}
+      ${s.dropped ? `<span class="small muted">normálne ${esc(s.normal_tier)}</span>` : ""}<span class="chev" aria-hidden="true">›</span></a>`;
+}
+
+function details(g: Game): string {
+  const rows = LAYERS.map(([k, label]) => [label, g.away.layers?.[k] ?? 0, g.home.layers?.[k] ?? 0] as const);
+  rows.push(["Domáce prostredie", 0, g.home_adv]);
+  const body = rows
+    .filter(([, a, h]) => Math.round(a) !== 0 || Math.round(h) !== 0)
+    .map(([label, a, h]) => `<tr><td>${label}</td><td class="n">${signed(Math.round(a))}</td><td class="n">${signed(Math.round(h))}</td></tr>`)
+    .join("");
+  return `<details class="more"><summary>Podrobnosti modelu</summary>
+    <table class="table"><caption class="sr-only">Vplyv vrstiev modelu v Elo bodoch</caption>
+      <thead><tr><th>Vplyv v Elo bodoch</th><th class="n">${esc(g.away.team)}</th><th class="n">${esc(g.home.team)}</th></tr></thead>
+      <tbody>${body}</tbody></table>
+    <p class="small muted">Sila teamu je odchýlka od priemeru ligy. Kladné číslo teamu pomáha, záporné ho oslabuje.</p></details>`;
 }
 
 export function gameView(d: AppData, id: string): string {
   const g = allGames(d.predictions).find((x) => x.game_id === id);
-  if (!g) return `${header("ZÁPAS", "NENÁJDENÝ")}<p class="empty">Zápas sa nenašiel. <a href="#/">Späť na dnešné zápasy</a></p>`;
-  const dropped = [g.home, g.away].filter((s) => s.dropped);
-  return `${header(`${dayLabel(g.date)} · ZAČIATOK ${tipoff(g.tipoff_utc, g.date)}`, `${teamLink(g.home.team)} <span class="vs">vs</span> ${teamLink(g.away.team)}`, `${g.neutral ? "neutrálne ihrisko" : "doma"}<br>${esc(TEAM_NAMES[g.home.team] ?? g.home.team)}`)}
-    <section class="card duel" aria-label="Porovnanie teamov">
-      ${side(g.home)}
-      <div class="center"><div class="big">${pct(g.p_home)}</div><div class="small muted">výhra ${esc(g.home.team)}</div>
-        <div class="mid num">${signed1(g.margin_home)}</div><div class="small muted">očakávaný rozdiel</div></div>
-      ${side(g.away)}
+  if (!g) return `${header("Zápas sa nenašiel", "", { href: "#/", label: "Zápasy" })}<p class="empty">Tento zápas už nie je v predpovediach. <a href="#/">Späť na zápasy</a></p>`;
+  const { home, away } = split(g.p_home);
+  const homeFav = g.p_home > 0.5;
+  const fav = homeFav ? g.home : g.away;
+  const margin = Math.abs(g.margin_home);
+  const day = longDate(localDay(g.tipoff_utc, g.date));
+  const side = (s: TeamState, p: number, isFav: boolean, where: string) => `<div class="side${isFav ? " fav" : ""}">
+      <a class="abbr big" href="#/team/${esc(s.team)}">${esc(s.team)}</a>
+      <span class="small muted">${where}</span>
+      <span class="pct num">${p} %</span>${isFav ? `<span class="tip">tip</span>` : ""}</div>`;
+  return `${header(`${esc(g.away.team)} <span class="at">@</span> ${esc(g.home.team)}`, `${esc(day)}, ${time(g.tipoff_utc)}${isPre(g) ? " · príprava" : ""}${g.neutral ? " · neutrálne ihrisko" : ""}`, { href: "#/", label: "Zápasy" })}
+    <section class="card hero">
+      <div class="duel">${side(g.away, away, !homeFav, "hostia")}${side(g.home, home, homeFav, g.neutral ? "neutrálne" : "doma")}</div>
+      <div class="bar ${homeFav ? "home-fav" : "away-fav"}" role="img" aria-label="Šanca na výhru: ${esc(g.away.team)} ${away} %, ${esc(g.home.team)} ${home} %"><i style="width:${away}%"></i></div>
+      <p class="verdict">Tip: <b>${esc(fav.team)}</b> vyhrá so šancou ${homeFav ? home : away} %, ${points(margin)}.</p>
     </section>
-    ${g.kind === "preseason" ? `<p class="small note pre-note"><b class="pre">PRÍPRAVA</b> · hviezdy hrajú menej minút a model je naučený na základnú časť, šanca je len orientačná a do vyhodnotenia sa neráta</p>` : ""}
-    ${dropped.map((s) => `<p class="small note">${esc(s.team)} normálne: <b>${esc(s.normal_tier.toUpperCase())}</b> – dnes o úroveň nižšie</p>`).join("")}
-    <div class="cols"><div>
-    <h2 class="section">// VRSTVY MODELU (ELO) · ${esc(g.home.team)} ◂ ▸ ${esc(g.away.team)}</h2>
-    <section class="card">${layerRows(g)}<p class="small muted legend">zelená = pomáha teamu, červená = oslabuje ho</p></section>
-    </div><div>
-    <h2 class="section">// PREČO</h2>
-    <section class="card">${reasons(g)}</section>
-    ${g.what_if.length ? `<a class="button" href="#/cokeby/${esc(g.game_id)}">Čo keby: ${esc(g.what_if[0].player)} (${esc(g.what_if[0].team)})</a>` : ""}
-    </div></div>`;
+    ${isPre(g) ? `<p class="hint">Prípravný zápas: hviezdy hrajú menej a model je naučený na základnú časť, tip je len orientačný.</p>` : ""}
+    <h2 class="sec">Prečo</h2><section class="card">${reasons(g)}</section>
+    ${whatIf(g)}
+    <h2 class="sec">Forma pred týmto zápasom</h2><section class="card">${form(g.away)}${form(g.home)}</section>
+    ${details(g)}`;
 }

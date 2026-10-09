@@ -414,3 +414,20 @@ def test_results_for_app_merge_cloud_and_mac(tmp_path):
     by_id = {r["game_id"]: r for r in res}
     assert by_id["0022600001"]["box"] == mac_box  # Mac má prednosť
     assert by_id["espn-4"]["box"]["UTA"]  # príprava len z ESPN, aj so štatistikami
+
+
+def test_results_for_app_have_tipoff_from_schedule(tmp_path):
+    from team_pulse.predict import results_for_app
+
+    state = {
+        "schedule": [{"game_id": "0022600001", "tipoff_utc": "2026-10-20 23:00:00+00:00"}],
+        "results": [
+            {"game_id": "0022600001", "date": "2026-10-20", "home": "DET", "away": "CHI", "box": {}},
+            {"game_id": "0022600002", "date": "2026-10-20", "home": "MIA", "away": "ORL", "box": {}},
+        ],
+    }
+    res = results_for_app(state, tmp_path / "pred", tmp_path / "box")
+    assert [r["tipoff_utc"] for r in res] == [
+        "2026-10-20 23:00:00+00:00",
+        "",
+    ]  # bez rozpisu ostane americký dátum
