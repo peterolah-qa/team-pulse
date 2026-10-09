@@ -1,0 +1,282 @@
+{
+ "date": "2026-10-09",
+ "games": {
+  "0012600012": {
+   "game_id": "0012600012",
+   "espn_id": "401898395",
+   "date": "2026-10-09",
+   "kind": "preseason",
+   "home": "DAL",
+   "away": "HOU",
+   "pts_home": 117,
+   "pts_away": 135,
+   "box": {
+    "HOU": [
+     {
+      "player": "Tari Eason",
+      "min": 24,
+      "pts": 20,
+      "reb": 9,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Fred VanVleet",
+      "min": 24,
+      "pts": 17,
+      "reb": 2,
+      "ast": 7,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Amen Thompson",
+      "min": 24,
+      "pts": 8,
+      "reb": 7,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Kevin Durant",
+      "min": 23,
+      "pts": 15,
+      "reb": 0,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Alperen Sengun",
+      "min": 22,
+      "pts": 16,
+      "reb": 10,
+      "ast": 10,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jabari Smith Jr.",
+      "min": 22,
+      "pts": 12,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Reed Sheppard",
+      "min": 19,
+      "pts": 16,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Bogdan Bogdanovic",
+      "min": 16,
+      "pts": 4,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Steven Adams",
+      "min": 14,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Oscar Tshiebwe",
+      "min": 12,
+      "pts": 5,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Crawford",
+      "min": 12,
+      "pts": 4,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Bruce Thornton",
+      "min": 9,
+      "pts": 13,
+      "reb": 0,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Quadir Copeland",
+      "min": 9,
+      "pts": 3,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Julian Phillips",
+      "min": 7,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sean Pedulla",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "DAL": [
+     {
+      "player": "Naji Marshall",
+      "min": 24,
+      "pts": 16,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Max Christie",
+      "min": 24,
+      "pts": 14,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Sergio de Larrea",
+      "min": 24,
+      "pts": 11,
+      "reb": 2,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Zaccharie Risacher",
+      "min": 24,
+      "pts": 9,
+      "reb": 8,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Cooper Flagg",
+      "min": 19,
+      "pts": 19,
+      "reb": 6,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Tarik Biberovic",
+      "min": 19,
+      "pts": 9,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jett Howard",
+      "min": 16,
+      "pts": 8,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Tobi Lawal",
+      "min": 15,
+      "pts": 13,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Seth Lundy",
+      "min": 14,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "John Poulakidas",
+      "min": 14,
+      "pts": 3,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Moussa Cisse",
+      "min": 14,
+      "pts": 0,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Dwight Powell",
+      "min": 13,
+      "pts": 1,
+      "reb": 1,
+      "ast": 8,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Morez Johnson Jr.",
+      "min": 12,
+      "pts": 4,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Daniel Gafford",
+      "min": 8,
+      "pts": 7,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
+  }
+ }
+}

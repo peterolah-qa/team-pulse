@@ -55,46 +55,46 @@
    "game_id": "0012600037",
    "kind": "preseason",
    "tipoff_utc": "2026-10-10 00:00:00+00:00",
-   "locked_at": "2026-10-09T13:08:08+00:00",
+   "locked_at": "2026-10-09T16:11:50+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-09T13:08:05Z",
+   "injuries_timestamp": "2026-10-09T16:11:43Z",
    "neutral": false,
    "p_home": 0.67,
    "margin_home": 5.1,
    "home": {
     "team": "CHI",
     "elo": 1384.0,
-    "elo_today": 1363.5,
-    "pulse": 26.4,
+    "elo_today": 1364.1,
+    "pulse": 26.5,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -121.0,
-     "roster": -20.7,
+     "roster": -20.0,
      "players": -1.9,
      "fatigue": 2.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      -21
+      -20
      ]
     ]
    },
    "away": {
     "team": "MEM",
     "elo": 1334.6,
-    "elo_today": 1299.1,
-    "pulse": 15.7,
+    "elo_today": 1299.7,
+    "pulse": 15.8,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -170.4,
-     "roster": -39.4,
+     "roster": -38.8,
      "players": 0.0,
      "fatigue": 3.8
     },
