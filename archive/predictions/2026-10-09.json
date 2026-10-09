@@ -55,17 +55,17 @@
    "game_id": "0012600037",
    "kind": "preseason",
    "tipoff_utc": "2026-10-10 00:00:00+00:00",
-   "locked_at": "2026-10-09T19:26:17+00:00",
+   "locked_at": "2026-10-09T23:26:40+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-09T19:26:13Z",
+   "injuries_timestamp": "2026-10-09T23:26:29Z",
    "neutral": false,
-   "p_home": 0.67,
-   "margin_home": 5.1,
+   "p_home": 0.668,
+   "margin_home": 5.0,
    "home": {
     "team": "CHI",
     "elo": 1384.0,
-    "elo_today": 1364.1,
-    "pulse": 26.5,
+    "elo_today": 1362.3,
+    "pulse": 26.2,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
@@ -73,7 +73,7 @@
     "layers": {
      "strength": -121.0,
      "roster": -20.0,
-     "players": -1.9,
+     "players": -3.8,
      "fatigue": 2.0
     },
     "reasons": [
@@ -86,7 +86,7 @@
    "away": {
     "team": "MEM",
     "elo": 1334.6,
-    "elo_today": 1299.7,
+    "elo_today": 1299.8,
     "pulse": 15.8,
     "tier": "Kritický",
     "normal_tier": "Kritický",
@@ -94,7 +94,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -170.4,
-     "roster": -38.8,
+     "roster": -38.7,
      "players": 0.0,
      "fatigue": 3.8
     },
