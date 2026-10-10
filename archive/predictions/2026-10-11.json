@@ -1,0 +1,59 @@
+{
+ "date": "2026-10-11",
+ "games": {
+  "0012600016": {
+   "game_id": "0012600016",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-11 10:00:00+00:00",
+   "locked_at": "2026-10-10T11:25:28+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-10T11:25:23Z",
+   "neutral": true,
+   "p_home": 0.764,
+   "margin_home": 8.5,
+   "home": {
+    "team": "HOU",
+    "elo": 1571.2,
+    "elo_today": 1589.6,
+    "pulse": 64.1,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 66.2,
+     "roster": 55.0,
+     "players": -39.2,
+     "fatigue": 2.7
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      55
+     ],
+     [
+      "Bez Kevin Durant",
+      -39
+     ]
+    ]
+   },
+   "away": {
+    "team": "DAL",
+    "elo": 1392.8,
+    "elo_today": 1387.5,
+    "pulse": 30.4,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -112.2,
+     "roster": -4.5,
+     "players": -0.8,
+     "fatigue": 0
+    },
+    "reasons": []
+   }
+  }
+ }
+}
