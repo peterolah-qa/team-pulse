@@ -277,6 +277,310 @@
      }
     ]
    }
+  },
+  "0012600037": {
+   "game_id": "0012600037",
+   "espn_id": "401908940",
+   "date": "2026-10-09",
+   "kind": "preseason",
+   "home": "CHI",
+   "away": "MEM",
+   "pts_home": 100,
+   "pts_away": 104,
+   "box": {
+    "MEM": [
+     {
+      "player": "GG Jackson",
+      "min": 17,
+      "pts": 14,
+      "reb": 4,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Quinten Post",
+      "min": 17,
+      "pts": 4,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Zach Edey",
+      "min": 16,
+      "pts": 10,
+      "reb": 5,
+      "ast": 0,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Cam Spencer",
+      "min": 16,
+      "pts": 4,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kris Murray",
+      "min": 16,
+      "pts": 3,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Olivier-Maxence Prosper",
+      "min": 16,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Walter Clayton Jr.",
+      "min": 15,
+      "pts": 2,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ty Jerome",
+      "min": 14,
+      "pts": 16,
+      "reb": 1,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Javon Small",
+      "min": 14,
+      "pts": 9,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Jaylen Wells",
+      "min": 14,
+      "pts": 8,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Karim Lopez",
+      "min": 14,
+      "pts": 4,
+      "reb": 6,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cameron Boozer",
+      "min": 12,
+      "pts": 10,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jerami Grant",
+      "min": 12,
+      "pts": 9,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cedric Coward",
+      "min": 12,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Scotty Pippen Jr.",
+      "min": 12,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Taylor Hendricks",
+      "min": 11,
+      "pts": 5,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jahmai Mashack",
+      "min": 7,
+      "pts": 0,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Carson Cooper",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "CHI": [
+     {
+      "player": "Caleb Wilson",
+      "min": 32,
+      "pts": 21,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tobe Awaka",
+      "min": 24,
+      "pts": 0,
+      "reb": 7,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Giddey",
+      "min": 23,
+      "pts": 13,
+      "reb": 3,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Leonard Miller",
+      "min": 23,
+      "pts": 12,
+      "reb": 11,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Isaac Okoro",
+      "min": 23,
+      "pts": 5,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Norman Powell",
+      "min": 19,
+      "pts": 17,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Noa Essengue",
+      "min": 19,
+      "pts": 5,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dailyn Swain",
+      "min": 18,
+      "pts": 6,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Buddy Hield",
+      "min": 17,
+      "pts": 5,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Matas Buzelis",
+      "min": 12,
+      "pts": 6,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Patrick Williams",
+      "min": 10,
+      "pts": 3,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jalen Bridges",
+      "min": 8,
+      "pts": 4,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Drew Peterson",
+      "min": 7,
+      "pts": 3,
+      "reb": 2,
+      "ast": 0,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Brandon Boston Jr.",
+      "min": 4,
+      "pts": 0,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
