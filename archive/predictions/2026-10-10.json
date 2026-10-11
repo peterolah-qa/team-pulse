@@ -350,53 +350,53 @@
    "game_id": "0012600039",
    "kind": "preseason",
    "tipoff_utc": "2026-10-11 02:30:00+00:00",
-   "locked_at": "2026-10-10T21:57:36+00:00",
+   "locked_at": "2026-10-11T00:49:36+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-10T21:57:25Z",
+   "injuries_timestamp": "2026-10-11T00:49:31Z",
    "neutral": false,
    "p_home": 0.338,
    "margin_home": -4.9,
    "home": {
     "team": "PHX",
     "elo": 1528.3,
-    "elo_today": 1518.8,
-    "pulse": 52.3,
+    "elo_today": 1524.0,
+    "pulse": 53.2,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 23.3,
-     "roster": -16.7,
+     "roster": -11.5,
      "players": 0.0,
      "fatigue": 7.2
     },
     "reasons": [
      [
       "Sila súpisky",
-      -17
+      -11
      ]
     ]
    },
    "away": {
     "team": "SAS",
     "elo": 1702.5,
-    "elo_today": 1733.6,
-    "pulse": 88.1,
+    "elo_today": 1738.8,
+    "pulse": 89.0,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 197.5,
-     "roster": 31.6,
+     "roster": 36.8,
      "players": -3.8,
      "fatigue": 3.2
     },
     "reasons": [
      [
       "Sila súpisky",
-      32
+      37
      ]
     ]
    }
