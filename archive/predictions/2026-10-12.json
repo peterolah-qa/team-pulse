@@ -1,0 +1,241 @@
+{
+ "date": "2026-10-12",
+ "games": {
+  "0012600007": {
+   "game_id": "0012600007",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-12 23:00:00+00:00",
+   "locked_at": "2026-10-12T01:40:39+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-12T01:40:32Z",
+   "neutral": false,
+   "p_home": 0.45,
+   "margin_home": -1.4,
+   "home": {
+    "team": "ATL",
+    "elo": 1531.2,
+    "elo_today": 1543.4,
+    "pulse": 56.4,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 26.2,
+     "roster": 10.8,
+     "players": -1.9,
+     "fatigue": 3.2
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      11
+     ]
+    ]
+   },
+   "away": {
+    "team": "OKC",
+    "elo": 1687.3,
+    "elo_today": 1662.3,
+    "pulse": 76.2,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 182.3,
+     "roster": 36.6,
+     "players": -68.3,
+     "fatigue": 6.8
+    },
+    "reasons": [
+     [
+      "Bez Shai Gilgeous-Alexander, Chet Holmgren",
+      -68
+     ],
+     [
+      "Sila súpisky",
+      37
+     ]
+    ]
+   }
+  },
+  "0012600050": {
+   "game_id": "0012600050",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-12 23:00:00+00:00",
+   "locked_at": "2026-10-12T01:40:39+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-12T01:40:32Z",
+   "neutral": false,
+   "p_home": 0.59,
+   "margin_home": 2.6,
+   "home": {
+    "team": "WAS",
+    "elo": 1284.8,
+    "elo_today": 1296.9,
+    "pulse": 15.3,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -220.2,
+     "roster": 10.1,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      10
+     ]
+    ]
+   },
+   "away": {
+    "team": "BKN",
+    "elo": 1320.0,
+    "elo_today": 1302.4,
+    "pulse": 16.2,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "stredná",
+    "layers": {
+     "strength": -185.0,
+     "roster": -11.3,
+     "players": -10.2,
+     "fatigue": 3.9
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -11
+     ],
+     [
+      "Bez Michael Porter Jr. (?)",
+      -10
+     ]
+    ]
+   }
+  },
+  "0012600043": {
+   "game_id": "0012600043",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-12 23:30:00+00:00",
+   "locked_at": "2026-10-12T01:40:39+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-12T01:40:32Z",
+   "neutral": false,
+   "p_home": 0.818,
+   "margin_home": 10.9,
+   "home": {
+    "team": "NYK",
+    "elo": 1725.9,
+    "elo_today": 1783.5,
+    "pulse": 96.4,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 220.9,
+     "roster": 53.7,
+     "players": 0.0,
+     "fatigue": 4.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      54
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIN",
+    "elo": 1557.7,
+    "elo_today": 1558.0,
+    "pulse": 58.8,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "stredná",
+    "layers": {
+     "strength": 52.7,
+     "roster": -1.4,
+     "players": -15.2,
+     "fatigue": 16.9
+    },
+    "reasons": [
+     [
+      "4. zápas výjazdu",
+      19
+     ],
+     [
+      "Bez Anthony Edwards (?), LaMelo Ball (?)",
+      -15
+     ]
+    ]
+   }
+  },
+  "0012600044": {
+   "game_id": "0012600044",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-13 01:00:00+00:00",
+   "locked_at": "2026-10-12T01:40:39+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-12T01:40:32Z",
+   "neutral": false,
+   "p_home": 0.194,
+   "margin_home": -10.3,
+   "home": {
+    "team": "UTA",
+    "elo": 1341.5,
+    "elo_today": 1337.1,
+    "pulse": 22.0,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "stredná",
+    "layers": {
+     "strength": -163.5,
+     "roster": 0.3,
+     "players": -10.6,
+     "fatigue": 6.0
+    },
+    "reasons": [
+     [
+      "Bez Lauri Markkanen (?)",
+      -11
+     ]
+    ]
+   },
+   "away": {
+    "team": "SAS",
+    "elo": 1702.5,
+    "elo_today": 1704.5,
+    "pulse": 83.3,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 197.5,
+     "roster": 37.8,
+     "players": -3.8,
+     "fatigue": -32.0
+    },
+    "reasons": [
+     [
+      "Hrá vo výške",
+      -40
+     ],
+     [
+      "Sila súpisky",
+      38
+     ]
+    ]
+   }
+  }
+ }
+}
