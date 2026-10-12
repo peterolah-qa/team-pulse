@@ -5,46 +5,50 @@
    "game_id": "0012600007",
    "kind": "preseason",
    "tipoff_utc": "2026-10-12 23:00:00+00:00",
-   "locked_at": "2026-10-12T13:35:05+00:00",
+   "locked_at": "2026-10-12T22:03:52+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-12T13:35:04Z",
+   "injuries_timestamp": "2026-10-12T22:03:43Z",
    "neutral": false,
-   "p_home": 0.45,
-   "margin_home": -1.4,
+   "p_home": 0.406,
+   "margin_home": -2.8,
    "home": {
     "team": "ATL",
     "elo": 1531.2,
-    "elo_today": 1543.4,
-    "pulse": 56.4,
+    "elo_today": 1509.9,
+    "pulse": 50.8,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 26.2,
-     "roster": 10.8,
-     "players": -1.9,
+     "roster": 14.3,
+     "players": -38.8,
      "fatigue": 3.2
     },
     "reasons": [
      [
+      "Bez Jalen Johnson, Dyson Daniels",
+      -39
+     ],
+     [
       "Sila súpisky",
-      11
+      14
      ]
     ]
    },
    "away": {
     "team": "OKC",
     "elo": 1687.3,
-    "elo_today": 1662.3,
-    "pulse": 76.2,
+    "elo_today": 1665.8,
+    "pulse": 76.8,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 182.3,
-     "roster": 36.6,
+     "roster": 40.0,
      "players": -68.3,
      "fatigue": 6.8
     },
@@ -55,7 +59,7 @@
      ],
      [
       "Sila súpisky",
-      37
+      40
      ]
     ]
    }
@@ -64,105 +68,100 @@
    "game_id": "0012600050",
    "kind": "preseason",
    "tipoff_utc": "2026-10-12 23:00:00+00:00",
-   "locked_at": "2026-10-12T13:35:05+00:00",
+   "locked_at": "2026-10-12T22:03:52+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-12T13:35:04Z",
+   "injuries_timestamp": "2026-10-12T22:03:43Z",
    "neutral": false,
-   "p_home": 0.59,
-   "margin_home": 2.6,
+   "p_home": 0.544,
+   "margin_home": 1.3,
    "home": {
     "team": "WAS",
     "elo": 1284.8,
-    "elo_today": 1296.9,
-    "pulse": 15.3,
+    "elo_today": 1273.1,
+    "pulse": 11.4,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -220.2,
-     "roster": 10.1,
-     "players": 0.0,
+     "roster": 13.5,
+     "players": -27.2,
      "fatigue": 2.0
     },
     "reasons": [
      [
+      "Bez Anthony Davis",
+      -27
+     ],
+     [
       "Sila súpisky",
-      10
+      14
      ]
     ]
    },
    "away": {
     "team": "BKN",
     "elo": 1320.0,
-    "elo_today": 1302.4,
-    "pulse": 16.2,
+    "elo_today": 1316.1,
+    "pulse": 18.5,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
-    "confidence": "stredná",
+    "confidence": "vysoká",
     "layers": {
      "strength": -185.0,
-     "roster": -11.3,
-     "players": -10.2,
+     "roster": -7.9,
+     "players": 0.0,
      "fatigue": 3.9
     },
-    "reasons": [
-     [
-      "Sila súpisky",
-      -11
-     ],
-     [
-      "Bez Michael Porter Jr. (?)",
-      -10
-     ]
-    ]
+    "reasons": []
    }
   },
   "0012600043": {
    "game_id": "0012600043",
    "kind": "preseason",
    "tipoff_utc": "2026-10-12 23:30:00+00:00",
-   "locked_at": "2026-10-12T13:35:05+00:00",
+   "locked_at": "2026-10-12T22:03:52+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-12T13:35:04Z",
+   "injuries_timestamp": "2026-10-12T22:03:43Z",
    "neutral": false,
    "p_home": 0.818,
    "margin_home": 10.9,
    "home": {
     "team": "NYK",
     "elo": 1725.9,
-    "elo_today": 1783.5,
-    "pulse": 96.4,
+    "elo_today": 1787.0,
+    "pulse": 97.0,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 220.9,
-     "roster": 53.7,
+     "roster": 57.1,
      "players": 0.0,
      "fatigue": 4.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      54
+      57
      ]
     ]
    },
    "away": {
     "team": "MIN",
     "elo": 1557.7,
-    "elo_today": 1558.0,
-    "pulse": 58.8,
+    "elo_today": 1561.4,
+    "pulse": 59.4,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": 52.7,
-     "roster": -1.4,
+     "roster": 2.0,
      "players": -15.2,
      "fatigue": 16.9
     },
@@ -182,24 +181,24 @@
    "game_id": "0012600044",
    "kind": "preseason",
    "tipoff_utc": "2026-10-13 01:00:00+00:00",
-   "locked_at": "2026-10-12T13:35:05+00:00",
+   "locked_at": "2026-10-12T22:03:52+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-12T13:35:04Z",
+   "injuries_timestamp": "2026-10-12T22:03:43Z",
    "neutral": false,
-   "p_home": 0.194,
-   "margin_home": -10.3,
+   "p_home": 0.249,
+   "margin_home": -8.0,
    "home": {
     "team": "UTA",
     "elo": 1341.5,
-    "elo_today": 1337.1,
-    "pulse": 22.0,
+    "elo_today": 1340.6,
+    "pulse": 22.6,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": -163.5,
-     "roster": 0.3,
+     "roster": 3.7,
      "players": -10.6,
      "fatigue": 6.0
     },
@@ -213,26 +212,30 @@
    "away": {
     "team": "SAS",
     "elo": 1702.5,
-    "elo_today": 1704.5,
-    "pulse": 83.3,
-    "tier": "Silný",
+    "elo_today": 1642.2,
+    "pulse": 72.9,
+    "tier": "Stabilný",
     "normal_tier": "Silný",
-    "dropped": false,
+    "dropped": true,
     "confidence": "vysoká",
     "layers": {
      "strength": 197.5,
-     "roster": 37.8,
-     "players": -3.8,
+     "roster": 41.2,
+     "players": -69.5,
      "fatigue": -32.0
     },
     "reasons": [
      [
-      "Hrá vo výške",
-      -40
+      "Bez Victor Wembanyama, Stephon Castle",
+      -70
      ],
      [
       "Sila súpisky",
-      38
+      41
+     ],
+     [
+      "Hrá vo výške",
+      -40
      ]
     ]
    }
