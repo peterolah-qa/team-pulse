@@ -161,7 +161,9 @@ Stiahnuté dáta sa necommitujú. Mená hráčov v testoch a na screenshotoch s�
 - [x] 0a – replikácia Elo (G0) · [x] 0b – vrstvy B, C, sila súpisky (G1) · [x] 1 – dátový agent a stav
 - [x] 2 – PWA appka (G3)
 - [ ] G2 – 14 dní ostrej prevádzky od 20. 10. 2026
-- [ ] neskôr: Supabase (história predpovedí), notifikácie
+- [x] upozornenia v appke na dohrané zápasy
+- [ ] ďalšie športy: NHL, Tipos extraliga, F1 – [plán](docs/sporty.md)
+- [ ] neskôr: Supabase (história predpovedí)
 
 ---
 
