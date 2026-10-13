@@ -123,25 +123,25 @@
    "game_id": "0012600047",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 00:00:00+00:00",
-   "locked_at": "2026-10-13T22:30:47+00:00",
+   "locked_at": "2026-10-13T23:00:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-13T22:30:45Z",
+   "injuries_timestamp": "2026-10-13T23:00:49Z",
    "neutral": false,
-   "p_home": 0.843,
-   "margin_home": 12.2,
+   "p_home": 0.856,
+   "margin_home": 12.8,
    "home": {
     "team": "OKC",
     "elo": 1687.3,
-    "elo_today": 1652.0,
-    "pulse": 74.5,
+    "elo_today": 1671.0,
+    "pulse": 77.7,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
-    "confidence": "nízka",
+    "confidence": "vysoká",
     "layers": {
      "strength": 182.3,
-     "roster": 38.7,
-     "players": -34.2,
+     "roster": 38.1,
+     "players": -14.6,
      "fatigue": -39.8
     },
     "reasons": [
@@ -151,33 +151,33 @@
      ],
      [
       "Sila súpisky",
-      39
+      38
      ],
      [
-      "Bez Shai Gilgeous-Alexander (?), Chet Holmgren (?)",
-      -34
+      "Bez Chet Holmgren",
+      -15
      ]
     ]
    },
    "away": {
     "team": "IND",
     "elo": 1379.3,
-    "elo_today": 1390.3,
-    "pulse": 30.9,
+    "elo_today": 1389.7,
+    "pulse": 30.8,
     "tier": "Oslabený",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "nízka",
     "layers": {
      "strength": -125.7,
-     "roster": 24.7,
+     "roster": 24.0,
      "players": -16.6,
      "fatigue": 2.9
     },
     "reasons": [
      [
       "Sila súpisky",
-      25
+      24
      ],
      [
       "Bez Tyrese Haliburton (?)",
@@ -190,24 +190,24 @@
    "game_id": "0012600048",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-13T22:30:47+00:00",
+   "locked_at": "2026-10-13T23:00:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-13T22:30:45Z",
+   "injuries_timestamp": "2026-10-13T23:00:49Z",
    "neutral": false,
    "p_home": 0.784,
    "margin_home": 9.3,
    "home": {
     "team": "LAL",
     "elo": 1569.2,
-    "elo_today": 1622.5,
-    "pulse": 69.6,
+    "elo_today": 1621.8,
+    "pulse": 69.5,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "nízka",
     "layers": {
      "strength": 64.2,
-     "roster": 52.3,
+     "roster": 51.6,
      "players": -4.0,
      "fatigue": 5.0
     },
@@ -221,15 +221,15 @@
    "away": {
     "team": "GSW",
     "elo": 1446.7,
-    "elo_today": 1440.1,
-    "pulse": 39.2,
+    "elo_today": 1439.5,
+    "pulse": 39.1,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -58.3,
-     "roster": 11.0,
+     "roster": 10.3,
      "players": -21.0,
      "fatigue": 3.5
     },
@@ -240,7 +240,7 @@
      ],
      [
       "Sila súpisky",
-      11
+      10
      ]
     ]
    }
@@ -249,57 +249,57 @@
    "game_id": "0012600049",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-13T22:30:47+00:00",
+   "locked_at": "2026-10-13T23:00:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-13T22:30:45Z",
+   "injuries_timestamp": "2026-10-13T23:00:49Z",
    "neutral": false,
    "p_home": 0.35,
    "margin_home": -4.5,
    "home": {
     "team": "SAC",
     "elo": 1374.4,
-    "elo_today": 1356.3,
-    "pulse": 25.2,
+    "elo_today": 1355.7,
+    "pulse": 25.1,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": -130.6,
-     "roster": -10.3,
+     "roster": -10.9,
      "players": -10.8,
      "fatigue": 3.0
     },
     "reasons": [
      [
-      "Bez Domantas Sabonis (?), Maxime Raynaud",
+      "Sila súpisky",
       -11
      ],
      [
-      "Sila súpisky",
-      -10
+      "Bez Domantas Sabonis (?), Maxime Raynaud",
+      -11
      ]
     ]
    },
    "away": {
     "team": "POR",
     "elo": 1515.8,
-    "elo_today": 1560.1,
-    "pulse": 59.2,
+    "elo_today": 1559.5,
+    "pulse": 59.1,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 10.8,
-     "roster": 41.7,
+     "roster": 41.1,
      "players": 0.0,
      "fatigue": 2.6
     },
     "reasons": [
      [
       "Sila súpisky",
-      42
+      41
      ]
     ]
    }
