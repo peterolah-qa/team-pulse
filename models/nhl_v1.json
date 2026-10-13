@@ -1,0 +1,79 @@
+{
+  "version": "nhl-v1",
+  "features": [
+    "elo_diff",
+    "home",
+    "home_rest",
+    "home_b2b",
+    "home_three_in4",
+    "home_tz_east",
+    "away_rest",
+    "away_b2b",
+    "away_three_in4",
+    "away_tz_east",
+    "away_road"
+  ],
+  "coef": [
+    0.56700643911765,
+    0.11311968963071968,
+    -0.02532517612905626,
+    -0.24072217406167135,
+    -0.08938825372922674,
+    0.0011695456263381124,
+    -0.007010308857840497,
+    0.21832178405090447,
+    0.006369841201211605,
+    0.004028707398395856,
+    0.010247220113606865
+  ],
+  "intercept": 0.11065462995226989,
+  "elo_params": {
+    "k": 6.0,
+    "hca": 30.0,
+    "carryover": 0.8,
+    "mean": 1505.0,
+    "new_team": 1505.0
+  },
+  "train_seasons": [
+    2009,
+    2026
+  ],
+  "n_games": 21612,
+  "created": "2026-10-13",
+  "test_metrics": {
+    "accuracy": 0.5759654471544715,
+    "log_loss": 0.671286242906403,
+    "brier": 0.23940169421713822,
+    "n": 3936
+  },
+  "elo_weights": {
+    "home": 20.0,
+    "home_rest": -4.5,
+    "home_b2b": -42.5,
+    "home_three_in4": -15.8,
+    "home_tz_east": 0.2,
+    "away_rest": -1.2,
+    "away_b2b": 38.5,
+    "away_three_in4": 1.1,
+    "away_tz_east": 0.7,
+    "away_road": 1.8
+  },
+  "calibration": [],
+  "versions": [
+    {
+      "model": "A: Elo",
+      "accuracy": 0.5716463414634146,
+      "log_loss": 0.6729630164347743
+    },
+    {
+      "model": "A kalibrované (Elo + domáci)",
+      "accuracy": 0.571900406504065,
+      "log_loss": 0.6731582191763602
+    },
+    {
+      "model": "A + C (+ únava)",
+      "accuracy": 0.5759654471544715,
+      "log_loss": 0.671286242906403
+    }
+  ]
+}
