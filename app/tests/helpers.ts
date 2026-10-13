@@ -49,3 +49,13 @@ export function withResults(p: Json): Json {
   ];
   return p;
 }
+
+/* Zariadenie, ktoré appku už otvorilo, keď boli dohrané len zápasy `ids` (upozornenia aj odznak na Výsledkoch).
+   Nastaví sa len pred prvým načítaním, reload už pamäť appky neprepíše. */
+export async function visitedBefore(page: Page, ids: string[]) {
+  await page.addInitScript((seen) => {
+    if (localStorage.getItem("tp-notified")) return;
+    localStorage.setItem("tp-notified", JSON.stringify(seen));
+    localStorage.setItem("tp-viewed", JSON.stringify(seen));
+  }, ids);
+}

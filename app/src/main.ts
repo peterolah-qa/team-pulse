@@ -9,6 +9,7 @@ import "@fontsource/barlow/latin-ext-600.css";
 import "./style.css";
 
 import { loadData, type AppData } from "./data";
+import { markViewed, showToasts, takeNew, updateBadge } from "./notify";
 import { gameView } from "./views/game";
 import { gamesView } from "./views/games";
 import { modelView } from "./views/model";
@@ -54,7 +55,30 @@ function render(): void {
     if (a.dataset.tab === r.tab) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   });
+  if (r.tab === "vysledky") markViewed(data);
+  updateBadge(data);
   window.scrollTo(0, 0);
+}
+
+/* Nové dáta: upozornenia na dohrané zápasy a číslo na záložke Výsledky. */
+function announce(): void {
+  if (!data) return;
+  showToasts(takeNew(data));
+  updateBadge(data);
+}
+
+/* Po návrate appky z pozadia stiahne čerstvé dáta (zobrazí sa pri ďalšom kliknutí) a ukáže, čo skončilo. */
+async function refresh(): Promise<void> {
+  if (!data || document.visibilityState !== "visible") return;
+  try {
+    const fresh = await loadData();
+    if (fresh.predictions.generated_at === data.predictions.generated_at) return;
+    data = fresh;
+    if (route().tab === "vysledky") render();
+    announce();
+  } catch {
+    /* bez siete ostanú posledné dáta */
+  }
 }
 
 async function start(): Promise<void> {
@@ -62,6 +86,7 @@ async function start(): Promise<void> {
   try {
     data = await loadData();
     render();
+    announce();
   } catch (e) {
     app.innerHTML = `<div class="empty" role="alert"><p>Dáta sa nepodarilo načítať.</p>
       <p class="small muted">${String(e instanceof Error ? e.message : e)}</p>
@@ -99,6 +124,8 @@ function tilt(): void {
 }
 
 window.addEventListener("hashchange", render);
+document.addEventListener("visibilitychange", refresh);
+window.setInterval(refresh, 5 * 60_000);
 tilt();
 start();
 

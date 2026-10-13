@@ -270,6 +270,33 @@ details.more.inner { margin: 0; border: 0; border-top: 1px solid var(--line); bo
 .tabbar a[aria-current="page"] { color: var(--text); background: linear-gradient(180deg, var(--chip-hi), var(--chip-lo));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 -2px 0 var(--brand), 0 4px 10px -4px color-mix(in srgb, var(--brand) 50%, transparent); }
 .tabbar a[aria-current="page"] svg { color: var(--brand); filter: drop-shadow(0 0 4px color-mix(in srgb, var(--brand) 60%, transparent)); }
+.tabbar a { position: relative; }
+.badge { position: absolute; top: 2px; left: calc(50% + 6px); min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px;
+  font: 700 11px/18px var(--display); color: var(--on-accent); background: var(--accent); text-align: center;
+  box-shadow: 0 0 0 2px var(--bg-2), 0 2px 6px rgba(0, 0, 0, 0.5); }
+
+/* Upozornenia na dohrané zápasy: hore, nad obsahom, zmiznú samy */
+.toasts { position: fixed; top: calc(env(safe-area-inset-top, 0px) + 10px); left: 50%; z-index: 6; transform: translateX(-50%);
+  width: min(608px, calc(100% - 20px)); display: grid; gap: 8px; pointer-events: none; }
+.toast { pointer-events: auto; display: grid; grid-template-columns: 30px minmax(0, 1fr); align-items: center; gap: 10px;
+  padding: 10px 14px 10px 10px; color: var(--text); text-decoration: none; font: 400 15px/1.3 var(--body);
+  background: linear-gradient(180deg, var(--panel-hi), var(--panel-lo)); border: 1px solid var(--line-hi); border-left-width: 4px;
+  border-radius: 14px; box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  animation: toast-in 0.28s ease-out both; }
+.toast b { font: 700 15px var(--display); margin-right: 4px; }
+.toast .t-sub { display: block; color: var(--muted); font-size: 13px; }
+.t-ico { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font: 700 16px var(--display);
+  background: var(--chip-hi); color: var(--muted); }
+.toast.hit { border-left-color: var(--hit); }
+.toast.hit b, .toast.hit .t-ico { color: var(--hit); }
+.toast.hit .t-ico { background: color-mix(in srgb, var(--hit) 16%, transparent); }
+.toast.miss { background: linear-gradient(180deg, var(--miss-hi), var(--miss-bg)); border-color: var(--miss); }
+.toast.miss b, .toast.miss .t-ico { color: var(--miss); }
+.toast.miss .t-ico { background: color-mix(in srgb, var(--miss) 16%, transparent); }
+.toast.more { border-left-color: var(--brand); }
+.toast.more .t-ico { color: var(--brand); }
+@keyframes toast-in { from { opacity: 0; transform: translateY(-8px); } }
+
 .button { margin-top: 12px; font: 600 16px var(--body); color: var(--on-accent); background: linear-gradient(180deg, var(--accent-hi), var(--accent)); border: 0; border-radius: 10px;
   padding: 10px 16px; cursor: pointer; box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--accent) 60%, transparent); }
 
@@ -284,4 +311,5 @@ details.more.inner { margin: 0; border: 0; border-top: 1px solid var(--line); bo
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; }
   .match, .tiprow, .teamrow { transform: none !important; }
+  .toast { animation: none; }
 }

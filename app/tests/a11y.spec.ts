@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { open, serveData, withResults } from "./helpers";
+import { open, serveData, visitedBefore, withResults } from "./helpers";
 
 /* Automatická kontrola prístupnosti (WCAG 2.1 A + AA) na každej obrazovke. */
 const SCREENS = {
@@ -24,6 +24,15 @@ for (const [name, hash] of Object.entries(SCREENS)) {
     expect(summary).toEqual([]);
   });
 }
+
+test("a11y: upozornenia na dohrané zápasy a číslo na záložke Výsledky", async ({ page }) => {
+  await serveData(page, { predictions: withResults });
+  await visitedBefore(page, ["0012600050"]);
+  await open(page);
+  await page.locator("#toasts .toast").first().waitFor();
+  const result = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
+  expect(result.violations.map((v) => `${v.id}: ${v.nodes.length}× ${v.help}`)).toEqual([]);
+});
 
 test("a11y: rozbaľovacie podrobnosti sa ovládajú klávesnicou", async ({ page }) => {
   await serveData(page, { predictions: withResults });

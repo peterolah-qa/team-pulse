@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { fixture, open, serveData, withResults } from "./helpers";
+import { fixture, NOW, open, serveData, visitedBefore, withResults } from "./helpers";
 
 test.beforeEach(async ({ page }) => {
   await serveData(page, { predictions: withResults });
@@ -156,6 +156,96 @@ test("Výsledok: skóre, tip a štatistiky hráčov (MIN, B, D, A, BL)", async (
   await expect(more.locator("tbody tr")).toHaveCount(3);
   await page.locator("a.back").click();
   await expect(page).toHaveURL(/#\/vysledky$/);
+});
+
+test("Upozornenia: prvé otvorenie appky nič neukáže ani nepočíta", async ({ page }) => {
+  await open(page);
+  await expect(page.locator(".tabbar a").first()).toBeVisible();
+  await expect(page.locator("#toasts .toast")).toHaveCount(0);
+  await expect(page.locator(".tabbar .badge")).toHaveCount(0);
+  await page.reload();
+  await page.locator("header.top").first().waitFor();
+  await expect(page.locator("#toasts .toast")).toHaveCount(0);
+});
+
+test("Upozornenia: dohrané zápasy od poslednej návštevy, nevyšiel červený, klik otvorí výsledok", async ({ page }) => {
+  await visitedBefore(page, ["0012600050"]); // naposledy bol dohraný len zápas z prípravy
+  await open(page);
+  const toasts = page.locator("#toasts .toast");
+  await expect(toasts).toHaveCount(2);
+  // najnovší hore: PHI @ NYK (02:00), potom BOS @ DET (01:00)
+  await expect(toasts.nth(0)).toHaveClass(/miss/);
+  await expect(toasts.nth(0)).toHaveText(/^✗\s*Tip nevyšiel PHI 104 : 99 NYK tip NYK 70 %$/);
+  await expect(toasts.nth(0)).toHaveAttribute("href", "#/vysledok/0022600901");
+  await expect(toasts.nth(1)).toHaveClass(/hit/);
+  await expect(toasts.nth(1)).toHaveText(/^✓\s*Tip vyšiel BOS 104 : 110 DET tip DET 62 %$/);
+  const border = (i: number) => toasts.nth(i).evaluate((el) => getComputedStyle(el).borderLeftColor);
+  expect(await border(0)).toBe("rgb(251, 90, 114)"); // červená
+  expect(await border(1)).toBe("rgb(52, 211, 153)"); // zelená
+
+  const tab = page.locator('.tabbar a[data-tab="vysledky"]');
+  await expect(tab.locator(".badge [aria-hidden=true]")).toHaveText("2");
+  await expect(tab).toHaveAccessibleName(/^Výsledky\s*, 2 nové výsledky$/);
+
+  await toasts.nth(0).click();
+  await expect(page).toHaveURL(/#\/vysledok\/0022600901$/);
+  await expect(page.locator("h1")).toContainText("NYK");
+  await expect(toasts).toHaveCount(0);
+  await expect(tab.locator(".badge")).toHaveCount(0); // výsledky už videl
+
+  await page.reload(); // to isté sa druhýkrát neukáže
+  await page.locator("header.top").first().waitFor();
+  await expect(page.locator("h1")).toContainText("NYK");
+  await expect(toasts).toHaveCount(0);
+  await expect(tab.locator(".badge")).toHaveCount(0);
+});
+
+test("Upozornenia: po návrate do appky ukáže zápas, ktorý medzitým skončil", async ({ page }) => {
+  await page.unrouteAll();
+  await serveData(page, { predictions: (p) => ((withResults(p).results = p.results.slice(0, 2)), p) }); // NYK ešte hrá
+  await open(page);
+  await expect(page.locator("#toasts .toast")).toHaveCount(0);
+
+  await page.unrouteAll();
+  await serveData(page, { predictions: (p) => ({ ...withResults(p), generated_at: "2026-10-20T15:15:00+00:00" }) });
+  await page.evaluate(() => document.dispatchEvent(new Event("visibilitychange")));
+  const toast = page.locator("#toasts .toast");
+  await expect(toast).toHaveCount(1);
+  await expect(toast).toContainText("Tip nevyšiel PHI 104 : 99 NYK");
+  const tab = page.locator('.tabbar a[data-tab="vysledky"]');
+  await expect(tab.locator(".badge [aria-hidden=true]")).toHaveText("1");
+  await expect(tab).toHaveAccessibleName(/1 nový výsledok$/);
+
+  await tab.click();
+  await expect(page.locator("a.match")).toHaveCount(2);
+  await expect(tab.locator(".badge")).toHaveCount(0);
+});
+
+test("Upozornenia: najviac 3 naraz, zvyšok jedným odkazom, po 7 s zmiznú", async ({ page }) => {
+  await page.unrouteAll();
+  await serveData(page, {
+    predictions: (p) => {
+      withResults(p);
+      const extra = (id: string, h: string, a: string, tip: string) =>
+        ({ ...p.results[1], game_id: id, home: h, away: a, tipoff_utc: tip, box: {} });
+      p.results.push(extra("0022600902", "LAL", "GSW", "2026-10-20 02:30:00+00:00"), extra("0022600903", "DEN", "OKC", "2026-10-20 01:00:00+00:00"));
+      return p;
+    },
+  });
+  await visitedBefore(page, ["0022500001"]); // starý zápas, ktorý už v dátach nie je
+  await page.clock.install({ time: NOW });
+  await page.goto("/#/");
+  await page.locator("header.top").first().waitFor();
+  const toasts = page.locator("#toasts .toast");
+  await expect(toasts).toHaveCount(4);
+  await expect(toasts.nth(0)).toContainText("GSW 104 : 110 LAL"); // najneskôr začatý
+  await expect(toasts.nth(1)).toContainText("OKC 104 : 110 DEN");
+  await expect(toasts.nth(2)).toContainText("PHI 104 : 99 NYK");
+  await expect(toasts.nth(3)).toHaveText(/Ďalšie výsledky: 2$/);
+  await expect(toasts.nth(3)).toHaveAttribute("href", "#/vysledky");
+  await expect(page.locator('.tabbar a[data-tab="vysledky"] .badge [aria-hidden=true]')).toHaveText("5");
+  await page.clock.runFor(7_000);
+  await expect(toasts).toHaveCount(0);
 });
 
 test("Detail zápasu: tip, prečo, otázny hráč, forma a podrobnosti modelu", async ({ page }) => {
