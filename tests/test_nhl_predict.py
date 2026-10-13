@@ -106,8 +106,10 @@ def test_main_writes_predictions(tmp_path, monkeypatch, capsys):
     history().to_parquet(hist_path, index=False)
     model(away_b2b=0.2).save(model_path)
     monkeypatch.setattr(pr, "fetch_season", lambda session, year: current())
-    monkeypatch.setattr(pr, "today_et", lambda now=None: date(2026, 10, 13))
-    data = pr.main(3, out, hist_path, model_path)
+    now = datetime(2026, 10, 13, 14, tzinfo=UTC)  # pred oboma zápasmi
+    data = pr.main(3, out, hist_path, model_path, archive=tmp_path / "archive", now=now)
     assert json.loads(out.read_text(encoding="utf-8")) == data
     printed = capsys.readouterr().out
     assert "Sezóna 2026/27: dohratých 1 zápasov" in printed and "tip BOS" in printed
+    assert "zamknuté tipy pred začiatkom: 2" in printed
+    assert sorted(p.name for p in (tmp_path / "archive").iterdir()) == ["2026-10-13.json", "2026-10-14.json"]

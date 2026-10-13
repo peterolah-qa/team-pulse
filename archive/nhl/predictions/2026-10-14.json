@@ -1,0 +1,55 @@
+{
+ "games": {
+  "2026020106": {
+   "game_id": "2026020106",
+   "date": "2026-10-14",
+   "tipoff_utc": "2026-10-14T23:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.528,
+   "tip": "WSH",
+   "home": {
+    "team": "WSH",
+    "elo": 1530.4,
+    "reasons": {
+     "back-to-back": -42.5,
+     "3. zápas za 4 dni": -15.8
+    }
+   },
+   "away": {
+    "team": "MTL",
+    "elo": 1526.7,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-13T14:55:14+00:00"
+  },
+  "2026020107": {
+   "game_id": "2026020107",
+   "date": "2026-10-14",
+   "tipoff_utc": "2026-10-15T00:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.595,
+   "tip": "COL",
+   "home": {
+    "team": "COL",
+    "elo": 1579.6,
+    "reasons": {
+     "back-to-back": -42.5
+    }
+   },
+   "away": {
+    "team": "DAL",
+    "elo": 1543.1,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-13T14:55:14+00:00"
+  }
+ }
+}

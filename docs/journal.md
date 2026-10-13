@@ -6,6 +6,9 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 13. 10. 2026
 
+- **NHL – archív tipov a vyhodnotenie.** `predict` zamkne tipy do `archive/nhl/predictions/`
+  (prepísať sa dajú len do začiatku zápasu). `team_pulse.nhl.archive` ráno porovná tipy
+  s výsledkami → `reports/nhl_live.md`. Prvé ostré tipy: noc 13./14. 10., 16 zápasov.
 - **NHL – živé tipy (vetva `nhl`).** Finálny model `models/nhl_v1.json` (Elo + únava, váhy
   z 21 612 zápasov 2008/09 – 2025/26, test 57,6 % / log loss 0,6713). `team_pulse.nhl.predict`
   stiahne aktuálnu sezónu z API NHL, spočíta Elo a únavu a vypíše tipy na najbližšie dni
@@ -60,4 +63,4 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 ## Čaká
 
 - G2 NBA: 20. 10. – 3. 11. 2026, 14 dní ostrej prevádzky. Kód NBA sa do 3. 11. nemení.
-- NHL: overiť živé tipy proti skutočným výsledkom, potom archív tipov a ostré meranie G2-NHL.
+- NHL: vyhodnotiť prvé ostré tipy (noc 13./14. 10.), potom ostré meranie G2-NHL.

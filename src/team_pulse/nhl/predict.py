@@ -22,27 +22,25 @@ import pandas as pd
 import requests
 
 from team_pulse.model_store import StoredModel, load
+from team_pulse.nhl.archive import ARCHIVE, lock
 from team_pulse.nhl.elo import HockeyEloParams, run, season_reset
-from team_pulse.nhl.fetch_games import FINISHED, fetch_season, finished_games, franchise, season_label
+from team_pulse.nhl.fetch_games import (
+    FINISHED,
+    fetch_season,
+    finished_games,
+    franchise,
+    season_label,
+    season_of,
+    today_et,
+)  # fmt: skip
 from team_pulse.nhl.fetch_games import OUT as GAMES
 from team_pulse.nhl.model import MODEL
 from team_pulse.nhl.schedule import add_features
 
 OUT = Path("app/public/data/nhl/predictions.json")
-ET = ZoneInfo("America/New_York")
 LOCAL = ZoneInfo("Europe/Bratislava")
 KINDS = {"R": "regular", "P": "playoff"}
 MIN_REASON = 10  # Elo – menší vplyv sa v dôvodoch neukazuje
-
-
-def today_et(now: datetime | None = None) -> date:
-    """Dnešný deň v USA (ET): dátumy zápasov NHL sú podľa ET."""
-    return (now or datetime.now(UTC)).astimezone(ET).date()
-
-
-def season_of(day: date) -> int:
-    """Sezóna = rok, v ktorom končí. Nová sezóna NHL začína v septembri/októbri."""
-    return day.year + 1 if day.month >= 8 else day.year
 
 
 def upcoming_games(current: pd.DataFrame, first: date, days: int) -> pd.DataFrame:
@@ -151,8 +149,16 @@ def line(g: dict) -> str:
     )
 
 
-def main(days: int = 3, out: Path = OUT, games_path: Path = GAMES, model_path: Path = MODEL) -> dict:
-    now = datetime.now(UTC)
+def main(
+    days: int = 3,
+    out: Path = OUT,
+    games_path: Path = GAMES,
+    model_path: Path = MODEL,
+    archive: Path | None = None,
+    now: datetime | None = None,
+) -> dict:
+    """archive: kam zamknúť tipy (predvolene archive/nhl/predictions, None v testoch bez archívu)."""
+    now = now or datetime.now(UTC)
     first = today_et(now)
     model = load(model_path)
     history = pd.read_parquet(games_path)
@@ -161,11 +167,12 @@ def main(days: int = 3, out: Path = OUT, games_path: Path = GAMES, model_path: P
     data = to_json(games, model, now)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    locked = lock(data, now, archive) if archive else 0
     done = int(current["state"].isin(FINISHED).sum())
     print(f"Sezóna {season_label(season_of(first))}: dohratých {done} zápasov, tipy na {days} dni")
     for g in games:
         print(line(g))
-    print(f"\nUložené: {out}")
+    print(f"\nUložené: {out}" + (f", zamknuté tipy pred začiatkom: {locked} ({archive})" if archive else ""))
     return data
 
 
@@ -173,4 +180,4 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=3)
     a = ap.parse_args()
-    main(a.days)
+    main(a.days, archive=ARCHIVE)

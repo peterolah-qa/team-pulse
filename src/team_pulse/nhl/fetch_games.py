@@ -16,12 +16,15 @@ from __future__ import annotations
 
 import argparse
 import time
+from datetime import UTC, date, datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 import requests
 
 OUT = Path("data/raw/nhl_games.parquet")
+ET = ZoneInfo("America/New_York")
 URL = "https://api-web.nhle.com/v1/club-schedule-season/{team}/{season}"
 
 CURRENT = [
@@ -62,6 +65,16 @@ def season_id(end_year: int) -> str:
 def season_label(end_year: int) -> str:
     """2026 → '2025/26'."""
     return f"{end_year - 1}/{str(end_year)[-2:]}"
+
+
+def today_et(now: datetime | None = None) -> date:
+    """Dnešný deň v USA (ET): dátumy zápasov NHL sú podľa ET."""
+    return (now or datetime.now(UTC)).astimezone(ET).date()
+
+
+def season_of(day: date) -> int:
+    """Sezóna = rok, v ktorom končí. Nová sezóna NHL začína v septembri/októbri."""
+    return day.year + 1 if day.month >= 8 else day.year
 
 
 def franchise(abbr: str) -> str:
