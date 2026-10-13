@@ -1,7 +1,8 @@
 name: Predikcie
 
 # Každých 15 minút počas amerického dňa a večera (UTC 14:00 – 06:59): zranenia ESPN
-# + stav z Macu (state/state.json) → predpovede (JSON) → build appky → GitHub Pages.
+# + stav z Macu (state/state.json) → predpovede (JSON) + archív do repa → build appky → GitHub Pages.
+# Navyše cron-job.org každých 30 min cez workflow_dispatch (plánované behy GitHub často vynechá).
 on:
   schedule:
     # minúty mimo celých štvrťhodín: GitHub v špičke (začiatok hodiny) plánované behy odkladá alebo vynecháva
@@ -39,6 +40,25 @@ jobs:
       - name: Predpovede na 3 najbližšie hracie dni → app/public/data (+ archív, výsledky z ESPN)
         run: uv run python -m team_pulse.predict --days 3 --out app/public/data --archive
 
+      # Archív hneď po predpovediach: chyba pri builde alebo na strane Pages nezahodí zamknuté tipy.
+      # Neúspešný push nezastaví zverejnenie, beh ale na konci skončí červeno (Kontrola archívu).
+      - name: Archív predpovedí a výsledkov z ESPN → repo (len keď sa niečo zmenilo)
+        id: archive
+        continue-on-error: true
+        run: |
+          [ -d archive ] || { echo "Archív zatiaľ prázdny"; exit 0; }
+          git add archive
+          if git diff --cached --quiet; then echo "Archív bez zmeny"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Archív predpovedí $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash && git push -q && exit 0
+            sleep $((i * 10))
+          done
+          echo "::error::Archív sa nepodarilo poslať na GitHub"
+          exit 1
+
       - name: Node.js
         uses: actions/setup-node@v4
         with:
@@ -61,17 +81,8 @@ jobs:
         id: deploy
         uses: actions/deploy-pages@v4
 
-      - name: Archív predpovedí a výsledkov z ESPN → repo (len keď sa niečo zmenilo)
+      - name: Kontrola archívu
+        if: steps.archive.outcome == 'failure'
         run: |
-          [ -d archive ] || { echo "Archív zatiaľ prázdny"; exit 0; }
-          git add archive
-          if git diff --cached --quiet; then echo "Archív bez zmeny"; exit 0; fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -q -m "Archív predpovedí $(date -u +%Y-%m-%dT%H:%MZ)"
-          for i in 1 2 3; do
-            git pull -q --rebase --autostash && git push -q && exit 0
-            sleep $((i * 10))
-          done
-          echo "::error::Archív sa nepodarilo poslať na GitHub"
+          echo "::error::Archív sa nepodarilo poslať na GitHub (stránka je zverejnená)"
           exit 1
