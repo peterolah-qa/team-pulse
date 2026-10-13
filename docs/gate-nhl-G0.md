@@ -42,5 +42,10 @@ Elo + únava z rozpisu na teste: log loss 0,6730 → 0,6713 (zlepšenie 0,0017, 
 presnosť 57,2 % → 57,6 %. Najväčší vplyv má back-to-back: domáci −49 Elo, hostia +34 Elo
 pre domácich. Peter vrstvu schválil, NHL model = Elo + únava (reports/nhl_learned.md).
 
-Ďalší kandidát: brankár (kto chytá). Najprv sa overí, či štartujúceho brankára vieme pred
-zápasom aj naživo (scripts/probe_nhl_goalies.py), inak by vrstva fungovala len v backteste.
+## Zamietnuté kandidáty (13. 10. 2026)
+
+- Vrstva G – brankár: očakávaný brankár +0,0001, skutočný 0,0000 (hranica 0,0005).
+  Štartujúceho brankára pred zápasom NHL ani ESPN neukazujú. reports/nhl_goalies.md
+- Glicko-2 namiesto Ela: horšie o 0,0028; navyše k Elu: 0,0000. reports/nhl_glicko.md
+
+NHL model ostáva Elo + únava. Denník: docs/journal.md.
