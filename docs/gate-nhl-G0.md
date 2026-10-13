@@ -35,3 +35,12 @@ sa naučili len na tréningových sezónach.
   namiesto 1 230 zápasov). Sťahovač sa preto pýta aj na zaniknuté skratky a kontroluje počty.
 
 Podrobnosti: reports/nhl_backtest.md. Ďalší krok: návrh vrstvy C (únava), reports/nhl_learned.md.
+
+## Vrstva C – únava (schválená 13. 10. 2026)
+
+Elo + únava z rozpisu na teste: log loss 0,6730 → 0,6713 (zlepšenie 0,0017, hranica 0,0005),
+presnosť 57,2 % → 57,6 %. Najväčší vplyv má back-to-back: domáci −49 Elo, hostia +34 Elo
+pre domácich. Peter vrstvu schválil, NHL model = Elo + únava (reports/nhl_learned.md).
+
+Ďalší kandidát: brankár (kto chytá). Najprv sa overí, či štartujúceho brankára vieme pred
+zápasom aj naživo (scripts/probe_nhl_goalies.py), inak by vrstva fungovala len v backteste.
