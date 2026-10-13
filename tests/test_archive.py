@@ -343,7 +343,8 @@ def test_live_results_saved_once_per_game(tmp_path):
         [
             espn_event("1", "UTAH", "DEN"),  # dohraný, v našom rozpise
             espn_event("2", "BOS", "NY", completed=False),  # ešte sa hrá
-            espn_event("3", "PHX", "XYZ"),  # klub mimo NBA
+            espn_event("3", "PHX", "XYZ"),  # neznámy team
+            espn_event("5", "PHX", "MEL", slug="preseason"),  # príprava proti klubu mimo NBA
             espn_event("4", "MIA", "ORL", slug="preseason"),  # dohraný, nie je v rozpise
         ]
     )

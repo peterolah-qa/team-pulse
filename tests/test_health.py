@@ -83,3 +83,42 @@ def test_missed_mac_run_detected_in_preseason():
     s["results"] = [{"date": "2026-10-04"}]
     problems = check_state(s, pd.Timestamp("2026-10-09"))
     assert problems and "neprebehla" in problems[0]
+
+
+def event(abbr_home, abbr_away, slug):
+    return {
+        "id": "1",
+        "date": "2026-10-12T23:00Z",
+        "season": {"year": 2027, "slug": slug},
+        "competitions": [
+            {
+                "status": {"type": {"state": "pre", "completed": False}},
+                "competitors": [
+                    {"homeAway": "home", "team": {"abbreviation": abbr_home}, "score": "0"},
+                    {"homeAway": "away", "team": {"abbreviation": abbr_away}, "score": "0"},
+                ],
+            }
+        ],
+    }
+
+
+def test_preseason_game_against_foreign_club_is_healthy():
+    """Príprava proti klubu mimo NBA (napr. Melbourne United) nie je chyba zdroja."""
+    data = {"events": [event("PHX", "MEL", "preseason"), event("NY", "BOS", "preseason")]}
+    assert check_scoreboard(data) == []
+
+
+def test_unknown_team_in_season_game_is_reported():
+    problems = check_scoreboard({"events": [event("PHX", "XYZ", "regular-season")]})
+    assert problems and "XYZ" in problems[0]
+
+
+def test_health_prints_annotation_in_github_actions(monkeypatch, capsys):
+    import team_pulse.health as health
+
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    monkeypatch.setattr(health, "fetch_injuries", lambda: {"injuries": [], "timestamp": None})
+    monkeypatch.setattr(health, "fetch_scoreboard", lambda day: {"events": []})
+    monkeypatch.setattr(health, "load_state", lambda path: {"last_result": "2026-06-13", "schedule": []})
+    assert health.main() == 1  # prázdny zoznam zranení
+    assert "::error title=Kontrola zdrojov::ESPN zranenia: prázdny zoznam" in capsys.readouterr().out

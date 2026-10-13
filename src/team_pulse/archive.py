@@ -336,9 +336,12 @@ def update_live_results(
         dirty = False
         for ev in fetch_scoreboard(day.strftime("%Y%m%d")).get("events", []):
             try:
-                r = parse_scoreboard({"events": [ev]}).iloc[0]
+                one = parse_scoreboard({"events": [ev]})
             except KeyError:
+                continue  # neznámy team (zachytí kontrola zdrojov)
+            if one.empty:
                 continue  # príprava proti klubu mimo NBA
+            r = one.iloc[0]
             if not r.completed:
                 continue
             espn_kind = "preseason" if ev.get("season", {}).get("slug") == "preseason" else "regular"

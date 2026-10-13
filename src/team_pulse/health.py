@@ -11,6 +11,7 @@ Spustenie:  uv run python -m team_pulse.health
 
 from __future__ import annotations
 
+import os
 import sys
 from datetime import UTC, datetime
 
@@ -93,6 +94,8 @@ def main() -> int:
         print("✗ Problémy:")
         for p in problems:
             print(f"  - {p}")
+            if os.environ.get("GITHUB_ACTIONS"):  # dôvod sa ukáže priamo na stránke behu (Annotations)
+                print(f"::error title=Kontrola zdrojov::{p}")
         return 1
     print("✓ Zdroje aj stav sú v poriadku")
     return 0

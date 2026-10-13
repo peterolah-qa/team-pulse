@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pevná verzia: ubuntu-latest sa od 19. 10. mení na Ubuntu 26
     defaults:
       run:
         working-directory: app

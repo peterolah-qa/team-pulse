@@ -23,7 +23,7 @@ concurrency:
 
 jobs:
   predict:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # pevná verzia: ubuntu-latest sa od 19. 10. mení na Ubuntu 26
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
