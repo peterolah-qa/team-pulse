@@ -1,0 +1,752 @@
+{
+ "games": [
+  {
+   "id": 2024010010,
+   "season": 20242025,
+   "gameType": 1,
+   "gameDate": "2024-09-22",
+   "venue": {
+    "default": "Scotiabank Arena"
+   },
+   "neutralSite": false,
+   "startTimeUTC": "2024-09-22T23:00:00Z",
+   "easternUTCOffset": "-04:00",
+   "venueUTCOffset": "-04:00",
+   "venueTimezone": "America/Toronto",
+   "gameState": "FINAL",
+   "gameScheduleState": "OK",
+   "tvBroadcasts": [
+    {
+     "id": 324,
+     "market": "N",
+     "countryCode": "US",
+     "network": "NHLN",
+     "sequenceNumber": 35
+    },
+    {
+     "id": 282,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "SN",
+     "sequenceNumber": 107
+    }
+   ],
+   "awayTeam": {
+    "id": 9,
+    "commonName": {
+     "default": "Senators",
+     "fr": "Sénateurs"
+    },
+    "placeName": {
+     "default": "Ottawa"
+    },
+    "placeNameWithPreposition": {
+     "default": "Ottawa",
+     "fr": "d'Ottawa"
+    },
+    "abbrev": "OTT",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/OTT_dark.svg",
+    "awaySplitSquad": false,
+    "score": 6
+   },
+   "homeTeam": {
+    "id": 10,
+    "commonName": {
+     "default": "Maple Leafs"
+    },
+    "placeName": {
+     "default": "Toronto"
+    },
+    "placeNameWithPreposition": {
+     "default": "Toronto",
+     "fr": "de Toronto"
+    },
+    "abbrev": "TOR",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/TOR_dark.svg",
+    "homeSplitSquad": false,
+    "score": 5
+   },
+   "periodDescriptor": {
+    "number": 4,
+    "periodType": "OT",
+    "maxRegulationPeriods": 3
+   },
+   "gameOutcome": {
+    "lastPeriodType": "OT"
+   },
+   "winningGoalie": {
+    "playerId": 8481544,
+    "firstInitial": {
+     "default": "M."
+    },
+    "lastName": {
+     "default": "Sogaard",
+     "fi": "Søgaard",
+     "sv": "Søgaard"
+    }
+   },
+   "winningGoalScorer": {
+    "playerId": 8484759,
+    "firstInitial": {
+     "default": "C."
+    },
+    "lastName": {
+     "default": "Yakemchuk"
+    }
+   },
+   "threeMinRecap": "/video/recap-senators-at-leafs-9-22-24-6362327365112",
+   "gameCenterLink": "/gamecenter/ott-vs-tor/2024/09/22/2024010010"
+  },
+  {
+   "id": 2024010024,
+   "season": 20242025,
+   "gameType": 1,
+   "gameDate": "2024-09-24",
+   "venue": {
+    "default": "Canadian Tire Centre",
+    "fr": "Centre Canadian Tire"
+   },
+   "neutralSite": false,
+   "startTimeUTC": "2024-09-24T23:00:00Z",
+   "easternUTCOffset": "-04:00",
+   "venueUTCOffset": "-04:00",
+   "venueTimezone": "US/Eastern",
+   "gameState": "FINAL",
+   "gameScheduleState": "OK",
+   "tvBroadcasts": [
+    {
+     "id": 293,
+     "market": "A",
+     "countryCode": "CA",
+     "network": "TSN4",
+     "sequenceNumber": 137
+    },
+    {
+     "id": 294,
+     "market": "H",
+     "countryCode": "CA",
+     "network": "TSN5",
+     "sequenceNumber": 135
+    }
+   ],
+   "awayTeam": {
+    "id": 10,
+    "commonName": {
+     "default": "Maple Leafs"
+    },
+    "placeName": {
+     "default": "Toronto"
+    },
+    "placeNameWithPreposition": {
+     "default": "Toronto",
+     "fr": "de Toronto"
+    },
+    "abbrev": "TOR",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/TOR_dark.svg",
+    "awaySplitSquad": false,
+    "score": 1
+   },
+   "homeTeam": {
+    "id": 9,
+    "commonName": {
+     "default": "Senators",
+     "fr": "Sénateurs"
+    },
+    "placeName": {
+     "default": "Ottawa"
+    },
+    "placeNameWithPreposition": {
+     "default": "Ottawa",
+     "fr": "d'Ottawa"
+    },
+    "abbrev": "OTT",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/OTT_dark.svg",
+    "homeSplitSquad": false,
+    "score": 2
+   },
+   "periodDescriptor": {
+    "number": 3,
+    "periodType": "REG",
+    "maxRegulationPeriods": 3
+   },
+   "gameOutcome": {
+    "lastPeriodType": "REG"
+   },
+   "winningGoalie": {
+    "playerId": 8476341,
+    "firstInitial": {
+     "default": "A."
+    },
+    "lastName": {
+     "default": "Forsberg"
+    }
+   },
+   "winningGoalScorer": {
+    "playerId": 8482859,
+    "firstInitial": {
+     "default": "Z."
+    },
+    "lastName": {
+     "default": "Ostapchuk"
+    }
+   },
+   "threeMinRecap": "/video/recap-leafs-at-senators-9-24-24-6362420260112",
+   "gameCenterLink": "/gamecenter/tor-vs-ott/2024/09/24/2024010024"
+  },
+  {
+   "id": 2024020006,
+   "season": 20242025,
+   "gameType": 2,
+   "gameDate": "2024-10-09",
+   "venue": {
+    "default": "Centre Bell"
+   },
+   "neutralSite": false,
+   "startTimeUTC": "2024-10-09T23:00:00Z",
+   "easternUTCOffset": "-04:00",
+   "venueUTCOffset": "-04:00",
+   "venueTimezone": "America/Montreal",
+   "gameState": "OFF",
+   "gameScheduleState": "OK",
+   "tvBroadcasts": [
+    {
+     "id": 282,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "SN",
+     "sequenceNumber": 107
+    },
+    {
+     "id": 281,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "TVAS",
+     "sequenceNumber": 120
+    }
+   ],
+   "awayTeam": {
+    "id": 10,
+    "commonName": {
+     "default": "Maple Leafs"
+    },
+    "placeName": {
+     "default": "Toronto"
+    },
+    "placeNameWithPreposition": {
+     "default": "Toronto",
+     "fr": "de Toronto"
+    },
+    "abbrev": "TOR",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/TOR_dark.svg",
+    "awaySplitSquad": false,
+    "score": 0
+   },
+   "homeTeam": {
+    "id": 8,
+    "commonName": {
+     "default": "Canadiens"
+    },
+    "placeName": {
+     "default": "Montréal"
+    },
+    "placeNameWithPreposition": {
+     "default": "Montréal",
+     "fr": "de Montréal"
+    },
+    "abbrev": "MTL",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/MTL_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/MTL_dark.svg",
+    "homeSplitSquad": false,
+    "score": 1
+   },
+   "periodDescriptor": {
+    "number": 3,
+    "periodType": "REG",
+    "maxRegulationPeriods": 3
+   },
+   "gameOutcome": {
+    "lastPeriodType": "REG"
+   },
+   "winningGoalie": {
+    "playerId": 8478470,
+    "firstInitial": {
+     "default": "S."
+    },
+    "lastName": {
+     "default": "Montembeault"
+    }
+   },
+   "winningGoalScorer": {
+    "playerId": 8481540,
+    "firstInitial": {
+     "default": "C."
+    },
+    "lastName": {
+     "default": "Caufield"
+    }
+   },
+   "threeMinRecap": "/video/recap-leafs-at-canadiens-10-9-24-6363054024112",
+   "threeMinRecapFr": "/fr/video/recap-leafs-at-canadiens-10-9-24-6363054535112",
+   "gameCenterLink": "/gamecenter/tor-vs-mtl/2024/10/09/2024020006"
+  },
+  {
+   "id": 2024020125,
+   "season": 20242025,
+   "gameType": 2,
+   "gameDate": "2024-10-26",
+   "venue": {
+    "default": "TD Garden"
+   },
+   "neutralSite": false,
+   "startTimeUTC": "2024-10-26T23:00:00Z",
+   "easternUTCOffset": "-04:00",
+   "venueUTCOffset": "-04:00",
+   "venueTimezone": "US/Eastern",
+   "gameState": "OFF",
+   "gameScheduleState": "OK",
+   "tvBroadcasts": [
+    {
+     "id": 282,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "SN",
+     "sequenceNumber": 21
+    },
+    {
+     "id": 324,
+     "market": "N",
+     "countryCode": "US",
+     "network": "NHLN",
+     "sequenceNumber": 35
+    },
+    {
+     "id": 4,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "CBC",
+     "sequenceNumber": 101
+    },
+    {
+     "id": 31,
+     "market": "H",
+     "countryCode": "US",
+     "network": "NESN",
+     "sequenceNumber": 405
+    }
+   ],
+   "awayTeam": {
+    "id": 10,
+    "commonName": {
+     "default": "Maple Leafs"
+    },
+    "placeName": {
+     "default": "Toronto"
+    },
+    "placeNameWithPreposition": {
+     "default": "Toronto",
+     "fr": "de Toronto"
+    },
+    "abbrev": "TOR",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/TOR_dark.svg",
+    "awaySplitSquad": false,
+    "score": 3
+   },
+   "homeTeam": {
+    "id": 6,
+    "commonName": {
+     "default": "Bruins"
+    },
+    "placeName": {
+     "default": "Boston"
+    },
+    "placeNameWithPreposition": {
+     "default": "Boston",
+     "fr": "de Boston"
+    },
+    "abbrev": "BOS",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/BOS_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/BOS_dark.svg",
+    "homeSplitSquad": false,
+    "airlineLink": "https://www.jetblue.com/?utm_source=Bruins-Web&utm_medium=Schedule-Icon&utm_campaign=Ticket-Booking",
+    "airlineDesc": "Fly JetBlue",
+    "score": 4
+   },
+   "periodDescriptor": {
+    "number": 4,
+    "periodType": "OT",
+    "maxRegulationPeriods": 3
+   },
+   "gameOutcome": {
+    "lastPeriodType": "OT"
+   },
+   "winningGoalie": {
+    "playerId": 8480280,
+    "firstInitial": {
+     "default": "J."
+    },
+    "lastName": {
+     "default": "Swayman"
+    }
+   },
+   "winningGoalScorer": {
+    "playerId": 8473419,
+    "firstInitial": {
+     "default": "B."
+    },
+    "lastName": {
+     "default": "Marchand"
+    }
+   },
+   "threeMinRecap": "/video/tor-at-bos-recap-6363817997112",
+   "gameCenterLink": "/gamecenter/tor-vs-bos/2024/10/26/2024020125"
+  },
+  {
+   "id": 2024020971,
+   "season": 20242025,
+   "gameType": 2,
+   "gameDate": "2025-03-03",
+   "venue": {
+    "default": "Scotiabank Arena"
+   },
+   "neutralSite": false,
+   "startTimeUTC": "2025-03-04T00:30:00Z",
+   "easternUTCOffset": "-05:00",
+   "venueUTCOffset": "-05:00",
+   "venueTimezone": "America/Toronto",
+   "gameState": "OFF",
+   "gameScheduleState": "OK",
+   "tvBroadcasts": [
+    {
+     "id": 548,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "Prime",
+     "sequenceNumber": 116
+    },
+    {
+     "id": 314,
+     "market": "A",
+     "countryCode": "US",
+     "network": "NBCSCA",
+     "sequenceNumber": 393
+    }
+   ],
+   "awayTeam": {
+    "id": 28,
+    "commonName": {
+     "default": "Sharks"
+    },
+    "placeName": {
+     "default": "San Jose"
+    },
+    "placeNameWithPreposition": {
+     "default": "San Jose",
+     "fr": "de San Jose"
+    },
+    "abbrev": "SJS",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/SJS_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/SJS_dark.svg",
+    "awaySplitSquad": false,
+    "score": 3
+   },
+   "homeTeam": {
+    "id": 10,
+    "commonName": {
+     "default": "Maple Leafs"
+    },
+    "placeName": {
+     "default": "Toronto"
+    },
+    "placeNameWithPreposition": {
+     "default": "Toronto",
+     "fr": "de Toronto"
+    },
+    "abbrev": "TOR",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/TOR_dark.svg",
+    "homeSplitSquad": false,
+    "hotelLink": "https://www.marriott.com/default.mi?scid=cfdfa4af-106f-4087-8192-1caa58e5f6ad",
+    "hotelDesc": "Book Now",
+    "score": 2
+   },
+   "periodDescriptor": {
+    "number": 5,
+    "periodType": "SO",
+    "maxRegulationPeriods": 3
+   },
+   "gameOutcome": {
+    "lastPeriodType": "SO"
+   },
+   "winningGoalie": {
+    "playerId": 8480382,
+    "firstInitial": {
+     "default": "A."
+    },
+    "lastName": {
+     "default": "Georgiev",
+     "cs": "Georgijev",
+     "fi": "Georgijev",
+     "sk": "Georgijev"
+    }
+   },
+   "threeMinRecap": "/video/sjs-at-tor-recap-6369577853112",
+   "gameCenterLink": "/gamecenter/sjs-vs-tor/2025/03/03/2024020971"
+  },
+  {
+   "id": 2024030111,
+   "season": 20242025,
+   "gameType": 3,
+   "gameDate": "2025-04-20",
+   "venue": {
+    "default": "Scotiabank Arena"
+   },
+   "neutralSite": false,
+   "startTimeUTC": "2025-04-20T23:00:00Z",
+   "easternUTCOffset": "-04:00",
+   "venueUTCOffset": "-04:00",
+   "venueTimezone": "America/Toronto",
+   "gameState": "OFF",
+   "gameScheduleState": "OK",
+   "tvBroadcasts": [
+    {
+     "id": 307,
+     "market": "N",
+     "countryCode": "US",
+     "network": "ESPN2",
+     "sequenceNumber": 12
+    },
+    {
+     "id": 4,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "CBC",
+     "sequenceNumber": 101
+    },
+    {
+     "id": 282,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "SN",
+     "sequenceNumber": 107
+    },
+    {
+     "id": 281,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "TVAS",
+     "sequenceNumber": 120
+    }
+   ],
+   "awayTeam": {
+    "id": 9,
+    "commonName": {
+     "default": "Senators",
+     "fr": "Sénateurs"
+    },
+    "placeName": {
+     "default": "Ottawa"
+    },
+    "placeNameWithPreposition": {
+     "default": "Ottawa",
+     "fr": "d'Ottawa"
+    },
+    "abbrev": "OTT",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/OTT_dark.svg",
+    "awaySplitSquad": false,
+    "score": 2
+   },
+   "homeTeam": {
+    "id": 10,
+    "commonName": {
+     "default": "Maple Leafs"
+    },
+    "placeName": {
+     "default": "Toronto"
+    },
+    "placeNameWithPreposition": {
+     "default": "Toronto",
+     "fr": "de Toronto"
+    },
+    "abbrev": "TOR",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/TOR_dark.svg",
+    "homeSplitSquad": false,
+    "score": 6
+   },
+   "periodDescriptor": {
+    "number": 3,
+    "periodType": "REG",
+    "maxRegulationPeriods": 3
+   },
+   "gameOutcome": {
+    "lastPeriodType": "REG"
+   },
+   "winningGoalie": {
+    "playerId": 8476932,
+    "firstInitial": {
+     "default": "A."
+    },
+    "lastName": {
+     "default": "Stolarz"
+    }
+   },
+   "winningGoalScorer": {
+    "playerId": 8475166,
+    "firstInitial": {
+     "default": "J."
+    },
+    "lastName": {
+     "default": "Tavares"
+    }
+   },
+   "seriesStatus": {
+    "round": 1,
+    "seriesAbbrev": "R1",
+    "seriesTitle": "1st Round",
+    "seriesLetter": "A",
+    "neededToWin": 4,
+    "topSeedWins": 1,
+    "bottomSeedWins": 0,
+    "gameNumberOfSeries": 1
+   },
+   "seriesUrl": "/schedule/playoff-series/2025/series-a/mapleleafs-vs-senators",
+   "threeMinRecap": "/video/ott-at-tor-recap-6371736383112",
+   "threeMinRecapFr": "/fr/video/ott-vs-tor-20-04-2025-resume-6371739250112",
+   "condensedGame": "/video/ott-at-tor-condensed-game-6371738573112",
+   "condensedGameFr": "/fr/video/match-condense-senators-maple-leafs-20-04-2025-6371738783112",
+   "gameCenterLink": "/gamecenter/ott-vs-tor/2025/04/20/2024030111"
+  },
+  {
+   "id": 2024030112,
+   "season": 20242025,
+   "gameType": 3,
+   "gameDate": "2025-04-22",
+   "venue": {
+    "default": "Scotiabank Arena"
+   },
+   "neutralSite": false,
+   "startTimeUTC": "2025-04-22T23:30:00Z",
+   "easternUTCOffset": "-04:00",
+   "venueUTCOffset": "-04:00",
+   "venueTimezone": "America/Toronto",
+   "gameState": "OFF",
+   "gameScheduleState": "OK",
+   "tvBroadcasts": [
+    {
+     "id": 307,
+     "market": "N",
+     "countryCode": "US",
+     "network": "ESPN2",
+     "sequenceNumber": 12
+    },
+    {
+     "id": 4,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "CBC",
+     "sequenceNumber": 101
+    },
+    {
+     "id": 282,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "SN",
+     "sequenceNumber": 107
+    },
+    {
+     "id": 281,
+     "market": "N",
+     "countryCode": "CA",
+     "network": "TVAS",
+     "sequenceNumber": 120
+    }
+   ],
+   "awayTeam": {
+    "id": 9,
+    "commonName": {
+     "default": "Senators",
+     "fr": "Sénateurs"
+    },
+    "placeName": {
+     "default": "Ottawa"
+    },
+    "placeNameWithPreposition": {
+     "default": "Ottawa",
+     "fr": "d'Ottawa"
+    },
+    "abbrev": "OTT",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/OTT_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/OTT_dark.svg",
+    "awaySplitSquad": false,
+    "score": 2
+   },
+   "homeTeam": {
+    "id": 10,
+    "commonName": {
+     "default": "Maple Leafs"
+    },
+    "placeName": {
+     "default": "Toronto"
+    },
+    "placeNameWithPreposition": {
+     "default": "Toronto",
+     "fr": "de Toronto"
+    },
+    "abbrev": "TOR",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/TOR_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/TOR_dark.svg",
+    "homeSplitSquad": false,
+    "score": 3
+   },
+   "periodDescriptor": {
+    "number": 4,
+    "periodType": "OT",
+    "maxRegulationPeriods": 3
+   },
+   "gameOutcome": {
+    "lastPeriodType": "OT"
+   },
+   "winningGoalie": {
+    "playerId": 8476932,
+    "firstInitial": {
+     "default": "A."
+    },
+    "lastName": {
+     "default": "Stolarz"
+    }
+   },
+   "winningGoalScorer": {
+    "playerId": 8477503,
+    "firstInitial": {
+     "default": "M."
+    },
+    "lastName": {
+     "default": "Domi"
+    }
+   },
+   "seriesStatus": {
+    "round": 1,
+    "seriesAbbrev": "R1",
+    "seriesTitle": "1st Round",
+    "seriesLetter": "A",
+    "neededToWin": 4,
+    "topSeedWins": 2,
+    "bottomSeedWins": 0,
+    "gameNumberOfSeries": 2
+   },
+   "seriesUrl": "/schedule/playoff-series/2025/series-a/mapleleafs-vs-senators",
+   "threeMinRecap": "/video/ott-at-tor-recap-6371811636112",
+   "threeMinRecapFr": "/fr/video/ott-vs-tor-22-04-2025-resume-6371813727112",
+   "condensedGame": "/video/ott-at-tor-condensed-game-6371813139112",
+   "condensedGameFr": "/fr/video/match-condense-senators-maple-leafs-22-04-2025-6371815281112",
+   "gameCenterLink": "/gamecenter/ott-vs-tor/2025/04/22/2024030112"
+  }
+ ]
+}

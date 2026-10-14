@@ -1,0 +1,85 @@
+{
+ "ATL": 88,
+ "PHX": 97,
+ "games": [
+  {
+   "id": 2009021019,
+   "season": 20092010,
+   "gameType": 2,
+   "gameDate": "2010-03-14",
+   "venue": {
+    "default": "Philips Arena"
+   },
+   "neutralSite": false,
+   "startTimeUTC": "2010-03-14T21:00:00Z",
+   "easternUTCOffset": "-04:00",
+   "venueUTCOffset": "-04:00",
+   "venueTimezone": "US/Eastern",
+   "gameState": "OFF",
+   "gameScheduleState": "OK",
+   "tvBroadcasts": [
+    {
+     "id": 88,
+     "market": "H",
+     "countryCode": "US",
+     "network": "SPSO",
+     "sequenceNumber": 376
+    }
+   ],
+   "awayTeam": {
+    "id": 27,
+    "commonName": {
+     "default": "Coyotes"
+    },
+    "placeName": {
+     "default": "Phoenix"
+    },
+    "placeNameWithPreposition": {
+     "default": "Phoenix",
+     "fr": "de Phoenix"
+    },
+    "abbrev": "PHX",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/PHX_20032004-20132014_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/PHX_20032004-20132014_dark.svg",
+    "awaySplitSquad": false,
+    "score": 3
+   },
+   "homeTeam": {
+    "id": 11,
+    "commonName": {
+     "default": "Thrashers"
+    },
+    "placeName": {
+     "default": "Atlanta"
+    },
+    "placeNameWithPreposition": {
+     "default": "Atlanta",
+     "fr": "d'Atlanta"
+    },
+    "abbrev": "ATL",
+    "logo": "https://assets.nhle.com/logos/nhl/svg/ATL_19992000-20102011_light.svg",
+    "darkLogo": "https://assets.nhle.com/logos/nhl/svg/ATL_19992000-20102011_dark.svg",
+    "homeSplitSquad": false,
+    "score": 2
+   },
+   "periodDescriptor": {
+    "number": 5,
+    "periodType": "SO",
+    "maxRegulationPeriods": 3
+   },
+   "gameOutcome": {
+    "lastPeriodType": "SO"
+   },
+   "winningGoalie": {
+    "playerId": 8467391,
+    "firstInitial": {
+     "default": "J."
+    },
+    "lastName": {
+     "default": "LaBarbera"
+    }
+   },
+   "gameCenterLink": "/gamecenter/phx-vs-atl/2010/03/14/2009021019"
+  }
+ ]
+}

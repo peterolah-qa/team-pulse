@@ -55,10 +55,24 @@ rozbilo appku nainštalovanú na ploche.
   Tréning do 2022/23, test 2023/24 – 2025/26, ako pri NBA. Prvé 3 sezóny sú rozbeh Ela.
 - Hodnotí sa len základná časť (playoff sa zapisuje do Ela, ale nehodnotí).
 - **Kritérium:** log loss Ela na testovacích sezónach je o ≥ 0,0005 nižší než obe
-  baseline („vždy domáci“, „lepšia bilancia“).
+  baseline („vždy domáci“, „lepšia bilancia“). Pravdepodobnosti baseline sa naučia
+  z tréningových sezón (podiel výhier domácich, výhry teamu s lepšou bilanciou), takže sú
+  silnejšie než pevných 60 % pri NBA.
+- Parametre Ela (K, domáca výhoda, prenos do sezóny) sa ladia len na tréningových sezónach.
 - Test úniku dát prechádza (predpoveď nikdy nevidí výsledok zápasu, ktorý predpovedá).
 - Presnosť sa len zapíše. Hokej je náhodnejší než basketbal: NBA má 67 %,
   pri NHL rátame skôr s 58 – 60 %.
+
+### Spustenie Š1 (z Macu, vetva `nhl`)
+
+```
+uv run python scripts/probe_nhl.py                                # ukážky odpovedí, kontrola zdrojov
+uv run python -m team_pulse.nhl.fetch_games --from 2006 --to 2026  # história, cca 7 min
+uv run python -m team_pulse.nhl.backtest                          # reports/nhl_backtest.md
+```
+
+Sťahovač si pýta rozpis každého klubu vrátane zaniknutých skratiek (ATL, PHX, ARI)
+a skontroluje, že počet zápasov základnej časti presne sedí s ligou. Inak nič neuloží.
 
 ## Čím sa športy líšia
 
