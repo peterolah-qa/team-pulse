@@ -58,31 +58,57 @@ def _pairwise(r: np.ndarray, pos: np.ndarray, same: np.ndarray | None = None) ->
     return ((won - exp) * mask).sum(axis=1) / max(n - 1, 1)
 
 
-def elo_ratings(df: pd.DataFrame, p: EloParams) -> pd.DataFrame:
-    """Ku každému riadku rating jazdca a tímu PRED týmito pretekmi (vidí len skoršie preteky)."""
-    drv: dict[str, float] = {}
-    team: dict[str, float] = {}
-    season = None
+@dataclass
+class Elo:
+    """Ratingy jazdcov a tímov po posledných započítaných pretekoch. Backtest aj ostrá prevádzka
+    (state/f1_state.json) idú cez tie isté kroky: enter_season → before → apply."""
+
+    p: EloParams
+    drivers: dict[str, float]
+    teams: dict[str, float]
+    season: int | None = None
+    last_round: int = 0
+
+    def enter_season(self, s: int) -> None:
+        """Pri prvých pretekoch novej sezóny návrat k priemeru (pri zmene pravidiel úplne)."""
+        if self.season is not None and s != self.season:
+            c = 0.0 if s in self.p.resets else self.p.carry
+            self.drivers = {k: MEAN + c * (v - MEAN) for k, v in self.drivers.items()}
+            self.teams = {k: MEAN + c * (v - MEAN) for k, v in self.teams.items()}
+            self.last_round = 0
+        self.season = s
+
+    def before(self, drivers, constructors) -> tuple[np.ndarray, np.ndarray]:
+        """Rating jazdcov a ich tímov pred pretekmi (nováčik = priemer)."""
+        teams = [team_of(c) for c in constructors]
+        rd = np.array([self.drivers.get(d, MEAN) for d in drivers])
+        return rd, np.array([self.teams.get(t, MEAN) for t in teams])
+
+    def apply(self, g: pd.DataFrame) -> None:
+        """Započíta jedny preteky (g zoradené podľa poradia v cieli)."""
+        teams = g["constructor"].map(team_of).to_numpy()
+        rd, rt = self.before(g["driver"], g["constructor"])
+        pos = g["position"].to_numpy()
+        rd_new = rd + self.p.k_driver * _pairwise(rd, pos)
+        same = teams[:, None] == teams[None, :]  # tímoví kolegovia sa pri tíme neporovnávajú
+        dt = self.p.k_team * _pairwise(rt, pos, same)
+        for d, v in zip(g["driver"], rd_new, strict=True):
+            self.drivers[d] = float(v)
+        for t in np.unique(teams):  # oba vozy tímu: priemer zmien
+            self.teams[t] = float(rt[teams == t][0] + dt[teams == t].mean())
+        self.last_round = int(g["round"].iloc[0])
+
+
+def elo_ratings(df: pd.DataFrame, p: EloParams, elo: Elo | None = None) -> pd.DataFrame:
+    """Ku každému riadku rating jazdca a tímu PRED týmito pretekmi (vidí len skoršie preteky).
+    Ak je daný `elo`, po skončení obsahuje stav po posledných pretekoch (pre ostrú prevádzku)."""
+    elo = elo if elo is not None else Elo(p, {}, {})
     out = []
     for g in races(df):
-        s = int(g["season"].iloc[0])
-        if season is not None and s != season:
-            c = 0.0 if s in p.resets else p.carry
-            drv = {k: MEAN + c * (v - MEAN) for k, v in drv.items()}
-            team = {k: MEAN + c * (v - MEAN) for k, v in team.items()}
-        season = s
-        teams = g["constructor"].map(team_of).to_numpy()
-        rd = np.array([drv.get(d, MEAN) for d in g["driver"]])
-        rt = np.array([team.get(t, MEAN) for t in teams])
+        elo.enter_season(int(g["season"].iloc[0]))
+        rd, rt = elo.before(g["driver"], g["constructor"])
         out.append(g.assign(elo_driver=rd, elo_team=rt))
-        pos = g["position"].to_numpy()
-        rd_new = rd + p.k_driver * _pairwise(rd, pos)
-        same = teams[:, None] == teams[None, :]  # tímoví kolegovia sa pri tíme neporovnávajú
-        dt = p.k_team * _pairwise(rt, pos, same)
-        for d, v in zip(g["driver"], rd_new, strict=True):
-            drv[d] = v
-        for t in np.unique(teams):  # oba vozy tímu: priemer zmien
-            team[t] = rt[teams == t][0] + dt[teams == t].mean()
+        elo.apply(g)
     return pd.concat(out, ignore_index=True)
 
 

@@ -167,7 +167,9 @@ def backtest(
 
     test = df[(df["season"] == TEST_SEASON) & df["round"].between(*TEST_ROUNDS)]
     valid = df[in_seasons(df, VALID)]
-    out: dict[str, object] = {"params": best, "weights": w, "tuning": tuning, "test": {}, "valid": {}}
+    out: dict[str, object] = {
+        "params": best, "weights": w, "slot_table": slot_table, "tuning": tuning, "test": {}, "valid": {}
+    }  # fmt: skip
     for name, part, weights in (("test", test, w), ("valid", valid, w_valid)):
         probs = {
             "model": model_probs(part, slot_table, weights),

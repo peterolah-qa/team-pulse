@@ -69,7 +69,7 @@ Spoločné jadro až keď budú tri športy, dovtedy by sme hádali, čo je naoz
 |---|---|---|
 | NBA | ✅ 27. 9. (`docs/gate-G0.md`, `docs/gate-G1.md`) | 20. 10. – 2. 11. (`docs/gate-G2.md`) |
 | NHL | ✅ 13. 10. (`docs/gate-nhl-G0.md`) | 13. – 26. 10. (`docs/gate-nhl-G2.md`) |
-| F1 | stanovené 14. 10. (`docs/gate-f1-G0.md`): test 2026 kolá 1 – 17, log loss víťaza | 6 pretekov 25. 10. – 6. 12., tip po kvalifikácii |
+| F1 | ❌ 14. 10. (`docs/gate-f1-G0.md`): model A horší než kvalifikácia | namiesto G2: model B naostro mimo appky, 6 pretekov 25. 10. – 6. 12. (`docs/gate-f1-shadow.md`, workflow `f1.yml`) |
 | Extraliga | stanoví sa pred backtestom | stanoví sa |
 
 Hranice G2 pre NBA a NHL vychádzajú z backtestu (`scripts/g2_reference.py` → `reports/g2_reference.md`).
