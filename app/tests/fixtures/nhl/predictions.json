@@ -191,5 +191,36 @@
    "elo": 1416.0,
    "as_of": "2026-10-21"
   }
- ]
+ ],
+ "injuries": {
+  "DAL": [
+   {
+    "player": "Tyler Seguin",
+    "pos": "C",
+    "status": "IR",
+    "injury": "Hip",
+    "return_date": "2026-11-02",
+    "updated": "2026-10-10T15:00Z"
+   },
+   {
+    "player": "Jason Robertson",
+    "pos": "LW",
+    "status": "DTD",
+    "injury": "Upper Body",
+    "return_date": "2026-10-21",
+    "updated": "2026-10-20T18:00Z"
+   }
+  ],
+  "TOR": [
+   {
+    "player": "Chris Tanev",
+    "pos": "D",
+    "status": "OUT",
+    "injury": "Lower Body",
+    "return_date": null,
+    "updated": "2026-10-19T12:00Z"
+   }
+  ]
+ },
+ "injuries_timestamp": "2026-10-20T20:30:00Z"
 }

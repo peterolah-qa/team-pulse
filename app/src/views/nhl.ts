@@ -1,6 +1,6 @@
 /* NHL (beta): zápasy, tipy, výsledky, liga podľa Ela a model. Tipy sa zamykajú raz ráno (Mac),
-   appka ich len ukazuje. Bez súpisiek a štatistík hráčov – tie NHL zatiaľ nemá. */
-import type { NhlData, NhlGame, NhlResult, NhlSide } from "../data";
+   appka ich len ukazuje. Zranenia z ESPN sú len informácia, model ich nepočíta (brána G2-NHL). */
+import type { NhlData, NhlGame, NhlInjury, NhlResult, NhlSide } from "../data";
 import { coin, dayHeading, esc, groupBy, header, localDay, longDate, signed, split, teamName, time, when } from "../ui";
 import { byTipoff, gameRow, isPre } from "./games";
 import { modelPage } from "./model";
@@ -17,6 +17,43 @@ const games = (n: NhlData): NhlGame[] => Object.values(n.predictions.days).flat(
 const finished = (n: NhlData): Set<string> => new Set(n.predictions.results.map((r) => r.game_id));
 const updated = (n: NhlData): string =>
   `tipy z ${esc(when(n.predictions.last_locked ?? n.predictions.generated_at))} · výsledky ${esc(when(n.predictions.generated_at))}`;
+
+const STATUS: Record<NhlInjury["status"], [string, string]> = {
+  OUT: ["nehrá", "t3"],
+  SUSP: ["trest", "t3"],
+  IR: ["dlhodobo", "t3"], // listina zranených (IR), aspoň 7 dní mimo
+  DTD: ["otázny", "t1"],
+  "?": ["neistý", "t1"],
+};
+const INJURY: Record<string, string> = {
+  "Upper Body": "horná časť tela", "Lower Body": "dolná časť tela", Undisclosed: "neuvedené", Illness: "choroba",
+  Concussion: "otras mozgu", Head: "hlava", Neck: "krk", Shoulder: "rameno", Elbow: "lakeť", Arm: "ruka", Wrist: "zápästie",
+  Hand: "ruka", Finger: "prst", Back: "chrbát", Abdomen: "brucho", Ribs: "rebrá", Hip: "bedro", Groin: "slabiny", Leg: "noha",
+  Thigh: "stehno", Hamstring: "zadný stehenný sval", Knee: "koleno", Ankle: "členok", Foot: "chodidlo", Achilles: "achilovka",
+  Personal: "osobné dôvody",
+};
+
+/* Chýbajúci hráči jedného teamu (ESPN). Návrat je odhad ESPN, nie istota. */
+function injuryRows(n: NhlData, team: string): string {
+  const list = n.predictions.injuries?.[team] ?? [];
+  if (!list.length) return `<li><span><b>${esc(team)}</b> <span class="muted">nikto nechýba</span></span></li>`;
+  return list
+    .map((p) => {
+      const [label, tone] = STATUS[p.status] ?? STATUS["?"];
+      const what = [p.pos, p.injury ? (INJURY[p.injury] ?? p.injury) : null].filter(Boolean).join(" · ");
+      const [, m, d] = (p.return_date ?? "").split("-").map(Number);
+      const back = d && p.status !== "DTD" ? `návrat asi ${d}. ${m}.` : "";
+      return `<li><span><b>${esc(team)}</b> ${esc(p.player)} <span class="chip ${tone}">${label}</span>${what ? `<br><span class="small muted">${esc(what)}</span>` : ""}</span><span class="small muted nowrap">${back}</span></li>`;
+    })
+    .join("");
+}
+
+function injuriesCard(n: NhlData, g: NhlGame): string {
+  if (n.predictions.injuries == null) return "";
+  const stamp = n.predictions.injuries_timestamp ? ` (stav ${esc(when(n.predictions.injuries_timestamp))})` : "";
+  return `<h2 class="sec">Chýbajúci hráči</h2><section class="card"><ul class="rows">${injuryRows(n, g.away.team)}${injuryRows(n, g.home.team)}</ul>
+      <p class="small muted">Zranenia z ESPN${stamp}. Model NHL ich zatiaľ nepočíta, tip sa podľa nich nemení. Dlhodobo = listina zranených (IR).</p></section>`;
+}
 
 /* Poznámka pod zápasom: najväčší vplyv únavy na každý team („DET: back-to-back“). */
 const fatigue = (g: NhlGame): string[] => [g.away, g.home].flatMap((s) => (s.reasons.length ? [`${s.team}: ${s.reasons[0][0]}`] : []));
@@ -116,6 +153,7 @@ export function nhlGameView(n: NhlData, id: string): string {
     ${beta()}
     <h2 class="sec">Prečo</h2><section class="card">${why(n, g)}
       <p class="small muted">Vplyv v Elo bodoch. Únava: zápas deň po dni, 3. zápas za 4 dni, cestovanie na východ, dlhý výjazd.</p></section>
+    ${injuriesCard(n, g)}
     <p class="meta">Tip zamknutý ${esc(when(g.locked_at))}. Po začiatku zápasu sa už nemení.</p>`;
 }
 
@@ -132,7 +170,7 @@ export function nhlTeamsView(n: NhlData): string {
     .join("");
   return `${header("Teamy", "sila podľa výsledkov (Elo), od najsilnejšieho")}${beta()}
     <section><h2 class="day"><span>Liga podľa Ela</span><span class="day-n">${list.length}</span></h2><ul class="list tight">${rows}</ul></section>
-    <p class="meta">Elo pred posledným zápasom s tipom, priemer ligy je 1505. Forma (Pulse), súpisky a zranenia zatiaľ len pri NBA.</p>`;
+    <p class="meta">Elo pred posledným zápasom s tipom, priemer ligy je 1505. Forma (Pulse) a súpisky zatiaľ len pri NBA, zranenia sú v detaile zápasu.</p>`;
 }
 
 const NHL_WEIGHTS: Record<string, string> = {

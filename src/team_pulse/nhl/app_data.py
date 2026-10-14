@@ -4,7 +4,8 @@ Tipy počíta a zamyká ranná úloha na Macu (team_pulse.nhl.daily → archive/
 Tu sa nič nepočíta, model sa nemení (brána G2-NHL): len sa poskladá to, čo appka ukáže.
 Beží v GitHub Actions pri každom builde appky (predict.yml), chyba NHL nezastaví NBA.
 
-  predictions.json  zápasy, ktoré sa ešte nedohrali (s tipom), výsledky za posledné dni, teamy podľa Ela
+  predictions.json  zápasy, ktoré sa ešte nedohrali (s tipom), výsledky za posledné dni, teamy podľa Ela,
+                    zranenia z ESPN (len informácia, model ich nepoužíva)
   model.json        presnosť a vrstvy modelu (rovnaký tvar ako NBA model.json)
 
 Spustenie:  uv run python -m team_pulse.nhl.app_data
@@ -19,6 +20,7 @@ from pathlib import Path
 
 import requests
 
+from team_pulse.nhl import injuries as inj
 from team_pulse.nhl.archive import ARCHIVE, load_tips
 from team_pulse.nhl.fetch_games import FINISHED, franchise, today_et
 from team_pulse.nhl.model import MODEL
@@ -151,6 +153,13 @@ def main(out: Path = OUT, archive: Path = ARCHIVE, now: datetime | None = None) 
         results = []
     model = json.loads(MODEL.read_text(encoding="utf-8"))["version"]
     data = build(tips, results, now, model)
+    try:
+        raw = inj.fetch()
+        data["injuries"], data["injuries_timestamp"] = inj.parse(raw), raw.get("timestamp")
+    except (requests.RequestException, ValueError, KeyError) as e:
+        # bez zranení appka ukáže tipy ako doteraz, len bez zoznamu chýbajúcich hráčov
+        print(f"::warning::NHL zranenia sa nepodarilo stiahnuť: {e.__class__.__name__}: {e}")
+        data["injuries"], data["injuries_timestamp"] = None, None
     out.mkdir(parents=True, exist_ok=True)
     (out / "predictions.json").write_text(
         json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
@@ -160,7 +169,8 @@ def main(out: Path = OUT, archive: Path = ARCHIVE, now: datetime | None = None) 
     )
     n = sum(len(g) for g in data["days"].values())
     rs, ts = len(data["results"]), len(data["teams"])
-    print(f"NHL pre appku: {n} zápasov s tipom, {rs} výsledkov, {ts} teamov → {out}")
+    ij = sum(len(p) for p in (data["injuries"] or {}).values())
+    print(f"NHL pre appku: {n} zápasov s tipom, {rs} výsledkov, {ts} teamov, {ij} zranených → {out}")
     return data
 
 
