@@ -1,7 +1,7 @@
-# F1 – model B a ostré meranie mimo appky (NÁVRH, čaká na schválenie Petrom)
+# F1 – model B a ostré meranie mimo appky (schválené 14. 10. 2026)
 
-Návrh 14. 10. 2026 po nesplnenej bráne G0-F1 (`docs/gate-f1-G0.md`). Platí až po schválení,
-najneskôr pred kvalifikáciou v Austine (24. 10. 2026, 21:00 UTC). Po schválení sa nemení.
+Návrh 14. 10. 2026 po nesplnenej bráne G0-F1 (`docs/gate-f1-G0.md`), **Peter schválil 14. 10. 2026**
+pred prvým zamknutým tipom (Austin, kvalifikácia 24. 10. 2026, 21:00 UTC). Model ani kritériá sa už nemenia.
 
 ## Prečo nové meranie
 
