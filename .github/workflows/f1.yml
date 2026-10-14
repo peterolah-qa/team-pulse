@@ -1,0 +1,49 @@
+name: F1
+
+# Ostré tipy F1 mimo appky (model B, docs/gate-f1-shadow.md): Elo po dojazdených pretekoch,
+# tip po kvalifikácii a pred štartom, vyhodnotenie po pretekoch → state, archive/f1, reports/f1_live.md.
+# Vlastný workflow: predict.yml je počas G2 NBA (20. 10. – 2. 11.) zmrazený.
+on:
+  schedule:
+    # kvalifikácia je v sobotu, preteky v nedeľu (aj Las Vegas a Katar podľa UTC); každú hodinu cez víkend,
+    # plánované behy GitHub odkladá, okno od kvalifikácie po štart má aspoň ~18 h
+    - cron: "41 * * * 6,0"
+    - cron: "41 6,12 * * 1" # pondelok: neskoré výsledky do vyhodnotenia
+  workflow_dispatch:
+
+permissions:
+  contents: write # commit stavu, archívu tipov a reportu
+
+concurrency:
+  group: f1
+  cancel-in-progress: false
+
+jobs:
+  f1:
+    runs-on: ubuntu-24.04 # pevná verzia: ubuntu-latest sa od 19. 10. mení na Ubuntu 26
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Inštalácia uv
+        uses: astral-sh/setup-uv@v10.3.0 # od v8 nemá tag hlavnej verzie (v10)
+
+      - name: Python a knižnice podľa uv.lock
+        run: uv sync --locked
+
+      - name: Elo, tip po kvalifikácii, vyhodnotenie (Jolpica-F1)
+        run: uv run python -m team_pulse.f1.live
+
+      - name: Stav, archív tipov a report → repo (len keď sa niečo zmenilo)
+        run: |
+          git add state/f1_state.json reports/f1_live.md
+          if [ -d archive/f1 ]; then git add archive/f1; fi  # pred prvým tipom priečinok ešte nie je
+          if git diff --cached --quiet; then echo "F1 bez zmeny"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "F1 $(date -u +%Y-%m-%dT%H:%MZ): tipy a vyhodnotenie"
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash && git push -q && exit 0
+            sleep $((i * 10))
+          done
+          echo "::error::F1 sa nepodarilo poslať na GitHub"
+          exit 1

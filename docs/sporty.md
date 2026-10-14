@@ -55,7 +55,7 @@ rozbilo appku nainštalovanú na ploche.
 |---|---|---|---|
 | Š1 – NHL: dáta a backtest | sťahovač histórie, hokejové Elo, backtest, ostré tipy mimo appky | hotovo 13. 10. | G0-NHL ✅ |
 | Š2 – NHL v appke (beta) | prepínač športu, zápasy, tipy, výsledky NHL; dáta z rannej NHL úlohy | hotovo 14. 10. (pred G2 NBA) | G2-NHL 13. – 26. 10. |
-| Š3 – F1 | zdroj (Jolpica), história, model pretekov, backtest; tipy od Austinu, potom appka (beta) | 15. 10. – 1. 11. | G0-F1, G2-F1 = 6 pretekov do 6. 12. |
+| Š3 – F1 | zdroj (Jolpica), história, model pretekov, backtest; tipy od Austinu (zamknuté po kvalifikácii), potom appka (beta) | 15. 10. – 1. 11. | G0-F1 (`docs/gate-f1-G0.md`), G2-F1 = 6 pretekov do 6. 12. |
 | Š4 – Tipos extraliga | overiť zdroj a podmienky, história, backtest, appka | po Š3 | G0 + G2 extraliga |
 | Š5 – Spoločné jadro | `core/` podľa toho, čo majú športy naozaj spoločné; výstupy bez zmeny | pri treťom športe, najskôr 4. 11. | všetky testy zelené, rovnaké JSON |
 
@@ -69,7 +69,7 @@ Spoločné jadro až keď budú tri športy, dovtedy by sme hádali, čo je naoz
 |---|---|---|
 | NBA | ✅ 27. 9. (`docs/gate-G0.md`, `docs/gate-G1.md`) | 20. 10. – 2. 11. (`docs/gate-G2.md`) |
 | NHL | ✅ 13. 10. (`docs/gate-nhl-G0.md`) | 13. – 26. 10. (`docs/gate-nhl-G2.md`) |
-| F1 | stanoví sa pred backtestom | 6 pretekov 25. 10. – 6. 12. |
+| F1 | ❌ 14. 10. (`docs/gate-f1-G0.md`): model A horší než kvalifikácia | namiesto G2: model B naostro mimo appky, 6 pretekov 25. 10. – 6. 12. (`docs/gate-f1-shadow.md`, workflow `f1.yml`) |
 | Extraliga | stanoví sa pred backtestom | stanoví sa |
 
 Hranice G2 pre NBA a NHL vychádzajú z backtestu (`scripts/g2_reference.py` → `reports/g2_reference.md`).
@@ -115,4 +115,5 @@ a skontroluje, že počet zápasov základnej časti presne sedí s ligou. Inak 
   ESPN `hockey/nhl` (rovnaký tvar ako `basketball/nba`). Sťahuje sa z Macu
   alebo z GitHub Actions.
 - Extraliga: verejné API nie je. Web hockeyslovakia.sk, najprv overiť podmienky používania.
-- F1: Jolpica (nástupca Ergast), OpenF1.
+- F1: Jolpica (nástupca Ergast), licencia CC BY-NC-SA 4.0 – nekomerčne, v appke uviesť zdroj;
+  limit 4 požiadavky/s, 500/h. OpenF1 (živá telemetria) model nepotrebuje.
