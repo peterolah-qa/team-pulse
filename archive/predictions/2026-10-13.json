@@ -190,16 +190,16 @@
    "game_id": "0012600048",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-14T01:00:53+00:00",
+   "locked_at": "2026-10-14T01:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-14T01:00:43Z",
+   "injuries_timestamp": "2026-10-14T01:30:35Z",
    "neutral": false,
    "p_home": 0.73,
    "margin_home": 7.2,
    "home": {
     "team": "LAL",
     "elo": 1569.2,
-    "elo_today": 1563.8,
+    "elo_today": 1564.1,
     "pulse": 59.8,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
@@ -207,7 +207,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 64.2,
-     "roster": 53.1,
+     "roster": 53.4,
      "players": -63.6,
      "fatigue": 5.0
     },
@@ -225,15 +225,15 @@
    "away": {
     "team": "GSW",
     "elo": 1446.7,
-    "elo_today": 1441.0,
-    "pulse": 39.3,
+    "elo_today": 1441.3,
+    "pulse": 39.4,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -58.3,
-     "roster": 11.8,
+     "roster": 12.1,
      "players": -21.0,
      "fatigue": 3.5
     },
@@ -253,46 +253,46 @@
    "game_id": "0012600049",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-14T01:00:53+00:00",
+   "locked_at": "2026-10-14T01:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-14T01:00:43Z",
+   "injuries_timestamp": "2026-10-14T01:30:35Z",
    "neutral": false,
-   "p_home": 0.35,
-   "margin_home": -4.5,
+   "p_home": 0.341,
+   "margin_home": -4.8,
    "home": {
     "team": "SAC",
     "elo": 1374.4,
-    "elo_today": 1357.2,
-    "pulse": 25.4,
+    "elo_today": 1348.9,
+    "pulse": 24.0,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
-    "confidence": "stredná",
+    "confidence": "vysoká",
     "layers": {
      "strength": -130.6,
-     "roster": -9.4,
-     "players": -10.8,
+     "roster": -9.1,
+     "players": -19.3,
      "fatigue": 3.0
     },
     "reasons": [
      [
-      "Bez Domantas Sabonis (?), Maxime Raynaud",
-      -11
+      "Bez Domantas Sabonis, Maxime Raynaud",
+      -19
      ]
     ]
    },
    "away": {
     "team": "POR",
     "elo": 1515.8,
-    "elo_today": 1561.0,
-    "pulse": 59.3,
+    "elo_today": 1561.3,
+    "pulse": 59.4,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 10.8,
-     "roster": 42.6,
+     "roster": 42.9,
      "players": 0.0,
      "fatigue": 2.6
     },
