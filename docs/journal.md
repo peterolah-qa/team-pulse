@@ -6,6 +6,18 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 14. 10. 2026
 
+- **Nové poradie a brány po športoch** (`docs/sporty.md`). Každý šport má vlastné G0 a G2, do appky
+  ide po G0 s označením beta. Poradie: NHL v appke (15. – 19. 10.) → F1 (6 zostávajúcich pretekov
+  2026 ako G2-F1) → extraliga → spoločné jadro pri treťom športe. Počas G2 NBA sa nemení kód NBA,
+  appka môže dostať nový šport cez krátku vetvu so zelenými testami.
+- **Kritériá G2 NBA a G2-NHL – návrh** (`docs/gate-G2.md`, `docs/gate-nhl-G2.md`, čaká na schválenie).
+  Hranice z backtestu (`scripts/g2_reference.py` → `reports/g2_reference.md`): log loss za 14 dní
+  ≤ 95. percentil 14-dňových okien testovacích sezón, NBA 0,6739, NHL 0,7101. Zistenie: NHL prehrá
+  s baseline „vždy domáci“ v 24,5 % 14-dňových okien, NBA len v 3,1 %, preto je porazenie baseline
+  kritériom len pri NBA. Začiatok sezóny je pri NBA ťažší (log loss 0,634, celá sezóna 0,597).
+- **Chyba v NBA histórii: chýbajú zápasy na neutrálnej pôde** – 5 v 2024/25 aj 2025/26 (Mexiko,
+  Paríž, Berlín, Londýn, semifinále NBA Cupu), niektoré teamy majú 79 – 81 zápasov. V období G2
+  taký zápas nie je, prvý je 7. 11. (DEN @ IND, Mexiko). Oprava pred 20. 10., najneskôr pred 7. 11.
 - **NBA – poistka „len z `main`“** (schválená, pred G2). Ranná NBA úloha na inej vetve skončí chybou
   skôr, než niečo stiahne alebo commitne. Kontrolu (`require_branch`) používa aj NHL úloha.
 - **NHL – prvý automatický beh** (skúšobne o 12:22): commit „NHL 2026-10-14: noc 13. 10. tip vyšiel
@@ -92,5 +104,8 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 ## Čaká
 
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- G2 NBA: 20. 10. – 3. 11. 2026, 14 dní ostrej prevádzky. Kód NBA sa do 3. 11. nemení.
-- NHL: overiť prvý automatický beh 15. 10. (commit „NHL 2026-10-15: …“ a log). G2-NHL podľa plánu v Š3.
+- Schváliť kritériá G2 NBA a G2-NHL, potom `bash scripts/board_plan2.sh` (boardy podľa nového poradia).
+- NBA: oprava zápasov na neutrálnej pôde v histórii (pred 20. 10., najneskôr pred 7. 11.).
+- G2 NBA: 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. Kód NBA sa do 3. 11. nemení.
+- G2-NHL: 13. – 26. 10. 2026, vyhodnotenie 27. 10.
+- NHL: overiť prvý automatický beh 15. 10. (commit „NHL 2026-10-15: …“ a log).

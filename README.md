@@ -155,15 +155,16 @@ Stiahnuté dáta sa necommitujú. Mená hráčov v testoch a na screenshotoch s�
 
 - Backtest pozná absencie len z box score (kto nehral), nie zo skutočného injury reportu pred zápasom.
 - Kalibrácia je najslabšia v pásme 60 – 70 %.
-- Na začiatku sezóny 2026/27 je model o 2 – 3 body istejší ako trh. Sleduje sa to počas brány G2 (14 dní prevádzky).
+- Začiatok sezóny je pre model ťažší: v backteste mal v prvých 14 dňoch log loss 0,634 (celá sezóna 0,597),
+  lebo Elo prenesené cez leto a nové súpisky sú menej presné (`reports/g2_reference.md`).
 
 ## Plán
 
 - [x] 0a – replikácia Elo (G0) · [x] 0b – vrstvy B, C, sila súpisky (G1) · [x] 1 – dátový agent a stav
 - [x] 2 – PWA appka (G3)
-- [ ] G2 – 14 dní ostrej prevádzky od 20. 10. 2026
+- [ ] G2 – 14 dní ostrej prevádzky 20. 10. – 2. 11. 2026, kritériá vopred v [docs/gate-G2.md](docs/gate-G2.md)
 - [x] upozornenia v appke na dohrané zápasy
-- [ ] ďalšie športy: NHL (model hotový, ostré tipy mimo appky), Tipos extraliga, F1 – [plán](docs/sporty.md)
+- [ ] ďalšie športy: NHL (v appke ako beta, G2-NHL 13. – 26. 10.), F1, Tipos extraliga – [plán](docs/sporty.md)
 - [ ] neskôr: Supabase (história predpovedí)
 
 ---
