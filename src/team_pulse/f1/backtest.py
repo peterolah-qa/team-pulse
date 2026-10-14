@@ -21,6 +21,7 @@ from team_pulse.f1.fetch import OUT as RESULTS
 from team_pulse.f1.fetch import SPRINTS
 from team_pulse.f1.model import (
     FEATURES,
+    REGULATION_CHANGES,
     EloParams,
     elo_ratings,
     features,
@@ -122,10 +123,12 @@ def fit(df: pd.DataFrame, table: np.ndarray, mask: pd.Series) -> np.ndarray:
     )
 
 
-def tune(res: pd.DataFrame, table: np.ndarray, grid: dict[str, list[float]] = GRID) -> pd.DataFrame:
+def tune(
+    res: pd.DataFrame, table: np.ndarray, grid: dict[str, list[float]] = GRID, resets: tuple[int, ...] = ()
+) -> pd.DataFrame:
     rows = []
     for kd, kt, c in itertools.product(grid["k_driver"], grid["k_team"], grid["carry"]):
-        df = elo_ratings(res, EloParams(kd, kt, c))
+        df = elo_ratings(res, EloParams(kd, kt, c, resets))
         w = fit(df, table, in_seasons(df, FIT_EARLY))
         v = df[in_seasons(df, VALID)]
         rows.append(
@@ -140,7 +143,10 @@ def tune(res: pd.DataFrame, table: np.ndarray, grid: dict[str, list[float]] = GR
 
 
 def backtest(
-    res: pd.DataFrame, sprints: pd.DataFrame, grid: dict[str, list[float]] = GRID
+    res: pd.DataFrame,
+    sprints: pd.DataFrame,
+    grid: dict[str, list[float]] = GRID,
+    resets: tuple[int, ...] = (),
 ) -> dict[str, object]:
     res = res.copy()
     res["champ_rank"] = championship_rank(res, sprints)
@@ -150,8 +156,8 @@ def backtest(
     has_rank = train & res["champ_rank"].notna()
     rank_table = win_table(res.loc[has_rank, "champ_rank"].astype(int), won[has_rank], max_slot=30)
 
-    tuning = tune(res, slot_table, grid)
-    best = EloParams(*tuning.loc[0, ["k_driver", "k_team", "carry"]].astype(float))
+    tuning = tune(res, slot_table, grid, resets)
+    best = EloParams(*tuning.loc[0, ["k_driver", "k_team", "carry"]].astype(float), resets=resets)
     df = elo_ratings(res, best)
     df["champ_rank"] = df.set_index(["season", "round", "driver"]).index.map(
         res.set_index(["season", "round", "driver"])["champ_rank"]
@@ -185,7 +191,19 @@ def _num(x: float, d: int = 4) -> str:
     return f"{x:.{d}f}".replace(".", ",")
 
 
-def to_markdown(r: dict[str, object]) -> str:
+def to_markdown(r: dict[str, object], variant: str = "A") -> str:
+    """Variant A = report brány G0-F1. Variant B = návrh po bráne, test už videný → len orientačne."""
+    if variant == "B":
+        head = (
+            "# F1 – model B (návrh po G0-F1, orientačne)\n\n"
+            "Elo vynulované pri zmene technických pravidiel (2017, 2022, 2026), inak rovnako ako model A.\n"
+            "**Test 2026 kolá 1 – 17 sme po G0-F1 už videli – čísla nižšie nie sú dôkaz ani brána.**\n"
+            "Rozhodne ostré meranie na 6 zostávajúcich pretekoch 2026 (docs/gate-f1-shadow.md).\n\n"
+        )
+        verdict = "orientačne, nie kritérium"
+    else:
+        head = "# F1 – backtest (brána G0-F1)\n\n"
+        verdict = "kritérium splnené" if r["passed"] else "kritérium nesplnené"
     p: EloParams = r["params"]
     w = r["weights"]
     rows = lambda part: "\n".join(  # noqa: E731
@@ -201,9 +219,9 @@ def to_markdown(r: dict[str, object]) -> str:
             f"| {rnd} | {g['race'].iloc[0].replace(' Grand Prix', '')} | {fav['code']} {_pct(fav['p'])} | "
             f"{win['code']} (kval. {int(quali_slot(g).loc[win.name])}.) | {_pct(win['p'])} |"
         )
-    return f"""# F1 – backtest (brána G0-F1)
-
-Kritériá: docs/gate-f1-G0.md (stanovené 14. 10. 2026 pred meraním). Tip po kvalifikácii,
+    return (
+        head
+        + f"""Kritériá: docs/gate-f1-G0.md (stanovené 14. 10. 2026 pred meraním). Tip po kvalifikácii,
 hodnotí sa víťaz. Tréning 2014 – 2025 ({r["n_train"]} pretekov, 2014 rozbeh Ela), test 2026 kolá 1 – 17
 ({r["n_test"]} pretekov). Dáta: Jolpica-F1 (CC BY-NC-SA 4.0).
 
@@ -214,7 +232,7 @@ hodnotí sa víťaz. Tréning 2014 – 2025 ({r["n_train"]} pretekov, 2014 rozbe
 {rows("test")}
 
 Rozdiel oproti lepšej baseline: **{_num(r["margin"])}** (hranica {_num(THRESHOLD)}) →
-**{"kritérium splnené" if r["passed"] else "kritérium nesplnené"}**.
+**{verdict}**.
 
 ## Staré pravidlá: 2023 – 2025 (len zápis)
 
@@ -236,21 +254,35 @@ kvalifikácia {_num(w[0], 3)}, Elo jazdca {_num(w[1], 3)}, Elo tímu {_num(w[2],
 |---|---|---|---|---|
 {chr(10).join(per_race)}
 """
+    )
 
 
-def main(results: Path = RESULTS, sprints: Path = SPRINTS, out: Path = REPORT) -> dict[str, object]:
-    r = backtest(pd.read_parquet(results), pd.read_parquet(sprints))
+REPORT_B = Path("reports/f1_model_b.md")
+
+
+def main(
+    results: Path = RESULTS, sprints: Path = SPRINTS, out: Path = REPORT, variant: str = "A"
+) -> dict[str, object]:
+    """Variant A = model z brány G0-F1. Variant B = Elo vynulované pri zmene pravidiel (návrh po G0-F1)."""
+    resets = REGULATION_CHANGES if variant == "B" else ()
+    r = backtest(pd.read_parquet(results), pd.read_parquet(sprints), resets=resets)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(to_markdown(r), encoding="utf-8")
+    out.write_text(to_markdown(r, variant), encoding="utf-8")
     t = r["test"]
     for k, s in t.items():
         print(
             f"{k:13s} presnosť {s.accuracy:6.1%}  log loss {s.log_loss:.4f}  Brier pódia {s.podium_brier:.4f}"
         )
-    print(f"rozdiel oproti lepšej baseline {r['margin']:.4f} → {'SPLNENÉ' if r['passed'] else 'NESPLNENÉ'}")
+    verdict = "orientačne (videné dáta)" if variant == "B" else ("SPLNENÉ" if r["passed"] else "NESPLNENÉ")
+    print(f"rozdiel oproti lepšej baseline {r['margin']:.4f} → {verdict}")
     print(f"Report: {out}")
     return r
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--variant", choices=["A", "B"], default="A")
+    v = ap.parse_args().variant
+    main(out=REPORT_B if v == "B" else REPORT, variant=v)

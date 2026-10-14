@@ -32,6 +32,11 @@ class EloParams:
     k_driver: float = 24.0
     k_team: float = 24.0
     carry: float = 0.7  # na začiatku sezóny sa rating vráti k priemeru: MEAN + carry · (rating − MEAN)
+    resets: tuple[int, ...] = ()  # sezóny s novými technickými pravidlami: rating začína od priemeru
+
+
+# Zmeny technických pravidiel (FIA), stanovené vopred – nie ladené: model B v nich Elo vynuluje.
+REGULATION_CHANGES = (2017, 2022, 2026)
 
 
 def team_of(constructor: str) -> str:
@@ -62,8 +67,9 @@ def elo_ratings(df: pd.DataFrame, p: EloParams) -> pd.DataFrame:
     for g in races(df):
         s = int(g["season"].iloc[0])
         if season is not None and s != season:
-            drv = {k: MEAN + p.carry * (v - MEAN) for k, v in drv.items()}
-            team = {k: MEAN + p.carry * (v - MEAN) for k, v in team.items()}
+            c = 0.0 if s in p.resets else p.carry
+            drv = {k: MEAN + c * (v - MEAN) for k, v in drv.items()}
+            team = {k: MEAN + c * (v - MEAN) for k, v in team.items()}
         season = s
         teams = g["constructor"].map(team_of).to_numpy()
         rd = np.array([drv.get(d, MEAN) for d in g["driver"]])
