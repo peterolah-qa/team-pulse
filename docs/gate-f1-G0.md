@@ -58,6 +58,34 @@ aspoň o 0,0005, inak sa nepridá. Zmenu modelu len navrhnem, schvaľuje Peter.
 Prejde → tipy od Veľkej ceny USA (Austin, kvalifikácia 24. 10., preteky 25. 10.) a F1 v appke
 ako beta. Neprejde → zapíše sa príčina, F1 sa do appky nedostane a G2-F1 sa posunie.
 
-## Vyhodnotenie
+## Vyhodnotenie (14. 10. 2026)
 
-Zatiaľ nemerané.
+| Kritérium | Cieľ | Výsledok | Stav |
+|---|---|---|---|
+| Úplnosť dát | všetky preteky a kvalifikácie, počty jazdcov podľa Jolpica | 2014 – 2026 (do 17. kola), 269 pretekov, 5 479 riadkov; malé polia (18 – 19) overené proti API | ✅ |
+| Log loss víťaza vs. lepšia baseline | rozdiel ≥ 0,0005 | 1,2009 vs. 1,1473 (kvalifikácia), rozdiel **−0,0537** | ❌ |
+| Test úniku dát | prechádza | prechádza, overené aj úmyselnou chybou | ✅ |
+| Contract test Jolpica | prechádza | skutočná odpoveď (Singapur 2026, výsledky, kvalifikácia, šprint) | ✅ |
+
+**Rozhodnutie: brána G0-F1 nesplnená.** Model sa na teste neladil a meranie sa neopakovalo.
+
+| Test 2026 kolá 1 – 17 | Presnosť | Log loss víťaza | Brier pódia |
+|---|---|---|---|
+| Model (Elo jazdca + Elo tímu + kvalifikácia) | 58,8 % | 1,2009 | 0,0694 |
+| Baseline kvalifikácia | 70,6 % | 1,1473 | 0,0705 |
+| Baseline šampionát | 35,3 % | 1,8677 | 0,0980 |
+
+### Príčina
+
+- **Nové pravidlá 2026 prehodili poradie.** Elo jazdcov a tímov sa prenieslo zo sezóny 2025
+  (prenos 0,5). Model preto favorizoval Russella aj v pretekoch, kde z 1. miesta kvalifikácie
+  štartoval Antonelli (kolá 2, 3, 5, 13, 14); Antonelli vyhral 8 zo 17 pretekov.
+- **Model verí Elu viac než kvalifikácii** (váhy 1,37 a 0,78 na 100 Elo). Na starých pravidlách
+  to fungovalo: 2023 – 2025 (pre váhy neznáme) model 1,0227 vs. kvalifikácia 1,3101.
+- **Kvalifikácia je v 2026 silnejšia než v minulosti:** z 1. miesta vyhral 12 zo 17 pretekov
+  (70,6 %), v tréningu 2014 – 2025 len 54,8 %. Tabuľka baseline je z tréningu, takže ju to
+  ešte podceňuje – model by musel byť ešte lepší.
+- Šanca na pódium (len zápis) je u modelu o niečo lepšia (Brier 0,0694 vs. 0,0705).
+
+Podľa pravidla: F1 sa do appky nedostane, G2-F1 sa posúva. Ďalší postup rozhodne Peter.
+Podrobnosti: reports/f1_backtest.md.
