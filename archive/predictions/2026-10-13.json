@@ -190,46 +190,50 @@
    "game_id": "0012600048",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-14T00:30:48+00:00",
+   "locked_at": "2026-10-14T01:00:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-14T00:30:38Z",
+   "injuries_timestamp": "2026-10-14T01:00:43Z",
    "neutral": false,
-   "p_home": 0.787,
-   "margin_home": 9.5,
+   "p_home": 0.73,
+   "margin_home": 7.2,
    "home": {
     "team": "LAL",
     "elo": 1569.2,
-    "elo_today": 1625.2,
-    "pulse": 70.0,
-    "tier": "Silný",
+    "elo_today": 1563.8,
+    "pulse": 59.8,
+    "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 64.2,
-     "roster": 51.0,
-     "players": 0.0,
+     "roster": 53.1,
+     "players": -63.6,
      "fatigue": 5.0
     },
     "reasons": [
      [
+      "Bez Luka Dončić",
+      -64
+     ],
+     [
       "Sila súpisky",
-      51
+      53
      ]
     ]
    },
    "away": {
     "team": "GSW",
     "elo": 1446.7,
-    "elo_today": 1438.9,
-    "pulse": 39.0,
+    "elo_today": 1441.0,
+    "pulse": 39.3,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -58.3,
-     "roster": 9.7,
+     "roster": 11.8,
      "players": -21.0,
      "fatigue": 3.5
     },
@@ -237,6 +241,10 @@
      [
       "Bez Jimmy Butler III",
       -21
+     ],
+     [
+      "Sila súpisky",
+      12
      ]
     ]
    }
@@ -245,32 +253,28 @@
    "game_id": "0012600049",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-14T00:30:48+00:00",
+   "locked_at": "2026-10-14T01:00:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-14T00:30:38Z",
+   "injuries_timestamp": "2026-10-14T01:00:43Z",
    "neutral": false,
    "p_home": 0.35,
    "margin_home": -4.5,
    "home": {
     "team": "SAC",
     "elo": 1374.4,
-    "elo_today": 1355.1,
-    "pulse": 25.0,
+    "elo_today": 1357.2,
+    "pulse": 25.4,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": -130.6,
-     "roster": -11.5,
+     "roster": -9.4,
      "players": -10.8,
      "fatigue": 3.0
     },
     "reasons": [
-     [
-      "Sila súpisky",
-      -12
-     ],
      [
       "Bez Domantas Sabonis (?), Maxime Raynaud",
       -11
@@ -280,22 +284,22 @@
    "away": {
     "team": "POR",
     "elo": 1515.8,
-    "elo_today": 1558.9,
-    "pulse": 59.0,
+    "elo_today": 1561.0,
+    "pulse": 59.3,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 10.8,
-     "roster": 40.5,
+     "roster": 42.6,
      "players": 0.0,
      "fatigue": 2.6
     },
     "reasons": [
      [
       "Sila súpisky",
-      40
+      43
      ]
     ]
    }
