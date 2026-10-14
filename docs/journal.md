@@ -6,6 +6,18 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 14. 10. 2026
 
+- **F1 – brána G0-F1 nesplnená** (vetva `f1`, `docs/gate-f1-G0.md`, `reports/f1_backtest.md`, board #67,
+  #68, #70, #81). Kritériá schválil Peter pred meraním (commit `c1995c6`): tip po kvalifikácii (zmena
+  oproti #70), tréning 2014 – 2025, test 2026 kolá 1 – 17, kritérium log loss víťaza o ≥ 0,0005 nižší
+  než lepšia baseline. Zdroj Jolpica-F1 (CC BY-NC-SA 4.0, limit 500/h): sťahovač `team_pulse.f1.fetch`
+  s cache, 269 pretekov, kontrola úplnosti, contract test na skutočnej odpovedi. Model: Elo jazdca +
+  Elo tímu (tímy cez premenovania) + miesto v kvalifikácii, podmienený logit. Výsledok na teste:
+  model 1,2009, baseline kvalifikácia 1,1473 (presnosť 58,8 % vs. 70,6 %), rozdiel −0,0537 → ❌.
+  Príčina: Elo prenesené zo sezóny 2025 do nových pravidiel 2026 (model favorizoval Russella, keď
+  z pole position štartoval Antonelli) a model verí Elu viac než kvalifikácii; z pole vyhral v 2026
+  12 zo 17 pretekov (v tréningu 54,8 %). Na starých pravidlách 2023 – 2025 model kvalifikáciu jasne
+  porazil (1,0227 vs. 1,3101). Model sa na teste neladil, meranie sa neopakovalo. F1 do appky nejde,
+  G2-F1 sa posúva, ďalší postup rozhodne Peter.
 - **NHL v appke (beta), nový dizajn, aktualizácia Actions** (PR #82, board: #61, #79, #80, #83, #84).
   NHL: prepínač NBA / NHL hore (pamätá si výber), zápasy, tipy, výsledky (pp / sn), detail zápasu
   (Elo, domáce prostredie, únava), liga podľa Ela, model; štítok BETA do prejdenia G2-NHL.
@@ -117,6 +129,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## Čaká
 
+- F1: rozhodnúť ďalší postup po nesplnenej G0-F1 (vetva `f1` čaká, nezlúčená).
 - Kontrola zdrojov: pridať job na cron-job.org o 11:30 UTC (#85), job Predikcie nechať zapnutý.
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
 - Schváliť kritériá G2 NBA a G2-NHL, potom `bash scripts/board_plan2.sh` (boardy podľa nového poradia).
