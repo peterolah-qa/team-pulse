@@ -195,3 +195,12 @@ def test_score_counts_winner_log_loss_and_accuracy():
     df = race(2025, 1, ["a", "b", "c", "d"])
     s = bt.score(df, np.array([0.5, 0.3, 0.1, 0.1]))
     assert s.log_loss == pytest.approx(-np.log(0.5)) and s.accuracy == 1.0 and s.races == 1
+
+
+def test_regulation_change_resets_ratings_to_mean():
+    df = pd.concat([season_of(2025, 3, ["a", "b", "c", "d"]), season_of(2026, 1, ["a", "b", "c", "d"])])
+    keep = m.elo_ratings(df, m.EloParams(32, 32, 0.9))
+    reset = m.elo_ratings(df, m.EloParams(32, 32, 0.9, resets=(2026,)))
+    first26 = lambda r: r[r["season"] == 2026][["elo_driver", "elo_team"]].to_numpy()  # noqa: E731
+    assert np.allclose(first26(reset), m.MEAN)
+    assert not np.allclose(first26(keep), m.MEAN)
