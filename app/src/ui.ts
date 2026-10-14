@@ -1,5 +1,5 @@
 /* Spoločné UI prvky: formátovanie, dátumy v našom čase, farby úrovní, prstenec Pulse. */
-import type { Tier } from "./data";
+import type { Sport, Tier } from "./data";
 
 export const TEAM_NAMES: Record<string, string> = {
   ATL: "Atlanta Hawks", BOS: "Boston Celtics", BKN: "Brooklyn Nets", CHA: "Charlotte Hornets",
@@ -24,9 +24,34 @@ export const TEAM_COLORS: Record<string, [string, string]> = {
   UTA: ["#4b2a87", "#f9a01b"], WAS: ["#002b5c", "#e31837"],
 };
 
+export const NHL_NAMES: Record<string, string> = {
+  ANA: "Anaheim Ducks", BOS: "Boston Bruins", BUF: "Buffalo Sabres", CAR: "Carolina Hurricanes",
+  CBJ: "Columbus Blue Jackets", CGY: "Calgary Flames", CHI: "Chicago Blackhawks", COL: "Colorado Avalanche",
+  DAL: "Dallas Stars", DET: "Detroit Red Wings", EDM: "Edmonton Oilers", FLA: "Florida Panthers",
+  LAK: "Los Angeles Kings", MIN: "Minnesota Wild", MTL: "Montréal Canadiens", NJD: "New Jersey Devils",
+  NSH: "Nashville Predators", NYI: "New York Islanders", NYR: "New York Rangers", OTT: "Ottawa Senators",
+  PHI: "Philadelphia Flyers", PIT: "Pittsburgh Penguins", SEA: "Seattle Kraken", SJS: "San Jose Sharks",
+  STL: "St. Louis Blues", TBL: "Tampa Bay Lightning", TOR: "Toronto Maple Leafs", UTA: "Utah Mammoth",
+  VAN: "Vancouver Canucks", VGK: "Vegas Golden Knights", WPG: "Winnipeg Jets", WSH: "Washington Capitals",
+};
+
+/* NHL farby dresov (skratky sa s NBA prekrývajú: BOS, DAL, DET, MIN, PHI, TOR, UTA, CHI). */
+export const NHL_COLORS: Record<string, [string, string]> = {
+  ANA: ["#f47a38", "#b9975b"], BOS: ["#ffb81c", "#1b1b1b"], BUF: ["#003087", "#ffb81c"], CAR: ["#ce1126", "#1b1b1b"],
+  CBJ: ["#002654", "#ce1126"], CGY: ["#c8102e", "#f1be48"], CHI: ["#cf0a2c", "#1b1b1b"], COL: ["#6f263d", "#236192"],
+  DAL: ["#006847", "#8f8f8c"], DET: ["#ce1126", "#ffffff"], EDM: ["#041e42", "#ff4c00"], FLA: ["#041e42", "#c8102e"],
+  LAK: ["#1b1b1b", "#a2aaad"], MIN: ["#154734", "#a6192e"], MTL: ["#af1e2d", "#192168"], NJD: ["#ce1126", "#1b1b1b"],
+  NSH: ["#ffb81c", "#041e42"], NYI: ["#00539b", "#f47d30"], NYR: ["#0038a8", "#ce1126"], OTT: ["#1b1b1b", "#c52032"],
+  PHI: ["#f74902", "#1b1b1b"], PIT: ["#1b1b1b", "#fcb514"], SEA: ["#001628", "#99d9d9"], SJS: ["#006d75", "#ea7200"],
+  STL: ["#002f87", "#fcb514"], TBL: ["#002868", "#ffffff"], TOR: ["#00205b", "#ffffff"], UTA: ["#6cace4", "#1b1b1b"],
+  VAN: ["#00205b", "#00843d"], VGK: ["#b4975a", "#333f42"], WPG: ["#041e42", "#ac162c"], WSH: ["#c8102e", "#041e42"],
+};
+
+export const teamName = (abbr: string, sport: Sport = "nba"): string => (sport === "nhl" ? NHL_NAMES : TEAM_NAMES)[abbr] ?? abbr;
+
 /* 3D minca vo farbách teamu (dvojfarebný dres, lesk a hĺbka). S textom = veľká minca v detaile. */
-export function coin(abbr: string, label = false): string {
-  const [c1, c2] = TEAM_COLORS[abbr] ?? ["#3a3f55", "#8a90a8"];
+export function coin(abbr: string, label = false, sport: Sport = "nba"): string {
+  const [c1, c2] = (sport === "nhl" ? NHL_COLORS : TEAM_COLORS)[abbr] ?? ["#3a3f55", "#8a90a8"];
   return `<span class="coin${label ? " big" : ""}" style="--c1:${c1};--c2:${c2}" aria-hidden="true">${label ? esc(abbr) : ""}</span>`;
 }
 
@@ -112,9 +137,10 @@ export function groupBy<T>(items: T[], key: (x: T) => string): [string, T[]][] {
 
 // --- stavebné bloky obrazoviek ---
 
+/* Hlavička obrazovky. Hlavné obrazovky majú vedľa značky prepínač športu (doplní ho main.ts). */
 export function header(title: string, sub = "", back?: { href: string; label: string }): string {
   return `<header class="top">
-    ${back ? `<a class="back" href="${back.href}">‹ ${esc(back.label)}</a>` : `<span class="brand" aria-hidden="true">Team Pulse</span>`}
+    ${back ? `<a class="back" href="${back.href}">‹ ${esc(back.label)}</a>` : `<div class="brandrow"><span class="brand" aria-hidden="true">Team Pulse</span><span data-sport-switch></span></div>`}
     <h1>${title}</h1>${sub ? `<p class="sub">${sub}</p>` : ""}</header>`;
 }
 
@@ -140,4 +166,26 @@ export function ring(pulse: number, t: Tier, size = 88): string {
       stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" transform="rotate(-90 ${mid} ${mid})"/>
     <text x="${mid}" y="${mid + size * 0.11}" text-anchor="middle" class="ring-num" font-size="${size * 0.32}">${pulseNum(pulse)}</text>
   </svg>`;
+}
+
+/* Tenký pruh šancí pod zápasom v zozname: hostia vľavo, domáci vpravo, favorit zlatý (ako v detaile).
+   Len doplnok k číslam vedľa, preto aria-hidden. */
+export function oddsBar(pHome: number): string {
+  const { away } = split(pHome);
+  return `<span class="mbar ${pHome > 0.5 ? "home-fav" : "away-fav"}" aria-hidden="true"><i style="width:${away}%"></i></span>`;
+}
+
+/* Malý graf formy (Pulse po zápasoch). Posledný bod zvýraznený, čísla sú aj v popise pre čítačky. */
+export function sparkline(values: number[], t: Tier, label: string, w = 72, h = 24): string {
+  if (values.length < 2) return "";
+  const pad = 4;
+  const lo = Math.min(...values), hi = Math.max(...values);
+  const span = Math.max(hi - lo, 10); // malý rozptyl nech nevyzerá ako dráma
+  const mid = (lo + hi) / 2;
+  const x = (i: number) => pad + (i / (values.length - 1)) * (w - 2 * pad);
+  const y = (v: number) => h / 2 - ((v - mid) / span) * (h - 2 * pad);
+  const pts = values.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+  const last = values.length - 1;
+  return `<svg class="spark ${tierClass(t)}" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(label)}">
+    <polyline points="${pts}"/><circle cx="${x(last).toFixed(1)}" cy="${y(values[last]).toFixed(1)}" r="3"/></svg>`;
 }

@@ -27,13 +27,20 @@ s akou šancou vyjdú všetky naraz. Nie je spojený s NBA ani s jej klubmi a ne
 
 | Obrazovka | Obsah |
 |---|---|
-| **Zápasy** | najbližšie zápasy po dňoch v našom čase: tip na víťaza, šanca oboch teamov, forma (bodka), chýbajúci hráči |
-| **Tipy** | favoriti zápasov, ktoré ešte nezačali, od najväčšej šance nadol; pri každom riadku šanca, že vyjdú všetky tipy od prvého po daný (súčin šancí) |
+| **Zápasy** | najbližšie zápasy po dňoch v našom čase: tip na víťaza, šanca oboch teamov aj ako pruh, chýbajúci hráči |
+| **Tipy** | favoriti zápasov, ktoré ešte nezačali, od najväčšej šance nadol; pri každom riadku a v grafe šanca, že vyjdú všetky tipy od prvého po daný (súčin šancí) |
 | **Výsledky** | dohrané zápasy posledných dní so skóre a naším tipom pred zápasom (nevyšiel = červený); v detaile štatistiky hráčov |
-| **Zápas** | tip a šanca, prečo (najviac 4 dôvody), čo ak otázny hráč nenastúpi, forma teamov; vrstvy modelu po rozkliknutí |
+| **Zápas** | tip a šanca, prečo (najviac 4 dôvody), čo ak otázny hráč nenastúpi, forma teamov s grafom Pulse; vrstvy modelu po rozkliknutí |
 | **Team** | Pulse a poradie podľa formy, najbližšie zápasy s našou šancou, posledné výsledky, súpiska so zranenými navrchu |
 | **Teamy** | liga rozdelená na Silní / Stabilní / Oslabení / Kritickí, poradie podľa Pulse |
 | **Model** | presnosť na neznámych zápasoch a kalibrácia; ako sa model učil po rozkliknutí |
+
+**NHL (beta)** – prepínač NBA / NHL hore: zápasy, tipy, výsledky (pp = po predĺžení, sn = po nájazdoch),
+detail zápasu (Elo, domáce prostredie, únava), liga podľa Ela a model. Tipy zamyká ranná NHL úloha na Macu
+(`archive/nhl/predictions`), GitHub Actions k nim pri každom builde pridá výsledky z API NHL
+(`team_pulse.nhl.app_data`). Označenie beta zmizne po prejdení brány G2-NHL (`docs/gate-nhl-G2.md`).
+
+Na počítači sa zoznamy rozložia do dvoch stĺpcov. Appka má tmavú aj svetlú tému podľa nastavenia systému.
 
 **Pulse** = 50 + (Elo dnes − 1505) / 6, teda 50 znamená priemerný team. Hranice úrovní sú 70 / 50 / 30.
 Team, ktorý je dnes aspoň o 60 Elo pod svojím normálom (napr. mu chýba hviezda), padne o úroveň nižšie.

@@ -15,12 +15,14 @@ export default defineConfig({
     locale: "sk-SK",
     timezoneId: "Europe/Bratislava",
     serviceWorkers: "block", // inak by service worker obišiel podstrčené dáta
+    colorScheme: "dark", // hlavná téma; svetlú kontroluje projekt a11y-light a vizuálne testy „-svetla“
     trace: "retain-on-failure",
   },
   expect: { toHaveScreenshot: { maxDiffPixelRatio: 0.02, animations: "disabled" } },
   projects: [
     { name: "mobile", testIgnore: /visual/, use: { ...devices["Pixel 7"] } },
     { name: "desktop", testIgnore: /visual/, use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 800 } } },
+    { name: "a11y-light", testMatch: /a11y/, use: { ...devices["Pixel 7"], colorScheme: "light" } },
     ...(visual
       ? [
           { name: "visual-mobile", testMatch: /visual/, use: { ...devices["Pixel 7"] } },

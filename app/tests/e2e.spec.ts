@@ -385,3 +385,27 @@ test("PWA: manifest a ikony sú dostupné", async ({ page, request }) => {
   for (const icon of manifest.icons) expect((await request.get(`/${icon.src}`)).ok(), icon.src).toBeTruthy();
   expect((await request.get("/sw.js")).ok()).toBeTruthy();
 });
+
+test("Dizajn: pruh šancí pri zápase, graf tipov, graf formy v detaile", async ({ page }) => {
+  await open(page);
+  const first = page.locator("a.match").first();
+  await expect(first.locator(".mbar.home-fav")).toHaveCount(1); // DET doma je favorit
+  expect(await first.locator(".mbar i").evaluate((el) => (el as HTMLElement).style.width)).toBe("38%");
+
+  await open(page, "#/tipy");
+  await expect(page.locator("svg.acc-chart")).toHaveAttribute("aria-label", /1 tip 84 %, 2 tipy 61 %, 3 tipy 43 %, 4 tipy 26 %, 5 tipov 15 %, 6 tipov 8 %/);
+  await expect(page.locator("svg.acc-chart .val-lbl")).toHaveText(["84 %", "8 %"]);
+
+  await open(page, "#/zapas/0022600001");
+  await expect(page.locator(".formrow svg.spark")).toHaveCount(2);
+  await expect(page.locator(".formrow svg.spark").first()).toHaveAttribute("aria-label", /^Pulse BOS za posledných \d+ zápasov: od \d+ po \d+$/);
+});
+
+test("Široká obrazovka: zoznamy v dvoch stĺpcoch, detail ostane úzky", async ({ page }, info) => {
+  test.skip(info.project.name !== "desktop", "len počítač");
+  await open(page);
+  const cols = await page.locator(".list").first().evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(" ").length);
+  expect(cols).toBe(2);
+  await open(page, "#/zapas/0022600001");
+  expect(await page.locator("#app").evaluate((el) => el.getBoundingClientRect().width)).toBeLessThanOrEqual(680);
+});

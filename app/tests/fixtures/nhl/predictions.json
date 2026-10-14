@@ -1,0 +1,195 @@
+{
+ "generated_at": "2026-10-20T22:15:00+00:00",
+ "sport": "nhl",
+ "beta": true,
+ "model": "nhl-v1",
+ "last_locked": "2026-10-20T08:15:00+00:00",
+ "days": {
+  "2026-10-20": [
+   {
+    "game_id": "2026020200",
+    "date": "2026-10-20",
+    "tipoff_utc": "2026-10-20T23:00:00Z",
+    "kind": "regular",
+    "neutral": false,
+    "p_home": 0.463,
+    "locked_at": "2026-10-20T08:15:00+00:00",
+    "home": {
+     "team": "TOR",
+     "elo": 1477.1,
+     "reasons": []
+    },
+    "away": {
+     "team": "BUF",
+     "elo": 1536.6,
+     "reasons": []
+    }
+   },
+   {
+    "game_id": "2026020201",
+    "date": "2026-10-20",
+    "tipoff_utc": "2026-10-21T01:00:00Z",
+    "kind": "regular",
+    "neutral": false,
+    "p_home": 0.602,
+    "locked_at": "2026-10-20T08:15:00+00:00",
+    "home": {
+     "team": "COL",
+     "elo": 1582.0,
+     "reasons": [
+      [
+       "back-to-back",
+       -42
+      ]
+     ]
+    },
+    "away": {
+     "team": "DAL",
+     "elo": 1540.8,
+     "reasons": [
+      [
+       "back-to-back",
+       -38
+      ],
+      [
+       "3. zápas za 4 dni",
+       -16
+      ]
+     ]
+    }
+   }
+  ],
+  "2026-10-21": [
+   {
+    "game_id": "2026020210",
+    "date": "2026-10-21",
+    "tipoff_utc": "2026-10-21T23:00:00Z",
+    "kind": "regular",
+    "neutral": false,
+    "p_home": 0.66,
+    "locked_at": "2026-10-20T08:15:00+00:00",
+    "home": {
+     "team": "FLA",
+     "elo": 1511.9,
+     "reasons": []
+    },
+    "away": {
+     "team": "VAN",
+     "elo": 1416.0,
+     "reasons": []
+    }
+   },
+   {
+    "game_id": "2026020211",
+    "date": "2026-10-21",
+    "tipoff_utc": "2026-10-22T02:00:00Z",
+    "kind": "regular",
+    "neutral": false,
+    "p_home": 0.5,
+    "locked_at": "2026-10-20T08:15:00+00:00",
+    "home": {
+     "team": "VGK",
+     "elo": 1500.0,
+     "reasons": []
+    },
+    "away": {
+     "team": "SEA",
+     "elo": 1500.0,
+     "reasons": []
+    }
+   }
+  ]
+ },
+ "results": [
+  {
+   "game_id": "2026020190",
+   "date": "2026-10-19",
+   "tipoff_utc": "2026-10-19T23:00:00Z",
+   "kind": "regular",
+   "home": "DET",
+   "away": "NJD",
+   "goals_home": 4,
+   "goals_away": 3,
+   "last_period": "OT",
+   "p_home": 0.588
+  },
+  {
+   "game_id": "2026020191",
+   "date": "2026-10-20",
+   "tipoff_utc": "2026-10-20T17:00:00Z",
+   "kind": "regular",
+   "home": "BOS",
+   "away": "MTL",
+   "goals_home": 2,
+   "goals_away": 5,
+   "last_period": "REG",
+   "p_home": 0.55
+  },
+  {
+   "game_id": "2026020192",
+   "date": "2026-10-20",
+   "tipoff_utc": "2026-10-20T19:00:00Z",
+   "kind": "regular",
+   "home": "NYR",
+   "away": "PHI",
+   "goals_home": 3,
+   "goals_away": 2,
+   "last_period": "SO",
+   "p_home": null
+  },
+  {
+   "game_id": "2026020150",
+   "date": "2026-10-17",
+   "tipoff_utc": "2026-10-17T23:00:00Z",
+   "kind": "regular",
+   "home": "CAR",
+   "away": "PIT",
+   "goals_home": 5,
+   "goals_away": 1,
+   "last_period": "REG",
+   "p_home": 0.61
+  }
+ ],
+ "teams": [
+  {
+   "team": "COL",
+   "elo": 1582.0,
+   "as_of": "2026-10-21"
+  },
+  {
+   "team": "DAL",
+   "elo": 1540.8,
+   "as_of": "2026-10-21"
+  },
+  {
+   "team": "BUF",
+   "elo": 1536.6,
+   "as_of": "2026-10-21"
+  },
+  {
+   "team": "FLA",
+   "elo": 1511.9,
+   "as_of": "2026-10-21"
+  },
+  {
+   "team": "SEA",
+   "elo": 1500.0,
+   "as_of": "2026-10-21"
+  },
+  {
+   "team": "VGK",
+   "elo": 1500.0,
+   "as_of": "2026-10-21"
+  },
+  {
+   "team": "TOR",
+   "elo": 1477.1,
+   "as_of": "2026-10-21"
+  },
+  {
+   "team": "VAN",
+   "elo": 1416.0,
+   "as_of": "2026-10-21"
+  }
+ ]
+}

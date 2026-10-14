@@ -131,6 +131,56 @@ export interface AppData {
   model: ModelInfo;
 }
 
+// --- NHL (beta): zamknuté tipy z archívu a výsledky, publikuje src/team_pulse/nhl/app_data.py ---
+
+export type Sport = "nba" | "nhl";
+
+export interface NhlSide {
+  team: string;
+  elo: number;
+  reasons: [string, number][]; // únava a cestovanie v Elo bodoch, od najväčšieho vplyvu
+}
+
+export interface NhlGame {
+  game_id: string;
+  date: string;
+  tipoff_utc: string;
+  kind?: string;
+  neutral: boolean;
+  p_home: number;
+  locked_at: string;
+  home: NhlSide;
+  away: NhlSide;
+}
+
+export interface NhlResult {
+  game_id: string;
+  date: string;
+  tipoff_utc: string;
+  kind?: string;
+  home: string;
+  away: string;
+  goals_home: number;
+  goals_away: number;
+  last_period: string | null; // REG, OT (po predĺžení), SO (po nájazdoch)
+  p_home: number | null;
+}
+
+export interface NhlPredictions {
+  generated_at: string;
+  beta: boolean;
+  model: string;
+  last_locked: string | null;
+  days: Record<string, NhlGame[]>;
+  results: NhlResult[];
+  teams: { team: string; elo: number; as_of: string }[];
+}
+
+export interface NhlData {
+  predictions: NhlPredictions;
+  model: ModelInfo;
+}
+
 async function getJson<T>(name: string): Promise<T> {
   const r = await fetch(`./data/${name}.json`, { cache: "no-store" });
   if (!r.ok) throw new Error(`${name}.json: HTTP ${r.status}`);
@@ -144,6 +194,11 @@ export async function loadData(): Promise<AppData> {
     getJson<ModelInfo>("model"),
   ]);
   return { predictions, teams, model };
+}
+
+export async function loadNhl(): Promise<NhlData> {
+  const [predictions, model] = await Promise.all([getJson<NhlPredictions>("nhl/predictions"), getJson<ModelInfo>("nhl/model")]);
+  return { predictions, model };
 }
 
 export function allGames(p: Predictions): Game[] {

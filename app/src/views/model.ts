@@ -1,5 +1,5 @@
 /* Model: ako často trafí víťaza, či sedia percentá (kalibrácia), podrobnosti po rozkliknutí. */
-import type { AppData } from "../data";
+import type { AppData, ModelInfo } from "../data";
 import { esc, header, pct1, signed } from "../ui";
 
 const WEIGHT_LABELS: Record<string, string> = {
@@ -13,10 +13,10 @@ const WEIGHT_LABELS: Record<string, string> = {
   strength_diff: "Rozdiel síl súpisiek (1 bod PIE)",
 };
 
-function calibration(d: AppData): string {
-  const cal = d.model.calibration;
+function calibration(m: ModelInfo): string {
+  const cal = m.calibration;
   if (!cal.length) return `<p class="muted">Kalibrácia bude k dispozícii po pretrénovaní modelu.</p>`;
-  const W = 320, H = 180, padL = 34, padB = 28, padT = 10, padR = 12;
+  const W = 320, H = 180, padL = 42, padB = 28, padT = 10, padR = 12;
   const x = (v: number) => padL + ((v - 0.5) / 0.5) * (W - padL - padR);
   const y = (v: number) => H - padB - ((v - 0.5) / 0.5) * (H - padB - padT);
   const ticks = [0.5, 0.6, 0.7, 0.8, 0.9, 1.0];
@@ -34,28 +34,32 @@ function calibration(d: AppData): string {
     <p class="small muted">Vodorovne: šanca favorita podľa modelu. Zvislo: ako často favorit naozaj vyhral. Bodky na čiare = percentá sedia.</p>`;
 }
 
-export function modelView(d: AppData): string {
-  const m = d.model;
+/* Spoločná obrazovka modelu; šport dodá popisy váh a vetu pod presnosťou. */
+export function modelPage(m: ModelInfo, labels: Record<string, string>, intro: string, extra = ""): string {
   const t = m.test_metrics;
   const versions = m.versions
     .map((v, i) => `<tr class="${i === m.versions.length - 1 ? "best" : ""}"><td>${esc(v.model)}</td><td class="n">${pct1(v.accuracy)}</td><td class="n">${v.log_loss.toFixed(4).replace(".", ",")}</td></tr>`)
     .join("");
   const weights = Object.entries(m.elo_weights)
-    .filter(([k]) => k in WEIGHT_LABELS)
+    .filter(([k]) => k in labels)
     .map(([k, v]) => [k, k.startsWith("away_") ? -v : v] as const)
     .sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]))
-    .map(([k, v]) => `<li><span>${esc(WEIGHT_LABELS[k])}</span><span class="num ${v >= 0 ? "pos" : "neg"}">${signed(Math.round(v))}</span></li>`)
+    .map(([k, v]) => `<li><span>${esc(labels[k])}</span><span class="num ${v >= 0 ? "pos" : "neg"}">${signed(Math.round(v))}</span></li>`)
     .join("");
   const seasons = `${m.train_seasons[0] - 1}/${String(m.train_seasons[0]).slice(-2)} – ${m.train_seasons[1] - 1}/${String(m.train_seasons[1]).slice(-2)}`;
   return `${header("Model", `verzia ${esc(m.version)}`)}
     <section class="card hero">
       <p class="big-n num">${pct1(t.accuracy)}</p>
-      <p>Toľko zápasov model trafil (víťaza) v sezónach ${esc(t.test_seasons)}, ktoré pri učení nevidel. Aj stávkové kancelárie trafia víťaza len v 68 – 70 % zápasov.</p>
-    </section>
-    <h2 class="sec">Sedia percentá?</h2><section class="card">${calibration(d)}</section>
+      <p>Toľko zápasov model trafil (víťaza) v sezónach ${esc(t.test_seasons)}, ktoré pri učení nevidel. ${intro}</p>
+    </section>${extra}
+    <h2 class="sec">Sedia percentá?</h2><section class="card">${calibration(m)}</section>
     <details class="more"><summary>Ako sa model učil</summary>
       <p class="small muted">Učenie na sezónach ${seasons}, ${m.n_games.toLocaleString("sk-SK")} zápasov. Každá vrstva musela zlepšiť presnosť, inak sa nepoužila.</p>
       <table class="table"><caption class="sr-only">Porovnanie vrstiev modelu</caption><thead><tr><th>Vrstvy</th><th class="n">Presnosť</th><th class="n">Log loss</th></tr></thead><tbody>${versions}</tbody></table>
       <p class="small muted sub-h">Čo sa model naučil (vplyv na team v Elo bodoch)</p><ul class="rows">${weights}</ul>
     </details>`;
+}
+
+export function modelView(d: AppData): string {
+  return modelPage(d.model, WEIGHT_LABELS, "Aj stávkové kancelárie trafia víťaza len v 68 – 70 % zápasov.");
 }

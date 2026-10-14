@@ -1,7 +1,7 @@
 {
   "name": "Team Pulse",
   "short_name": "Team Pulse",
-  "description": "NBA zápasy s tipom na víťaza, výsledky so štatistikami hráčov a forma teamov.",
+  "description": "NBA a NHL zápasy s tipom na víťaza, výsledky so štatistikami hráčov a forma teamov.",
   "lang": "sk",
   "start_url": "./",
   "scope": "./",

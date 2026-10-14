@@ -1,7 +1,7 @@
 /* Detail zápasu: tip a šanca, prečo, čo ak otázny hráč nenastúpi, forma teamov, podrobnosti modelu. */
 import type { AppData, Game, TeamState } from "../data";
 import { allGames } from "../data";
-import { chip, coin, esc, header, localDay, longDate, pulseNum, signed, split, TEAM_NAMES, time } from "../ui";
+import { chip, coin, esc, header, localDay, longDate, pulseNum, signed, sparkline, split, TEAM_NAMES, time } from "../ui";
 import { isPre } from "./games";
 
 const LAYERS: [keyof NonNullable<TeamState["layers"]>, string][] = [
@@ -42,10 +42,17 @@ function points(margin: number): string {
   return `očakávaný rozdiel asi ${n} ${n === 1 ? "bod" : n < 5 ? "body" : "bodov"}`;
 }
 
-function form(s: TeamState): string {
+const FORM_GAMES = 10;
+
+/* Riadok formy: Pulse pred zápasom, úroveň a malý graf Pulse za posledné zápasy teamu. */
+function form(d: AppData, s: TeamState): string {
+  const trend = (d.teams.teams[s.team]?.trend ?? []).slice(-FORM_GAMES).map((p) => p.pulse);
+  const spark = trend.length >= 2
+    ? sparkline(trend, s.tier, `Pulse ${s.team} za posledných ${trend.length} zápasov: od ${pulseNum(trend[0])} po ${pulseNum(trend[trend.length - 1])}`)
+    : "";
   return `<a class="formrow" href="#/team/${esc(s.team)}">
       ${coin(s.team)}<span class="abbr">${esc(s.team)}</span><span class="name">${esc(TEAM_NAMES[s.team] ?? s.team)}</span>
-      <span class="pulse">Pulse <b class="num">${pulseNum(s.pulse)}</b></span>${chip(s.tier)}
+      ${spark}<span class="pulse">Pulse <b class="num">${pulseNum(s.pulse)}</b></span>${chip(s.tier)}
       ${s.dropped ? `<span class="small muted">normálne ${esc(s.normal_tier)}</span>` : ""}<span class="chev" aria-hidden="true">›</span></a>`;
 }
 
@@ -84,6 +91,7 @@ export function gameView(d: AppData, id: string): string {
     ${isPre(g) ? `<p class="hint">Prípravný zápas: hviezdy hrajú menej a model je naučený na základnú časť, tip je len orientačný.</p>` : ""}
     <h2 class="sec">Prečo</h2><section class="card">${reasons(g)}</section>
     ${whatIf(g)}
-    <h2 class="sec">Forma pred týmto zápasom</h2><section class="card">${form(g.away)}${form(g.home)}</section>
+    <h2 class="sec">Forma pred týmto zápasom</h2><section class="card">${form(d, g.away)}${form(d, g.home)}
+      <p class="small muted formnote">Pulse 0 – 100 = forma teamu: sila z výsledkov, súpiska a chýbajúci hráči. Graf = Pulse po posledných zápasoch.</p></section>
     ${details(g)}`;
 }

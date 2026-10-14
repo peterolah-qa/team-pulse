@@ -12,12 +12,19 @@ const SCREENS = {
   team: "#/team/PHI",
   teamy: "#/teamy",
   model: "#/model",
+  "nhl-zapasy": "#/nhl/",
+  "nhl-tipy": "#/nhl/tipy",
+  "nhl-vysledky": "#/nhl/vysledky",
+  "nhl-zapas": "#/nhl/zapas/2026020201",
+  "nhl-teamy": "#/nhl/teamy",
+  "nhl-model": "#/nhl/model",
 };
 
 for (const [name, hash] of Object.entries(SCREENS)) {
   test(`a11y: ${name}`, async ({ page }) => {
     await serveData(page, { predictions: withResults });
     await open(page, hash);
+    if (hash.startsWith("#/nhl")) await page.locator(".beta-note").first().waitFor(); // NHL sa načíta až po otvorení
     const result = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
     const summary = result.violations.map((v) => `${v.id}: ${v.nodes.length}× ${v.help}`);
     expect(result.passes.length).toBeGreaterThan(10); // axe naozaj bežal
