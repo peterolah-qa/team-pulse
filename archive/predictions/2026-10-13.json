@@ -190,46 +190,46 @@
    "game_id": "0012600048",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-13T23:45:20+00:00",
+   "locked_at": "2026-10-14T00:00:59+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-13T23:45:08Z",
+   "injuries_timestamp": "2026-10-14T00:00:51Z",
    "neutral": false,
    "p_home": 0.784,
    "margin_home": 9.3,
    "home": {
     "team": "LAL",
     "elo": 1569.2,
-    "elo_today": 1621.8,
-    "pulse": 69.5,
+    "elo_today": 1621.3,
+    "pulse": 69.4,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "nízka",
     "layers": {
      "strength": 64.2,
-     "roster": 51.6,
+     "roster": 51.1,
      "players": -4.0,
      "fatigue": 5.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      52
+      51
      ]
     ]
    },
    "away": {
     "team": "GSW",
     "elo": 1446.7,
-    "elo_today": 1439.5,
-    "pulse": 39.1,
+    "elo_today": 1438.9,
+    "pulse": 39.0,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -58.3,
-     "roster": 10.3,
+     "roster": 9.8,
      "players": -21.0,
      "fatigue": 3.5
     },
@@ -237,10 +237,6 @@
      [
       "Bez Jimmy Butler III",
       -21
-     ],
-     [
-      "Sila súpisky",
-      10
      ]
     ]
    }
@@ -249,24 +245,24 @@
    "game_id": "0012600049",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-13T23:45:20+00:00",
+   "locked_at": "2026-10-14T00:00:59+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-13T23:45:08Z",
+   "injuries_timestamp": "2026-10-14T00:00:51Z",
    "neutral": false,
    "p_home": 0.35,
    "margin_home": -4.5,
    "home": {
     "team": "SAC",
     "elo": 1374.4,
-    "elo_today": 1355.7,
-    "pulse": 25.1,
+    "elo_today": 1355.1,
+    "pulse": 25.0,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": -130.6,
-     "roster": -10.9,
+     "roster": -11.5,
      "players": -10.8,
      "fatigue": 3.0
     },
@@ -284,15 +280,15 @@
    "away": {
     "team": "POR",
     "elo": 1515.8,
-    "elo_today": 1559.5,
-    "pulse": 59.1,
+    "elo_today": 1558.9,
+    "pulse": 59.0,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 10.8,
-     "roster": 41.1,
+     "roster": 40.5,
      "players": 0.0,
      "fatigue": 2.6
     },
