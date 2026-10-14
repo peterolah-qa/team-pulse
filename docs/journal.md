@@ -4,6 +4,15 @@
 `reports/*.md`, na boardoch „Team Pulse“ a „Team Pulse – športy“ a v histórii commitov.
 Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov a brán.
 
+## 14. 10. 2026
+
+- **NHL – prvá ostrá noc (13./14. 10.).** 16 zápasov, tip vyšiel 8 (50,0 %), log loss 0,6921.
+  Overené nezávisle z archívu: všetky tipy zamknuté 7 h pred prvým zápasom, počet aj log loss sedia.
+  Priemerná šanca tipu 56,4 % → čakali sme ~9 trafených; 8 z 16 alebo menej vyjde pri presnosti
+  57,6 % v 36 % nocí. Jedna noc nič nehovorí, zmysel má až súčet za dlhšie obdobie (G2-NHL = 14 dní,
+  ~100 zápasov). Elo sa po noci pohlo správne (COL po výhre v DAL +2,4, DAL −2,3).
+- **NHL – tipy na 14./15. 10.** zamknuté (13 zápasov), tipy na 14. 10. prepočítané po nočných výsledkoch.
+
 ## 13. 10. 2026
 
 - **Spúšťanie predikcií cez cron-job.org.** Plánované behy GitHubu chodili 4 – 5× denne namiesto
@@ -11,6 +20,9 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   (token len na `team-pulse`, Actions read/write, platí do ~11. 1. 2027). Test 204, beh sa spustil.
   Prvý beh spadol na zverejnení Pages (GitHub nenašiel artefakt), po Re-run prešiel aj s commitom
   archívu – chyba bola na strane GitHubu.
+- **Predikcie: archív tipov pred zverejnením na Pages** (`6f25971`). Doteraz chyba Pages preskočila
+  aj commit archívu a zamknuté tipy z behu sa stratili. Teraz sa archív commitne hneď po predpovediach,
+  neúspešný push nezastaví zverejnenie a beh skončí červeno (krok Kontrola archívu). Prvý beh: zelený.
 - **NHL – archív tipov a vyhodnotenie.** `predict` zamkne tipy do `archive/nhl/predictions/`
   (prepísať sa dajú len do začiatku zápasu). `team_pulse.nhl.archive` ráno porovná tipy
   s výsledkami → `reports/nhl_live.md`. Prvé ostré tipy: noc 13./14. 10., 16 zápasov.
@@ -69,4 +81,5 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
 - G2 NBA: 20. 10. – 3. 11. 2026, 14 dní ostrej prevádzky. Kód NBA sa do 3. 11. nemení.
-- NHL: vyhodnotiť prvé ostré tipy (noc 13./14. 10.), potom ostré meranie G2-NHL.
+- NHL: každé ráno z Macu `nhl.archive` + `nhl.predict --days 2` a commit (kým nie je automatizácia).
+  G2-NHL (14 dní ostro) podľa plánu v Š3.
