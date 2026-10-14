@@ -47,6 +47,11 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   12 zo 17 pretekov (v tréningu 54,8 %). Na starých pravidlách 2023 – 2025 model kvalifikáciu jasne
   porazil (1,0227 vs. 1,3101). Model sa na teste neladil, meranie sa neopakovalo. F1 do appky nejde,
   G2-F1 sa posúva, ďalší postup rozhodne Peter.
+- **Kontrola zdrojov cez cron-job.org – návod** (board #85). Plán GitHubu ju spúšťa s oneskorením
+  až 9 h, preto Peter pridá na cron-job.org druhý job (kópia jobu Predikcie): POST na
+  `.../actions/workflows/health.yml/dispatches`, telo `{"ref":"main"}`, denne 11:30 UTC. Job Predikcie
+  ostáva zapnutý, bežia oba. Presun behov Actions mimo špičky sa nerobil – repozitár je verejný,
+  minúty sú zadarmo.
 - **NHL v appke (beta), nový dizajn, aktualizácia Actions** (PR #82, board: #61, #79, #80, #83, #84).
   NHL: prepínač NBA / NHL hore (pamätá si výber), zápasy, tipy, výsledky (pp / sn), detail zápasu
   (Elo, domáce prostredie, únava), liga podľa Ela, model; štítok BETA do prejdenia G2-NHL.
