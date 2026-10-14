@@ -190,25 +190,25 @@
    "game_id": "0012600048",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-14T00:00:59+00:00",
+   "locked_at": "2026-10-14T00:30:48+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-14T00:00:51Z",
+   "injuries_timestamp": "2026-10-14T00:30:38Z",
    "neutral": false,
-   "p_home": 0.784,
-   "margin_home": 9.3,
+   "p_home": 0.787,
+   "margin_home": 9.5,
    "home": {
     "team": "LAL",
     "elo": 1569.2,
-    "elo_today": 1621.3,
-    "pulse": 69.4,
-    "tier": "Stabilný",
+    "elo_today": 1625.2,
+    "pulse": 70.0,
+    "tier": "Silný",
     "normal_tier": "Stabilný",
     "dropped": false,
-    "confidence": "nízka",
+    "confidence": "vysoká",
     "layers": {
      "strength": 64.2,
-     "roster": 51.1,
-     "players": -4.0,
+     "roster": 51.0,
+     "players": 0.0,
      "fatigue": 5.0
     },
     "reasons": [
@@ -229,7 +229,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -58.3,
-     "roster": 9.8,
+     "roster": 9.7,
      "players": -21.0,
      "fatigue": 3.5
     },
@@ -245,9 +245,9 @@
    "game_id": "0012600049",
    "kind": "preseason",
    "tipoff_utc": "2026-10-14 02:00:00+00:00",
-   "locked_at": "2026-10-14T00:00:59+00:00",
+   "locked_at": "2026-10-14T00:30:48+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-14T00:00:51Z",
+   "injuries_timestamp": "2026-10-14T00:30:38Z",
    "neutral": false,
    "p_home": 0.35,
    "margin_home": -4.5,
@@ -269,7 +269,7 @@
     "reasons": [
      [
       "Sila súpisky",
-      -11
+      -12
      ],
      [
       "Bez Domantas Sabonis (?), Maxime Raynaud",
@@ -295,7 +295,7 @@
     "reasons": [
      [
       "Sila súpisky",
-      41
+      40
      ]
     ]
    }
