@@ -6,6 +6,11 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 15. 10. 2026
 
+- **F1 – záložné spúšťanie z cron-job.org – návod** (board #89, súvisí s #86). Plán GitHubu môže
+  behy `f1.yml` odložiť o hodiny, preto Peter pridá na cron-job.org job (klon jobu Predikcie): POST na
+  `.../actions/workflows/f1.yml/dispatches`, telo `{"ref":"main"}`, sobota a nedeľa každú hodinu
+  (minúta 11) a pondelok 06:11 UTC. Plán v `f1.yml` ostáva ako záloha. Claude job nepridáva sám
+  (účet a token sú Petrove).
 - **NHL – zranenia z ESPN v appke** (PR #88, board #59). Nový `team_pulse.nhl.injuries`: ESPN
   `hockey/nhl/injuries` → kluby NHL (ESPN LA, NJ, SJ, TB → LAK, NJD, SJS, TBL), stavy nehrá / trest /
   dlhodobo (IR) / otázny. `nhl.app_data` ich pridá do `nhl/predictions.json`, appka ich ukáže v detaile
@@ -163,6 +168,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## Čaká
 
+- F1: pridať job na cron-job.org pre `f1.yml` (#89) pred Austinom (24. 10.), po testovacom behu overiť.
 - NHL zranenia: zlúčiť PR #88 (CI zelené), potom overiť sekciu „Chýbajúci hráči“ na živej appke.
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - F1: overiť prvý zamknutý tip po kvalifikácii v Austine (24./25. 10., `archive/f1/predictions/2026-18.json`);
