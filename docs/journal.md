@@ -6,6 +6,10 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 14. 10. 2026
 
+- **NBA – poistka „len z `main`“** (schválená, pred G2). Ranná NBA úloha na inej vetve skončí chybou
+  skôr, než niečo stiahne alebo commitne. Kontrolu (`require_branch`) používa aj NHL úloha.
+- **NHL – prvý automatický beh** (skúšobne o 12:22): commit „NHL 2026-10-14: noc 13. 10. tip vyšiel
+  8 z 16, zamknuté tipy 13“ prešiel na GitHub.
 - **Chyba: NBA stav z 14. 10. skončil vo vetve `nhl`.** Ranná NBA úloha commituje do vetvy, na ktorej
   je priečinok na Macu, a ten bol od 13. 10. na `nhl`. `main` mal do 12:04 stav z 13. 10. (dopad len
   na prípravné zápasy, sezóna začína 20. 10.). Oprava: `nhl` zlúčená do `main` (`e5d91d1`), vetva
@@ -90,4 +94,3 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
 - G2 NBA: 20. 10. – 3. 11. 2026, 14 dní ostrej prevádzky. Kód NBA sa do 3. 11. nemení.
 - NHL: overiť prvý automatický beh 15. 10. (commit „NHL 2026-10-15: …“ a log). G2-NHL podľa plánu v Š3.
-- Návrh (čaká na schválenie, do 20. 10.): rovnaká poistka „len z `main`“ aj do NBA rannej úlohy.

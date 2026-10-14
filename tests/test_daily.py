@@ -117,3 +117,37 @@ def test_git_pull_gives_up_after_last_try(monkeypatch):
     monkeypatch.setattr(daily, "_git", down)
     with pytest.raises(RuntimeError, match="resolve host"):
         daily.git_pull(tries=2, wait_s=0)
+
+
+def test_require_branch_only_main():
+    import pytest
+
+    from team_pulse.daily import require_branch
+
+    require_branch("main")
+    with pytest.raises(RuntimeError, match="„nhl“.*git switch main"):
+        require_branch("nhl")
+    with pytest.raises(RuntimeError, match="odpojený HEAD"):
+        require_branch("")
+
+
+def test_main_refuses_push_from_other_branch(monkeypatch):
+    """Na inej vetve než main skončí skôr, než niečo stiahne alebo commitne (chyba zo 14. 10. 2026)."""
+    import pytest
+
+    import team_pulse.daily as daily
+
+    monkeypatch.setattr(daily, "current_branch", lambda: "nhl")
+    monkeypatch.setattr(daily, "git_pull", lambda: pytest.fail("pull na cudzej vetve"))
+    monkeypatch.setattr("team_pulse.live.schedule.fetch_schedule", lambda: pytest.fail("sťahoval"))
+    with pytest.raises(RuntimeError, match="nhl"):
+        daily.main(push=True)
+
+
+def test_current_branch_in_real_repo(tmp_path):
+    from team_pulse.daily import current_branch
+
+    git(tmp_path, "init", "-q", "-b", "main")
+    assert current_branch(tmp_path) == "main"
+    git(tmp_path, "checkout", "-q", "-b", "nhl")
+    assert current_branch(tmp_path) == "nhl"

@@ -24,22 +24,16 @@ from pathlib import Path
 
 import pandas as pd
 
-from team_pulse.daily import git_commit_if_changed, git_pull
+from team_pulse.daily import current_branch, git_commit_if_changed, git_pull, require_branch
 from team_pulse.nhl import archive, predict
 from team_pulse.nhl.fetch_games import today_et
 
 DAYS = 2  # dnes a zajtra (ET): tipy na zajtra sa ráno po ďalšej noci prepočítajú
-BRANCH = "main"
 NBA_JOB = r"team_pulse\.daily"  # ranná NBA úloha (nezhoduje sa s team_pulse.nhl.daily)
 GIT_LOCK = Path(".git/index.lock")
 WAIT_S = 30
 MAX_WAIT_S = 30 * 60
 LOG = "~/Library/Logs/team-pulse-nhl.log"
-
-
-def current_branch(cwd: Path | None = None) -> str:
-    r = subprocess.run(["git", "branch", "--show-current"], cwd=cwd, capture_output=True, text=True)
-    return r.stdout.strip()
 
 
 def nba_running() -> bool:
@@ -94,9 +88,7 @@ def notify(text: str) -> None:
 def main(push: bool, days: int = DAYS) -> bool:
     """Vráti True, ak vznikol commit."""
     print(f"=== {datetime.now():%Y-%m-%d %H:%M} NHL ===")
-    branch = current_branch()
-    if branch != BRANCH:
-        raise RuntimeError(f"priečinok je na vetve „{branch}“, NHL úloha beží len na {BRANCH}")
+    require_branch(current_branch())  # aj s --no-push: archív tipov patrí do main
     wait_for_nba()
     if push:
         try:

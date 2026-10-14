@@ -7,6 +7,8 @@
   5. čo sa zmenilo (stav, výsledky, report), commitne a pošle na GitHub → cloud prepočíta predpovede
 
 Pred začiatkom aj pred odoslaním si stiahne novinky z GitHubu (archív predpovedí commituje cloud).
+Posiela len z vetvy main: na inej vetve skončí chybou skôr, než niečo stiahne (stav by inak
+skončil v cudzej vetve a appka by počítala zo starého stavu, ako 14. 10. 2026).
 
 Spustenie:  uv run python -m team_pulse.daily [--no-push]
 Automaticky každé ráno o 10:00: bash scripts/install_daily.sh
@@ -64,6 +66,7 @@ def same_state(path: Path, state: dict) -> bool:
     return strip(json.loads(path.read_text(encoding="utf-8"))) == strip(state)
 
 
+BRANCH = "main"  # appka na GitHube berie stav len z main
 PULL_TRIES = 5
 PULL_WAIT_S = 30  # po prebudení Macu sa Wi-Fi pripája niekoľko sekúnd
 
@@ -72,6 +75,20 @@ def _git(*args: str, cwd: Path | None = None) -> None:
     r = subprocess.run(["git", *args], cwd=cwd, capture_output=True, text=True)
     if r.returncode != 0:  # chybu gitu vypíš do logu, nie len „exit status 1“
         raise RuntimeError(f"git {' '.join(args)}: {(r.stderr or r.stdout).strip()}")
+
+
+def current_branch(cwd: Path | None = None) -> str:
+    """Názov aktuálnej vetvy (prázdny pri odpojenom HEAD)."""
+    r = subprocess.run(["git", "branch", "--show-current"], cwd=cwd, capture_output=True, text=True)
+    return r.stdout.strip()
+
+
+def require_branch(branch: str, expected: str = BRANCH) -> None:
+    if branch != expected:
+        raise RuntimeError(
+            f"priečinok je na vetve „{branch or 'odpojený HEAD'}“, na GitHub sa posiela len z {expected} "
+            f"(prepni: git switch {expected})"
+        )
 
 
 def git_pull(cwd: Path | None = None, tries: int = PULL_TRIES, wait_s: float = PULL_WAIT_S) -> None:
@@ -119,6 +136,7 @@ def main(push: bool) -> None:
 
     print(f"=== {datetime.now():%Y-%m-%d %H:%M} ===")
     if push:
+        require_branch(current_branch())
         try:
             git_pull()
         except RuntimeError as e:  # pokračuj, pred odoslaním sa pull skúsi znova
