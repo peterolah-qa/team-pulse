@@ -6,6 +6,20 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 14. 10. 2026
 
+- **NHL v appke (beta), nový dizajn, aktualizácia Actions** (PR #82, board: #61, #79, #80, #83, #84).
+  NHL: prepínač NBA / NHL hore (pamätá si výber), zápasy, tipy, výsledky (pp / sn), detail zápasu
+  (Elo, domáce prostredie, únava), liga podľa Ela, model; štítok BETA do prejdenia G2-NHL.
+  Dáta skladá `team_pulse.nhl.app_data` v `predict.yml`: zamknuté tipy z `archive/nhl/predictions`
+  + výsledky z API NHL, nič sa neprepočítava (model NHL počas G2-NHL nemenený). **Odchýlka od plánu
+  (#79):** namiesto commitu z rannej úlohy sa zmenil `predict.yml` – NHL krok s `continue-on-error`
+  (chyba NHL nezastaví NBA) a spúšťanie pri pushi do `archive/nhl/**`; zmena pred zmrazením 20. 10.
+  Dizajn: pruh šancí pri zápase, graf „šanca, že vyjdú všetky“ v Tipoch, graf Pulse vo forme teamov,
+  dva stĺpce na počítači, svetlá téma podľa systému (WCAG AA), väčšie popisy osí. Actions: nové
+  verzie akcií (koniec varovania o Node 20), CI s `permissions: contents: read` a archívom
+  FiveThirtyEight z cache. Testy: pytest 342, Playwright 141 (vizuálne v obraze Playwright 1.56.1 /
+  Ubuntu 24.04, a11y aj vo svetlej téme). Prvý ostrý beh po zlúčení zelený: 13 zápasov NHL s tipom,
+  19 výsledkov, 32 teamov. Zistenie: plán GitHubu spúšťa Kontrolu zdrojov až o 9 h neskôr (12. 10.
+  o 20:23 namiesto 11:30), Predikcie ťahá takmer celé cron-job.org.
 - **Nové poradie a brány po športoch** (`docs/sporty.md`). Každý šport má vlastné G0 a G2, do appky
   ide po G0 s označením beta. Poradie: NHL v appke (15. – 19. 10.) → F1 (6 zostávajúcich pretekov
   2026 ako G2-F1) → extraliga → spoločné jadro pri treťom športe. Počas G2 NBA sa nemení kód NBA,
@@ -103,6 +117,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## Čaká
 
+- Kontrola zdrojov: pridať job na cron-job.org o 11:30 UTC (#85), job Predikcie nechať zapnutý.
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
 - Schváliť kritériá G2 NBA a G2-NHL, potom `bash scripts/board_plan2.sh` (boardy podľa nového poradia).
 - NBA: oprava zápasov na neutrálnej pôde v histórii (pred 20. 10., najneskôr pred 7. 11.).
