@@ -4,6 +4,15 @@
 `reports/*.md`, na boardoch „Team Pulse“ a „Team Pulse – športy“ a v histórii commitov.
 Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov a brán.
 
+## 15. 10. 2026
+
+- **NHL – zranenia z ESPN v appke** (PR #88, board #59). Nový `team_pulse.nhl.injuries`: ESPN
+  `hockey/nhl/injuries` → kluby NHL (ESPN LA, NJ, SJ, TB → LAK, NJD, SJS, TBL), stavy nehrá / trest /
+  dlhodobo (IR) / otázny. `nhl.app_data` ich pridá do `nhl/predictions.json`, appka ich ukáže v detaile
+  zápasu v sekcii „Chýbajúci hráči“. Len informácia: model NHL ich nepoužíva a tipy sa nemenia (brána
+  G2-NHL). Keď ESPN zlyhá, sekcia sa neukáže. Naostro: 128 hráčov z 30 klubov, všetky skratky sedia.
+  pytest 369 passed, Playwright zelené, CI zelené. Zlúčenie čaká na Petra.
+
 ## 14. 10. 2026
 
 - **Extraliga – zdroj dát zatiaľ bez povolenia, nič sa nesťahuje** (board #64). Oficiálny web
@@ -149,6 +158,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## Čaká
 
+- NHL zranenia: zlúčiť PR #88 (CI zelené), potom overiť sekciu „Chýbajúci hráči“ na živej appke.
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - F1: overiť prvý zamknutý tip po kvalifikácii v Austine (24./25. 10., `archive/f1/predictions/2026-18.json`);
   vyhodnotenie modelu B 7. 12. (#86).
