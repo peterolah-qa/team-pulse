@@ -6,6 +6,14 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 14. 10. 2026
 
+- **Chyba: NBA stav z 14. 10. skončil vo vetve `nhl`.** Ranná NBA úloha commituje do vetvy, na ktorej
+  je priečinok na Macu, a ten bol od 13. 10. na `nhl`. `main` mal do 12:04 stav z 13. 10. (dopad len
+  na prípravné zápasy, sezóna začína 20. 10.). Oprava: `nhl` zlúčená do `main` (`e5d91d1`), vetva
+  zmazaná, CI aj predikcie zelené. Pravidlo: priečinok na Macu ostáva na `main` (`docs/sporty.md`).
+- **NHL v `main`.** Kód, model, archív a reporty NHL sú v `main`, mimo appky. Kód NBA sa nezmenil.
+- **NHL – ranná úloha** `team_pulse.nhl.daily` (launchd 10:15, `scripts/install_nhl_daily.sh`):
+  beží len na `main`, počká na NBA úlohu a na git, vyhodnotí noc, zamkne tipy na dnes a zajtra,
+  commitne archív a report. Pri chybe upozornenie v macOS a záznam v `~/Library/Logs/team-pulse-nhl.log`.
 - **NHL – prvá ostrá noc (13./14. 10.).** 16 zápasov, tip vyšiel 8 (50,0 %), log loss 0,6921.
   Overené nezávisle z archívu: všetky tipy zamknuté 7 h pred prvým zápasom, počet aj log loss sedia.
   Priemerná šanca tipu 56,4 % → čakali sme ~9 trafených; 8 z 16 alebo menej vyjde pri presnosti
@@ -81,5 +89,5 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
 - G2 NBA: 20. 10. – 3. 11. 2026, 14 dní ostrej prevádzky. Kód NBA sa do 3. 11. nemení.
-- NHL: každé ráno z Macu `nhl.archive` + `nhl.predict --days 2` a commit (kým nie je automatizácia).
-  G2-NHL (14 dní ostro) podľa plánu v Š3.
+- NHL: overiť prvý automatický beh 15. 10. (commit „NHL 2026-10-15: …“ a log). G2-NHL podľa plánu v Š3.
+- Návrh (čaká na schválenie, do 20. 10.): rovnaká poistka „len z `main`“ aj do NBA rannej úlohy.

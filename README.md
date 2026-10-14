@@ -129,7 +129,8 @@ npm test                                 # E2E + prístupnosť
 npm run test:visual                      # vizuálna regresia (screenshoty sú z Linuxu/CI)
 ```
 
-Denná úloha na Macu: `bash scripts/install_daily.sh` (launchd, 10:00).
+Ranné úlohy na Macu (launchd): NBA `bash scripts/install_daily.sh` (10:00), NHL tipy
+`bash scripts/install_nhl_daily.sh` (10:15). Obe commitujú do `main`, priečinok musí byť na `main`.
 
 ## Štruktúra
 
@@ -162,7 +163,7 @@ Stiahnuté dáta sa necommitujú. Mená hráčov v testoch a na screenshotoch s�
 - [x] 2 – PWA appka (G3)
 - [ ] G2 – 14 dní ostrej prevádzky od 20. 10. 2026
 - [x] upozornenia v appke na dohrané zápasy
-- [ ] ďalšie športy: NHL, Tipos extraliga, F1 – [plán](docs/sporty.md)
+- [ ] ďalšie športy: NHL (model hotový, ostré tipy mimo appky), Tipos extraliga, F1 – [plán](docs/sporty.md)
 - [ ] neskôr: Supabase (história predpovedí)
 
 ---

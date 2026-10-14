@@ -10,6 +10,10 @@ Jeden repozitár, jedna vetva `main` = to, čo beží. Vetvy len krátko na jedn
 (napr. `nhl`) a do `main` idú až po zelených testoch. Žiadna vetva na šport natrvalo:
 spoločné opravy by sa museli ručne prenášať a vetvy by sa rozišli.
 
+NHL je v `main` od 14. 10. 2026 (mimo appky). Ranné úlohy na Macu (NBA 10:00, NHL 10:15)
+commitujú do vetvy, na ktorej je priečinok – priečinok na Macu preto ostáva na `main`
+a vývoj ide v krátkych vetvách mimo ranného času. NHL úloha na inej vetve odmietne bežať.
+
 ```
 team-pulse/
   src/team_pulse/
@@ -43,7 +47,7 @@ rozbilo appku nainštalovanú na ploche.
 
 | Fáza | Obsah | Kedy | Brána |
 |---|---|---|---|
-| Š1 – NHL: dáta a backtest | sťahovač histórie, hokejové Elo, backtest; len vetva `nhl` | teraz – 3. 11. | G0-NHL |
+| Š1 – NHL: dáta a backtest | sťahovač histórie, hokejové Elo, backtest, ostré tipy mimo appky | hotovo 13. 10. | G0-NHL ✅ |
 | Š2 – Spoločné jadro | `core/` + `sports/nba/`, appka a výstupy bez zmeny | od 4. 11. (po G2) | všetky testy zelené, rovnaké JSON |
 | Š3 – NHL v appke | živé dáta, prepínač športu, hokejové štatistiky | po Š2 | G2-NHL (14 dní ostro) |
 | Š4 – Tipos extraliga | overiť zdroj a podmienky, história, backtest, appka | po Š3 | G0 + G2 extraliga |
@@ -63,12 +67,14 @@ rozbilo appku nainštalovanú na ploche.
 - Presnosť sa len zapíše. Hokej je náhodnejší než basketbal: NBA má 67 %,
   pri NHL rátame skôr s 58 – 60 %.
 
-### Spustenie Š1 (z Macu, vetva `nhl`)
+### Spustenie NHL (z Macu)
 
 ```
 uv run python scripts/probe_nhl.py                                # ukážky odpovedí, kontrola zdrojov
 uv run python -m team_pulse.nhl.fetch_games --from 2006 --to 2026  # história, cca 7 min
 uv run python -m team_pulse.nhl.backtest                          # reports/nhl_backtest.md
+uv run python -m team_pulse.nhl.daily                             # vyhodnotenie noci + tipy → GitHub
+bash scripts/install_nhl_daily.sh                                 # to isté každé ráno o 10:15
 ```
 
 Sťahovač si pýta rozpis každého klubu vrátane zaniknutých skratiek (ATL, PHX, ARI)
@@ -79,7 +85,7 @@ a skontroluje, že počet zápasov základnej časti presne sedí s ligou. Inak 
 | | NBA | NHL / extraliga | F1 |
 |---|---|---|---|
 | Výsledok | výhra / prehra | výhra / prehra (aj po predĺžení alebo nájazdoch) | poradie 20 jazdcov |
-| Model | Elo + únava + hráči | Elo, kandidáti: brankár, únava | víťaz a pódium, nie dvojica |
+| Model | Elo + únava + hráči | Elo + únava (brankár a Glicko-2 zamietnuté) | víťaz a pódium, nie dvojica |
 | Štatistiky | MIN, B, D, A, BL | G, A, body, +/−, zákroky brankára | kolá, zastávky, poradie |
 
 ## Zdroje dát

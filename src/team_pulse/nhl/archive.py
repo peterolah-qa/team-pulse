@@ -1,10 +1,11 @@
-"""Archív NHL tipov a ich vyhodnotenie po zápasoch (ostrá skúška na vetve nhl).
+"""Archív NHL tipov a ich vyhodnotenie po zápasoch (ostré tipy mimo appky).
 
 Zamknutie: každý beh `team_pulse.nhl.predict` uloží tipy do archive/nhl/predictions/<deň ET>.json.
 Tip sa dá prepísať len do začiatku zápasu, po začiatku ostane posledný tip spred zápasu.
 Vyhodnotenie: tip vs. skutočný výsledok, presnosť a log loss po dňoch → reports/nhl_live.md.
 
 Spustenie (z Macu, ráno po zápasoch):  uv run python -m team_pulse.nhl.archive
+Automaticky spolu s tipmi: team_pulse.nhl.daily (každé ráno o 10:15)
 """
 
 from __future__ import annotations
