@@ -6,6 +6,13 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 14. 10. 2026
 
+- **F1 – ostrá prevádzka modelu B mimo appky nasadená** (PR #87, board #68, #86). Peter schválil
+  `docs/gate-f1-shadow.md` pred prvým tipom. `team_pulse.f1.live` + workflow `f1.yml` (sobota a nedeľa
+  každú hodinu, pondelok ráno): Elo po dojazdených pretekoch, tip po kvalifikácii a pred štartom do
+  `archive/f1/predictions`, vyhodnotenie do `reports/f1_live.md`. Zmrazený model B v
+  `state/f1_state.json` (Elo po kole 17). Generálka na Singapure 2026: šance živej prevádzky = backtest
+  (rozdiel 5·10⁻⁷). `predict.yml` sa nemenil. Zlúčené merge commitom, aby ostal commit kritérií
+  `c1995c6`. Prvý ručný beh na `main` zelený. Prvý tip: Austin, kvalifikácia 24. 10. 21:00 UTC.
 - **F1 – model B a návrh ostrého merania mimo appky** (`docs/gate-f1-shadow.md`, `reports/f1_model_b.md`,
   board #86). Peter po G0-F1 zvolil nový model meraný naostro mimo appky. Model B = model A + Elo
   jazdcov aj tímov vynulované pri zmene technických pravidiel (2017, 2022, 2026, dané FIA, nie ladené).
@@ -136,8 +143,8 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## Čaká
 
-- F1: schváliť návrh `docs/gate-f1-shadow.md` (model B, 6 pretekov mimo appky) pred 24. 10.; potom
-  `f1.yml`, stav modelu a archív tipov (#86).
+- F1: overiť prvý zamknutý tip po kvalifikácii v Austine (24./25. 10., `archive/f1/predictions/2026-18.json`);
+  vyhodnotenie modelu B 7. 12. (#86).
 - Kontrola zdrojov: pridať job na cron-job.org o 11:30 UTC (#85), job Predikcie nechať zapnutý.
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
 - Schváliť kritériá G2 NBA a G2-NHL, potom `bash scripts/board_plan2.sh` (boardy podľa nového poradia).
