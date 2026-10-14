@@ -277,6 +277,301 @@
      }
     ]
    }
+  },
+  "0012600046": {
+   "game_id": "0012600046",
+   "espn_id": "401908944",
+   "date": "2026-10-13",
+   "kind": "preseason",
+   "home": "TOR",
+   "away": "NYK",
+   "pts_home": 148,
+   "pts_away": 98,
+   "box": {
+    "NYK": [
+     {
+      "player": "Mohamed Diawara",
+      "min": 29,
+      "pts": 13,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tyler Kolek",
+      "min": 28,
+      "pts": 9,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "James Wiseman",
+      "min": 24,
+      "pts": 18,
+      "reb": 10,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyler Nickel",
+      "min": 21,
+      "pts": 11,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Miles McBride",
+      "min": 19,
+      "pts": 8,
+      "reb": 3,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Pacome Dadiet",
+      "min": 18,
+      "pts": 10,
+      "reb": 1,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Bruce Brown",
+      "min": 18,
+      "pts": 5,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kevin McCullar Jr.",
+      "min": 18,
+      "pts": 4,
+      "reb": 3,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Jose Alvarado",
+      "min": 17,
+      "pts": 4,
+      "reb": 3,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Drew Eubanks",
+      "min": 15,
+      "pts": 8,
+      "reb": 2,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jaden Akins",
+      "min": 14,
+      "pts": 4,
+      "reb": 1,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Ochai Agbaji",
+      "min": 10,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tony Bradley",
+      "min": 9,
+      "pts": 4,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "TOR": [
+     {
+      "player": "RJ Barrett",
+      "min": 23,
+      "pts": 17,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Scottie Barnes",
+      "min": 22,
+      "pts": 19,
+      "reb": 6,
+      "ast": 4,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Immanuel Quickley",
+      "min": 22,
+      "pts": 8,
+      "reb": 3,
+      "ast": 6,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jakob Poeltl",
+      "min": 19,
+      "pts": 6,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ja'Kobe Walter",
+      "min": 18,
+      "pts": 14,
+      "reb": 1,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Kawhi Leonard",
+      "min": 17,
+      "pts": 21,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Collin Murray-Boyles",
+      "min": 16,
+      "pts": 19,
+      "reb": 9,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Allen Graves",
+      "min": 15,
+      "pts": 5,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jamal Shead",
+      "min": 14,
+      "pts": 5,
+      "reb": 0,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Alijah Martin",
+      "min": 13,
+      "pts": 2,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Jaden Bradley",
+      "min": 12,
+      "pts": 3,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Trayce Jackson-Davis",
+      "min": 10,
+      "pts": 9,
+      "reb": 3,
+      "ast": 0,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Kyle Anderson",
+      "min": 9,
+      "pts": 2,
+      "reb": 3,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nimari Burnett",
+      "min": 9,
+      "pts": 0,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyson Degenhart",
+      "min": 7,
+      "pts": 4,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyreke Key",
+      "min": 6,
+      "pts": 11,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Malachi Smith",
+      "min": 6,
+      "pts": 3,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamarion Sharp",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
