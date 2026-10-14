@@ -6,6 +6,12 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 14. 10. 2026
 
+- **Extraliga – zdroj dát zatiaľ bez povolenia, nič sa nesťahuje** (board #64). Oficiálny web
+  hockeyslovakia.sk nemá verejné API a jeho `robots.txt` výslovne zakazuje AI roboty (ClaudeBot,
+  anthropic-ai, GPTBot a ďalšie) – Claude ho preto nečíta ani nesťahuje. Otvorený zdroj zápasov
+  s licenciou (ako Jolpica pre F1) sa nenašiel; stránky tretích strán (hstats, HockeyDB, QuantHockey)
+  majú len súhrny alebo dáta bez licencie, prevzaté z oficiálneho webu. Ďalší krok: Peter požiada
+  SZĽH o súhlas s použitím výsledkov v nekomerčnej appke. Bez súhlasu #65 a #66 stoja.
 - **F1 – ostrá prevádzka modelu B mimo appky nasadená** (PR #87, board #68, #86). Peter schválil
   `docs/gate-f1-shadow.md` pred prvým tipom. `team_pulse.f1.live` + workflow `f1.yml` (sobota a nedeľa
   každú hodinu, pondelok ráno): Elo po dojazdených pretekoch, tip po kvalifikácii a pred štartom do
@@ -143,6 +149,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## Čaká
 
+- Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - F1: overiť prvý zamknutý tip po kvalifikácii v Austine (24./25. 10., `archive/f1/predictions/2026-18.json`);
   vyhodnotenie modelu B 7. 12. (#86).
 - Kontrola zdrojov: pridať job na cron-job.org o 11:30 UTC (#85), job Predikcie nechať zapnutý.

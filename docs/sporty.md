@@ -114,6 +114,7 @@ a skontroluje, že počet zápasov základnej časti presne sedí s ligou. Inak 
 - NHL: `api-web.nhle.com` a `api.nhle.com/stats` (bez kľúča, neoficiálne zdokumentované),
   ESPN `hockey/nhl` (rovnaký tvar ako `basketball/nba`). Sťahuje sa z Macu
   alebo z GitHub Actions.
-- Extraliga: verejné API nie je. Web hockeyslovakia.sk, najprv overiť podmienky používania.
+- Extraliga: verejné API nie je. Web hockeyslovakia.sk v `robots.txt` zakazuje AI roboty
+  (overené 14. 10. 2026), otvorený zdroj s licenciou sa nenašiel. Bez súhlasu SZĽH sa nesťahuje (#64).
 - F1: Jolpica (nástupca Ergast), licencia CC BY-NC-SA 4.0 – nekomerčne, v appke uviesť zdroj;
   limit 4 požiadavky/s, 500/h. OpenF1 (živá telemetria) model nepotrebuje.
