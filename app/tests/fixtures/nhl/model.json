@@ -1,0 +1,46 @@
+{
+ "version": "nhl-v1",
+ "created": "2026-10-13",
+ "train_seasons": [
+  2009,
+  2026
+ ],
+ "n_games": 21612,
+ "test_metrics": {
+  "accuracy": 0.5759654471544715,
+  "log_loss": 0.671286242906403,
+  "brier": 0.23940169421713822,
+  "n": 3936,
+  "test_seasons": "2023/24 – 2025/26"
+ },
+ "calibration": [],
+ "versions": [
+  {
+   "model": "A: Elo",
+   "accuracy": 0.5716463414634146,
+   "log_loss": 0.6729630164347743
+  },
+  {
+   "model": "A kalibrované (Elo + domáci)",
+   "accuracy": 0.571900406504065,
+   "log_loss": 0.6731582191763602
+  },
+  {
+   "model": "A + C (+ únava)",
+   "accuracy": 0.5759654471544715,
+   "log_loss": 0.671286242906403
+  }
+ ],
+ "elo_weights": {
+  "home": 20.0,
+  "home_rest": -4.5,
+  "home_b2b": -42.5,
+  "home_three_in4": -15.8,
+  "home_tz_east": 0.2,
+  "away_rest": -1.2,
+  "away_b2b": 38.5,
+  "away_three_in4": 1.1,
+  "away_tz_east": 0.7,
+  "away_road": 1.8
+ }
+}

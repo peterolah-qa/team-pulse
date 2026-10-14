@@ -1,7 +1,7 @@
 name: Predikcie
 
 # Každých 15 minút počas amerického dňa a večera (UTC 14:00 – 06:59): zranenia ESPN
-# + stav z Macu (state/state.json) → predpovede (JSON) + archív do repa → build appky → GitHub Pages.
+# + stav z Macu (state/state.json) → predpovede (JSON) + archív do repa → NHL tipy z archívu → build appky → GitHub Pages.
 # Navyše cron-job.org každých 30 min cez workflow_dispatch (plánované behy GitHub často vynechá).
 on:
   schedule:
@@ -10,7 +10,8 @@ on:
     - cron: "7,22,37,52 0-6 * * *"
   push:
     branches: [main]
-    paths: ["state/state.json", "models/**", "app/**", "src/team_pulse/**", ".github/workflows/predict.yml"]
+    # archive/nhl/**: ranná NHL úloha z Macu zamkla nové tipy → hneď do appky
+    paths: ["state/state.json", "archive/nhl/**", "models/**", "app/**", "src/team_pulse/**", ".github/workflows/predict.yml"]
   workflow_dispatch:
 
 permissions:
@@ -29,10 +30,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Inštalácia uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v10.3.0 # od v8 nemá tag hlavnej verzie (v10)
 
       - name: Python a knižnice podľa uv.lock
         run: uv sync --locked
@@ -59,8 +60,14 @@ jobs:
           echo "::error::Archív sa nepodarilo poslať na GitHub"
           exit 1
 
+      # NHL (beta): len zamknuté tipy z archívu + výsledky z API NHL, nič sa nepočíta.
+      # Chyba NHL nezastaví zverejnenie NBA, appka potom NHL ukáže ako nedostupnú.
+      - name: NHL pre appku (tipy z archívu, výsledky z API NHL) → app/public/data/nhl
+        continue-on-error: true
+        run: uv run python -m team_pulse.nhl.app_data
+
       - name: Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -73,13 +80,13 @@ jobs:
           npm run build
 
       - name: Príprava stránky
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: app/dist
 
       - name: Zverejnenie na GitHub Pages
         id: deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
       - name: Kontrola archívu
         if: steps.archive.outcome == 'failure'

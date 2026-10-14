@@ -42,14 +42,20 @@ export function resultRow(r: Result): string {
   </a></li>`;
 }
 
-const byNewest = (a: Result, b: Result): number =>
+type Dated = { tipoff_utc?: string; date: string; game_id: string };
+
+const byNewest = (a: Dated, b: Dated): number =>
   (parseUtc(b.tipoff_utc)?.getTime() ?? 0) - (parseUtc(a.tipoff_utc)?.getTime() ?? 0) || b.date.localeCompare(a.date) || b.game_id.localeCompare(a.game_id);
 
-/* Na obrazovke Výsledky len zápasy, ktoré u nás začali včera alebo dnes. */
-export function recentResults(d: AppData, now: Date = new Date()): Result[] {
+/* Na obrazovke Výsledky len zápasy, ktoré u nás začali včera alebo dnes (NBA aj NHL). */
+export function recentOf<T extends Dated>(list: T[], now: Date = new Date()): T[] {
   const key = (n: number) => new Date(now.getFullYear(), now.getMonth(), now.getDate() + n, 12).toLocaleDateString("sv-SE");
   const keep = new Set([key(0), key(-1)]);
-  return (d.predictions.results ?? []).filter((r) => keep.has(localDay(r.tipoff_utc, r.date))).sort(byNewest);
+  return list.filter((r) => keep.has(localDay(r.tipoff_utc, r.date))).sort(byNewest);
+}
+
+export function recentResults(d: AppData, now: Date = new Date()): Result[] {
+  return recentOf(d.predictions.results ?? [], now);
 }
 
 export function resultsView(d: AppData): string {

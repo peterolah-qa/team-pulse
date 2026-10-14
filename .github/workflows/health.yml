@@ -14,10 +14,10 @@ jobs:
   health:
     runs-on: ubuntu-24.04 # pevná verzia: ubuntu-latest sa od 19. 10. mení na Ubuntu 26
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Inštalácia uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v10.3.0 # od v8 nemá tag hlavnej verzie (v10)
 
       - name: Python a knižnice podľa uv.lock
         run: uv sync --locked

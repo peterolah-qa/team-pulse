@@ -5,14 +5,17 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-24.04 # pevná verzia: ubuntu-latest sa od 19. 10. mení na Ubuntu 26
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Inštalácia uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v10.3.0 # od v8 nemá tag hlavnej verzie (v10)
 
       - name: Python a knižnice podľa uv.lock
         run: uv sync --locked
@@ -22,7 +25,16 @@ jobs:
           uv run ruff check .
           uv run ruff format --check .
 
+      # Archív sa už nemení: stiahne sa raz a ďalej ide z cache, CI tak nezávisí od cudzieho repozitára.
+      - name: Archív FiveThirtyEight z cache
+        id: ref-cache
+        uses: actions/cache@v6
+        with:
+          path: data/ref/nba_elo.csv
+          key: fivethirtyeight-nba-elo-v1
+
       - name: Archív FiveThirtyEight pre replikačný test
+        if: steps.ref-cache.outputs.cache-hit != 'true'
         run: |
           mkdir -p data/ref
           curl -sSfL -o data/ref/nba_elo.csv https://raw.githubusercontent.com/Neil-Paine-1/NBA-elo/main/nba_elo.csv
