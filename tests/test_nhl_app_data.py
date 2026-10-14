@@ -2,9 +2,11 @@
 
 import json
 from datetime import UTC, datetime
+from pathlib import Path
 
 from team_pulse.nhl import app_data as ad
 
+FIXTURES = Path(__file__).parent / "fixtures"
 NOW = datetime(2026, 10, 14, 15, 0, tzinfo=UTC)  # 14. 10. ET
 
 
@@ -111,6 +113,24 @@ def test_main_writes_files_even_when_api_fails(tmp_path, monkeypatch):
         raise ad.requests.ConnectionError("bez siete")
 
     monkeypatch.setattr(ad, "fetch_results", down)
+    monkeypatch.setattr(ad.inj, "fetch", down)
     data = ad.main(out=tmp_path / "out", archive=archive, now=NOW)
     assert data["results"] == [] and list(data["days"]) == ["2026-10-14"]
+    assert data["injuries"] is None and data["injuries_timestamp"] is None
     assert json.loads((tmp_path / "out" / "model.json").read_text(encoding="utf-8"))["version"] == "nhl-v1"
+
+
+def test_main_adds_injuries_without_touching_tips(tmp_path, monkeypatch):
+    archive = tmp_path / "archive"
+    archive.mkdir()
+    t4 = tip("4", "2026-10-14", "2026-10-14T23:00:00Z")
+    (archive / "2026-10-14.json").write_text(json.dumps({"games": {"4": t4}}), encoding="utf-8")
+    raw = json.loads((FIXTURES / "espn_nhl_injuries.json").read_text(encoding="utf-8"))
+    monkeypatch.setattr(ad, "fetch_results", lambda *_a, **_k: [])
+    monkeypatch.setattr(ad.inj, "fetch", lambda *_a, **_k: raw)
+    data = ad.main(out=tmp_path / "out", archive=archive, now=NOW)
+    assert data["injuries_timestamp"] == raw["timestamp"]
+    assert set(data["injuries"]) == {"ANA", "BUF", "CGY"}
+    assert data["days"]["2026-10-14"][0]["p_home"] == t4["p_home"]  # tip sa nemení
+    saved = json.loads((tmp_path / "out" / "predictions.json").read_text(encoding="utf-8"))
+    assert saved["injuries"] == data["injuries"]

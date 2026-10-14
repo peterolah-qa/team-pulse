@@ -102,6 +102,28 @@ test("Detail zápasu NHL: tip, prečo (Elo, domáce prostredie, únava), čas za
   await expect(page.locator("h1")).toHaveText("Zápas sa nenašiel");
 });
 
+test("Detail zápasu NHL: chýbajúci hráči z ESPN, bez vplyvu na tip", async ({ page }) => {
+  await nhl(page, "#/nhl/zapas/2026020201");
+  const card = page.locator("section.card", { has: page.locator("li", { hasText: "Seguin" }) });
+  const rows = card.locator(".rows li");
+  await expect(rows).toHaveCount(3);
+  await expect(rows.nth(0)).toContainText("DAL Tyler Seguin dlhodobo");
+  await expect(rows.nth(0)).toContainText("C · bedro");
+  await expect(rows.nth(0)).toContainText("návrat asi 2. 11.");
+  await expect(rows.nth(1)).toContainText("DAL Jason Robertson otázny");
+  await expect(rows.nth(1)).not.toContainText("návrat");
+  await expect(rows.nth(2)).toContainText("COL nikto nechýba");
+  await expect(card).toContainText("Model NHL ich zatiaľ nepočíta, tip sa podľa nich nemení");
+  await expect(page.locator(".verdict")).toContainText("Tip: COL vyhrá so šancou 60 %");
+});
+
+test("Detail zápasu NHL: zranenia sa nestiahli → sekcia chýbajúcich hráčov nie je", async ({ page }) => {
+  await serveData(page, { "nhl/predictions": (j) => ({ ...j, injuries: null }) });
+  await nhl(page, "#/nhl/zapas/2026020201");
+  await expect(page.locator("h2", { hasText: "Prečo" })).toBeVisible();
+  await expect(page.locator("h2", { hasText: "Chýbajúci hráči" })).toHaveCount(0);
+});
+
 test("Teamy NHL: poradie podľa Ela, Model NHL: presnosť a vrstvy", async ({ page }) => {
   await nhl(page, "#/nhl/teamy");
   const rows = page.locator(".teamrow");
