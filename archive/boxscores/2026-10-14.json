@@ -1653,6 +1653,301 @@
      }
     ]
    }
+  },
+  "0012600064": {
+   "game_id": "0012600064",
+   "espn_id": "401918011",
+   "date": "2026-10-14",
+   "kind": "preseason",
+   "home": "LAC",
+   "away": "DEN",
+   "pts_home": 122,
+   "pts_away": 110,
+   "box": {
+    "DEN": [
+     {
+      "player": "Trevon Brazile",
+      "min": 25,
+      "pts": 22,
+      "reb": 2,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Cam Whitmore",
+      "min": 24,
+      "pts": 17,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Julian Strawther",
+      "min": 19,
+      "pts": 11,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamal Murray",
+      "min": 17,
+      "pts": 14,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nikola Jokic",
+      "min": 17,
+      "pts": 5,
+      "reb": 6,
+      "ast": 7,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ryan Nembhard",
+      "min": 17,
+      "pts": 5,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Marvin Bagley III",
+      "min": 15,
+      "pts": 4,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Aaron Gordon",
+      "min": 14,
+      "pts": 8,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cameron Johnson",
+      "min": 13,
+      "pts": 5,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Christian Braun",
+      "min": 13,
+      "pts": 3,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bryce Hopkins",
+      "min": 13,
+      "pts": 3,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Alpha Diallo",
+      "min": 13,
+      "pts": 0,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "DaRon Holmes II",
+      "min": 12,
+      "pts": 8,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyus Jones",
+      "min": 12,
+      "pts": 0,
+      "reb": 1,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zeke Nnaji",
+      "min": 8,
+      "pts": 5,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Emanuel Miller",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Coleman Hawkins",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dane Goodwin",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "LAC": [
+     {
+      "player": "Keaton Wagler",
+      "min": 28,
+      "pts": 12,
+      "reb": 5,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Jackson",
+      "min": 26,
+      "pts": 9,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Rui Hachimura",
+      "min": 24,
+      "pts": 16,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Derrick Jones Jr.",
+      "min": 24,
+      "pts": 14,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Darius Garland",
+      "min": 23,
+      "pts": 14,
+      "reb": 2,
+      "ast": 7,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Baba Miller",
+      "min": 21,
+      "pts": 15,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Pickett",
+      "min": 20,
+      "pts": 10,
+      "reb": 1,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Gradey Dick",
+      "min": 19,
+      "pts": 8,
+      "reb": 3,
+      "ast": 4,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Nick Martinelli",
+      "min": 16,
+      "pts": 8,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Blake Wesley",
+      "min": 15,
+      "pts": 4,
+      "reb": 0,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jahmyl Telfort",
+      "min": 9,
+      "pts": 0,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Brook Lopez",
+      "min": 8,
+      "pts": 9,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Fletcher Loyer",
+      "min": 7,
+      "pts": 3,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
