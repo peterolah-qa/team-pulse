@@ -5,57 +5,53 @@
    "game_id": "0012600055",
    "kind": "preseason",
    "tipoff_utc": "2026-10-15 23:30:00+00:00",
-   "locked_at": "2026-10-15T22:00:57+00:00",
+   "locked_at": "2026-10-15T22:30:48+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-15T22:00:52Z",
+   "injuries_timestamp": "2026-10-15T22:30:44Z",
    "neutral": false,
-   "p_home": 0.751,
-   "margin_home": 8.0,
+   "p_home": 0.788,
+   "margin_home": 9.5,
    "home": {
     "team": "NYK",
     "elo": 1726.3,
-    "elo_today": 1731.5,
-    "pulse": 87.7,
+    "elo_today": 1772.8,
+    "pulse": 94.6,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
-    "confidence": "nízka",
+    "confidence": "vysoká",
     "layers": {
      "strength": 221.3,
-     "roster": 50.9,
-     "players": -42.7,
+     "roster": 49.4,
+     "players": 0.0,
      "fatigue": -3.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      51
-     ],
-     [
-      "Bez Jalen Brunson (?), Karl-Anthony Towns (?)",
-      -43
+      49
      ]
     ]
    },
    "away": {
     "team": "TOR",
     "elo": 1545.3,
-    "elo_today": 1587.1,
-    "pulse": 63.7,
+    "elo_today": 1585.7,
+    "pulse": 63.5,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 40.3,
-     "roster": 37.7,
+     "roster": 36.3,
      "players": 0.0,
      "fatigue": 4.1
     },
     "reasons": [
      [
       "Sila súpisky",
-      38
+      36
      ]
     ]
    }
@@ -64,31 +60,31 @@
    "game_id": "0012600020",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 00:30:00+00:00",
-   "locked_at": "2026-10-15T22:00:57+00:00",
+   "locked_at": "2026-10-15T22:30:48+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-15T22:00:52Z",
+   "injuries_timestamp": "2026-10-15T22:30:44Z",
    "neutral": false,
    "p_home": 0.471,
    "margin_home": -0.9,
    "home": {
     "team": "HOU",
     "elo": 1571.2,
-    "elo_today": 1607.1,
-    "pulse": 67.0,
+    "elo_today": 1605.7,
+    "pulse": 66.8,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "nízka",
     "layers": {
      "strength": 66.2,
-     "roster": 62.0,
+     "roster": 60.6,
      "players": -30.1,
      "fatigue": 4.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      62
+      61
      ],
      [
       "Bez Kevin Durant (?), Alperen Sengun (?)",
@@ -99,22 +95,22 @@
    "away": {
     "team": "OKC",
     "elo": 1687.0,
-    "elo_today": 1709.7,
-    "pulse": 84.1,
+    "elo_today": 1708.3,
+    "pulse": 83.9,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 182.0,
-     "roster": 33.8,
+     "roster": 32.4,
      "players": -7.3,
      "fatigue": -3.7
     },
     "reasons": [
      [
       "Sila súpisky",
-      34
+      32
      ]
     ]
    }
