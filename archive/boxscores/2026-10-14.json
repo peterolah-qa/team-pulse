@@ -1,6 +1,274 @@
 {
  "date": "2026-10-14",
  "games": {
+  "0012600003": {
+   "game_id": "0012600003",
+   "espn_id": "401898404",
+   "date": "2026-10-14",
+   "kind": "preseason",
+   "home": "MIA",
+   "away": "BKN",
+   "pts_home": 144,
+   "pts_away": 128,
+   "box": {
+    "BKN": [
+     {
+      "player": "Julius Randle",
+      "min": 28,
+      "pts": 15,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Michael Porter Jr.",
+      "min": 27,
+      "pts": 27,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Keon Ellis",
+      "min": 24,
+      "pts": 0,
+      "reb": 2,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Egor Demin",
+      "min": 23,
+      "pts": 17,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Moritz Wagner",
+      "min": 22,
+      "pts": 15,
+      "reb": 3,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Nolan Traore",
+      "min": 22,
+      "pts": 12,
+      "reb": 2,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Noah Clowney",
+      "min": 22,
+      "pts": 6,
+      "reb": 7,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mikel Brown Jr.",
+      "min": 18,
+      "pts": 15,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Day'Ron Sharpe",
+      "min": 17,
+      "pts": 11,
+      "reb": 6,
+      "ast": 4,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Danny Wolf",
+      "min": 10,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Chaney Johnson",
+      "min": 9,
+      "pts": 2,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Grant Nelson",
+      "min": 6,
+      "pts": 5,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Minott",
+      "min": 6,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Drake Powell",
+      "min": 6,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "MIA": [
+     {
+      "player": "Giannis Antetokounmpo",
+      "min": 24,
+      "pts": 20,
+      "reb": 15,
+      "ast": 9,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "Davion Mitchell",
+      "min": 24,
+      "pts": 13,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Ryan Conwell",
+      "min": 24,
+      "pts": 13,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Bobby Portis",
+      "min": 24,
+      "pts": 12,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Klay Thompson",
+      "min": 23,
+      "pts": 12,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Nikola Jovic",
+      "min": 23,
+      "pts": 5,
+      "reb": 5,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Andrew Wiggins",
+      "min": 22,
+      "pts": 19,
+      "reb": 6,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Tim Hardaway Jr.",
+      "min": 20,
+      "pts": 14,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nick Richards",
+      "min": 16,
+      "pts": 11,
+      "reb": 5,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Simone Fontecchio",
+      "min": 14,
+      "pts": 11,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Keshad Johnson",
+      "min": 8,
+      "pts": 8,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Myron Gardner",
+      "min": 8,
+      "pts": 2,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kylor Kelley",
+      "min": 6,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Tre Donaldson",
+      "min": 6,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
   "0012600017": {
    "game_id": "0012600017",
    "espn_id": "401898405",
