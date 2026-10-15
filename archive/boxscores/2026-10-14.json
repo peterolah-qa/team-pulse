@@ -1,0 +1,273 @@
+{
+ "date": "2026-10-14",
+ "games": {
+  "0012600017": {
+   "game_id": "0012600017",
+   "espn_id": "401898405",
+   "date": "2026-10-14",
+   "kind": "preseason",
+   "home": "BOS",
+   "away": "CHA",
+   "pts_home": 114,
+   "pts_away": 93,
+   "box": {
+    "CHA": [
+     {
+      "player": "Brandon Miller",
+      "min": 27,
+      "pts": 16,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Naz Reid",
+      "min": 26,
+      "pts": 12,
+      "reb": 6,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Royce O'Neale",
+      "min": 23,
+      "pts": 12,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Moussa Diabate",
+      "min": 23,
+      "pts": 3,
+      "reb": 5,
+      "ast": 0,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Tidjane Salaun",
+      "min": 22,
+      "pts": 16,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Christian Anderson",
+      "min": 21,
+      "pts": 10,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Dennis Schroder",
+      "min": 21,
+      "pts": 5,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Liam McNeeley",
+      "min": 20,
+      "pts": 7,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ryan Kalkbrenner",
+      "min": 19,
+      "pts": 7,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sion James",
+      "min": 17,
+      "pts": 0,
+      "reb": 4,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Michael Ajayi",
+      "min": 8,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Hannes Steinbach",
+      "min": 6,
+      "pts": 2,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jarkel Joiner",
+      "min": 4,
+      "pts": 1,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Wyatt Fricks",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "BOS": [
+     {
+      "player": "Jayson Tatum",
+      "min": 29,
+      "pts": 19,
+      "reb": 8,
+      "ast": 6,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Payton Pritchard",
+      "min": 29,
+      "pts": 7,
+      "reb": 3,
+      "ast": 11,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Neemias Queta",
+      "min": 24,
+      "pts": 16,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Paul George",
+      "min": 24,
+      "pts": 5,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Derrick White",
+      "min": 20,
+      "pts": 17,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Sam Hauser",
+      "min": 18,
+      "pts": 6,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mitchell Robinson",
+      "min": 17,
+      "pts": 12,
+      "reb": 7,
+      "ast": 1,
+      "blk": 3,
+      "stl": 0
+     },
+     {
+      "player": "Baylor Scheierman",
+      "min": 17,
+      "pts": 5,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jordan Walsh",
+      "min": 17,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Luka Garza",
+      "min": 14,
+      "pts": 14,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Hugo Gonzalez",
+      "min": 13,
+      "pts": 5,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ron Harper Jr.",
+      "min": 6,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dillon Mitchell",
+      "min": 5,
+      "pts": 4,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Chris Cenac Jr.",
+      "min": 5,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     }
+    ]
+   }
+  }
+ }
+}
