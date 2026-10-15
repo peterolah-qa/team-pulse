@@ -345,12 +345,12 @@
    "game_id": "0012600064",
    "kind": "preseason",
    "tipoff_utc": "2026-10-15 02:30:00+00:00",
-   "locked_at": "2026-10-15T01:00:58+00:00",
+   "locked_at": "2026-10-15T01:30:46+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-15T01:00:55Z",
+   "injuries_timestamp": "2026-10-15T01:30:36Z",
    "neutral": false,
    "p_home": 0.416,
-   "margin_home": -2.5,
+   "margin_home": -2.4,
    "home": {
     "team": "LAC",
     "elo": 1534.1,
@@ -376,8 +376,8 @@
    "away": {
     "team": "DEN",
     "elo": 1596.1,
-    "elo_today": 1662.5,
-    "pulse": 76.2,
+    "elo_today": 1661.8,
+    "pulse": 76.1,
     "tier": "Silný",
     "normal_tier": "Stabilný",
     "dropped": false,
@@ -385,7 +385,7 @@
     "layers": {
      "strength": 91.1,
      "roster": 63.8,
-     "players": 0.0,
+     "players": -0.7,
      "fatigue": 2.6
     },
     "reasons": [
