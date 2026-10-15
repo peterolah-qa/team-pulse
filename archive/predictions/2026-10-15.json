@@ -60,24 +60,24 @@
    "game_id": "0012600020",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 00:30:00+00:00",
-   "locked_at": "2026-10-15T23:30:44+00:00",
+   "locked_at": "2026-10-15T23:47:27+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-15T23:30:40Z",
+   "injuries_timestamp": "2026-10-15T23:47:18Z",
    "neutral": false,
    "p_home": 0.508,
    "margin_home": 0.2,
    "home": {
     "team": "HOU",
     "elo": 1571.2,
-    "elo_today": 1634.8,
-    "pulse": 71.6,
+    "elo_today": 1635.0,
+    "pulse": 71.7,
     "tier": "Silný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 66.2,
-     "roster": 59.6,
+     "roster": 59.7,
      "players": 0.0,
      "fatigue": 4.0
     },
@@ -91,7 +91,7 @@
    "away": {
     "team": "OKC",
     "elo": 1687.0,
-    "elo_today": 1707.3,
+    "elo_today": 1707.5,
     "pulse": 83.7,
     "tier": "Silný",
     "normal_tier": "Silný",
@@ -99,14 +99,14 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 182.0,
-     "roster": 31.4,
+     "roster": 31.5,
      "players": -7.3,
      "fatigue": -3.7
     },
     "reasons": [
      [
       "Sila súpisky",
-      31
+      32
      ]
     ]
    }
