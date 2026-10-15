@@ -5,31 +5,31 @@
    "game_id": "0012600018",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 23:00:00+00:00",
-   "locked_at": "2026-10-15T23:00:53+00:00",
+   "locked_at": "2026-10-15T23:30:44+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-15T23:00:49Z",
+   "injuries_timestamp": "2026-10-15T23:30:40Z",
    "neutral": false,
    "p_home": 0.537,
    "margin_home": 1.1,
    "home": {
     "team": "PHI",
     "elo": 1528.8,
-    "elo_today": 1573.6,
-    "pulse": 61.4,
+    "elo_today": 1572.6,
+    "pulse": 61.3,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "nízka",
     "layers": {
      "strength": 23.8,
-     "roster": 87.8,
+     "roster": 86.8,
      "players": -49.8,
      "fatigue": 6.8
     },
     "reasons": [
      [
       "Sila súpisky",
-      88
+      87
      ],
      [
       "Bez Joel Embiid (?), LeBron James (?)",
@@ -40,22 +40,22 @@
    "away": {
     "team": "BOS",
     "elo": 1606.3,
-    "elo_today": 1623.1,
-    "pulse": 69.7,
+    "elo_today": 1622.1,
+    "pulse": 69.5,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 101.3,
-     "roster": 12.0,
+     "roster": 11.0,
      "players": 0.0,
      "fatigue": 4.7
     },
     "reasons": [
      [
       "Sila súpisky",
-      12
+      11
      ]
     ]
    }
@@ -64,53 +64,48 @@
    "game_id": "0012600021",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 23:00:00+00:00",
-   "locked_at": "2026-10-15T23:00:53+00:00",
+   "locked_at": "2026-10-15T23:30:44+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-15T23:00:49Z",
+   "injuries_timestamp": "2026-10-15T23:30:40Z",
    "neutral": false,
    "p_home": 0.613,
    "margin_home": 3.3,
    "home": {
     "team": "ORL",
     "elo": 1540.8,
-    "elo_today": 1554.1,
-    "pulse": 58.2,
+    "elo_today": 1553.1,
+    "pulse": 58.0,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 35.8,
-     "roster": 10.4,
+     "roster": 9.4,
      "players": 0.0,
      "fatigue": 3.0
     },
-    "reasons": [
-     [
-      "Sila súpisky",
-      10
-     ]
-    ]
+    "reasons": []
    },
    "away": {
     "team": "MIA",
     "elo": 1523.2,
-    "elo_today": 1540.1,
-    "pulse": 55.8,
+    "elo_today": 1539.1,
+    "pulse": 55.7,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": 18.2,
-     "roster": 24.9,
+     "roster": 23.9,
      "players": -12.8,
      "fatigue": 4.7
     },
     "reasons": [
      [
       "Sila súpisky",
-      25
+      24
      ],
      [
       "Bez Bam Adebayo (?)",
@@ -123,31 +118,31 @@
    "game_id": "0012600056",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 23:00:00+00:00",
-   "locked_at": "2026-10-15T23:00:53+00:00",
+   "locked_at": "2026-10-15T23:30:44+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-15T23:00:49Z",
+   "injuries_timestamp": "2026-10-15T23:30:40Z",
    "neutral": false,
    "p_home": 0.699,
    "margin_home": 6.1,
    "home": {
     "team": "DET",
     "elo": 1614.0,
-    "elo_today": 1618.6,
-    "pulse": 68.9,
+    "elo_today": 1617.6,
+    "pulse": 68.8,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 109.0,
-     "roster": 15.7,
+     "roster": 14.7,
      "players": 0.0,
      "fatigue": -11.2
     },
     "reasons": [
      [
       "Sila súpisky",
-      16
+      15
      ],
      [
       "Posun na východ o 1 h",
@@ -158,15 +153,15 @@
    "away": {
     "team": "TOR",
     "elo": 1545.3,
-    "elo_today": 1527.3,
-    "pulse": 53.7,
+    "elo_today": 1526.3,
+    "pulse": 53.5,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 40.3,
-     "roster": 30.3,
+     "roster": 29.3,
      "players": 0.0,
      "fatigue": -48.4
     },
@@ -177,7 +172,7 @@
      ],
      [
       "Sila súpisky",
-      30
+      29
      ]
     ]
    }
@@ -186,24 +181,24 @@
    "game_id": "0012600057",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 23:00:00+00:00",
-   "locked_at": "2026-10-15T23:00:53+00:00",
+   "locked_at": "2026-10-15T23:30:44+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-15T23:00:49Z",
+   "injuries_timestamp": "2026-10-15T23:30:40Z",
    "neutral": false,
    "p_home": 0.613,
    "margin_home": 3.3,
    "home": {
     "team": "IND",
     "elo": 1379.4,
-    "elo_today": 1381.0,
-    "pulse": 29.3,
+    "elo_today": 1380.0,
+    "pulse": 29.2,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -125.6,
-     "roster": 12.4,
+     "roster": 11.4,
      "players": -1.1,
      "fatigue": -9.7
     },
@@ -214,29 +209,29 @@
      ],
      [
       "Sila súpisky",
-      12
+      11
      ]
     ]
    },
    "away": {
     "team": "MIL",
     "elo": 1387.5,
-    "elo_today": 1366.8,
-    "pulse": 27.0,
+    "elo_today": 1365.8,
+    "pulse": 26.8,
     "tier": "Kritický",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": -117.5,
-     "roster": -17.7,
+     "roster": -18.7,
      "players": -12.1,
      "fatigue": 9.1
     },
     "reasons": [
      [
       "Sila súpisky",
-      -18
+      -19
      ],
      [
       "Bez Kevin Porter Jr. (?), Tyler Herro (?)",
