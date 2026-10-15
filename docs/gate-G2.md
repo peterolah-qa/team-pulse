@@ -40,10 +40,15 @@ Presnosť a kalibrácia sa len zapíšu (v backteste 14-dňové okná 58,1 – 7
 Zapíše sa príčina. Oprava ide až po skončení obdobia, potom sa meranie opakuje 14 dní.
 Model sa počas merania nemení. Zmenu modelu len navrhnem, schvaľuje Peter.
 
-## Známe riziko pred začiatkom
+## Oprava dát pred začiatkom (14. 10. 2026)
 
-V histórii NBA chýbajú zápasy na neutrálnej pôde: 5 v sezóne 2024/25 (Mexiko, 2× Paríž,
+V histórii NBA chýbali zápasy na neutrálnej pôde: 5 v sezóne 2024/25 (Mexiko, 2× Paríž,
 2× semifinále NBA Cupu vo Vegas) a 5 v sezóne 2025/26 (Mexiko, Berlín, Londýn, 2× semifinále
-NBA Cupu). Niektoré teamy majú preto v týchto sezónach 79 – 81 zápasov namiesto 82 a Elo ich
-nepozná. V období G2 taký zápas nie je, prvý je 7. 11. 2026 (DEN @ IND, Mexiko). Oprava a nové
-stiahnutie histórie pred 20. 10., aby G2 merala Elo so všetkými zápasmi, najneskôr pred 7. 11.
+NBA Cupu). nba_api ich od 2024/25 zapisuje bez „vs.“ a `normalize()` ich zahodil. Oprava ich páruje
+podľa zápisu „HOSTIA @ DOMÁCI“, ktorý sa zhoduje s rozpisom NBA, a označí ich ako neutrálne. Všetky
+teamy majú teraz v oboch sezónach 82 zápasov. Elo sa zmenilo najviac o 2,6 bodu, backtest
+nepatrne (log loss 0,59963 → 0,59975). V období G2 taký zápas nie je, prvý je 7. 11. 2026
+(DEN @ IND, Mexiko).
+
+Na opravených dátach by hranica kritéria 5 vyšla 0,6751. Ostáva **0,6739**, ktorá bola stanovená
+vopred a je prísnejšia.

@@ -6,6 +6,16 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 15. 10. 2026
 
+- **Prvé automatické ranné behy prešli.** NBA stav 10:08 (`cd2b999`, archív +7 výsledkov), NHL 10:15
+  (`798189e`, noc 14. 10.: tip vyšiel 1 z 2, zamknutých 13 tipov). Všetkých 31 NHL tipov v archíve je
+  zamknutých pred začiatkom zápasu.
+- **NBA – oprava zápasov na neutrálnej pôde** (`normalize()` v `team_pulse.data.fetch_games`, #74).
+  nba_api ich od 2024/25 zapisuje v oboch riadkoch ako „HOSTIA @ DOMÁCI“ bez „vs.“, preto vypadli
+  (10 zápasov). Teraz sa párujú podľa tohto zápisu (zhoduje sa s domácimi v rozpise NBA) a dostanú
+  neutral=True. Dva riadky, ktoré sa nedajú spárovať, sú chyba namiesto tichého vypadnutia. Test na
+  skutočných dátach (`tests/fixtures/nba_neutral_games.json`, `scripts/probe_nba_neutral.py`).
+  Simulácia: všetky teamy 82 zápasov, Elo ±2,6 bodu, backtest log loss 0,59963 → 0,59975. Hranica
+  G2 ostáva 0,6739 (na opravených dátach 0,6751, ponechaná prísnejšia stanovená vopred).
 - **F1 – záložné spúšťanie z cron-job.org – návod** (board #89, súvisí s #86). Plán GitHubu môže
   behy `f1.yml` odložiť o hodiny, preto Peter pridá na cron-job.org job (klon jobu Predikcie): POST na
   `.../actions/workflows/f1.yml/dispatches`, telo `{"ref":"main"}`, sobota a nedeľa každú hodinu
@@ -175,8 +185,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   vyhodnotenie modelu B 7. 12. (#86).
 - Kontrola zdrojov: pridať job na cron-job.org o 11:30 UTC (#85), job Predikcie nechať zapnutý.
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- Schváliť kritériá G2 NBA a G2-NHL, potom `bash scripts/board_plan2.sh` (boardy podľa nového poradia).
-- NBA: oprava zápasov na neutrálnej pôde v histórii (pred 20. 10., najneskôr pred 7. 11.).
+- NBA: po oprave znova stiahnuť históriu (`team_pulse.data.fetch_games --from 2001 --to 2026`),
+  overiť 82 zápasov každého teamu v 2024/25 a 2025/26, potom ranná úloha → opravený stav do `main`.
 - G2 NBA: 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. Kód NBA sa do 3. 11. nemení.
 - G2-NHL: 13. – 26. 10. 2026, vyhodnotenie 27. 10.
-- NHL: overiť prvý automatický beh 15. 10. (commit „NHL 2026-10-15: …“ a log).

@@ -66,3 +66,57 @@ def test_bubble_games_are_neutral():
 
     g = pd.DataFrame({"date": pd.to_datetime(["2020-03-10", "2020-07-30", "2020-10-11", "2020-12-22"])})
     assert mark_neutral(g)["neutral"].tolist() == [False, True, True, False]
+
+
+def neutral_fixture():
+    """Skutočné zápasy na neutrálnej pôde z nba_api a rozpisu NBA (scripts/probe_nba_neutral.py)."""
+    import json
+    from pathlib import Path
+
+    return json.loads(Path("tests/fixtures/nba_neutral_games.json").read_text(encoding="utf-8"))
+
+
+def test_neutral_site_games_are_paired_by_schedule_home_team():
+    """2024/25 a 2025/26: oba riadky majú „HOSTIA @ DOMÁCI“, bez „vs.“. Predtým zápas vypadol."""
+    for season, end_year in (("2024-25", 2025), ("2025-26", 2026)):
+        data = neutral_fixture()[season]
+        g = normalize(pd.DataFrame(data["games"]), end_year, False, {}).set_index("game_id")
+        sched = {s["gameId"]: s for s in data["schedule"] if s["gameId"].startswith("002")}
+        assert len(g) == 5 and set(g.index) == set(sched)  # 5 zápasov základnej časti, žiadny nevypadol
+        for gid, s in sched.items():
+            row = g.loc[gid]
+            assert (row["home"], row["away"]) == (s["homeTeam_teamTricode"], s["awayTeam_teamTricode"])
+            assert (row["pts_home"], row["pts_away"]) == (s["homeTeam_score"], s["awayTeam_score"])
+            assert row["neutral"] and s["isNeutral"]
+
+
+def test_regular_game_is_not_neutral():
+    r = raw(
+        [
+            ["5", "2024-11-01", "BOS vs. MIA", 1610612738, "BOS", 110],
+            ["5", "2024-11-01", "MIA @ BOS", 1610612748, "MIA", 101],
+        ]
+    )
+    assert not normalize(r, 2025, False, ABBR).loc[0, "neutral"]
+
+
+def test_two_rows_that_cannot_be_paired_raise():
+    """Nový neznámy zápis nesmie zápas potichu zahodiť."""
+    import pytest
+
+    r = raw(
+        [
+            ["6", "2024-11-01", "BOS @ MIA", 1610612738, "BOS", 110],
+            ["6", "2024-11-01", "MIA @ BOS", 1610612748, "MIA", 101],
+        ]
+    )
+    with pytest.raises(ValueError, match="2024-25: 1 zápasov sa nedá spárovať.*6"):
+        normalize(r, 2025, False, ABBR)
+
+
+def test_mark_neutral_keeps_neutral_site_and_adds_bubble():
+    from team_pulse.data.fetch_games import mark_neutral
+
+    g = pd.DataFrame({"date": pd.to_datetime(["2025-01-23", "2020-08-01", "2025-02-01"]),
+                      "neutral": [True, False, False]})  # fmt: skip
+    assert mark_neutral(g)["neutral"].tolist() == [True, True, False]

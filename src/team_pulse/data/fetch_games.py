@@ -37,9 +37,29 @@ def fix_franchise(team: str, end_year: int) -> str:
 
 
 def normalize(raw: pd.DataFrame, end_year: int, playoff: bool, abbr: dict[int, str]) -> pd.DataFrame:
-    """Z dvoch riadkov na zápas (jeden za každý team) urobí jeden riadok domáci vs. hostia."""
+    """Z dvoch riadkov na zápas (jeden za každý team) urobí jeden riadok domáci vs. hostia.
+
+    Domáci majú v MATCHUP „vs.“, hostia „@“. Zápas na neutrálnej pôde (od 2024/25 Mexiko, Paríž,
+    Berlín, Londýn, semifinále NBA Cupu) má v oboch riadkoch rovnaké „HOSTIA @ DOMÁCI“ podľa rozpisu
+    NBA a dostane neutral=True. Zápas s jedným riadkom (výsledok ešte nie je kompletný) sa vynechá,
+    príde pri ďalšom stiahnutí. Dva riadky, ktoré sa nedajú spárovať, sú chyba – zápas nesmie
+    potichu vypadnúť z histórie.
+    """
     df = raw.copy()
     df["is_home"] = df["MATCHUP"].str.contains(" vs. ", regex=False)
+    rows = df.groupby("GAME_ID")["GAME_ID"].transform("size")
+    homes = df.groupby("GAME_ID")["is_home"].transform("sum")
+    neutral = (rows == 2) & (homes == 0)
+    df.loc[neutral, "is_home"] = (
+        df.loc[neutral, "TEAM_ABBREVIATION"] == df.loc[neutral, "MATCHUP"].str.split(" @ ").str[1]
+    )
+    check = df[rows >= 2].groupby("GAME_ID")["is_home"].agg(["size", "sum"])
+    if bad := check.index[(check["size"] != 2) | (check["sum"] != 1)].tolist():
+        shown = ", ".join(map(str, bad[:5]))
+        raise ValueError(
+            f"{season_label(end_year)}: {len(bad)} zápasov sa nedá spárovať na domácich a hostí: {shown}"
+        )
+    neutral_ids = set(df.loc[neutral, "GAME_ID"])
     home = df[df["is_home"]].set_index("GAME_ID")
     away = df[~df["is_home"]].set_index("GAME_ID")
     both = home.index.intersection(away.index)
@@ -54,6 +74,7 @@ def normalize(raw: pd.DataFrame, end_year: int, playoff: bool, abbr: dict[int, s
             "away": away["TEAM_ID"].map(abbr).fillna(away["TEAM_ABBREVIATION"]).values,
             "pts_home": home["PTS"].astype(int).values,
             "pts_away": away["PTS"].astype(int).values,
+            "neutral": [gid in neutral_ids for gid in both],
         }
     )
     out["home"] = [fix_franchise(t, end_year) for t in out["home"]]
@@ -62,9 +83,10 @@ def normalize(raw: pd.DataFrame, end_year: int, playoff: bool, abbr: dict[int, s
 
 
 def mark_neutral(games: pd.DataFrame) -> pd.DataFrame:
-    """Označí zápasy bez domácej výhody (bublina 2020)."""
+    """Označí zápasy bez domácej výhody: bublina 2020 a zápasy na neutrálnej pôde (z normalize)."""
     out = games.copy()
-    out["neutral"] = out["date"].between(*BUBBLE)
+    bubble = out["date"].between(*BUBBLE)
+    out["neutral"] = (out["neutral"].fillna(False).astype(bool) | bubble) if "neutral" in out else bubble
     return out
 
 
