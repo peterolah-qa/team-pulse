@@ -5,9 +5,9 @@
    "game_id": "0012600018",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 23:00:00+00:00",
-   "locked_at": "2026-10-16T01:42:40+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-16T01:42:34Z",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
    "neutral": false,
    "p_home": 0.537,
    "margin_home": 1.1,
@@ -64,9 +64,9 @@
    "game_id": "0012600021",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 23:00:00+00:00",
-   "locked_at": "2026-10-16T01:42:40+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-16T01:42:34Z",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
    "neutral": false,
    "p_home": 0.613,
    "margin_home": 3.3,
@@ -118,9 +118,9 @@
    "game_id": "0012600056",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 23:00:00+00:00",
-   "locked_at": "2026-10-16T01:42:40+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-16T01:42:34Z",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
    "neutral": false,
    "p_home": 0.699,
    "margin_home": 6.1,
@@ -181,9 +181,9 @@
    "game_id": "0012600057",
    "kind": "preseason",
    "tipoff_utc": "2026-10-16 23:00:00+00:00",
-   "locked_at": "2026-10-16T01:42:40+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-16T01:42:34Z",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
    "neutral": false,
    "p_home": 0.613,
    "margin_home": 3.3,
@@ -244,9 +244,9 @@
    "game_id": "0012600008",
    "kind": "preseason",
    "tipoff_utc": "2026-10-17 00:00:00+00:00",
-   "locked_at": "2026-10-16T01:42:40+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-16T01:42:34Z",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
    "neutral": false,
    "p_home": 0.42,
    "margin_home": -2.3,
@@ -299,9 +299,9 @@
    "game_id": "0012600058",
    "kind": "preseason",
    "tipoff_utc": "2026-10-17 00:00:00+00:00",
-   "locked_at": "2026-10-16T01:42:40+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-16T01:42:34Z",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
    "neutral": false,
    "p_home": 0.371,
    "margin_home": -3.8,
@@ -354,9 +354,9 @@
    "game_id": "0012600059",
    "kind": "preseason",
    "tipoff_utc": "2026-10-17 00:00:00+00:00",
-   "locked_at": "2026-10-16T01:42:40+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-16T01:42:34Z",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
    "neutral": false,
    "p_home": 0.264,
    "margin_home": -7.4,
@@ -409,9 +409,9 @@
    "game_id": "0012600060",
    "kind": "preseason",
    "tipoff_utc": "2026-10-17 00:00:00+00:00",
-   "locked_at": "2026-10-16T01:42:40+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-16T01:42:34Z",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
    "neutral": false,
    "p_home": 0.759,
    "margin_home": 8.3,
@@ -459,9 +459,9 @@
    "game_id": "0012600061",
    "kind": "preseason",
    "tipoff_utc": "2026-10-17 00:00:00+00:00",
-   "locked_at": "2026-10-16T01:42:40+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-16T01:42:34Z",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
    "neutral": false,
    "p_home": 0.905,
    "margin_home": 16.3,
@@ -509,6 +509,120 @@
      ],
      [
       "Bez Domantas Sabonis (?), Maxime Raynaud",
+      -11
+     ]
+    ]
+   }
+  },
+  "0012600019": {
+   "game_id": "0012600019",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-17 02:00:00+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
+   "neutral": false,
+   "p_home": 0.442,
+   "margin_home": -1.7,
+   "home": {
+    "team": "GSW",
+    "elo": 1446.8,
+    "elo_today": 1427.9,
+    "pulse": 37.1,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -58.2,
+     "roster": -1.9,
+     "players": -21.0,
+     "fatigue": 4.0
+    },
+    "reasons": [
+     [
+      "Bez Jimmy Butler III",
+      -21
+     ]
+    ]
+   },
+   "away": {
+    "team": "POR",
+    "elo": 1516.2,
+    "elo_today": 1553.8,
+    "pulse": 58.1,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 11.2,
+     "roster": 28.8,
+     "players": 0.0,
+     "fatigue": 8.8
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      29
+     ]
+    ]
+   }
+  },
+  "0012600062": {
+   "game_id": "0012600062",
+   "kind": "preseason",
+   "tipoff_utc": "2026-10-17 02:00:00+00:00",
+   "locked_at": "2026-10-16T02:01:00+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-16T02:00:53Z",
+   "neutral": false,
+   "p_home": 0.771,
+   "margin_home": 8.7,
+   "home": {
+    "team": "PHX",
+    "elo": 1528.1,
+    "elo_today": 1500.6,
+    "pulse": 49.3,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 23.1,
+     "roster": -21.3,
+     "players": -10.6,
+     "fatigue": 4.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -21
+     ],
+     [
+      "Bez Devin Booker (?)",
+      -11
+     ]
+    ]
+   },
+   "away": {
+    "team": "UTA",
+    "elo": 1341.7,
+    "elo_today": 1334.2,
+    "pulse": 21.5,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -163.3,
+     "roster": -10.5,
+     "players": 0.0,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
       -11
      ]
     ]
