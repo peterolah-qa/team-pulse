@@ -4,19 +4,19 @@ Zo základnej časti zatiaľ nie je uložená žiadna predpoveď. Sezóna začí
 
 ## Príprava (skúška archívu, mimo G2)
 
-Uložené predpovede 60 · s výsledkom 48 · presnosť 52,1 %
+Uložené predpovede 60 · s výsledkom 60 · presnosť 50,0 %
 
 Hviezdy v príprave hrajú menej a model je naučený na základnú časť, takže tieto čísla nič nehovoria o kvalite modelu. Overujú len, že sa predpovede ukladajú a výsledky dopĺňajú.
 
 | Dátum | Zápas | Šanca domácich | Skóre | Tip |
 |:--|:--|--:|:--|:--|
-| 2026-10-15 | OKC @ HOU | 50,8 % | 89 : 116 | ✓ |
-| 2026-10-15 | TOR @ NYK | 78,8 % | 120 : 122 | ✓ |
-| 2026-10-14 | DEN @ LAC | 41,6 % | 110 : 122 | ✗ |
-| 2026-10-14 | PHX @ SAS | 81,7 % | 103 : 123 | ✓ |
-| 2026-10-14 | DET @ MIN | 52,6 % | 128 : 106 | ✗ |
-| 2026-10-14 | CHI @ MIL | 59,3 % | 125 : 104 | ✗ |
-| 2026-10-14 | NOP @ DAL | 49,8 % | 101 : 97 | ✓ |
-| 2026-10-14 | CHA @ BOS | 64,0 % | 93 : 114 | ✓ |
-| 2026-10-14 | BKN @ MIA | 81,4 % | 128 : 144 | ✓ |
-| 2026-10-13 | POR @ SAC | 34,1 % | 110 : 98 | ✓ |
+| 2026-10-16 | DEN @ LAL | 53,9 % | 121 : 106 | ✗ |
+| 2026-10-16 | UTA @ PHX | 78,0 % | 119 : 116 | ✗ |
+| 2026-10-16 | POR @ GSW | 44,7 % | 118 : 128 | ✗ |
+| 2026-10-16 | SAC @ SAS | 90,5 % | 97 : 126 | ✓ |
+| 2026-10-16 | WAS @ NOP | 75,9 % | 106 : 107 | ✓ |
+| 2026-10-16 | CHA @ MEM | 26,4 % | 98 : 117 | ✗ |
+| 2026-10-16 | MIN @ CHI | 40,4 % | 116 : 133 | ✗ |
+| 2026-10-16 | ATL @ DAL | 41,8 % | 135 : 111 | ✓ |
+| 2026-10-16 | MIL @ IND | 61,5 % | 128 : 127 | ✗ |
+| 2026-10-16 | TOR @ DET | 76,8 % | 125 : 129 | ✓ |
