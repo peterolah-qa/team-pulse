@@ -1,0 +1,50 @@
+{
+ "games": {
+  "2026020135": {
+   "game_id": "2026020135",
+   "date": "2026-10-18",
+   "tipoff_utc": "2026-10-18T22:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.65,
+   "tip": "MIN",
+   "home": {
+    "team": "MIN",
+    "elo": 1543.3,
+    "reasons": {}
+   },
+   "away": {
+    "team": "CBJ",
+    "elo": 1499.0,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-17T08:17:27+00:00"
+  },
+  "2026020136": {
+   "game_id": "2026020136",
+   "date": "2026-10-18",
+   "tipoff_utc": "2026-10-19T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.384,
+   "tip": "CAR",
+   "home": {
+    "team": "CGY",
+    "elo": 1449.3,
+    "reasons": {}
+   },
+   "away": {
+    "team": "CAR",
+    "elo": 1600.0,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-17T08:17:27+00:00"
+  }
+ }
+}
