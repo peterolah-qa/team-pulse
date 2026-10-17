@@ -2412,6 +2412,274 @@
      }
     ]
    }
+  },
+  "0012600062": {
+   "game_id": "0012600062",
+   "espn_id": "401908948",
+   "date": "2026-10-16",
+   "kind": "preseason",
+   "home": "PHX",
+   "away": "UTA",
+   "pts_home": 116,
+   "pts_away": 119,
+   "box": {
+    "UTA": [
+     {
+      "player": "Darryn Peterson",
+      "min": 29,
+      "pts": 13,
+      "reb": 6,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Lauri Markkanen",
+      "min": 27,
+      "pts": 19,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jaxson Hayes",
+      "min": 25,
+      "pts": 6,
+      "reb": 7,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Keyonte George",
+      "min": 23,
+      "pts": 13,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jaren Jackson Jr.",
+      "min": 21,
+      "pts": 17,
+      "reb": 3,
+      "ast": 0,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Ace Bailey",
+      "min": 21,
+      "pts": 12,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Brice Sensabaugh",
+      "min": 17,
+      "pts": 16,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Svi Mykhailiuk",
+      "min": 17,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Okogie",
+      "min": 17,
+      "pts": 2,
+      "reb": 2,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Collier",
+      "min": 17,
+      "pts": 2,
+      "reb": 5,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Green",
+      "min": 8,
+      "pts": 8,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kyle Filipowski",
+      "min": 8,
+      "pts": 6,
+      "reb": 7,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mo Bamba",
+      "min": 5,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Harrison Ingram",
+      "min": 3,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "PHX": [
+     {
+      "player": "Devin Booker",
+      "min": 26,
+      "pts": 16,
+      "reb": 3,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Khaman Maluach",
+      "min": 24,
+      "pts": 7,
+      "reb": 12,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Dillon Brooks",
+      "min": 23,
+      "pts": 18,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jalen Green",
+      "min": 23,
+      "pts": 18,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Miles Bridges",
+      "min": 21,
+      "pts": 8,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Collin Gillespie",
+      "min": 20,
+      "pts": 6,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ryan Dunn",
+      "min": 17,
+      "pts": 0,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Duop Reath",
+      "min": 15,
+      "pts": 8,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamaree Bouyea",
+      "min": 14,
+      "pts": 12,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jordan Goodwin",
+      "min": 14,
+      "pts": 10,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Koby Brea",
+      "min": 12,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Rasheer Fleming",
+      "min": 12,
+      "pts": 0,
+      "reb": 4,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Koa Peat",
+      "min": 10,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Pat Spencer",
+      "min": 9,
+      "pts": 8,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     }
+    ]
+   }
   }
  }
 }
