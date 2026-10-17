@@ -519,6 +519,283 @@
     ]
    }
   },
+  "0012600019": {
+   "game_id": "0012600019",
+   "espn_id": "401898409",
+   "date": "2026-10-16",
+   "kind": "preseason",
+   "home": "GSW",
+   "away": "POR",
+   "pts_home": 128,
+   "pts_away": 118,
+   "box": {
+    "POR": [
+     {
+      "player": "Ja Morant",
+      "min": 27,
+      "pts": 19,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Damian Lillard",
+      "min": 26,
+      "pts": 23,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Toumani Camara",
+      "min": 24,
+      "pts": 11,
+      "reb": 2,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Donovan Clingan",
+      "min": 24,
+      "pts": 6,
+      "reb": 11,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Deni Avdija",
+      "min": 23,
+      "pts": 12,
+      "reb": 4,
+      "ast": 3,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Yang Hansen",
+      "min": 20,
+      "pts": 6,
+      "reb": 7,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Scoot Henderson",
+      "min": 19,
+      "pts": 17,
+      "reb": 1,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Vit Krejci",
+      "min": 19,
+      "pts": 7,
+      "reb": 5,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Sidy Cissoko",
+      "min": 17,
+      "pts": 2,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "John Tonje",
+      "min": 12,
+      "pts": 6,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jeremy Sochan",
+      "min": 12,
+      "pts": 6,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jayson Kent",
+      "min": 12,
+      "pts": 3,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Branden Carlson",
+      "min": 5,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "GSW": [
+     {
+      "player": "Brandin Podziemski",
+      "min": 27,
+      "pts": 17,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Stephen Curry",
+      "min": 26,
+      "pts": 20,
+      "reb": 4,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Yaxel Lendeborg",
+      "min": 26,
+      "pts": 17,
+      "reb": 4,
+      "ast": 5,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Draymond Green",
+      "min": 24,
+      "pts": 7,
+      "reb": 8,
+      "ast": 10,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Gui Santos",
+      "min": 21,
+      "pts": 7,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "De'Anthony Melton",
+      "min": 19,
+      "pts": 7,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Gary Payton II",
+      "min": 17,
+      "pts": 8,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Georges Niang",
+      "min": 16,
+      "pts": 13,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Will Richard",
+      "min": 16,
+      "pts": 2,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Al Horford",
+      "min": 15,
+      "pts": 15,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Charles Bassey",
+      "min": 8,
+      "pts": 6,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Graham Ike",
+      "min": 8,
+      "pts": 2,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "LJ Cryer",
+      "min": 6,
+      "pts": 5,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyler Burton",
+      "min": 5,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Malevy Leons",
+      "min": 4,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Alex Toohey",
+      "min": 2,
+      "pts": 0,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
   "0012600021": {
    "game_id": "0012600021",
    "espn_id": "401898406",
