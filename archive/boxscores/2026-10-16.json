@@ -1036,6 +1036,274 @@
      }
     ]
    }
+  },
+  "0012600061": {
+   "game_id": "0012600061",
+   "espn_id": "401898843",
+   "date": "2026-10-16",
+   "kind": "preseason",
+   "home": "SAS",
+   "away": "SAC",
+   "pts_home": 126,
+   "pts_away": 97,
+   "box": {
+    "SAC": [
+     {
+      "player": "Zach LaVine",
+      "min": 30,
+      "pts": 20,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Domantas Sabonis",
+      "min": 30,
+      "pts": 14,
+      "reb": 10,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ben Simmons",
+      "min": 26,
+      "pts": 14,
+      "reb": 8,
+      "ast": 7,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Emanuel Sharp",
+      "min": 25,
+      "pts": 3,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 5
+     },
+     {
+      "player": "Precious Achiuwa",
+      "min": 22,
+      "pts": 13,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "De'Andre Hunter",
+      "min": 20,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Darius Acuff Jr.",
+      "min": 19,
+      "pts": 13,
+      "reb": 1,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Nique Clifford",
+      "min": 18,
+      "pts": 5,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Keegan Murray",
+      "min": 17,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jonathan Mogbo",
+      "min": 12,
+      "pts": 4,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tristen Newton",
+      "min": 12,
+      "pts": 1,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Alex Karaban",
+      "min": 5,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Daeqwon Plowden",
+      "min": 4,
+      "pts": 5,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "SAS": [
+     {
+      "player": "Stephon Castle",
+      "min": 23,
+      "pts": 13,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "De'Aaron Fox",
+      "min": 22,
+      "pts": 16,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Devin Vassell",
+      "min": 22,
+      "pts": 12,
+      "reb": 6,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Dylan Harper",
+      "min": 21,
+      "pts": 19,
+      "reb": 0,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Keldon Johnson",
+      "min": 20,
+      "pts": 15,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Victor Wembanyama",
+      "min": 17,
+      "pts": 14,
+      "reb": 8,
+      "ast": 2,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Julian Champagnie",
+      "min": 17,
+      "pts": 9,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Carter Bryant",
+      "min": 17,
+      "pts": 5,
+      "reb": 8,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tarris Reed Jr.",
+      "min": 14,
+      "pts": 2,
+      "reb": 8,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Harrison Barnes",
+      "min": 13,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Luke Kornet",
+      "min": 13,
+      "pts": 1,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Ja'Kobi Gillespie",
+      "min": 10,
+      "pts": 11,
+      "reb": 0,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Maliq Brown",
+      "min": 10,
+      "pts": 4,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "David Jones Garcia",
+      "min": 10,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jordan McLaughlin",
+      "min": 10,
+      "pts": 0,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
