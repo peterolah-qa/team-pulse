@@ -1,0 +1,255 @@
+{
+ "date": "2026-10-16",
+ "games": {
+  "0012600021": {
+   "game_id": "0012600021",
+   "espn_id": "401898406",
+   "date": "2026-10-16",
+   "kind": "preseason",
+   "home": "ORL",
+   "away": "MIA",
+   "pts_home": 136,
+   "pts_away": 115,
+   "box": {
+    "MIA": [
+     {
+      "player": "Ryan Conwell",
+      "min": 20,
+      "pts": 17,
+      "reb": 1,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Nick Richards",
+      "min": 18,
+      "pts": 9,
+      "reb": 11,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Simone Fontecchio",
+      "min": 18,
+      "pts": 8,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Andrew Wiggins",
+      "min": 15,
+      "pts": 13,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Bobby Portis",
+      "min": 15,
+      "pts": 12,
+      "reb": 5,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Nikola Jovic",
+      "min": 15,
+      "pts": 12,
+      "reb": 6,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Davion Mitchell",
+      "min": 15,
+      "pts": 7,
+      "reb": 1,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Klay Thompson",
+      "min": 15,
+      "pts": 0,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tre Donaldson",
+      "min": 11,
+      "pts": 5,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Myron Gardner",
+      "min": 11,
+      "pts": 0,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tim Hardaway Jr.",
+      "min": 9,
+      "pts": 7,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Keshad Johnson",
+      "min": 7,
+      "pts": 3,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Gabe Madsen",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kylor Kelley",
+      "min": 2,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "ORL": [
+     {
+      "player": "Paolo Banchero",
+      "min": 27,
+      "pts": 24,
+      "reb": 7,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Desmond Bane",
+      "min": 26,
+      "pts": 23,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Nikola Vucevic",
+      "min": 21,
+      "pts": 13,
+      "reb": 8,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jalen Suggs",
+      "min": 21,
+      "pts": 8,
+      "reb": 3,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Franz Wagner",
+      "min": 19,
+      "pts": 11,
+      "reb": 6,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tristan da Silva",
+      "min": 17,
+      "pts": 10,
+      "reb": 3,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Wendell Carter Jr.",
+      "min": 14,
+      "pts": 2,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamal Cain",
+      "min": 11,
+      "pts": 9,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jevon Carter",
+      "min": 8,
+      "pts": 3,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jase Richardson",
+      "min": 7,
+      "pts": 0,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Alex Morales",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Noah Penda",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
+  }
+ }
+}
