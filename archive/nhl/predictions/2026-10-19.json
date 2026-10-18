@@ -1,0 +1,88 @@
+{
+ "games": {
+  "2026020137": {
+   "game_id": "2026020137",
+   "date": "2026-10-19",
+   "tipoff_utc": "2026-10-19T23:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.572,
+   "tip": "NYR",
+   "home": {
+    "team": "NYR",
+    "elo": 1503.1,
+    "reasons": {}
+   },
+   "away": {
+    "team": "ANA",
+    "elo": 1483.0,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-18T08:15:27+00:00"
+  },
+  "2026020138": {
+   "game_id": "2026020138",
+   "date": "2026-10-19",
+   "tipoff_utc": "2026-10-19T23:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.396,
+   "tip": "COL",
+   "home": {
+    "team": "PHI",
+    "elo": 1477.5,
+    "reasons": {}
+   },
+   "away": {
+    "team": "COL",
+    "elo": 1582.1,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-18T08:15:27+00:00"
+  },
+  "2026020139": {
+   "game_id": "2026020139",
+   "date": "2026-10-19",
+   "tipoff_utc": "2026-10-19T23:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.588,
+   "tip": "TOR",
+   "home": {
+    "team": "TOR",
+    "elo": 1470.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "SJS",
+    "elo": 1441.1,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-18T08:15:27+00:00"
+  },
+  "2026020140": {
+   "game_id": "2026020140",
+   "date": "2026-10-19",
+   "tipoff_utc": "2026-10-20T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.581,
+   "tip": "UTA",
+   "home": {
+    "team": "UTA",
+    "elo": 1518.2,
+    "reasons": {}
+   },
+   "away": {
+    "team": "PIT",
+    "elo": 1497.6,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-18T08:15:27+00:00"
+  }
+ }
+}
