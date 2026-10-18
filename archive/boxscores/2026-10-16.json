@@ -1848,7 +1848,7 @@
    "kind": "preseason",
    "home": "MEM",
    "away": "CHA",
-   "pts_home": 117,
+   "pts_home": 116,
    "pts_away": 98,
    "box": {
     "CHA": [
@@ -2010,7 +2010,7 @@
      {
       "player": "Zach Edey",
       "min": 21,
-      "pts": 10,
+      "pts": 9,
       "reb": 6,
       "ast": 1,
       "blk": 1,
