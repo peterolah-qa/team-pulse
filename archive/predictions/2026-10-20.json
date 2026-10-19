@@ -1,0 +1,55 @@
+{
+ "date": "2026-10-20",
+ "games": {
+  "0022600001": {
+   "game_id": "0022600001",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-20 19:00:00+00:00",
+   "locked_at": "2026-10-19T19:01:00+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-19T19:00:51Z",
+   "neutral": false,
+   "p_home": 0.614,
+   "margin_home": 3.3,
+   "home": {
+    "team": "DET",
+    "elo": 1614.0,
+    "elo_today": 1631.4,
+    "pulse": 71.1,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 109.0,
+     "roster": 10.4,
+     "players": 0.0,
+     "fatigue": 7.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      10
+     ]
+    ]
+   },
+   "away": {
+    "team": "BOS",
+    "elo": 1606.3,
+    "elo_today": 1616.3,
+    "pulse": 68.6,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 101.3,
+     "roster": 6.7,
+     "players": 0.0,
+     "fatigue": 3.3
+    },
+    "reasons": []
+   }
+  }
+ }
+}
