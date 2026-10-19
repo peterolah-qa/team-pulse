@@ -166,6 +166,15 @@ export interface NhlResult {
   p_home: number | null;
 }
 
+export interface NhlInjury {
+  player: string;
+  pos: string | null;
+  status: "OUT" | "SUSP" | "IR" | "DTD" | "?";
+  injury: string | null; // ESPN po anglicky („Upper Body“)
+  return_date: string | null; // odhad ESPN, YYYY-MM-DD
+  updated: string | null;
+}
+
 export interface NhlPredictions {
   generated_at: string;
   beta: boolean;
@@ -174,6 +183,8 @@ export interface NhlPredictions {
   days: Record<string, NhlGame[]>;
   results: NhlResult[];
   teams: { team: string; elo: number; as_of: string }[];
+  injuries?: Record<string, NhlInjury[]> | null; // ESPN, len informácia – model NHL ich nepoužíva
+  injuries_timestamp?: string | null;
 }
 
 export interface NhlData {
