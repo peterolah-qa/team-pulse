@@ -1,0 +1,46 @@
+{
+ "games": {
+  "2026020152": {
+   "game_id": "2026020152",
+   "date": "2026-10-21",
+   "tipoff_utc": "2026-10-21T23:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.607,
+   "tip": "BUF",
+   "home": {
+    "team": "BUF",
+    "elo": 1536.5,
+    "reasons": {}
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1480.5,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-20T08:15:28+00:00"
+  },
+  "2026020153": {
+   "game_id": "2026020153",
+   "date": "2026-10-21",
+   "tipoff_utc": "2026-10-21T23:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.544,
+   "tip": "OTT",
+   "home": {
+    "team": "OTT",
+    "elo": 1530.4,
+    "reasons": {}
+   },
+   "away": {
+    "team": "FLA",
+    "elo": 1517.8,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-20T08:15:28+00:00"
+  }
+ }
+}
