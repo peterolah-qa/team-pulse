@@ -1,0 +1,219 @@
+{
+ "date": "2026-10-20",
+ "games": {
+  "0022600001": {
+   "game_id": "0022600001",
+   "espn_id": "401909088",
+   "date": "2026-10-20",
+   "kind": "regular",
+   "home": "DET",
+   "away": "BOS",
+   "pts_home": 121,
+   "pts_away": 113,
+   "box": {
+    "BOS": [
+     {
+      "player": "Jayson Tatum",
+      "min": 38,
+      "pts": 13,
+      "reb": 4,
+      "ast": 11,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Derrick White",
+      "min": 36,
+      "pts": 17,
+      "reb": 1,
+      "ast": 8,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Paul George",
+      "min": 31,
+      "pts": 38,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 5
+     },
+     {
+      "player": "Payton Pritchard",
+      "min": 28,
+      "pts": 17,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Neemias Queta",
+      "min": 22,
+      "pts": 3,
+      "reb": 4,
+      "ast": 2,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Sam Hauser",
+      "min": 18,
+      "pts": 11,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Baylor Scheierman",
+      "min": 18,
+      "pts": 8,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mitchell Robinson",
+      "min": 18,
+      "pts": 4,
+      "reb": 3,
+      "ast": 1,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Jordan Walsh",
+      "min": 13,
+      "pts": 0,
+      "reb": 6,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Hugo Gonzalez",
+      "min": 10,
+      "pts": 0,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Luka Garza",
+      "min": 8,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "DET": [
+     {
+      "player": "Cade Cunningham",
+      "min": 35,
+      "pts": 22,
+      "reb": 4,
+      "ast": 8,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Ausar Thompson",
+      "min": 33,
+      "pts": 11,
+      "reb": 11,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Duren",
+      "min": 28,
+      "pts": 22,
+      "reb": 9,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Duncan Robinson",
+      "min": 28,
+      "pts": 21,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "John Collins",
+      "min": 25,
+      "pts": 6,
+      "reb": 5,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Isaiah Joe",
+      "min": 19,
+      "pts": 8,
+      "reb": 2,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Javonte Green",
+      "min": 18,
+      "pts": 19,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kevin Huerter",
+      "min": 18,
+      "pts": 3,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Paul Reed",
+      "min": 17,
+      "pts": 6,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Daniss Jenkins",
+      "min": 15,
+      "pts": 3,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ronald Holland II",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
