@@ -1,6 +1,10 @@
 # Ostrá prevádzka: vyhodnotenie predpovedí
 
-Zo základnej časti zatiaľ nie je uložená žiadna predpoveď. Sezóna začína 20. 10.
+Základná časť: 2026-10-20 – 2026-10-20 · uložené predpovede 3 · s výsledkom 0 · čaká na výsledok 3
+
+Odohrané zápasy bez uloženej predpovede: **0**
+
+Zatiaľ žiadny zápas s výsledkom.
 
 ## Príprava (skúška archívu, mimo G2)
 
