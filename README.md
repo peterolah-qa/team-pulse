@@ -4,22 +4,24 @@
 [![Appka](https://github.com/peterolah-qa/team-pulse/actions/workflows/app.yml/badge.svg)](https://github.com/peterolah-qa/team-pulse/actions/workflows/app.yml)
 [![Predikcie](https://github.com/peterolah-qa/team-pulse/actions/workflows/predict.yml/badge.svg)](https://github.com/peterolah-qa/team-pulse/actions/workflows/predict.yml)
 
-**V akom stave je NBA team pred zápasom?** Team Pulse to vyhodnotí v 4 úrovniach
-(Silný / Stabilný / Oslabený / Kritický), povie prečo, ako veľmi si je istý
-a čo sa zmení, ak otázny hráč nenastúpi.
+**V akom stave je team pred zápasom a kto má väčšiu šancu vyhrať?** Team Pulse to pri NBA vyhodnotí
+v 4 úrovniach (Silný / Stabilný / Oslabený / Kritický), povie prečo, ako veľmi si je istý a čo sa zmení,
+ak otázny hráč nenastúpi. NHL je v appke ako beta, F1 sa meria naostro mimo appky.
 
 **→ [peterolah-qa.github.io/team-pulse](https://peterolah-qa.github.io/team-pulse/)** (appka sa dá nainštalovať na mobil)
 
 > *In English:* a personal, non-commercial project. It is a web app (PWA) that rates each NBA team's
-> condition before a game. It uses an Elo model replicated from FiveThirtyEight, plus learned layers for
-> player availability, fatigue and roster strength. Everything runs on free data and free infrastructure.
+> condition before a game and gives the model's win probability, with NHL in beta. The NBA model is an Elo
+> model replicated from FiveThirtyEight plus learned layers for player availability, fatigue and roster
+> strength; the NHL model is Elo plus fatigue. Everything runs on free data and free infrastructure.
 > The project also serves as a QA-automation portfolio piece: see [Testing](#testovanie).
 
-![Mobilné obrazovky: Zápasy, Tipy, Výsledky, Zápas, Team](docs/screenshots/mobile.jpg)
+![Mobilné obrazovky: Zápasy (karty), Tipy, Teamy, detail NHL zápasu, Model](docs/screenshots/mobile.jpg)
 
 Team Pulse je len na orientáciu. **Neukazuje kurzy a neodkazuje na stávkové kancelárie.** „Tip“ v appke
 je team, ktorému model dáva väčšiu šancu na výhru; karta Tipy ich len zoradí podľa šance a ukáže,
-s akou šancou vyjdú všetky naraz. Nie je spojený s NBA ani s jej klubmi a nepoužíva ich logá.
+s akou šancou vyjdú všetky naraz. Nie je spojený s NBA, NHL ani s ich klubmi a nepoužíva ich logá
+(len farby dresov a skratky).
 
 ---
 
@@ -27,51 +29,83 @@ s akou šancou vyjdú všetky naraz. Nie je spojený s NBA ani s jej klubmi a ne
 
 | Obrazovka | Obsah |
 |---|---|
-| **Zápasy** | najbližšie zápasy po dňoch v našom čase: tip na víťaza, šanca oboch teamov aj ako pruh, chýbajúci hráči |
-| **Tipy** | favoriti zápasov, ktoré ešte nezačali, od najväčšej šance nadol; pri každom riadku a v grafe šanca, že vyjdú všetky tipy od prvého po daný (súčin šancí) |
+| **Zápasy** | pás dní (počet zápasov a najistejší tip dňa), zápasy ako **balíček kariet** (švih do strán, šípky, „Zápas 2 z 3“) alebo zoznam; na karte šanca, tip, Pulse teamov a najviac 4 dôvody v Elo bodoch v prospech tipu; vedľa prehľad dňa (šanca, že vyjdú všetky tipy dňa, najistejší tip, liga podľa formy, model) |
+| **Tipy** | favoriti zápasov, ktoré ešte nezačali, od najväčšej šance nadol; ukazovatele (najistejší tip, počet, všetky naraz) a graf: stĺpec = šanca tipu, čiara = šanca, že vyjdú všetky tipy od prvého po daný (súčin šancí) |
 | **Výsledky** | dohrané zápasy posledných dní so skóre a naším tipom pred zápasom (nevyšiel = červený); v detaile štatistiky hráčov |
-| **Zápas** | tip a šanca, prečo (najviac 4 dôvody), čo ak otázny hráč nenastúpi, forma teamov s grafom Pulse; vrstvy modelu po rozkliknutí |
+| **Zápas (NBA)** | tip a šanca, prečo (najviac 4 dôvody), čo ak otázny hráč nenastúpi, forma teamov s grafom Pulse; vrstvy modelu po rozkliknutí |
+| **Zápas (NHL)** | istota tipu, **prečo X %** v Elo bodoch (súčet presne sedí na zamknutú šancu), Elo trend, odpočinok a cestovanie, forma v sezóne, porovnanie s poradím v lige, vzájomné zápasy, chýbajúci hráči, zdieľanie a **Sledovať zápas** |
 | **Team** | Pulse a poradie podľa formy, najbližšie zápasy s našou šancou, posledné výsledky, súpiska so zranenými navrchu |
-| **Teamy** | liga rozdelená na Silní / Stabilní / Oslabení / Kritickí, poradie podľa Pulse |
-| **Model** | presnosť na neznámych zápasoch a kalibrácia; ako sa model učil po rozkliknutí |
+| **Teamy** | liga v 4 úrovniach Silní / Stabilní / Oslabení / Kritickí ako karusel so záložkami (na počítači 4 stĺpce); pri teame Pulse a posun oproti normálu s hlavným dôvodom |
+| **Model** | presnosť, log loss a Brier na neznámych zápasoch, kalibrácia, prínos každej vrstvy modelu; váhy po rozkliknutí |
 
-**NHL (beta)** – prepínač NBA / NHL hore: zápasy, tipy, výsledky (pp = po predĺžení, sn = po nájazdoch),
-detail zápasu (Elo, domáce prostredie, únava), liga podľa Ela a model. Tipy zamyká ranná NHL úloha na Macu
-(`archive/nhl/predictions`), GitHub Actions k nim pri každom builde pridá výsledky z API NHL
-(`team_pulse.nhl.app_data`). Označenie beta zmizne po prejdení brány G2-NHL (`docs/gate-nhl-G2.md`).
-
-Na počítači sa zoznamy rozložia do dvoch stĺpcov. Appka má tmavú aj svetlú tému podľa nastavenia systému.
+**Vzhľad („Luminous Pulse“):** tmavý analytický terminál, farba nesie význam. Úrovne formy majú vlastné
+farby (Silný smaragd, Stabilný indigo, Oslabený jantár, Kritický rubín), tip je fialovo-modrá žiara,
+nie stávková žltá. Odznak teamu je kruh vo farbách dresu so skratkou a prstencom: pri NBA Pulse, pri NHL
+šanca na výhru. Písmo Space Grotesk a Inter, číslice rovnako široké. Na počítači sú Zápasy prehľad
+v dvoch stĺpcoch. Appka má tmavú aj svetlú tému podľa nastavenia systému.
 
 **Pulse** = 50 + (Elo dnes − 1505) / 6, teda 50 znamená priemerný team. Hranice úrovní sú 70 / 50 / 30.
 Team, ktorý je dnes aspoň o 60 Elo pod svojím normálom (napr. mu chýba hviezda), padne o úroveň nižšie.
 
-![Desktop](docs/screenshots/desktop.png)
+**NHL (beta)** – prepínač NBA / NHL hore. Tipy zamyká ranná NHL úloha na Macu (`archive/nhl/predictions`),
+GitHub Actions k nim pri každom builde pridá výsledky z API NHL, zranenia z ESPN a kontext zápasu
+(`team_pulse.nhl.context`): z rozpisov klubov znova spočíta vstupy modelu a overí, že dajú presne zamknutú
+šancu, a doplní formu, odpočinok, vzájomné zápasy a štatistiky NHL (len keď počet zápasov a výhier sedí
+s rozpisom). Tlačidlo **Sledovať zápas** ukáže v appke výsledok a či tip vyšiel, keď sa zápas dohrá.
+Označenie beta zmizne po prejdení brány G2-NHL ([docs/gate-nhl-G2.md](docs/gate-nhl-G2.md)).
+
+![Počítač: Zápasy ako prehľad dňa](docs/screenshots/desktop.png)
+
+## Športy a brány
+
+Každý šport má vlastný model a vlastné brány, hranice sa stanovia pred meraním ([plán](docs/sporty.md)).
+
+| Šport | Model | Backtest (G0) | Ostré meranie (G2) | Stav |
+|---|---|---|---|---|
+| **NBA** | Elo + únava + hráči + sila súpisky | ✅ [G0](docs/gate-G0.md), [G1](docs/gate-G1.md) | 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. ([G2](docs/gate-G2.md)) | v appke |
+| **NHL** | Elo + únava | ✅ [G0-NHL](docs/gate-nhl-G0.md) | 13. – 26. 10. 2026, vyhodnotenie 27. 10. ([G2-NHL](docs/gate-nhl-G2.md)); predbežne k 20. 10. všetky kritériá splnené (51 zápasov, log loss 0,6449, hranica 0,7101) | v appke ako beta |
+| **F1** | Elo jazdca a tímu + kvalifikácia | ❌ [G0-F1](docs/gate-f1-G0.md): horší než kvalifikácia | model B naostro mimo appky, 6 pretekov 25. 10. – 6. 12. 2026 ([docs/gate-f1-shadow.md](docs/gate-f1-shadow.md)) | tip po kvalifikácii, `f1.yml` |
+| **Tipos extraliga** | hokejové Elo z NHL | – | – | čaká na súhlas SZĽH so zdrojom dát |
+
+Brány G2 vyhodnocuje skript nezávislým prepočtom z archívu, nie z reportu:
+`uv run python -m team_pulse.gate_g2 nba|nhl` → `reports/gate_g2_<šport>.md`. Počas G2 sa model,
+predikcie, archív, ranné úlohy ani `predict.yml` daného športu nemenia; appka (obrazovky) áno, len so
+zelenými testami.
 
 ## Ako to funguje
 
 ```mermaid
 flowchart LR
-  subgraph Mac["Mac (každý deň 10:00, launchd)"]
+  subgraph Mac["Mac (každé ráno, launchd)"]
     A[nba_api: výsledky, box score] --> B[Elo + hodnoty hráčov]
-    B --> C[state/state.json]
+    B --> C["state/state.json"]
+    N[API NHL: história a rozpis] --> M[NHL Elo + únava, tipy]
+    M --> T["archive/nhl/predictions"]
   end
-  C -->|git push| D
-  subgraph GH["GitHub Actions (každých 15 min)"]
-    D[ESPN: zranenia] --> E[predikcie → JSON]
-    E --> F[build appky: Vite + TypeScript]
+  C -->|"git push 10:00"| D
+  T -->|"git push 10:15"| D
+  subgraph GH["GitHub Actions (každých 15 min + cron-job.org)"]
+    D[ESPN: zranenia, výsledky] --> E[NBA predikcie + archív]
+    E --> K[NHL: výsledky, zranenia, kontext zápasu]
+    K --> F[build appky: Vite + TypeScript]
   end
   F --> G[GitHub Pages: PWA]
   H[Kontrola zdrojov, denne] -.->|chyba = e-mail| I((ja))
+  J["F1: sobota a nedeľa, f1.yml"] -.-> L["archive/f1, reports/f1_live.md"]
 ```
 
-- **Mac** robí ťažkú prácu, lebo stats.nba.com často blokuje požiadavky z cloudových serverov. Výsledkom je malý súbor stavu.
-- **GitHub Actions** každých 15 minút stiahne zranenia, prepočíta predpovede a nasadí appku.
-- **Archív predpovedí:** do 24 hodín pred zápasom cloud uloží predpoveď do `archive/predictions/`, kým zápas nezačne, prepisuje ju novšou; po začiatku sa už nemení. (GitHub plánované behy často vynecháva, preto široké okno.) Mac ráno doplní výsledky (`archive/results/`) a prepíše [reports/live.md](reports/live.md) s presnosťou, log loss a kalibráciou ostrej prevádzky.
-- **Výsledky:** na obrazovke Dnes sú dohrané zápasy posledných 3 hracích dní so skóre a naším tipom pred zápasom; v detaile štatistiky hráčov (minúty, body, doskoky, asistencie, bloky, zisky). Cloud ich berie z ESPN hneď po zápase (aj z prípravy) a ukladá do `archive/boxscores/`; ranný box score z Macu (nba_api) má prednosť.
+- **Mac** robí ťažkú prácu, lebo stats.nba.com často blokuje požiadavky z cloudových serverov. NBA úloha
+  (10:00) zapíše malý súbor stavu, NHL úloha (10:15) vyhodnotí noc a zamkne tipy na ďalšie zápasy.
+- **GitHub Actions** každých 15 minút stiahne zranenia, prepočíta predpovede a nasadí appku. Plánované behy
+  GitHubu často meškajú, preto ich každých 30 minút spúšťa aj cron-job.org (`workflow_dispatch`).
+- **Archív predpovedí:** do 24 hodín pred zápasom cloud uloží predpoveď do `archive/predictions/`, kým zápas nezačne, prepisuje ju novšou; po začiatku sa už nemení. Archív sa commitne pred buildom appky, takže chyba appky ho nepokazí. Mac ráno doplní výsledky (`archive/results/`) a prepíše [reports/live.md](reports/live.md) s presnosťou, log loss a kalibráciou ostrej prevádzky (NHL: [reports/nhl_live.md](reports/nhl_live.md)).
+- **Výsledky:** dohrané zápasy posledných dní so skóre a naším tipom pred zápasom; v detaile štatistiky hráčov (minúty, body, doskoky, asistencie, bloky, zisky). Cloud ich berie z ESPN hneď po zápase (aj z prípravy) a ukladá do `archive/boxscores/`; ranný box score z Macu (nba_api) má prednosť.
 - **Príprava:** prípravné zápasy appka ukazuje so štítkom PRÍPRAVA. Do Ela, únavy v sezóne ani do vyhodnotenia sa nerátajú; v archíve slúžia ako skúška pred sezónou.
 - **Náklady: 0 €.** Repo je verejné, Pages a Actions sú zadarmo a všetky zdroje dát sú voľné.
 
 ## Model
+
+### NBA
 
 Základ je **Elo podľa FiveThirtyEight**. Je replikovaný a overený proti ich archívu: K = 20 · (MOV + 3)^0,8 / (7,5 + 0,006 · D),
 výhoda domáceho prostredia a prenos medzi sezónami 0,75 · R + 0,25 · 1505. Nad ním sú naučené vrstvy:
@@ -96,26 +130,38 @@ Pre porovnanie: aj stávkové kancelárie trafia víťaza len v 68 – 70 % záp
 [reports/backtest.md](reports/backtest.md), [reports/learned.md](reports/learned.md) a v bránach
 [G0](docs/gate-G0.md), [G1](docs/gate-G1.md), [G3](docs/gate-G3.md).
 
+### NHL
+
+Hokejové Elo (K 6, domáca výhoda 30, prenos do sezóny 0,8) + **únava** (back-to-back, 3. zápas za 4 dni,
+odpočinok, posun pásma na východ, dĺžka výjazdu), naučené na 21 612 zápasoch. Test 2023/24 – 2025/26:
+presnosť 57,6 %, log loss 0,6713 (samotné Elo 0,6730, „vždy domáci“ 54,3 %). Hokej je náhodnejší než basketbal.
+Zamietnuté, lebo nezlepšili log loss o 0,0005: Glicko-2 namiesto Ela, očakávaný aj skutočný brankár
+([reports/nhl_learned.md](reports/nhl_learned.md), [reports/nhl_glicko.md](reports/nhl_glicko.md),
+[reports/nhl_goalies.md](reports/nhl_goalies.md)).
+
 ## Testovanie
 
-Projekt je zároveň ukážka QA automatizácie. Testuje sa model, dáta aj appka:
+Projekt je zároveň ukážka QA automatizácie. Testuje sa model, dáta, prevádzka aj appka:
 
 | Čo | Ako | Kde |
 |---|---|---|
-| Vzorce Elo | unit testy s ručne spočítanými príkladmi | `tests/test_elo.py` |
+| Vzorce Elo | unit testy s ručne spočítanými príkladmi | `tests/test_elo.py`, `tests/test_nhl_elo.py` |
 | Vlastnosti modelu | property-based testy (Hypothesis): Elo je hra s nulovým súčtom, pravdepodobnosti sú v 0 – 1 a dávajú spolu 1 | `tests/test_elo_properties.py` |
 | Replikácia | porovnanie s archívom FiveThirtyEight od sezóny 2000/01 | `tests/test_replication_538.py` |
 | Únik dát z budúcnosti | žiadny vstup nesmie byť novší ako začiatok zápasu | `tests/test_no_leakage.py` |
-| Živé zdroje | kontraktové testy ESPN a NBA na uložených odpovediach, test, že sa nikdy nepoužijú kurzy | `tests/test_live_contracts.py` |
-| Prevádzka | denná kontrola zdrojov a čerstvosti stavu, pri chybe príde e-mail | `.github/workflows/health.yml` |
-| Appka E2E | Playwright na mobile (Pixel 7) aj desktope: dni v našom čase, tip a percentá spolu 100 %, výsledky (nevyšiel = červený), navigácia, prázdne a chybové stavy, vodorovné posúvanie na 360 px | `app/tests/e2e.spec.ts` |
-| Prístupnosť | axe-core, WCAG 2.1 A + AA, na každej obrazovke 0 porušení; ovládanie klávesnicou | `app/tests/a11y.spec.ts` |
-| Vizuálna regresia | screenshoty 8 obrazoviek × 2 zariadenia, pevný čas testu | `app/tests/visual.spec.ts` |
+| Živé zdroje | kontraktové testy ESPN a NBA na uložených skutočných odpovediach, test, že sa nikdy nepoužijú kurzy; NHL a F1 rovnako na uložených odpovediach API | `tests/test_live_contracts.py`, `tests/test_nhl_*.py`, `tests/test_f1*.py` |
+| Detail NHL zápasu | rozpis → skutočná predikcia → kontext: rozpad tipu musí dať presne zamknutú šancu, odpočinok rovnaké čísla ako model; sonda na skutočných tipoch | `tests/test_nhl_context.py`, `scripts/probe_nhl_context.py` |
+| Brány G2 | vyhodnotenie nezávislým prepočtom; testy, že upravený report sa odhalí | `tests/test_gate_g2.py` |
+| Prevádzka | denná kontrola zdrojov a čerstvosti stavu, pri chybe príde e-mail; poistka, že archív tipov sa naozaj pushol | `.github/workflows/health.yml`, `predict.yml` |
+| Appka E2E | Playwright na mobile (Pixel 7) aj desktope: dni v našom čase, tip a percentá spolu 100 %, pás dní, balíček kariet (švih, šípky, klávesnica), prehľad dňa, Teamy, výsledky (nevyšiel = červený), Sledovať zápas, zdieľanie, prázdne a chybové stavy, vodorovné posúvanie na 360 px | `app/tests/e2e.spec.ts`, `screens.spec.ts`, `nhl.spec.ts` |
+| Prístupnosť | axe-core, WCAG 2.1 A + AA, 16 obrazoviek v tmavej aj svetlej téme, 0 porušení; ovládanie klávesnicou | `app/tests/a11y.spec.ts` |
+| Vizuálna regresia | screenshoty 14 obrazoviek × 2 zariadenia, pevný čas testu | `app/tests/visual.spec.ts` |
 
-Lighthouse (mobil): **Performance 100 · Accessibility 100 · Best Practices 100 · SEO 100.**
+Spolu pytest 410 testov a Playwright 147 + 28 vizuálnych. Lighthouse (mobil) pri bráne G3:
+**Performance 100 · Accessibility 100 · Best Practices 100 · SEO 100.**
 
 CI beží pri každom pushi: ruff (lint + formát), pytest, typová kontrola, build a Playwright.
-Pred každým commitom sa spustí pre-commit (ruff, kontrola privátnych kľúčov a veľkých súborov).
+Pred každým commitom sa spustí pre-commit (ruff, kontrola privátnych kľúčov, veľkých súborov a koncov riadkov).
 Na GitHube je zapnutý secret scanning s push protection.
 
 ## Spustenie lokálne
@@ -124,16 +170,19 @@ Na GitHube je zapnutý secret scanning s push protection.
 # Python časť (Python 3.12, uv)
 uv sync
 uv run pytest
-uv run python -m team_pulse.state        # stav zo stiahnutých dát
-uv run python -m team_pulse.predict      # JSON pre appku → app/public/data
+uv run python -m team_pulse.state              # NBA stav zo stiahnutých dát
+uv run python -m team_pulse.predict            # NBA JSON pre appku → app/public/data
+uv run python -m team_pulse.nhl.daily          # NHL: vyhodnotenie noci + tipy (z Macu)
+uv run python -m team_pulse.nhl.app_data       # NHL JSON pre appku → app/public/data/nhl
+uv run python -m team_pulse.gate_g2 nba        # vyhodnotenie brány G2 (aj nhl)
 
 # appka (Node 22)
 cd app
 npm install
-npx playwright install chromium          # len prvýkrát, pre testy
-npm run dev                              # http://localhost:5173
-npm test                                 # E2E + prístupnosť
-npm run test:visual                      # vizuálna regresia (screenshoty sú z Linuxu/CI)
+npx playwright install chromium                # len prvýkrát, pre testy
+npm run dev                                    # http://localhost:5173
+npm test                                       # E2E + prístupnosť
+npm run test:visual                            # vizuálna regresia (screenshoty sú z Linuxu/CI)
 ```
 
 Ranné úlohy na Macu (launchd): NBA `bash scripts/install_daily.sh` (10:00), NHL tipy
@@ -142,37 +191,48 @@ Ranné úlohy na Macu (launchd): NBA `bash scripts/install_daily.sh` (10:00), NH
 ## Štruktúra
 
 ```
-src/team_pulse/     model (elo, players, schedule, learned), stav, predikcie, denná úloha
-src/team_pulse/live ESPN zranenia a výsledky, NBA rozpis, párovanie mien
-tests/              pytest + Hypothesis + fixtures živých zdrojov
-app/                PWA: Vite + TypeScript bez frameworku, Playwright testy
-models/v1.json      naučený model (váhy, kalibrácia, metriky)
-state/state.json    denný stav z Macu
-archive/            posledné predpovede pred zápasmi a výsledky z ESPN (cloud), výsledky pre report (Mac)
-reports/, docs/     backtest, naučené váhy, vyhodnotenia brán
+src/team_pulse/      NBA model (elo, players, schedule, learned), stav, predikcie, denná úloha, brány G2
+src/team_pulse/live  ESPN zranenia a výsledky, NBA rozpis, párovanie mien
+src/team_pulse/nhl   NHL: história, Elo + únava, tipy, archív, dáta a kontext zápasu pre appku
+src/team_pulse/f1    F1: Jolpica, model B, tip po kvalifikácii, vyhodnotenie
+tests/               pytest + Hypothesis + uložené odpovede živých zdrojov
+app/                 PWA: Vite + TypeScript bez frameworku, Playwright testy
+models/              naučené modely (v1.json NBA, nhl_v1.json), váhy, kalibrácia, metriky
+state/               denný stav NBA z Macu, stav F1
+archive/             zamknuté tipy pred zápasmi a výsledky (NBA, nhl/, f1/)
+reports/, docs/      backtesty, ostré merania, brány, denník projektu (docs/journal.md)
 ```
 
 ## Dáta
 
-Voľné zdroje: [nba_api](https://github.com/swar/nba_api) (stats.nba.com), verejné endpointy ESPN (zranenia, výsledky)
-a archív Elo FiveThirtyEight ([Neil Paine](https://github.com/Neil-Paine-1/NBA-elo)).
-Stiahnuté dáta sa necommitujú. Mená hráčov v testoch a na screenshotoch sú vymyslené.
+Voľné zdroje: [nba_api](https://github.com/swar/nba_api) (stats.nba.com), verejné endpointy ESPN (zranenia, výsledky),
+API NHL (`api-web.nhle.com`, `api.nhle.com/stats`), [Jolpica](https://github.com/jolpica/jolpica-f1) pre F1
+(CC BY-NC-SA 4.0) a archív Elo FiveThirtyEight ([Neil Paine](https://github.com/Neil-Paine-1/NBA-elo)).
+Stiahnuté dáta sa necommitujú, len malé uložené odpovede pre testy. Mená hráčov v testoch a na screenshotoch
+sú vymyslené, čísla na screenshotoch sú testovacie.
 
 ## Obmedzenia
 
 - Backtest pozná absencie len z box score (kto nehral), nie zo skutočného injury reportu pred zápasom.
-- Kalibrácia je najslabšia v pásme 60 – 70 %.
+- Kalibrácia NBA je najslabšia v pásme 60 – 70 %.
 - Začiatok sezóny je pre model ťažší: v backteste mal v prvých 14 dňoch log loss 0,634 (celá sezóna 0,597),
   lebo Elo prenesené cez leto a nové súpisky sú menej presné (`reports/g2_reference.md`).
+- NHL model nepozná brankára ani zranenia (zranenia sú v appke len informácia), štartujúci brankár
+  ráno pri zamykaní tipov nie je známy.
+- Sledovať zápas a upozornenia fungujú v appke (pamäť v zariadení), nie ako push notifikácie mimo nej.
 
 ## Plán
 
 - [x] 0a – replikácia Elo (G0) · [x] 0b – vrstvy B, C, sila súpisky (G1) · [x] 1 – dátový agent a stav
-- [x] 2 – PWA appka (G3)
-- [ ] G2 – 14 dní ostrej prevádzky 20. 10. – 2. 11. 2026, kritériá vopred v [docs/gate-G2.md](docs/gate-G2.md)
-- [x] upozornenia v appke na dohrané zápasy
-- [ ] ďalšie športy: NHL (v appke ako beta, G2-NHL 13. – 26. 10.), F1, Tipos extraliga – [plán](docs/sporty.md)
+- [x] 2 – PWA appka (G3) · [x] upozornenia v appke na dohrané zápasy
+- [ ] G2 NBA – 14 dní ostrej prevádzky 20. 10. – 2. 11. 2026, kritériá vopred v [docs/gate-G2.md](docs/gate-G2.md)
+- [x] NHL v appke ako beta · [ ] G2-NHL 13. – 26. 10. 2026 (vyhodnotenie 27. 10.)
+- [ ] F1 – model B naostro mimo appky do 6. 12. 2026 · [ ] Tipos extraliga – čaká na súhlas SZĽH
+- [x] redizajn: vzhľad, detail NHL, pás dní, karty, prehľad dňa, Tipy, Teamy, Model
+- [ ] redizajn: detail NBA, Moje teamy, Bilancia tipov naostro, Sledovať pre NBA, nová ikona
 - [ ] neskôr: Supabase (história predpovedí)
+
+Čo sa kedy urobilo a prečo: [docs/journal.md](docs/journal.md). Úlohy: boardy „Team Pulse“ a „Team Pulse – športy“.
 
 ---
 

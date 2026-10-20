@@ -6,6 +6,11 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 20. 10. 2026
 
+- **README aktualizovaný** na stav k 20. 10.: NBA aj NHL v appke, nový vzhľad a obrazovky (pás dní, karty,
+  prehľad dňa, detail NHL, Teamy v 4 úrovniach, Model), tabuľka športov a brán (NBA G2, NHL G2 predbežne
+  splnené, F1 model B mimo appky, extraliga čaká na SZĽH), NHL model, testy (pytest 410, Playwright 147 + 28),
+  štruktúra, zdroje dát, obmedzenia, plán. Nové screenshoty `docs/screenshots/mobile.jpg` a `desktop.png`
+  (testovacie dáta appky, pevný čas testov). Lighthouse uvedený ako výsledok brány G3 (po redizajne nemeraný).
 - **Redizajn – celý ekosystém obrazoviek (Petrovo zadanie 11:58).** Smer: analytický terminál (Bloomberg,
   FiveThirtyEight), nie stávková kancelária. Peter rozhodol: karusely vnútri obrazoviek (medzi záložkami len dok),
   Zápasy na mobile ako balíček kariet s prepínačom na zoznam, všetko v jednom kroku so screenshotmi pred patchom.
