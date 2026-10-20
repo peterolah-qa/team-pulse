@@ -5,8 +5,11 @@ Tu sa nič nepočíta, model sa nemení (brána G2-NHL): len sa poskladá to, č
 Beží v GitHub Actions pri každom builde appky (predict.yml), chyba NHL nezastaví NBA.
 
   predictions.json  zápasy, ktoré sa ešte nedohrali (s tipom), výsledky za posledné dni, teamy podľa Ela,
-                    zranenia z ESPN (len informácia, model ich nepoužíva)
+                    zranenia z ESPN (len informácia, model ich nepoužíva), pri každom zápase kontext
+                    pre detail (team_pulse.nhl.context: rozpad tipu, Elo trend, forma, odpočinok,
+                    vzájomné zápasy, štatistiky)
   model.json        presnosť a vrstvy modelu (rovnaký tvar ako NBA model.json)
+  cache.json        rozpisy klubov pre ďalší beh (aby sa nesťahovali pri každom builde)
 
 Spustenie:  uv run python -m team_pulse.nhl.app_data
 """
@@ -20,9 +23,11 @@ from pathlib import Path
 
 import requests
 
+from team_pulse.model_store import load
+from team_pulse.nhl import context as cx
 from team_pulse.nhl import injuries as inj
 from team_pulse.nhl.archive import ARCHIVE, load_tips
-from team_pulse.nhl.fetch_games import FINISHED, franchise, today_et
+from team_pulse.nhl.fetch_games import FINISHED, franchise, season_of, today_et
 from team_pulse.nhl.model import MODEL
 
 OUT = Path("app/public/data/nhl")
@@ -141,6 +146,45 @@ def model_info(path: Path = MODEL) -> dict:
     }
 
 
+def add_context(
+    data: dict,
+    tips: list[dict],
+    results: list[dict],
+    now: datetime,
+    cache: dict,
+    fetch: cx.Fetch | None = None,
+    summary: dict | None = None,
+    pause: float = 0.25,
+) -> tuple[dict, list[str]]:
+    """Ku každému zápasu s tipom doplní `ctx` pre detail. Tipy sa nemenia. Vráti (nová cache, problémy).
+
+    summary: odpoveď štatistík NHL (None = nepodarilo sa ju stiahnuť, štatistiky sa vynechajú)."""
+    model = load(MODEL)
+    by_id = {t["game_id"]: t for t in tips}
+    games = [g for gs in data["days"].values() for g in gs]
+    need: dict[str, set[str]] = {}
+    for g in games:
+        for side in ("home", "away"):
+            need.setdefault(g[side]["team"], set()).add(g["game_id"])
+    season = season_of(today_et(now))
+    session = requests.Session()
+    fetch = fetch or (lambda team, year: cx.fetch_club(team, year, session))
+    cache, fetched, problems = cx.schedules(need, season, results, now, cache, fetch, pause)
+    stats: dict[str, dict] = {}
+    if summary is not None:
+        parsed = cx.team_stats(summary, cx.team_ids(cache), season)
+        stats, wrong = cx.check_stats(parsed["teams"], cache, season)
+        problems += parsed["problems"] + wrong
+    for g in games:
+        g["ctx"] = cx.game_context(by_id[g["game_id"]], tips, cache, model, stats)
+    data["context_at"] = now.isoformat(timespec="seconds")
+    data["stats_at"] = now.isoformat(timespec="seconds") if stats else None
+    verified = sum(1 for g in games if g["ctx"]["edge"]["verified"])
+    print(f"NHL kontext: {len(games)} zápasov, rozpad overený {verified}, stiahnuté rozpisy {fetched}, "
+          f"štatistiky {len(stats)} klubov")  # fmt: skip
+    return cache, problems
+
+
 def main(out: Path = OUT, archive: Path = ARCHIVE, now: datetime | None = None) -> dict:
     now = now or datetime.now(UTC)
     tips = load_tips(archive)
@@ -161,6 +205,21 @@ def main(out: Path = OUT, archive: Path = ARCHIVE, now: datetime | None = None) 
         print(f"::warning::NHL zranenia sa nepodarilo stiahnuť: {e.__class__.__name__}: {e}")
         data["injuries"], data["injuries_timestamp"] = None, None
     out.mkdir(parents=True, exist_ok=True)
+    try:
+        summary = cx.fetch_summary(season_of(today))
+    except (requests.RequestException, ValueError) as e:
+        print(f"::warning::NHL štatistiky klubov sa nepodarilo stiahnuť: {e.__class__.__name__}: {e}")
+        summary = None
+    try:
+        cache, problems = add_context(data, tips, results, now, cx.load_cache(), summary=summary)
+        for p in problems:
+            print(f"::warning::NHL kontext: {p}")
+        (out / "cache.json").write_text(json.dumps(cache, ensure_ascii=False) + "\n", encoding="utf-8")
+    except Exception as e:  # kontext je len doplnok: tipy a výsledky sa zverejnia aj bez neho
+        print(f"::warning::NHL kontext zápasov sa nepodaril: {e.__class__.__name__}: {e}")
+        for g in (g for gs in data["days"].values() for g in gs):
+            g.pop("ctx", None)
+        data["context_at"] = data["stats_at"] = None
     (out / "predictions.json").write_text(
         json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
     )

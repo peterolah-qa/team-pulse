@@ -77,14 +77,28 @@ function toastHtml(r: Result): string {
 }
 
 export function showToasts(list: Result[]): void {
-  const box = document.getElementById("toasts");
-  if (!box || !list.length) return;
+  if (!list.length) return;
   const sorted = [...list].sort((a, b) => (b.tipoff_utc ?? b.date).localeCompare(a.tipoff_utc ?? a.date));
   const shown = sorted.slice(0, MAX_TOASTS).map(toastHtml);
   if (sorted.length > MAX_TOASTS)
     shown.push(`<a class="toast more" href="#/vysledky"><span class="t-ico" aria-hidden="true">+</span><span><b>Ďalšie výsledky: ${sorted.length - MAX_TOASTS}</b></span></a>`);
-  box.innerHTML = shown.join("");
-  const clear = () => (box.innerHTML = "");
-  box.querySelectorAll("a").forEach((a) => a.addEventListener("click", clear));
+  showHtml(shown);
+}
+
+/* Hotové upozornenia (odkazy .toast). Nové sa pridajú k tým, čo ešte svietia. */
+export function showHtml(items: string[]): void {
+  const box = document.getElementById("toasts");
+  if (!box || !items.length) return;
+  const wrap = document.createElement("div");
+  wrap.style.display = "contents";
+  wrap.innerHTML = items.join("");
+  box.append(wrap);
+  const clear = () => wrap.remove();
+  wrap.querySelectorAll("a").forEach((a) => a.addEventListener("click", clear));
   window.setTimeout(clear, TOAST_MS);
+}
+
+/* Krátka správa bez odkazu (napr. „Odkaz je skopírovaný“). */
+export function say(text: string): void {
+  showHtml([`<div class="toast info"><span class="t-ico" aria-hidden="true">i</span><span>${esc(text)}</span></div>`]);
 }

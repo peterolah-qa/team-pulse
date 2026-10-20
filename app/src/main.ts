@@ -1,15 +1,22 @@
 /* Vstupný bod: načíta dáta, jednoduchý router (#/…), prepínanie obrazoviek. */
-// Len latinka + latin-ext (slovenské znaky), nie thai/devanagari – menší download.
-import "@fontsource/chakra-petch/latin-700.css";
-import "@fontsource/chakra-petch/latin-ext-700.css";
-import "@fontsource/barlow/latin-400.css";
-import "@fontsource/barlow/latin-ext-400.css";
-import "@fontsource/barlow/latin-600.css";
-import "@fontsource/barlow/latin-ext-600.css";
+// Len latinka + latin-ext (slovenské znaky), nie cyrilika ani vietnamčina – menší download.
+import "@fontsource/space-grotesk/latin-500.css";
+import "@fontsource/space-grotesk/latin-ext-500.css";
+import "@fontsource/space-grotesk/latin-600.css";
+import "@fontsource/space-grotesk/latin-ext-600.css";
+import "@fontsource/space-grotesk/latin-700.css";
+import "@fontsource/space-grotesk/latin-ext-700.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-ext-400.css";
+import "@fontsource/inter/latin-500.css";
+import "@fontsource/inter/latin-ext-500.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/inter/latin-ext-600.css";
 import "./style.css";
 
 import { loadData, loadNhl, type AppData, type NhlData, type Sport } from "./data";
-import { markViewed, showToasts, takeNew, updateBadge } from "./notify";
+import { followed, settleNhl, toggle } from "./follow";
+import { markViewed, say, showHtml, showToasts, takeNew, updateBadge } from "./notify";
 import { esc, header } from "./ui";
 import { gameView } from "./views/game";
 import { gamesView } from "./views/games";
@@ -110,6 +117,7 @@ function ensureNhl(): void {
     .then(() => {
       nhlLoading = null;
       if (parse().sport === "nhl") render();
+      if (nhl) showHtml(settleNhl(nhl.predictions.results));
     });
 }
 
@@ -148,6 +156,7 @@ function render(): void {
     nhlError = null;
     render();
   });
+  wireDetail(r);
   document.title = `${r.sport === "nhl" ? "NHL · " : ""}${r.title} · Team Pulse`;
   const prefix = r.sport === "nhl" ? "#/nhl/" : "#/";
   document.querySelectorAll<HTMLAnchorElement>(".tabbar a").forEach((a) => {
@@ -161,10 +170,47 @@ function render(): void {
   window.scrollTo(0, 0);
 }
 
+/* Detail zápasu: zdieľanie odkazu a prichytené tlačidlo „Sledovať zápas“. */
+function wireDetail(r: Route): void {
+  const follow = document.getElementById("follow") as HTMLButtonElement | null;
+  if (follow) app.dataset.cta = "";
+  else delete app.dataset.cta;
+  follow?.addEventListener("click", () => {
+    const on = toggle(follow.dataset.sport as Sport, follow.dataset.id ?? "", follow.dataset.label ?? "");
+    if (on === null) return say("Sledovanie sa v tomto prehliadači nedá uložiť (súkromné okno?).");
+    render();
+    document.getElementById("follow")?.focus();
+    say(on ? "Keď sa zápas dohrá, ukážeme ti tu výsledok a či tip vyšiel." : "Zápas už nesleduješ.");
+  });
+  document.getElementById("share")?.addEventListener("click", async () => {
+    const url = location.href;
+    const title = `${document.querySelector("h1")?.textContent?.trim() ?? r.title} · Team Pulse`;
+    try {
+      if (navigator.share) return await navigator.share({ title, url });
+    } catch (e) {
+      if (e instanceof DOMException && e.name === "AbortError") return; // používateľ zdieľanie zrušil
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      say("Odkaz na zápas je skopírovaný.");
+    } catch {
+      say(url);
+    }
+  });
+}
+
+/* Sledované NHL zápasy, ktoré sa medzičasom dohrali (NHL dáta sa kvôli tomu načítajú aj bez otvorenia NHL). */
+function settleFollowed(): void {
+  if (!followed("nhl").length) return;
+  if (!nhl) return ensureNhl();
+  showHtml(settleNhl(nhl.predictions.results));
+}
+
 /* Nové dáta: upozornenia na dohrané zápasy a číslo na záložke Výsledky. */
 function announce(): void {
   if (!data) return;
   showToasts(takeNew(data));
+  settleFollowed();
   badge();
 }
 
@@ -172,7 +218,10 @@ function announce(): void {
 async function refresh(): Promise<void> {
   if (!data || document.visibilityState !== "visible") return;
   try {
-    if (nhl) nhl = await loadNhl().catch(() => nhl);
+    if (nhl) {
+      nhl = await loadNhl().catch(() => nhl);
+      if (nhl) showHtml(settleNhl(nhl.predictions.results));
+    }
     const fresh = await loadData();
     if (fresh.predictions.generated_at === data.predictions.generated_at) return;
     data = fresh;
@@ -203,38 +252,9 @@ async function start(): Promise<void> {
   }
 }
 
-/* Jemné 3D naklonenie karty za myšou (len počítač s myšou, nie pri obmedzení pohybu). Jeden poslucháč, nič na mobile. */
-function tilt(): void {
-  if (!matchMedia("(hover: hover) and (pointer: fine)").matches || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  let card: HTMLElement | null = null;
-  let frame = 0;
-  app.addEventListener("pointermove", (e) => {
-    const el = (e.target as HTMLElement).closest<HTMLElement>(".match, .tiprow, .teamrow");
-    if (card && card !== el) {
-      card.style.removeProperty("--rx");
-      card.style.removeProperty("--ry");
-    }
-    card = el;
-    if (!el || frame) return;
-    frame = requestAnimationFrame(() => {
-      frame = 0;
-      const r = el.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
-      el.style.setProperty("--rx", `${(-y * 5).toFixed(2)}deg`);
-      el.style.setProperty("--ry", `${(x * 6).toFixed(2)}deg`);
-    });
-  });
-  app.addEventListener("pointerleave", () => {
-    card?.style.removeProperty("--rx");
-    card?.style.removeProperty("--ry");
-    card = null;
-  });
-}
-
 window.addEventListener("hashchange", render);
 document.addEventListener("visibilitychange", refresh);
 window.setInterval(refresh, 5 * 60_000);
-tilt();
 start();
 
 if (import.meta.env.PROD && "serviceWorker" in navigator) {

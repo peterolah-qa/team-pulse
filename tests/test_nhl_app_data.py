@@ -114,9 +114,15 @@ def test_main_writes_files_even_when_api_fails(tmp_path, monkeypatch):
 
     monkeypatch.setattr(ad, "fetch_results", down)
     monkeypatch.setattr(ad.inj, "fetch", down)
+    monkeypatch.setattr(ad.cx, "load_cache", lambda *_a, **_k: {})
+    monkeypatch.setattr(ad.cx, "fetch_club", down)
+    monkeypatch.setattr(ad.cx, "fetch_summary", down)
     data = ad.main(out=tmp_path / "out", archive=archive, now=NOW)
     assert data["results"] == [] and list(data["days"]) == ["2026-10-14"]
     assert data["injuries"] is None and data["injuries_timestamp"] is None
+    ctx = data["days"]["2026-10-14"][0]["ctx"]  # bez rozpisov aspoň rozpad tipu z archívu
+    assert set(ctx) == {"edge", "trend"} and ctx["edge"]["verified"] is False
+    assert data["stats_at"] is None
     assert json.loads((tmp_path / "out" / "model.json").read_text(encoding="utf-8"))["version"] == "nhl-v1"
 
 
@@ -128,6 +134,9 @@ def test_main_adds_injuries_without_touching_tips(tmp_path, monkeypatch):
     raw = json.loads((FIXTURES / "espn_nhl_injuries.json").read_text(encoding="utf-8"))
     monkeypatch.setattr(ad, "fetch_results", lambda *_a, **_k: [])
     monkeypatch.setattr(ad.inj, "fetch", lambda *_a, **_k: raw)
+    monkeypatch.setattr(ad.cx, "load_cache", lambda *_a, **_k: {})
+    monkeypatch.setattr(ad.cx, "fetch_club", lambda *_a, **_k: [])
+    monkeypatch.setattr(ad.cx, "fetch_summary", lambda *_a, **_k: {"data": []})
     data = ad.main(out=tmp_path / "out", archive=archive, now=NOW)
     assert data["injuries_timestamp"] == raw["timestamp"]
     assert set(data["injuries"]) == {"ANA", "BUF", "CGY"}

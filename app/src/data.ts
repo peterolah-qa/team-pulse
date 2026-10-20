@@ -141,6 +141,72 @@ export interface NhlSide {
   reasons: [string, number][]; // únava a cestovanie v Elo bodoch, od najväčšieho vplyvu
 }
 
+/* Kontext zápasu pre detail (src/team_pulse/nhl/context.py). Len informácia, tip sa podľa neho nemení. */
+export type NhlOutcome = "W" | "L" | "OTL"; // OTL = prehra po predĺžení alebo nájazdoch
+
+export interface NhlEdge {
+  verified: boolean; // model z rozpisu klubov znova vypočítal presne zamknutú šancu
+  total: number; // Elo body z pohľadu domácich, dajú zamknutú šancu
+  items: [string, string, number][]; // [kľúč, popis, Elo body z pohľadu domácich], súčet = total
+}
+
+export interface NhlLastGame {
+  date: string;
+  opp: string;
+  home: boolean;
+  gf: number;
+  ga: number;
+  res: NhlOutcome;
+  last: "OT" | "SO" | null;
+}
+
+export interface NhlForm {
+  gp: number;
+  record: [number, number, number]; // výhry, prehry, prehry po predĺžení alebo nájazdoch (základná časť)
+  home_record: [number, number, number];
+  road_record: [number, number, number];
+  gf_pg: number | null;
+  ga_pg: number | null;
+  last: NhlLastGame[]; // od najnovšieho
+}
+
+export interface NhlRest {
+  prev: { date: string; opp: string; home: boolean; res: NhlOutcome } | null;
+  rest?: number; // dni od posledného zápasu (1 = back-to-back, najviac 7) – rovnako ako vstup modelu
+  b2b?: boolean;
+  three_in4?: boolean;
+  tz_east?: number;
+  road?: number;
+}
+
+export type NhlStatKey = "gf" | "ga" | "pp" | "pk" | "sf" | "sa";
+export type NhlStats = Record<NhlStatKey, number> & { gp: number; w: number; rank: Record<NhlStatKey, number> };
+
+export interface NhlTeamCtx {
+  form: NhlForm;
+  rest: NhlRest;
+  stats?: NhlStats;
+}
+
+export interface NhlH2H {
+  date: string;
+  home: string;
+  away: string;
+  gh: number;
+  ga: number;
+  last: "OT" | "SO" | null;
+  type: "R" | "P";
+}
+
+export interface NhlCtx {
+  edge: NhlEdge;
+  trend: { home: [string, number][]; away: [string, number][] };
+  venue?: string | null;
+  home?: NhlTeamCtx;
+  away?: NhlTeamCtx;
+  h2h?: NhlH2H[];
+}
+
 export interface NhlGame {
   game_id: string;
   date: string;
@@ -151,6 +217,7 @@ export interface NhlGame {
   locked_at: string;
   home: NhlSide;
   away: NhlSide;
+  ctx?: NhlCtx;
 }
 
 export interface NhlResult {
@@ -185,6 +252,8 @@ export interface NhlPredictions {
   teams: { team: string; elo: number; as_of: string }[];
   injuries?: Record<string, NhlInjury[]> | null; // ESPN, len informácia – model NHL ich nepoužíva
   injuries_timestamp?: string | null;
+  context_at?: string | null;
+  stats_at?: string | null;
 }
 
 export interface NhlData {

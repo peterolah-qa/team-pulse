@@ -4,8 +4,102 @@
 `reports/*.md`, na boardoch „Team Pulse“ a „Team Pulse – športy“ a v histórii commitov.
 Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov a brán.
 
+## 20. 10. 2026
+
+- **Redizajn appky – rozhodnutie.** Petrovi sa súčasný vzhľad nepáči: farby, neprehľadnosť, amatérsky dojem,
+  písmo a 3D mince teamov, celkovo chaos a málo užitočných funkcií. Zvolený štýl „Odvážny a hravý“, nasadiť
+  hneď, keď bude hotový. Najprv 5 variantov na plátne (Dres, Plagát, Tabuľa, Nálepky, Lano), potom Peter dodal
+  návrh zo Stitch „Luminous Pulse“ (detail NHL zápasu SJS @ MTL). Ten sa berie s úpravami podľa pravidiel:
+  - kurzy, „hodnota“, férový kurz a „Pridať na tiket“ vypustené (nekomerčné, bez kurzov) → karta Istota tipu
+    a tlačidlo Sledovať zápas,
+  - rozpad Ela so skutočnými číslami modelu namiesto vymyslených,
+  - namiesto „energia 100 % / 45 %“ fakty: dni voľna, back-to-back, 3. zápas za 4 dni, zápas výjazdu, posun pásma,
+  - potvrdení brankári vypustení (o 10:15 štartéra nikto nepozná, vrstva G zamietnutá),
+  - forma, vzájomné zápasy a porovnanie štatistík z API NHL len ako informácia (model NHL sa počas G2-NHL nemení).
+- **Pravidlo počas G2 NBA – zmena (Petrovo rozhodnutie 20. 10.).** Obrazovky appky vrátane NBA sa smú meniť
+  (redizajn). Mení sa len appka (`app/`), nie model, predikcie, archív, ranná úloha ani `predict.yml`, každá zmena
+  len so zelenými testami. Archív NBA tipov sa commituje pred buildom appky, meranie G2 tým nie je dotknuté.
+  Zapísané v `docs/sporty.md`.
+- **Návrhy z iného nástroja (Peter vložil 20. 10.).** Prijaté: hlavná karta a tip vystúpia nad ostatné, Elo trend,
+  prichytené Sledovať zápas, porovnanie s poradím v lige; neskôr kompaktný / podrobný zoznam, Moje teamy hore,
+  Bilancia (board). Zamietnuté: oficiálne logá NHL aj štylizované siluety (ochranné známky, pravidlo bez log),
+  kalkulačka kurzov, Kellyho kritérium, „value bet“, ROI, tiket a pohyb kurzov (pravidlo bez kurzov a stávok).
+  Radar namiesto pruhov neodporúčaný: pri dvoch teamoch a 6 číslach sa pruhy s poradím čítajú presnejšie.
+- **Etapa 1 – dizajnový systém** (celá appka): tmavé plochy, fialová = aktívne, zlatá = tip a šanca favorita,
+  azúrová = Elo; Space Grotesk na čísla a nadpisy, Inter na text; ploché karty, vystúpi len hlavná karta
+  zápasu; plávajúci dok; odznak so skratkou vo farbách dresu namiesto 3D mincí; bez pozadia ihriska a 3D náklonu.
+  Svetlá téma s kontrastom WCAG AA (axe v oboch témach).
+- **Etapa 2 – detail NHL zápasu.** Hlavná karta (čas, aréna, bilancia, posledných 5, šanca, tip, odpočinok), istota
+  tipu, „Prečo X % pre …“ v Elo bodoch, Elo trend, odpočinok a cestovanie, forma v sezóne, porovnanie s poradím
+  v lige, vzájomné zápasy, chýbajúci hráči, zdieľanie odkazu a prichytené Sledovať zápas (upozornenie v appke po
+  dohraní, pamäť len v zariadení).
+- **NHL kontext zápasu** (`team_pulse.nhl.context`, beží v `app_data` v Predikciách, chyba nezastaví tipy):
+  - rozpad tipu: šanca z archívu prevedená na Elo body. Keď sa z rozpisu klubov dajú znova spočítať vstupy modelu
+    a model z nich dá presne zamknutú šancu, rozpad je po položkách a „prepočítaný“; inak Elo, domáci ľad, únava
+    z archívu a zvyšok. Súčet vždy sedí na zamknutú šancu. Test: rozpis → skutočná predikcia → kontext dá presne
+    tú istú šancu a rovnaké čísla odpočinku ako model.
+  - Oprava môjho návrhu z rána: „+146 Elo → 71 %“ pri SJS @ MTL bolo neúplné, model má aj konštantu (+19,5 Elo)
+    a vplyv odpočinku a výjazdu. Po rannom zamknutí 20. 10. (šanca 0,716), overené sondou na skutočnom rozpise:
+    Elo +91,0, domáci ľad +20,0, konštanta +19,5, MTL 2 dni voľna −13,4, SJS bez dňa voľna −1,2, SJS back-to-back
+    +38,5, SJS 3. zápas za 4 dni +1,1, SJS 4. zápas výjazdu +7,2 = +162,7 Elo → MTL 72 %.
+  - forma, odpočinok, vzájomné zápasy (táto a minulá sezóna) z rozpisov klubov; štatistiky NHL (presilovky,
+    oslabenia, strely) len po kontrole tvaru a len pre klub, ktorému sedí počet zápasov a výhier s rozpisom.
+  - rozpisy sa nesťahujú pri každom behu: posledná verzia zo zverejnenej appky (`data/nhl/cache.json`), znova len
+    klub s novým zápasom, starší než 6 h alebo bez zápasu s tipom. Minulá sezóna sa už nemení.
+  - sonda `scripts/probe_nhl_context.py` (Mac): overí rozpad na dnešných skutočných tipoch a štatistiky NHL,
+    odpoveď štatistík uloží do `tests/fixtures/nhl_team_summary.json`. Z cloudu sa API NHL nedá volať.
+- **Sonda so skutočnými dátami (Mac, 11:40) – OK.** Štatistiky NHL: 32 klubov, tvar sedí, počet zápasov a výhier
+  sedí s rozpisom pri 32 z 32. Zápasy s tipom: 13, rozpad overený pri 13 z 13 (model z rozpisu = zamknutá šanca).
+  SJS @ MTL: Centre Bell, SJS 4-4-1, MTL 4-3-1, SJS back-to-back a 4. zápas výjazdu, MTL 2 dni voľna; vzájomné
+  zápasy len 2 (v minulej sezóne hrali dvakrát, v tejto ešte nie). Odpoveď štatistík uložená ako
+  `tests/fixtures/nhl_team_summary.json`, test na nej kontroluje tvar a poradie v lige.
+- **Board:** `scripts/board_redizajn.sh` – míľnik „R – Redizajn appky“, hotové etapy 1 a 2, kontext NHL a Sledovať
+  zápas; ďalej overenie so skutočnými dátami, detail NBA, zoznamy, Moje teamy, Bilancia, Sledovať pre NBA,
+  nová ikona, testy a kontrola na iPhone.
+- **Testy:** pytest 409, Playwright 129 (E2E, prístupnosť v tmavej aj svetlej téme) + 26 vizuálnych (nové
+  snapshoty), ruff čistý. Test parsera G2 upravený: report NBA má od 20. 10. riadok základnej časti už pred
+  prvým výsledkom, tabuľku až s výsledkami (`gate_g2 nba` na dnešných dátach: predbežne splnené, 0 dohratých).
+- **Ranné úlohy 20. 10. prešli:** NBA stav 10:00 (`3c44b15`), NHL 10:15 (`5860614`, noc 19. 10.: tip vyšiel 3 z 4,
+  zamknutých 13 tipov).
+
+## 19. 10. 2026
+
+- **Kontrola celého projektu pred G2 NBA.** Kód sa od 15. 10. nemenil, len tipy, výsledky a stav.
+  Testy: pytest 369, Playwright 115 (E2E, prístupnosť) + 26 vizuálnych, ruff čistý, v repe žiadne
+  tokeny. GitHub Actions 15. – 19. 10.: 248 behov, 2 chyby – 15. 10. časový limit pri zverejnení na
+  Pages (GitHub, archív bol uložený predtým) a 16. 10. sa nepodarilo pushnúť archív NBA tipov (dva behy
+  naraz, viď nižšie; poistka „Kontrola archívu“ beh označila, tipy zamkol ďalší beh o 30 min).
+  Log na Macu: NBA ranná úloha bežala každý deň 15. – 19. 10. (19. 10. bez zmeny, preto bez commitu),
+  NHL každý deň o 10:15.
+- **cron-job.org: job Kontroly zdrojov spúšťal Predikcie.** Vznikol kópiou jobu Predikcie a URL ostala
+  na `predict.yml`, preto každý deň o 11:30 bežali Predikcie dvakrát naraz a Kontrola zdrojov sa
+  z cron-job.org nespustila ani raz. Opravené na `health.yml`, čas 13:30 (11:30 UTC). Test run 16:43:
+  Kontrola zdrojov cez `workflow_dispatch` prešla, Predikcie navyše nespustil.
+- **Zistenie na po G2 (`docs/napady.md` D2):** beh Predikcií, ktorý čaká v rade, začne zo starého
+  commitu a pri pushi archívu narazí na konflikt v tom istom súbore. Bez dvojitého jobu je to zriedkavé,
+  oprava v `predict.yml` až po zmrazení.
+- **NHL zranenia v appke – PR #88 zlúčený** (`44846ba`). Pred zlúčením overené na aktuálnom `main`
+  (pytest 374, Playwright 119 + 26 vizuálnych), po zlúčení CI, Appka aj Predikcie zelené. Mení len NHL.
+- **G2 NBA – pripravenosť.** Stav s opravenou históriou, rozpis 20. 10. sedí s NBC (BOS @ DET 15:00 ET,
+  PHI @ NYK 19:00 ET, OKC @ SAS 21:30 ET), v období 20. 10. – 2. 11. je 107 zápasov, žiadny na
+  neutrálnej pôde.
+- **G2-NHL v polovici.** Všetkých 62 zápasov 13. – 20. 10. má tip zamknutý pred začiatkom (overené proti
+  nezávislému rozpisu NHL). Vyhodnotených 47: tip vyšiel 28 (59,6 %), log loss 0,6454 (hranica 0,7101).
+- **Vyhodnotenie brán G2 – skript** `team_pulse.gate_g2` (`nba` / `nhl`, výstup `reports/gate_g2_<šport>.md`,
+  návratový kód 1 pri nesplnení). Overuje kritériá z `docs/gate-G2.md` a `docs/gate-nhl-G2.md` bez
+  zmeny: tipy zamknuté pred začiatkom podľa rozpisu (NBA zo stavu, NHL z API NHL), výsledky, nezávislý
+  prepočet z archívov oproti reportom, stav do 12:00 z histórie gitu (NBA), hranice log loss
+  a baseline. Pred koncom obdobia hodnotí predbežne. 18 testov: reporty v nich píše skutočný kód
+  prevádzky a upravený report skript odhalí. NBA kód sa nemenil.
+- **Nápady na vylepšenia** (`docs/napady.md`): používateľ, model, kvalita, prevádzka, bezpečnosť,
+  prezentácia. Odporúčané: Mac sa ráno sám zobudí (dnes), strážca dát a živej appky (počas G2),
+  začiatok sezóny podľa zmien v súpiske (po G2). Čaká na Petrov výber.
+
 ## 15. 10. 2026
 
+- **NBA história znova stiahnutá a overená.** 33 410 zápasov (+10), 2024/25 aj 2025/26 po 1230
+  zápasov, každý team 82, v každej 5 na neutrálnej pôde. Opravený stav (`e81443f`): Elo ORL −1,9,
+  MEM +1,6, ostatné do 0,4 – presne podľa simulácie po prenose cez leto. #74 uzavretá.
 - **Prvé automatické ranné behy prešli.** NBA stav 10:08 (`cd2b999`, archív +7 výsledkov), NHL 10:15
   (`798189e`, noc 14. 10.: tip vyšiel 1 z 2, zamknutých 13 tipov). Všetkých 31 NHL tipov v archíve je
   zamknutých pred začiatkom zápasu.
@@ -179,13 +273,15 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 ## Čaká
 
 - F1: pridať job na cron-job.org pre `f1.yml` (#89) pred Austinom (24. 10.), po testovacom behu overiť.
-- NHL zranenia: zlúčiť PR #88 (CI zelené), potom overiť sekciu „Chýbajúci hráči“ na živej appke.
+- NHL zranenia: overiť sekciu „Chýbajúci hráči“ v detaile NHL zápasu na živej appke.
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - F1: overiť prvý zamknutý tip po kvalifikácii v Austine (24./25. 10., `archive/f1/predictions/2026-18.json`);
   vyhodnotenie modelu B 7. 12. (#86).
-- Kontrola zdrojov: pridať job na cron-job.org o 11:30 UTC (#85), job Predikcie nechať zapnutý.
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- NBA: po oprave znova stiahnuť históriu (`team_pulse.data.fetch_games --from 2001 --to 2026`),
-  overiť 82 zápasov každého teamu v 2024/25 a 2025/26, potom ranná úloha → opravený stav do `main`.
-- G2 NBA: 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. Kód NBA sa do 3. 11. nemení.
-- G2-NHL: 13. – 26. 10. 2026, vyhodnotenie 27. 10.
+- G2 NBA: 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. ráno: `uv run python -m team_pulse.gate_g2 nba`.
+  Model, predikcie, archív, ranná úloha a `predict.yml` sa do 3. 11. nemenia, obrazovky appky áno (20. 10.).
+- G2-NHL: 13. – 26. 10. 2026, vyhodnotenie 27. 10. ráno po NHL úlohe (z Macu, potrebuje API NHL):
+  `uv run python -m team_pulse.gate_g2 nhl`.
+- Nápady: Peter vyberie z `docs/napady.md`, vybrané pôjdu na board.
+- Redizajn: po deployi overiť detail NHL na živej appke (iPhone) a varovania „NHL kontext“ v Predikciách.
+  Ďalej etapa 3 (detail NBA), 4 (zoznamy, Moje teamy, Bilancia) a 5 (testy, iPhone).

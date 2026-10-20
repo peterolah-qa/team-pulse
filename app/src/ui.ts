@@ -49,10 +49,21 @@ export const NHL_COLORS: Record<string, [string, string]> = {
 
 export const teamName = (abbr: string, sport: Sport = "nba"): string => (sport === "nhl" ? NHL_NAMES : TEAM_NAMES)[abbr] ?? abbr;
 
-/* 3D minca vo farbách teamu (dvojfarebný dres, lesk a hĺbka). S textom = veľká minca v detaile. */
+/* Čitateľná farba textu na farbe teamu (relatívny jas podľa WCAG): biela alebo takmer čierna. */
+export function onColor(hex: string): string {
+  const [r, g, b] = [1, 3, 5].map((i) => {
+    const c = parseInt(hex.slice(i, i + 2), 16) / 255;
+    return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  });
+  const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  return (1.05 / (lum + 0.05)) >= ((lum + 0.05) / 0.05) ? "#ffffff" : "#111111";
+}
+
+/* Farby teamu bez log: malý pásik vo farbách dresu, s textom veľký odznak so skratkou (detail zápasu). */
 export function coin(abbr: string, label = false, sport: Sport = "nba"): string {
   const [c1, c2] = (sport === "nhl" ? NHL_COLORS : TEAM_COLORS)[abbr] ?? ["#3a3f55", "#8a90a8"];
-  return `<span class="coin${label ? " big" : ""}" style="--c1:${c1};--c2:${c2}" aria-hidden="true">${label ? esc(abbr) : ""}</span>`;
+  const on = label ? `;--on-c1:${onColor(c1)}` : "";
+  return `<span class="coin${label ? " big" : ""}" style="--c1:${c1};--c2:${c2}${on}" aria-hidden="true">${label ? esc(abbr) : ""}</span>`;
 }
 
 export const TIERS: Tier[] = ["Silný", "Stabilný", "Oslabený", "Kritický"];
@@ -67,6 +78,11 @@ export const pct = (p: number): string => `${Math.round(p * 100)} %`;
 export const pct1 = (p: number): string => `${nf1.format(p * 100)} %`;
 export const num1 = (x: number): string => nf1.format(x);
 export const signed = (x: number): string => (x > 0 ? `+${x}` : x < 0 ? `−${Math.abs(x)}` : "0");
+/* Elo body na jedno desatinné miesto so znamienkom: „+38,5“, „−13,4“, „0,0“. */
+export const signed1 = (x: number): string => {
+  const r = Math.round(x * 10) / 10;
+  return `${r > 0 ? "+" : r < 0 ? "−" : ""}${nf1.format(Math.abs(r))}`;
+};
 
 /* Pulse sa zobrazuje zaokrúhlený nadol, aby sedel s hranicami úrovní (49,5 = 49 = Oslabený). */
 export const pulseNum = (p: number): number => Math.floor(p);

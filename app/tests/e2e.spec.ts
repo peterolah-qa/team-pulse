@@ -108,11 +108,12 @@ test("Výsledky: po dňoch, súhrn tipov a nevyšiel = celý červený", async (
   await expect(rows.nth(0).locator(".tl.won")).toContainText("PHI104");
   await expect(rows.nth(1)).toHaveClass(/hit/);
   await expect(rows.nth(1).locator(".tipline")).toHaveText("Tip DET 62 % · vyšiel");
-  const style = (i: number) => rows.nth(i).evaluate((el) => ({ border: getComputedStyle(el).borderTopColor, bg: getComputedStyle(el).backgroundImage }));
+  const style = (i: number) => rows.nth(i).evaluate((el) => ({ stripe: getComputedStyle(el).boxShadow, bg: getComputedStyle(el).backgroundColor }));
   const [miss, hit] = [await style(0), await style(1)];
-  expect(miss.border).toBe("rgb(251, 90, 114)"); // červený okraj
-  expect(miss.bg).toContain("rgb(52, 22, 42)"); // červené pozadie celej karty
-  expect(hit.bg).not.toContain("rgb(52, 22, 42)");
+  expect(miss.stripe).toContain("rgb(248, 113, 113)"); // červený pásik vľavo
+  expect(miss.bg).toBe("rgb(42, 20, 24)"); // červené pozadie celej karty
+  expect(hit.stripe).toContain("rgb(52, 211, 153)"); // zelený pásik
+  expect(hit.bg).not.toBe("rgb(42, 20, 24)");
 });
 
 test("Výsledky: zápas zo včera bez uloženého tipu, prázdny stav bez včerajších zápasov", async ({ page }) => {
@@ -179,9 +180,9 @@ test("Upozornenia: dohrané zápasy od poslednej návštevy, nevyšiel červený
   await expect(toasts.nth(0)).toHaveAttribute("href", "#/vysledok/0022600901");
   await expect(toasts.nth(1)).toHaveClass(/hit/);
   await expect(toasts.nth(1)).toHaveText(/^✓\s*Tip vyšiel BOS 104 : 110 DET tip DET 62 %$/);
-  const border = (i: number) => toasts.nth(i).evaluate((el) => getComputedStyle(el).borderLeftColor);
-  expect(await border(0)).toBe("rgb(251, 90, 114)"); // červená
-  expect(await border(1)).toBe("rgb(52, 211, 153)"); // zelená
+  const stripe = (i: number) => toasts.nth(i).evaluate((el) => getComputedStyle(el).boxShadow);
+  expect(await stripe(0)).toContain("rgb(248, 113, 113)"); // červená
+  expect(await stripe(1)).toContain("rgb(52, 211, 153)"); // zelená
 
   const tab = page.locator('.tabbar a[data-tab="vysledky"]');
   await expect(tab.locator(".badge [aria-hidden=true]")).toHaveText("2");

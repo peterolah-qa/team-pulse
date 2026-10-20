@@ -45,9 +45,12 @@ rozbilo appku nainštalovanú na ploche.
 - Šport ide do appky po prejdení G0 s označením **beta**. Beta zmizne po prejdení jeho G2.
   Model športu sa počas jeho G2 nemení.
 - Počas G2 NBA (20. 10. – 2. 11. 2026, vyhodnotenie 3. 11.) sa kód NBA nemení: model, predikcie,
-  archív, ranná úloha, `predict.yml`. Appka môže dostať nový šport cez krátku vetvu so zelenými
-  testami (E2E, prístupnosť, vizuálne), obrazovky NBA sa nemenia. Archív NBA tipov sa commituje
-  pred buildom appky, takže chyba appky meranie G2 nepokazí.
+  archív, ranná úloha, `predict.yml`. Appka (aj obrazovky NBA) sa meniť smie – od 20. 10. redizajn,
+  Petrovo rozhodnutie – len so zelenými testami (E2E, prístupnosť, vizuálne). Archív NBA tipov sa
+  commituje pred buildom appky, takže chyba appky meranie G2 nepokazí.
+- Detail zápasu ukazuje len skutočné čísla: rozpad tipu sa sčíta presne na zamknutú šancu, forma,
+  odpočinok a štatistiky sú len informácia a model sa podľa nich nemení. Žiadne kurzy, „hodnota“
+  ani tiket, žiadne logá ani siluety lôg.
 
 ## Fázy
 
@@ -73,6 +76,10 @@ Spoločné jadro až keď budú tri športy, dovtedy by sme hádali, čo je naoz
 | Extraliga | stanoví sa pred backtestom | stanoví sa |
 
 Hranice G2 pre NBA a NHL vychádzajú z backtestu (`scripts/g2_reference.py` → `reports/g2_reference.md`).
+Vyhodnotenie G2: `uv run python -m team_pulse.gate_g2 nba|nhl` → `reports/gate_g2_<šport>.md`.
+
+Detail NHL zápasu v appke: kontext z `team_pulse.nhl.context` (rozpad tipu, Elo trend, forma, odpočinok,
+vzájomné zápasy, štatistiky NHL). Sonda so skutočnými dátami: `uv run python scripts/probe_nhl_context.py`.
 
 ## Brána G0-NHL (stanovené vopred, 13. 10. 2026)
 

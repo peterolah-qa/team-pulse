@@ -1,7 +1,8 @@
 /* NHL (beta): zápasy, tipy, výsledky, liga podľa Ela a model. Tipy sa zamykajú raz ráno (Mac),
    appka ich len ukazuje. Zranenia z ESPN sú len informácia, model ich nepočíta (brána G2-NHL). */
-import type { NhlData, NhlGame, NhlInjury, NhlResult, NhlSide } from "../data";
-import { coin, dayHeading, esc, groupBy, header, localDay, longDate, signed, split, teamName, time, when } from "../ui";
+import type { NhlData, NhlForm, NhlGame, NhlInjury, NhlOutcome, NhlResult, NhlSide, NhlStatKey } from "../data";
+import { isFollowed } from "../follow";
+import { coin, dayHeading, dayTitle, esc, groupBy, header, localDay, num1, pct1, shortDate, signed, signed1, split, teamName, time, when } from "../ui";
 import { byTipoff, gameRow, isPre } from "./games";
 import { modelPage } from "./model";
 import { recentOf } from "./result";
@@ -118,43 +119,269 @@ export function nhlResultsView(n: NhlData): string {
     <p class="meta">Výsledky zo včera a z dneška. pp = po predĺžení, sn = po nájazdoch. Červený zápas = náš tip nevyšiel.</p>`;
 }
 
-function why(n: NhlData, g: NhlGame): string {
-  const diff = Math.round(g.home.elo - g.away.elo);
-  const stronger = diff >= 0 ? g.home.team : g.away.team;
-  const rows: string[] = [
-    `<li><span><b>${esc(stronger)}</b> silnejší (Elo ${Math.round(Math.max(g.home.elo, g.away.elo))} : ${Math.round(Math.min(g.home.elo, g.away.elo))})</span><span class="pos">pomáha <span class="num">${signed(Math.abs(diff))}</span></span></li>`,
-  ];
-  const hca = Math.round(n.model.elo_weights.home ?? 0);
-  if (!g.neutral && hca) rows.push(`<li><span><b>${esc(g.home.team)}</b> domáce prostredie</span><span class="pos">pomáha <span class="num">${signed(hca)}</span></span></li>`);
-  const side = (s: NhlSide) =>
-    s.reasons.map(([t, e]) => `<li><span><b>${esc(s.team)}</b> ${esc(t)}</span><span class="${e >= 0 ? "pos" : "neg"}">${e >= 0 ? "pomáha" : "oslabuje"} <span class="num">${signed(e)}</span></span></li>`);
-  rows.push(...side(g.away), ...side(g.home));
-  return `<ul class="rows">${rows.join("")}</ul>`;
+// --- detail zápasu ---------------------------------------------------------------------------------
+
+const ICON = {
+  share: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></svg>`,
+  bell: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>`,
+  check: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`,
+};
+
+const LETTER: Record<NhlOutcome, string> = { W: "V", L: "P", OTL: "P" };
+const OUTCOME: Record<NhlOutcome, string> = { W: "výhra", L: "prehra", OTL: "prehra po predĺžení alebo nájazdoch" };
+const EXTRA_LONG: Record<string, string> = { OT: "po predĺžení", SO: "po nájazdoch" };
+
+const plural = (n: number, w: [string, string, string]): string => (n === 1 ? w[0] : n >= 2 && n <= 4 ? w[1] : w[2]);
+const dm = (iso: string): string => {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${d}. ${m}.${y !== new Date().getFullYear() ? ` ${y}` : ""}`;
+};
+const dayDiff = (a: string, b: string): number => Math.round((Date.parse(`${b}T12:00:00Z`) - Date.parse(`${a}T12:00:00Z`)) / 86_400_000);
+
+/* „3-0-1“ + popis pre čítačky */
+function record(r: [number, number, number]): string {
+  const [w, l, o] = r;
+  const spoken = `${w} ${plural(w, ["výhra", "výhry", "výhier"])}, ${l} ${plural(l, ["prehra", "prehry", "prehier"])}, ${o} po predĺžení alebo nájazdoch`;
+  return `<span aria-hidden="true">${w}-${l}-${o}</span><span class="sr-only">${spoken}</span>`;
+}
+
+/* Posledných 5 zápasov ako štvorčeky, najnovší vpravo. */
+function dots(form?: NhlForm): string {
+  if (!form?.last.length) return "";
+  const games = [...form.last].reverse();
+  const spoken = games.map((x) => OUTCOME[x.res]).join(", ");
+  return `<span class="dots" role="img" aria-label="Posledné zápasy od najstaršieho: ${spoken}">${games
+    .map((x) => `<span class="dot5 ${x.res}" title="${esc(`${dm(x.date)} ${x.home ? "doma" : "vonku"} ${x.opp} ${x.gf}:${x.ga}`)}">${LETTER[x.res]}</span>`)
+    .join("")}</span>`;
+}
+
+/* Fakty o odpočinku z rozpisu (rovnaké čísla ako vstupy modelu). Bez rozpisu dôvody únavy z tipu. */
+function restFacts(g: NhlGame, side: "home" | "away"): string[] {
+  const s = g[side];
+  const r = g.ctx?.[side]?.rest;
+  if (!r || r.rest === undefined) return s.reasons.map(([t]) => t);
+  const out: string[] = [];
+  if (r.b2b) out.push("back-to-back");
+  else if (r.rest >= 7) out.push("6 a viac dní voľna");
+  else out.push(`${r.rest - 1} ${plural(r.rest - 1, ["deň", "dni", "dní"])} voľna`);
+  if (r.three_in4) out.push("3. zápas za 4 dni");
+  if (r.tz_east) out.push(`posun o ${r.tz_east} h na východ`);
+  if (r.road && r.road >= 2) out.push(`${r.road}. zápas výjazdu`);
+  return out;
+}
+
+function hero(g: NhlGame): string {
+  const { home, away } = split(g.p_home);
+  const homeFav = g.p_home > 0.5;
+  const fav = homeFav ? g.home.team : g.away.team;
+  const { title } = dayTitle(localDay(g.tipoff_utc, g.date));
+  const day = title === "Dnes" || title === "Zajtra" || title === "Včera" ? title : shortDate(localDay(g.tipoff_utc, g.date));
+  const col = (side: "home" | "away") => {
+    const s = g[side];
+    const f = g.ctx?.[side]?.form;
+    return `<div class="tcol${side === "home" ? " r" : ""}">
+      ${coin(s.team, true, "nhl")}
+      <span class="where">${side === "home" ? (g.neutral ? "neutrálne" : "domáci") : "hostia"}</span>
+      <span class="tfull">${esc(teamName(s.team, "nhl"))}</span>
+      ${f ? `<span class="rec">${record(f.record)}</span>${dots(f)}` : ""}
+    </div>`;
+  };
+  const facts = (["away", "home"] as const)
+    .map((side) => [g[side].team, restFacts(g, side)] as const)
+    .filter(([, f]) => f.length)
+    .map(([t, f]) => `<li><b>${esc(t)}</b><span>${f.map(esc).join(" · ")}</span></li>`)
+    .join("");
+  return `<section class="hero2" aria-labelledby="match-title">
+    <div class="hmeta"><span class="when2">${esc(day)} ${time(g.tipoff_utc)}</span>${g.ctx?.venue ? `<span>${esc(g.ctx.venue)}</span>` : ""}${isPre(g) ? `<span class="tag">príprava</span>` : ""}</div>
+    <div class="pair">${col("away")}${col("home")}</div>
+    <div class="probs"><span class="pnum${homeFav ? "" : " fav"}">${away} %</span><span class="plbl">šanca na výhru</span><span class="pnum${homeFav ? " fav" : ""}">${home} %</span></div>
+    <div class="bar ${homeFav ? "home-fav" : "away-fav"}" role="img" aria-label="Šanca na výhru: ${esc(g.away.team)} ${away} %, ${esc(g.home.team)} ${home} %"><i style="width:${away}%"></i></div>
+    <p class="tipbox"><span class="tip">tip</span><span class="what">${esc(fav)} vyhrá</span><span class="small muted">aj po predĺžení alebo nájazdoch</span></p>
+    ${facts ? `<ul class="facts" aria-label="Odpočinok a cestovanie">${facts}</ul>` : ""}
+  </section>`;
+}
+
+function sure(n: NhlData, g: NhlGame): string {
+  const p = Math.max(g.p_home, 1 - g.p_home);
+  const level = p >= 0.65 ? "výrazný favorit" : p >= 0.57 ? "mierny favorit" : "vyrovnaný zápas";
+  const acc = n.model.test_metrics.accuracy;
+  const pos = ((p - 0.5) / 0.5) * 100;
+  return `<h2 class="sec">Istota tipu</h2><section class="card sure">
+    <span class="level">${level}</span>
+    <div class="scale" role="img" aria-label="Šanca favorita ${Math.round(p * 100)} % na stupnici od 50 do 100 %"><i style="left:${pos.toFixed(1)}%"></i></div>
+    <div class="ends" aria-hidden="true"><span>50 % vyrovnané</span><span>100 % istota</span></div>
+    <p>Z 10 takýchto zápasov by favorit vyhral asi <b>${Math.round(p * 10)}</b>. Hokej je náhodný, aj silný favorit často prehrá.</p>
+    <p class="small muted">V teste na sezónach ${esc(n.model.test_metrics.test_seasons)} tip vyšiel v ${pct1(acc)} zápasov.</p>
+  </section>`;
+}
+
+/* Prečo má tip svoju šancu: Elo body z pohľadu tipovaného teamu, súčet = zamknutá šanca. */
+function edgeCard(n: NhlData, g: NhlGame): string {
+  const e = g.ctx?.edge;
+  if (!e) return "";
+  const homeFav = g.p_home > 0.5;
+  const fav = homeFav ? g.home.team : g.away.team;
+  const sign = homeFav ? 1 : -1;
+  const p = Math.round((homeFav ? g.p_home : 1 - g.p_home) * 100);
+  const big = e.items.filter(([, , v]) => Math.abs(v) >= 1);
+  const small = e.items.filter(([, , v]) => Math.abs(v) < 1);
+  const rows: [string, string, number][] = big.map(([k, label, v]) => [k, label, sign * v]);
+  if (small.length) rows.push(["small", "Drobné vplyvy (spolu)", sign * small.reduce((a, [, , v]) => a + v, 0)]);
+  const max = Math.max(20, ...rows.map(([, , v]) => Math.abs(v)));
+  const elo = (s: NhlSide) => `${s.team} ${Math.round(s.elo)}`;
+  const label = (k: string, text: string) =>
+    k === "elo" ? `${esc(text)}<small>${esc(elo(g.away))} : ${esc(elo(g.home))}</small>` : k === "base" ? `${esc(text)}<small>platí pre každý zápas</small>` : esc(text);
+  const body = rows
+    .map(([k, text, v]) => {
+      const w = (Math.abs(v) / max) * 50;
+      const cls = v >= 0 ? "plus" : "minus";
+      const pos = v >= 0 ? `left:50%;width:${w.toFixed(1)}%` : `right:50%;width:${w.toFixed(1)}%`;
+      return `<div class="erow"><span class="lbl">${label(k, text)}</span><span class="ebar" aria-hidden="true"><i class="${cls}" style="${pos}"></i></span><span class="ev ${cls}">${signed1(v)}</span></div>`;
+    })
+    .join("");
+  const note = e.verified
+    ? `<p class="okchip">${ICON.check}Prepočítané: z rozpisu a Ela model znova dá presne zamknutú šancu.</p>`
+    : `<p class="small muted">Rozpis klubov nie je k dispozícii, rozpad je zo zamknutého tipu. Konštanta modelu a vplyvy pod 10 bodov sú spolu v poslednom riadku.</p>`;
+  return `<h2 class="sec">Prečo ${p} % pre ${esc(fav)}</h2><section class="card edge">
+    ${body}
+    <div class="etotal"><span>Spolu v prospech ${esc(fav)}</span><span class="num">${signed1(sign * e.total)} Elo → ${p} %</span></div>
+    ${note}
+    <p class="small muted">Elo body: kladné pomáhajú tipu, záporné mu uberajú. Váhy sú naučené z ${new Intl.NumberFormat("sk-SK").format(n.model.n_games)} zápasov NHL, niektoré idú proti intuícii (napr. deň voľna navyše domácim mierne uberá).</p>
+  </section>`;
+}
+
+function eloSpark(points: [string, number][]): string {
+  const w = 120, h = 32, pad = 4;
+  const vals = points.map(([, e]) => e);
+  const lo = Math.min(...vals), hi = Math.max(...vals);
+  const span = Math.max(hi - lo, 20);
+  const mid = (lo + hi) / 2;
+  const x = (i: number) => pad + (i / (vals.length - 1)) * (w - 2 * pad);
+  const y = (v: number) => h / 2 - ((v - mid) / span) * (h - 2 * pad);
+  const pts = vals.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+  const last = vals.length - 1;
+  return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><polyline points="${pts}"/><circle cx="${x(last).toFixed(1)}" cy="${y(vals[last]).toFixed(1)}" r="3"/></svg>`;
+}
+
+function trendCard(g: NhlGame): string {
+  const t = g.ctx?.trend;
+  if (!t) return "";
+  const row = (s: NhlSide, pts: [string, number][]) => {
+    if (pts.length < 2)
+      return `<div class="trow"><span class="abbr">${esc(s.team)}</span><span class="small muted">zatiaľ 1 zápas s tipom</span><span class="tv">${Math.round(s.elo)}</span></div>`;
+    const d = Math.round(pts[pts.length - 1][1] - pts[0][1]);
+    return `<div class="trow" role="img" aria-label="Elo ${esc(s.team)} pred zápasmi od ${dm(pts[0][0])}: z ${Math.round(pts[0][1])} na ${Math.round(pts[pts.length - 1][1])}">
+      <span class="abbr">${esc(s.team)}</span>${eloSpark(pts)}<span class="tv">${Math.round(pts[pts.length - 1][1])}<small class="${d > 0 ? "pos" : d < 0 ? "neg" : "muted"}">${signed(d)} od ${dm(pts[0][0])}</small></span></div>`;
+  };
+  return `<h2 class="sec">Elo trend</h2><section class="card trend2">
+    ${row(g.away, t.away)}${row(g.home, t.home)}
+    <p class="small muted">Elo pred každým zápasom s tipom (od 13. 10. 2026), posledný bod = pred týmto zápasom. Priemer ligy 1505.</p>
+  </section>`;
+}
+
+function restCard(g: NhlGame): string {
+  const card = (side: "home" | "away") => {
+    const s = g[side];
+    const r = g.ctx?.[side]?.rest;
+    const facts = restFacts(g, side);
+    let prev = "";
+    if (r?.prev) {
+      const days = dayDiff(r.prev.date, g.date);
+      const when = days === 1 ? "včera" : days === 2 ? "predvčerom" : `pred ${days} dňami`;
+      prev = `<p>Naposledy <b>${when}</b> ${r.prev.home ? "doma s" : "vonku u"} ${esc(r.prev.opp)}, ${OUTCOME[r.prev.res]}</p>`;
+    } else if (r) prev = `<p>Prvý zápas sezóny</p>`;
+    const warn = (f: string) => /back-to-back|3\. zápas|posun|výjazdu/.test(f);
+    return `<div class="card tcard"><h3>${coin(s.team, false, "nhl")}${esc(s.team)}</h3>${prev}
+      ${facts.length ? `<div class="pills">${facts.map((f) => `<span class="pill${warn(f) ? " warn" : " ok"}">${esc(f)}</span>`).join("")}</div>` : `<p>Bez únavy</p>`}</div>`;
+  };
+  return `<h2 class="sec">Odpočinok a cestovanie</h2><div class="two">${card("away")}${card("home")}</div>`;
+}
+
+function formCard(g: NhlGame): string {
+  if (!g.ctx?.home || !g.ctx?.away) return "";
+  const card = (side: "home" | "away") => {
+    const s = g[side];
+    const f = g.ctx![side]!.form;
+    const gpg = f.gf_pg != null && f.ga_pg != null ? `<p>Góly na zápas <b>${num2(f.gf_pg)} : ${num2(f.ga_pg)}</b></p>` : "";
+    const list = f.last
+      .map((x) => `<li><span class="dot5 ${x.res}" aria-hidden="true">${LETTER[x.res]}</span><span>${x.home ? "doma" : "u"} ${esc(x.opp)} <span class="sr-only">${OUTCOME[x.res]}</span></span><span class="sc">${x.gf}:${x.ga}${x.last ? ` <small class="muted">${x.last === "OT" ? "pp" : "sn"}</small>` : ""}</span></li>`)
+      .join("");
+    return `<div class="card tcard"><h3>${coin(s.team, false, "nhl")}${esc(s.team)} <span class="small muted">${record(f.record)}</span></h3>
+      <p>Doma <b>${record(f.home_record)}</b></p><p>Vonku <b>${record(f.road_record)}</b></p>${gpg}
+      ${list ? `<ul class="last5" aria-label="Posledné zápasy ${esc(s.team)}, od najnovšieho">${list}</ul>` : `<p>Ešte nehrali</p>`}</div>`;
+  };
+  return `<h2 class="sec">Forma v sezóne</h2><div class="two">${card("away")}${card("home")}</div>
+    <p class="hint">V-P-P = výhry, prehry v riadnom čase, prehry po predĺžení alebo nájazdoch (základná časť). pp = po predĺžení, sn = po nájazdoch.</p>`;
+}
+
+const nf2 = new Intl.NumberFormat("sk-SK", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const num2 = (x: number): string => nf2.format(x);
+
+const STAT_ROWS: [NhlStatKey, string, boolean, (x: number) => string][] = [
+  ["gf", "Góly na zápas", false, num2],
+  ["ga", "Inkasované góly", true, num2],
+  ["pp", "Presilovky", false, (x) => pct1(x)],
+  ["pk", "Oslabenia", false, (x) => pct1(x)],
+  ["sf", "Strely na bránu", false, (x) => num1(x)],
+  ["sa", "Strely súpera", true, (x) => num1(x)],
+];
+
+function compareCard(g: NhlGame): string {
+  const a = g.ctx?.away?.stats, h = g.ctx?.home?.stats;
+  if (!a || !h) return "";
+  const rows = STAT_ROWS.map(([k, label, lower, fmt]) => {
+    const av = a[k], hv = h[k];
+    const max = Math.max(av, hv) || 1;
+    const aBetter = lower ? av < hv : av > hv, hBetter = lower ? hv < av : hv > av;
+    return `<div class="crow"><div class="cline">
+        <span class="a${aBetter ? " better" : ""}">${fmt(av)}<span class="rk" title="poradie v lige">${a.rank[k]}.</span></span>
+        <span class="c">${label}</span>
+        <span class="h${hBetter ? " better" : ""}"><span class="rk" title="poradie v lige">${h.rank[k]}.</span>${fmt(hv)}</span></div>
+      <div class="cbars" aria-hidden="true"><span><i class="${aBetter ? "better" : ""}" style="width:${((av / max) * 100).toFixed(0)}%"></i></span><span><i class="${hBetter ? "better" : ""}" style="width:${((hv / max) * 100).toFixed(0)}%"></i></span></div></div>`;
+  }).join("");
+  return `<h2 class="sec">Porovnanie</h2><section class="card cmp">
+    <div class="cmph"><span>${esc(g.away.team)}</span><span>${esc(g.home.team)}</span></div>${rows}
+    <p class="small muted">Malé číslo = poradie v lige (1. = najlepší), základná časť po ${a.gp} a ${h.gp} zápasoch. Zlatá = lepší v dvojici. Zdroj: štatistiky NHL.</p>
+  </section>`;
+}
+
+function h2hCard(g: NhlGame): string {
+  const list = g.ctx?.h2h;
+  if (!list) return "";
+  if (!list.length) return `<h2 class="sec">Vzájomné zápasy</h2><p class="empty">V tejto ani minulej sezóne spolu nehrali.</p>`;
+  const rows = list
+    .map((x) => {
+      const winner = x.gh > x.ga ? x.home : x.away;
+      const extra = x.last ? ` ${EXTRA_LONG[x.last]}` : "";
+      return `<li><span><span class="sc">${esc(x.away)} ${x.ga}:${x.gh} ${esc(x.home)}</span><small>${dm(x.date)} · doma ${esc(x.home)}${x.type === "P" ? " · playoff" : ""}${extra}</small></span><span class="wchip">výhra ${esc(winner)}</span></li>`;
+    })
+    .join("");
+  return `<h2 class="sec">Vzájomné zápasy</h2><ul class="card h2h">${rows}</ul>
+    <p class="hint">Posledné ${list.length === 1 ? "stretnutie" : `${list.length} stretnutia`} v tejto a minulej sezóne, skóre hostia : domáci.</p>`;
 }
 
 export function nhlGameView(n: NhlData, id: string): string {
   const back = { href: BASE, label: "Zápasy" };
   const g = games(n).find((x) => x.game_id === id);
   if (!g) return `${header("Zápas sa nenašiel", "", back)}<p class="empty">Tento zápas už nie je medzi tipmi. <a href="${BASE}">Späť na zápasy</a></p>`;
-  const { home, away } = split(g.p_home);
-  const homeFav = g.p_home > 0.5;
-  const fav = homeFav ? g.home : g.away;
-  const day = longDate(localDay(g.tipoff_utc, g.date));
-  const side = (s: NhlSide, p: number, isFav: boolean, where: string) => `<div class="side${isFav ? " fav" : ""}">
-      ${coin(s.team, true, "nhl")}<span class="tname">${esc(teamName(s.team, "nhl"))}</span>
-      <span class="small muted">${where}</span>
-      <span class="pct num">${p} %</span>${isFav ? `<span class="tip">tip</span>` : ""}</div>`;
-  return `${header(`${esc(g.away.team)} <span class="at">@</span> ${esc(g.home.team)}`, `${esc(day)}, ${time(g.tipoff_utc)}${isPre(g) ? " · príprava" : ""}${g.neutral ? " · neutrálne ihrisko" : ""}`, back)}
-    <section class="card hero">
-      <div class="duel">${side(g.away, away, !homeFav, "hostia")}${side(g.home, home, homeFav, g.neutral ? "neutrálne" : "doma")}</div>
-      <div class="bar ${homeFav ? "home-fav" : "away-fav"}" role="img" aria-label="Šanca na výhru: ${esc(g.away.team)} ${away} %, ${esc(g.home.team)} ${home} %"><i style="width:${away}%"></i></div>
-      <p class="verdict">Tip: <b>${esc(fav.team)}</b> vyhrá so šancou ${homeFav ? home : away} % (aj po predĺžení alebo nájazdoch).</p>
-    </section>
+  const label = `${g.away.team} @ ${g.home.team}`;
+  const on = isFollowed("nhl", g.game_id);
+  const stamp = n.predictions.context_at ? ` Kontext z ${esc(when(n.predictions.context_at))}.` : "";
+  return `<header class="top"><div class="dtop"><a class="back" href="${back.href}">‹ ${esc(back.label)}</a>
+      <button type="button" class="iconbtn" id="share" aria-label="Zdieľať zápas">${ICON.share}</button></div>
+    <h1 class="match-h" id="match-title">${esc(g.away.team)} <span class="at">@</span> ${esc(g.home.team)}</h1></header>
+    ${hero(g)}
     ${beta()}
-    <h2 class="sec">Prečo</h2><section class="card">${why(n, g)}
-      <p class="small muted">Vplyv v Elo bodoch. Únava: zápas deň po dni, 3. zápas za 4 dni, cestovanie na východ, dlhý výjazd.</p></section>
+    ${sure(n, g)}
+    ${edgeCard(n, g)}
+    ${trendCard(g)}
+    ${restCard(g)}
+    ${formCard(g)}
+    ${compareCard(g)}
+    ${h2hCard(g)}
     ${injuriesCard(n, g)}
-    <p class="meta">Tip zamknutý ${esc(when(g.locked_at))}. Po začiatku zápasu sa už nemení.</p>`;
+    <p class="meta">Tip zamknutý ${esc(when(g.locked_at))}, po začiatku zápasu sa už nemení. Forma, odpočinok, porovnanie a vzájomné zápasy sú len informácia, model NHL ich počas brány G2-NHL nemení.${stamp} Zdroj: API NHL, zranenia ESPN.</p>
+    <div class="cta"><button type="button" class="follow" id="follow" aria-pressed="${on}" data-sport="nhl" data-id="${esc(g.game_id)}" data-label="${esc(label)}">${on ? ICON.check : ICON.bell}<span>${on ? "Sledujem zápas" : "Sledovať zápas"}</span></button></div>`;
 }
 
 export function nhlTeamsView(n: NhlData): string {

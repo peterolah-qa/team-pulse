@@ -23,6 +23,47 @@
      "team": "BUF",
      "elo": 1536.6,
      "reasons": []
+    },
+    "ctx": {
+     "edge": {
+      "verified": false,
+      "total": -26.1,
+      "items": [
+       [
+        "elo",
+        "Rozdiel v Elo",
+        -59.5
+       ],
+       [
+        "home",
+        "TOR: domáci ľad",
+        20.0
+       ],
+       [
+        "other",
+        "Konštanta modelu a drobné vplyvy",
+        13.4
+       ]
+      ]
+     },
+     "trend": {
+      "home": [
+       [
+        "2026-10-20",
+        1477.1
+       ]
+      ],
+      "away": [
+       [
+        "2026-10-13",
+        1529.3
+       ],
+       [
+        "2026-10-20",
+        1536.6
+       ]
+      ]
+     }
     }
    },
    {
@@ -31,7 +72,7 @@
     "tipoff_utc": "2026-10-21T01:00:00Z",
     "kind": "regular",
     "neutral": false,
-    "p_home": 0.602,
+    "p_home": 0.604,
     "locked_at": "2026-10-20T08:15:00+00:00",
     "home": {
      "team": "COL",
@@ -55,6 +96,336 @@
        "3. zápas za 4 dni",
        -16
       ]
+     ]
+    },
+    "ctx": {
+     "edge": {
+      "verified": true,
+      "total": 74.1,
+      "items": [
+       [
+        "elo",
+        "Rozdiel v Elo",
+        41.2
+       ],
+       [
+        "home",
+        "COL: domáci ľad",
+        20.0
+       ],
+       [
+        "base",
+        "Konštanta modelu",
+        19.5
+       ],
+       [
+        "home_rest",
+        "COL: bez dňa voľna",
+        -4.5
+       ],
+       [
+        "home_b2b",
+        "COL: back-to-back",
+        -42.5
+       ],
+       [
+        "home_tz_east",
+        "COL: posun o 1 h na východ",
+        0.2
+       ],
+       [
+        "away_rest",
+        "DAL: bez dňa voľna",
+        -1.2
+       ],
+       [
+        "away_b2b",
+        "DAL: back-to-back",
+        38.5
+       ],
+       [
+        "away_three_in4",
+        "DAL: 3. zápas za 4 dni",
+        1.1
+       ],
+       [
+        "away_road",
+        "DAL: 1. zápas výjazdu",
+        1.8
+       ]
+      ]
+     },
+     "trend": {
+      "home": [
+       [
+        "2026-10-13",
+        1570.2
+       ],
+       [
+        "2026-10-15",
+        1575.9
+       ],
+       [
+        "2026-10-17",
+        1579.4
+       ],
+       [
+        "2026-10-19",
+        1584.1
+       ],
+       [
+        "2026-10-20",
+        1582.0
+       ]
+      ],
+      "away": [
+       [
+        "2026-10-14",
+        1548.0
+       ],
+       [
+        "2026-10-16",
+        1544.6
+       ],
+       [
+        "2026-10-19",
+        1543.2
+       ],
+       [
+        "2026-10-20",
+        1540.8
+       ]
+      ]
+     },
+     "venue": "Ball Arena",
+     "away": {
+      "form": {
+       "gp": 6,
+       "record": [
+        3,
+        2,
+        1
+       ],
+       "home_record": [
+        2,
+        1,
+        1
+       ],
+       "road_record": [
+        1,
+        1,
+        0
+       ],
+       "gf_pg": 3.17,
+       "ga_pg": 2.83,
+       "last": [
+        {
+         "date": "2026-10-19",
+         "opp": "UTA",
+         "home": true,
+         "gf": 2,
+         "ga": 3,
+         "res": "OTL",
+         "last": "OT"
+        },
+        {
+         "date": "2026-10-17",
+         "opp": "STL",
+         "home": true,
+         "gf": 4,
+         "ga": 1,
+         "res": "W",
+         "last": null
+        },
+        {
+         "date": "2026-10-16",
+         "opp": "NSH",
+         "home": true,
+         "gf": 1,
+         "ga": 3,
+         "res": "L",
+         "last": null
+        },
+        {
+         "date": "2026-10-14",
+         "opp": "MIN",
+         "home": false,
+         "gf": 5,
+         "ga": 4,
+         "res": "W",
+         "last": "SO"
+        },
+        {
+         "date": "2026-10-11",
+         "opp": "CHI",
+         "home": true,
+         "gf": 3,
+         "ga": 1,
+         "res": "W",
+         "last": null
+        }
+       ]
+      },
+      "rest": {
+       "prev": {
+        "date": "2026-10-19",
+        "opp": "UTA",
+        "home": true,
+        "res": "OTL"
+       },
+       "rest": 1,
+       "b2b": true,
+       "three_in4": true,
+       "tz_east": 0,
+       "road": 1
+      },
+      "stats": {
+       "gp": 6,
+       "w": 3,
+       "gf": 3.1667,
+       "ga": 2.8333,
+       "pp": 0.2381,
+       "pk": 0.8125,
+       "sf": 29.5,
+       "sa": 27.2,
+       "rank": {
+        "gf": 9,
+        "ga": 14,
+        "pp": 8,
+        "pk": 11,
+        "sf": 13,
+        "sa": 7
+       }
+      }
+     },
+     "home": {
+      "form": {
+       "gp": 7,
+       "record": [
+        5,
+        2,
+        0
+       ],
+       "home_record": [
+        3,
+        0,
+        0
+       ],
+       "road_record": [
+        2,
+        2,
+        0
+       ],
+       "gf_pg": 3.71,
+       "ga_pg": 2.43,
+       "last": [
+        {
+         "date": "2026-10-19",
+         "opp": "VGK",
+         "home": false,
+         "gf": 4,
+         "ga": 2,
+         "res": "W",
+         "last": null
+        },
+        {
+         "date": "2026-10-17",
+         "opp": "SEA",
+         "home": true,
+         "gf": 5,
+         "ga": 3,
+         "res": "W",
+         "last": null
+        },
+        {
+         "date": "2026-10-15",
+         "opp": "EDM",
+         "home": true,
+         "gf": 2,
+         "ga": 3,
+         "res": "L",
+         "last": null
+        },
+        {
+         "date": "2026-10-13",
+         "opp": "CGY",
+         "home": false,
+         "gf": 3,
+         "ga": 1,
+         "res": "W",
+         "last": null
+        },
+        {
+         "date": "2026-10-11",
+         "opp": "LAK",
+         "home": false,
+         "gf": 1,
+         "ga": 4,
+         "res": "L",
+         "last": null
+        }
+       ]
+      },
+      "rest": {
+       "prev": {
+        "date": "2026-10-19",
+        "opp": "VGK",
+        "home": false,
+        "res": "W"
+       },
+       "rest": 1,
+       "b2b": true,
+       "three_in4": false,
+       "tz_east": 1,
+       "road": 0
+      },
+      "stats": {
+       "gp": 7,
+       "w": 5,
+       "gf": 3.7143,
+       "ga": 2.4286,
+       "pp": 0.2963,
+       "pk": 0.7826,
+       "sf": 33.1,
+       "sa": 28.6,
+       "rank": {
+        "gf": 2,
+        "ga": 5,
+        "pp": 3,
+        "pk": 20,
+        "sf": 4,
+        "sa": 12
+       }
+      }
+     },
+     "h2h": [
+      {
+       "date": "2026-04-02",
+       "home": "DAL",
+       "away": "COL",
+       "gh": 3,
+       "ga": 2,
+       "last": "OT",
+       "type": "R"
+      },
+      {
+       "date": "2026-01-24",
+       "home": "COL",
+       "away": "DAL",
+       "gh": 4,
+       "ga": 1,
+       "last": null,
+       "type": "R"
+      },
+      {
+       "date": "2025-11-08",
+       "home": "DAL",
+       "away": "COL",
+       "gh": 2,
+       "ga": 5,
+       "last": null,
+       "type": "R"
+      }
      ]
     }
    }
@@ -222,5 +593,7 @@
    }
   ]
  },
- "injuries_timestamp": "2026-10-20T20:30:00Z"
+ "injuries_timestamp": "2026-10-20T20:30:00Z",
+ "context_at": "2026-10-20T08:30:00+00:00",
+ "stats_at": "2026-10-20T08:30:00+00:00"
 }

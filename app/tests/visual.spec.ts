@@ -27,7 +27,9 @@ for (const [name, hash] of [...Object.entries(SCREENS), ...Object.entries(LIGHT)
     if (hash.startsWith("#/nhl")) await page.locator(".beta-note").first().waitFor();
     await page.evaluate(() => document.fonts.ready);
     // spodná lišta je fixed – pri screenshote celej stránky ju dáme na koniec, nech neprekrýva obsah
-    await page.addStyleTag({ content: ".tabbar { position: static !important; transform: none !important; margin: 16px auto 0; }" });
+    await page.addStyleTag({
+      content: ".tabbar, .cta { position: static !important; transform: none !important; margin: 16px auto 0; } #app[data-cta] { padding-bottom: 0; }",
+    });
     await expect(page).toHaveScreenshot(`${name}.png`, { fullPage: true });
   });
 }
