@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Team Pulse</title>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+    <stop offset="0" stop-color="#14192b" stop-opacity="1"/><stop offset="1" stop-color="#05070c" stop-opacity="1"/></linearGradient>
+  <radialGradient id="hi" cx="0.5" cy="0.08" r="0.75">
+    <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.28"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+  <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#8b5cf6" stop-opacity="1"/><stop offset="0.5" stop-color="#6366f1" stop-opacity="0.35"/><stop offset="1" stop-color="#00f2fe" stop-opacity="1"/></linearGradient>
+  <linearGradient id="pulse" gradientUnits="userSpaceOnUse" x1="70" y1="0" x2="442" y2="0">
+    <stop offset="0" stop-color="#8b5cf6" stop-opacity="1"/><stop offset="0.38" stop-color="#6366f1" stop-opacity="1"/><stop offset="0.62" stop-color="#00f2fe" stop-opacity="1"/><stop offset="1" stop-color="#10b981" stop-opacity="1"/></linearGradient>
+  <radialGradient id="node" cx=".4" cy=".35" r=".7">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="1"/><stop offset="0.45" stop-color="#b9fbff" stop-opacity="1"/><stop offset="1" stop-color="#00f2fe" stop-opacity="1"/></radialGradient>
+  <radialGradient id="halo"><stop offset="0" stop-color="#00f2fe" stop-opacity="0.75"/><stop offset="1" stop-color="#00f2fe" stop-opacity="0"/></radialGradient>
+  <filter id="wide" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="near" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+<rect width="512" height="512" fill="url(#bg)"/><rect width="512" height="512" fill="url(#hi)"/>
+<g transform="translate(256 256) scale(0.94) translate(-256 -256)">
+  <g fill="none" stroke="#8b5cf6" stroke-width="3">
+    <circle cx="256" cy="268" r="82" stroke-opacity=".22"/>
+    <circle cx="256" cy="268" r="146" stroke-opacity=".15"/>
+    <circle cx="256" cy="268" r="210" stroke-opacity=".09"/>
+    <path d="M256 58v420M46 268h420" stroke-opacity=".07" stroke-dasharray="6 10"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="70,292 176,292 206,254 238,346 282,138 322,292 442,292" stroke="url(#pulse)" stroke-width="44" opacity=".55" filter="url(#wide)"/>
+    <polyline points="70,292 176,292 206,254 238,346 282,138 322,292 442,292" stroke="url(#pulse)" stroke-width="30" opacity=".9" filter="url(#near)"/>
+    <polyline points="70,292 176,292 206,254 238,346 282,138 322,292 442,292" stroke="url(#pulse)" stroke-width="28"/>
+    <polyline points="70,292 176,292 206,254 238,346 282,138 322,292 442,292" stroke="#ffffff" stroke-width="7" stroke-opacity=".5"/>
+  </g>
+  <circle cx="282" cy="138" r="58" fill="url(#halo)"/>
+  <circle cx="282" cy="138" r="23" fill="url(#node)"/>
+</g>
+</svg>

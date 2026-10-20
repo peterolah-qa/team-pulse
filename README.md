@@ -42,7 +42,8 @@ s akou šancou vyjdú všetky naraz. Nie je spojený s NBA, NHL ani s ich klubmi
 farby (Silný smaragd, Stabilný indigo, Oslabený jantár, Kritický rubín), tip je fialovo-modrá žiara,
 nie stávková žltá. Odznak teamu je kruh vo farbách dresu so skratkou a prstencom: pri NBA Pulse, pri NHL
 šanca na výhru. Písmo Space Grotesk a Inter, číslice rovnako široké. Na počítači sú Zápasy prehľad
-v dvoch stĺpcoch. Appka má tmavú aj svetlú tému podľa nastavenia systému.
+v dvoch stĺpcoch. Appka má tmavú aj svetlú tému podľa nastavenia systému. Ikona: tmavý squircle s radarovými
+kruhmi a neónovou EKG krivkou z fialovej do smaragdovej so žiariacim vrcholom (verzie pre Android, iOS aj počítač).
 
 **Pulse** = 50 + (Elo dnes − 1505) / 6, teda 50 znamená priemerný team. Hranice úrovní sú 70 / 50 / 30.
 Team, ktorý je dnes aspoň o 60 Elo pod svojím normálom (napr. mu chýba hviezda), padne o úroveň nižšie.
@@ -229,7 +230,8 @@ sú vymyslené, čísla na screenshotoch sú testovacie.
 - [x] NHL v appke ako beta · [ ] G2-NHL 13. – 26. 10. 2026 (vyhodnotenie 27. 10.)
 - [ ] F1 – model B naostro mimo appky do 6. 12. 2026 · [ ] Tipos extraliga – čaká na súhlas SZĽH
 - [x] redizajn: vzhľad, detail NHL, pás dní, karty, prehľad dňa, Tipy, Teamy, Model
-- [ ] redizajn: detail NBA, Moje teamy, Bilancia tipov naostro, Sledovať pre NBA, nová ikona
+- [x] nová ikona appky (squircle, neónová EKG krivka, radar, vrcholový uzol; `scripts/make_icons.py`)
+- [ ] redizajn: detail NBA, Moje teamy, Bilancia tipov naostro, Sledovať pre NBA
 - [ ] neskôr: Supabase (história predpovedí)
 
 Čo sa kedy urobilo a prečo: [docs/journal.md](docs/journal.md). Úlohy: boardy „Team Pulse“ a „Team Pulse – športy“.

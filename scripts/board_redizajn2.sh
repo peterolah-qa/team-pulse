@@ -67,6 +67,8 @@ add "$NBA,$SPORTY" "Model: ukazovatele, kalibrácia a prínos vrstiev" "app,desi
   'Presnosť, log loss, Brier; kalibračná krivka; log loss každej vrstvy a zmena oproti predchádzajúcej; váhy po rozkliknutí.' "done"
 add "$NBA,$SPORTY" "README: aktuálny stav projektu" "docs" \
   'Obrazovky po redizajne, športy a brány (NBA, NHL, F1, extraliga), NHL model, testy, štruktúra, zdroje, obmedzenia, plán; nové screenshoty.' "done"
+add "$NBA" "Nová ikona appky v štýle Luminous Pulse" "app,design" \
+  'Squircle, radarové kruhy, neónová EKG krivka z fialovej do smaragdovej, vrcholový uzol; any / maskable / iOS. scripts/make_icons.py + npm run icons.' "done"
 url=$(url_of "Redizajn 4: Zápasy, Tipy, Výsledky, Teamy")
 if [ -n "$url" ] && [ "$(state_of "Redizajn 4: Zápasy, Tipy, Výsledky, Teamy")" != "CLOSED" ]; then
   gh issue close "$url" --reason completed \

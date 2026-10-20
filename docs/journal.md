@@ -6,6 +6,14 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 20. 10. 2026
 
+- **Nová ikona appky** (Petrovo zadanie 13:10): tmavý squircle (superelipsa, #14192B → #05070C) s jemným
+  okrajom z fialovej do azúrovej, radarové kruhy, neónová EKG krivka z fialovej (#8B5CF6) cez indigo do azúrovej
+  a smaragdovej (#00F2FE / #10B981) s dvojitou žiarou a žiariaci vrcholový uzol („Peak Pulse“). Varianty: `icon.svg`
+  a PNG 192 / 512 so squircle a priehľadnými rohmi, maskable 512 pre Android (celý štvorec, obsah v bezpečnej zóne),
+  apple-touch-icon 180 pre iOS (celý štvorec, rohy zaoblí iOS). Zdroj `scripts/make_icons.py` (SVG), PNG z neho
+  `npm run icons` (Chromium z Playwrightu). Čitateľná aj pri 32 – 48 px. Zmenšenie PNG na 256 farieb zamietnuté
+  (pruhy v žiare), ostávajú bezstratové. Na iPhone sa nová ikona ukáže až po odobratí a novom pridaní appky
+  na plochu, Android si ju obnoví sám.
 - **README aktualizovaný** na stav k 20. 10.: NBA aj NHL v appke, nový vzhľad a obrazovky (pás dní, karty,
   prehľad dňa, detail NHL, Teamy v 4 úrovniach, Model), tabuľka športov a brán (NBA G2, NHL G2 predbežne
   splnené, F1 model B mimo appky, extraliga čaká na SZĽH), NHL model, testy (pytest 410, Playwright 147 + 28),
@@ -321,5 +329,5 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 - G2-NHL: 13. – 26. 10. 2026, vyhodnotenie 27. 10. ráno po NHL úlohe (z Macu, potrebuje API NHL):
   `uv run python -m team_pulse.gate_g2 nhl`.
 - Nápady: Peter vyberie z `docs/napady.md`, vybrané pôjdu na board.
-- Redizajn: po deployi kroku 2 `bash scripts/board_redizajn2.sh`, kontrola na iPhone (švih kariet, pás dní).
-  Ďalej etapa 3 (detail NBA), Moje teamy, Bilancia, Sledovať pre NBA, nová ikona, etapa 5 (testy, iPhone).
+- Redizajn: `bash scripts/board_redizajn2.sh`, kontrola na iPhone (švih kariet, pás dní, nová ikona po novom
+  pridaní na plochu). Ďalej etapa 3 (detail NBA), Moje teamy, Bilancia, Sledovať pre NBA, etapa 5 (testy, iPhone).
