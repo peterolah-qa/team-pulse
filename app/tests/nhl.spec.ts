@@ -1,8 +1,9 @@
 import { expect, test } from "@playwright/test";
-import { fixture, isData, open, serveData, withResults } from "./helpers";
+import { fixture, isData, listMode, open, serveData, withResults } from "./helpers";
 
 /* NHL (beta): prepínač športu, zápasy, tipy, výsledky, detail, teamy a model. „Teraz“ = streda 21. 10. 0:30. */
 test.beforeEach(async ({ page }) => {
+  await listMode(page); // karty NHL sú v screens.spec.ts
   await serveData(page, { predictions: withResults });
 });
 
@@ -242,7 +243,7 @@ test("Teamy NHL: poradie podľa Ela, Model NHL: presnosť a vrstvy", async ({ pa
 
   await nhl(page, "#/nhl/model");
   await expect(page.locator(".big-n")).toHaveText("57,6 %");
-  await expect(page.locator(".hero")).toContainText("54,3 %");
+  await expect(page.locator(".hint.intro")).toContainText("54,3 %");
   await page.locator("details.more summary").click();
   await expect(page.locator("details.more li", { hasText: "Hostia: 2. zápas za 2 dni" })).toContainText("−");
 });

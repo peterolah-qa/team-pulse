@@ -1,7 +1,7 @@
 /* Team: forma dnes, najbližšie zápasy s naším tipom, posledné výsledky, súpiska. Teamy: liga podľa formy. */
 import type { AppData, Result, TeamPage, Tier } from "../data";
 import { allGames } from "../data";
-import { chip, coin, esc, header, localDay, parseUtc, pulseNum, ring, shortDate, signed, split, TEAM_NAMES, TIERS, tierClass, time } from "../ui";
+import { badge, chip, coin, esc, header, localDay, parseUtc, pulseNum, ring, shortDate, signed, split, TEAM_NAMES, TIERS, tierClass, time } from "../ui";
 
 const STATUS: Record<string, [string, string]> = {
   OUT: ["nehrá", "t3"],
@@ -90,18 +90,39 @@ export function teamView(d: AppData, abbr: string): string {
 }
 
 const GROUP: Record<Tier, string> = { Silný: "Silní", Stabilný: "Stabilní", Oslabený: "Oslabení", Kritický: "Kritickí" };
+const RANGE: Record<Tier, string> = { Silný: "Pulse 70 a viac", Stabilný: "Pulse 50 – 69", Oslabený: "Pulse 30 – 49", Kritický: "Pulse pod 30" };
+
+/* Posun dnes: o koľko Elo je team pod/nad svojím normálom (chýbajúci hráči, súpiska) a hlavný dôvod. */
+function shift(t: TeamPage): string {
+  const d = Math.round(t.elo_today - t.elo);
+  const parts: string[] = [];
+  if (t.dropped) parts.push(`<b class="neg">↓ z úrovne ${esc(t.normal_tier)}</b>`);
+  if (d) parts.push(`<span class="${d > 0 ? "pos" : "neg"}">dnes ${signed(d)} Elo</span>`);
+  if (t.reasons.length) parts.push(esc(`${t.reasons[0][0]} ${signed(t.reasons[0][1])}`));
+  return parts.length ? parts.join(" · ") : "bez zmeny oproti normálu";
+}
 
 export function teamsView(d: AppData): string {
   const list = ranked(d);
-  const groups = TIERS.map((tier) => [tier, list.filter((t) => t.tier === tier)] as const).filter(([, ts]) => ts.length);
-  return `${header("Teamy", "forma dnes, od najlepšieho")}
-    ${groups
-      .map(([tier, ts]) => `<section><h2 class="day"><span>${GROUP[tier]}</span><span class="day-n">${ts.length}</span></h2><ul class="list tight">${ts
+  const groups = TIERS.map((tier) => [tier, list.filter((t) => t.tier === tier)] as const);
+  const tabs = groups
+    .map(([tier, ts], i) => `<button type="button" class="ttab ${tierClass(tier)}" data-tier="${i}" aria-pressed="${i === 0}" aria-controls="tier-${i}">
+      <span class="dot" aria-hidden="true"></span>${GROUP[tier]} <b class="num">${ts.length}</b></button>`)
+    .join("");
+  const panels = groups
+    .map(([tier, ts], i) => `<section class="tpanel ${tierClass(tier)}" id="tier-${i}" aria-labelledby="tier-h-${i}">
+      <h2 class="tp-h" id="tier-h-${i}"><span>${GROUP[tier]}</span><span class="tp-r">${RANGE[tier]}</span><span class="day-n">${ts.length}</span></h2>
+      ${ts.length ? `<ul class="list tight">${ts
         .map((t) => `<li><a class="teamrow" href="#/team/${esc(t.team)}">
-          <span class="rank num">${list.indexOf(t) + 1}</span><span class="abbr">${coin(t.team)}${esc(t.team)}</span><span class="name">${esc(TEAM_NAMES[t.team] ?? t.team)}</span>
-          <span class="meter ${tierClass(t.tier)}" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, t.pulse))}%"></i></span>
+          <span class="rank num">${list.indexOf(t) + 1}</span>
+          <span class="abbr">${badge(t.team, "nba", "sm", { value: t.pulse, tone: tierClass(t.tier) })}${esc(t.team)}</span>
+          <span class="tmid"><span class="name">${esc(TEAM_NAMES[t.team] ?? t.team)}</span><span class="shift">${shift(t)}</span></span>
           <span class="pulse num ${tierClass(t.tier)}">${pulseNum(t.pulse)}</span></a></li>`)
-        .join("")}</ul></section>`)
-      .join("")}
-    <p class="meta">Pulse 0 – 100 je forma teamu dnes: sila z výsledkov, súpiska a chýbajúci hráči. Silný 70+, Stabilný 50 – 69, Oslabený 30 – 49, Kritický pod 30.</p>`;
+        .join("")}</ul>` : `<p class="empty">Teraz žiadny team.</p>`}
+    </section>`)
+    .join("");
+  return `${header("Teamy", "forma dnes (Pulse), od najlepšieho")}
+    <div class="tiers"><div class="tiers-nav" role="group" aria-label="Úrovne formy">${tabs}</div>
+      <div class="tiers-track">${panels}</div></div>
+    <p class="meta">Pulse 0 – 100 je forma teamu dnes: sila z výsledkov, súpiska a chýbajúci hráči (50 = priemer ligy). Team, ktorý je dnes aspoň o 60 Elo pod normálom, padne o úroveň nižšie. Na mobile sa medzi úrovňami prechádza švihom do strán.</p>`;
 }

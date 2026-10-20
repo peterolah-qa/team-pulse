@@ -6,6 +6,34 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 20. 10. 2026
 
+- **Redizajn – celý ekosystém obrazoviek (Petrovo zadanie 11:58).** Smer: analytický terminál (Bloomberg,
+  FiveThirtyEight), nie stávková kancelária. Peter rozhodol: karusely vnútri obrazoviek (medzi záložkami len dok),
+  Zápasy na mobile ako balíček kariet s prepínačom na zoznam, všetko v jednom kroku so screenshotmi pred patchom.
+  - **Paleta podľa významu:** úrovne formy Silný smaragd (#10B981, žiara #00F2FE), Stabilný indigo (#6366F1),
+    Oslabený jantár (#F59E0B), Kritický rubín (#F43F5E); podklad #0B0F19, karty #181E31 s okrajom #242D46.
+    Tip už nie je žltý: fialovo-modrá žiara (#7C3AED → #2563EB). Stabilný je indigo, aby sa nemýlil s tipom
+    (oba by inak boli fialové), jantár zostal len Oslabenému.
+  - **Odznak teamu:** kruh vo farbách dresu so skratkou a prstencom: pri NBA Pulse vo farbe úrovne, pri NHL
+    šanca na výhru v zápase (NHL Pulse nemá, nič sa nedopočítava). Žiadne logá.
+  - **Zápasy:** pás dní hore (počet zápasov a najistejší tip dňa, zvolený deň svieti), Karty / Zoznam (appka si
+    pamätá), balíček kariet so švihom, šípkami aj klávesnicou a ukazovateľom „Zápas 2 z 3“. Karta: Pulse
+    (NBA) alebo bilancia a Elo (NHL), šanca, tip a najviac 4 dôvody v Elo bodoch v prospech tipu (NHL z rozpadu
+    tipu). Vedľa prehľad dňa: počet zápasov, priemerná šanca favorita, všetky tipy dňa naraz, najistejší tip,
+    liga podľa formy (NHL: najsilnejší podľa Ela) a model. Na počítači karty v mriežke a prehľad v stĺpci.
+  - **Tipy:** ukazovatele (najistejší tip, počet, všetky naraz), graf: stĺpce = šanca tipu, čiara s plochou =
+    súčin od prvého po daný; pri každom riadku pruh súčinu.
+  - **Teamy (NBA):** 4 úrovne ako karusel so záložkami (na počítači 4 stĺpce), Kritickí jemne pulzujú; pri teame
+    Pulse, prstenec a posun oproti normálu („dnes −3 Elo · Bez I. Varga (?) −12“). NHL ostáva poradie podľa Ela.
+  - **Model:** presnosť, log loss, Brier ako ukazovatele, kalibrácia, prínos vrstiev (log loss a zmena oproti
+    predchádzajúcej vrstve, napr. kalibrované Elo +0,0007 = horšie, únava −0,0034), váhy po rozkliknutí.
+  - **Prechody:** obrazovka sa jemne zjaví a posunie, nie pri zmene dňa ani zobrazenia; pri obmedzení pohybu nič.
+  - **Chyba nájdená testom pred odovzdaním:** kontajner kariet mal atribút `data-mode`, takže klik na šípku
+    balíčka appka vzala ako „prepni zobrazenie“ a karty prekreslila. Opravené (len tlačidlá, iný atribút).
+  - Detail NBA zápasu dostal prstence Pulse, inak čaká na etapu 3.
+  - **Testy:** pytest 410 (vrátane testu na skutočnej odpovedi štatistík NHL), Playwright 147 (E2E, prístupnosť
+    v tmavej aj svetlej téme, nové `screens.spec.ts`: pás dní, balíček, švih, šípky, klávesnica, prehľad dňa,
+    Teamy, NHL karty) + 28 vizuálnych (nové snapshoty, aj Zápasy ako zoznam).
+
 - **Redizajn appky – rozhodnutie.** Petrovi sa súčasný vzhľad nepáči: farby, neprehľadnosť, amatérsky dojem,
   písmo a 3D mince teamov, celkovo chaos a málo užitočných funkcií. Zvolený štýl „Odvážny a hravý“, nasadiť
   hneď, keď bude hotový. Najprv 5 variantov na plátne (Dres, Plagát, Tabuľa, Nálepky, Lano), potom Peter dodal
@@ -53,12 +81,17 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   SJS @ MTL: Centre Bell, SJS 4-4-1, MTL 4-3-1, SJS back-to-back a 4. zápas výjazdu, MTL 2 dni voľna; vzájomné
   zápasy len 2 (v minulej sezóne hrali dvakrát, v tejto ešte nie). Odpoveď štatistík uložená ako
   `tests/fixtures/nhl_team_summary.json`, test na nej kontroluje tvar a poradie v lige.
-- **Board:** `scripts/board_redizajn.sh` – míľnik „R – Redizajn appky“, hotové etapy 1 a 2, kontext NHL a Sledovať
+- **Board:** `scripts/board_redizajn2.sh` – hotové kroky ekosystému (paleta, Zápasy, počítač, Tipy, Teamy, Model),
+  „Redizajn 4“ uzavretý, Moje teamy a Bilancia ostávajú otvorené.
+- **Board (doobeda):** `scripts/board_redizajn.sh` – míľnik „R – Redizajn appky“, hotové etapy 1 a 2, kontext NHL a Sledovať
   zápas; ďalej overenie so skutočnými dátami, detail NBA, zoznamy, Moje teamy, Bilancia, Sledovať pre NBA,
   nová ikona, testy a kontrola na iPhone.
 - **Testy:** pytest 409, Playwright 129 (E2E, prístupnosť v tmavej aj svetlej téme) + 26 vizuálnych (nové
   snapshoty), ruff čistý. Test parsera G2 upravený: report NBA má od 20. 10. riadok základnej časti už pred
   prvým výsledkom, tabuľku až s výsledkami (`gate_g2 nba` na dnešných dátach: predbežne splnené, 0 dohratých).
+- **G2-NHL predbežne k 20. 10. – všetky 4 kritériá splnené** (`5096fd6`): 51 z 51 tipov zamknutých pred
+  začiatkom, všetky dohraté a vyhodnotené, nezávislý prepočet = report (vyšlo 31, log loss 0,6449), hranica
+  0,7101. Prvá verzia reportu (v `8888dee`) bola z rána pred NHL úlohou, preto hlásila chýbajúci 19. 10.
 - **Ranné úlohy 20. 10. prešli:** NBA stav 10:00 (`3c44b15`), NHL 10:15 (`5860614`, noc 19. 10.: tip vyšiel 3 z 4,
   zamknutých 13 tipov).
 
@@ -283,5 +316,5 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 - G2-NHL: 13. – 26. 10. 2026, vyhodnotenie 27. 10. ráno po NHL úlohe (z Macu, potrebuje API NHL):
   `uv run python -m team_pulse.gate_g2 nhl`.
 - Nápady: Peter vyberie z `docs/napady.md`, vybrané pôjdu na board.
-- Redizajn: po deployi overiť detail NHL na živej appke (iPhone) a varovania „NHL kontext“ v Predikciách.
-  Ďalej etapa 3 (detail NBA), 4 (zoznamy, Moje teamy, Bilancia) a 5 (testy, iPhone).
+- Redizajn: po deployi kroku 2 `bash scripts/board_redizajn2.sh`, kontrola na iPhone (švih kariet, pás dní).
+  Ďalej etapa 3 (detail NBA), Moje teamy, Bilancia, Sledovať pre NBA, nová ikona, etapa 5 (testy, iPhone).

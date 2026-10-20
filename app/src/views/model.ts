@@ -2,6 +2,8 @@
 import type { AppData, ModelInfo } from "../data";
 import { esc, header, pct1, signed } from "../ui";
 
+const n4 = (x: number): string => x.toFixed(4).replace(".", ",");
+
 const WEIGHT_LABELS: Record<string, string> = {
   home: "Domáce prostredie",
   away_b2b: "Hostia: 2. zápas za 2 dni",
@@ -34,12 +36,29 @@ function calibration(m: ModelInfo): string {
     <p class="small muted">Vodorovne: šanca favorita podľa modelu. Zvislo: ako často favorit naozaj vyhral. Bodky na čiare = percentá sedia.</p>`;
 }
 
+/* Prínos vrstiev: log loss každej verzie (menej = lepšie) a zmena oproti predchádzajúcej. */
+function layers(m: ModelInfo): string {
+  const v = m.versions;
+  if (!v.length) return "";
+  const lo = Math.min(...v.map((x) => x.log_loss)), hi = Math.max(...v.map((x) => x.log_loss));
+  const span = Math.max(hi - lo, 0.001);
+  const rows = v
+    .map((x, i) => {
+      const w = 30 + ((hi - x.log_loss) / span) * 70; // kratší pruh = horší log loss
+      const d = i ? x.log_loss - v[i - 1].log_loss : 0;
+      const best = i === v.length - 1;
+      return `<li class="${best ? "best" : ""}"><div class="ly-top"><span class="ly-name">${esc(x.model)}</span><span class="num">${n4(x.log_loss)}</span></div>
+        <div class="ly-bar" aria-hidden="true"><i style="width:${w.toFixed(0)}%"></i></div>
+        <div class="ly-sub"><span>presnosť ${pct1(x.accuracy)}</span>${i ? `<span class="${d < 0 ? "pos" : d > 0 ? "neg" : "muted"}">${d < 0 ? "−" : d > 0 ? "+" : "±"}${n4(Math.abs(d))}</span>` : `<span class="muted">základ</span>`}</div></li>`;
+    })
+    .join("");
+  return `<h2 class="sec">Prínos vrstiev</h2><section class="card"><ol class="layers">${rows}</ol>
+    <p class="small muted">Log loss na testovacích sezónach, menej = lepšie. Dlhší pruh = lepší model. Vrstva sa do modelu dostala, len ak zlepšila log loss aspoň o 0,0005.</p></section>`;
+}
+
 /* Spoločná obrazovka modelu; šport dodá popisy váh a vetu pod presnosťou. */
 export function modelPage(m: ModelInfo, labels: Record<string, string>, intro: string, extra = ""): string {
   const t = m.test_metrics;
-  const versions = m.versions
-    .map((v, i) => `<tr class="${i === m.versions.length - 1 ? "best" : ""}"><td>${esc(v.model)}</td><td class="n">${pct1(v.accuracy)}</td><td class="n">${v.log_loss.toFixed(4).replace(".", ",")}</td></tr>`)
-    .join("");
   const weights = Object.entries(m.elo_weights)
     .filter(([k]) => k in labels)
     .map(([k, v]) => [k, k.startsWith("away_") ? -v : v] as const)
@@ -47,16 +66,18 @@ export function modelPage(m: ModelInfo, labels: Record<string, string>, intro: s
     .map(([k, v]) => `<li><span>${esc(labels[k])}</span><span class="num ${v >= 0 ? "pos" : "neg"}">${signed(Math.round(v))}</span></li>`)
     .join("");
   const seasons = `${m.train_seasons[0] - 1}/${String(m.train_seasons[0]).slice(-2)} – ${m.train_seasons[1] - 1}/${String(m.train_seasons[1]).slice(-2)}`;
-  return `${header("Model", `verzia ${esc(m.version)}`)}
-    <section class="card hero">
-      <p class="big-n num">${pct1(t.accuracy)}</p>
-      <p>Toľko zápasov model trafil (víťaza) v sezónach ${esc(t.test_seasons)}, ktoré pri učení nevidel. ${intro}</p>
-    </section>${extra}
-    <h2 class="sec">Sedia percentá?</h2><section class="card">${calibration(m)}</section>
-    <details class="more"><summary>Ako sa model učil</summary>
-      <p class="small muted">Učenie na sezónach ${seasons}, ${m.n_games.toLocaleString("sk-SK")} zápasov. Každá vrstva musela zlepšiť presnosť, inak sa nepoužila.</p>
-      <table class="table"><caption class="sr-only">Porovnanie vrstiev modelu</caption><thead><tr><th>Vrstvy</th><th class="n">Presnosť</th><th class="n">Log loss</th></tr></thead><tbody>${versions}</tbody></table>
-      <p class="small muted sub-h">Čo sa model naučil (vplyv na team v Elo bodoch)</p><ul class="rows">${weights}</ul>
+  return `${header("Model", `verzia ${esc(m.version)} · test na sezónach ${esc(t.test_seasons)}`)}${extra}
+    <div class="kpis-row">
+      <div class="card kpi-card main"><span class="label">Presnosť</span><span class="big-n num">${pct1(t.accuracy)}</span><span class="kpi-l">trafený víťaz v zápasoch, ktoré model pri učení nevidel</span></div>
+      <div class="card kpi-card"><span class="label">Log loss</span><span class="kpi-n num">${n4(t.log_loss)}</span><span class="kpi-l">istota percent, menej = lepšie</span></div>
+      <div class="card kpi-card"><span class="label">Brier</span><span class="kpi-n num">${n4(t.brier)}</span><span class="kpi-l">chyba percent, menej = lepšie</span></div>
+    </div>
+    <p class="hint intro">${intro}</p>
+    <h2 class="sec">Kalibrácia: sedia percentá?</h2><section class="card">${calibration(m)}</section>
+    ${layers(m)}
+    <details class="more"><summary>Čo sa model naučil</summary>
+      <p class="small muted">Učenie na sezónach ${seasons}, ${m.n_games.toLocaleString("sk-SK")} zápasov. Vplyv na team v Elo bodoch:</p>
+      <ul class="rows">${weights}</ul>
     </details>`;
 }
 

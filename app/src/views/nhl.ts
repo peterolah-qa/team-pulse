@@ -2,8 +2,9 @@
    appka ich len ukazuje. Zranenia z ESPN sú len informácia, model ich nepočíta (brána G2-NHL). */
 import type { NhlData, NhlForm, NhlGame, NhlInjury, NhlOutcome, NhlResult, NhlSide, NhlStatKey } from "../data";
 import { isFollowed } from "../follow";
-import { coin, dayHeading, dayTitle, esc, groupBy, header, localDay, num1, pct1, shortDate, signed, signed1, split, teamName, time, when } from "../ui";
-import { byTipoff, gameRow, isPre } from "./games";
+import { badge, coin, dayHeading, dayTitle, esc, groupBy, header, localDay, num1, pct1, shortDate, signed, signed1, split, teamName, time, when } from "../ui";
+import { byTipoff, gameRow, isPre, modelWidget } from "./games";
+import { card, dayWidget, matchesPage, topReasons, type CardSide } from "./matches";
 import { modelPage } from "./model";
 import { recentOf } from "./result";
 import { tipsFrom, tipsPage } from "./tips";
@@ -59,20 +60,49 @@ function injuriesCard(n: NhlData, g: NhlGame): string {
 /* Poznámka pod zápasom: najväčší vplyv únavy na každý team („DET: back-to-back“). */
 const fatigue = (g: NhlGame): string[] => [g.away, g.home].flatMap((s) => (s.reasons.length ? [`${s.team}: ${s.reasons[0][0]}`] : []));
 
+/* NHL karta: prstenec = šanca na výhru v zápase (NHL nemá Pulse), dôvody = rozpad tipu v Elo bodoch. */
+function nhlCard(g: NhlGame, i: number, cnt: number, now: number): string {
+  const homeFav = g.p_home > 0.5;
+  const { home, away } = split(g.p_home);
+  const side = (s: "home" | "away"): CardSide => {
+    const f = g.ctx?.[s]?.form;
+    const isFav = (s === "home") === homeFav;
+    return {
+      ring: { value: s === "home" ? home : away, tone: isFav ? "tip" : "dim" },
+      name: teamName(g[s].team, "nhl"),
+      line: `${f ? `<span class="num">${f.record.join("-")}</span> · ` : ""}Elo <b class="num">${Math.round(g[s].elo)}</b>`,
+    };
+  };
+  const sign = homeFav ? 1 : -1;
+  const reasons: [string, number][] = g.ctx
+    ? g.ctx.edge.items.filter(([k]) => k !== "base").map(([, label, v]) => [label, sign * v])
+    : [g.away, g.home].flatMap((s) => s.reasons.map(([t, e]): [string, number] => [`${s.team}: ${t}`, (s === g.home) === homeFav ? e : -e]));
+  return card(g, "nhl", { href: `${BASE}zapas/${esc(g.game_id)}`, away: side("away"), home: side("home"), reasons: topReasons(reasons), venue: g.ctx?.venue }, i, cnt, now);
+}
+
+function eloWidget(n: NhlData): string {
+  const top = n.predictions.teams.slice(0, 5);
+  if (!top.length) return "";
+  return `<section class="card widget"><h2 class="label">Najsilnejší podľa Ela</h2><ol class="eloten">${top
+    .map((t, i) => `<li><span class="num muted">${i + 1}.</span>${badge(t.team, "nhl")}<b>${esc(t.team)}</b><span class="muted">${esc(teamName(t.team, "nhl"))}</span><span class="num">${Math.round(t.elo)}</span></li>`)
+    .join("")}</ol><a class="wlink" href="${BASE}teamy">Celá liga podľa Ela ›</a></section>`;
+}
+
 export function nhlGamesView(n: NhlData): string {
   const done = finished(n);
   const list = games(n).filter((g) => !done.has(g.game_id)).sort(byTipoff);
-  const now = Date.now();
-  const days = groupBy(list, (g) => localDay(g.tipoff_utc, g.date));
-  const body = days.length
-    ? days
-        .map(([day, gs]) => `<section>${dayHeading(day, gs.length, ["zápas", "zápasy", "zápasov"])}<ul class="list">${gs
-          .map((g) => gameRow(g, now, { sport: "nhl", notes: fatigue(g) }))
-          .join("")}</ul></section>`)
-        .join("")
-    : `<p class="empty">Žiadne zápasy s tipom. Tipy na ďalšie dni pribudnú ráno.</p>`;
-  return `${header("Zápasy", updated(n))}${beta()}${body}
-    <p class="meta">Časy sú v našom čase. Tip = team, ktorému model dáva väčšiu šancu na výhru (aj po predĺžení alebo nájazdoch).</p>`;
+  const byId = new Map(list.map((g) => [g.game_id, g]));
+  return matchesPage({
+    sport: "nhl",
+    games: list,
+    sub: updated(n),
+    intro: beta(),
+    card: (g, i, cnt, now) => nhlCard(byId.get(g.game_id)!, i, cnt, now),
+    row: (g, now) => gameRow(g, now, { sport: "nhl", notes: fatigue(byId.get(g.game_id)!) }),
+    widgets: (day, gs) => `${dayWidget(day, gs, "nhl")}${eloWidget(n)}${modelWidget(n.model, `${BASE}model`)}`,
+    footer: "Časy sú v našom čase. Tip = team, ktorému model dáva väčšiu šancu na výhru (aj po predĺžení alebo nájazdoch). Prstenec okolo teamu = šanca na výhru v zápase.",
+    empty: "Žiadne zápasy s tipom. Tipy na ďalšie dni pribudnú ráno.",
+  });
 }
 
 export function nhlTipsView(n: NhlData): string {

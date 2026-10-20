@@ -59,11 +59,29 @@ export function onColor(hex: string): string {
   return (1.05 / (lum + 0.05)) >= ((lum + 0.05) / 0.05) ? "#ffffff" : "#111111";
 }
 
-/* Farby teamu bez log: malý pásik vo farbách dresu, s textom veľký odznak so skratkou (detail zápasu). */
-export function coin(abbr: string, label = false, sport: Sport = "nba"): string {
+/* Prstenec okolo odznaku: hodnota 0 – 100 a farba (úroveň Pulse t0 – t3, alebo „tip“ pre šancu na výhru). */
+export interface RingValue {
+  value: number;
+  tone: string; // t0 | t1 | t2 | t3 | tip | dim
+}
+
+/* Odznak teamu bez log: kruh vo farbách dresu so skratkou (monogram), okolo prstenec formy alebo šance.
+   sm = do riadkov zoznamu (bez textu), lg = karta a detail zápasu. Len doplnok k textu, preto aria-hidden. */
+export function badge(abbr: string, sport: Sport = "nba", size: "sm" | "lg" = "sm", r?: RingValue): string {
   const [c1, c2] = (sport === "nhl" ? NHL_COLORS : TEAM_COLORS)[abbr] ?? ["#3a3f55", "#8a90a8"];
-  const on = label ? `;--on-c1:${onColor(c1)}` : "";
-  return `<span class="coin${label ? " big" : ""}" style="--c1:${c1};--c2:${c2}${on}" aria-hidden="true">${label ? esc(abbr) : ""}</span>`;
+  const R = 16, C = 2 * Math.PI * R;
+  const v = r ? Math.max(0, Math.min(100, r.value)) : 0;
+  const arc = r
+    ? `<circle class="tb-arc ${r.tone}" cx="18" cy="18" r="${R}" stroke-dasharray="${((C * v) / 100).toFixed(2)} ${C.toFixed(2)}" transform="rotate(-90 18 18)"/>`
+    : "";
+  return `<span class="tb ${size}${r ? " ringed" : ""}" style="--c1:${c1};--c2:${c2};--on-c1:${onColor(c1)}" aria-hidden="true">
+    <svg viewBox="0 0 36 36"><circle class="tb-track" cx="18" cy="18" r="${R}"/>${arc}</svg>
+    <span class="tb-disc">${size === "lg" ? esc(abbr) : ""}</span></span>`;
+}
+
+/* Starší názov: odznak bez prstenca (big = so skratkou). */
+export function coin(abbr: string, label = false, sport: Sport = "nba"): string {
+  return badge(abbr, sport, label ? "lg" : "sm");
 }
 
 export const TIERS: Tier[] = ["Silný", "Stabilný", "Oslabený", "Kritický"];

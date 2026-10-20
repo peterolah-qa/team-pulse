@@ -1,7 +1,9 @@
 import { expect, test } from "@playwright/test";
-import { fixture, NOW, open, serveData, visitedBefore, withResults } from "./helpers";
+import { fixture, listMode, NOW, open, serveData, visitedBefore, withResults } from "./helpers";
 
+/* Zápasy tu testujeme ako zoznam; karty, pás dní, Teamy a Model v novom vzhľade sú v screens.spec.ts. */
 test.beforeEach(async ({ page }) => {
+  await listMode(page);
   await serveData(page, { predictions: withResults });
 });
 
@@ -110,10 +112,10 @@ test("Výsledky: po dňoch, súhrn tipov a nevyšiel = celý červený", async (
   await expect(rows.nth(1).locator(".tipline")).toHaveText("Tip DET 62 % · vyšiel");
   const style = (i: number) => rows.nth(i).evaluate((el) => ({ stripe: getComputedStyle(el).boxShadow, bg: getComputedStyle(el).backgroundColor }));
   const [miss, hit] = [await style(0), await style(1)];
-  expect(miss.stripe).toContain("rgb(248, 113, 113)"); // červený pásik vľavo
-  expect(miss.bg).toBe("rgb(42, 20, 24)"); // červené pozadie celej karty
+  expect(miss.stripe).toContain("rgb(251, 113, 133)"); // červený pásik vľavo
+  expect(miss.bg).toBe("rgb(42, 21, 32)"); // červené pozadie celej karty
   expect(hit.stripe).toContain("rgb(52, 211, 153)"); // zelený pásik
-  expect(hit.bg).not.toBe("rgb(42, 20, 24)");
+  expect(hit.bg).not.toBe("rgb(42, 21, 32)");
 });
 
 test("Výsledky: zápas zo včera bez uloženého tipu, prázdny stav bez včerajších zápasov", async ({ page }) => {
@@ -181,7 +183,7 @@ test("Upozornenia: dohrané zápasy od poslednej návštevy, nevyšiel červený
   await expect(toasts.nth(1)).toHaveClass(/hit/);
   await expect(toasts.nth(1)).toHaveText(/^✓\s*Tip vyšiel BOS 104 : 110 DET tip DET 62 %$/);
   const stripe = (i: number) => toasts.nth(i).evaluate((el) => getComputedStyle(el).boxShadow);
-  expect(await stripe(0)).toContain("rgb(248, 113, 113)"); // červená
+  expect(await stripe(0)).toContain("rgb(251, 113, 133)"); // červená
   expect(await stripe(1)).toContain("rgb(52, 211, 153)"); // zelená
 
   const tab = page.locator('.tabbar a[data-tab="vysledky"]');
@@ -298,26 +300,21 @@ test("Team: forma, najbližšie zápasy s našou šancou, posledné zápasy, zra
   await expect(page).toHaveURL(/#\/zapas\/0022600002$/);
 });
 
-test("Teamy: skupiny podľa formy, poradie sedí s Pulse", async ({ page }) => {
-  await open(page, "#/teamy");
-  await expect(page.locator("h2.day > span:first-child")).toHaveText(["Silní", "Stabilní", "Oslabení", "Kritickí"]);
-  const rows = page.locator("a.teamrow");
-  await expect(rows).toHaveCount(8);
-  await expect(rows.locator(".rank")).toHaveText(["1", "2", "3", "4", "5", "6", "7", "8"]);
-  await expect(rows.locator(".abbr")).toHaveText(["NYK", "OKC", "SAS", "DET", "DEN", "BOS", "PHI", "LAL"]);
-  const pulses = (await rows.locator(".pulse").allTextContents()).map(Number);
-  expect([...pulses].sort((a, b) => b - a)).toEqual(pulses);
-  await rows.nth(1).click();
-  await expect(page).toHaveURL(/#\/team\/OKC$/);
-});
-
-test("Model: presnosť, kalibrácia, podrobnosti po rozkliknutí", async ({ page }) => {
+test("Model: presnosť, log loss, Brier, kalibrácia, prínos vrstiev, váhy po rozkliknutí", async ({ page }) => {
   await open(page, "#/model");
   await expect(page.locator(".big-n")).toHaveText("67,3 %");
+  await expect(page.locator(".kpi-card .kpi-n")).toHaveText(["0,5996", "0,2068"]);
   await expect(page.locator("svg.cal")).toBeVisible();
+  const layers = page.locator(".layers li");
+  await expect(layers).toHaveCount(5);
+  await expect(layers.first()).toContainText("A: Elo (HCA 70)");
+  await expect(layers.first()).toContainText("základ");
+  await expect(layers.nth(1).locator(".neg")).toHaveText("+0,0007"); // kalibrované Elo bolo horšie
+  await expect(layers.nth(2).locator(".pos")).toHaveText("−0,0034");
+  await expect(page.locator(".layers li.best")).toContainText("A + B + C + sila súpisky");
+  await expect(page.locator(".layers li.best")).toContainText("0,5996");
   const more = page.locator("details.more");
   await more.locator("summary").click();
-  await expect(more.locator("tr.best")).toHaveCount(1);
   await expect(more.locator("li", { hasText: "Hostia: 2. zápas za 2 dni" })).toContainText("−");
 });
 
@@ -402,9 +399,12 @@ test("Dizajn: pruh šancí pri zápase, graf tipov, graf formy v detaile", async
   await expect(page.locator(".formrow svg.spark").first()).toHaveAttribute("aria-label", /^Pulse BOS za posledných \d+ zápasov: od \d+ po \d+$/);
 });
 
-test("Široká obrazovka: zoznamy v dvoch stĺpcoch, detail ostane úzky", async ({ page }, info) => {
+test("Široká obrazovka: Zápasy s prehľadom dňa vedľa, výsledky v dvoch stĺpcoch, detail ostane úzky", async ({ page }, info) => {
   test.skip(info.project.name !== "desktop", "len počítač");
   await open(page);
+  const dash = await page.locator(".dash").evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(" ").length);
+  expect(dash).toBe(2);
+  await open(page, "#/vysledky");
   const cols = await page.locator(".list").first().evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(" ").length);
   expect(cols).toBe(2);
   await open(page, "#/zapas/0022600001");

@@ -24,6 +24,7 @@ import { modelView } from "./views/model";
 import { nhlGamesView, nhlGameView, nhlModelView, nhlResultsView, nhlTeamsView, nhlTipsView } from "./views/nhl";
 import { resultsView, resultView } from "./views/result";
 import { teamsView, teamView } from "./views/team";
+import { type Mode, mode, pickDay, setMode } from "./views/matches";
 import { tipsView } from "./views/tips";
 
 const app = document.getElementById("app")!;
@@ -144,7 +145,8 @@ function badge(): void {
   else document.querySelector(".tabbar .badge")?.remove();
 }
 
-function render(): void {
+/* keep = zmena v rámci obrazovky (deň, zobrazenie): bez posunu hore a bez prechodovej animácie. */
+function render(keep = false): void {
   if (!data) return;
   const r = route();
   if (r.sport === "nhl") ensureNhl();
@@ -157,6 +159,12 @@ function render(): void {
     render();
   });
   wireDetail(r);
+  wireCarousels();
+  if (!keep) {
+    app.classList.remove("enter");
+    void app.offsetWidth; // nová animácia aj pri rovnakej triede
+    app.classList.add("enter");
+  }
   document.title = `${r.sport === "nhl" ? "NHL · " : ""}${r.title} · Team Pulse`;
   const prefix = r.sport === "nhl" ? "#/nhl/" : "#/";
   document.querySelectorAll<HTMLAnchorElement>(".tabbar a").forEach((a) => {
@@ -167,7 +175,7 @@ function render(): void {
   saveSport(r.sport);
   if (r.sport === "nba" && r.tab === "vysledky") markViewed(data);
   badge();
-  window.scrollTo(0, 0);
+  if (!keep) window.scrollTo(0, 0);
 }
 
 /* Detail zápasu: zdieľanie odkazu a prichytené tlačidlo „Sledovať zápas“. */
@@ -178,7 +186,7 @@ function wireDetail(r: Route): void {
   follow?.addEventListener("click", () => {
     const on = toggle(follow.dataset.sport as Sport, follow.dataset.id ?? "", follow.dataset.label ?? "");
     if (on === null) return say("Sledovanie sa v tomto prehliadači nedá uložiť (súkromné okno?).");
-    render();
+    render(true);
     document.getElementById("follow")?.focus();
     say(on ? "Keď sa zápas dohrá, ukážeme ti tu výsledok a či tip vyšiel." : "Zápas už nesleduješ.");
   });
@@ -225,7 +233,7 @@ async function refresh(): Promise<void> {
     const fresh = await loadData();
     if (fresh.predictions.generated_at === data.predictions.generated_at) return;
     data = fresh;
-    if (route().tab === "vysledky") render();
+    if (route().tab === "vysledky") render(true);
     announce();
   } catch {
     /* bez siete ostanú posledné dáta */
@@ -252,7 +260,77 @@ async function start(): Promise<void> {
   }
 }
 
-window.addEventListener("hashchange", render);
+/* Karusely: balíček zápasov (poradie „Zápas 3 z 11“, šípky) a úrovne na Teamy (záložky ↔ panely). */
+function wireCarousels(): void {
+  app.querySelectorAll<HTMLElement>(".deck").forEach((deck) => {
+    const track = deck.querySelector<HTMLElement>(".deck-track")!;
+    const cards = [...track.children] as HTMLElement[];
+    const pos = deck.querySelector(".deck-pos")!;
+    const segs = [...deck.querySelectorAll(".deck-prog i")];
+    const [prev, next] = [...deck.querySelectorAll<HTMLButtonElement>("[data-deck]")];
+    let shown = 0;
+    const step = () => (cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : 1) || 1; // šírka karty + medzera
+    const index = () => Math.round(track.scrollLeft / step());
+    const update = () => {
+      const i = Math.max(0, Math.min(cards.length - 1, index()));
+      if (i === shown) return;
+      shown = i;
+      pos.textContent = `Zápas ${i + 1} z ${cards.length}`;
+      segs.forEach((s, k) => s.classList.toggle("on", k <= i));
+      prev.disabled = i === 0;
+      next.disabled = i === cards.length - 1;
+    };
+    track.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
+    const go = (d: number) => {
+      const i = Math.max(0, Math.min(cards.length - 1, shown + d));
+      track.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: smooth() });
+    };
+    prev.addEventListener("click", () => go(-1));
+    next.addEventListener("click", () => go(1));
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        go(e.key === "ArrowRight" ? 1 : -1);
+      }
+    });
+  });
+  app.querySelectorAll<HTMLElement>(".tiers").forEach((box) => {
+    const track = box.querySelector<HTMLElement>(".tiers-track")!;
+    const panels = [...track.children] as HTMLElement[];
+    const tabs = [...box.querySelectorAll<HTMLButtonElement>("[data-tier]")];
+    const mark = (i: number) => tabs.forEach((t, k) => t.setAttribute("aria-pressed", String(k === i)));
+    tabs.forEach((t, i) => t.addEventListener("click", () => {
+      mark(i);
+      track.scrollTo({ left: panels[i].offsetLeft - panels[0].offsetLeft, behavior: smooth() });
+    }));
+    track.addEventListener("scroll", () => requestAnimationFrame(() => {
+      if (track.scrollWidth <= track.clientWidth + 2) return; // počítač: všetky úrovne vedľa seba
+      const step = (panels.length > 1 ? panels[1].offsetLeft - panels[0].offsetLeft : 1) || 1;
+      mark(Math.round(track.scrollLeft / step));
+    }), { passive: true });
+  });
+  app.querySelector<HTMLElement>(".dchip.on")?.scrollIntoView({ block: "nearest", inline: "center" });
+}
+
+const smooth = (): ScrollBehavior => (matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+
+/* Pás dní a prepínač Karty / Zoznam (jeden poslucháč pre celú appku). */
+app.addEventListener("click", (e) => {
+  const el = (e.target as HTMLElement).closest<HTMLElement>("button[data-day], button[data-mode]");
+  if (!el) return;
+  if (el.dataset.mode) {
+    setMode(el.dataset.mode as Mode);
+    render(true);
+    app.querySelector<HTMLElement>(`[data-mode="${el.dataset.mode}"]`)?.focus();
+    return;
+  }
+  pickDay(el.dataset.sport as Sport, el.dataset.day!);
+  render(true);
+  app.querySelector<HTMLElement>(`[data-day="${el.dataset.day}"]`)?.focus();
+  if (mode() === "list") document.getElementById(`den-${el.dataset.day}`)?.scrollIntoView({ behavior: smooth(), block: "start" });
+});
+
+window.addEventListener("hashchange", () => render());
 document.addEventListener("visibilitychange", refresh);
 window.setInterval(refresh, 5 * 60_000);
 start();

@@ -64,3 +64,14 @@ export async function visitedBefore(page: Page, ids: string[]) {
     localStorage.setItem("tp-viewed", JSON.stringify(seen));
   }, ids);
 }
+
+/* Zápasy ako zoznam (predvolené sú karty). Pre testy obsahu zoznamu; nastaví sa pri každom načítaní. */
+export async function listMode(page: Page) {
+  await page.addInitScript(() => {
+    try {
+      localStorage.setItem("tp-mode", "list");
+    } catch {
+      /* bez úložiska */
+    }
+  });
+}

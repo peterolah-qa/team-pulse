@@ -1,10 +1,11 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { open, serveData, visitedBefore, withResults } from "./helpers";
+import { listMode, open, serveData, visitedBefore, withResults } from "./helpers";
 
 /* Automatická kontrola prístupnosti (WCAG 2.1 A + AA) na každej obrazovke. */
 const SCREENS = {
   zapasy: "#/",
+  "zapasy-zoznam": "#/",
   tipy: "#/tipy",
   vysledky: "#/vysledky",
   vysledok: "#/vysledok/0022600900",
@@ -13,6 +14,7 @@ const SCREENS = {
   teamy: "#/teamy",
   model: "#/model",
   "nhl-zapasy": "#/nhl/",
+  "nhl-zapasy-zoznam": "#/nhl/",
   "nhl-tipy": "#/nhl/tipy",
   "nhl-vysledky": "#/nhl/vysledky",
   "nhl-zapas": "#/nhl/zapas/2026020201",
@@ -22,6 +24,7 @@ const SCREENS = {
 
 for (const [name, hash] of Object.entries(SCREENS)) {
   test(`a11y: ${name}`, async ({ page }) => {
+    if (name.endsWith("-zoznam")) await listMode(page);
     await serveData(page, { predictions: withResults });
     await open(page, hash);
     if (hash.startsWith("#/nhl")) await page.locator(".beta-note").first().waitFor(); // NHL sa načíta až po otvorení
