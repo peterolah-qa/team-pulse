@@ -1,10 +1,40 @@
 # Ostrá prevádzka: vyhodnotenie predpovedí
 
-Základná časť: 2026-10-20 – 2026-10-20 · uložené predpovede 3 · s výsledkom 0 · čaká na výsledok 3
+Základná časť: 2026-10-20 – 2026-10-21 · uložené predpovede 14 · s výsledkom 3 · čaká na výsledok 11
 
 Odohrané zápasy bez uloženej predpovede: **0**
 
-Zatiaľ žiadny zápas s výsledkom.
+| | Ostrá prevádzka | Backtest v1 |
+|:--|--:|--:|
+| Zápasy | 3 | sezóny 2023/24 – 2025/26 |
+| Presnosť | 33,3 % (± 53,3 p. b.) | 67,3 % |
+| Log loss | 0,9601 | 0,5996 |
+| Brier | 0,3697 | 0,2068 |
+
+Log loss a Brier: nižšie = lepšie. ± je 95 % interval presnosti; pri ~100 zápasoch je asi ±9 p. b., férové porovnanie s backtestom až okolo 500 zápasov.
+
+## Kalibrácia
+
+Keď model dá favoritovi X %, vyhrá favorit naozaj približne X %?
+
+| Pásmo | Zápasy | Predpoveď | Skutočnosť |
+|:--|--:|--:|--:|
+| 60 – 70 % | 2 | 61,5 % | 50,0 % |
+| 70 – 80 % | 1 | 76,2 % | 0,0 % |
+
+## Podľa istoty
+
+| Istota | Zápasy | Presnosť |
+|:--|--:|--:|
+| vysoká | 3 | 33,3 % |
+
+## Posledné zápasy
+
+| Dátum | Zápas | Šanca domácich | Skóre | Tip |
+|:--|:--|--:|:--|:--|
+| 2026-10-20 | OKC @ SAS | 61,6 % | 116 : 104 | ✗ |
+| 2026-10-20 | PHI @ NYK | 76,2 % | 106 : 100 | ✗ |
+| 2026-10-20 | BOS @ DET | 61,4 % | 113 : 121 | ✓ |
 
 ## Príprava (skúška archívu, mimo G2)
 
