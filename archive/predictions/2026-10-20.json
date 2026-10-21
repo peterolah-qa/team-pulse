@@ -110,53 +110,53 @@
    "game_id": "0022600003",
    "kind": "regular",
    "tipoff_utc": "2026-10-21 01:30:00+00:00",
-   "locked_at": "2026-10-20T23:30:45+00:00",
+   "locked_at": "2026-10-21T00:00:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-20T23:30:43Z",
+   "injuries_timestamp": "2026-10-21T00:00:48Z",
    "neutral": false,
    "p_home": 0.616,
    "margin_home": 3.4,
    "home": {
     "team": "SAS",
     "elo": 1703.0,
-    "elo_today": 1727.8,
-    "pulse": 87.1,
+    "elo_today": 1728.5,
+    "pulse": 87.2,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 198.0,
-     "roster": 21.4,
+     "roster": 22.0,
      "players": -3.5,
      "fatigue": 7.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      21
+      22
      ]
     ]
    },
    "away": {
     "team": "OKC",
     "elo": 1687.0,
-    "elo_today": 1710.4,
-    "pulse": 84.2,
+    "elo_today": 1711.1,
+    "pulse": 84.4,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 182.0,
-     "roster": 20.2,
+     "roster": 20.9,
      "players": 0.0,
      "fatigue": 3.3
     },
     "reasons": [
      [
       "Sila súpisky",
-      20
+      21
      ]
     ]
    }
