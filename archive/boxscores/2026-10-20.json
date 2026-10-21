@@ -214,6 +214,193 @@
      }
     ]
    }
+  },
+  "0022600002": {
+   "game_id": "0022600002",
+   "espn_id": "401909089",
+   "date": "2026-10-20",
+   "kind": "regular",
+   "home": "NYK",
+   "away": "PHI",
+   "pts_home": 100,
+   "pts_away": 106,
+   "box": {
+    "PHI": [
+     {
+      "player": "Tyrese Maxey",
+      "min": 40,
+      "pts": 28,
+      "reb": 4,
+      "ast": 5,
+      "blk": 3,
+      "stl": 3
+     },
+     {
+      "player": "Jaylen Brown",
+      "min": 35,
+      "pts": 19,
+      "reb": 8,
+      "ast": 6,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "VJ Edgecombe",
+      "min": 35,
+      "pts": 9,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "LeBron James",
+      "min": 34,
+      "pts": 14,
+      "reb": 9,
+      "ast": 7,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Joel Embiid",
+      "min": 33,
+      "pts": 13,
+      "reb": 11,
+      "ast": 6,
+      "blk": 3,
+      "stl": 2
+     },
+     {
+      "player": "Kentavious Caldwell-Pope",
+      "min": 26,
+      "pts": 10,
+      "reb": 4,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Anfernee Simons",
+      "min": 25,
+      "pts": 13,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Adem Bona",
+      "min": 10,
+      "pts": 0,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jabari Walker",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "NYK": [
+     {
+      "player": "Jalen Brunson",
+      "min": 34,
+      "pts": 21,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mikal Bridges",
+      "min": 33,
+      "pts": 4,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "OG Anunoby",
+      "min": 32,
+      "pts": 10,
+      "reb": 5,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Josh Hart",
+      "min": 30,
+      "pts": 14,
+      "reb": 7,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Landry Shamet",
+      "min": 25,
+      "pts": 5,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Karl-Anthony Towns",
+      "min": 24,
+      "pts": 19,
+      "reb": 12,
+      "ast": 1,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Andre Drummond",
+      "min": 24,
+      "pts": 12,
+      "reb": 14,
+      "ast": 4,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Jose Alvarado",
+      "min": 16,
+      "pts": 8,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Miles McBride",
+      "min": 14,
+      "pts": 3,
+      "reb": 1,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jordan Clarkson",
+      "min": 8,
+      "pts": 4,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
