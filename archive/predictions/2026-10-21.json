@@ -50,9 +50,9 @@
    "game_id": "0022600086",
    "kind": "regular",
    "tipoff_utc": "2026-10-21 23:00:00+00:00",
-   "locked_at": "2026-10-21T02:00:52+00:00",
+   "locked_at": "2026-10-21T02:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-21T02:00:44Z",
+   "injuries_timestamp": "2026-10-21T02:30:34Z",
    "neutral": false,
    "p_home": 0.515,
    "margin_home": 0.4,
@@ -100,9 +100,9 @@
    "game_id": "0022600004",
    "kind": "regular",
    "tipoff_utc": "2026-10-21 23:30:00+00:00",
-   "locked_at": "2026-10-21T02:00:52+00:00",
+   "locked_at": "2026-10-21T02:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-21T02:00:44Z",
+   "injuries_timestamp": "2026-10-21T02:30:34Z",
    "neutral": false,
    "p_home": 0.602,
    "margin_home": 3.0,
@@ -155,9 +155,9 @@
    "game_id": "0022600087",
    "kind": "regular",
    "tipoff_utc": "2026-10-21 23:30:00+00:00",
-   "locked_at": "2026-10-21T02:00:52+00:00",
+   "locked_at": "2026-10-21T02:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-21T02:00:44Z",
+   "injuries_timestamp": "2026-10-21T02:30:34Z",
    "neutral": false,
    "p_home": 0.27,
    "margin_home": -7.2,
@@ -210,9 +210,9 @@
    "game_id": "0022600088",
    "kind": "regular",
    "tipoff_utc": "2026-10-21 23:30:00+00:00",
-   "locked_at": "2026-10-21T02:00:52+00:00",
+   "locked_at": "2026-10-21T02:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-21T02:00:44Z",
+   "injuries_timestamp": "2026-10-21T02:30:34Z",
    "neutral": false,
    "p_home": 0.813,
    "margin_home": 10.6,
@@ -265,9 +265,9 @@
    "game_id": "0022600089",
    "kind": "regular",
    "tipoff_utc": "2026-10-22 00:00:00+00:00",
-   "locked_at": "2026-10-21T02:00:52+00:00",
+   "locked_at": "2026-10-21T02:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-21T02:00:44Z",
+   "injuries_timestamp": "2026-10-21T02:30:34Z",
    "neutral": false,
    "p_home": 0.555,
    "margin_home": 1.6,
@@ -365,9 +365,9 @@
    "game_id": "0022600091",
    "kind": "regular",
    "tipoff_utc": "2026-10-22 00:30:00+00:00",
-   "locked_at": "2026-10-21T02:00:52+00:00",
+   "locked_at": "2026-10-21T02:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-21T02:00:44Z",
+   "injuries_timestamp": "2026-10-21T02:30:34Z",
    "neutral": false,
    "p_home": 0.83,
    "margin_home": 11.5,
@@ -420,9 +420,9 @@
    "game_id": "0022600005",
    "kind": "regular",
    "tipoff_utc": "2026-10-22 02:00:00+00:00",
-   "locked_at": "2026-10-21T02:00:52+00:00",
+   "locked_at": "2026-10-21T02:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-21T02:00:44Z",
+   "injuries_timestamp": "2026-10-21T02:30:34Z",
    "neutral": false,
    "p_home": 0.798,
    "margin_home": 9.9,
@@ -475,9 +475,9 @@
    "game_id": "0022600092",
    "kind": "regular",
    "tipoff_utc": "2026-10-22 02:00:00+00:00",
-   "locked_at": "2026-10-21T02:00:52+00:00",
+   "locked_at": "2026-10-21T02:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-21T02:00:44Z",
+   "injuries_timestamp": "2026-10-21T02:30:34Z",
    "neutral": false,
    "p_home": 0.63,
    "margin_home": 3.9,
@@ -526,6 +526,61 @@
      [
       "Sila súpisky",
       -27
+     ]
+    ]
+   }
+  },
+  "0022600093": {
+   "game_id": "0022600093",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-22 02:30:00+00:00",
+   "locked_at": "2026-10-21T02:30:45+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-21T02:30:34Z",
+   "neutral": false,
+   "p_home": 0.755,
+   "margin_home": 8.1,
+   "home": {
+    "team": "LAC",
+    "elo": 1534.2,
+    "elo_today": 1495.4,
+    "pulse": 48.4,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 29.2,
+     "roster": -39.5,
+     "players": -6.3,
+     "fatigue": 7.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -39
+     ]
+    ]
+   },
+   "away": {
+    "team": "SAC",
+    "elo": 1374.4,
+    "elo_today": 1346.6,
+    "pulse": 23.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -130.6,
+     "roster": -28.8,
+     "players": -2.3,
+     "fatigue": 3.3
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -29
      ]
     ]
    }
