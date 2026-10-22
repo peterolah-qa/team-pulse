@@ -420,24 +420,24 @@
    "game_id": "0022600005",
    "kind": "regular",
    "tipoff_utc": "2026-10-22 02:00:00+00:00",
-   "locked_at": "2026-10-22T01:00:54+00:00",
+   "locked_at": "2026-10-22T01:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-22T01:00:45Z",
+   "injuries_timestamp": "2026-10-22T01:30:40Z",
    "neutral": false,
-   "p_home": 0.798,
-   "margin_home": 9.9,
+   "p_home": 0.791,
+   "margin_home": 9.6,
    "home": {
     "team": "LAL",
     "elo": 1569.1,
-    "elo_today": 1610.3,
-    "pulse": 67.6,
+    "elo_today": 1609.6,
+    "pulse": 67.4,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 64.1,
-     "roster": 34.3,
+     "roster": 33.6,
      "players": 0.0,
      "fatigue": 7.0
     },
@@ -451,22 +451,22 @@
    "away": {
     "team": "GSW",
     "elo": 1446.8,
-    "elo_today": 1411.1,
-    "pulse": 34.3,
+    "elo_today": 1418.9,
+    "pulse": 35.6,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
-    "confidence": "stredná",
+    "confidence": "vysoká",
     "layers": {
      "strength": -58.2,
-     "roster": -7.0,
-     "players": -32.1,
+     "roster": -7.7,
+     "players": -23.5,
      "fatigue": 3.3
     },
     "reasons": [
      [
-      "Bez Jimmy Butler III, Stephen Curry (?)",
-      -32
+      "Bez Jimmy Butler III, Brandin Podziemski",
+      -24
      ]
     ]
    }
@@ -475,57 +475,53 @@
    "game_id": "0022600092",
    "kind": "regular",
    "tipoff_utc": "2026-10-22 02:00:00+00:00",
-   "locked_at": "2026-10-22T01:00:54+00:00",
+   "locked_at": "2026-10-22T01:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-22T01:00:45Z",
+   "injuries_timestamp": "2026-10-22T01:30:40Z",
    "neutral": false,
-   "p_home": 0.63,
-   "margin_home": 3.9,
+   "p_home": 0.644,
+   "margin_home": 4.3,
    "home": {
     "team": "POR",
     "elo": 1516.2,
-    "elo_today": 1534.4,
-    "pulse": 54.9,
+    "elo_today": 1546.2,
+    "pulse": 56.9,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
-    "confidence": "stredná",
+    "confidence": "vysoká",
     "layers": {
      "strength": 11.2,
-     "roster": 23.7,
-     "players": -12.5,
+     "roster": 23.0,
+     "players": 0.0,
      "fatigue": 7.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      24
-     ],
-     [
-      "Bez Deni Avdija (?)",
-      -12
+      23
      ]
     ]
    },
    "away": {
     "team": "PHX",
     "elo": 1528.1,
-    "elo_today": 1505.0,
-    "pulse": 50.0,
+    "elo_today": 1504.3,
+    "pulse": 49.9,
     "tier": "Oslabený",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 23.1,
-     "roster": -26.4,
+     "roster": -27.1,
      "players": 0.0,
      "fatigue": 3.3
     },
     "reasons": [
      [
       "Sila súpisky",
-      -26
+      -27
      ]
     ]
    }
@@ -534,53 +530,53 @@
    "game_id": "0022600093",
    "kind": "regular",
    "tipoff_utc": "2026-10-22 02:30:00+00:00",
-   "locked_at": "2026-10-22T01:00:54+00:00",
+   "locked_at": "2026-10-22T01:30:45+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-22T01:00:45Z",
+   "injuries_timestamp": "2026-10-22T01:30:40Z",
    "neutral": false,
    "p_home": 0.755,
    "margin_home": 8.1,
    "home": {
     "team": "LAC",
     "elo": 1534.2,
-    "elo_today": 1495.9,
-    "pulse": 48.5,
+    "elo_today": 1495.2,
+    "pulse": 48.4,
     "tier": "Oslabený",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 29.2,
-     "roster": -38.9,
+     "roster": -39.6,
      "players": -6.3,
      "fatigue": 7.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      -39
+      -40
      ]
     ]
    },
    "away": {
     "team": "SAC",
     "elo": 1374.4,
-    "elo_today": 1347.1,
-    "pulse": 23.7,
+    "elo_today": 1346.4,
+    "pulse": 23.6,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -130.6,
-     "roster": -28.3,
+     "roster": -29.0,
      "players": -2.3,
      "fatigue": 3.3
     },
     "reasons": [
      [
       "Sila súpisky",
-      -28
+      -29
      ]
     ]
    }
