@@ -1730,6 +1730,265 @@
      }
     ]
    }
+  },
+  "0022600092": {
+   "game_id": "0022600092",
+   "espn_id": "401909841",
+   "date": "2026-10-21",
+   "kind": "regular",
+   "home": "POR",
+   "away": "PHX",
+   "pts_home": 124,
+   "pts_away": 83,
+   "box": {
+    "PHX": [
+     {
+      "player": "Devin Booker",
+      "min": 29,
+      "pts": 23,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Miles Bridges",
+      "min": 29,
+      "pts": 8,
+      "reb": 4,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Dillon Brooks",
+      "min": 27,
+      "pts": 10,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jalen Green",
+      "min": 25,
+      "pts": 10,
+      "reb": 2,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jordan Goodwin",
+      "min": 22,
+      "pts": 3,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Collin Gillespie",
+      "min": 21,
+      "pts": 0,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Khaman Maluach",
+      "min": 17,
+      "pts": 2,
+      "reb": 6,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Oso Ighodaro",
+      "min": 15,
+      "pts": 8,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Dunn",
+      "min": 14,
+      "pts": 3,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Rasheer Fleming",
+      "min": 12,
+      "pts": 1,
+      "reb": 2,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Duop Reath",
+      "min": 9,
+      "pts": 5,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Koa Peat",
+      "min": 7,
+      "pts": 4,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamaree Bouyea",
+      "min": 7,
+      "pts": 3,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Pat Spencer",
+      "min": 7,
+      "pts": 3,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     }
+    ],
+    "POR": [
+     {
+      "player": "Sidy Cissoko",
+      "min": 25,
+      "pts": 3,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Damian Lillard",
+      "min": 24,
+      "pts": 25,
+      "reb": 3,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Toumani Camara",
+      "min": 23,
+      "pts": 18,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Deni Avdija",
+      "min": 23,
+      "pts": 18,
+      "reb": 10,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Ja Morant",
+      "min": 23,
+      "pts": 14,
+      "reb": 5,
+      "ast": 8,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Donovan Clingan",
+      "min": 21,
+      "pts": 11,
+      "reb": 7,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jrue Holiday",
+      "min": 21,
+      "pts": 8,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Scoot Henderson",
+      "min": 19,
+      "pts": 15,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Robert Williams III",
+      "min": 15,
+      "pts": 2,
+      "reb": 10,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Vit Krejci",
+      "min": 15,
+      "pts": 1,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Yang Hansen",
+      "min": 12,
+      "pts": 5,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Micah Potter",
+      "min": 12,
+      "pts": 4,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jayson Kent",
+      "min": 7,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
   }
  }
 }
