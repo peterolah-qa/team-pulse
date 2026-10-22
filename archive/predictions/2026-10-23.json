@@ -5,24 +5,24 @@
    "game_id": "0022600099",
    "kind": "regular",
    "tipoff_utc": "2026-10-23 20:00:00+00:00",
-   "locked_at": "2026-10-22T22:00:59+00:00",
+   "locked_at": "2026-10-22T22:30:48+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-22T22:00:51Z",
+   "injuries_timestamp": "2026-10-22T22:30:41Z",
    "neutral": false,
    "p_home": 0.597,
    "margin_home": 2.8,
    "home": {
     "team": "MIL",
     "elo": 1374.5,
-    "elo_today": 1336.1,
-    "pulse": 21.9,
+    "elo_today": 1336.0,
+    "pulse": 21.8,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -130.5,
-     "roster": -42.2,
+     "roster": -42.3,
      "players": 0.0,
      "fatigue": 3.8
     },
@@ -36,7 +36,7 @@
    "away": {
     "team": "CHI",
     "elo": 1373.9,
-    "elo_today": 1335.9,
+    "elo_today": 1335.7,
     "pulse": 21.8,
     "tier": "Kritický",
     "normal_tier": "Kritický",
@@ -44,14 +44,14 @@
     "confidence": "stredná",
     "layers": {
      "strength": -131.1,
-     "roster": -30.5,
+     "roster": -30.6,
      "players": -16.2,
      "fatigue": 8.6
     },
     "reasons": [
      [
       "Sila súpisky",
-      -30
+      -31
      ],
      [
       "Bez Josh Giddey (?)",
