@@ -1,15 +1,15 @@
 # Ostrá prevádzka: vyhodnotenie predpovedí
 
-Základná časť: 2026-10-20 – 2026-10-21 · uložené predpovede 14 · s výsledkom 3 · čaká na výsledok 11
+Základná časť: 2026-10-20 – 2026-10-22 · uložené predpovede 16 · s výsledkom 14 · čaká na výsledok 2
 
 Odohrané zápasy bez uloženej predpovede: **0**
 
 | | Ostrá prevádzka | Backtest v1 |
 |:--|--:|--:|
-| Zápasy | 3 | sezóny 2023/24 – 2025/26 |
-| Presnosť | 33,3 % (± 53,3 p. b.) | 67,3 % |
-| Log loss | 0,9601 | 0,5996 |
-| Brier | 0,3697 | 0,2068 |
+| Zápasy | 14 | sezóny 2023/24 – 2025/26 |
+| Presnosť | 64,3 % (± 25,1 p. b.) | 67,3 % |
+| Log loss | 0,6241 | 0,5996 |
+| Brier | 0,2200 | 0,2068 |
 
 Log loss a Brier: nižšie = lepšie. ± je 95 % interval presnosti; pri ~100 zápasoch je asi ±9 p. b., férové porovnanie s backtestom až okolo 500 zápasov.
 
@@ -19,19 +19,32 @@ Keď model dá favoritovi X %, vyhrá favorit naozaj približne X %?
 
 | Pásmo | Zápasy | Predpoveď | Skutočnosť |
 |:--|--:|--:|--:|
-| 60 – 70 % | 2 | 61,5 % | 50,0 % |
-| 70 – 80 % | 1 | 76,2 % | 0,0 % |
+| 50 – 60 % | 2 | 53,5 % | 100,0 % |
+| 60 – 70 % | 6 | 62,4 % | 33,3 % |
+| 70 – 80 % | 4 | 76,0 % | 75,0 % |
+| 80 – 90 % | 2 | 82,1 % | 100,0 % |
 
 ## Podľa istoty
 
 | Istota | Zápasy | Presnosť |
 |:--|--:|--:|
-| vysoká | 3 | 33,3 % |
+| vysoká | 14 | 64,3 % |
 
 ## Posledné zápasy
 
 | Dátum | Zápas | Šanca domácich | Skóre | Tip |
 |:--|:--|--:|:--|:--|
+| 2026-10-21 | SAC @ LAC | 75,5 % | 96 : 121 | ✓ |
+| 2026-10-21 | PHX @ POR | 64,4 % | 83 : 124 | ✓ |
+| 2026-10-21 | GSW @ LAL | 79,1 % | 105 : 127 | ✓ |
+| 2026-10-21 | DAL @ HOU | 83,0 % | 110 : 128 | ✓ |
+| 2026-10-21 | IND @ NOP | 64,8 % | 123 : 120 | ✗ |
+| 2026-10-21 | UTA @ MEM | 55,5 % | 103 : 123 | ✓ |
+| 2026-10-21 | CHI @ TOR | 81,3 % | 92 : 135 | ✓ |
+| 2026-10-21 | CHA @ BKN | 27,0 % | 110 : 103 | ✓ |
+| 2026-10-21 | MIN @ MIA | 60,2 % | 131 : 106 | ✗ |
+| 2026-10-21 | MIL @ WAS | 51,5 % | 116 : 128 | ✓ |
+| 2026-10-21 | ATL @ ORL | 62,3 % | 132 : 125 | ✗ |
 | 2026-10-20 | OKC @ SAS | 61,6 % | 116 : 104 | ✗ |
 | 2026-10-20 | PHI @ NYK | 76,2 % | 106 : 100 | ✗ |
 | 2026-10-20 | BOS @ DET | 61,4 % | 113 : 121 | ✓ |
