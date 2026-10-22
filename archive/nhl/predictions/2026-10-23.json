@@ -1,0 +1,46 @@
+{
+ "games": {
+  "2026020166": {
+   "game_id": "2026020166",
+   "date": "2026-10-23",
+   "tipoff_utc": "2026-10-24T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.365,
+   "tip": "MTL",
+   "home": {
+    "team": "CHI",
+    "elo": 1417.3,
+    "reasons": {}
+   },
+   "away": {
+    "team": "MTL",
+    "elo": 1525.6,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-22T08:15:25+00:00"
+  },
+  "2026020167": {
+   "game_id": "2026020167",
+   "date": "2026-10-23",
+   "tipoff_utc": "2026-10-24T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.552,
+   "tip": "COL",
+   "home": {
+    "team": "COL",
+    "elo": 1576.1,
+    "reasons": {}
+   },
+   "away": {
+    "team": "TBL",
+    "elo": 1565.7,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-22T08:15:25+00:00"
+  }
+ }
+}
