@@ -1,0 +1,60 @@
+{
+ "date": "2026-10-23",
+ "games": {
+  "0022600099": {
+   "game_id": "0022600099",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-23 20:00:00+00:00",
+   "locked_at": "2026-10-22T20:01:01+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-22T20:00:51Z",
+   "neutral": false,
+   "p_home": 0.577,
+   "margin_home": 2.2,
+   "home": {
+    "team": "MIL",
+    "elo": 1374.5,
+    "elo_today": 1335.8,
+    "pulse": 21.8,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -130.5,
+     "roster": -42.5,
+     "players": 0.0,
+     "fatigue": 3.8
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -43
+     ]
+    ]
+   },
+   "away": {
+    "team": "CHI",
+    "elo": 1373.9,
+    "elo_today": 1351.7,
+    "pulse": 24.5,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -131.1,
+     "roster": -30.8,
+     "players": 0.0,
+     "fatigue": 8.6
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -31
+     ]
+    ]
+   }
+  }
+ }
+}
