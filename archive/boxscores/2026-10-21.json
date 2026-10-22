@@ -1498,6 +1498,238 @@
      }
     ]
    }
+  },
+  "0022600091": {
+   "game_id": "0022600091",
+   "espn_id": "401909840",
+   "date": "2026-10-21",
+   "kind": "regular",
+   "home": "HOU",
+   "away": "DAL",
+   "pts_home": 128,
+   "pts_away": 110,
+   "box": {
+    "DAL": [
+     {
+      "player": "Cooper Flagg",
+      "min": 33,
+      "pts": 32,
+      "reb": 5,
+      "ast": 2,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "P.J. Washington",
+      "min": 31,
+      "pts": 10,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Naji Marshall",
+      "min": 29,
+      "pts": 16,
+      "reb": 2,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Max Christie",
+      "min": 29,
+      "pts": 5,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zaccharie Risacher",
+      "min": 27,
+      "pts": 4,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 5
+     },
+     {
+      "player": "Marcus Sasser",
+      "min": 24,
+      "pts": 17,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kyrie Irving",
+      "min": 24,
+      "pts": 15,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Daniel Gafford",
+      "min": 22,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Morez Johnson Jr.",
+      "min": 14,
+      "pts": 6,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sergio de Larrea",
+      "min": 7,
+      "pts": 0,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Moussa Cisse",
+      "min": 3,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "HOU": [
+     {
+      "player": "Kevin Durant",
+      "min": 37,
+      "pts": 30,
+      "reb": 6,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Jabari Smith Jr.",
+      "min": 36,
+      "pts": 30,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Amen Thompson",
+      "min": 33,
+      "pts": 16,
+      "reb": 10,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Alperen Sengun",
+      "min": 30,
+      "pts": 23,
+      "reb": 10,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Fred VanVleet",
+      "min": 30,
+      "pts": 6,
+      "reb": 2,
+      "ast": 11,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Marcus Smart",
+      "min": 26,
+      "pts": 10,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Reed Sheppard",
+      "min": 16,
+      "pts": 3,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Bogdan Bogdanovic",
+      "min": 13,
+      "pts": 5,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Clint Capela",
+      "min": 8,
+      "pts": 0,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Crawford",
+      "min": 3,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tari Eason",
+      "min": 3,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Bruce Thornton",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jae'Sean Tate",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
