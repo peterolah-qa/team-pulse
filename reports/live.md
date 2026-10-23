@@ -1,15 +1,15 @@
 # Ostrá prevádzka: vyhodnotenie predpovedí
 
-Základná časť: 2026-10-20 – 2026-10-22 · uložené predpovede 16 · s výsledkom 14 · čaká na výsledok 2
+Základná časť: 2026-10-20 – 2026-10-23 · uložené predpovede 28 · s výsledkom 16 · čaká na výsledok 12
 
 Odohrané zápasy bez uloženej predpovede: **0**
 
 | | Ostrá prevádzka | Backtest v1 |
 |:--|--:|--:|
-| Zápasy | 14 | sezóny 2023/24 – 2025/26 |
-| Presnosť | 64,3 % (± 25,1 p. b.) | 67,3 % |
-| Log loss | 0,6241 | 0,5996 |
-| Brier | 0,2200 | 0,2068 |
+| Zápasy | 16 | sezóny 2023/24 – 2025/26 |
+| Presnosť | 68,8 % (± 22,7 p. b.) | 67,3 % |
+| Log loss | 0,5996 | 0,5996 |
+| Brier | 0,2077 | 0,2068 |
 
 Log loss a Brier: nižšie = lepšie. ± je 95 % interval presnosti; pri ~100 zápasoch je asi ±9 p. b., férové porovnanie s backtestom až okolo 500 zápasov.
 
@@ -20,7 +20,7 @@ Keď model dá favoritovi X %, vyhrá favorit naozaj približne X %?
 | Pásmo | Zápasy | Predpoveď | Skutočnosť |
 |:--|--:|--:|--:|
 | 50 – 60 % | 2 | 53,5 % | 100,0 % |
-| 60 – 70 % | 6 | 62,4 % | 33,3 % |
+| 60 – 70 % | 8 | 63,1 % | 50,0 % |
 | 70 – 80 % | 4 | 76,0 % | 75,0 % |
 | 80 – 90 % | 2 | 82,1 % | 100,0 % |
 
@@ -28,12 +28,14 @@ Keď model dá favoritovi X %, vyhrá favorit naozaj približne X %?
 
 | Istota | Zápasy | Presnosť |
 |:--|--:|--:|
-| vysoká | 14 | 64,3 % |
+| vysoká | 16 | 68,8 % |
 
 ## Posledné zápasy
 
 | Dátum | Zápas | Šanca domácich | Skóre | Tip |
 |:--|:--|--:|:--|:--|
+| 2026-10-22 | DEN @ OKC | 68,3 % | 84 : 96 | ✓ |
+| 2026-10-22 | CLE @ PHI | 62,2 % | 106 : 114 | ✓ |
 | 2026-10-21 | SAC @ LAC | 75,5 % | 96 : 121 | ✓ |
 | 2026-10-21 | PHX @ POR | 64,4 % | 83 : 124 | ✓ |
 | 2026-10-21 | GSW @ LAL | 79,1 % | 105 : 127 | ✓ |
