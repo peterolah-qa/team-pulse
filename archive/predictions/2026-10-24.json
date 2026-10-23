@@ -1,0 +1,68 @@
+{
+ "date": "2026-10-24",
+ "games": {
+  "0022600104": {
+   "game_id": "0022600104",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-24 22:00:00+00:00",
+   "locked_at": "2026-10-23T22:01:00+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-23T22:00:56Z",
+   "neutral": false,
+   "p_home": 0.668,
+   "margin_home": 5.0,
+   "home": {
+    "team": "CHA",
+    "elo": 1619.3,
+    "elo_today": 1529.1,
+    "pulse": 54.0,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 114.3,
+     "roster": -36.4,
+     "players": -5.8,
+     "fatigue": -48.0
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -43
+     ],
+     [
+      "Sila súpisky",
+      -36
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIA",
+    "elo": 1501.5,
+    "elo_today": 1466.9,
+    "pulse": 43.7,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -3.5,
+     "roster": 18.8,
+     "players": 0.0,
+     "fatigue": -53.4
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Sila súpisky",
+      19
+     ]
+    ]
+   }
+  }
+ }
+}
