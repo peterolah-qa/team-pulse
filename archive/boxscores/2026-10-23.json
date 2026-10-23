@@ -1,0 +1,201 @@
+{
+ "date": "2026-10-23",
+ "games": {
+  "0022600099": {
+   "game_id": "0022600099",
+   "espn_id": "401909848",
+   "date": "2026-10-23",
+   "kind": "regular",
+   "home": "MIL",
+   "away": "CHI",
+   "pts_home": 125,
+   "pts_away": 132,
+   "box": {
+    "CHI": [
+     {
+      "player": "Norman Powell",
+      "min": 33,
+      "pts": 25,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Caleb Wilson",
+      "min": 33,
+      "pts": 21,
+      "reb": 6,
+      "ast": 1,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Isaac Okoro",
+      "min": 28,
+      "pts": 12,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Josh Giddey",
+      "min": 25,
+      "pts": 6,
+      "reb": 4,
+      "ast": 9,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Leonard Miller",
+      "min": 24,
+      "pts": 19,
+      "reb": 3,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jalen Smith",
+      "min": 24,
+      "pts": 14,
+      "reb": 13,
+      "ast": 1,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Tre Jones",
+      "min": 24,
+      "pts": 11,
+      "reb": 3,
+      "ast": 8,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Matas Buzelis",
+      "min": 17,
+      "pts": 7,
+      "reb": 5,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Noa Essengue",
+      "min": 17,
+      "pts": 4,
+      "reb": 1,
+      "ast": 1,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Buddy Hield",
+      "min": 15,
+      "pts": 13,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "MIL": [
+     {
+      "player": "Jaime Jaquez Jr.",
+      "min": 35,
+      "pts": 19,
+      "reb": 11,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Rollins",
+      "min": 34,
+      "pts": 11,
+      "reb": 7,
+      "ast": 6,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Tyler Herro",
+      "min": 32,
+      "pts": 34,
+      "reb": 5,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kyle Kuzma",
+      "min": 30,
+      "pts": 14,
+      "reb": 9,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Myles Turner",
+      "min": 30,
+      "pts": 12,
+      "reb": 3,
+      "ast": 1,
+      "blk": 5,
+      "stl": 0
+     },
+     {
+      "player": "Kasparas Jakucionis",
+      "min": 23,
+      "pts": 7,
+      "reb": 2,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "AJ Green",
+      "min": 17,
+      "pts": 11,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ousmane Dieng",
+      "min": 16,
+      "pts": 3,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kel'el Ware",
+      "min": 15,
+      "pts": 11,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Brayden Burries",
+      "min": 8,
+      "pts": 3,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
+  }
+ }
+}
