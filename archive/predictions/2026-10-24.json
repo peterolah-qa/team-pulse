@@ -5,9 +5,9 @@
    "game_id": "0022600104",
    "kind": "regular",
    "tipoff_utc": "2026-10-24 22:00:00+00:00",
-   "locked_at": "2026-10-23T23:00:53+00:00",
+   "locked_at": "2026-10-23T23:30:46+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-23T23:00:45Z",
+   "injuries_timestamp": "2026-10-23T23:30:35Z",
    "neutral": false,
    "p_home": 0.668,
    "margin_home": 5.0,
@@ -60,6 +60,124 @@
      [
       "Sila súpisky",
       19
+     ]
+    ]
+   }
+  },
+  "0022600105": {
+   "game_id": "0022600105",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-24 23:30:00+00:00",
+   "locked_at": "2026-10-23T23:30:46+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-23T23:30:35Z",
+   "neutral": false,
+   "p_home": 0.871,
+   "margin_home": 13.8,
+   "home": {
+    "team": "CLE",
+    "elo": 1570.7,
+    "elo_today": 1599.7,
+    "pulse": 65.8,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 65.7,
+     "roster": 25.9,
+     "players": 0.0,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      26
+     ]
+    ]
+   },
+   "away": {
+    "team": "BKN",
+    "elo": 1317.0,
+    "elo_today": 1292.2,
+    "pulse": 14.5,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -188.0,
+     "roster": -28.2,
+     "players": 0.0,
+     "fatigue": 3.4
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -28
+     ]
+    ]
+   }
+  },
+  "0022600106": {
+   "game_id": "0022600106",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-24 23:30:00+00:00",
+   "locked_at": "2026-10-23T23:30:46+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-23T23:30:35Z",
+   "neutral": false,
+   "p_home": 0.87,
+   "margin_home": 13.7,
+   "home": {
+    "team": "PHI",
+    "elo": 1552.9,
+    "elo_today": 1590.0,
+    "pulse": 64.2,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 47.9,
+     "roster": 83.3,
+     "players": -48.2,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      83
+     ],
+     [
+      "Bez LeBron James (?)",
+      -48
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIL",
+    "elo": 1374.5,
+    "elo_today": 1283.3,
+    "pulse": 13.1,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -130.5,
+     "roster": -42.1,
+     "players": 0.0,
+     "fatigue": -49.0
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Sila súpisky",
+      -42
      ]
     ]
    }
