@@ -1,6 +1,256 @@
 {
  "date": "2026-10-23",
  "games": {
+  "0022600094": {
+   "game_id": "0022600094",
+   "espn_id": "401909843",
+   "date": "2026-10-23",
+   "kind": "regular",
+   "home": "CHA",
+   "away": "ATL",
+   "pts_home": 81,
+   "pts_away": 128,
+   "box": {
+    "ATL": [
+     {
+      "player": "Jalen Johnson",
+      "min": 29,
+      "pts": 19,
+      "reb": 7,
+      "ast": 8,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Nickeil Alexander-Walker",
+      "min": 27,
+      "pts": 14,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Kingston Flemings",
+      "min": 25,
+      "pts": 5,
+      "reb": 6,
+      "ast": 8,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Dyson Daniels",
+      "min": 23,
+      "pts": 11,
+      "reb": 9,
+      "ast": 4,
+      "blk": 1,
+      "stl": 7
+     },
+     {
+      "player": "Aaron Wiggins",
+      "min": 22,
+      "pts": 19,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "CJ McCollum",
+      "min": 22,
+      "pts": 13,
+      "reb": 1,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Onyeka Okongwu",
+      "min": 22,
+      "pts": 10,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Luguentz Dort",
+      "min": 19,
+      "pts": 9,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jock Landale",
+      "min": 18,
+      "pts": 8,
+      "reb": 6,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Corey Kispert",
+      "min": 10,
+      "pts": 11,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dorian Finney-Smith",
+      "min": 8,
+      "pts": 3,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Asa Newell",
+      "min": 8,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zuby Ejiofor",
+      "min": 8,
+      "pts": 3,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "CHA": [
+     {
+      "player": "Naz Reid",
+      "min": 25,
+      "pts": 17,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Sion James",
+      "min": 24,
+      "pts": 3,
+      "reb": 2,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tidjane Salaun",
+      "min": 23,
+      "pts": 11,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Brandon Miller",
+      "min": 23,
+      "pts": 6,
+      "reb": 2,
+      "ast": 0,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Moussa Diabate",
+      "min": 21,
+      "pts": 5,
+      "reb": 8,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Grayson Allen",
+      "min": 20,
+      "pts": 11,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dennis Schroder",
+      "min": 20,
+      "pts": 4,
+      "reb": 4,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Kalkbrenner",
+      "min": 19,
+      "pts": 6,
+      "reb": 7,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Royce O'Neale",
+      "min": 17,
+      "pts": 6,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Christian Anderson",
+      "min": 16,
+      "pts": 2,
+      "reb": 0,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Hannes Steinbach",
+      "min": 12,
+      "pts": 6,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Liam McNeeley",
+      "min": 12,
+      "pts": 4,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "PJ Hall",
+      "min": 10,
+      "pts": 0,
+      "reb": 1,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     }
+    ]
+   }
+  },
   "0022600099": {
    "game_id": "0022600099",
    "espn_id": "401909848",

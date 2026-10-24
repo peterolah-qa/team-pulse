@@ -475,24 +475,24 @@
    "game_id": "0022600101",
    "kind": "regular",
    "tipoff_utc": "2026-10-24 02:00:00+00:00",
-   "locked_at": "2026-10-24T01:00:58+00:00",
+   "locked_at": "2026-10-24T01:30:49+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T01:00:55Z",
+   "injuries_timestamp": "2026-10-24T01:30:48Z",
    "neutral": false,
    "p_home": 0.719,
    "margin_home": 6.8,
    "home": {
     "team": "GSW",
     "elo": 1439.3,
-    "elo_today": 1414.3,
-    "pulse": 34.9,
+    "elo_today": 1415.5,
+    "pulse": 35.1,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -65.7,
-     "roster": -7.0,
+     "roster": -5.8,
      "players": -21.0,
      "fatigue": 3.0
     },
@@ -506,22 +506,22 @@
    "away": {
     "team": "MEM",
     "elo": 1348.9,
-    "elo_today": 1302.7,
-    "pulse": 16.3,
+    "elo_today": 1303.9,
+    "pulse": 16.5,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -156.1,
-     "roster": -47.7,
+     "roster": -46.5,
      "players": 0.0,
      "fatigue": 1.5
     },
     "reasons": [
      [
       "Sila súpisky",
-      -48
+      -47
      ]
     ]
    }
@@ -530,53 +530,53 @@
    "game_id": "0022600102",
    "kind": "regular",
    "tipoff_utc": "2026-10-24 02:00:00+00:00",
-   "locked_at": "2026-10-24T01:00:58+00:00",
+   "locked_at": "2026-10-24T01:30:49+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T01:00:55Z",
+   "injuries_timestamp": "2026-10-24T01:30:48Z",
    "neutral": false,
    "p_home": 0.719,
    "margin_home": 6.8,
    "home": {
     "team": "LAL",
     "elo": 1576.6,
-    "elo_today": 1612.6,
-    "pulse": 67.9,
+    "elo_today": 1613.8,
+    "pulse": 68.1,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 71.6,
-     "roster": 34.0,
+     "roster": 35.2,
      "players": 0.0,
      "fatigue": 2.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      34
+      35
      ]
     ]
    },
    "away": {
     "team": "LAC",
     "elo": 1541.0,
-    "elo_today": 1501.2,
-    "pulse": 49.4,
+    "elo_today": 1502.4,
+    "pulse": 49.6,
     "tier": "Oslabený",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 36.0,
-     "roster": -38.1,
+     "roster": -37.0,
      "players": -6.3,
      "fatigue": 4.7
     },
     "reasons": [
      [
       "Sila súpisky",
-      -38
+      -37
      ]
     ]
    }
@@ -585,53 +585,53 @@
    "game_id": "0022600103",
    "kind": "regular",
    "tipoff_utc": "2026-10-24 02:00:00+00:00",
-   "locked_at": "2026-10-24T01:00:58+00:00",
+   "locked_at": "2026-10-24T01:30:49+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T01:00:55Z",
+   "injuries_timestamp": "2026-10-24T01:30:48Z",
    "neutral": false,
    "p_home": 0.329,
    "margin_home": -5.1,
    "home": {
     "team": "SAC",
     "elo": 1367.6,
-    "elo_today": 1341.4,
-    "pulse": 22.7,
+    "elo_today": 1342.6,
+    "pulse": 22.9,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -137.4,
-     "roster": -27.0,
+     "roster": -25.8,
      "players": -2.3,
      "fatigue": 3.1
     },
     "reasons": [
      [
       "Sila súpisky",
-      -27
+      -26
      ]
     ]
    },
    "away": {
     "team": "POR",
     "elo": 1538.1,
-    "elo_today": 1564.5,
-    "pulse": 59.9,
+    "elo_today": 1565.7,
+    "pulse": 60.1,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 33.1,
-     "roster": 22.6,
+     "roster": 23.8,
      "players": 0.0,
      "fatigue": 3.8
     },
     "reasons": [
      [
       "Sila súpisky",
-      23
+      24
      ]
     ]
    }
