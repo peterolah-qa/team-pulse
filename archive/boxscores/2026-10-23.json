@@ -1242,6 +1242,256 @@
     ]
    }
   },
+  "0022600098": {
+   "game_id": "0022600098",
+   "espn_id": "401909847",
+   "date": "2026-10-23",
+   "kind": "regular",
+   "home": "MIA",
+   "away": "DET",
+   "pts_home": 111,
+   "pts_away": 128,
+   "box": {
+    "DET": [
+     {
+      "player": "Cade Cunningham",
+      "min": 30,
+      "pts": 16,
+      "reb": 2,
+      "ast": 8,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "John Collins",
+      "min": 29,
+      "pts": 23,
+      "reb": 7,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Duncan Robinson",
+      "min": 28,
+      "pts": 17,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Paul Reed",
+      "min": 26,
+      "pts": 19,
+      "reb": 11,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Daniss Jenkins",
+      "min": 22,
+      "pts": 15,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ronald Holland II",
+      "min": 22,
+      "pts": 8,
+      "reb": 5,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kevin Huerter",
+      "min": 20,
+      "pts": 5,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Ausar Thompson",
+      "min": 19,
+      "pts": 4,
+      "reb": 3,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Isaiah Joe",
+      "min": 18,
+      "pts": 12,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Javonte Green",
+      "min": 13,
+      "pts": 5,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jalen Duren",
+      "min": 10,
+      "pts": 4,
+      "reb": 6,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Tolu Smith",
+      "min": 2,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "MIA": [
+     {
+      "player": "Giannis Antetokounmpo",
+      "min": 33,
+      "pts": 36,
+      "reb": 12,
+      "ast": 5,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Davion Mitchell",
+      "min": 33,
+      "pts": 18,
+      "reb": 2,
+      "ast": 5,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Pelle Larsson",
+      "min": 29,
+      "pts": 7,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Andrew Wiggins",
+      "min": 26,
+      "pts": 8,
+      "reb": 8,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Klay Thompson",
+      "min": 24,
+      "pts": 6,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bam Adebayo",
+      "min": 23,
+      "pts": 4,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Bobby Portis",
+      "min": 21,
+      "pts": 11,
+      "reb": 8,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tim Hardaway Jr.",
+      "min": 21,
+      "pts": 8,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nikola Jovic",
+      "min": 13,
+      "pts": 5,
+      "reb": 4,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Dru Smith",
+      "min": 6,
+      "pts": 3,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nick Richards",
+      "min": 3,
+      "pts": 3,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Conwell",
+      "min": 3,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Simone Fontecchio",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Myron Gardner",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     }
+    ]
+   }
+  },
   "0022600099": {
    "game_id": "0022600099",
    "espn_id": "401909848",
