@@ -5,9 +5,9 @@
    "game_id": "0022600104",
    "kind": "regular",
    "tipoff_utc": "2026-10-24 22:00:00+00:00",
-   "locked_at": "2026-10-24T00:30:50+00:00",
+   "locked_at": "2026-10-24T01:00:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T00:30:46Z",
+   "injuries_timestamp": "2026-10-24T01:00:55Z",
    "neutral": false,
    "p_home": 0.668,
    "margin_home": 5.0,
@@ -68,9 +68,9 @@
    "game_id": "0022600105",
    "kind": "regular",
    "tipoff_utc": "2026-10-24 23:30:00+00:00",
-   "locked_at": "2026-10-24T00:30:50+00:00",
+   "locked_at": "2026-10-24T01:00:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T00:30:46Z",
+   "injuries_timestamp": "2026-10-24T01:00:55Z",
    "neutral": false,
    "p_home": 0.871,
    "margin_home": 13.8,
@@ -123,9 +123,9 @@
    "game_id": "0022600106",
    "kind": "regular",
    "tipoff_utc": "2026-10-24 23:30:00+00:00",
-   "locked_at": "2026-10-24T00:30:50+00:00",
+   "locked_at": "2026-10-24T01:00:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T00:30:46Z",
+   "injuries_timestamp": "2026-10-24T01:00:55Z",
    "neutral": false,
    "p_home": 0.87,
    "margin_home": 13.7,
@@ -186,9 +186,9 @@
    "game_id": "0022600108",
    "kind": "regular",
    "tipoff_utc": "2026-10-25 00:00:00+00:00",
-   "locked_at": "2026-10-24T00:30:50+00:00",
+   "locked_at": "2026-10-24T01:00:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T00:30:46Z",
+   "injuries_timestamp": "2026-10-24T01:00:55Z",
    "neutral": false,
    "p_home": 0.662,
    "margin_home": 4.9,
@@ -245,9 +245,9 @@
    "game_id": "0022600109",
    "kind": "regular",
    "tipoff_utc": "2026-10-25 00:00:00+00:00",
-   "locked_at": "2026-10-24T00:30:50+00:00",
+   "locked_at": "2026-10-24T01:00:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T00:30:46Z",
+   "injuries_timestamp": "2026-10-24T01:00:55Z",
    "neutral": false,
    "p_home": 0.202,
    "margin_home": -9.9,
@@ -312,9 +312,9 @@
    "game_id": "0022600107",
    "kind": "regular",
    "tipoff_utc": "2026-10-25 00:30:00+00:00",
-   "locked_at": "2026-10-24T00:30:50+00:00",
+   "locked_at": "2026-10-24T01:00:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T00:30:46Z",
+   "injuries_timestamp": "2026-10-24T01:00:55Z",
    "neutral": false,
    "p_home": 0.483,
    "margin_home": -0.5,
@@ -363,6 +363,65 @@
      [
       "2. zápas za 2 dni",
       -49
+     ]
+    ]
+   }
+  },
+  "0022600110": {
+   "game_id": "0022600110",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-25 01:00:00+00:00",
+   "locked_at": "2026-10-24T01:00:58+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-24T01:00:55Z",
+   "neutral": false,
+   "p_home": 0.873,
+   "margin_home": 13.9,
+   "home": {
+    "team": "DEN",
+    "elo": 1590.8,
+    "elo_today": 1639.2,
+    "pulse": 72.4,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 85.8,
+     "roster": 44.9,
+     "players": 0.0,
+     "fatigue": 3.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      45
+     ]
+    ]
+   },
+   "away": {
+    "team": "NOP",
+    "elo": 1420.9,
+    "elo_today": 1327.5,
+    "pulse": 20.4,
+    "tier": "Kritický",
+    "normal_tier": "Oslabený",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -84.1,
+     "roster": -4.8,
+     "players": 0.0,
+     "fatigue": -88.7
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Hrá vo výške",
+      -40
      ]
     ]
    }
