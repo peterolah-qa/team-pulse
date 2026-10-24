@@ -5,9 +5,9 @@
    "game_id": "0022600112",
    "kind": "regular",
    "tipoff_utc": "2026-10-25 21:00:00+00:00",
-   "locked_at": "2026-10-24T21:50:27+00:00",
+   "locked_at": "2026-10-24T22:00:59+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T21:50:25Z",
+   "injuries_timestamp": "2026-10-24T22:00:56Z",
    "neutral": false,
    "p_home": 0.285,
    "margin_home": -6.7,
@@ -58,6 +58,60 @@
       35
      ]
     ]
+   }
+  },
+  "0022600113": {
+   "game_id": "0022600113",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-25 22:00:00+00:00",
+   "locked_at": "2026-10-24T22:00:59+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-24T22:00:56Z",
+   "neutral": false,
+   "p_home": 0.437,
+   "margin_home": -1.8,
+   "home": {
+    "team": "BKN",
+    "elo": 1317.0,
+    "elo_today": 1252.4,
+    "pulse": 7.9,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -188.0,
+     "roster": -23.8,
+     "players": 0.0,
+     "fatigue": -40.8
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -43
+     ],
+     [
+      "Sila súpisky",
+      -24
+     ]
+    ]
+   },
+   "away": {
+    "team": "IND",
+    "elo": 1369.7,
+    "elo_today": 1382.4,
+    "pulse": 29.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -135.3,
+     "roster": 9.1,
+     "players": 0.0,
+     "fatigue": 3.6
+    },
+    "reasons": []
    }
   }
  }
