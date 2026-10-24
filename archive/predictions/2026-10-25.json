@@ -5,9 +5,9 @@
    "game_id": "0022600112",
    "kind": "regular",
    "tipoff_utc": "2026-10-25 21:00:00+00:00",
-   "locked_at": "2026-10-24T22:30:51+00:00",
+   "locked_at": "2026-10-24T23:00:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T22:30:43Z",
+   "injuries_timestamp": "2026-10-24T23:00:48Z",
    "neutral": false,
    "p_home": 0.285,
    "margin_home": -6.7,
@@ -64,9 +64,9 @@
    "game_id": "0022600113",
    "kind": "regular",
    "tipoff_utc": "2026-10-25 22:00:00+00:00",
-   "locked_at": "2026-10-24T22:30:51+00:00",
+   "locked_at": "2026-10-24T23:00:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T22:30:43Z",
+   "injuries_timestamp": "2026-10-24T23:00:48Z",
    "neutral": false,
    "p_home": 0.437,
    "margin_home": -1.8,
@@ -112,6 +112,166 @@
      "fatigue": 3.6
     },
     "reasons": []
+   }
+  },
+  "0022600114": {
+   "game_id": "0022600114",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-25 23:00:00+00:00",
+   "locked_at": "2026-10-24T23:00:57+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-24T23:00:48Z",
+   "neutral": false,
+   "p_home": 0.876,
+   "margin_home": 14.1,
+   "home": {
+    "team": "NYK",
+    "elo": 1702.8,
+    "elo_today": 1747.6,
+    "pulse": 90.4,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 197.8,
+     "roster": 42.3,
+     "players": 0.0,
+     "fatigue": 2.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      42
+     ]
+    ]
+   },
+   "away": {
+    "team": "ORL",
+    "elo": 1510.9,
+    "elo_today": 1431.4,
+    "pulse": 37.7,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 5.9,
+     "roster": 4.6,
+     "players": -87.1,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Bez Paolo Banchero",
+      -87
+     ]
+    ]
+   }
+  },
+  "0022600115": {
+   "game_id": "0022600115",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-25 23:00:00+00:00",
+   "locked_at": "2026-10-24T23:00:57+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-24T23:00:48Z",
+   "neutral": false,
+   "p_home": 0.593,
+   "margin_home": 2.7,
+   "home": {
+    "team": "MIN",
+    "elo": 1598.4,
+    "elo_today": 1595.4,
+    "pulse": 65.1,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 93.4,
+     "roster": -8.8,
+     "players": 0.0,
+     "fatigue": 5.8
+    },
+    "reasons": []
+   },
+   "away": {
+    "team": "TOR",
+    "elo": 1560.0,
+    "elo_today": 1598.1,
+    "pulse": 65.5,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 55.0,
+     "roster": 30.4,
+     "players": 0.0,
+     "fatigue": 7.7
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      30
+     ]
+    ]
+   }
+  },
+  "0022600116": {
+   "game_id": "0022600116",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-25 23:00:00+00:00",
+   "locked_at": "2026-10-24T23:00:57+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-24T23:00:48Z",
+   "neutral": false,
+   "p_home": 0.817,
+   "margin_home": 10.8,
+   "home": {
+    "team": "OKC",
+    "elo": 1707.9,
+    "elo_today": 1734.4,
+    "pulse": 88.2,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 202.9,
+     "roster": 23.5,
+     "players": 0.0,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      24
+     ]
+    ]
+   },
+   "away": {
+    "team": "LAC",
+    "elo": 1535.1,
+    "elo_today": 1510.4,
+    "pulse": 50.9,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 30.1,
+     "roster": -34.5,
+     "players": -6.3,
+     "fatigue": 16.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -34
+     ]
+    ]
    }
   }
  }
