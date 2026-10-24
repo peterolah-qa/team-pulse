@@ -5,16 +5,16 @@
    "game_id": "0022600112",
    "kind": "regular",
    "tipoff_utc": "2026-10-25 21:00:00+00:00",
-   "locked_at": "2026-10-24T22:00:59+00:00",
+   "locked_at": "2026-10-24T22:30:51+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T22:00:56Z",
+   "injuries_timestamp": "2026-10-24T22:30:43Z",
    "neutral": false,
    "p_home": 0.285,
    "margin_home": -6.7,
    "home": {
     "team": "UTA",
     "elo": 1333.4,
-    "elo_today": 1319.4,
+    "elo_today": 1319.7,
     "pulse": 19.1,
     "tier": "Kritický",
     "normal_tier": "Kritický",
@@ -22,7 +22,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -171.6,
-     "roster": -16.0,
+     "roster": -15.7,
      "players": 0.0,
      "fatigue": 2.0
     },
@@ -36,15 +36,15 @@
    "away": {
     "team": "LAL",
     "elo": 1582.5,
-    "elo_today": 1584.8,
-    "pulse": 63.3,
+    "elo_today": 1585.1,
+    "pulse": 63.4,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 77.5,
-     "roster": 34.8,
+     "roster": 35.1,
      "players": 0.0,
      "fatigue": -32.4
     },
@@ -64,16 +64,16 @@
    "game_id": "0022600113",
    "kind": "regular",
    "tipoff_utc": "2026-10-25 22:00:00+00:00",
-   "locked_at": "2026-10-24T22:00:59+00:00",
+   "locked_at": "2026-10-24T22:30:51+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-24T22:00:56Z",
+   "injuries_timestamp": "2026-10-24T22:30:43Z",
    "neutral": false,
    "p_home": 0.437,
    "margin_home": -1.8,
    "home": {
     "team": "BKN",
     "elo": 1317.0,
-    "elo_today": 1252.4,
+    "elo_today": 1252.7,
     "pulse": 7.9,
     "tier": "Kritický",
     "normal_tier": "Kritický",
@@ -81,7 +81,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -188.0,
-     "roster": -23.8,
+     "roster": -23.5,
      "players": 0.0,
      "fatigue": -40.8
     },
@@ -92,14 +92,14 @@
      ],
      [
       "Sila súpisky",
-      -24
+      -23
      ]
     ]
    },
    "away": {
     "team": "IND",
     "elo": 1369.7,
-    "elo_today": 1382.4,
+    "elo_today": 1382.7,
     "pulse": 29.6,
     "tier": "Kritický",
     "normal_tier": "Kritický",
@@ -107,7 +107,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -135.3,
-     "roster": 9.1,
+     "roster": 9.4,
      "players": 0.0,
      "fatigue": 3.6
     },
