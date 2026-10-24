@@ -1,0 +1,64 @@
+{
+ "date": "2026-10-25",
+ "games": {
+  "0022600112": {
+   "game_id": "0022600112",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-25 21:00:00+00:00",
+   "locked_at": "2026-10-24T21:01:02+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-24T21:00:55Z",
+   "neutral": false,
+   "p_home": 0.285,
+   "margin_home": -6.7,
+   "home": {
+    "team": "UTA",
+    "elo": 1333.4,
+    "elo_today": 1319.4,
+    "pulse": 19.1,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -171.6,
+     "roster": -16.0,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -16
+     ]
+    ]
+   },
+   "away": {
+    "team": "LAL",
+    "elo": 1582.5,
+    "elo_today": 1584.8,
+    "pulse": 63.3,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 77.5,
+     "roster": 34.8,
+     "players": 0.0,
+     "fatigue": -32.4
+    },
+    "reasons": [
+     [
+      "Hrá vo výške",
+      -40
+     ],
+     [
+      "Sila súpisky",
+      35
+     ]
+    ]
+   }
+  }
+ }
+}
