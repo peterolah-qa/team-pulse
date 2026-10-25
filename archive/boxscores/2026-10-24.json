@@ -616,6 +616,202 @@
     ]
    }
   },
+  "0022600108": {
+   "game_id": "0022600108",
+   "espn_id": "401909857",
+   "date": "2026-10-24",
+   "kind": "regular",
+   "home": "CHI",
+   "away": "WAS",
+   "pts_home": 120,
+   "pts_away": 124,
+   "box": {
+    "WAS": [
+     {
+      "player": "Kyshawn George",
+      "min": 36,
+      "pts": 22,
+      "reb": 9,
+      "ast": 5,
+      "blk": 4,
+      "stl": 0
+     },
+     {
+      "player": "Trae Young",
+      "min": 34,
+      "pts": 25,
+      "reb": 4,
+      "ast": 9,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Anthony Davis",
+      "min": 31,
+      "pts": 19,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Justin Champagnie",
+      "min": 26,
+      "pts": 11,
+      "reb": 14,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Bilal Coulibaly",
+      "min": 25,
+      "pts": 7,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Tre Johnson",
+      "min": 23,
+      "pts": 13,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Alex Sarr",
+      "min": 23,
+      "pts": 10,
+      "reb": 2,
+      "ast": 3,
+      "blk": 3,
+      "stl": 0
+     },
+     {
+      "player": "Bub Carrington",
+      "min": 21,
+      "pts": 9,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Deandre Ayton",
+      "min": 16,
+      "pts": 6,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Will Riley",
+      "min": 5,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "CHI": [
+     {
+      "player": "Caleb Wilson",
+      "min": 38,
+      "pts": 30,
+      "reb": 14,
+      "ast": 3,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Matas Buzelis",
+      "min": 35,
+      "pts": 21,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Norman Powell",
+      "min": 33,
+      "pts": 18,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Josh Giddey",
+      "min": 30,
+      "pts": 9,
+      "reb": 8,
+      "ast": 10,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Smith",
+      "min": 24,
+      "pts": 14,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Leonard Miller",
+      "min": 21,
+      "pts": 7,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tre Jones",
+      "min": 18,
+      "pts": 10,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Buddy Hield",
+      "min": 16,
+      "pts": 9,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaac Okoro",
+      "min": 14,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zach Collins",
+      "min": 11,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
   "0022600109": {
    "game_id": "0022600109",
    "espn_id": "401909858",
