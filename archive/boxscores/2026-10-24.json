@@ -616,6 +616,202 @@
     ]
    }
   },
+  "0022600107": {
+   "game_id": "0022600107",
+   "espn_id": "401909856",
+   "date": "2026-10-24",
+   "kind": "regular",
+   "home": "ATL",
+   "away": "HOU",
+   "pts_home": 114,
+   "pts_away": 121,
+   "box": {
+    "HOU": [
+     {
+      "player": "Amen Thompson",
+      "min": 39,
+      "pts": 17,
+      "reb": 11,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kevin Durant",
+      "min": 37,
+      "pts": 22,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Alperen Sengun",
+      "min": 33,
+      "pts": 17,
+      "reb": 10,
+      "ast": 7,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jabari Smith Jr.",
+      "min": 33,
+      "pts": 14,
+      "reb": 5,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Tari Eason",
+      "min": 31,
+      "pts": 19,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Reed Sheppard",
+      "min": 30,
+      "pts": 19,
+      "reb": 6,
+      "ast": 7,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Bogdan Bogdanovic",
+      "min": 20,
+      "pts": 11,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Clint Capela",
+      "min": 11,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bruce Thornton",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jae'Sean Tate",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Crawford",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     }
+    ],
+    "ATL": [
+     {
+      "player": "Jalen Johnson",
+      "min": 38,
+      "pts": 26,
+      "reb": 9,
+      "ast": 16,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Nickeil Alexander-Walker",
+      "min": 32,
+      "pts": 18,
+      "reb": 5,
+      "ast": 4,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "CJ McCollum",
+      "min": 30,
+      "pts": 17,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dyson Daniels",
+      "min": 29,
+      "pts": 18,
+      "reb": 8,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Aaron Wiggins",
+      "min": 29,
+      "pts": 16,
+      "reb": 5,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Onyeka Okongwu",
+      "min": 26,
+      "pts": 8,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Luguentz Dort",
+      "min": 23,
+      "pts": 7,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jock Landale",
+      "min": 19,
+      "pts": 2,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kingston Flemings",
+      "min": 15,
+      "pts": 2,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
   "0022600108": {
    "game_id": "0022600108",
    "espn_id": "401909857",
