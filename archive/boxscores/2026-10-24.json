@@ -1,0 +1,201 @@
+{
+ "date": "2026-10-24",
+ "games": {
+  "0022600104": {
+   "game_id": "0022600104",
+   "espn_id": "401909853",
+   "date": "2026-10-24",
+   "kind": "regular",
+   "home": "CHA",
+   "away": "MIA",
+   "pts_home": 115,
+   "pts_away": 110,
+   "box": {
+    "MIA": [
+     {
+      "player": "Bam Adebayo",
+      "min": 39,
+      "pts": 20,
+      "reb": 8,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Davion Mitchell",
+      "min": 37,
+      "pts": 22,
+      "reb": 1,
+      "ast": 10,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Pelle Larsson",
+      "min": 36,
+      "pts": 15,
+      "reb": 7,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Klay Thompson",
+      "min": 27,
+      "pts": 14,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Bobby Portis",
+      "min": 27,
+      "pts": 13,
+      "reb": 8,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Giannis Antetokounmpo",
+      "min": 25,
+      "pts": 14,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tim Hardaway Jr.",
+      "min": 21,
+      "pts": 5,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Andrew Wiggins",
+      "min": 18,
+      "pts": 4,
+      "reb": 1,
+      "ast": 1,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Nikola Jovic",
+      "min": 6,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Conwell",
+      "min": 4,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "CHA": [
+     {
+      "player": "Dennis Schroder",
+      "min": 38,
+      "pts": 25,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Naz Reid",
+      "min": 37,
+      "pts": 23,
+      "reb": 9,
+      "ast": 0,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Brandon Miller",
+      "min": 36,
+      "pts": 34,
+      "reb": 7,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Grayson Allen",
+      "min": 34,
+      "pts": 20,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Sion James",
+      "min": 26,
+      "pts": 0,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Kalkbrenner",
+      "min": 23,
+      "pts": 6,
+      "reb": 5,
+      "ast": 2,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Moussa Diabate",
+      "min": 22,
+      "pts": 4,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Royce O'Neale",
+      "min": 11,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tidjane Salaun",
+      "min": 10,
+      "pts": 3,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Christian Anderson",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
