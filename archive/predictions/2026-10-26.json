@@ -5,9 +5,9 @@
    "game_id": "0022600119",
    "kind": "regular",
    "tipoff_utc": "2026-10-26 23:00:00+00:00",
-   "locked_at": "2026-10-25T23:01:06+00:00",
+   "locked_at": "2026-10-25T23:30:49+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-25T23:01:03Z",
+   "injuries_timestamp": "2026-10-25T23:30:39Z",
    "neutral": false,
    "p_home": 0.819,
    "margin_home": 10.9,
@@ -55,9 +55,9 @@
    "game_id": "0022600120",
    "kind": "regular",
    "tipoff_utc": "2026-10-26 23:00:00+00:00",
-   "locked_at": "2026-10-25T23:01:06+00:00",
+   "locked_at": "2026-10-25T23:30:49+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-25T23:01:03Z",
+   "injuries_timestamp": "2026-10-25T23:30:39Z",
    "neutral": false,
    "p_home": 0.671,
    "margin_home": 5.1,
@@ -102,6 +102,111 @@
      [
       "2. zápas za 2 dni",
       -49
+     ]
+    ]
+   }
+  },
+  "0022600121": {
+   "game_id": "0022600121",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-26 23:30:00+00:00",
+   "locked_at": "2026-10-25T23:30:49+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-25T23:30:39Z",
+   "neutral": false,
+   "p_home": 0.851,
+   "margin_home": 12.6,
+   "home": {
+    "team": "BOS",
+    "elo": 1607.0,
+    "elo_today": 1619.4,
+    "pulse": 69.1,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 102.0,
+     "roster": 9.4,
+     "players": 0.0,
+     "fatigue": 3.0
+    },
+    "reasons": []
+   },
+   "away": {
+    "team": "CHI",
+    "elo": 1374.2,
+    "elo_today": 1346.0,
+    "pulse": 23.5,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -130.8,
+     "roster": -28.1,
+     "players": 0.0,
+     "fatigue": -0.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -28
+     ]
+    ]
+   }
+  },
+  "0022600122": {
+   "game_id": "0022600122",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-26 23:30:00+00:00",
+   "locked_at": "2026-10-25T23:30:49+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-25T23:30:39Z",
+   "neutral": false,
+   "p_home": 0.753,
+   "margin_home": 8.1,
+   "home": {
+    "team": "MIA",
+    "elo": 1485.7,
+    "elo_today": 1505.0,
+    "pulse": 50.0,
+    "tier": "Stabilný",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -19.3,
+     "roster": 21.5,
+     "players": 0.0,
+     "fatigue": -2.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      21
+     ]
+    ]
+   },
+   "away": {
+    "team": "DAL",
+    "elo": 1399.6,
+    "elo_today": 1358.0,
+    "pulse": 25.5,
+    "tier": "Kritický",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -105.4,
+     "roster": -7.6,
+     "players": -33.5,
+     "fatigue": -0.6
+    },
+    "reasons": [
+     [
+      "Bez Cooper Flagg, Santi Aldama",
+      -33
      ]
     ]
    }
