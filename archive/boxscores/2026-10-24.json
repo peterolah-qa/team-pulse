@@ -1248,6 +1248,211 @@
      }
     ]
    }
+  },
+  "0022600110": {
+   "game_id": "0022600110",
+   "espn_id": "401909859",
+   "date": "2026-10-24",
+   "kind": "regular",
+   "home": "DEN",
+   "away": "NOP",
+   "pts_home": 141,
+   "pts_away": 135,
+   "box": {
+    "NOP": [
+     {
+      "player": "Trey Murphy III",
+      "min": 37,
+      "pts": 26,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Dejounte Murray",
+      "min": 35,
+      "pts": 22,
+      "reb": 6,
+      "ast": 6,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Zion Williamson",
+      "min": 33,
+      "pts": 17,
+      "reb": 1,
+      "ast": 2,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Derik Queen",
+      "min": 25,
+      "pts": 17,
+      "reb": 8,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Saddiq Bey",
+      "min": 25,
+      "pts": 14,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jeremiah Fears",
+      "min": 23,
+      "pts": 10,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jordan Poole",
+      "min": 23,
+      "pts": 6,
+      "reb": 3,
+      "ast": 7,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "DeAndre Jordan",
+      "min": 20,
+      "pts": 9,
+      "reb": 9,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Bennedict Mathurin",
+      "min": 20,
+      "pts": 9,
+      "reb": 4,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Herbert Jones",
+      "min": 16,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Karlo Matkovic",
+      "min": 8,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "DEN": [
+     {
+      "player": "Nikola Jokic",
+      "min": 44,
+      "pts": 35,
+      "reb": 15,
+      "ast": 10,
+      "blk": 4,
+      "stl": 2
+     },
+     {
+      "player": "Jamal Murray",
+      "min": 43,
+      "pts": 42,
+      "reb": 3,
+      "ast": 6,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Christian Braun",
+      "min": 40,
+      "pts": 15,
+      "reb": 8,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Aaron Gordon",
+      "min": 37,
+      "pts": 7,
+      "reb": 5,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Trevon Brazile",
+      "min": 28,
+      "pts": 17,
+      "reb": 9,
+      "ast": 0,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "DeMar DeRozan",
+      "min": 24,
+      "pts": 12,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bryce Hopkins",
+      "min": 19,
+      "pts": 2,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cam Whitmore",
+      "min": 11,
+      "pts": 4,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tyus Jones",
+      "min": 10,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Marvin Bagley III",
+      "min": 9,
+      "pts": 5,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
