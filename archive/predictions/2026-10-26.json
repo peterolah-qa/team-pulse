@@ -1,0 +1,110 @@
+{
+ "date": "2026-10-26",
+ "games": {
+  "0022600119": {
+   "game_id": "0022600119",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-26 23:00:00+00:00",
+   "locked_at": "2026-10-25T23:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-25T23:01:03Z",
+   "neutral": false,
+   "p_home": 0.819,
+   "margin_home": 10.9,
+   "home": {
+    "team": "CHA",
+    "elo": 1574.6,
+    "elo_today": 1531.5,
+    "pulse": 54.4,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 69.6,
+     "roster": -33.3,
+     "players": -5.8,
+     "fatigue": -4.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -33
+     ]
+    ]
+   },
+   "away": {
+    "team": "WAS",
+    "elo": 1303.7,
+    "elo_today": 1304.9,
+    "pulse": 16.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -201.3,
+     "roster": -3.9,
+     "players": 0.0,
+     "fatigue": 5.1
+    },
+    "reasons": []
+   }
+  },
+  "0022600120": {
+   "game_id": "0022600120",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-26 23:00:00+00:00",
+   "locked_at": "2026-10-25T23:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-25T23:01:03Z",
+   "neutral": false,
+   "p_home": 0.671,
+   "margin_home": 5.1,
+   "home": {
+    "team": "CLE",
+    "elo": 1572.0,
+    "elo_today": 1606.2,
+    "pulse": 66.9,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 67.0,
+     "roster": 32.2,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      32
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIN",
+    "elo": 1598.4,
+    "elo_today": 1541.0,
+    "pulse": 56.0,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 93.4,
+     "roster": -8.4,
+     "players": 0.0,
+     "fatigue": -48.9
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ]
+    ]
+   }
+  }
+ }
+}
