@@ -19,7 +19,7 @@
     "reasons": {}
    },
    "model": "nhl-v1",
-   "locked_at": "2026-10-24T08:15:18+00:00"
+   "locked_at": "2026-10-25T09:15:24+00:00"
   },
   "2026020181": {
    "game_id": "2026020181",
@@ -40,7 +40,7 @@
     "reasons": {}
    },
    "model": "nhl-v1",
-   "locked_at": "2026-10-24T08:15:18+00:00"
+   "locked_at": "2026-10-25T09:15:24+00:00"
   },
   "2026020182": {
    "game_id": "2026020182",
@@ -61,7 +61,7 @@
     "reasons": {}
    },
    "model": "nhl-v1",
-   "locked_at": "2026-10-24T08:15:18+00:00"
+   "locked_at": "2026-10-25T09:15:24+00:00"
   },
   "2026020183": {
    "game_id": "2026020183",
@@ -69,11 +69,11 @@
    "tipoff_utc": "2026-10-26T00:00:00Z",
    "kind": "regular",
    "neutral": false,
-   "p_home": 0.327,
+   "p_home": 0.324,
    "tip": "COL",
    "home": {
     "team": "NSH",
-    "elo": 1476.0,
+    "elo": 1474.0,
     "reasons": {
      "back-to-back": -42.5,
      "3. zápas za 4 dni": -15.8
@@ -85,7 +85,7 @@
     "reasons": {}
    },
    "model": "nhl-v1",
-   "locked_at": "2026-10-24T08:15:18+00:00"
+   "locked_at": "2026-10-25T09:15:24+00:00"
   },
   "2026020184": {
    "game_id": "2026020184",
@@ -93,7 +93,7 @@
    "tipoff_utc": "2026-10-26T02:00:00Z",
    "kind": "regular",
    "neutral": false,
-   "p_home": 0.413,
+   "p_home": 0.406,
    "tip": "MIN",
    "home": {
     "team": "VAN",
@@ -102,13 +102,13 @@
    },
    "away": {
     "team": "MIN",
-    "elo": 1540.0,
+    "elo": 1544.6,
     "reasons": {
      "back-to-back": -38.5
     }
    },
    "model": "nhl-v1",
-   "locked_at": "2026-10-24T08:15:18+00:00"
+   "locked_at": "2026-10-25T09:15:24+00:00"
   }
  }
 }

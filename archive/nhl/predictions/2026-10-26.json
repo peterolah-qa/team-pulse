@@ -1,0 +1,67 @@
+{
+ "games": {
+  "2026020185": {
+   "game_id": "2026020185",
+   "date": "2026-10-26",
+   "tipoff_utc": "2026-10-26T23:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.589,
+   "tip": "NYR",
+   "home": {
+    "team": "NYR",
+    "elo": 1500.7,
+    "reasons": {}
+   },
+   "away": {
+    "team": "LAK",
+    "elo": 1472.3,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-25T09:15:24+00:00"
+  },
+  "2026020186": {
+   "game_id": "2026020186",
+   "date": "2026-10-26",
+   "tipoff_utc": "2026-10-27T00:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.504,
+   "tip": "CGY",
+   "home": {
+    "team": "CGY",
+    "elo": 1460.2,
+    "reasons": {}
+   },
+   "away": {
+    "team": "TOR",
+    "elo": 1489.0,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-25T09:15:24+00:00"
+  },
+  "2026020187": {
+   "game_id": "2026020187",
+   "date": "2026-10-26",
+   "tipoff_utc": "2026-10-27T01:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.621,
+   "tip": "EDM",
+   "home": {
+    "team": "EDM",
+    "elo": 1532.1,
+    "reasons": {}
+   },
+   "away": {
+    "team": "DET",
+    "elo": 1480.2,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-25T09:15:24+00:00"
+  }
+ }
+}
