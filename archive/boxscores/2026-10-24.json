@@ -1453,6 +1453,211 @@
      }
     ]
    }
+  },
+  "0022600111": {
+   "game_id": "0022600111",
+   "espn_id": "401909860",
+   "date": "2026-10-24",
+   "kind": "regular",
+   "home": "PHX",
+   "away": "GSW",
+   "pts_home": 131,
+   "pts_away": 122,
+   "box": {
+    "GSW": [
+     {
+      "player": "Yaxel Lendeborg",
+      "min": 36,
+      "pts": 26,
+      "reb": 9,
+      "ast": 5,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Will Richard",
+      "min": 31,
+      "pts": 11,
+      "reb": 0,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "De'Anthony Melton",
+      "min": 27,
+      "pts": 25,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Graham Ike",
+      "min": 26,
+      "pts": 12,
+      "reb": 10,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Brandon Williams",
+      "min": 24,
+      "pts": 20,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Gui Santos",
+      "min": 23,
+      "pts": 7,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Georges Niang",
+      "min": 23,
+      "pts": 4,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Gary Payton II",
+      "min": 17,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "LJ Cryer",
+      "min": 14,
+      "pts": 3,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Charles Bassey",
+      "min": 13,
+      "pts": 10,
+      "reb": 7,
+      "ast": 0,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Malevy Leons",
+      "min": 4,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "PHX": [
+     {
+      "player": "Devin Booker",
+      "min": 36,
+      "pts": 43,
+      "reb": 7,
+      "ast": 7,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Dillon Brooks",
+      "min": 34,
+      "pts": 15,
+      "reb": 2,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Miles Bridges",
+      "min": 33,
+      "pts": 16,
+      "reb": 7,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Collin Gillespie",
+      "min": 28,
+      "pts": 11,
+      "reb": 4,
+      "ast": 9,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Khaman Maluach",
+      "min": 28,
+      "pts": 9,
+      "reb": 9,
+      "ast": 3,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Green",
+      "min": 26,
+      "pts": 12,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jordan Goodwin",
+      "min": 20,
+      "pts": 9,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Luke Kennard",
+      "min": 18,
+      "pts": 11,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ryan Dunn",
+      "min": 13,
+      "pts": 5,
+      "reb": 5,
+      "ast": 0,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Duop Reath",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
