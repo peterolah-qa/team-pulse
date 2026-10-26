@@ -1320,6 +1320,211 @@
      }
     ]
    }
+  },
+  "0022600118": {
+   "game_id": "0022600118",
+   "espn_id": "401909867",
+   "date": "2026-10-25",
+   "kind": "regular",
+   "home": "SAC",
+   "away": "MEM",
+   "pts_home": 112,
+   "pts_away": 123,
+   "box": {
+    "MEM": [
+     {
+      "player": "Jaylen Wells",
+      "min": 33,
+      "pts": 16,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Ty Jerome",
+      "min": 32,
+      "pts": 31,
+      "reb": 4,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Cedric Coward",
+      "min": 32,
+      "pts": 15,
+      "reb": 11,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Cameron Boozer",
+      "min": 31,
+      "pts": 16,
+      "reb": 11,
+      "ast": 4,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Stewart",
+      "min": 22,
+      "pts": 13,
+      "reb": 5,
+      "ast": 2,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Jerami Grant",
+      "min": 22,
+      "pts": 5,
+      "reb": 5,
+      "ast": 3,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Quinten Post",
+      "min": 17,
+      "pts": 7,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Scotty Pippen Jr.",
+      "min": 17,
+      "pts": 6,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cam Spencer",
+      "min": 16,
+      "pts": 13,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "GG Jackson",
+      "min": 10,
+      "pts": 1,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Taylor Hendricks",
+      "min": 7,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "SAC": [
+     {
+      "player": "Zach LaVine",
+      "min": 40,
+      "pts": 37,
+      "reb": 2,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Precious Achiuwa",
+      "min": 39,
+      "pts": 12,
+      "reb": 10,
+      "ast": 0,
+      "blk": 3,
+      "stl": 2
+     },
+     {
+      "player": "Darius Acuff Jr.",
+      "min": 36,
+      "pts": 22,
+      "reb": 3,
+      "ast": 7,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Domantas Sabonis",
+      "min": 34,
+      "pts": 15,
+      "reb": 15,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "De'Andre Hunter",
+      "min": 29,
+      "pts": 7,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jonathan Mogbo",
+      "min": 18,
+      "pts": 7,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Daeqwon Plowden",
+      "min": 16,
+      "pts": 3,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Emanuel Sharp",
+      "min": 14,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Malik Monk",
+      "min": 12,
+      "pts": 6,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Leaky Black",
+      "min": 0,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
