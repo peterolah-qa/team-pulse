@@ -1,0 +1,210 @@
+{
+ "date": "2026-10-25",
+ "games": {
+  "0022600112": {
+   "game_id": "0022600112",
+   "espn_id": "401909861",
+   "date": "2026-10-25",
+   "kind": "regular",
+   "home": "UTA",
+   "away": "LAL",
+   "pts_home": 123,
+   "pts_away": 132,
+   "box": {
+    "LAL": [
+     {
+      "player": "Luka Doncic",
+      "min": 38,
+      "pts": 52,
+      "reb": 8,
+      "ast": 10,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Austin Reaves",
+      "min": 36,
+      "pts": 29,
+      "reb": 1,
+      "ast": 4,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Ziaire Williams",
+      "min": 30,
+      "pts": 11,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Walker Kessler",
+      "min": 28,
+      "pts": 2,
+      "reb": 7,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Matisse Thybulle",
+      "min": 26,
+      "pts": 11,
+      "reb": 1,
+      "ast": 1,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Sandro Mamukelashvili",
+      "min": 21,
+      "pts": 9,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Collin Sexton",
+      "min": 20,
+      "pts": 13,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Quentin Grimes",
+      "min": 20,
+      "pts": 3,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jake LaRavia",
+      "min": 15,
+      "pts": 0,
+      "reb": 4,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Kevon Looney",
+      "min": 5,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "UTA": [
+     {
+      "player": "Lauri Markkanen",
+      "min": 38,
+      "pts": 28,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Keyonte George",
+      "min": 33,
+      "pts": 24,
+      "reb": 9,
+      "ast": 10,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jaren Jackson Jr.",
+      "min": 33,
+      "pts": 20,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Darryn Peterson",
+      "min": 30,
+      "pts": 8,
+      "reb": 3,
+      "ast": 2,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Ace Bailey",
+      "min": 29,
+      "pts": 17,
+      "reb": 12,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jaxson Hayes",
+      "min": 19,
+      "pts": 9,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Brice Sensabaugh",
+      "min": 17,
+      "pts": 7,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Svi Mykhailiuk",
+      "min": 14,
+      "pts": 2,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Collier",
+      "min": 13,
+      "pts": 6,
+      "reb": 3,
+      "ast": 6,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Okogie",
+      "min": 10,
+      "pts": 2,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Josh Green",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}

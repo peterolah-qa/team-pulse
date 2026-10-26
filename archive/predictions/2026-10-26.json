@@ -5,9 +5,9 @@
    "game_id": "0022600119",
    "kind": "regular",
    "tipoff_utc": "2026-10-26 23:00:00+00:00",
-   "locked_at": "2026-10-25T23:30:49+00:00",
+   "locked_at": "2026-10-26T00:01:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-25T23:30:39Z",
+   "injuries_timestamp": "2026-10-26T00:01:00Z",
    "neutral": false,
    "p_home": 0.819,
    "margin_home": 10.9,
@@ -55,9 +55,9 @@
    "game_id": "0022600120",
    "kind": "regular",
    "tipoff_utc": "2026-10-26 23:00:00+00:00",
-   "locked_at": "2026-10-25T23:30:49+00:00",
+   "locked_at": "2026-10-26T00:01:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-25T23:30:39Z",
+   "injuries_timestamp": "2026-10-26T00:01:00Z",
    "neutral": false,
    "p_home": 0.671,
    "margin_home": 5.1,
@@ -110,9 +110,9 @@
    "game_id": "0022600121",
    "kind": "regular",
    "tipoff_utc": "2026-10-26 23:30:00+00:00",
-   "locked_at": "2026-10-25T23:30:49+00:00",
+   "locked_at": "2026-10-26T00:01:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-25T23:30:39Z",
+   "injuries_timestamp": "2026-10-26T00:01:00Z",
    "neutral": false,
    "p_home": 0.851,
    "margin_home": 12.6,
@@ -160,9 +160,9 @@
    "game_id": "0022600122",
    "kind": "regular",
    "tipoff_utc": "2026-10-26 23:30:00+00:00",
-   "locked_at": "2026-10-25T23:30:49+00:00",
+   "locked_at": "2026-10-26T00:01:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-25T23:30:39Z",
+   "injuries_timestamp": "2026-10-26T00:01:00Z",
    "neutral": false,
    "p_home": 0.753,
    "margin_home": 8.1,
@@ -207,6 +207,124 @@
      [
       "Bez Cooper Flagg, Santi Aldama",
       -33
+     ]
+    ]
+   }
+  },
+  "0022600123": {
+   "game_id": "0022600123",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-27 00:00:00+00:00",
+   "locked_at": "2026-10-26T00:01:03+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-26T00:01:00Z",
+   "neutral": false,
+   "p_home": 0.598,
+   "margin_home": 2.9,
+   "home": {
+    "team": "MIL",
+    "elo": 1360.4,
+    "elo_today": 1320.5,
+    "pulse": 19.3,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -144.6,
+     "roster": -37.9,
+     "players": 0.0,
+     "fatigue": -2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -38
+     ]
+    ]
+   },
+   "away": {
+    "team": "IND",
+    "elo": 1369.7,
+    "elo_today": 1318.5,
+    "pulse": 18.9,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "stredná",
+    "layers": {
+     "strength": -135.3,
+     "roster": 9.8,
+     "players": -12.2,
+     "fatigue": -48.8
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Bez Ivica Zubac (?)",
+      -12
+     ]
+    ]
+   }
+  },
+  "0022600124": {
+   "game_id": "0022600124",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-27 00:00:00+00:00",
+   "locked_at": "2026-10-26T00:01:03+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-26T00:01:00Z",
+   "neutral": false,
+   "p_home": 0.791,
+   "margin_home": 9.6,
+   "home": {
+    "team": "OKC",
+    "elo": 1707.9,
+    "elo_today": 1689.8,
+    "pulse": 80.8,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 202.9,
+     "roster": 23.9,
+     "players": 0.0,
+     "fatigue": -42.0
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -43
+     ],
+     [
+      "Sila súpisky",
+      24
+     ]
+    ]
+   },
+   "away": {
+    "team": "PHX",
+    "elo": 1511.4,
+    "elo_today": 1500.0,
+    "pulse": 49.2,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 6.4,
+     "roster": -19.0,
+     "players": 0.0,
+     "fatigue": 7.6
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -19
      ]
     ]
    }
