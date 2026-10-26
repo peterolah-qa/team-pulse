@@ -455,6 +455,220 @@
      }
     ]
    }
+  },
+  "0022600116": {
+   "game_id": "0022600116",
+   "espn_id": "401909865",
+   "date": "2026-10-25",
+   "kind": "regular",
+   "home": "OKC",
+   "away": "LAC",
+   "pts_home": 108,
+   "pts_away": 101,
+   "box": {
+    "LAC": [
+     {
+      "player": "Darius Garland",
+      "min": 36,
+      "pts": 16,
+      "reb": 4,
+      "ast": 11,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kris Dunn",
+      "min": 33,
+      "pts": 15,
+      "reb": 4,
+      "ast": 6,
+      "blk": 2,
+      "stl": 5
+     },
+     {
+      "player": "Derrick Jones Jr.",
+      "min": 30,
+      "pts": 11,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Rui Hachimura",
+      "min": 29,
+      "pts": 5,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Keaton Wagler",
+      "min": 26,
+      "pts": 11,
+      "reb": 5,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Isaiah Jackson",
+      "min": 24,
+      "pts": 10,
+      "reb": 6,
+      "ast": 4,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Brook Lopez",
+      "min": 23,
+      "pts": 15,
+      "reb": 1,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Kobe Sanders",
+      "min": 20,
+      "pts": 12,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Gradey Dick",
+      "min": 18,
+      "pts": 6,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Baba Miller",
+      "min": 2,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "OKC": [
+     {
+      "player": "Shai Gilgeous-Alexander",
+      "min": 36,
+      "pts": 34,
+      "reb": 6,
+      "ast": 5,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Jalen Williams",
+      "min": 32,
+      "pts": 8,
+      "reb": 2,
+      "ast": 5,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Chet Holmgren",
+      "min": 31,
+      "pts": 10,
+      "reb": 4,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Ajay Mitchell",
+      "min": 28,
+      "pts": 18,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Isaiah Hartenstein",
+      "min": 27,
+      "pts": 12,
+      "reb": 12,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Alex Caruso",
+      "min": 22,
+      "pts": 12,
+      "reb": 7,
+      "ast": 6,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Jared McCain",
+      "min": 21,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Aday Mara",
+      "min": 14,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Bennett Stirtz",
+      "min": 11,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kenrich Williams",
+      "min": 7,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cason Wallace",
+      "min": 6,
+      "pts": 4,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jaylin Williams",
+      "min": 5,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
