@@ -205,6 +205,256 @@
      }
     ]
    }
+  },
+  "0022600113": {
+   "game_id": "0022600113",
+   "espn_id": "401909862",
+   "date": "2026-10-25",
+   "kind": "regular",
+   "home": "BKN",
+   "away": "IND",
+   "pts_home": 109,
+   "pts_away": 136,
+   "box": {
+    "IND": [
+     {
+      "player": "Tyrese Haliburton",
+      "min": 31,
+      "pts": 24,
+      "reb": 4,
+      "ast": 10,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Andrew Nembhard",
+      "min": 30,
+      "pts": 14,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Pascal Siakam",
+      "min": 26,
+      "pts": 21,
+      "reb": 7,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Larry Nance Jr.",
+      "min": 22,
+      "pts": 6,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jay Huff",
+      "min": 21,
+      "pts": 14,
+      "reb": 2,
+      "ast": 3,
+      "blk": 3,
+      "stl": 0
+     },
+     {
+      "player": "Obi Toppin",
+      "min": 20,
+      "pts": 16,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kelly Oubre Jr.",
+      "min": 20,
+      "pts": 14,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Aaron Nesmith",
+      "min": 19,
+      "pts": 13,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jarace Walker",
+      "min": 19,
+      "pts": 6,
+      "reb": 7,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Quenton Jackson",
+      "min": 18,
+      "pts": 5,
+      "reb": 1,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Slawson",
+      "min": 8,
+      "pts": 1,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ivica Zubac",
+      "min": 7,
+      "pts": 2,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "BKN": [
+     {
+      "player": "Nolan Traore",
+      "min": 25,
+      "pts": 17,
+      "reb": 2,
+      "ast": 5,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Julius Randle",
+      "min": 24,
+      "pts": 10,
+      "reb": 7,
+      "ast": 7,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Keon Ellis",
+      "min": 23,
+      "pts": 9,
+      "reb": 1,
+      "ast": 3,
+      "blk": 1,
+      "stl": 4
+     },
+     {
+      "player": "Josh Minott",
+      "min": 21,
+      "pts": 15,
+      "reb": 8,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Michael Porter Jr.",
+      "min": 21,
+      "pts": 10,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Chaney Johnson",
+      "min": 21,
+      "pts": 4,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Noah Clowney",
+      "min": 20,
+      "pts": 9,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Egor Demin",
+      "min": 19,
+      "pts": 3,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Day'Ron Sharpe",
+      "min": 16,
+      "pts": 11,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Moritz Wagner",
+      "min": 15,
+      "pts": 13,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Danny Wolf",
+      "min": 15,
+      "pts": 6,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Drake Powell",
+      "min": 12,
+      "pts": 0,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ben Saraf",
+      "min": 4,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Joshua Jefferson",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
