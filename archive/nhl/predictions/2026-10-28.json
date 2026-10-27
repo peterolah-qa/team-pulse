@@ -1,0 +1,92 @@
+{
+ "games": {
+  "2026020199": {
+   "game_id": "2026020199",
+   "date": "2026-10-28",
+   "tipoff_utc": "2026-10-28T23:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.647,
+   "tip": "WSH",
+   "home": {
+    "team": "WSH",
+    "elo": 1529.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1482.7,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-27T09:15:28+00:00"
+  },
+  "2026020200": {
+   "game_id": "2026020200",
+   "date": "2026-10-28",
+   "tipoff_utc": "2026-10-29T00:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.63,
+   "tip": "EDM",
+   "home": {
+    "team": "EDM",
+    "elo": 1529.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "CGY",
+    "elo": 1464.8,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-27T09:15:28+00:00"
+  },
+  "2026020201": {
+   "game_id": "2026020201",
+   "date": "2026-10-28",
+   "tipoff_utc": "2026-10-29T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.688,
+   "tip": "COL",
+   "home": {
+    "team": "COL",
+    "elo": 1573.6,
+    "reasons": {}
+   },
+   "away": {
+    "team": "NJD",
+    "elo": 1500.7,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-27T09:15:28+00:00"
+  },
+  "2026020202": {
+   "game_id": "2026020202",
+   "date": "2026-10-28",
+   "tipoff_utc": "2026-10-29T02:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.518,
+   "tip": "SEA",
+   "home": {
+    "team": "SEA",
+    "elo": 1472.9,
+    "reasons": {}
+   },
+   "away": {
+    "team": "TOR",
+    "elo": 1484.4,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-27T09:15:28+00:00"
+  }
+ }
+}
