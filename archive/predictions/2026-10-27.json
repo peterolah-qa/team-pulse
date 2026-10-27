@@ -5,9 +5,9 @@
    "game_id": "0022600128",
    "kind": "regular",
    "tipoff_utc": "2026-10-27 23:30:00+00:00",
-   "locked_at": "2026-10-27T02:30:50+00:00",
+   "locked_at": "2026-10-27T03:01:01+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-27T02:30:48Z",
+   "injuries_timestamp": "2026-10-27T03:00:50Z",
    "neutral": false,
    "p_home": 0.872,
    "margin_home": 13.9,
@@ -64,9 +64,9 @@
    "game_id": "0022600129",
    "kind": "regular",
    "tipoff_utc": "2026-10-28 00:00:00+00:00",
-   "locked_at": "2026-10-27T02:30:50+00:00",
+   "locked_at": "2026-10-27T03:01:01+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-27T02:30:48Z",
+   "injuries_timestamp": "2026-10-27T03:00:50Z",
    "neutral": false,
    "p_home": 0.701,
    "margin_home": 6.2,
@@ -127,9 +127,9 @@
    "game_id": "0022600130",
    "kind": "regular",
    "tipoff_utc": "2026-10-28 00:00:00+00:00",
-   "locked_at": "2026-10-27T02:30:50+00:00",
+   "locked_at": "2026-10-27T03:01:01+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-27T02:30:48Z",
+   "injuries_timestamp": "2026-10-27T03:00:50Z",
    "neutral": false,
    "p_home": 0.903,
    "margin_home": 16.1,
@@ -174,6 +174,61 @@
      [
       "Sila súpisky",
       -21
+     ]
+    ]
+   }
+  },
+  "0022600131": {
+   "game_id": "0022600131",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-28 03:00:00+00:00",
+   "locked_at": "2026-10-27T03:01:01+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-27T03:00:50Z",
+   "neutral": false,
+   "p_home": 0.657,
+   "margin_home": 4.7,
+   "home": {
+    "team": "LAL",
+    "elo": 1587.0,
+    "elo_today": 1631.3,
+    "pulse": 71.1,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 82.0,
+     "roster": 40.7,
+     "players": 0.0,
+     "fatigue": 3.7
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      41
+     ]
+    ]
+   },
+   "away": {
+    "team": "POR",
+    "elo": 1544.1,
+    "elo_today": 1578.0,
+    "pulse": 62.2,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 39.1,
+     "roster": 26.0,
+     "players": 0.0,
+     "fatigue": 8.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      26
      ]
     ]
    }
