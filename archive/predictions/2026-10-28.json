@@ -5,9 +5,9 @@
    "game_id": "0022600132",
    "kind": "regular",
    "tipoff_utc": "2026-10-28 23:00:00+00:00",
-   "locked_at": "2026-10-27T23:01:28+00:00",
+   "locked_at": "2026-10-27T23:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-27T23:01:22Z",
+   "injuries_timestamp": "2026-10-27T23:30:44Z",
    "neutral": false,
    "p_home": 0.669,
    "margin_home": 5.1,
@@ -60,9 +60,9 @@
    "game_id": "0022600133",
    "kind": "regular",
    "tipoff_utc": "2026-10-28 23:00:00+00:00",
-   "locked_at": "2026-10-27T23:01:28+00:00",
+   "locked_at": "2026-10-27T23:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-27T23:01:22Z",
+   "injuries_timestamp": "2026-10-27T23:30:44Z",
    "neutral": false,
    "p_home": 0.865,
    "margin_home": 13.4,
@@ -115,9 +115,9 @@
    "game_id": "0022600134",
    "kind": "regular",
    "tipoff_utc": "2026-10-28 23:00:00+00:00",
-   "locked_at": "2026-10-27T23:01:28+00:00",
+   "locked_at": "2026-10-27T23:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-27T23:01:22Z",
+   "injuries_timestamp": "2026-10-27T23:30:44Z",
    "neutral": false,
    "p_home": 0.632,
    "margin_home": 3.9,
@@ -178,9 +178,9 @@
    "game_id": "0022600135",
    "kind": "regular",
    "tipoff_utc": "2026-10-28 23:00:00+00:00",
-   "locked_at": "2026-10-27T23:01:28+00:00",
+   "locked_at": "2026-10-27T23:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-27T23:01:22Z",
+   "injuries_timestamp": "2026-10-27T23:30:44Z",
    "neutral": false,
    "p_home": 0.226,
    "margin_home": -8.9,
@@ -233,6 +233,69 @@
      [
       "Sila súpisky",
       90
+     ]
+    ]
+   }
+  },
+  "0022600136": {
+   "game_id": "0022600136",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-28 23:30:00+00:00",
+   "locked_at": "2026-10-27T23:30:54+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-27T23:30:44Z",
+   "neutral": false,
+   "p_home": 0.607,
+   "margin_home": 3.2,
+   "home": {
+    "team": "TOR",
+    "elo": 1548.4,
+    "elo_today": 1487.5,
+    "pulse": 47.1,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 43.4,
+     "roster": 31.6,
+     "players": -82.8,
+     "fatigue": -9.7
+    },
+    "reasons": [
+     [
+      "Bez Kawhi Leonard",
+      -83
+     ],
+     [
+      "Sila súpisky",
+      32
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "ORL",
+    "elo": 1531.1,
+    "elo_today": 1477.5,
+    "pulse": 45.4,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 26.1,
+     "roster": 7.0,
+     "players": -68.7,
+     "fatigue": 8.2
+    },
+    "reasons": [
+     [
+      "Bez Paolo Banchero",
+      -69
      ]
     ]
    }
