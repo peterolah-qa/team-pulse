@@ -1784,6 +1784,274 @@
      }
     ]
    }
+  },
+  "0022600127": {
+   "game_id": "0022600127",
+   "espn_id": "401909876",
+   "date": "2026-10-26",
+   "kind": "regular",
+   "home": "DEN",
+   "away": "GSW",
+   "pts_home": 114,
+   "pts_away": 134,
+   "box": {
+    "GSW": [
+     {
+      "player": "Brandin Podziemski",
+      "min": 33,
+      "pts": 18,
+      "reb": 7,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Yaxel Lendeborg",
+      "min": 31,
+      "pts": 31,
+      "reb": 12,
+      "ast": 6,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Gui Santos",
+      "min": 28,
+      "pts": 13,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Stephen Curry",
+      "min": 27,
+      "pts": 24,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Draymond Green",
+      "min": 27,
+      "pts": 3,
+      "reb": 4,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Al Horford",
+      "min": 19,
+      "pts": 11,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "De'Anthony Melton",
+      "min": 19,
+      "pts": 3,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Georges Niang",
+      "min": 18,
+      "pts": 9,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Brandon Williams",
+      "min": 15,
+      "pts": 6,
+      "reb": 3,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Gary Payton II",
+      "min": 12,
+      "pts": 7,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "LJ Cryer",
+      "min": 3,
+      "pts": 6,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Graham Ike",
+      "min": 3,
+      "pts": 3,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Malevy Leons",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Will Richard",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Charles Bassey",
+      "min": 2,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "DEN": [
+     {
+      "player": "Jamal Murray",
+      "min": 36,
+      "pts": 19,
+      "reb": 6,
+      "ast": 8,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Nikola Jokic",
+      "min": 35,
+      "pts": 19,
+      "reb": 7,
+      "ast": 11,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "Christian Braun",
+      "min": 34,
+      "pts": 9,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Bryce Hopkins",
+      "min": 31,
+      "pts": 13,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "DeMar DeRozan",
+      "min": 29,
+      "pts": 21,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Aaron Gordon",
+      "min": 25,
+      "pts": 7,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Trevon Brazile",
+      "min": 17,
+      "pts": 6,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Marvin Bagley III",
+      "min": 11,
+      "pts": 7,
+      "reb": 2,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Tyus Jones",
+      "min": 9,
+      "pts": 0,
+      "reb": 0,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Zeke Nnaji",
+      "min": 4,
+      "pts": 5,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cam Whitmore",
+      "min": 4,
+      "pts": 4,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Nembhard",
+      "min": 4,
+      "pts": 4,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "DaRon Holmes II",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
   }
  }
 }
