@@ -5,9 +5,9 @@
    "game_id": "0022600128",
    "kind": "regular",
    "tipoff_utc": "2026-10-27 23:30:00+00:00",
-   "locked_at": "2026-10-26T23:30:49+00:00",
+   "locked_at": "2026-10-27T00:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-26T23:30:42Z",
+   "injuries_timestamp": "2026-10-27T00:01:02Z",
    "neutral": false,
    "p_home": 0.872,
    "margin_home": 13.9,
@@ -52,6 +52,124 @@
      [
       "Sila súpisky",
       -26
+     ]
+    ]
+   }
+  },
+  "0022600129": {
+   "game_id": "0022600129",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-28 00:00:00+00:00",
+   "locked_at": "2026-10-27T00:01:05+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-27T00:01:02Z",
+   "neutral": false,
+   "p_home": 0.701,
+   "margin_home": 6.2,
+   "home": {
+    "team": "NYK",
+    "elo": 1682.7,
+    "elo_today": 1728.9,
+    "pulse": 87.3,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 177.7,
+     "roster": 44.3,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      44
+     ]
+    ]
+   },
+   "away": {
+    "team": "DET",
+    "elo": 1644.7,
+    "elo_today": 1635.2,
+    "pulse": 71.7,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 139.7,
+     "roster": 11.1,
+     "players": -34.7,
+     "fatigue": 14.1
+    },
+    "reasons": [
+     [
+      "Bez Jalen Duren",
+      -35
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ],
+     [
+      "Sila súpisky",
+      11
+     ]
+    ]
+   }
+  },
+  "0022600130": {
+   "game_id": "0022600130",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-28 00:00:00+00:00",
+   "locked_at": "2026-10-27T00:01:05+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-27T00:01:02Z",
+   "neutral": false,
+   "p_home": 0.903,
+   "margin_home": 16.1,
+   "home": {
+    "team": "SAS",
+    "elo": 1682.3,
+    "elo_today": 1706.4,
+    "pulse": 83.6,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 177.3,
+     "roster": 23.9,
+     "players": -3.5,
+     "fatigue": 3.7
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      24
+     ]
+    ]
+   },
+   "away": {
+    "team": "SAC",
+    "elo": 1347.4,
+    "elo_today": 1334.4,
+    "pulse": 21.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -157.6,
+     "roster": -21.6,
+     "players": -2.3,
+     "fatigue": 10.9
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -22
      ]
     ]
    }
