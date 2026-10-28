@@ -1,6 +1,7 @@
 name: NFL
 
-# Ostré tipy NFL mimo appky (G2-NFL, docs/gate-nfl-G2.md): najnovší nflverse games.csv → Elo →
+# Ostré tipy NFL mimo appky, dva modely (G2-NFL docs/gate-nfl-G2.md, G2-NFL-QB docs/gate-nfl-qb-G2.md):
+# najnovší nflverse games.csv → Elo (+ quarterback) →
 # tipy na najbližší týždeň pred výkopom (až keď je predchádzajúci týždeň dohraný) → vyhodnotenie
 # → archive/nfl, reports/nfl_live.md. Vlastný workflow: predict.yml je počas G2 NBA zmrazený.
 on:
@@ -36,6 +37,7 @@ jobs:
       - name: Archív tipov a report → repo (len keď sa niečo zmenilo)
         run: |
           git add reports/nfl_live.md
+          if [ -f reports/nfl_qb_live.md ]; then git add reports/nfl_qb_live.md; fi
           if [ -d archive/nfl ]; then git add archive/nfl; fi
           if git diff --cached --quiet; then echo "NFL bez zmeny"; exit 0; fi
           git config user.name "github-actions[bot]"

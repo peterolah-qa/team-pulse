@@ -6,6 +6,19 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 28. 10. 2026
 
+- **NFL naostro a vrstva quarterback** (večer). Týždeň 8 zamknutý na GitHube 19:36 UTC (14 tipov, `nfl.yml`
+  ručne, games.csv `671eaf7`). Vrstva quarterback: kandidáti ladení len na tréningu 2010 – 2022, test 2023 – 2025.
+  „Náhradník“ (iný štartujúci quarterback než bežný štartér = najčastejší v posledných 8 odohraných zápasoch)
+  prešiel jasne; „nováčik“ (< 8 štartov) na teste +0,00123, na tréningu len +0,00043 → zamietnutý (riziko náhody).
+  **Peter schválil len náhradníka.** Pri finálnej implementácii (rovnosť štartov → posledný štartér, história
+  len z odohraných zápasov) vyšla na tréningu penalizácia −65 Elo namiesto −60 z prvého prieskumu; test
+  0,63412 → 0,63050 (zlepšenie 0,00362, na tréningu 0,00403), presnosť 63,9 → 64,4 % (`reports/nfl_qb.md`).
+  - Druhý model `nfl-elo-qb-v1` od týždňa 10 popri čistom Ele (`archive/nfl/qb/predictions`,
+    `reports/nfl_qb_live.md`), brána `docs/gate-nfl-qb-G2.md` stanovená vopred: týždne 10 – 18 (136 zápasov),
+    log loss ≤ 0,6602 (95. percentil 136-zápasových okien testu). Úprimne: týždne 10 – 18 sezóny 2023 mali
+    0,6744, takže aj správny model môže hranicou neprejsť. G2-NFL čistého Ela sa nemení.
+  - `team_pulse.nfl.predict` zamyká oba modely, `nfl.yml` commituje aj `reports/nfl_qb_live.md`.
+    Testy NFL 21, pytest spolu 431.
 - **Brána G0-NFL splnená** (večer, kritériá commitnuté predtým v `87d5549`). Sonda z Macu: archív 538
   `nfl_elo.csv` na archive.org (6. 3. 2025, 5,9 MB), ESPN NFL scoreboard (týždeň 8, 14 zápasov, ID zápasu
   = games.csv, napr. 401873023 CAR @ GB), zranenia (800 záznamov, 62 quarterbackov). Nový kód
@@ -451,8 +464,8 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   a kontrola na iPhone (#101). Nové snímky vždy z CI (workflow Appka, `snimky`, na vetve).
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- NFL: ostré tipy od týždňa 8 (`nfl.yml`), G2-NFL do 10. 1. 2027 (`docs/gate-nfl-G2.md`); vrstva quarterback
-  do 11. 11. (návrh → Peter), porovnanie s archívom 538 na Macu; nezávislý prepočet `gate_g2 nfl` pred 10. 1.
+- NFL: ostré tipy od týždňa 8 (`nfl.yml`), G2-NFL do 10. 1. 2027; druhý model s quarterbackom od týždňa 10
+  (G2-NFL-QB); porovnanie s archívom 538 na Macu; nezávislý prepočet `gate_g2 nfl` pred 10. 1.
 - Tenis (pomalšie, do januára): história z archívu, Elo a backtest podľa `docs/gate-tennis-G0.md`, potom doplnenie medzery z ESPN
   (`docs/tennis.md`).
 - Bejzbal (pozastavený): sonda ESPN MLB, kritériá G0-MLB vopred, potom história a model (`docs/baseball.md`).

@@ -1,8 +1,8 @@
 # Brána G2-NFL: ostré tipy do konca základnej časti (stanovené vopred, 28. 10. 2026)
 
 Petrovo rozhodnutie 28. 10. 2026: ostré tipy čo najskôr – **od týždňa 8**, G2 meria čisté Elo z brány G0-NFL.
-Vrstva quarterback sa robí popri tom; ak ju Peter schváli, od týždňa 10 sa ku každému zápasu zamyká aj druhý
-tip (Elo + quarterback) s vlastnou bránou. Táto brána sa tým nemení.
+Vrstvu quarterback Peter schválil 28. 10.; od týždňa 10 sa ku každému zápasu zamyká aj druhý tip
+(Elo + quarterback) s vlastnou bránou `docs/gate-nfl-qb-G2.md`. Táto brána sa tým nemení.
 
 Obdobie: zápasy základnej časti s výkopom **29. 10. 2026 – 10. 1. 2027** (týždne 8 – 18, ~165 zápasov).
 Vyhodnotenie: po poslednom zápase základnej časti, keď ho má nflverse games.csv.

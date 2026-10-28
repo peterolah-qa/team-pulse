@@ -1,6 +1,9 @@
-"""Ostré tipy NFL: zamknutie pred výkopom a vyhodnotenie (G2-NFL, docs/gate-nfl-G2.md).
+"""Ostré tipy NFL: zamknutie pred výkopom a vyhodnotenie, dva modely s vlastnými bránami G2.
 
-Model `nfl-elo-v1` = Elo z brány G0-NFL (K 20, výhoda domáceho 48, prenos 0,6), počas G2 sa nemení.
+- `nfl-elo-v1` = Elo z brány G0-NFL (K 20, výhoda domáceho 48, prenos 0,6), od týždňa 8, docs/gate-nfl-G2.md.
+- `nfl-elo-qb-v1` = to isté Elo + náhradník quarterback (−65 Elo, team_pulse.nfl.qb), od týždňa 10,
+  docs/gate-nfl-qb-G2.md. Schválil Peter 28. 10. 2026.
+Počas svojej G2 sa žiadny model nemení.
 
 Postup pri každom spustení:
   1. Stiahne najnovší games.csv (nflverse, commit sa zapíše do tipu), načíta len povolené stĺpce.
@@ -11,7 +14,8 @@ Postup pri každom spustení:
   4. Vyhodnotí všetky zamknuté tipy s výsledkom → reports/nfl_live.md.
 
 Spustenie:  uv run python -m team_pulse.nfl.predict
-Výstup:     archive/nfl/predictions/<sezóna>-w<týždeň>.json, reports/nfl_live.md
+Výstup:     archive/nfl/predictions/<sezóna>-w<týždeň>.json, reports/nfl_live.md (Elo)
+            archive/nfl/qb/predictions/…, reports/nfl_qb_live.md (Elo + quarterback)
 """
 
 from __future__ import annotations
@@ -20,6 +24,7 @@ import argparse
 import json
 import math
 import os
+from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -29,6 +34,7 @@ import requests
 
 from team_pulse.nfl import games as G
 from team_pulse.nfl.elo import NflEloParams, diff, expected, run
+from team_pulse.nfl.qb import BACKUP_PENALTY, adjusted_diff, backup_flags
 
 MODEL = "nfl-elo-v1"
 PARAMS = NflEloParams(k=20.0, hfa=48.0, carryover=0.6)
@@ -39,6 +45,47 @@ COMMITS = "https://api.github.com/repos/nflverse/nfldata/commits/master"
 G2_FROM = "2026-10-29"  # prvý deň G2-NFL (týždeň 8)
 G2_TO = "2027-01-10"  # koniec základnej časti
 G2_LIMIT = 0.6620  # hranica log loss G2-NFL (docs/gate-nfl-G2.md)
+
+
+@dataclass(frozen=True)
+class Model:
+    name: str
+    label: str
+    backup_penalty: float  # 0 = bez vrstvy quarterback
+    start: tuple[int, int]  # (sezóna, týždeň) prvých tipov
+    archive: Path
+    report: Path
+    gate: str
+    g2_from: str
+    g2_to: str
+    g2_limit: float
+
+
+ELO = Model(
+    MODEL,
+    "Elo z brány G0-NFL: K 20, výhoda domáceho 48, prenos 0,6",
+    0.0,
+    (2026, 8),
+    ARCHIVE,
+    REPORT,
+    "docs/gate-nfl-G2.md",
+    G2_FROM,
+    G2_TO,
+    G2_LIMIT,
+)
+ELO_QB = Model(
+    "nfl-elo-qb-v1",
+    f"Elo z G0-NFL + náhradník quarterback −{BACKUP_PENALTY:g} Elo",
+    BACKUP_PENALTY,
+    (2026, 10),
+    Path("archive/nfl/qb/predictions"),
+    Path("reports/nfl_qb_live.md"),
+    "docs/gate-nfl-qb-G2.md",
+    "2026-11-12",
+    G2_TO,
+    0.6602,
+)
+MODELS = (ELO, ELO_QB)
 
 
 def kickoff_utc(day: pd.Timestamp, gametime: object) -> pd.Timestamp | None:
@@ -79,18 +126,27 @@ def next_week(games: pd.DataFrame) -> tuple[int, int] | None:
 
 
 def tips_for_week(
-    games: pd.DataFrame, season: int, week: int, now: pd.Timestamp, commit: str, already: set[str]
+    games: pd.DataFrame,
+    season: int,
+    week: int,
+    now: pd.Timestamp,
+    commit: str,
+    already: set[str],
+    model: Model = ELO,
 ) -> tuple[list[dict], list[str]]:
-    """Nové tipy na zápasy týždňa, ktoré ešte nezačali. Vráti (tipy, problémy)."""
+    """Nové tipy modelu na zápasy týždňa, ktoré ešte nezačali. Vráti (tipy, problémy)."""
+    if (season, week) < model.start:
+        return [], []
     problems = []
     earlier = games[(games["season"] == season) & (games["week"] < week) & ~games["played"]]
     if len(earlier):
         names = ", ".join(f"{r.away} @ {r.home} ({r.week}. týždeň)" for r in earlier.itertuples())
         return [], [f"predchádzajúce týždne nie sú dohraté: {names} – tipy sa nezamkli"]
     r = run(games, PARAMS)
+    flags = backup_flags(r) if model.backup_penalty else None
     week_games = r[(r["season"] == season) & (r["week"] == week)]
     tips = []
-    for g in week_games.itertuples(index=False):
+    for i, g in zip(week_games.index, week_games.itertuples(index=False), strict=True):
         if g.game_id in already or g.played:
             continue
         ko = kickoff_utc(g.date, g.gametime)
@@ -101,6 +157,16 @@ def tips_for_week(
             problems.append(f"{g.away} @ {g.home}: už začal ({ko:%Y-%m-%d %H:%M} UTC) – bez tipu")
             continue
         d = diff(g.elo_home_pre, g.elo_away_pre, PARAMS, bool(g.neutral), bool(g.playoff))
+        extra = {}
+        if flags is not None:
+            bh, ba = int(flags.at[i, "home_backup"]), int(flags.at[i, "away_backup"])
+            d = adjusted_diff(d, bh, ba, model.backup_penalty)
+            extra = {
+                "home_backup": bh,
+                "away_backup": ba,
+                "home_primary_qb_id": flags.at[i, "home_primary"],
+                "away_primary_qb_id": flags.at[i, "away_primary"],
+            }
         tips.append(
             {
                 "game_id": g.game_id,
@@ -118,7 +184,8 @@ def tips_for_week(
                 "p_home": round(expected(d), 4),
                 "home_qb": None if pd.isna(g.home_qb) else g.home_qb,
                 "away_qb": None if pd.isna(g.away_qb) else g.away_qb,
-                "model": MODEL,
+                **extra,
+                "model": model.name,
                 "games_commit": commit,
                 "locked_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
             }
@@ -126,7 +193,9 @@ def tips_for_week(
     return tips, problems
 
 
-def save(tips: list[dict], season: int, week: int, archive: Path = ARCHIVE) -> Path | None:
+def save(
+    tips: list[dict], season: int, week: int, archive: Path = ARCHIVE, model: str = MODEL
+) -> Path | None:
     """Pridá nové tipy do súboru týždňa; existujúce tipy sa nemenia."""
     if not tips:
         return None
@@ -136,12 +205,12 @@ def save(tips: list[dict], season: int, week: int, archive: Path = ARCHIVE) -> P
     new = [t for t in tips if t["game_id"] not in have]
     all_tips = sorted(old + new, key=lambda t: (t["kickoff_utc"], t["game_id"]))
     f.parent.mkdir(parents=True, exist_ok=True)
-    body = {"sport": "nfl", "season": season, "week": week, "model": MODEL, "tips": all_tips}
+    body = {"sport": "nfl", "season": season, "week": week, "model": model, "tips": all_tips}
     f.write_text(json.dumps(body, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return f
 
 
-def evaluate(tips: dict[str, dict], games: pd.DataFrame) -> pd.DataFrame:
+def evaluate(tips: dict[str, dict], games: pd.DataFrame, model: Model = ELO) -> pd.DataFrame:
     """Zamknuté tipy s výsledkom (remíza sa nevyhodnocuje). Tip = domáci pri p_home > 0,5, inak hostia."""
     res = games.set_index("game_id")
     rows = []
@@ -166,7 +235,7 @@ def evaluate(tips: dict[str, dict], games: pd.DataFrame) -> pd.DataFrame:
                 "hit": pick_home == home_won,
                 "ll": -math.log(p if home_won else 1 - p),
                 "brier": (p - float(home_won)) ** 2,
-                "g2": G2_FROM <= t["kickoff_utc"][:10] <= G2_TO,
+                "g2": model.g2_from <= t["kickoff_utc"][:10] <= model.g2_to,
             }
         )
     return pd.DataFrame(rows).sort_values(["kickoff_utc", "game_id"]) if rows else pd.DataFrame(rows)
@@ -180,15 +249,14 @@ def _num(x: float) -> str:
     return f"{x:.4f}".replace(".", ",")
 
 
-def report(tips: dict[str, dict], games: pd.DataFrame, now: pd.Timestamp) -> str:
-    ev = evaluate(tips, games)
+def report(tips: dict[str, dict], games: pd.DataFrame, now: pd.Timestamp, model: Model = ELO) -> str:
+    ev = evaluate(tips, games, model)
     pending = len(tips) - len(ev)
     head = (
-        "# NFL – ostré tipy\n\n"
-        f"Model `{MODEL}` (Elo z brány G0-NFL: K 20, výhoda domáceho 48, prenos 0,6), "
-        "tipy zamknuté pred výkopom "
+        f"# NFL – ostré tipy (`{model.name}`)\n\n"
+        f"Model `{model.name}` ({model.label}), tipy zamknuté pred výkopom "
         "(`team_pulse.nfl.predict`), výsledky z nflverse games.csv (zdroj nflverse / Lee Sharpe). "
-        f"Brána G2-NFL {G2_FROM} – {G2_TO}: log loss ≤ {_num(G2_LIMIT)} (`docs/gate-nfl-G2.md`).\n\n"
+        f"Brána G2 {model.g2_from} – {model.g2_to}: log loss ≤ {_num(model.g2_limit)} (`{model.gate}`).\n\n"
         f"Stav k {now:%Y-%m-%d %H:%M} UTC: zamknutých tipov {len(tips)}, vyhodnotených {len(ev)}, "
         f"čaká na výsledok {pending}.\n\n"
     )
@@ -224,23 +292,25 @@ def main(now: datetime | None = None, commit: str | None = None) -> int:
     commit = commit or latest_commit(session)
     games = G.load(G.download(commit, session))
     nxt = next_week(games)
-    problems: list[str] = []
-    new: list[dict] = []
-    if nxt:
-        new, problems = tips_for_week(games, *nxt, t, commit, set(locked()))
-        f = save(new, *nxt)
-        print(f"Týždeň {nxt[1]} sezóny {nxt[0]}: nových tipov {len(new)}" + (f" → {f}" if f else ""))
-        for tip in new:
-            fav = tip["home"] if tip["p_home"] > 0.5 else tip["away"]
-            p = max(tip["p_home"], 1 - tip["p_home"])
-            print(f"  {tip['kickoff_utc']} {tip['away']} @ {tip['home']}: tip {fav} {p:.0%}")
-    else:
+    for model in MODELS:
+        if nxt:
+            new, problems = tips_for_week(games, *nxt, t, commit, set(locked(model.archive)), model)
+            f = save(new, *nxt, model.archive, model.name)
+            print(f"{model.name}, týždeň {nxt[1]}: nových tipov {len(new)}" + (f" → {f}" if f else ""))
+            for tip in new:
+                fav = tip["home"] if tip["p_home"] > 0.5 else tip["away"]
+                p = max(tip["p_home"], 1 - tip["p_home"])
+                print(f"  {tip['kickoff_utc']} {tip['away']} @ {tip['home']}: tip {fav} {p:.0%}")
+            for p in problems:
+                print(f"! {p}")
+        tips = locked(model.archive)
+        if tips or (nxt and nxt >= model.start):
+            model.report.parent.mkdir(parents=True, exist_ok=True)
+            model.report.write_text(report(tips, games, t, model), encoding="utf-8")
+            print(f"Report: {model.report}")
+    if not nxt:
         print("Sezóna nemá neodohrané zápasy.")
-    for p in problems:
-        print(f"! {p}")
-    REPORT.parent.mkdir(parents=True, exist_ok=True)
-    REPORT.write_text(report(locked(), games, t), encoding="utf-8")
-    print(f"Report: {REPORT} (games.csv {commit[:7]})")
+    print(f"games.csv {commit[:7]}")
     return 0
 
 

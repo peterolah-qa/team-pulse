@@ -41,7 +41,7 @@ src/team_pulse/nfl/
   games.py        games.csv → jednotný zápas; povolené stĺpce, stávkové sa nenačítajú
   espn.py         živé výsledky a zranenia (ako NBA), párovanie cez ESPN ID zápasu
   elo.py          Elo tímov podľa 538: výhoda domáceho, váha rozdielu skóre, návrat k priemeru medzi sezónami
-  qb.py           hodnota štartujúceho quarterbacka (vrstva po Ele)
+  qb.py           vrstva quarterback: náhradník namiesto bežného štartéra −65 Elo (schválená 28. 10.)
   model.py        vrstvy: Elo, quarterback, odpočinok (voľný týždeň, štvrtok, cestovanie)
   backtest.py     tréningové / testovacie sezóny, log loss, Brier, kalibrácia, baseline
   predict.py      zamknutie tipov: archive/nfl/predictions/YYYY-MM-DD.json
@@ -81,6 +81,7 @@ Vrstvy (každá musí na testovacích sezónach zlepšiť log loss aspoň o 0,00
 | 28. – 30. 10. | sonda z Macu (archív 538, ESPN NFL); kritériá G0 vopred |
 | do ~6. 11. | `games.py`, Elo, backtest, G0-NFL; vrstva quarterback |
 | od 8. týždňa (29. 10.) | `nfl.yml` naostro mimo appky (3× denne), `reports/nfl_live.md`, G2-NFL do 10. 1. |
-| do 11. 11. | vrstva quarterback → návrh Petrovi; po schválení druhý model od týždňa 10 |
+| 28. 10. | vrstva quarterback schválená (náhradník −65 Elo, `reports/nfl_qb.md`) |
+| od 10. týždňa (12. 11.) | druhý model `nfl-elo-qb-v1`, G2-NFL-QB do 10. 1. (`docs/gate-nfl-qb-G2.md`) |
 | po jadre | NFL v appke (beta) |
 | 14. 2. 2027 | Super Bowl, koniec sezóny |

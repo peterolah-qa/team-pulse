@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import dataclasses
 import json
 import math
 from pathlib import Path
@@ -14,6 +15,7 @@ from hypothesis import strategies as st
 from team_pulse.nfl import elo, espn
 from team_pulse.nfl import games as G
 from team_pulse.nfl import predict as P
+from team_pulse.nfl import qb as Q
 from team_pulse.nfl.backtest import record_diff
 
 FIXTURE = Path("tests/fixtures/nfl_espn_scoreboard.json")
@@ -225,6 +227,9 @@ def test_espn_team_codes_match_nflverse() -> None:
 # --- ostré tipy (team_pulse.nfl.predict) ---
 
 
+ANY = dataclasses.replace(P.ELO, start=(0, 0))  # testy na malej sezóne od týždňa 1
+
+
 def week_games(played_weeks: int, weeks: int = 3) -> pd.DataFrame:
     """Malá sezóna 2026: 2 zápasy týždenne, odohrané prvé `played_weeks` týždne."""
     rows = []
@@ -266,10 +271,10 @@ def test_lock_only_next_week_before_kickoff() -> None:
     g = week_games(played_weeks=1)
     assert P.next_week(g) == (2026, 2)
     now = pd.Timestamp("2026-09-20 17:30", tz="UTC")  # 13:30 ET týždňa 2: zápasy o 13:00 ET už začali
-    tips, problems = P.tips_for_week(g, 2026, 2, now, "abc", set())
+    tips, problems = P.tips_for_week(g, 2026, 2, now, "abc", set(), ANY)
     assert tips == [] and len(problems) == 2 and all("už začal" in p for p in problems)
     early = pd.Timestamp("2026-09-19 12:00", tz="UTC")
-    tips, problems = P.tips_for_week(g, 2026, 2, early, "abc", set())
+    tips, problems = P.tips_for_week(g, 2026, 2, early, "abc", set(), ANY)
     assert [t["week"] for t in tips] == [2, 2] and not problems
     assert all(0 < t["p_home"] < 1 and t["model"] == P.MODEL and t["games_commit"] == "abc" for t in tips)
 
@@ -277,20 +282,20 @@ def test_lock_only_next_week_before_kickoff() -> None:
 def test_no_tips_if_previous_week_unfinished() -> None:
     g = week_games(played_weeks=1)
     g.loc[g["week"] == 1, ["played", "score_home", "score_away"]] = [False, None, None]
-    tips, problems = P.tips_for_week(g, 2026, 2, pd.Timestamp("2026-09-19", tz="UTC"), "abc", set())
+    tips, problems = P.tips_for_week(g, 2026, 2, pd.Timestamp("2026-09-19", tz="UTC"), "abc", set(), ANY)
     assert tips == [] and "nie sú dohraté" in problems[0]
 
 
 def test_locked_tip_never_overwritten(tmp_path: Path) -> None:
     g = week_games(played_weeks=1)
     now = pd.Timestamp("2026-09-19 12:00", tz="UTC")
-    tips, _ = P.tips_for_week(g, 2026, 2, now, "abc", set())
+    tips, _ = P.tips_for_week(g, 2026, 2, now, "abc", set(), ANY)
     P.save(tips, 2026, 2, tmp_path)
     changed = [dict(t, p_home=0.01) for t in tips]
     P.save(changed, 2026, 2, tmp_path)
     again = P.locked(tmp_path)
     assert {t["p_home"] for t in again.values()} == {t["p_home"] for t in tips}
-    tips2, _ = P.tips_for_week(g, 2026, 2, now, "abc", set(again))
+    tips2, _ = P.tips_for_week(g, 2026, 2, now, "abc", set(again), ANY)
     assert tips2 == []
 
 
@@ -320,3 +325,60 @@ def test_evaluate_hit_logloss_and_tie_excluded() -> None:
     assert ev.loc["2026_02_D_C", "ll"] == pytest.approx(-math.log(0.3))
     g.loc[g["game_id"] == "2026_02_B_A", ["score_away", "tie"]] = [24.0, True]
     assert "2026_02_B_A" not in set(P.evaluate(tips, g)["game_id"])
+
+
+def test_models_start_weeks() -> None:
+    g = week_games(played_weeks=1)
+    early = pd.Timestamp("2026-09-19 12:00", tz="UTC")
+    assert P.tips_for_week(g, 2026, 2, early, "abc", set(), P.ELO) == ([], [])  # Elo od týždňa 8
+    assert P.ELO.start == (2026, 8) and P.ELO_QB.start == (2026, 10)
+    assert P.ELO.archive != P.ELO_QB.archive and P.ELO.report != P.ELO_QB.report
+
+
+def test_primary_qb_mode_with_recent_tiebreak() -> None:
+    assert Q.primary([]) is None
+    assert Q.primary(["a", "a", "b"]) == "a"
+    assert Q.primary(["a", "b"]) == "b"  # rovnosť → posledný
+    assert Q.primary(["x"] * 5 + ["a"] * 8) == "a"  # len posledných 8
+
+
+def qb_games(home_qbs: list[str | None], played: list[bool]) -> pd.DataFrame:
+    rows = []
+    for i, (qb, pl) in enumerate(zip(home_qbs, played, strict=True)):
+        rows.append(
+            {
+                "game_id": f"g{i}",
+                "season": 2026,
+                "week": i + 1,
+                "date": pd.Timestamp("2026-09-13") + pd.Timedelta(days=7 * i),
+                "home": "A",
+                "away": f"X{i}",
+                "home_qb_id": qb,
+                "away_qb_id": f"x{i}",
+                "played": pl,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def test_backup_flags_only_from_played_games() -> None:
+    f = Q.backup_flags(qb_games(["a", "a", "b", "a", None], [True, True, True, False, True]))
+    assert f["home_backup"].tolist() == [0, 0, 1, 0, 0]  # 1. zápas bez histórie, None = neznámy quarterback
+    assert f.loc[3, "home_primary"] == "a"
+    g = qb_games(["a", "b", "b"], [True, False, True])  # neodohraný zápas s „b“ sa nepočíta do histórie
+    assert Q.backup_flags(g)["home_backup"].tolist() == [0, 1, 1]
+
+
+def test_qb_model_tip_has_flags_and_penalty() -> None:
+    g = week_games(played_weeks=1)
+    g["home_qb_id"] = "h1"
+    g["away_qb_id"] = "a1"
+    g.loc[g["week"] == 2, "home_qb_id"] = "h2"  # týždeň 2: domáci s náhradníkom
+    early = pd.Timestamp("2026-09-19 12:00", tz="UTC")
+    model = dataclasses.replace(P.ELO_QB, start=(0, 0))
+    elo, _ = P.tips_for_week(g, 2026, 2, early, "abc", set(), ANY)
+    qb, _ = P.tips_for_week(g, 2026, 2, early, "abc", set(), model)
+    for e, q in zip(elo, qb, strict=True):
+        assert q["home_backup"] == 1 and q["away_backup"] == 0 and q["model"] == "nfl-elo-qb-v1"
+        assert q["elo_diff"] == pytest.approx(e["elo_diff"] - Q.BACKUP_PENALTY, abs=0.11)
+        assert q["p_home"] < e["p_home"]
