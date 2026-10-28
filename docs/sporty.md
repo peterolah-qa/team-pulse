@@ -1,7 +1,8 @@
 # Team Pulse – viac športov (plán 13. 10. 2026, nové poradie 14. 10. 2026)
 
 Jedna appka Team Pulse, hore prepínač športu. Každý šport má vlastný model, vlastné dáta
-a vlastné brány. Prvý šport je NBA (beží), ďalej NHL, F1 a Tipos extraliga.
+a vlastné brány. Prvý šport je NBA (beží), ďalej NHL, F1, Tipos extraliga a bejzbal (MLB a LVBP,
+`docs/baseball.md`, 28. 10.), po ňom tenis.
 Úlohy a stav: board **Team Pulse – športy** (`scripts/board_sporty.sh`).
 
 ## Architektúra
@@ -61,6 +62,11 @@ rozbilo appku nainštalovanú na ploche.
 | Š3 – F1 | zdroj (Jolpica), história, model pretekov, backtest; tipy od Austinu (zamknuté po kvalifikácii), potom appka (beta) | 15. 10. – 1. 11. | G0-F1 (`docs/gate-f1-G0.md`), G2-F1 = 6 pretekov do 6. 12. |
 | Š4 – Tipos extraliga | overiť zdroj a podmienky, história, backtest, appka | po Š3 | G0 + G2 extraliga |
 | Š5 – Spoločné jadro | `core/` podľa toho, čo majú športy naozaj spoločné; výstupy bez zmeny | pri treťom športe, najskôr 4. 11. | všetky testy zelené, rovnaké JSON |
+| Š6 – Bejzbal: zdroje | sonda z Macu: MLB Stats API (MLB, zimné ligy), Retrosheet, archív 538, zdroj LVBP a podmienky | 28. 10. – 1. 11. | rozhodnutie o zdrojoch |
+| Š7 – Bejzbal: model a G0 | história, Elo, nadhadzovač, cestovanie a odpočinok; backtest MLB a LVBP zvlášť | LVBP do ~15. 11., MLB do ~20. 12. | G0-LVBP, G0-MLB |
+| Š8 – LVBP naostro mimo appky | ranná úloha na Macu 10:30, tipy, archív, `reports/lvbp_live.md` | ~16. 11. – 27. 12. | G2-LVBP |
+| Š9 – Bejzbal v appke (beta) | prepínač NBA · NHL · MLB, karta s nadhadzovačmi, detail s overeným rozpadom; MLB naostro | po jadre, január – marec 2027; MLB od 25. 3. 2027 | G2-MLB 25. 3. – 7. 4. 2027 |
+| Š10 – Tenis | návrh architektúry, zdroje, model, brány | po bejzbale | – |
 
 Prečo toto poradie: NHL je najbližšie k hotovému a jej G2 už beží (tipy sa zamykajú od 13. 10.).
 F1 má pevný termín, sezóna 2026 končí 6. 12. a 6 zostávajúcich pretekov poslúži ako ostré meranie.

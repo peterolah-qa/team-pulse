@@ -6,6 +6,23 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 28. 10. 2026
 
+- **Nový šport: bejzbal** (Petrov nápad 12:44). Návrh architektúry `docs/baseball.md`, Peter rozhodol:
+  **MLB aj venezuelská LVBP naraz**, tipy zamyká **ranná úloha na Macu** (10:30, po NBA a NHL). Šport = model,
+  liga = zdroj: spoločný kód modelu, parametre zvlášť pre každú ligu. Kód v `src/team_pulse/baseball/`,
+  do `sports/` ho presunie jadro (#55 – 58). Do appky ide bejzbal až po jadre (tretí šport v appke).
+  - Termíny (overené 28. 10.): LVBP 2026/27 od 12. 10. do 27. 12. (8 tímov × 56 zápasov), potom round robin
+    a finále v januári. MLB 2027 od 24. / 25. 3. do 26. 9.; kolektívna zmluva MLB končí 1. 12. 2026 a liga
+    pripravuje lockout, sezóna 2027 sa môže posunúť a s ňou aj G2-MLB.
+  - Model po vrstvách: Elo (MLB replikácia 538 z `mlb_elo.csv`, CC BY 4.0, ak sa nájde archívna kópia),
+    štartujúci nadhadzovač (kĺzavé hodnotenie), cestovanie a odpočinok; každá vrstva aspoň 0,0005 log loss.
+    Ohlásený nadhadzovač sa uloží do tipu, výmena pred zápasom tip nemení. Odložené zápasy sa nevyhodnocujú,
+    dvojzápasy podľa ID. Testovacie sezóny MLB 2023 – 2025 (zmena pravidiel 2023).
+  - Zdroje: Retrosheet (história MLB, voľné použitie s povinnou vetou o zdroji), MLB Stats API (len denný
+    rozpis a nadhadzovači; podmienky MLBAM a pokrytie zimných líg overiť), LVBP podľa sondy. Stránka, ktorá
+    zakazuje roboty alebo AI, sa nepoužije. Z cloudu sú zdroje zablokované: sonda `scripts/probe_baseball.py`
+    z Macu.
+  - Board: míľniky Š6 – Š10 a úlohy (`scripts/board_baseball.sh`). Po bejzbale **tenis** (Petrov nápad 12:49),
+    návrh architektúry až po bejzbale.
 - **Brána G2-NHL splnená** (13. – 26. 10., kritériá `docs/gate-nhl-G2.md`): 98 z 98 tipov zamknutých pred
   začiatkom, 98 z 98 zápasov dohratých a vyhodnotených, nezávislý prepočet = report (109 zápasov vrátane noci
   27. 10., tip vyšiel 63, log loss 0,6730), log loss obdobia 0,6686 pri hranici 0,7101. Tip vyšiel v 59 z 98
@@ -361,4 +378,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   a kontrola na iPhone (#101). Nové snímky vždy z CI (workflow Appka, `snimky`, na vetve).
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
+- Bejzbal: Peter spustí `uv run python scripts/probe_baseball.py` (Mac) a výstup vloží do chatu; podľa neho
+  zdroj LVBP, kritériá G0-LVBP a G0-MLB vopred, potom história a model (`docs/baseball.md`).
+- Tenis: návrh architektúry po bejzbale.
 - Nápady: Peter vyberie z `docs/napady.md`, vybrané pôjdu na board.

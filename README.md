@@ -69,6 +69,7 @@ Každý šport má vlastný model a vlastné brány, hranice sa stanovia pred me
 | **NHL** | Elo + únava | ✅ [G0-NHL](docs/gate-nhl-G0.md) | ✅ [G2-NHL](docs/gate-nhl-G2.md) 13. – 26. 10. 2026: 98 zápasov, tip vyšiel 60,2 %, log loss 0,6686 (hranica 0,7101), [výsledok](reports/gate_g2_nhl.md) | v appke |
 | **F1** | Elo jazdca a tímu + kvalifikácia | ❌ [G0-F1](docs/gate-f1-G0.md): horší než kvalifikácia | model B naostro mimo appky, 6 pretekov 25. 10. – 6. 12. 2026 ([docs/gate-f1-shadow.md](docs/gate-f1-shadow.md)) | tip po kvalifikácii, `f1.yml` |
 | **Tipos extraliga** | hokejové Elo z NHL | – | – | čaká na súhlas SZĽH so zdrojom dát |
+| **Bejzbal** (MLB, LVBP) | Elo + štartujúci nadhadzovač ([plán](docs/baseball.md)) | G0-LVBP ~15. 11., G0-MLB ~20. 12. | LVBP mimo appky do 27. 12. 2026, MLB od 25. 3. 2027 | overenie zdrojov |
 
 Brány G2 vyhodnocuje skript nezávislým prepočtom z archívu, nie z reportu:
 `uv run python -m team_pulse.gate_g2 nba|nhl` → `reports/gate_g2_<šport>.md`. Počas G2 sa model,
@@ -233,6 +234,7 @@ sú vymyslené, čísla na screenshotoch sú testovacie.
 - [ ] G2 NBA – 14 dní ostrej prevádzky 20. 10. – 2. 11. 2026, kritériá vopred v [docs/gate-G2.md](docs/gate-G2.md)
 - [x] NHL v appke ako beta · [x] G2-NHL 13. – 26. 10. 2026 splnená 28. 10., beta zmizla
 - [ ] F1 – model B naostro mimo appky do 6. 12. 2026 · [ ] Tipos extraliga – čaká na súhlas SZĽH
+- [ ] bejzbal: LVBP a MLB ([docs/baseball.md](docs/baseball.md)) · [ ] potom tenis
 - [x] redizajn: vzhľad, detail NHL, pás dní, karty, prehľad dňa, Tipy, Teamy, Model
 - [x] nová ikona appky (squircle, neónová EKG krivka, radar, vrcholový uzol; `scripts/make_icons.py`)
 - [ ] redizajn: detail NBA, Moje teamy, Bilancia tipov naostro, Sledovať pre NBA
