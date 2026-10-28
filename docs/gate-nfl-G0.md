@@ -1,4 +1,4 @@
-# Brána G0-NFL – kritériá (stanovené 28. 10. 2026 pred meraním)
+# Brána G0-NFL – kritériá (stanovené 28. 10. 2026 pred meraním) a vyhodnotenie
 
 Backtest NFL modelu (`docs/nfl.md`) na histórii z nflverse `games.csv` (pripnutý commit `a6b91bf` repozitára
 `nflverse/nfldata`). Kritériá sú napísané a commitnuté **pred prvým behom modelu na testovacích sezónach**;
@@ -45,3 +45,31 @@ o **0,0005** oproti modelu bez nej; inak sa nepridá. Zmenu modelu navrhnem, sch
 Prejde → ostré tipy mimo appky (`nfl.yml`, `reports/nfl_live.md`) a G2-NFL do 10. 1. 2027, kritériá G2
 sa stanovia pred prvým ostrým tipom. Neprejde → zapíše sa príčina, oprava a nové meranie na tých istých
 testovacích sezónach sa zapíše ako druhý pokus.
+
+## Vyhodnotenie (28. 10. 2026): ✅ splnená
+
+Kritériá vyššie boli commitnuté v `87d5549` pred prvým behom modelu. Backtest
+`uv run python -m team_pulse.nfl.backtest`, podrobnosti v `reports/nfl_backtest.md`.
+
+| # | Kritérium | Výsledok | Stav |
+|---|---|---|---|
+| 1 | Úplnosť dát | 2010 – 2025 všetky počty po sezónach sedia | ✅ |
+| 2 | Log loss Ela vs. lepšia baseline | 0,6341 vs. 0,6611 (bilancia), rozdiel 0,0270 | ✅ |
+| 3 | Test úniku dát | prechádza (Hypothesis: zmena budúcich výsledkov nemení minulé šance), úmyselná chyba zachytená | ✅ |
+| 4 | Stávkové stĺpce | žiadny sa nenačíta (zoznam povolených stĺpcov), test prechádza | ✅ |
+| 5 | Contract test ESPN NFL | skutočná odpoveď z 28. 10. (`tests/fixtures/nfl_espn_scoreboard.json`), ID zápasu = games.csv | ✅ |
+
+| Model (test 2023 – 2025, 854 zápasov) | Presnosť | Log loss | Brier |
+|---|---|---|---|
+| Elo ladené na tréningu (K 20, domáci 48, prenos 0,6) | 63,9 % | 0,6341 | 0,2218 |
+| Elo štart FiveThirtyEight (K 20, domáci 48, prenos 2/3) | 63,9 % | 0,6348 | 0,2220 |
+| Baseline: lepšia bilancia | 59,5 % | 0,6611 | 0,2342 |
+| Baseline: vždy domáci | 54,1 % | 0,6895 | 0,2482 |
+
+Zistenia:
+- Ladenie na tréningu zmenilo len prenos do sezóny (2/3 → 0,6); prínos na teste je malý (0,0007).
+  Prenos 0,6 je na okraji mriežky; na tréningu je optimum medzi 0,55 a 0,6 (rozdiel 0,00002), na výsledku
+  to nič nemení.
+- Kalibrácia v poriadku: pásmo 60 – 70 % vyhralo 67,3 %, 70 – 80 % vyhralo 69,4 % (183 zápasov).
+- Po sezónach 60,4 / 67,0 / 64,4 %; v 2023 bolo veľa zmien quarterbackov – vrstva quarterback je ďalší krok.
+- Porovnanie s 538 (`nfl_elo.csv`, informatívne) sa urobí z archívnej kópie na Macu.

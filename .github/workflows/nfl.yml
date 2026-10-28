@@ -1,0 +1,49 @@
+name: NFL
+
+# Ostré tipy NFL mimo appky (G2-NFL, docs/gate-nfl-G2.md): najnovší nflverse games.csv → Elo →
+# tipy na najbližší týždeň pred výkopom (až keď je predchádzajúci týždeň dohraný) → vyhodnotenie
+# → archive/nfl, reports/nfl_live.md. Vlastný workflow: predict.yml je počas G2 NBA zmrazený.
+on:
+  schedule:
+    # 3× denne mimo celých hodín; týždeň sa zamyká od utorka (po pondelňajšom zápase) do štvrtka
+    - cron: "17 9,15,21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write # commit archívu tipov a reportu
+
+concurrency:
+  group: nfl
+  cancel-in-progress: false
+
+jobs:
+  nfl:
+    runs-on: ubuntu-24.04 # pevná verzia: ubuntu-latest sa od 19. 10. mení na Ubuntu 26
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Inštalácia uv
+        uses: astral-sh/setup-uv@v10.3.0 # od v8 nemá tag hlavnej verzie (v10)
+
+      - name: Python a knižnice podľa uv.lock
+        run: uv sync --locked
+
+      - name: Elo, tipy na najbližší týždeň, vyhodnotenie (nflverse games.csv)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # len na zistenie najnovšieho commitu nflverse/nfldata
+        run: uv run python -m team_pulse.nfl.predict
+
+      - name: Archív tipov a report → repo (len keď sa niečo zmenilo)
+        run: |
+          git add reports/nfl_live.md
+          if [ -d archive/nfl ]; then git add archive/nfl; fi
+          if git diff --cached --quiet; then echo "NFL bez zmeny"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "NFL $(date -u +%Y-%m-%dT%H:%MZ): tipy a vyhodnotenie"
+          for i in 1 2 3; do
+            git pull -q --rebase --autostash && git push -q && exit 0
+            sleep $((i * 10))
+          done
+          echo "::error::NFL sa nepodarilo poslať na GitHub"
+          exit 1

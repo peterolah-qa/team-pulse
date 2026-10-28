@@ -2,7 +2,9 @@
 
 Petrove rozhodnutia 28. 10. 2026: NFL ako ďalší šport s **prednosťou pred tenisom** (sezóna beží, tenis stačí
 do januára), dáta z **nflverse `games.csv` s uvedením zdroja**, tipy zamyká **GitHub Actions** (cron-job.org),
-ostré meranie **G2 do konca základnej časti**. Pravidlá sú rovnaké ako pri ostatných športoch (`docs/sporty.md`):
+ostré meranie **G2 do konca základnej časti**. Večer 28. 10. po G0: **ostré tipy čo najskôr – od týždňa 8**,
+G2 meria čisté Elo (`docs/gate-nfl-G2.md`); vrstva quarterback popri tom ako druhý model od týždňa 10 (ak ju Peter
+schváli), s vlastnou bránou. Pravidlá sú rovnaké ako pri ostatných športoch (`docs/sporty.md`):
 nekomerčné, žiadne kurzy ani logá, žiadne kľúče a surové dáta v repozitári, brány s hranicami stanovenými
 vopred, zmenu modelu len navrhnem a schvaľuje Peter.
 
@@ -44,7 +46,7 @@ src/team_pulse/nfl/
   backtest.py     tréningové / testovacie sezóny, log loss, Brier, kalibrácia, baseline
   predict.py      zamknutie tipov: archive/nfl/predictions/YYYY-MM-DD.json
   app_data.py     app/public/data/nfl/*.json (po jadre)
-.github/workflows/nfl.yml   v hracie dni z cron-job.org, zamkne tipy dňa pred prvým výkopom
+.github/workflows/nfl.yml   3× denne: tipy na najbližší týždeň (keď je predchádzajúci dohraný), vyhodnotenie
 scripts/probe_nfl.py        overenie archívu 538 a ESPN NFL z Macu
 reports/nfl_live.md         ostré tipy a vyhodnotenie
 ```
@@ -58,8 +60,9 @@ Vrstvy (každá musí na testovacích sezónach zlepšiť log loss aspoň o 0,00
 
 ## NFL špecifiká
 
-- **Zamknutie:** všetky zápasy začínajú po 15:30 nášho času (aj Londýn a Nemecko), stačí jeden beh v hracie dni
-  pred prvým výkopom; do tipu sa uloží štartujúci quarterback. Zmena quarterbacka po zamknutí tip nemení.
+- **Zamknutie:** `nfl.yml` 3× denne zamkne celý najbližší týždeň, len čo je predchádzajúci dohraný (zvyčajne
+  v utorok, pred štvrtkovým zápasom). Zápas, ktorý už začal, tip nedostane. Do tipu sa uloží očakávaný štartujúci
+  quarterback z games.csv a commit games.csv. Zmena quarterbacka po zamknutí tip nemení.
 - **Remíza** (raz za sezónu) sa nevyhodnocuje ako trafená ani netrafená; v Ele sa počíta ako polovica.
 - **Neutrálne ihrisko** (zahraničné zápasy, Super Bowl): bez výhody domáceho.
 - **Play-off** sa tipuje a vyhodnocuje rovnako ako základná časť.
@@ -67,8 +70,8 @@ Vrstvy (každá musí na testovacích sezónach zlepšiť log loss aspoň o 0,00
 ## Brány
 
 - **G0-NFL** (backtest): kritériá v `docs/gate-nfl-G0.md`, stanovené 28. 10. **pred** prvým behom modelu.
-- **G2-NFL:** od prvého ostrého tipu do konca základnej časti 10. 1. 2027 (~100 – 130 zápasov); hranica
-  log loss sa stanoví pred spustením (95. percentil v rovnako dlhých oknách backtestu, ako pri NHL).
+- **G2-NFL** (`docs/gate-nfl-G2.md`): týždne 8 – 18, výkop 29. 10. 2026 – 10. 1. 2027 (~165 zápasov), model
+  `nfl-elo-v1`; log loss ≤ 0,6620 (95. percentil 165-zápasových okien testovacích sezón).
 - Do appky ide NFL po G0 s označením **beta** (po jadre), beta zmizne po G2.
 
 ## Časový plán
@@ -77,6 +80,7 @@ Vrstvy (každá musí na testovacích sezónach zlepšiť log loss aspoň o 0,00
 |:--|:--|
 | 28. – 30. 10. | sonda z Macu (archív 538, ESPN NFL); kritériá G0 vopred |
 | do ~6. 11. | `games.py`, Elo, backtest, G0-NFL; vrstva quarterback |
-| od ~9. týždňa (od 5. 11.) | `nfl.yml` naostro mimo appky, `reports/nfl_live.md`, G2-NFL do 10. 1. |
+| od 8. týždňa (29. 10.) | `nfl.yml` naostro mimo appky (3× denne), `reports/nfl_live.md`, G2-NFL do 10. 1. |
+| do 11. 11. | vrstva quarterback → návrh Petrovi; po schválení druhý model od týždňa 10 |
 | po jadre | NFL v appke (beta) |
 | 14. 2. 2027 | Super Bowl, koniec sezóny |

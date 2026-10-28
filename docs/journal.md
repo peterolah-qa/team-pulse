@@ -6,6 +6,22 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 28. 10. 2026
 
+- **Brána G0-NFL splnená** (večer, kritériá commitnuté predtým v `87d5549`). Sonda z Macu: archív 538
+  `nfl_elo.csv` na archive.org (6. 3. 2025, 5,9 MB), ESPN NFL scoreboard (týždeň 8, 14 zápasov, ID zápasu
+  = games.csv, napr. 401873023 CAR @ GB), zranenia (800 záznamov, 62 quarterbackov). Nový kód
+  `src/team_pulse/nfl/` (`games.py` len povolené stĺpce, `elo.py` podľa 538, `espn.py`, `backtest.py`),
+  testy `tests/test_nfl.py` (12, vrátane Hypothesis testu úniku a úmyselnej chyby), pytest spolu 422.
+  - Test 2023 – 2025 (854 zápasov): Elo 63,9 %, log loss 0,6341; lepšia baseline (bilancia) 0,6611,
+    vždy domáci 0,6895. Ladené na tréningu: K 20, domáci 48, prenos 0,6 (538: 2/3), rozdiel na teste 0,0007.
+    Kalibrácia v poriadku, po sezónach 60,4 / 67,0 / 64,4 %. `reports/nfl_backtest.md`, `docs/gate-nfl-G0.md`.
+  - **Peter (20:30): ostré tipy čo najskôr.** Rozhodnutie „kombinácia oboch“: tipy od týždňa 8 (prvý zápas
+    CAR @ GB 30. 10. 00:15 UTC) a **G2-NFL meria čisté Elo** `nfl-elo-v1` do 10. 1. 2027 (~165 zápasov,
+    hranica log loss 0,6620 = 95. percentil 165-zápasových okien testu, `docs/gate-nfl-G2.md`, stanovené pred
+    prvým tipom); vrstva quarterback popri tom, po schválení druhý model od týždňa 10 s vlastnou bránou.
+  - Ostrá prevádzka: `team_pulse.nfl.predict` (najnovší games.csv, commit sa uloží do tipu; zamkne najbližší
+    týždeň, keď je predchádzajúci dohraný; zápas, ktorý už začal, tip nedostane; zamknutý tip sa neprepíše)
+    a `.github/workflows/nfl.yml` (3× denne + ručne). Skúšobný beh v cloude 28. 10. dal 14 tipov týždňa 8,
+    časy výkopov sedia so sondou ESPN (napr. PHI @ WAS 2. 11. 01:20 UTC). Testy NFL 17, pytest spolu 427.
 - **Nový šport: NFL** (Peter 13:21) po otázke, ktorý šport sa dá dobre tipovať štatisticky a hrá sa teraz.
   Porovnanie (približne, publikované Elo modely; NBA a NHL naše merania): tenis ~70 % (sezóna končí 22. 11.),
   NBA 67,3 % backtest / 63,5 % naostro, NFL ~65 % (do februára), NHL 57,6 %, MLB ~57 % (nehrá), futbal ~50 %
@@ -435,8 +451,8 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   a kontrola na iPhone (#101). Nové snímky vždy z CI (workflow Appka, `snimky`, na vetve).
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- NFL (prednosť): Peter spustí `uv run python scripts/probe_nfl.py` (Mac); potom `games.py`, Elo, backtest
-  podľa `docs/gate-nfl-G0.md` do ~6. 11., ostré tipy od ~9. týždňa (`docs/nfl.md`).
+- NFL: ostré tipy od týždňa 8 (`nfl.yml`), G2-NFL do 10. 1. 2027 (`docs/gate-nfl-G2.md`); vrstva quarterback
+  do 11. 11. (návrh → Peter), porovnanie s archívom 538 na Macu; nezávislý prepočet `gate_g2 nfl` pred 10. 1.
 - Tenis (pomalšie, do januára): história z archívu, Elo a backtest podľa `docs/gate-tennis-G0.md`, potom doplnenie medzery z ESPN
   (`docs/tennis.md`).
 - Bejzbal (pozastavený): sonda ESPN MLB, kritériá G0-MLB vopred, potom história a model (`docs/baseball.md`).

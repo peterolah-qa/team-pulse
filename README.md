@@ -71,7 +71,7 @@ Každý šport má vlastný model a vlastné brány, hranice sa stanovia pred me
 | **Tipos extraliga** | hokejové Elo z NHL | – | – | čaká na súhlas SZĽH so zdrojom dát |
 | **Bejzbal** (MLB) | Elo + štartujúci nadhadzovač ([plán](docs/baseball.md)) | – | od 25. 3. 2027 | zdroje overené, pozastavené |
 | **Tenis** (ATP, WTA) | Elo hráča + povrch ([plán](docs/tennis.md)) | G0 do polovice decembra | Australian Open 17. – 31. 1. 2027 | zdroje a model |
-| **NFL** | Elo + quarterback ([plán](docs/nfl.md)) | [G0-NFL](docs/gate-nfl-G0.md) do ~6. 11. | od ~9. týždňa do 10. 1. 2027 | dáta a model |
+| **NFL** | Elo + quarterback ([plán](docs/nfl.md)) | ✅ [G0-NFL](docs/gate-nfl-G0.md): Elo 63,9 %, log loss 0,6341 vs. 0,6611 | [G2-NFL](docs/gate-nfl-G2.md): týždne 8 – 18 (do 10. 1. 2027), `reports/nfl_live.md` | ostré tipy mimo appky |
 
 Brány G2 vyhodnocuje skript nezávislým prepočtom z archívu, nie z reportu:
 `uv run python -m team_pulse.gate_g2 nba|nhl` → `reports/gate_g2_<šport>.md`. Počas G2 sa model,
