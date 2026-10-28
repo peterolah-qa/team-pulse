@@ -3,10 +3,14 @@ import type { Page } from "@playwright/test";
 
 type Json = Record<string, any>;
 
-/* data/predictions.json aj data/nhl/predictions.json (glob s ** by vynechal súbory priamo v data/) */
-export const isData = (url: URL): boolean => url.pathname.includes("/data/") && url.pathname.endsWith(".json");
+/* data/predictions.json, data/nhl/predictions.json aj nfl/predictions.json (NFL je v public/nfl, nie v data/) */
+export const isData = (url: URL): boolean =>
+  (url.pathname.includes("/data/") || url.pathname.includes("/nfl/")) && url.pathname.endsWith(".json");
 
-type Name = "predictions" | "teams" | "model" | "nhl/predictions" | "nhl/model";
+type Name = "predictions" | "teams" | "model" | "nhl/predictions" | "nhl/model" | "nfl/predictions" | "nfl/model";
+
+const nameOf = (url: string): Name =>
+  (url.includes("/data/") ? url.split("/data/").pop()! : `nfl/${url.split("/nfl/").pop()!}`).replace(".json", "") as Name;
 
 export function fixture(name: Name): Json {
   return JSON.parse(readFileSync(new URL(`./fixtures/${name}.json`, import.meta.url), "utf8"));
@@ -15,7 +19,7 @@ export function fixture(name: Name): Json {
 /* Podstrčí appke dáta (NBA aj NHL). `edit` môže fixture pred odoslaním upraviť (prázdny deň, hraničný prípad…). */
 export async function serveData(page: Page, edit: Partial<Record<Name, (j: Json) => Json>> = {}) {
   await page.route(isData, async (route) => {
-    const name = route.request().url().split("/data/").pop()!.replace(".json", "") as Name;
+    const name = nameOf(route.request().url());
     const body = (edit[name] ?? ((j) => j))(fixture(name));
     await route.fulfill({ json: body });
   });
@@ -34,6 +38,11 @@ export async function open(page: Page, hash = "#/", now: Date = NOW) {
 /* NHL dáta sa načítajú až po otvorení NHL; potom #app stratí aria-busy. */
 export async function nhlReady(page: Page) {
   await page.locator('body[data-sport="nhl"] #app[aria-busy="false"]').waitFor();
+}
+
+/* To isté pre NFL (beta). */
+export async function nflReady(page: Page) {
+  await page.locator('body[data-sport="nfl"] #app[aria-busy="false"]').waitFor();
 }
 
 /* Výsledky posledných dní: tip vyšiel (DET), tip nevyšiel (NYK), príprava bez tipu a bez štatistík. */

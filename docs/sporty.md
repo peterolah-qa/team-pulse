@@ -70,7 +70,7 @@ rozbilo appku nainštalovanú na ploche.
 | Š10 – Tenis | ATP + WTA: archív Sackmann, doplnenie medzery z ESPN, Elo + povrch, vrstvy | od 28. 10., G0 do polovice decembra | G0-ATP, G0-WTA |
 | Š11 – Tenis v appke a G2 | zamykanie v GitHub Actions každých 30 min, appka (beta) od 1. 1. 2027 | po jadre | G2 Australian Open 17. – 31. 1. 2027 |
 | Š12 – NFL: dáta, model a G0 | nflverse games.csv bez stávkových stĺpcov, Elo podľa 538, quarterback, odpočinok | 28. 10. – ~6. 11. | G0-NFL ✅ 28. 10. (`docs/gate-nfl-G0.md`) |
-| Š13 – NFL naostro a v appke | `nfl.yml` v GitHub Actions od 8. týždňa (29. 10.), appka (beta) po jadre | 29. 10. – 14. 2. 2027 | G2-NFL do 10. 1. 2027 |
+| Š13 – NFL naostro a v appke | `nfl.yml` v GitHub Actions od 8. týždňa (29. 10.), appka (beta) od 28. 10. cez `app/public/nfl` | 29. 10. – 14. 2. 2027 | G2-NFL do 10. 1. 2027 |
 
 Prečo toto poradie: NHL je najbližšie k hotovému a jej G2 už beží (tipy sa zamykajú od 13. 10.).
 F1 má pevný termín, sezóna 2026 končí 6. 12. a 6 zostávajúcich pretekov poslúži ako ostré meranie.

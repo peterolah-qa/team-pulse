@@ -12,6 +12,7 @@ import pytest
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
+from team_pulse.nfl import app_data as A
 from team_pulse.nfl import elo, espn
 from team_pulse.nfl import games as G
 from team_pulse.nfl import predict as P
@@ -382,3 +383,57 @@ def test_qb_model_tip_has_flags_and_penalty() -> None:
         assert q["home_backup"] == 1 and q["away_backup"] == 0 and q["model"] == "nfl-elo-qb-v1"
         assert q["elo_diff"] == pytest.approx(e["elo_diff"] - Q.BACKUP_PENALTY, abs=0.11)
         assert q["p_home"] < e["p_home"]
+
+
+# --- NFL pre appku (team_pulse.nfl.app_data) ---
+
+
+def tip_for(g: pd.DataFrame, now: pd.Timestamp) -> dict:
+    tips, _ = P.tips_for_week(g, 2026, 2, now, "abc", set(), ANY)
+    return tips[0]
+
+
+def test_edge_items_sum_exactly_and_verify_by_recompute() -> None:
+    g = week_games(played_weeks=1)
+    tip = tip_for(g, pd.Timestamp("2026-09-19 12:00", tz="UTC"))
+    e = A.edge(tip, tip["elo_diff"])
+    assert sum(v for _, _, v in e["items"]) == pytest.approx(e["total"], abs=1e-9)
+    assert [k for k, _, _ in e["items"]] == ["elo", "home"]
+    assert e["verified"] is True
+    assert A.edge(tip, tip["elo_diff"] + 5)["verified"] is False
+    assert A.edge(tip, None)["verified"] is False
+
+
+def test_edge_playoff_and_neutral() -> None:
+    tip = {
+        "elo_diff": 120.0,
+        "neutral": True,
+        "playoff": True,
+        "home": "A",
+        "p_home": round(elo.expected(120.0), 4),
+    }
+    e = A.edge(tip, 120.0)
+    assert [k for k, _, _ in e["items"]] == ["elo", "playoff"]  # neutrálne ihrisko: bez výhody domáceho
+    assert e["items"][0][2] == pytest.approx(100.0) and e["items"][1][2] == pytest.approx(20.0)
+
+
+def test_build_upcoming_results_and_live() -> None:
+    g = week_games(played_weeks=1)
+    g["gametime"] = "13:00"
+    g["home_qb_id"], g["away_qb_id"] = "h", "a"
+    now = pd.Timestamp("2026-09-19 12:00", tz="UTC")
+    tips = {t["game_id"]: t for t in P.tips_for_week(g, 2026, 2, now, "abc", set(), ANY)[0]}
+    data = A.build(g, tips, {}, now.to_pydatetime(), "abc")
+    upcoming = [x for xs in data["days"].values() for x in xs]
+    assert {x["game_id"] for x in upcoming} == set(tips)
+    assert all(x["edge"]["verified"] for x in upcoming)
+    assert all(x["trend"]["home"][-1][1] == x["home"]["elo"] for x in upcoming)  # posledný bod = Elo v tipe
+    assert {r["week"] for r in data["results"]} == {1} and all(r["p_home"] is None for r in data["results"])
+    assert data["live"]["elo"]["locked"] == 2 and data["live"]["elo"]["n"] == 0
+    assert len(data["teams"]) == 4 and data["teams"][0]["elo"] >= data["teams"][-1]["elo"]
+
+
+def test_result_uses_tip_only_if_locked_before_kickoff() -> None:
+    tip = {"locked_at": "2026-09-20T17:00:01Z"}
+    assert A._locked_before(tip, "2026-09-20T17:00Z") is None
+    assert A._locked_before({"locked_at": "2026-09-20T16:59:59Z"}, "2026-09-20T17:00Z") is not None

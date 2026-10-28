@@ -1,7 +1,7 @@
 /* Tipy: favoriti zápasov, ktoré ešte nezačali, zoradení od najväčšej šance modelu nadol.
    Pri každom riadku je aj šanca, že vyjdú všetky tipy od prvého po tento (šance sa násobia) – aj ako graf. */
 import type { AppData, Sport } from "../data";
-import { allGames } from "../data";
+import { allGames, sportBase } from "../data";
 import { badge, esc, header, localDay, parseUtc, shortDate, split, time, when } from "../ui";
 import { isPre, type RowGame } from "./games";
 
@@ -65,7 +65,7 @@ function chart(acc: number[], ps: number[]): string {
 }
 
 export function tipsPage(list: Tip[], generatedAt: string, sport: Sport, footer: string, intro = ""): string {
-  const base = sport === "nhl" ? "#/nhl/" : "#/";
+  const base = sportBase(sport);
   const acc = together(list);
   const ps = list.map((t) => (t.home ? split(t.game.p_home).home : split(t.game.p_home).away));
   const rows = list.map((t, i) => {

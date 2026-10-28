@@ -123,6 +123,11 @@ main:focus { outline: none; }
 .sport a { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 14px; border-radius: 999px;
   font: 700 14px var(--display); color: var(--muted); text-decoration: none; }
 .sport a[aria-current="page"] { color: #fff; background: var(--primary-fill); }
+.beta { font: 700 10px/16px var(--display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary-ink);
+  border: 1px solid currentColor; border-radius: 999px; padding: 0 6px; }
+.sport a[aria-current="page"] .beta { color: #fff; }
+.beta-note { display: flex; align-items: baseline; gap: 8px; }
+.beta-note .beta { flex: none; }
 .back { display: inline-flex; align-items: center; gap: 4px; min-height: 36px; font: 600 15px var(--body); text-decoration: none; }
 h1 { display: flex; align-items: center; gap: 10px; font: 700 28px/1.15 var(--display); letter-spacing: -0.02em; margin-top: 6px; text-wrap: balance; }
 h1 .at { color: var(--muted); font-size: 20px; font-weight: 500; }

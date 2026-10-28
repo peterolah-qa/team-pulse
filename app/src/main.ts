@@ -14,13 +14,14 @@ import "@fontsource/inter/latin-600.css";
 import "@fontsource/inter/latin-ext-600.css";
 import "./style.css";
 
-import { loadData, loadNhl, type AppData, type NhlData, type Sport } from "./data";
+import { loadData, loadNfl, loadNhl, sportBase, type AppData, type NflData, type NhlData, type Sport } from "./data";
 import { followed, settleNhl, toggle } from "./follow";
 import { markViewed, say, showHtml, showToasts, takeNew, updateBadge } from "./notify";
 import { esc, header } from "./ui";
 import { gameView } from "./views/game";
 import { gamesView } from "./views/games";
 import { modelView } from "./views/model";
+import { nflGamesView, nflGameView, nflModelView, nflResultsView, nflTeamsView, nflTipsView } from "./views/nfl";
 import { nhlGamesView, nhlGameView, nhlModelView, nhlResultsView, nhlTeamsView, nhlTipsView } from "./views/nhl";
 import { resultsView, resultView } from "./views/result";
 import { teamsView, teamView } from "./views/team";
@@ -32,6 +33,9 @@ let data: AppData | null = null;
 let nhl: NhlData | null = null; // NHL sa načíta až pri prvom otvorení
 let nhlError: string | null = null;
 let nhlLoading: Promise<void> | null = null;
+let nfl: NflData | null = null; // NFL (beta) sa načíta až pri prvom otvorení
+let nflError: string | null = null;
+let nflLoading: Promise<void> | null = null;
 
 const SPORT_KEY = "tp-sport";
 /* záložka → cesta v adrese (bez športu) */
@@ -47,10 +51,10 @@ interface Route {
   wide: boolean; // zoznamy sa na širokej obrazovke rozložia do dvoch stĺpcov, detaily ostanú úzke
 }
 
-/* #/tipy = NBA, #/nhl/tipy = NHL. Staré odkazy bez športu ostávajú NBA. */
+/* #/tipy = NBA, #/nhl/tipy = NHL, #/nfl/tipy = NFL. Staré odkazy bez športu ostávajú NBA. */
 function parse(): { sport: Sport; page: string; arg: string } {
   const parts = (location.hash || "#/").split("/");
-  if (parts[1] === "nhl") return { sport: "nhl", page: parts[2] ?? "", arg: decodeURIComponent(parts[3] ?? "") };
+  if (parts[1] === "nhl" || parts[1] === "nfl") return { sport: parts[1], page: parts[2] ?? "", arg: decodeURIComponent(parts[3] ?? "") };
   return { sport: "nba", page: parts[1] ?? "", arg: decodeURIComponent(parts[2] ?? "") };
 }
 
@@ -105,9 +109,48 @@ function nhlRoute(page: string, id: string): Omit<Route, "sport"> {
   }
 }
 
+function nflRoute(page: string, id: string): Omit<Route, "sport"> {
+  const tab = PATH_TAB[page] ?? "zapasy";
+  const title = TITLES[tab];
+  if (!nfl) {
+    const html = nflError
+      ? `${header(title)}<div class="empty" role="alert"><p>NFL dáta sa nepodarilo načítať.</p><p class="small muted">${esc(nflError)}</p>
+          <button type="button" class="button" id="retry-nfl">Skúsiť znova</button></div>`
+      : `${header(title)}<p class="empty" role="status">Načítavam NFL…</p>`;
+    return { tab, html, title, wide: false };
+  }
+  const n = nfl;
+  switch (page) {
+    case "zapas":
+      return { tab, html: nflGameView(n, id), title: "Zápas", wide: false };
+    case "tipy":
+      return { tab, html: nflTipsView(n), title, wide: true };
+    case "vysledky":
+      return { tab, html: nflResultsView(n), title, wide: true };
+    case "teamy":
+      return { tab, html: nflTeamsView(n), title, wide: true };
+    case "model":
+      return { tab, html: nflModelView(n), title, wide: false };
+    default:
+      return { tab, html: nflGamesView(n), title, wide: true };
+  }
+}
+
 function route(): Route {
   const { sport, page, arg } = parse();
-  return { sport, ...(sport === "nhl" ? nhlRoute(page, arg) : nbaRoute(page, arg)) };
+  const r = sport === "nhl" ? nhlRoute(page, arg) : sport === "nfl" ? nflRoute(page, arg) : nbaRoute(page, arg);
+  return { sport, ...r };
+}
+
+function ensureNfl(): void {
+  if (nfl || nflError || nflLoading) return;
+  nflLoading = loadNfl()
+    .then((n) => (nfl = n))
+    .catch((e) => (nflError = String(e instanceof Error ? e.message : e)))
+    .then(() => {
+      nflLoading = null;
+      if (parse().sport === "nfl") render();
+    });
 }
 
 function ensureNhl(): void {
@@ -122,12 +165,11 @@ function ensureNhl(): void {
     });
 }
 
-/* Prepínač NBA / NHL vedľa značky: rovnaká záložka v druhom športe. */
+/* Prepínač NBA / NHL / NFL vedľa značky: rovnaká záložka v druhom športe. */
 function sportSwitch(r: Route): string {
   const path = TAB_PATH[r.tab] ?? "";
-  const link = (s: Sport, label: string) =>
-    `<a href="#/${s === "nhl" ? "nhl/" : ""}${path}"${r.sport === s ? ' aria-current="page"' : ""}>${label}</a>`;
-  return `<nav class="sport" aria-label="Šport">${link("nba", "NBA")}${link("nhl", "NHL")}</nav>`;
+  const link = (s: Sport, label: string) => `<a href="${sportBase(s)}${path}"${r.sport === s ? ' aria-current="page"' : ""}>${label}</a>`;
+  return `<nav class="sport" aria-label="Šport">${link("nba", "NBA")}${link("nhl", "NHL")}${link("nfl", `NFL <span class="beta">beta</span>`)}</nav>`;
 }
 
 function saveSport(s: Sport): void {
@@ -150,13 +192,19 @@ function render(keep = false): void {
   if (!data) return;
   const r = route();
   if (r.sport === "nhl") ensureNhl();
+  if (r.sport === "nfl") ensureNfl();
   app.innerHTML = r.html;
   app.dataset.layout = r.wide ? "wide" : "narrow";
-  app.setAttribute("aria-busy", String(r.sport === "nhl" && !nhl && !nhlError)); // NHL sa ešte načítava
+  const loading = (r.sport === "nhl" && !nhl && !nhlError) || (r.sport === "nfl" && !nfl && !nflError);
+  app.setAttribute("aria-busy", String(loading)); // NHL alebo NFL sa ešte načítava
   document.body.dataset.sport = r.sport;
   app.querySelector("[data-sport-switch]")?.replaceWith(document.createRange().createContextualFragment(sportSwitch(r)));
   document.getElementById("retry-nhl")?.addEventListener("click", () => {
     nhlError = null;
+    render();
+  });
+  document.getElementById("retry-nfl")?.addEventListener("click", () => {
+    nflError = null;
     render();
   });
   wireDetail(r);
@@ -166,8 +214,8 @@ function render(keep = false): void {
     void app.offsetWidth; // nová animácia aj pri rovnakej triede
     app.classList.add("enter");
   }
-  document.title = `${r.sport === "nhl" ? "NHL · " : ""}${r.title} · Team Pulse`;
-  const prefix = r.sport === "nhl" ? "#/nhl/" : "#/";
+  document.title = `${r.sport === "nba" ? "" : `${r.sport.toUpperCase()} · `}${r.title} · Team Pulse`;
+  const prefix = sportBase(r.sport);
   document.querySelectorAll<HTMLAnchorElement>(".tabbar a").forEach((a) => {
     a.href = prefix + (TAB_PATH[a.dataset.tab ?? ""] ?? "");
     if (a.dataset.tab === r.tab) a.setAttribute("aria-current", "page");
@@ -231,6 +279,7 @@ async function refresh(): Promise<void> {
       nhl = await loadNhl().catch(() => nhl);
       if (nhl) showHtml(settleNhl(nhl.predictions.results));
     }
+    if (nfl) nfl = await loadNfl().catch(() => nfl);
     const fresh = await loadData();
     if (fresh.predictions.generated_at === data.predictions.generated_at) return;
     data = fresh;
@@ -245,7 +294,8 @@ async function start(): Promise<void> {
   app.innerHTML = `<p class="empty" role="status">Načítavam…</p>`;
   // nainštalovaná appka (bez # v adrese) sa otvorí v naposledy zvolenom športe
   try {
-    if (!location.hash && localStorage.getItem(SPORT_KEY) === "nhl") history.replaceState(null, "", "#/nhl/");
+    const last = localStorage.getItem(SPORT_KEY);
+    if (!location.hash && (last === "nhl" || last === "nfl")) history.replaceState(null, "", `#/${last}/`);
   } catch {
     /* bez úložiska ostane NBA */
   }

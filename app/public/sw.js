@@ -1,5 +1,5 @@
 /* Service worker Team Pulse.
-   - stránka (index.html) a dáta (data/*.json): najprv sieť, pri výpadku posledná uložená verzia
+   - stránka (index.html) a dáta (data/*.json, nfl/*.json): najprv sieť, pri výpadku posledná uložená verzia
    - ostatné súbory (assets s hashom v názve, fonty, ikony): najprv cache
    VERSION prepíše build (vite.config.ts), takže po novom deployi sa stará cache zmaže. */
 const VERSION = "tp-__BUILD__";
@@ -47,6 +47,6 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== location.origin) return;
   if (e.request.mode === "navigate") e.respondWith(networkFirst(e.request, "./"));
-  else if (url.pathname.includes("/data/")) e.respondWith(networkFirst(e.request, url.pathname));
+  else if (url.pathname.includes("/data/") || url.pathname.includes("/nfl/")) e.respondWith(networkFirst(e.request, url.pathname));
   else e.respondWith(cacheFirst(e.request));
 });

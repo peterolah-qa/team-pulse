@@ -1,6 +1,6 @@
 /* Obrazovka Zápasy (NBA aj NHL): pás dní hore, zápasy ako balíček kariet (švih do strán) alebo zoznam,
    vedľa prehľad dňa. Na počítači sú karty v mriežke a prehľad v bočnom stĺpci. Všetky čísla sú z dát appky. */
-import type { Sport } from "../data";
+import { sportBase, type Sport } from "../data";
 import { badge, dayHeading, dayTitle, esc, groupBy, header, localDay, type RingValue, shortDate, signed, signed1, split, time } from "../ui";
 import { isPre, liveTag, type RowGame } from "./games";
 
@@ -159,7 +159,7 @@ export function matchesPage(o: MatchesOpts): string {
 /* --- widgety prehľadu dňa ------------------------------------------------------------------------- */
 
 export function dayWidget(day: string, gs: RowGame[], sport: Sport): string {
-  const base = sport === "nhl" ? "#/nhl/" : "#/";
+  const base = sportBase(sport);
   const tips = gs.map((g) => ({ g, ...fav(g) })).sort((a, b) => b.p - a.p);
   const top = tips[0];
   const avg = Math.round(tips.reduce((a, t) => a + t.p, 0) / tips.length);

@@ -65,7 +65,7 @@ export function modelPage(m: ModelInfo, labels: Record<string, string>, intro: s
     .sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]))
     .map(([k, v]) => `<li><span>${esc(labels[k])}</span><span class="num ${v >= 0 ? "pos" : "neg"}">${signed(Math.round(v))}</span></li>`)
     .join("");
-  const seasons = `${m.train_seasons[0] - 1}/${String(m.train_seasons[0]).slice(-2)} – ${m.train_seasons[1] - 1}/${String(m.train_seasons[1]).slice(-2)}`;
+  const seasons = m.train_label ?? `${m.train_seasons[0] - 1}/${String(m.train_seasons[0]).slice(-2)} – ${m.train_seasons[1] - 1}/${String(m.train_seasons[1]).slice(-2)}`;
   return `${header("Model", `verzia ${esc(m.version)} · test na sezónach ${esc(t.test_seasons)}`)}${extra}
     <div class="kpis-row">
       <div class="card kpi-card main"><span class="label">Presnosť</span><span class="big-n num">${pct1(t.accuracy)}</span><span class="kpi-l">trafený víťaz v zápasoch, ktoré model pri učení nevidel</span></div>

@@ -20,3 +20,11 @@ if [ -n "$n" ] && [ "${n#* }" != "CLOSED" ]; then
     --body "28. 10.: implementované (nfl-elo-qb-v1 v team_pulse.nfl.predict), prvé tipy týždeň 10 (12. 11.), brána docs/gate-nfl-qb-G2.md (log loss ≤ 0,6602). Zavrieť po prvých zamknutých tipoch." >/dev/null
   echo "~ #${n% *} komentár"
 fi
+
+# NFL v appke ako beta (28. 10. večer, cesta 1)
+n=$(num "NFL v appke (beta)")
+if [ -n "$n" ] && [ "${n#* }" != "CLOSED" ]; then
+  gh issue close "${n% *}" --repo "$REPO" --reason completed \
+    --comment "Hotové 28. 10.: NFL v appke ako beta (app/public/nfl z nfl.yml, predict.yml bez zmeny). Zápasy, Tipy, Výsledky, Teamy, Model, detail s overeným rozpadom tipu. Jadro (#55 – 58) od 4. 11." >/dev/null
+  echo "✓ #${n% *} NFL v appke (beta)"
+fi

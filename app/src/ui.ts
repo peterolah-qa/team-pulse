@@ -47,7 +47,33 @@ export const NHL_COLORS: Record<string, [string, string]> = {
   VAN: ["#00205b", "#00843d"], VGK: ["#b4975a", "#333f42"], WPG: ["#041e42", "#ac162c"], WSH: ["#c8102e", "#041e42"],
 };
 
-export const teamName = (abbr: string, sport: Sport = "nba"): string => (sport === "nhl" ? NHL_NAMES : TEAM_NAMES)[abbr] ?? abbr;
+/* NFL: skratky ako v nflverse games.csv (LA = Rams, WAS = Washington). Len farby, žiadne logá. */
+export const NFL_NAMES: Record<string, string> = {
+  ARI: "Arizona Cardinals", ATL: "Atlanta Falcons", BAL: "Baltimore Ravens", BUF: "Buffalo Bills",
+  CAR: "Carolina Panthers", CHI: "Chicago Bears", CIN: "Cincinnati Bengals", CLE: "Cleveland Browns",
+  DAL: "Dallas Cowboys", DEN: "Denver Broncos", DET: "Detroit Lions", GB: "Green Bay Packers",
+  HOU: "Houston Texans", IND: "Indianapolis Colts", JAX: "Jacksonville Jaguars", KC: "Kansas City Chiefs",
+  LA: "Los Angeles Rams", LAC: "Los Angeles Chargers", LV: "Las Vegas Raiders", MIA: "Miami Dolphins",
+  MIN: "Minnesota Vikings", NE: "New England Patriots", NO: "New Orleans Saints", NYG: "New York Giants",
+  NYJ: "New York Jets", PHI: "Philadelphia Eagles", PIT: "Pittsburgh Steelers", SEA: "Seattle Seahawks",
+  SF: "San Francisco 49ers", TB: "Tampa Bay Buccaneers", TEN: "Tennessee Titans", WAS: "Washington Commanders",
+};
+
+export const NFL_COLORS: Record<string, [string, string]> = {
+  ARI: ["#97233f", "#ffb612"], ATL: ["#a71930", "#1b1b1b"], BAL: ["#241773", "#9e7c0c"], BUF: ["#00338d", "#c60c30"],
+  CAR: ["#0085ca", "#101820"], CHI: ["#0b162a", "#c83803"], CIN: ["#fb4f14", "#1b1b1b"], CLE: ["#311d00", "#ff3c00"],
+  DAL: ["#003594", "#869397"], DEN: ["#fb4f14", "#002244"], DET: ["#0076b6", "#b0b7bc"], GB: ["#203731", "#ffb612"],
+  HOU: ["#03202f", "#a71930"], IND: ["#002c5f", "#a2aaad"], JAX: ["#006778", "#d7a22a"], KC: ["#e31837", "#ffb81c"],
+  LA: ["#003594", "#ffa300"], LAC: ["#0080c6", "#ffc20e"], LV: ["#1b1b1b", "#a5acaf"], MIA: ["#008e97", "#fc4c02"],
+  MIN: ["#4f2683", "#ffc62f"], NE: ["#002244", "#c60c30"], NO: ["#101820", "#d3bc8d"], NYG: ["#0b2265", "#a71930"],
+  NYJ: ["#125740", "#ffffff"], PHI: ["#004c54", "#a5acaf"], PIT: ["#101820", "#ffb612"], SEA: ["#002244", "#69be28"],
+  SF: ["#aa0000", "#b3995d"], TB: ["#d50a0a", "#34302b"], TEN: ["#0c2340", "#4b92db"], WAS: ["#5a1414", "#ffb612"],
+};
+
+const NAMES: Record<Sport, Record<string, string>> = { nba: TEAM_NAMES, nhl: NHL_NAMES, nfl: NFL_NAMES };
+const COLORS: Record<Sport, Record<string, [string, string]>> = { nba: TEAM_COLORS, nhl: NHL_COLORS, nfl: NFL_COLORS };
+
+export const teamName = (abbr: string, sport: Sport = "nba"): string => NAMES[sport][abbr] ?? abbr;
 
 /* Čitateľná farba textu na farbe teamu (relatívny jas podľa WCAG): biela alebo takmer čierna. */
 export function onColor(hex: string): string {
@@ -68,7 +94,7 @@ export interface RingValue {
 /* Odznak teamu bez log: kruh vo farbách dresu so skratkou (monogram), okolo prstenec formy alebo šance.
    sm = do riadkov zoznamu (bez textu), lg = karta a detail zápasu. Len doplnok k textu, preto aria-hidden. */
 export function badge(abbr: string, sport: Sport = "nba", size: "sm" | "lg" = "sm", r?: RingValue): string {
-  const [c1, c2] = (sport === "nhl" ? NHL_COLORS : TEAM_COLORS)[abbr] ?? ["#3a3f55", "#8a90a8"];
+  const [c1, c2] = COLORS[sport][abbr] ?? ["#3a3f55", "#8a90a8"];
   const R = 16, C = 2 * Math.PI * R;
   const v = r ? Math.max(0, Math.min(100, r.value)) : 0;
   const arc = r

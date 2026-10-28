@@ -118,6 +118,7 @@ export interface ModelInfo {
   version: string;
   created: string;
   train_seasons: [number, number];
+  train_label?: string; // sezóny učenia, ak nie sú v tvare NBA/NHL (napr. NFL „2010 – 2022“)
   n_games: number;
   test_metrics: { accuracy: number; log_loss: number; brier: number; test_seasons: string };
   calibration: { band: string; n: number; pred: number; actual: number }[];
@@ -133,7 +134,10 @@ export interface AppData {
 
 // --- NHL: zamknuté tipy z archívu a výsledky, publikuje src/team_pulse/nhl/app_data.py ---
 
-export type Sport = "nba" | "nhl";
+export type Sport = "nba" | "nhl" | "nfl";
+
+/* Začiatok adresy obrazoviek športu: NBA #/, ostatné #/<šport>/. */
+export const sportBase = (s: Sport): string => (s === "nba" ? "#/" : `#/${s}/`);
 
 export interface NhlSide {
   team: string;
@@ -278,6 +282,88 @@ export async function loadData(): Promise<AppData> {
 
 export async function loadNhl(): Promise<NhlData> {
   const [predictions, model] = await Promise.all([getJson<NhlPredictions>("nhl/predictions"), getJson<ModelInfo>("nhl/model")]);
+  return { predictions, model };
+}
+
+// --- NFL (beta): zamknuté tipy z archívu, výsledky a Elo z games.csv, publikuje src/team_pulse/nfl/app_data.py
+// do app/public/nfl (nie data/: súbory sa commitujú, build ich zverejní) ---
+
+export interface NflSide {
+  team: string;
+  elo: number;
+  qb: string | null; // očakávaný štartujúci quarterback v čase zamknutia (games.csv)
+  reasons: [string, number][]; // náhradník quarterback v druhom modeli (Elo body)
+}
+
+export interface NflGame {
+  game_id: string;
+  date: string; // deň v USA (ET)
+  week: number;
+  tipoff_utc: string;
+  kind: "regular" | "playoff";
+  neutral: boolean;
+  p_home: number; // model nfl-elo-v1 (meria ho G2-NFL)
+  p_home_qb: number | null; // druhý model nfl-elo-qb-v1 (od týždňa 10)
+  locked_at: string;
+  home: NflSide;
+  away: NflSide;
+  edge: { verified: boolean; total: number; items: [string, string, number][] };
+  trend: { home: [string, number][]; away: [string, number][] };
+  record: { home: [number, number, number] | null; away: [number, number, number] | null };
+}
+
+export interface NflResult {
+  game_id: string;
+  date: string;
+  week: number;
+  tipoff_utc: string | null;
+  kind: "regular" | "playoff";
+  home: string;
+  away: string;
+  score_home: number;
+  score_away: number;
+  p_home: number | null;
+  p_home_qb: number | null;
+}
+
+export interface NflLive {
+  model: string;
+  from: string;
+  to: string;
+  limit: number;
+  locked: number;
+  n: number;
+  hits: number;
+  log_loss: number | null;
+}
+
+export interface NflPredictions {
+  generated_at: string;
+  sport: "nfl";
+  beta: boolean;
+  model: string;
+  model_qb: string;
+  games_commit: string;
+  last_locked: string | null;
+  days: Record<string, NflGame[]>;
+  results: NflResult[];
+  teams: { team: string; elo: number; as_of: string; record: [number, number, number] }[];
+  live: { elo: NflLive; qb: NflLive };
+}
+
+export interface NflData {
+  predictions: NflPredictions;
+  model: ModelInfo;
+}
+
+async function getNfl<T>(name: string): Promise<T> {
+  const r = await fetch(`./nfl/${name}.json`, { cache: "no-store" });
+  if (!r.ok) throw new Error(`nfl/${name}.json: HTTP ${r.status}`);
+  return (await r.json()) as T;
+}
+
+export async function loadNfl(): Promise<NflData> {
+  const [predictions, model] = await Promise.all([getNfl<NflPredictions>("predictions"), getNfl<ModelInfo>("model")]);
   return { predictions, model };
 }
 

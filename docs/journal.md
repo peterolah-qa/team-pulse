@@ -6,6 +6,17 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 28. 10. 2026
 
+- **NFL v appke ako beta** (Peter 20:59: „cesta 1“ – NFL do appky hneď, jadro potom). `predict.yml` je do 3. 11.
+  zmrazený, preto dáta NFL nestavia on: `team_pulse.nfl.app_data` (beží v `nfl.yml`) ich zapíše do
+  `app/public/nfl/` (commitujú sa) a build appky v `predict.yml` ich zverejní bez zmeny workflowu (do 30 min).
+  - Prepínač NBA · NHL · NFL (beta), záložky Zápasy (karty aj zoznam, quarterbacky v poznámke), Tipy, Výsledky,
+    Teamy (32 tímov podľa Ela s bilanciou), Model (test 2023 – 2025, kalibrácia, vrstvy vrátane druhého modelu,
+    ostré meranie oboch modelov). Detail: šanca, istota, rozpad tipu v Elo bodoch (súčet presne na zamknutú
+    šancu, **overený prepočtom** z aktuálneho games.csv – 14 z 14), quarterbacky a druhý model, Elo trend
+    (posledný bod = Elo v tipe). Farby a skratky tímov, žiadne logá. Sledovať zápas zatiaľ len NBA/NHL.
+  - Service worker berie `nfl/*.json` najprv zo siete. Testy: Playwright NFL 7 + a11y 7 obrazoviek (3 projekty),
+    pytest NFL 25 (spolu 435). Vizuálne snímky: workflow Appka `snimky` teraz obnoví **všetky** snímky
+    (`--update-snapshots=all`), aby žiadna neukazovala starý stav (napr. prepínač bez NFL).
 - **NFL naostro a vrstva quarterback** (večer). Týždeň 8 zamknutý na GitHube 19:36 UTC (14 tipov, `nfl.yml`
   ručne, games.csv `671eaf7`). Vrstva quarterback: kandidáti ladení len na tréningu 2010 – 2022, test 2023 – 2025.
   „Náhradník“ (iný štartujúci quarterback než bežný štartér = najčastejší v posledných 8 odohraných zápasoch)

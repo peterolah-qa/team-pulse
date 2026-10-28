@@ -83,7 +83,7 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Testy + nové vizuálne snímky
-        run: npx playwright test --update-snapshots
+        run: npx playwright test --update-snapshots=all # všetky snímky z prehliadača CI, nie len tie nad 2 %
         env:
           VISUAL: "1"
 

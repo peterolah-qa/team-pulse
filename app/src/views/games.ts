@@ -1,6 +1,6 @@
 /* Zápasy: najbližšie zápasy po dňoch v našom čase. Jeden zápas = hostia a domáci pod sebou, vpravo šanca. */
 import type { AppData, Game, ModelInfo, Sport, TeamState, Tier } from "../data";
-import { allGames } from "../data";
+import { allGames, sportBase } from "../data";
 import { badge, chip, esc, oddsBar, parseUtc, pulseNum, split, TEAM_NAMES, TIERS, tierClass, time, when } from "../ui";
 import { card, dayWidget, fav, matchesPage, topReasons, type CardSide } from "./matches";
 
@@ -57,7 +57,7 @@ export function gameRow(g: RowGame, now: number = Date.now(), opt: { sport?: Spo
   const notes = opt.notes ?? absences(g);
   const favSide = homeFav ? g.home : g.away;
   const tone = favSide.tier ? ` tone-${tierClass(favSide.tier)}` : "";
-  return `<li><a class="match${tone}" href="#/${sport === "nhl" ? "nhl/" : ""}zapas/${esc(g.game_id)}">
+  return `<li><a class="match${tone}" href="${sportBase(sport)}zapas/${esc(g.game_id)}">
     <div class="when"><span class="clock">${time(g.tipoff_utc)}</span>${liveTag(g, now)}${isPre(g) ? `<span class="tag">príprava</span>` : ""}</div>
     <div class="teams">${line(g.away, away, !homeFav, false, sport)}${line(g.home, home, homeFav, !g.neutral, sport)}${oddsBar(g.p_home)}</div>
     ${notes.length || g.neutral ? `<p class="note">${[g.neutral ? "neutrálne ihrisko" : "", ...notes].filter(Boolean).map(esc).join(" · ")}</p>` : ""}

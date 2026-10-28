@@ -33,8 +33,9 @@ najbližší týždeň už tiež.
 
 ## Architektúra
 
-NFL začína v `src/team_pulse/nfl/`. Spoločné jadro (#55 – 58) ho neskôr presunie do `sports/`. Do appky ide
-NFL až po jadre.
+NFL začína v `src/team_pulse/nfl/`. Spoločné jadro (#55 – 58) ho neskôr presunie do `sports/`. Do appky išla
+NFL 28. 10. ako beta ešte pred jadrom (Petrovo rozhodnutie, cesta 1): `nfl.yml` zapisuje dáta do `app/public/nfl`,
+build appky v `predict.yml` (zmrazený do 3. 11.) ich zverejní bez zmeny workflowu.
 
 ```
 src/team_pulse/nfl/
@@ -45,7 +46,7 @@ src/team_pulse/nfl/
   model.py        vrstvy: Elo, quarterback, odpočinok (voľný týždeň, štvrtok, cestovanie)
   backtest.py     tréningové / testovacie sezóny, log loss, Brier, kalibrácia, baseline
   predict.py      zamknutie tipov: archive/nfl/predictions/YYYY-MM-DD.json
-  app_data.py     app/public/data/nfl/*.json (po jadre)
+  app_data.py     app/public/nfl/*.json (commitujú sa, build appky ich zverejní)
 .github/workflows/nfl.yml   3× denne: tipy na najbližší týždeň (keď je predchádzajúci dohraný), vyhodnotenie
 scripts/probe_nfl.py        overenie archívu 538 a ESPN NFL z Macu
 reports/nfl_live.md         ostré tipy a vyhodnotenie
@@ -83,5 +84,6 @@ Vrstvy (každá musí na testovacích sezónach zlepšiť log loss aspoň o 0,00
 | od 8. týždňa (29. 10.) | `nfl.yml` naostro mimo appky (3× denne), `reports/nfl_live.md`, G2-NFL do 10. 1. |
 | 28. 10. | vrstva quarterback schválená (náhradník −65 Elo, `reports/nfl_qb.md`) |
 | od 10. týždňa (12. 11.) | druhý model `nfl-elo-qb-v1`, G2-NFL-QB do 10. 1. (`docs/gate-nfl-qb-G2.md`) |
-| po jadre | NFL v appke (beta) |
+| 28. 10. | NFL v appke (beta): `app/public/nfl` z `nfl.yml`, bez zmeny `predict.yml` (Peter: cesta 1) |
+| od 4. 11. | spoločné jadro (#55 – 58) hneď po G2 NBA, pred tenisom |
 | 14. 2. 2027 | Super Bowl, koniec sezóny |
