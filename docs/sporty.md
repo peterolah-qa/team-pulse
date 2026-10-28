@@ -2,7 +2,8 @@
 
 Jedna appka Team Pulse, hore prepínač športu. Každý šport má vlastný model, vlastné dáta
 a vlastné brány. Prvý šport je NBA (beží), ďalej NHL, F1, Tipos extraliga, bejzbal (MLB,
-`docs/baseball.md`, 28. 10., pozastavený) a tenis (ATP a WTA, `docs/tennis.md`, 28. 10.).
+`docs/baseball.md`, 28. 10., pozastavený) tenis (ATP a WTA, `docs/tennis.md`, 28. 10.)
+a NFL (`docs/nfl.md`, 28. 10., prednosť pred tenisom – sezóna beží).
 Úlohy a stav: board **Team Pulse – športy** (`scripts/board_sporty.sh`).
 
 ## Architektúra
@@ -68,6 +69,8 @@ rozbilo appku nainštalovanú na ploche.
 | Š9 – Bejzbal v appke (beta) | prepínač NBA · NHL · MLB, karta s nadhadzovačmi, detail s overeným rozpadom; MLB naostro | po jadre, január – marec 2027; MLB od 25. 3. 2027 | G2-MLB 25. 3. – 7. 4. 2027 |
 | Š10 – Tenis | ATP + WTA: archív Sackmann, doplnenie medzery z ESPN, Elo + povrch, vrstvy | od 28. 10., G0 do polovice decembra | G0-ATP, G0-WTA |
 | Š11 – Tenis v appke a G2 | zamykanie v GitHub Actions každých 30 min, appka (beta) od 1. 1. 2027 | po jadre | G2 Australian Open 17. – 31. 1. 2027 |
+| Š12 – NFL: dáta, model a G0 | nflverse games.csv bez stávkových stĺpcov, Elo podľa 538, quarterback, odpočinok | 28. 10. – ~6. 11. | G0-NFL (`docs/gate-nfl-G0.md`) |
+| Š13 – NFL naostro a v appke | `nfl.yml` v GitHub Actions od ~9. týždňa, appka (beta) po jadre | ~5. 11. – 14. 2. 2027 | G2-NFL do 10. 1. 2027 |
 
 Prečo toto poradie: NHL je najbližšie k hotovému a jej G2 už beží (tipy sa zamykajú od 13. 10.).
 F1 má pevný termín, sezóna 2026 končí 6. 12. a 6 zostávajúcich pretekov poslúži ako ostré meranie.

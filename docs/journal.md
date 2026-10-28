@@ -6,6 +6,23 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 28. 10. 2026
 
+- **Nový šport: NFL** (Peter 13:21) po otázke, ktorý šport sa dá dobre tipovať štatisticky a hrá sa teraz.
+  Porovnanie (približne, publikované Elo modely; NBA a NHL naše merania): tenis ~70 % (sezóna končí 22. 11.),
+  NBA 67,3 % backtest / 63,5 % naostro, NFL ~65 % (do februára), NHL 57,6 %, MLB ~57 % (nehrá), futbal ~50 %
+  (remíza). Tabuľka pre Petra: `sporty-predvidatelnost.xlsx` (mimo repozitára).
+  Návrh `docs/nfl.md`, Peter rozhodol: **NFL má prednosť pred tenisom**, dáta z nflverse `games.csv` so zdrojom,
+  zámok tipov v GitHub Actions, G2 do konca základnej časti.
+  - Dáta (overené 28. 10.): `nflverse/nfldata` `games.csv` (commit `a6b91bf`, aktualizácia 28. 10.): 1999 – 2026,
+    sezóna 2026 = 272 zápasov, odohraných 107 (7 týždňov), všetky so štartujúcimi quarterbackmi, najbližší
+    týždeň tiež; súbor má aj stávkové stĺpce (moneyline, spread, total) – načítavajú sa len povolené stĺpce.
+    Licencia v `nfldata` nie je uvedená (nflverse-data je CC BY 4.0): holé fakty, nekomerčne, so zdrojom.
+    538 `nfl_elo.csv` (Elo aj s quarterbackom) len na zaniknutej adrese – archív overí sonda.
+  - Termíny: základná časť do 10. 1. 2027, play-off od 16. 1., Super Bowl LXI 14. 2. 2027.
+  - **Kritériá G0-NFL** (`docs/gate-nfl-G0.md`) stanovené pred prvým behom: zahrievanie 1999 – 2009, tréning
+    2010 – 2022, test 2023 – 2025 (855 zápasov, 1 remíza); Elo o ≥ 0,0005 lepší log loss než lepšia baseline
+    (vždy domáci, bilancia). Počty po sezónach overené: 2020 má 13 zápasov play-off (14 tímov), 2022 má 271
+    zápasov základnej časti (zrušený BUF – CIN).
+  - Board: míľniky Š12 a Š13 (`scripts/board_nfl.sh`), sonda `scripts/probe_nfl.py`.
 - **Tenis: sonda ESPN a kritériá G0** (sonda z Macu 13:14). Pôvodné repozitáre Sackmanna aj cez API 404.
   ESPN tenis funguje pre ATP aj WTA: `scoreboard?dates=` vráti celé turnaje týždňa (aj kvalifikáciu),
   naplánované zápasy majú oboch hráčov a čas, skreč a kontumácia majú vlastný stav, 15. 7. 2026 vrátil
@@ -418,7 +435,9 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   a kontrola na iPhone (#101). Nové snímky vždy z CI (workflow Appka, `snimky`, na vetve).
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- Tenis: história z archívu, Elo a backtest podľa `docs/gate-tennis-G0.md`, potom doplnenie medzery z ESPN
+- NFL (prednosť): Peter spustí `uv run python scripts/probe_nfl.py` (Mac); potom `games.py`, Elo, backtest
+  podľa `docs/gate-nfl-G0.md` do ~6. 11., ostré tipy od ~9. týždňa (`docs/nfl.md`).
+- Tenis (pomalšie, do januára): história z archívu, Elo a backtest podľa `docs/gate-tennis-G0.md`, potom doplnenie medzery z ESPN
   (`docs/tennis.md`).
 - Bejzbal (pozastavený): sonda ESPN MLB, kritériá G0-MLB vopred, potom história a model (`docs/baseball.md`).
 - Nápady: Peter vyberie z `docs/napady.md`, vybrané pôjdu na board.
