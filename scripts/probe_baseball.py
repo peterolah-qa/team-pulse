@@ -31,7 +31,7 @@ ROBOTS = [
     "https://www.retrosheet.org/robots.txt",
 ]
 AI_AGENTS = {"*", "gptbot", "claudebot", "claude-web", "anthropic-ai", "ccbot", "google-extended"}
-HEADERS = {"User-Agent": "team-pulse probe (nekomerčný projekt; github.com/peterolah-qa/team-pulse)"}
+HEADERS = {"User-Agent": "team-pulse probe (non-commercial; github.com/peterolah-qa/team-pulse)"}  # len ASCII
 PAUSE = 0.5  # s medzi dopytmi na MLB Stats API, žiadne hromadné sťahovanie
 
 session = requests.Session()

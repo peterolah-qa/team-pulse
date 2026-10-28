@@ -21,6 +21,8 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
     rozpis a nadhadzovači; podmienky MLBAM a pokrytie zimných líg overiť), LVBP podľa sondy. Stránka, ktorá
     zakazuje roboty alebo AI, sa nepoužije. Z cloudu sú zdroje zablokované: sonda `scripts/probe_baseball.py`
     z Macu.
+    Prvý beh sondy na Macu padol na hlavičke User-Agent so slovenským „č“ (HTTP hlavičky sú latin-1),
+    hlavička je teraz len ASCII.
   - Board: míľniky Š6 – Š10 a úlohy (`scripts/board_baseball.sh`). Po bejzbale **tenis** (Petrov nápad 12:49),
     návrh architektúry až po bejzbale.
 - **Brána G2-NHL splnená** (13. – 26. 10., kritériá `docs/gate-nhl-G2.md`): 98 z 98 tipov zamknutých pred
