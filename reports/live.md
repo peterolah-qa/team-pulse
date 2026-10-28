@@ -1,15 +1,15 @@
 # Ostrá prevádzka: vyhodnotenie predpovedí
 
-Základná časť: 2026-10-20 – 2026-10-27 · uložené predpovede 56 · s výsledkom 52 · čaká na výsledok 4
+Základná časť: 2026-10-20 – 2026-10-28 · uložené predpovede 68 · s výsledkom 56 · čaká na výsledok 12
 
 Odohrané zápasy bez uloženej predpovede: **0**
 
 | | Ostrá prevádzka | Backtest v1 |
 |:--|--:|--:|
-| Zápasy | 52 | sezóny 2023/24 – 2025/26 |
-| Presnosť | 63,5 % (± 13,1 p. b.) | 67,3 % |
-| Log loss | 0,6397 | 0,5996 |
-| Brier | 0,2236 | 0,2068 |
+| Zápasy | 56 | sezóny 2023/24 – 2025/26 |
+| Presnosť | 64,3 % (± 12,5 p. b.) | 67,3 % |
+| Log loss | 0,6236 | 0,5996 |
+| Brier | 0,2174 | 0,2068 |
 
 Log loss a Brier: nižšie = lepšie. ± je 95 % interval presnosti; pri ~100 zápasoch je asi ±9 p. b., férové porovnanie s backtestom až okolo 500 zápasov.
 
@@ -20,20 +20,25 @@ Keď model dá favoritovi X %, vyhrá favorit naozaj približne X %?
 | Pásmo | Zápasy | Predpoveď | Skutočnosť |
 |:--|--:|--:|--:|
 | 50 – 60 % | 12 | 55,6 % | 58,3 % |
-| 60 – 70 % | 17 | 64,2 % | 47,1 % |
-| 70 – 80 % | 12 | 73,9 % | 75,0 % |
-| 80 – 90 % | 11 | 84,4 % | 81,8 % |
+| 60 – 70 % | 18 | 64,2 % | 44,4 % |
+| 70 – 80 % | 13 | 73,6 % | 76,9 % |
+| 80 – 90 % | 12 | 84,7 % | 83,3 % |
+| 90 – 100 % | 1 | 90,3 % | 100,0 % |
 
 ## Podľa istoty
 
 | Istota | Zápasy | Presnosť |
 |:--|--:|--:|
-| vysoká | 52 | 63,5 % |
+| vysoká | 56 | 64,3 % |
 
 ## Posledné zápasy
 
 | Dátum | Zápas | Šanca domácich | Skóre | Tip |
 |:--|:--|--:|:--|:--|
+| 2026-10-27 | POR @ LAL | 65,7 % | 136 : 129 | ✗ |
+| 2026-10-27 | SAC @ SAS | 90,3 % | 103 : 130 | ✓ |
+| 2026-10-27 | DET @ NYK | 70,1 % | 97 : 111 | ✓ |
+| 2026-10-27 | BKN @ BOS | 87,5 % | 124 : 125 | ✓ |
 | 2026-10-26 | GSW @ DEN | 85,9 % | 134 : 114 | ✗ |
 | 2026-10-26 | MEM @ UTA | 61,5 % | 110 : 105 | ✗ |
 | 2026-10-26 | ATL @ HOU | 67,4 % | 110 : 120 | ✓ |
@@ -50,10 +55,6 @@ Keď model dá favoritovi X %, vyhrá favorit naozaj približne X %?
 | 2026-10-25 | ORL @ NYK | 87,6 % | 111 : 102 | ✗ |
 | 2026-10-25 | IND @ BKN | 43,5 % | 136 : 109 | ✓ |
 | 2026-10-25 | LAL @ UTA | 28,5 % | 132 : 123 | ✓ |
-| 2026-10-24 | GSW @ PHX | 77,3 % | 122 : 131 | ✓ |
-| 2026-10-24 | NOP @ DEN | 87,7 % | 135 : 141 | ✓ |
-| 2026-10-24 | HOU @ ATL | 53,5 % | 121 : 114 | ✗ |
-| 2026-10-24 | SAS @ DAL | 17,6 % | 122 : 106 | ✓ |
 
 ## Príprava (skúška archívu, mimo G2)
 
