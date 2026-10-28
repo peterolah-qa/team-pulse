@@ -24,7 +24,7 @@ v repozitári, brány s hranicami stanovenými vopred, zmenu modelu len navrhnem
 |:--|:--|:--|:--|
 | Jeff Sackmann `tennis_atp`, `tennis_wta` | história zápasov od roku 1968: hráči, rebríček, povrch, kolo, skóre, dĺžka | CC BY-NC-SA 4.0 (nekomerčne, uviesť autora, rovnaká licencia pri ďalšom šírení) | **pôvodné repozitáre vracajú 404** (hlásenie z 19. 9. 2026; overené 28. 10.: súbor 2024 HTTP 404) |
 | Archívna kópia `Aneeshers/tennis-sackmann-archive` | to isté, snímka ATP a WTA z júna 2026 | rovnaká licencia CC BY-NC-SA 4.0, kópia si nenárokuje vlastníctvo | ✅ overené 28. 10.: commit `83733587` (25. 6. 2026), zápasy do turnajov začínajúcich 25. 5. 2026 (Roland Garros) |
-| ESPN tenis | živý rozpis, výsledky, doplnenie medzery jún – november 2026 | rovnaký typ podmienok ako ESPN pri NBA a NHL (osobné, nekomerčné) | overiť sondou |
+| ESPN tenis | živý rozpis, výsledky, doplnenie medzery jún – november 2026 | rovnaký typ podmienok ako ESPN pri NBA a NHL (osobné, nekomerčné) | ✅ sonda 28. 10. (nižšie) |
 | ~~TML-Database~~ | – | dáta zoškrabané z webu ATP | nepoužijeme |
 | ~~tennis-data.co.uk~~ | – | obsahuje stávkové kurzy | nepoužijeme |
 
@@ -36,6 +36,22 @@ a štatistík podania. Skreče (RET) 60 – 110 a kontumácie (W/O) ~20 za sezó
 - zjednotiť povrch (WTA 2025 má „clay“ aj „Clay“, niektoré zápasy bez povrchu – doplniť podľa turnaja),
 - **doplniť medzeru jún – november 2026** (tráva, Wimbledon, US Open, ázijská časť sezóny) z ESPN,
   inak by Elo pred januárom nepoznalo pol roka výsledkov.
+
+**Čo ukázala sonda ESPN** (28. 10. 2026, ATP aj WTA, dnes, zajtra a 15. 7. 2026):
+- `scoreboard?dates=` vráti **celé turnaje daného týždňa** (všetky dni, aj kvalifikáciu), nie len jeden deň.
+  Dnes a zajtra je preto odpoveď rovnaká; sťahovač berie zápasy podľa ich vlastného `startDate`.
+- Zápas má `id`, `startDate`, `round`, `status` a dvoch hráčov s ESPN ID, menom a `winner`. Stavy:
+  `STATUS_SCHEDULED`, `STATUS_IN_PROGRESS`, `STATUS_FINAL`, `STATUS_RETIRED`, `STATUS_WALKOVER`
+  (skreč a kontumácia sa dajú rozlíšiť).
+- **Naplánované zápasy majú oboch hráčov aj čas** (napr. Viedeň 19 a Bazilej 18 naplánovaných, všetky so známymi
+  hráčmi) – tip sa dá zamknúť pred začiatkom.
+- **Medzera sa dá doplniť:** 15. 7. 2026 vrátil Båstad, Gstaad, Umag a 6 turnajov WTA, všetko dohraté.
+- Treba: (1) zápasy deduplikovať podľa `id` – spoločné turnaje (Båstad) sú v odpovedi ATP aj WTA, okruh sa
+  určí podľa skupiny `mens-singles` / `womens-singles`, nie podľa adresy; (2) vynechať kvalifikáciu (kolo
+  „Qualifying …“), ako v histórii; (3) **rozlíšiť úroveň turnaja**: ESPN WTA ukazuje aj WTA 125 (Curitiba,
+  Valle d'Aosta, Querétaro), ktoré sa nerátajú – zoznam turnajov hlavných okruhov s párovaním názvov
+  ESPN ↔ história (napr. „Erste Bank Open“ = Vienna) bude v súbore s testami; (4) ID hráčov ESPN sú iné než
+  v histórii – párovanie mien v `players.py`.
 
 Sackmann je autor dát, archívna kópia je len miesto, odkiaľ sa dajú stiahnuť. V README a v appke sa uvedie
 Jeff Sackmann, licencia CC BY-NC-SA 4.0 a odkaz na pôvodné repozitáre aj na kópiu. Kópia sa používa
@@ -85,8 +101,9 @@ inak sa nepridá:
 
 ## Brány
 
-- **G0-ATP** a **G0-WTA** (backtest): kritériá v `docs/gate-tennis-G0.md`, napísané **pred** prvým behom.
-  Testovacie sezóny 2023 – 2025; log loss pod baseline z rebríčka, prínos každej vrstvy aspoň 0,0005, kalibrácia.
+- **G0-ATP** a **G0-WTA** (backtest): kritériá v `docs/gate-tennis-G0.md`, stanovené 28. 10. **pred** prvým
+  behom. Testovacie sezóny 2023 – 2025; Elo musí mať log loss aspoň o 0,0005 nižší než lepšia baseline
+  z rebríčka alebo bodov; úplnosť dát, test úniku, contract test ESPN; vrstvy každá aspoň 0,0005.
 - **G2-tenis:** Australian Open 17. – 31. 1. 2027 (dvojhra mužov aj žien, ~250 zápasov), vyhodnotenie
   po finále; hranice stanovené vopred.
 - Do appky ide tenis po G0 s označením **beta** (po jadre), beta zmizne po G2.

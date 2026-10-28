@@ -6,6 +6,16 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 28. 10. 2026
 
+- **Tenis: sonda ESPN a kritériá G0** (sonda z Macu 13:14). Pôvodné repozitáre Sackmanna aj cez API 404.
+  ESPN tenis funguje pre ATP aj WTA: `scoreboard?dates=` vráti celé turnaje týždňa (aj kvalifikáciu),
+  naplánované zápasy majú oboch hráčov a čas, skreč a kontumácia majú vlastný stav, 15. 7. 2026 vrátil
+  dohraté turnaje (medzera sa dá doplniť). Treba deduplikovať spoločné turnaje, vynechať kvalifikáciu,
+  odfiltrovať WTA 125 a spárovať hráčov a názvy turnajov (`docs/tennis.md`).
+  - **Kritériá G0-ATP a G0-WTA** (`docs/gate-tennis-G0.md`) stanovené pred prvým behom modelu: zahrievanie
+    1990 – 2014, tréning 2015 – 2022, test 2023 – 2025; Elo o ≥ 0,0005 nižší log loss než lepšia baseline
+    (rebríček, body), úplnosť dát, test úniku, contract test ESPN. Filtre súťaží určené z kódov úrovní
+    v archíve: WTA „W“ znamená v 2021 turnaje WTA 250 a v 2024 WTA 125, preto rozhoduje aj názov;
+    ATP bez Next Gen Finals. Doteraz som z archívu počítal len počty zápasov, žiadny model.
 - **Nový šport: tenis** (Peter 13:05, bejzbal pozastavený). Návrh `docs/tennis.md`, Peter rozhodol:
   **ATP aj WTA** (dvojhra, hlavné súťaže), zamykanie tipov **v GitHub Actions každých 30 min** (na moje
   odporúčanie: súper je často známy až pár hodín pred zápasom a zápasy sú vo všetkých časových pásmach,
@@ -408,7 +418,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   a kontrola na iPhone (#101). Nové snímky vždy z CI (workflow Appka, `snimky`, na vetve).
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- Tenis: Peter spustí `uv run python scripts/probe_tennis.py` (Mac) a výstup vloží do chatu; potom kritériá
-  G0-ATP a G0-WTA vopred, história, doplnenie medzery, Elo (`docs/tennis.md`).
+- Tenis: história z archívu, Elo a backtest podľa `docs/gate-tennis-G0.md`, potom doplnenie medzery z ESPN
+  (`docs/tennis.md`).
 - Bejzbal (pozastavený): sonda ESPN MLB, kritériá G0-MLB vopred, potom história a model (`docs/baseball.md`).
 - Nápady: Peter vyberie z `docs/napady.md`, vybrané pôjdu na board.
