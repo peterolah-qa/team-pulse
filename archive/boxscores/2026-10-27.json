@@ -1,6 +1,488 @@
 {
  "date": "2026-10-27",
  "games": {
+  "0022600128": {
+   "game_id": "0022600128",
+   "espn_id": "401909877",
+   "date": "2026-10-27",
+   "kind": "regular",
+   "home": "BOS",
+   "away": "BKN",
+   "pts_home": 125,
+   "pts_away": 124,
+   "box": {
+    "BKN": [
+     {
+      "player": "Julius Randle",
+      "min": 44,
+      "pts": 24,
+      "reb": 9,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Michael Porter Jr.",
+      "min": 40,
+      "pts": 27,
+      "reb": 12,
+      "ast": 2,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Chaney Johnson",
+      "min": 29,
+      "pts": 15,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mikel Brown Jr.",
+      "min": 28,
+      "pts": 17,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Keon Ellis",
+      "min": 25,
+      "pts": 2,
+      "reb": 3,
+      "ast": 4,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Nolan Traore",
+      "min": 24,
+      "pts": 15,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Noah Clowney",
+      "min": 24,
+      "pts": 3,
+      "reb": 4,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Moritz Wagner",
+      "min": 22,
+      "pts": 15,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Day'Ron Sharpe",
+      "min": 17,
+      "pts": 4,
+      "reb": 6,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Egor Demin",
+      "min": 10,
+      "pts": 2,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Josh Minott",
+      "min": 0,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "BOS": [
+     {
+      "player": "Jayson Tatum",
+      "min": 42,
+      "pts": 40,
+      "reb": 5,
+      "ast": 8,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Paul George",
+      "min": 36,
+      "pts": 20,
+      "reb": 7,
+      "ast": 7,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Derrick White",
+      "min": 33,
+      "pts": 16,
+      "reb": 5,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sam Hauser",
+      "min": 25,
+      "pts": 11,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mitchell Robinson",
+      "min": 25,
+      "pts": 7,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jordan Walsh",
+      "min": 24,
+      "pts": 15,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Payton Pritchard",
+      "min": 24,
+      "pts": 4,
+      "reb": 2,
+      "ast": 6,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Baylor Scheierman",
+      "min": 21,
+      "pts": 3,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Neemias Queta",
+      "min": 15,
+      "pts": 7,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Luka Garza",
+      "min": 13,
+      "pts": 2,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Hugo Gonzalez",
+      "min": 6,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
+  "0022600129": {
+   "game_id": "0022600129",
+   "espn_id": "401909878",
+   "date": "2026-10-27",
+   "kind": "regular",
+   "home": "NYK",
+   "away": "DET",
+   "pts_home": 111,
+   "pts_away": 97,
+   "box": {
+    "DET": [
+     {
+      "player": "Cade Cunningham",
+      "min": 36,
+      "pts": 19,
+      "reb": 9,
+      "ast": 8,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Duncan Robinson",
+      "min": 33,
+      "pts": 12,
+      "reb": 0,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "John Collins",
+      "min": 27,
+      "pts": 2,
+      "reb": 9,
+      "ast": 1,
+      "blk": 3,
+      "stl": 0
+     },
+     {
+      "player": "Paul Reed",
+      "min": 26,
+      "pts": 22,
+      "reb": 9,
+      "ast": 3,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Ausar Thompson",
+      "min": 25,
+      "pts": 11,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Daniss Jenkins",
+      "min": 24,
+      "pts": 11,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Javonte Green",
+      "min": 17,
+      "pts": 3,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Kevin Huerter",
+      "min": 16,
+      "pts": 7,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Ronald Holland II",
+      "min": 12,
+      "pts": 4,
+      "reb": 3,
+      "ast": 2,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Taurean Prince",
+      "min": 7,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Tolu Smith",
+      "min": 6,
+      "pts": 1,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ebuka Okorie",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaac Jones",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Elijah Harkless",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Chaz Lanier",
+      "min": 2,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "NYK": [
+     {
+      "player": "Jalen Brunson",
+      "min": 36,
+      "pts": 23,
+      "reb": 1,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "OG Anunoby",
+      "min": 36,
+      "pts": 13,
+      "reb": 7,
+      "ast": 2,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Karl-Anthony Towns",
+      "min": 33,
+      "pts": 27,
+      "reb": 20,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mikal Bridges",
+      "min": 32,
+      "pts": 12,
+      "reb": 3,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Landry Shamet",
+      "min": 28,
+      "pts": 13,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Hart",
+      "min": 27,
+      "pts": 6,
+      "reb": 4,
+      "ast": 4,
+      "blk": 0,
+      "stl": 5
+     },
+     {
+      "player": "Miles McBride",
+      "min": 17,
+      "pts": 5,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Andre Drummond",
+      "min": 14,
+      "pts": 10,
+      "reb": 8,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyler Kolek",
+      "min": 11,
+      "pts": 2,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jaden Akins",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Pacome Dadiet",
+      "min": 1,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mohamed Diawara",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "James Wiseman",
+      "min": 1,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
   "0022600130": {
    "game_id": "0022600130",
    "espn_id": "401909879",
