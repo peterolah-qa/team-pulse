@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
-import { fixture, isData, listMode, open, serveData, withResults } from "./helpers";
+import { fixture, isData, listMode, nhlReady, open, serveData, withResults } from "./helpers";
 
-/* NHL (beta): prepínač športu, zápasy, tipy, výsledky, detail, teamy a model. „Teraz“ = streda 21. 10. 0:30. */
+/* NHL: prepínač športu, zápasy, tipy, výsledky, detail, teamy a model. „Teraz“ = streda 21. 10. 0:30. */
 test.beforeEach(async ({ page }) => {
   await listMode(page); // karty NHL sú v screens.spec.ts
   await serveData(page, { predictions: withResults });
@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
 
 const nhl = async (page: import("@playwright/test").Page, hash = "#/nhl/") => {
   await open(page, hash);
-  await page.locator(".beta-note").first().waitFor();
+  await nhlReady(page);
 };
 
 const pcts = async (row: import("@playwright/test").Locator) =>
@@ -21,7 +21,7 @@ test("prepínač: NBA → NHL na tej istej záložke, záložky vedú do NHL, sp
   await expect(sw.locator("a[aria-current=page]")).toHaveText("NBA");
   await sw.getByRole("link", { name: /NHL/ }).click();
   await expect(page).toHaveURL(/#\/nhl\/tipy$/);
-  await page.locator(".beta-note").first().waitFor();
+  await nhlReady(page);
   await expect(page.getByRole("navigation", { name: "Šport" }).locator("a[aria-current=page]")).toContainText("NHL");
   await expect(page.locator(".tabbar a")).toHaveText(["Zápasy", "Tipy", "Výsledky", "Teamy", "Model"]);
   await expect(page.locator(".tabbar a[aria-current=page]")).toHaveText("Tipy");
@@ -37,10 +37,10 @@ test("prepínač: NBA → NHL na tej istej záložke, záložky vedú do NHL, sp
 test("nainštalovaná appka sa otvorí v naposledy zvolenom športe, odkaz na #/ ostáva NBA", async ({ page }) => {
   await nhl(page);
   await page.goto("/");
-  await page.locator(".beta-note").first().waitFor();
+  await nhlReady(page);
   await expect(page).toHaveURL(/#\/nhl\/$/);
   await open(page, "#/");
-  await expect(page.locator(".beta-note")).toHaveCount(0);
+  await expect(page.locator("body")).toHaveAttribute("data-sport", "nba");
   await expect(page.locator("a.match")).toHaveCount(6);
 });
 

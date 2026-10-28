@@ -31,6 +31,11 @@ export async function open(page: Page, hash = "#/", now: Date = NOW) {
   await page.locator("header.top").first().waitFor();
 }
 
+/* NHL dáta sa načítajú až po otvorení NHL; potom #app stratí aria-busy. */
+export async function nhlReady(page: Page) {
+  await page.locator('body[data-sport="nhl"] #app[aria-busy="false"]').waitFor();
+}
+
 /* Výsledky posledných dní: tip vyšiel (DET), tip nevyšiel (NYK), príprava bez tipu a bez štatistík. */
 export function withResults(p: Json): Json {
   const row = (player: string, min: number, pts: number) => ({ player, min, pts, reb: 7, ast: 5, blk: 1, stl: 2 });

@@ -6,12 +6,13 @@
 
 **V akom stave je team pred zápasom a kto má väčšiu šancu vyhrať?** Team Pulse to pri NBA vyhodnotí
 v 4 úrovniach (Silný / Stabilný / Oslabený / Kritický), povie prečo, ako veľmi si je istý a čo sa zmení,
-ak otázny hráč nenastúpi. NHL je v appke ako beta, F1 sa meria naostro mimo appky.
+ak otázny hráč nenastúpi. NHL je v appke od 14. 10. a 28. 10. prešla ostrým overením G2, F1 sa meria naostro
+mimo appky.
 
 **→ [peterolah-qa.github.io/team-pulse](https://peterolah-qa.github.io/team-pulse/)** (appka sa dá nainštalovať na mobil)
 
 > *In English:* a personal, non-commercial project. It is a web app (PWA) that rates each NBA team's
-> condition before a game and gives the model's win probability, with NHL in beta. The NBA model is an Elo
+> condition before a game and gives the model's win probability, for NBA and NHL. The NBA model is an Elo
 > model replicated from FiveThirtyEight plus learned layers for player availability, fatigue and roster
 > strength; the NHL model is Elo plus fatigue. Everything runs on free data and free infrastructure.
 > The project also serves as a QA-automation portfolio piece: see [Testing](#testovanie).
@@ -48,12 +49,13 @@ kruhmi a neónovou EKG krivkou z fialovej do smaragdovej so žiariacim vrcholom 
 **Pulse** = 50 + (Elo dnes − 1505) / 6, teda 50 znamená priemerný team. Hranice úrovní sú 70 / 50 / 30.
 Team, ktorý je dnes aspoň o 60 Elo pod svojím normálom (napr. mu chýba hviezda), padne o úroveň nižšie.
 
-**NHL (beta)** – prepínač NBA / NHL hore. Tipy zamyká ranná NHL úloha na Macu (`archive/nhl/predictions`),
+**NHL** – prepínač NBA / NHL hore. Tipy zamyká ranná NHL úloha na Macu (`archive/nhl/predictions`),
 GitHub Actions k nim pri každom builde pridá výsledky z API NHL, zranenia z ESPN a kontext zápasu
 (`team_pulse.nhl.context`): z rozpisov klubov znova spočíta vstupy modelu a overí, že dajú presne zamknutú
 šancu, a doplní formu, odpočinok, vzájomné zápasy a štatistiky NHL (len keď počet zápasov a výhier sedí
 s rozpisom). Tlačidlo **Sledovať zápas** ukáže v appke výsledok a či tip vyšiel, keď sa zápas dohrá.
-Označenie beta zmizne po prejdení brány G2-NHL ([docs/gate-nhl-G2.md](docs/gate-nhl-G2.md)).
+Brána G2-NHL (13. – 26. 10. 2026) je splnená: tip vyšiel v 59 z 98 zápasov (60,2 %), log loss 0,6686
+pri hranici 0,7101, označenie beta zmizlo ([reports/gate_g2_nhl.md](reports/gate_g2_nhl.md)).
 
 ![Počítač: Zápasy ako prehľad dňa](docs/screenshots/desktop.png)
 
@@ -64,7 +66,7 @@ Každý šport má vlastný model a vlastné brány, hranice sa stanovia pred me
 | Šport | Model | Backtest (G0) | Ostré meranie (G2) | Stav |
 |---|---|---|---|---|
 | **NBA** | Elo + únava + hráči + sila súpisky | ✅ [G0](docs/gate-G0.md), [G1](docs/gate-G1.md) | 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. ([G2](docs/gate-G2.md)) | v appke |
-| **NHL** | Elo + únava | ✅ [G0-NHL](docs/gate-nhl-G0.md) | 13. – 26. 10. 2026, vyhodnotenie 27. 10. ([G2-NHL](docs/gate-nhl-G2.md)); predbežne k 20. 10. všetky kritériá splnené (51 zápasov, log loss 0,6449, hranica 0,7101) | v appke ako beta |
+| **NHL** | Elo + únava | ✅ [G0-NHL](docs/gate-nhl-G0.md) | ✅ [G2-NHL](docs/gate-nhl-G2.md) 13. – 26. 10. 2026: 98 zápasov, tip vyšiel 60,2 %, log loss 0,6686 (hranica 0,7101), [výsledok](reports/gate_g2_nhl.md) | v appke |
 | **F1** | Elo jazdca a tímu + kvalifikácia | ❌ [G0-F1](docs/gate-f1-G0.md): horší než kvalifikácia | model B naostro mimo appky, 6 pretekov 25. 10. – 6. 12. 2026 ([docs/gate-f1-shadow.md](docs/gate-f1-shadow.md)) | tip po kvalifikácii, `f1.yml` |
 | **Tipos extraliga** | hokejové Elo z NHL | – | – | čaká na súhlas SZĽH so zdrojom dát |
 
@@ -184,6 +186,8 @@ npx playwright install chromium                # len prvýkrát, pre testy
 npm run dev                                    # http://localhost:5173
 npm test                                       # E2E + prístupnosť
 npm run test:visual                            # vizuálna regresia (screenshoty sú z Linuxu/CI)
+# nové screenshoty: na vetve spustiť workflow Appka so „snimky“
+#   gh workflow run app.yml --ref <vetva> -f snimky=true
 ```
 
 Ranné úlohy na Macu (launchd): NBA `bash scripts/install_daily.sh` (10:00), NHL tipy
@@ -227,7 +231,7 @@ sú vymyslené, čísla na screenshotoch sú testovacie.
 - [x] 0a – replikácia Elo (G0) · [x] 0b – vrstvy B, C, sila súpisky (G1) · [x] 1 – dátový agent a stav
 - [x] 2 – PWA appka (G3) · [x] upozornenia v appke na dohrané zápasy
 - [ ] G2 NBA – 14 dní ostrej prevádzky 20. 10. – 2. 11. 2026, kritériá vopred v [docs/gate-G2.md](docs/gate-G2.md)
-- [x] NHL v appke ako beta · [ ] G2-NHL 13. – 26. 10. 2026 (vyhodnotenie 27. 10.)
+- [x] NHL v appke ako beta · [x] G2-NHL 13. – 26. 10. 2026 splnená 28. 10., beta zmizla
 - [ ] F1 – model B naostro mimo appky do 6. 12. 2026 · [ ] Tipos extraliga – čaká na súhlas SZĽH
 - [x] redizajn: vzhľad, detail NHL, pás dní, karty, prehľad dňa, Tipy, Teamy, Model
 - [x] nová ikona appky (squircle, neónová EKG krivka, radar, vrcholový uzol; `scripts/make_icons.py`)

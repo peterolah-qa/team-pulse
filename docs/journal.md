@@ -4,6 +4,39 @@
 `reports/*.md`, na boardoch „Team Pulse“ a „Team Pulse – športy“ a v histórii commitov.
 Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov a brán.
 
+## 28. 10. 2026
+
+- **Brána G2-NHL splnená** (13. – 26. 10., kritériá `docs/gate-nhl-G2.md`): 98 z 98 tipov zamknutých pred
+  začiatkom, 98 z 98 zápasov dohratých a vyhodnotených, nezávislý prepočet = report (109 zápasov vrátane noci
+  27. 10., tip vyšiel 63, log loss 0,6730), log loss obdobia 0,6686 pri hranici 0,7101. Tip vyšiel v 59 z 98
+  (60,2 %), baseline „vždy domáci“ mal log loss 0,6774, model bol lepší. Výsledok `reports/gate_g2_nhl.md` (ef4a797).
+  Prvé spustenie o 9:00 dalo ❌ pri kritériu 3: prepočet z API NHL už mal 11 zápasov z noci 27. 10., report ich
+  ešte nemal, doplnila ich až ranná NHL úloha o 10:15. Rozdiel bol presne týchto 11 zápasov (4 tipy vyšli), nie
+  chyba modelu ani dát. Poučenie: bránu spúšťať až po rannej úlohe, aj G2 NBA 3. 11. až po 10:00.
+- **NHL bez označenia beta** (podľa `docs/gate-nhl-G2.md`, Po bráne): preč je „beta“ pri prepínači športu aj
+  poznámka na obrazovkách NHL. Na obrazovke Model NHL je výsledok G2-NHL (59 z 98, log loss 0,6686, hranica
+  0,7101), texty o „overovaní do 26. 10.“ sú prepísané na minulý čas. Dáta NHL majú `"beta": false`. Model,
+  tipy, archív ani ranná úloha sa nemenia. Testy čakajú na načítanie NHL cez `#app[aria-busy="false"]`
+  namiesto poznámky beta (rovnaký význam, prístupný aj čítačke obrazovky).
+- **Vizuálne snímky robí CI:** v cloudovom prostredí je Chromium 1243, v CI 1194 a písmo sa vykresľuje o kúsok
+  inak (detail NHL na počítači vyšiel o 23 px vyšší, 3 % pixelov iných, hranica je 2 %). Snímky vygenerované
+  inde by preto v CI padali. Workflow Appka má pri ručnom spustení voľbu `snimky`: na vetve (nie na `main`)
+  prebehnú všetky testy a nové snímky z prehliadača CI sa uložia commitom do vetvy. Až potom ide vetva do `main`,
+  takže `main` ostáva zelený. Skontrolované nad `main`: 27 z 28 snímok prešlo aj s prehliadačom 1243.
+- **Stav 21. – 27. 10.** (len automatické behy, vývoj stál): všetky behy zelené – Predikcie každých 30 min
+  z cron-job.org plus plán GitHubu, Kontrola zdrojov denne (od 25. 10. o 12:30 UTC, teda 13:30 po zmene času),
+  F1 cez víkend plánom GitHubu (záložný job na cron-job.org #89 ešte nie je), ranné úlohy NBA 10:00 a NHL 10:15
+  každý deň. Plánované behy GitHubu meškali 3 – 6 h, cron-job.org nie.
+  - G2 NBA priebežne k 27. 10.: 52 zápasov, tip vyšiel 63,5 %, log loss 0,6397 (hranica 0,6739). Pásmo 60 – 70 %
+    zatiaľ 47,1 % zo 17 zápasov: malá vzorka, model je do 3. 11. zamrazený, len sa sleduje.
+  - NHL noc 27. 10. (už po G2): tip vyšiel 4 z 11, spolu od 13. 10. 63 z 109 (57,8 %), log loss 0,6730.
+  - F1 model B, kolo 18 Austin: tip zamknutý po kvalifikácii, favorit ANT 70,9 % vyhral; log loss víťaza
+    0,3444 oproti 0,6629 pri šanciach len z kvalifikácie (1 zo 6 pretekov, `reports/f1_live.md`).
+- **Board** (`scripts/board_g2nhl.sh`): zavreté #63 (G2-NHL splnená), #85 (Kontrola zdrojov z cron-job.org
+  beží denne), #59 (NHL živé dáta a zranenia v appke; overenie na živej appke ostáva v #94), #35 (publikovanie
+  stavu a predpovedí na GitHub Pages beží od G2), #47 (duplicitné s #101). Nové a hneď hotové: NHL bez bety,
+  vizuálne snímky z CI. #34 (G2 NBA) ostáva otvorené do 3. 11. spolu s #75.
+
 ## 20. 10. 2026
 
 - **Nová ikona appky** (Petrovo zadanie 13:10): tmavý squircle (superelipsa, #14192B → #05070C) s jemným
@@ -318,16 +351,14 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## Čaká
 
-- F1: pridať job na cron-job.org pre `f1.yml` (#89) pred Austinom (24. 10.), po testovacom behu overiť.
-- NHL zranenia: overiť sekciu „Chýbajúci hráči“ v detaile NHL zápasu na živej appke.
+- F1: job na cron-job.org pre `f1.yml` (#89) pred Mexikom (kvalifikácia 31. 10.), plán GitHubu mešká
+  3 – 6 h; vyhodnotenie modelu B 7. 12. (#86, #70).
+- G2 NBA: 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. **po rannej úlohe (10:00)**:
+  `uv run python -m team_pulse.gate_g2 nba`. Model, predikcie, archív, ranná úloha a `predict.yml` sa do 3. 11.
+  nemenia, obrazovky appky áno (20. 10.). Po G2: jadro (#55 – 58), oprava stale checkout v `predict.yml` (D2).
+- NHL: overiť detail zápasu so skutočnými dátami na živej appke, aj „Chýbajúci hráči“ (#94).
+- Redizajn: detail NBA zápasu (#95), Sledovať pre NBA (#99), Moje teamy (#97), Bilancia (#98), testy
+  a kontrola na iPhone (#101). Nové snímky vždy z CI (workflow Appka, `snimky`, na vetve).
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
-- F1: overiť prvý zamknutý tip po kvalifikácii v Austine (24./25. 10., `archive/f1/predictions/2026-18.json`);
-  vyhodnotenie modelu B 7. 12. (#86).
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- G2 NBA: 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. ráno: `uv run python -m team_pulse.gate_g2 nba`.
-  Model, predikcie, archív, ranná úloha a `predict.yml` sa do 3. 11. nemenia, obrazovky appky áno (20. 10.).
-- G2-NHL: 13. – 26. 10. 2026, vyhodnotenie 27. 10. ráno po NHL úlohe (z Macu, potrebuje API NHL):
-  `uv run python -m team_pulse.gate_g2 nhl`.
 - Nápady: Peter vyberie z `docs/napady.md`, vybrané pôjdu na board.
-- Redizajn: `bash scripts/board_redizajn2.sh`, kontrola na iPhone (švih kariet, pás dní, nová ikona po novom
-  pridaní na plochu). Ďalej etapa 3 (detail NBA), Moje teamy, Bilancia, Sledovať pre NBA, etapa 5 (testy, iPhone).

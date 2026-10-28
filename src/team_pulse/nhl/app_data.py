@@ -1,4 +1,4 @@
-"""NHL v appke (beta): zamknuté tipy z archívu + výsledky z API NHL → app/public/data/nhl/.
+"""NHL v appke: zamknuté tipy z archívu + výsledky z API NHL → app/public/data/nhl/.
 
 Tipy počíta a zamyká ranná úloha na Macu (team_pulse.nhl.daily → archive/nhl/predictions).
 Tu sa nič nepočíta, model sa nemení (brána G2-NHL): len sa poskladá to, čo appka ukáže.
@@ -121,7 +121,7 @@ def build(tips: list[dict], results: list[dict], now: datetime, model: str) -> d
     return {
         "generated_at": now.isoformat(timespec="seconds"),
         "sport": "nhl",
-        "beta": True,
+        "beta": False,  # brána G2-NHL splnená 28. 10. 2026
         "model": model,
         "last_locked": max((t["locked_at"] for t in tips), default=None),
         "days": dict(sorted(days.items())),

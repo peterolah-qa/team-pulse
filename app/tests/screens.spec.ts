@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { open, serveData, withResults } from "./helpers";
+import { nhlReady, open, serveData, withResults } from "./helpers";
 
 /* Nový vzhľad (20. 10. 2026): pás dní, balíček kariet zápasov, prehľad dňa, Tipy s ukazovateľmi,
    Teamy ako 4 úrovne formy, NHL karty z rozpadu tipu. „Teraz“ = streda 21. 10. 0:30 (helpers.NOW). */
@@ -134,7 +134,7 @@ test("Teamy: 4 úrovne formy, poradie podľa Pulse, posun oproti normálu", asyn
 
 test("NHL Zápasy: karty s rozpadom tipu v prospech favorita, aréna, prstenec = šanca", async ({ page }) => {
   await zapasy(page, "#/nhl/");
-  await page.locator(".beta-note").first().waitFor();
+  await nhlReady(page);
   const cards = page.locator(".mcard");
   await expect(cards).toHaveCount(2); // dnes BUF @ TOR a DAL @ COL
   const buf = cards.first();

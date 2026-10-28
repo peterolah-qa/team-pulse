@@ -10,7 +10,7 @@ Jeden repozitár, jedna vetva `main` = to, čo beží. Vetvy len krátko na jedn
 (napr. `nhl`) a do `main` idú až po zelených testoch. Žiadna vetva na šport natrvalo:
 spoločné opravy by sa museli ručne prenášať a vetvy by sa rozišli.
 
-NHL je v `main` od 14. 10. 2026, v appke ako beta (Š2): tipy z archívu + výsledky z API NHL
+NHL je v `main` od 14. 10. 2026, v appke (Š2; beta do splnenia G2-NHL 28. 10.): tipy z archívu + výsledky z API NHL
 (`team_pulse.nhl.app_data` v `predict.yml`, chyba NHL nezastaví NBA). Ranné úlohy na Macu (NBA 10:00, NHL 10:15)
 commitujú do vetvy, na ktorej je priečinok – priečinok na Macu preto ostáva na `main`
 a vývoj ide v krátkych vetvách mimo ranného času. NHL úloha na inej vetve odmietne bežať.
@@ -57,7 +57,7 @@ rozbilo appku nainštalovanú na ploche.
 | Fáza | Obsah | Kedy | Brána |
 |---|---|---|---|
 | Š1 – NHL: dáta a backtest | sťahovač histórie, hokejové Elo, backtest, ostré tipy mimo appky | hotovo 13. 10. | G0-NHL ✅ |
-| Š2 – NHL v appke (beta) | prepínač športu, zápasy, tipy, výsledky NHL; dáta z rannej NHL úlohy | hotovo 14. 10. (pred G2 NBA) | G2-NHL 13. – 26. 10. |
+| Š2 – NHL v appke (beta) | prepínač športu, zápasy, tipy, výsledky NHL; dáta z rannej NHL úlohy | hotovo 14. 10. (pred G2 NBA) | G2-NHL 13. – 26. 10. ✅ (28. 10.) |
 | Š3 – F1 | zdroj (Jolpica), história, model pretekov, backtest; tipy od Austinu (zamknuté po kvalifikácii), potom appka (beta) | 15. 10. – 1. 11. | G0-F1 (`docs/gate-f1-G0.md`), G2-F1 = 6 pretekov do 6. 12. |
 | Š4 – Tipos extraliga | overiť zdroj a podmienky, história, backtest, appka | po Š3 | G0 + G2 extraliga |
 | Š5 – Spoločné jadro | `core/` podľa toho, čo majú športy naozaj spoločné; výstupy bez zmeny | pri treťom športe, najskôr 4. 11. | všetky testy zelené, rovnaké JSON |

@@ -1,6 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { listMode, open, serveData, visitedBefore, withResults } from "./helpers";
+import { listMode, nhlReady, open, serveData, visitedBefore, withResults } from "./helpers";
 
 /* Automatická kontrola prístupnosti (WCAG 2.1 A + AA) na každej obrazovke. */
 const SCREENS = {
@@ -27,7 +27,7 @@ for (const [name, hash] of Object.entries(SCREENS)) {
     if (name.endsWith("-zoznam")) await listMode(page);
     await serveData(page, { predictions: withResults });
     await open(page, hash);
-    if (hash.startsWith("#/nhl")) await page.locator(".beta-note").first().waitFor(); // NHL sa načíta až po otvorení
+    if (hash.startsWith("#/nhl")) await nhlReady(page); // NHL sa načíta až po otvorení
     const result = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]).analyze();
     const summary = result.violations.map((v) => `${v.id}: ${v.nodes.length}× ${v.help}`);
     expect(result.passes.length).toBeGreaterThan(10); // axe naozaj bežal

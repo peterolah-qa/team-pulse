@@ -1,5 +1,5 @@
-/* NHL (beta): zápasy, tipy, výsledky, liga podľa Ela a model. Tipy sa zamykajú raz ráno (Mac),
-   appka ich len ukazuje. Zranenia z ESPN sú len informácia, model ich nepočíta (brána G2-NHL). */
+/* NHL: zápasy, tipy, výsledky, liga podľa Ela a model. Tipy sa zamykajú raz ráno (Mac), appka ich len
+   ukazuje. Zranenia z ESPN sú len informácia, model ich nepočíta. Brána G2-NHL splnená 28. 10. 2026. */
 import type { NhlData, NhlForm, NhlGame, NhlInjury, NhlOutcome, NhlResult, NhlSide, NhlStatKey } from "../data";
 import { isFollowed } from "../follow";
 import { badge, coin, dayHeading, dayTitle, esc, groupBy, header, localDay, num1, pct1, shortDate, signed, signed1, split, teamName, time, when } from "../ui";
@@ -12,8 +12,9 @@ import { tipsFrom, tipsPage } from "./tips";
 const BASE = "#/nhl/";
 const EXTRA: Record<string, string> = { OT: "pp", SO: "sn" }; // po predĺžení, po samostatných nájazdoch
 
-const beta = (): string =>
-  `<p class="hint beta-note"><span class="beta">beta</span> NHL je nová. Model Elo + únava sa ostro overuje do 26. 10., tipy sa zamykajú raz ráno.</p>`;
+/* Výsledok ostrého overenia (reports/gate_g2_nhl.md), obdobie je uzavreté, čísla sa už nemenia. */
+const G2 =
+  `<p class="hint">Ostré overenie G2-NHL (13. – 26. 10. 2026) splnené: tip vyšiel v 59 z 98 zápasov (60,2 %), log loss 0,6686 pri hranici 0,7101.</p>`;
 
 const games = (n: NhlData): NhlGame[] => Object.values(n.predictions.days).flat();
 const finished = (n: NhlData): Set<string> => new Set(n.predictions.results.map((r) => r.game_id));
@@ -96,7 +97,6 @@ export function nhlGamesView(n: NhlData): string {
     sport: "nhl",
     games: list,
     sub: updated(n),
-    intro: beta(),
     card: (g, i, cnt, now) => nhlCard(byId.get(g.game_id)!, i, cnt, now),
     row: (g, now) => gameRow(g, now, { sport: "nhl", notes: fatigue(byId.get(g.game_id)!) }),
     widgets: (day, gs) => `${dayWidget(day, gs, "nhl")}${eloWidget(n)}${modelWidget(n.model, `${BASE}model`)}`,
@@ -107,13 +107,12 @@ export function nhlGamesView(n: NhlData): string {
 
 export function nhlTipsView(n: NhlData): string {
   const list = tipsFrom(games(n), finished(n));
-  if (!list.length) return `${header("Tipy")}${beta()}<p class="empty">Žiadne zápasy, ktoré ešte nezačali. Tipy pribudnú ráno.</p>`;
+  if (!list.length) return `${header("Tipy")}<p class="empty">Žiadne zápasy, ktoré ešte nezačali. Tipy pribudnú ráno.</p>`;
   return tipsPage(
     list,
     n.predictions.last_locked ?? n.predictions.generated_at,
     "nhl",
-    "Hokej je náhodnejší než basketbal, aj silný favorit často prehrá. Percentá sú z modelu, nie od stávkových kancelárií; naostro ich overuje brána G2-NHL (13. – 26. 10.).",
-    beta(),
+    "Hokej je náhodnejší než basketbal, aj silný favorit často prehrá. Percentá sú z modelu, nie od stávkových kancelárií; naostro ich overila brána G2-NHL (13. – 26. 10.).",
   );
 }
 
@@ -140,11 +139,11 @@ function resultRow(r: NhlResult): string {
 
 export function nhlResultsView(n: NhlData): string {
   const results = recentOf(n.predictions.results);
-  if (!results.length) return `${header("Výsledky")}${beta()}<p class="empty">Včera ani dnes sa ešte nedohral žiadny zápas NHL.</p>`;
+  if (!results.length) return `${header("Výsledky")}<p class="empty">Včera ani dnes sa ešte nedohral žiadny zápas NHL.</p>`;
   const tips = results.map(tipOf).filter((t) => t !== null);
   const hits = tips.filter((t) => t.hit).length;
   const days = groupBy(results, (r) => localDay(r.tipoff_utc, r.date));
-  return `${header("Výsledky", tips.length ? `tipy vyšli v <b>${hits} z ${tips.length}</b> zápasov` : "")}${beta()}
+  return `${header("Výsledky", tips.length ? `tipy vyšli v <b>${hits} z ${tips.length}</b> zápasov` : "")}
     ${days.map(([day, rs]) => `<section>${dayHeading(day, rs.length, ["zápas", "zápasy", "zápasov"])}<ul class="list">${rs.map(resultRow).join("")}</ul></section>`).join("")}
     <p class="meta">Výsledky zo včera a z dneška. pp = po predĺžení, sn = po nájazdoch. Červený zápas = náš tip nevyšiel.</p>`;
 }
@@ -401,7 +400,6 @@ export function nhlGameView(n: NhlData, id: string): string {
       <button type="button" class="iconbtn" id="share" aria-label="Zdieľať zápas">${ICON.share}</button></div>
     <h1 class="match-h" id="match-title">${esc(g.away.team)} <span class="at">@</span> ${esc(g.home.team)}</h1></header>
     ${hero(g)}
-    ${beta()}
     ${sure(n, g)}
     ${edgeCard(n, g)}
     ${trendCard(g)}
@@ -410,13 +408,13 @@ export function nhlGameView(n: NhlData, id: string): string {
     ${compareCard(g)}
     ${h2hCard(g)}
     ${injuriesCard(n, g)}
-    <p class="meta">Tip zamknutý ${esc(when(g.locked_at))}, po začiatku zápasu sa už nemení. Forma, odpočinok, porovnanie a vzájomné zápasy sú len informácia, model NHL ich počas brány G2-NHL nemení.${stamp} Zdroj: API NHL, zranenia ESPN.</p>
+    <p class="meta">Tip zamknutý ${esc(when(g.locked_at))}, po začiatku zápasu sa už nemení. Forma, odpočinok, porovnanie a vzájomné zápasy sú len informácia, model NHL ich nepočíta.${stamp} Zdroj: API NHL, zranenia ESPN.</p>
     <div class="cta"><button type="button" class="follow" id="follow" aria-pressed="${on}" data-sport="nhl" data-id="${esc(g.game_id)}" data-label="${esc(label)}">${on ? ICON.check : ICON.bell}<span>${on ? "Sledujem zápas" : "Sledovať zápas"}</span></button></div>`;
 }
 
 export function nhlTeamsView(n: NhlData): string {
   const list = n.predictions.teams;
-  if (!list.length) return `${header("Teamy")}${beta()}<p class="empty">Zatiaľ žiadne teamy s tipom.</p>`;
+  if (!list.length) return `${header("Teamy")}<p class="empty">Zatiaľ žiadne teamy s tipom.</p>`;
   const elos = list.map((t) => t.elo);
   const lo = Math.min(...elos) - 20, hi = Math.max(...elos);
   const rows = list
@@ -425,7 +423,7 @@ export function nhlTeamsView(n: NhlData): string {
       <span class="meter elo" aria-hidden="true"><i style="width:${(((t.elo - lo) / (hi - lo)) * 100).toFixed(0)}%"></i></span>
       <span class="pulse num elo">${Math.round(t.elo)}</span></div></li>`)
     .join("");
-  return `${header("Teamy", "sila podľa výsledkov (Elo), od najsilnejšieho")}${beta()}
+  return `${header("Teamy", "sila podľa výsledkov (Elo), od najsilnejšieho")}
     <section><h2 class="day"><span>Liga podľa Ela</span><span class="day-n">${list.length}</span></h2><ul class="list tight">${rows}</ul></section>
     <p class="meta">Elo pred posledným zápasom s tipom, priemer ligy je 1505. Forma (Pulse) a súpisky zatiaľ len pri NBA, zranenia sú v detaile zápasu.</p>`;
 }
@@ -444,5 +442,5 @@ const NHL_WEIGHTS: Record<string, string> = {
 };
 
 export function nhlModelView(n: NhlData): string {
-  return modelPage(n.model, NHL_WEIGHTS, "Hokej je náhodnejší než basketbal: tip „vždy domáci“ trafí v tých istých sezónach 54,3 %.", beta());
+  return modelPage(n.model, NHL_WEIGHTS, "Hokej je náhodnejší než basketbal: tip „vždy domáci“ trafí v tých istých sezónach 54,3 %.", G2);
 }

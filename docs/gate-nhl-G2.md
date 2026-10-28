@@ -36,3 +36,7 @@ v 14-dňových oknách 49,1 – 65,4 %, medián 58,0 %.
 
 Prejde → NHL v appke stratí označenie beta. Neprejde → zapíše sa príčina, oprava, nové meranie
 14 dní, NHL ostáva v appke ako beta.
+
+**Výsledok 28. 10. 2026: ✅ splnená** – 98 z 98 zápasov zamknutých a vyhodnotených, tip vyšiel 59 (60,2 %),
+log loss 0,6686 (baseline „vždy domáci“ 0,6774), prepočet = report ([reports/gate_g2_nhl.md](../reports/gate_g2_nhl.md)).
+Označenie beta zmizlo z appky.

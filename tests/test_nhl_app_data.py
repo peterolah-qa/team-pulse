@@ -64,7 +64,7 @@ def test_build_drops_finished_and_old_games():
         "2026-10-13": ["3"],
         "2026-10-14": ["4"],
     }
-    assert data["sport"] == "nhl" and data["beta"] is True
+    assert data["sport"] == "nhl" and data["beta"] is False
     assert [r["game_id"] for r in data["results"]] == ["2"]
     assert data["results"][0]["p_home"] == 0.6
 

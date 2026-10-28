@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { listMode, open, serveData, withResults } from "./helpers";
+import { listMode, nhlReady, open, serveData, withResults } from "./helpers";
 
 /* Vizuálna regresia: porovná obrazovky s uloženými screenshotmi (tests/visual.spec.ts-snapshots).
    Po zámernej zmene dizajnu: npm run test:update-snapshots */
@@ -26,7 +26,7 @@ for (const [name, hash] of [...Object.entries(SCREENS), ...Object.entries(LIGHT)
     if (name.endsWith("-zoznam")) await listMode(page);
     await serveData(page, { predictions: withResults });
     await open(page, hash);
-    if (hash.startsWith("#/nhl")) await page.locator(".beta-note").first().waitFor();
+    if (hash.startsWith("#/nhl")) await nhlReady(page);
     await page.evaluate(() => document.fonts.ready);
     // spodná lišta je fixed – pri screenshote celej stránky ju dáme na koniec, nech neprekrýva obsah
     await page.addStyleTag({

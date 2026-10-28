@@ -131,7 +131,7 @@ export interface AppData {
   model: ModelInfo;
 }
 
-// --- NHL (beta): zamknuté tipy z archívu a výsledky, publikuje src/team_pulse/nhl/app_data.py ---
+// --- NHL: zamknuté tipy z archívu a výsledky, publikuje src/team_pulse/nhl/app_data.py ---
 
 export type Sport = "nba" | "nhl";
 

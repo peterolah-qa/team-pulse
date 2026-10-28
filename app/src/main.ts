@@ -127,7 +127,7 @@ function sportSwitch(r: Route): string {
   const path = TAB_PATH[r.tab] ?? "";
   const link = (s: Sport, label: string) =>
     `<a href="#/${s === "nhl" ? "nhl/" : ""}${path}"${r.sport === s ? ' aria-current="page"' : ""}>${label}</a>`;
-  return `<nav class="sport" aria-label="Šport">${link("nba", "NBA")}${link("nhl", `NHL <span class="beta">beta</span>`)}</nav>`;
+  return `<nav class="sport" aria-label="Šport">${link("nba", "NBA")}${link("nhl", "NHL")}</nav>`;
 }
 
 function saveSport(s: Sport): void {
@@ -152,6 +152,7 @@ function render(keep = false): void {
   if (r.sport === "nhl") ensureNhl();
   app.innerHTML = r.html;
   app.dataset.layout = r.wide ? "wide" : "narrow";
+  app.setAttribute("aria-busy", String(r.sport === "nhl" && !nhl && !nhlError)); // NHL sa ešte načítava
   document.body.dataset.sport = r.sport;
   app.querySelector("[data-sport-switch]")?.replaceWith(document.createRange().createContextualFragment(sportSwitch(r)));
   document.getElementById("retry-nhl")?.addEventListener("click", () => {
