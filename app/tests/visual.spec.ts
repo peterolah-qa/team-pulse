@@ -34,7 +34,9 @@ for (const [name, hash] of [...Object.entries(SCREENS), ...Object.entries(LIGHT)
     // spodná lišta je fixed – pri screenshote celej stránky ju dáme na koniec, nech neprekrýva obsah
     await page.addStyleTag({
       content:
-        ".tabbar, .cta { position: static !important; transform: none !important; margin: 16px auto 0; } #app[data-cta] { padding-bottom: 0; } .dstrip { position: static !important; }",
+        ".tabbar, .cta { position: static !important; transform: none !important; margin: 16px auto 0; } #app[data-cta] { padding-bottom: 0; } .dstrip { position: static !important; }" +
+        // prechodová animácia obrazovky (view-in 0,28 s) a toasty: snímka nesmie zachytiť polovicu animácie
+        " #app.enter > * { animation: none !important; } .toast { animation: none !important; }",
     });
     await expect(page).toHaveScreenshot(`${name}.png`, { fullPage: true });
   });

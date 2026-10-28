@@ -6,6 +6,12 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 28. 10. 2026
 
+- **Červený beh Appka po zlúčení `nfl-appka` (`1af95e9`):** zlyhala jediná snímka, Výsledky na mobile
+  (11 075 pixelov, 4 %). Snímka z behu `snimky` zachytila obrazovku uprostred prechodovej animácie (`view-in`
+  0,28 s: obsah posunutý o pár pixelov a priesvitný), bežný beh potom porovnával hotovú obrazovku. Oprava:
+  vizuálne testy vypnú animáciu obrazovky a toastov ešte pred snímkou; snímky sa znova vytvoria v CI
+  (na vetve, zlúčenie až po kontrole). Pri porovnaní sa ukázalo aj to, že stará snímka Výsledkov mala ešte
+  „NHL beta“ – preto `--update-snapshots=all` (všetky snímky z CI naraz) bolo správne.
 - **README aktualizovaný** na stav k 28. 10. večer: NBA, NHL a NFL (beta) v appke, obrazovka Zápas (NFL), tabuľka
   športov a brán (NBA G2 priebežne 56 zápasov 64,3 %, NHL G2 ✅, NFL G0 ✅ a G2 do 10. 1., F1, tenis, bejzbal
   pozastavený, extraliga), schéma s `nfl.yml`, model NFL, testy (pytest 435, Playwright 182 + 32 vizuálnych,
@@ -477,8 +483,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## Čaká
 
-- **Teraz:** dokončiť `nfl-appka` – po dobehnutí behu Appka so `snimky` skontrolovať snímky a zlúčiť vetvu
-  do `main` (`git fetch && git merge --no-edit origin/nfl-appka && git push`), potom `bash scripts/board_nfl3.sh`.
+- **Teraz:** vetva `snimky-animacia` – beh Appka so `snimky`, kontrola snímok, potom zlúčenie do `main`.
 - F1: job na cron-job.org pre `f1.yml` (#89) pred Mexikom (kvalifikácia 31. 10.), plán GitHubu mešká
   3 – 6 h; vyhodnotenie modelu B 7. 12. (#86, #70).
 - G2 NBA: 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. **po rannej úlohe (10:00)**:
