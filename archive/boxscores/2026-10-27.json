@@ -714,6 +714,202 @@
      }
     ]
    }
+  },
+  "0022600131": {
+   "game_id": "0022600131",
+   "espn_id": "401909880",
+   "date": "2026-10-27",
+   "kind": "regular",
+   "home": "LAL",
+   "away": "POR",
+   "pts_home": 129,
+   "pts_away": 136,
+   "box": {
+    "POR": [
+     {
+      "player": "Deni Avdija",
+      "min": 33,
+      "pts": 23,
+      "reb": 4,
+      "ast": 9,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ja Morant",
+      "min": 31,
+      "pts": 23,
+      "reb": 0,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Damian Lillard",
+      "min": 31,
+      "pts": 21,
+      "reb": 5,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jrue Holiday",
+      "min": 30,
+      "pts": 22,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Donovan Clingan",
+      "min": 26,
+      "pts": 9,
+      "reb": 10,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Toumani Camara",
+      "min": 24,
+      "pts": 12,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Robert Williams III",
+      "min": 21,
+      "pts": 14,
+      "reb": 10,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Sidy Cissoko",
+      "min": 20,
+      "pts": 6,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Scoot Henderson",
+      "min": 17,
+      "pts": 2,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Vit Krejci",
+      "min": 7,
+      "pts": 4,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "LAL": [
+     {
+      "player": "Austin Reaves",
+      "min": 39,
+      "pts": 26,
+      "reb": 4,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Luka Doncic",
+      "min": 37,
+      "pts": 41,
+      "reb": 5,
+      "ast": 9,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Walker Kessler",
+      "min": 33,
+      "pts": 13,
+      "reb": 8,
+      "ast": 0,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Ziaire Williams",
+      "min": 29,
+      "pts": 11,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Sandro Mamukelashvili",
+      "min": 24,
+      "pts": 17,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Matisse Thybulle",
+      "min": 22,
+      "pts": 5,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jake LaRavia",
+      "min": 19,
+      "pts": 5,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Quentin Grimes",
+      "min": 19,
+      "pts": 2,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Collin Sexton",
+      "min": 14,
+      "pts": 9,
+      "reb": 1,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kevon Looney",
+      "min": 5,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
