@@ -6,6 +6,18 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 28. 10. 2026
 
+- **README aktualizovaný** na stav k 28. 10. večer: NBA, NHL a NFL (beta) v appke, obrazovka Zápas (NFL), tabuľka
+  športov a brán (NBA G2 priebežne 56 zápasov 64,3 %, NHL G2 ✅, NFL G0 ✅ a G2 do 10. 1., F1, tenis, bejzbal
+  pozastavený, extraliga), schéma s `nfl.yml`, model NFL, testy (pytest 435, Playwright 182 + 32 vizuálnych,
+  a11y 23 obrazoviek), príkazy, štruktúra, zdroje dát (nflverse, archív Sackmanna, Retrosheet), obmedzenia, plán.
+- **Snímky z CI – dvakrát zlúčené skôr** (12:40 `nhl-bez-bety`, 21:23 `nfl-appka`): príkazy na zlúčenie vetvy
+  sa spustili hneď po vytvorení vetvy, ešte kým beh Appka so `snimky` nedokončil snímky. Commit sa tak dostal
+  do `main` bez nových snímok a beh Appka na `main` bol červený, kým sa vetva so snímkami nezlúčila druhýkrát.
+  Model ani tipy to neovplyvnilo. Poučenie: príkazy na zlúčenie posielam až po kontrole snímok, nie v tej istej
+  správe.
+- **Dependabot** (12:56): GitHub hlásil 24 otvorených zraniteľností (1 kritická: certifi; ďalej virtualenv,
+  filelock, vite). Zlúčené všetky 4 PR so zelenými testami (#109 vite 7.3.7, #110 virtualenv, #113 certifi,
+  #114 filelock); certifi sú len certifikáty pre requests, výpočty modelov sa nemenia (G2 NBA neohrozené).
 - **NFL v appke ako beta** (Peter 20:59: „cesta 1“ – NFL do appky hneď, jadro potom). `predict.yml` je do 3. 11.
   zmrazený, preto dáta NFL nestavia on: `team_pulse.nfl.app_data` (beží v `nfl.yml`) ich zapíše do
   `app/public/nfl/` (commitujú sa) a build appky v `predict.yml` ich zverejní bez zmeny workflowu (do 30 min).
@@ -465,19 +477,24 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## Čaká
 
+- **Teraz:** dokončiť `nfl-appka` – po dobehnutí behu Appka so `snimky` skontrolovať snímky a zlúčiť vetvu
+  do `main` (`git fetch && git merge --no-edit origin/nfl-appka && git push`), potom `bash scripts/board_nfl3.sh`.
 - F1: job na cron-job.org pre `f1.yml` (#89) pred Mexikom (kvalifikácia 31. 10.), plán GitHubu mešká
   3 – 6 h; vyhodnotenie modelu B 7. 12. (#86, #70).
 - G2 NBA: 20. 10. – 2. 11. 2026, vyhodnotenie 3. 11. **po rannej úlohe (10:00)**:
   `uv run python -m team_pulse.gate_g2 nba`. Model, predikcie, archív, ranná úloha a `predict.yml` sa do 3. 11.
-  nemenia, obrazovky appky áno (20. 10.). Po G2: jadro (#55 – 58), oprava stale checkout v `predict.yml` (D2).
+  nemenia, obrazovky appky áno (20. 10.).
+- Od 4. 11.: **spoločné jadro** (#55 – 58) pred tenisom (Petrova cesta 1: NFL v appke hneď, jadro potom),
+  oprava stale checkout v `predict.yml` (D2).
+- NFL: tipy zamyká `nfl.yml` každý týždeň (8. týždeň zamknutý 28. 10.); G2-NFL do 10. 1. 2027, druhý model
+  s quarterbackom od 10. týždňa (12. 11.); porovnanie s archívom 538 na Macu; nezávislý prepočet
+  `gate_g2 nfl` pred 10. 1.; Sledovať zápas pre NFL.
 - NHL: overiť detail zápasu so skutočnými dátami na živej appke, aj „Chýbajúci hráči“ (#94).
 - Redizajn: detail NBA zápasu (#95), Sledovať pre NBA (#99), Moje teamy (#97), Bilancia (#98), testy
-  a kontrola na iPhone (#101). Nové snímky vždy z CI (workflow Appka, `snimky`, na vetve).
+  a kontrola na iPhone (#101). Nové snímky vždy z CI (workflow Appka, `snimky`, na vetve; zlúčiť až po kontrole).
+- Tenis (do januára): história z archívu, Elo a backtest podľa `docs/gate-tennis-G0.md`, potom doplnenie
+  medzery jún – november 2026 z ESPN (`docs/tennis.md`).
+- Bejzbal (pozastavený): sonda ESPN MLB, kritériá G0-MLB vopred, potom história a model (`docs/baseball.md`).
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- NFL: ostré tipy od týždňa 8 (`nfl.yml`), G2-NFL do 10. 1. 2027; druhý model s quarterbackom od týždňa 10
-  (G2-NFL-QB); porovnanie s archívom 538 na Macu; nezávislý prepočet `gate_g2 nfl` pred 10. 1.
-- Tenis (pomalšie, do januára): história z archívu, Elo a backtest podľa `docs/gate-tennis-G0.md`, potom doplnenie medzery z ESPN
-  (`docs/tennis.md`).
-- Bejzbal (pozastavený): sonda ESPN MLB, kritériá G0-MLB vopred, potom história a model (`docs/baseball.md`).
 - Nápady: Peter vyberie z `docs/napady.md`, vybrané pôjdu na board.
