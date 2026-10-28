@@ -9,6 +9,9 @@ Overí a vypíše (nič neukladá, surové dáta sa necommitujú):
   5. robots.txt stránok o LVBP: či zakazujú roboty alebo AI (takú stránku nepoužijeme).
 
 Spustenie (z Macu):  uv run python scripts/probe_baseball.py
+
+Prebehla 28. 10. 2026 (výsledok v docs/journal.md). Kroky 1, 2 a 5 slúžili len na rozhodnutie: MLB Stats API
+ani LVBP nepoužívame (docs/baseball.md). Pri pokračovaní bejzbalu ich nahradí sonda ESPN MLB.
 """
 
 from __future__ import annotations

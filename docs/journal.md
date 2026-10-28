@@ -6,6 +6,34 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
 
 ## 28. 10. 2026
 
+- **Nový šport: tenis** (Peter 13:05, bejzbal pozastavený). Návrh `docs/tennis.md`, Peter rozhodol:
+  **ATP aj WTA** (dvojhra, hlavné súťaže), zamykanie tipov **v GitHub Actions každých 30 min** (na moje
+  odporúčanie: súper je často známy až pár hodín pred zápasom a zápasy sú vo všetkých časových pásmach,
+  ranné zamknutie na Macu by väčšinu nestihlo). Kód v `src/team_pulse/tennis/`, do appky po jadre.
+  - Termíny (overené 28. 10.): ATP Finals 15. – 22. 11. 2026, United Cup od 1. 1. 2027, Australian Open
+    od 17. 1. 2027 → G2 na Australian Open.
+  - **Dáta:** pôvodné repozitáre Jeffa Sackmanna `tennis_atp` a `tennis_wta` vracajú 404 (hlásenie z 19. 9.
+    2026, overené: súbor 2024 HTTP 404). Archívna kópia `Aneeshers/tennis-sackmann-archive` overená priamo
+    (commit `83733587`, 25. 6. 2026, CC BY-NC-SA 4.0): zápasy do turnajov začínajúcich 25. 5. 2026, ATP
+    ~2 900 – 3 100 a WTA ~2 600 – 2 800 zápasov za sezónu, 49 stĺpcov (rebríček, povrch, kolo, best_of).
+    Treba vybrať hlavné súťaže, zjednotiť povrch a doplniť medzeru jún – november 2026 z ESPN.
+    TML-Database (zoškrabané z webu ATP) a tennis-data.co.uk (kurzy) nepoužijeme.
+  - Baseline je rebríček (silná: US Open 2016 rebríček 72,7 %, Elo 538 75,2 %). Skreč a kontumácia sa
+    nevyhodnocujú. Board: míľniky Š10 a Š11 (`scripts/board_tennis.sh`), sonda ESPN `scripts/probe_tennis.py`.
+- **Bejzbal: sonda zdrojov a rozhodnutie** (sonda z Macu 12:59, rozhodnutie 13:04). MLB Stats API funguje
+  (MLB: pri dohratých zápasoch ohlásení nadhadzovači 15 z 15, zrušený zápas „Cancelled“), LVBP je v ňom
+  ako liga 135 so sezónami 2010 – 2026 (~260 zápasov, 2019 – 2021 skrátené), ale **bez jediného
+  nadhadzovača**. Podmienky MLBAM (`copyright.txt`): „Only individual, non-commercial, non-bulk use of the
+  Materials is permitted and any other use … is prohibited without prior written authorization“. Retrosheet:
+  game logy dostupné, `notice.txt` overený (voľné použitie s povinnou vetou o zdroji). 538 `mlb_elo.csv`:
+  pôvodná adresa presmeruje na abcnews.com, kópia na archive.org z 6. 3. 2025 (56 MB). robots.txt webov
+  LVBP nič nezakazuje (nepotrebujeme ich).
+  - **Peter rozhodol: LVBP vypustiť, MLB bez MLB Stats API** (na moje odporúčanie): LVBP by mala model len
+    z Ela a výhody domáceho, malú vzorku a ako zdroj len MLBAM, ktorého podmienky povoľujú len individuálne
+    použitie. MLB stojí na Retrosheete (výslovne voľné použitie), 538 (CC BY) a ESPN (rovnaký stav ako NBA
+    a NHL); sezóna začína až 25. 3. 2027. `docs/baseball.md` prepísaný na samotnú MLB.
+  - **Bejzbal pozastavený** (Peter 13:05), pokračuje sa tenisom. Ďalší krok bejzbalu: sonda ESPN MLB
+    a kritériá G0-MLB. Board: `scripts/board_baseball2.sh`.
 - **Nový šport: bejzbal** (Petrov nápad 12:44). Návrh architektúry `docs/baseball.md`, Peter rozhodol:
   **MLB aj venezuelská LVBP naraz**, tipy zamyká **ranná úloha na Macu** (10:30, po NBA a NHL). Šport = model,
   liga = zdroj: spoločný kód modelu, parametre zvlášť pre každú ligu. Kód v `src/team_pulse/baseball/`,
@@ -380,7 +408,7 @@ Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov
   a kontrola na iPhone (#101). Nové snímky vždy z CI (workflow Appka, `snimky`, na vetve).
 - Extraliga: Peter pošle žiadosť o súhlas SZĽH (#64); až po súhlase história a backtest (#65).
 - Obnoviť token pre cron-job.org pred 11. 1. 2027 (inak sa predikcie spúšťajú len plánom GitHubu).
-- Bejzbal: Peter spustí `uv run python scripts/probe_baseball.py` (Mac) a výstup vloží do chatu; podľa neho
-  zdroj LVBP, kritériá G0-LVBP a G0-MLB vopred, potom história a model (`docs/baseball.md`).
-- Tenis: návrh architektúry po bejzbale.
+- Tenis: Peter spustí `uv run python scripts/probe_tennis.py` (Mac) a výstup vloží do chatu; potom kritériá
+  G0-ATP a G0-WTA vopred, história, doplnenie medzery, Elo (`docs/tennis.md`).
+- Bejzbal (pozastavený): sonda ESPN MLB, kritériá G0-MLB vopred, potom história a model (`docs/baseball.md`).
 - Nápady: Peter vyberie z `docs/napady.md`, vybrané pôjdu na board.
