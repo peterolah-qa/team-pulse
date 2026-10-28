@@ -1,0 +1,193 @@
+{
+ "events": [
+  {
+   "id": "401873023",
+   "date": "2026-10-30T00:15Z",
+   "week": {
+    "number": 8
+   },
+   "season": {
+    "year": 2026,
+    "type": 2,
+    "slug": "regular-season"
+   },
+   "status": {
+    "type": {
+     "id": "1",
+     "name": "STATUS_SCHEDULED",
+     "state": "pre",
+     "completed": false,
+     "description": "Scheduled",
+     "detail": "Thu, October 29th at 8:15 PM EDT",
+     "shortDetail": "10/29 - 8:15 PM EDT"
+    }
+   },
+   "competitions": [
+    {
+     "id": "401873023",
+     "date": "2026-10-30T00:15Z",
+     "neutralSite": false,
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Thu, October 29th at 8:15 PM EDT",
+       "shortDetail": "10/29 - 8:15 PM EDT"
+      }
+     },
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "0",
+       "winner": null,
+       "team": {
+        "id": "9",
+        "abbreviation": "GB",
+        "displayName": "Green Bay Packers"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "0",
+       "winner": null,
+       "team": {
+        "id": "29",
+        "abbreviation": "CAR",
+        "displayName": "Carolina Panthers"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "401873026",
+   "date": "2026-11-01T18:00Z",
+   "week": {
+    "number": 8
+   },
+   "season": {
+    "year": 2026,
+    "type": 2,
+    "slug": "regular-season"
+   },
+   "status": {
+    "type": {
+     "id": "1",
+     "name": "STATUS_SCHEDULED",
+     "state": "pre",
+     "completed": false,
+     "description": "Scheduled",
+     "detail": "Sun, November 1st at 1:00 PM EST",
+     "shortDetail": "11/1 - 1:00 PM EST"
+    }
+   },
+   "competitions": [
+    {
+     "id": "401873026",
+     "date": "2026-11-01T18:00Z",
+     "neutralSite": false,
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, November 1st at 1:00 PM EST",
+       "shortDetail": "11/1 - 1:00 PM EST"
+      }
+     },
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "0",
+       "winner": null,
+       "team": {
+        "id": "2",
+        "abbreviation": "BUF",
+        "displayName": "Buffalo Bills"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "0",
+       "winner": null,
+       "team": {
+        "id": "33",
+        "abbreviation": "BAL",
+        "displayName": "Baltimore Ravens"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "401873031",
+   "date": "2026-11-01T18:00Z",
+   "week": {
+    "number": 8
+   },
+   "season": {
+    "year": 2026,
+    "type": 2,
+    "slug": "regular-season"
+   },
+   "status": {
+    "type": {
+     "id": "1",
+     "name": "STATUS_SCHEDULED",
+     "state": "pre",
+     "completed": false,
+     "description": "Scheduled",
+     "detail": "Sun, November 1st at 1:00 PM EST",
+     "shortDetail": "11/1 - 1:00 PM EST"
+    }
+   },
+   "competitions": [
+    {
+     "id": "401873031",
+     "date": "2026-11-01T18:00Z",
+     "neutralSite": false,
+     "status": {
+      "type": {
+       "id": "1",
+       "name": "STATUS_SCHEDULED",
+       "state": "pre",
+       "completed": false,
+       "description": "Scheduled",
+       "detail": "Sun, November 1st at 1:00 PM EST",
+       "shortDetail": "11/1 - 1:00 PM EST"
+      }
+     },
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "0",
+       "winner": null,
+       "team": {
+        "id": "4",
+        "abbreviation": "CIN",
+        "displayName": "Cincinnati Bengals"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "0",
+       "winner": null,
+       "team": {
+        "id": "10",
+        "abbreviation": "TEN",
+        "displayName": "Tennessee Titans"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
