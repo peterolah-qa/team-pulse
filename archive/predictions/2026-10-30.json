@@ -1,0 +1,55 @@
+{
+ "date": "2026-10-30",
+ "games": {
+  "0022600015": {
+   "game_id": "0022600015",
+   "kind": "regular",
+   "tipoff_utc": "2026-10-30 23:00:00+00:00",
+   "locked_at": "2026-10-29T23:01:08+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-29T23:01:05Z",
+   "neutral": false,
+   "p_home": 0.311,
+   "margin_home": -5.8,
+   "home": {
+    "team": "WAS",
+    "elo": 1300.1,
+    "elo_today": 1303.4,
+    "pulse": 16.4,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -204.9,
+     "roster": 0.4,
+     "players": 0.0,
+     "fatigue": 2.9
+    },
+    "reasons": []
+   },
+   "away": {
+    "team": "CHA",
+    "elo": 1571.0,
+    "elo_today": 1543.4,
+    "pulse": 56.4,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 66.0,
+     "roster": -30.5,
+     "players": -5.8,
+     "fatigue": 8.7
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -30
+     ]
+    ]
+   }
+  }
+ }
+}
