@@ -1,0 +1,379 @@
+{
+ "date": "2026-10-28",
+ "games": {
+  "0022600132": {
+   "game_id": "0022600132",
+   "espn_id": "401909881",
+   "date": "2026-10-28",
+   "kind": "regular",
+   "home": "ATL",
+   "away": "MIA",
+   "pts_home": 117,
+   "pts_away": 129,
+   "box": {
+    "MIA": [
+     {
+      "player": "Davion Mitchell",
+      "min": 34,
+      "pts": 10,
+      "reb": 1,
+      "ast": 10,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Bam Adebayo",
+      "min": 33,
+      "pts": 24,
+      "reb": 9,
+      "ast": 3,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Giannis Antetokounmpo",
+      "min": 31,
+      "pts": 24,
+      "reb": 18,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Pelle Larsson",
+      "min": 31,
+      "pts": 17,
+      "reb": 6,
+      "ast": 8,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Andrew Wiggins",
+      "min": 29,
+      "pts": 18,
+      "reb": 2,
+      "ast": 2,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Bobby Portis",
+      "min": 23,
+      "pts": 11,
+      "reb": 9,
+      "ast": 4,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Tim Hardaway Jr.",
+      "min": 22,
+      "pts": 14,
+      "reb": 3,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Klay Thompson",
+      "min": 17,
+      "pts": 3,
+      "reb": 1,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Dru Smith",
+      "min": 14,
+      "pts": 3,
+      "reb": 0,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nikola Jovic",
+      "min": 7,
+      "pts": 5,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "ATL": [
+     {
+      "player": "Jalen Johnson",
+      "min": 36,
+      "pts": 12,
+      "reb": 9,
+      "ast": 11,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Nickeil Alexander-Walker",
+      "min": 32,
+      "pts": 23,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Onyeka Okongwu",
+      "min": 31,
+      "pts": 11,
+      "reb": 4,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Kingston Flemings",
+      "min": 28,
+      "pts": 23,
+      "reb": 5,
+      "ast": 5,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Dyson Daniels",
+      "min": 28,
+      "pts": 7,
+      "reb": 4,
+      "ast": 7,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Aaron Wiggins",
+      "min": 24,
+      "pts": 10,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Luguentz Dort",
+      "min": 24,
+      "pts": 8,
+      "reb": 3,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "CJ McCollum",
+      "min": 20,
+      "pts": 13,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jock Landale",
+      "min": 17,
+      "pts": 10,
+      "reb": 6,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
+  "0022600133": {
+   "game_id": "0022600133",
+   "espn_id": "401909882",
+   "date": "2026-10-28",
+   "kind": "regular",
+   "home": "CLE",
+   "away": "WAS",
+   "pts_home": 121,
+   "pts_away": 111,
+   "box": {
+    "WAS": [
+     {
+      "player": "Kyshawn George",
+      "min": 38,
+      "pts": 8,
+      "reb": 2,
+      "ast": 11,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Anthony Davis",
+      "min": 34,
+      "pts": 18,
+      "reb": 5,
+      "ast": 3,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Trae Young",
+      "min": 33,
+      "pts": 14,
+      "reb": 5,
+      "ast": 8,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "AJ Dybantsa",
+      "min": 27,
+      "pts": 19,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bilal Coulibaly",
+      "min": 27,
+      "pts": 17,
+      "reb": 2,
+      "ast": 0,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Alex Sarr",
+      "min": 26,
+      "pts": 18,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 4
+     },
+     {
+      "player": "Khris Middleton",
+      "min": 23,
+      "pts": 4,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bub Carrington",
+      "min": 20,
+      "pts": 3,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Deandre Ayton",
+      "min": 12,
+      "pts": 10,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "CLE": [
+     {
+      "player": "James Harden",
+      "min": 34,
+      "pts": 16,
+      "reb": 2,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Evan Mobley",
+      "min": 32,
+      "pts": 24,
+      "reb": 12,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Donovan Mitchell",
+      "min": 31,
+      "pts": 19,
+      "reb": 5,
+      "ast": 7,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jarrett Allen",
+      "min": 30,
+      "pts": 8,
+      "reb": 12,
+      "ast": 2,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "Peyton Watson",
+      "min": 28,
+      "pts": 22,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jaylon Tyson",
+      "min": 21,
+      "pts": 7,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Meleek Thomas",
+      "min": 20,
+      "pts": 10,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Sam Merrill",
+      "min": 20,
+      "pts": 8,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mario Hezonja",
+      "min": 17,
+      "pts": 5,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyrese Proctor",
+      "min": 6,
+      "pts": 2,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
