@@ -5,16 +5,16 @@
    "game_id": "0022600144",
    "kind": "regular",
    "tipoff_utc": "2026-10-30 00:00:00+00:00",
-   "locked_at": "2026-10-29T00:01:01+00:00",
+   "locked_at": "2026-10-29T00:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-29T00:00:59Z",
+   "injuries_timestamp": "2026-10-29T00:30:50Z",
    "neutral": false,
    "p_home": 0.561,
    "margin_home": 1.8,
    "home": {
     "team": "ATL",
     "elo": 1572.6,
-    "elo_today": 1528.9,
+    "elo_today": 1529.2,
     "pulse": 54.0,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
@@ -22,7 +22,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 67.6,
-     "roster": 4.4,
+     "roster": 4.6,
      "players": 0.0,
      "fatigue": -48.0
     },
@@ -36,7 +36,7 @@
    "away": {
     "team": "CLE",
     "elo": 1576.3,
-    "elo_today": 1558.2,
+    "elo_today": 1558.5,
     "pulse": 58.9,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
@@ -44,7 +44,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 71.3,
-     "roster": 35.1,
+     "roster": 35.4,
      "players": 0.0,
      "fatigue": -53.2
     },
@@ -64,24 +64,24 @@
    "game_id": "0022600145",
    "kind": "regular",
    "tipoff_utc": "2026-10-30 00:00:00+00:00",
-   "locked_at": "2026-10-29T00:01:01+00:00",
+   "locked_at": "2026-10-29T00:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-29T00:00:59Z",
+   "injuries_timestamp": "2026-10-29T00:30:50Z",
    "neutral": false,
    "p_home": 0.644,
    "margin_home": 4.3,
    "home": {
     "team": "NOP",
     "elo": 1414.0,
-    "elo_today": 1374.5,
-    "pulse": 28.2,
+    "elo_today": 1374.7,
+    "pulse": 28.3,
     "tier": "Kritický",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -91.0,
-     "roster": 2.5,
+     "roster": 2.7,
      "players": 0.0,
      "fatigue": -42.0
     },
@@ -95,7 +95,7 @@
    "away": {
     "team": "SAC",
     "elo": 1344.7,
-    "elo_today": 1333.4,
+    "elo_today": 1333.7,
     "pulse": 21.4,
     "tier": "Kritický",
     "normal_tier": "Kritický",
@@ -103,7 +103,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -160.3,
-     "roster": -17.5,
+     "roster": -17.2,
      "players": -2.3,
      "fatigue": 8.5
     },
