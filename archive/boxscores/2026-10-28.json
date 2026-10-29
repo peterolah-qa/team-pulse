@@ -2291,6 +2291,211 @@
      }
     ]
    }
+  },
+  "0022600143": {
+   "game_id": "0022600143",
+   "espn_id": "401909892",
+   "date": "2026-10-28",
+   "kind": "regular",
+   "home": "LAC",
+   "away": "LAL",
+   "pts_home": 87,
+   "pts_away": 103,
+   "box": {
+    "LAL": [
+     {
+      "player": "Quentin Grimes",
+      "min": 38,
+      "pts": 23,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Jake LaRavia",
+      "min": 35,
+      "pts": 2,
+      "reb": 10,
+      "ast": 0,
+      "blk": 2,
+      "stl": 3
+     },
+     {
+      "player": "Austin Reaves",
+      "min": 31,
+      "pts": 16,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Sandro Mamukelashvili",
+      "min": 30,
+      "pts": 13,
+      "reb": 8,
+      "ast": 3,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Matisse Thybulle",
+      "min": 28,
+      "pts": 15,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Walker Kessler",
+      "min": 26,
+      "pts": 11,
+      "reb": 9,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Collin Sexton",
+      "min": 21,
+      "pts": 21,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jarred Vanderbilt",
+      "min": 21,
+      "pts": 0,
+      "reb": 7,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jaden Hardy",
+      "min": 9,
+      "pts": 2,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "LAC": [
+     {
+      "player": "Keaton Wagler",
+      "min": 28,
+      "pts": 21,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Derrick Jones Jr.",
+      "min": 28,
+      "pts": 15,
+      "reb": 5,
+      "ast": 0,
+      "blk": 2,
+      "stl": 4
+     },
+     {
+      "player": "Kobe Sanders",
+      "min": 27,
+      "pts": 9,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Kris Dunn",
+      "min": 27,
+      "pts": 5,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Darius Garland",
+      "min": 26,
+      "pts": 14,
+      "reb": 1,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Brook Lopez",
+      "min": 22,
+      "pts": 2,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Gradey Dick",
+      "min": 19,
+      "pts": 5,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Jackson",
+      "min": 19,
+      "pts": 4,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Baba Miller",
+      "min": 17,
+      "pts": 4,
+      "reb": 7,
+      "ast": 1,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Cam Christie",
+      "min": 14,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Pickett",
+      "min": 8,
+      "pts": 4,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nick Martinelli",
+      "min": 6,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
