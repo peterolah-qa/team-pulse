@@ -5,24 +5,24 @@
    "game_id": "0022600147",
    "kind": "regular",
    "tipoff_utc": "2026-10-31 19:00:00+00:00",
-   "locked_at": "2026-10-30T22:00:56+00:00",
+   "locked_at": "2026-10-30T22:30:51+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-30T22:00:51Z",
+   "injuries_timestamp": "2026-10-30T22:30:46Z",
    "neutral": false,
    "p_home": 0.354,
    "margin_home": -4.3,
    "home": {
     "team": "UTA",
     "elo": 1319.2,
-    "elo_today": 1288.8,
-    "pulse": 14.0,
+    "elo_today": 1289.5,
+    "pulse": 14.1,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": -185.8,
-     "roster": -14.1,
+     "roster": -13.4,
      "players": -19.3,
      "fatigue": 3.0
     },
@@ -33,22 +33,22 @@
      ],
      [
       "Sila súpisky",
-      -14
+      -13
      ]
     ]
    },
    "away": {
     "team": "POR",
     "elo": 1522.3,
-    "elo_today": 1489.4,
-    "pulse": 47.4,
+    "elo_today": 1490.1,
+    "pulse": 47.5,
     "tier": "Oslabený",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 17.3,
-     "roster": 27.1,
+     "roster": 27.8,
      "players": -27.5,
      "fatigue": -32.5
     },
@@ -58,12 +58,12 @@
       -40
      ],
      [
-      "Bez Ja Morant",
-      -27
+      "Sila súpisky",
+      28
      ],
      [
-      "Sila súpisky",
-      27
+      "Bez Ja Morant",
+      -27
      ]
     ]
    }
@@ -72,24 +72,24 @@
    "game_id": "0022600148",
    "kind": "regular",
    "tipoff_utc": "2026-10-31 22:00:00+00:00",
-   "locked_at": "2026-10-30T22:00:56+00:00",
+   "locked_at": "2026-10-30T22:30:51+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-30T22:00:51Z",
+   "injuries_timestamp": "2026-10-30T22:30:46Z",
    "neutral": false,
-   "p_home": 0.522,
-   "margin_home": 0.6,
+   "p_home": 0.571,
+   "margin_home": 2.1,
    "home": {
     "team": "CHA",
     "elo": 1571.0,
-    "elo_today": 1486.1,
-    "pulse": 46.9,
+    "elo_today": 1486.8,
+    "pulse": 47.0,
     "tier": "Oslabený",
     "normal_tier": "Stabilný",
     "dropped": true,
     "confidence": "vysoká",
     "layers": {
      "strength": 66.0,
-     "roster": -32.0,
+     "roster": -31.3,
      "players": -5.8,
      "fatigue": -47.0
     },
@@ -100,23 +100,23 @@
      ],
      [
       "Sila súpisky",
-      -32
+      -31
      ]
     ]
    },
    "away": {
     "team": "PHI",
     "elo": 1549.2,
-    "elo_today": 1547.0,
-    "pulse": 57.0,
+    "elo_today": 1507.9,
+    "pulse": 50.5,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
-    "confidence": "nízka",
+    "confidence": "vysoká",
     "layers": {
      "strength": 44.2,
-     "roster": 90.7,
-     "players": -39.9,
+     "roster": 91.4,
+     "players": -79.8,
      "fatigue": -53.0
     },
     "reasons": [
@@ -125,12 +125,12 @@
       91
      ],
      [
-      "2. zápas za 2 dni",
-      -49
+      "Bez Jaylen Brown",
+      -80
      ],
      [
-      "Bez Jaylen Brown (?)",
-      -40
+      "2. zápas za 2 dni",
+      -49
      ]
     ]
    }
