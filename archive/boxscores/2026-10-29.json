@@ -374,6 +374,274 @@
      }
     ]
    }
+  },
+  "0022600146": {
+   "game_id": "0022600146",
+   "espn_id": "401909895",
+   "date": "2026-10-29",
+   "kind": "regular",
+   "home": "POR",
+   "away": "MEM",
+   "pts_home": 103,
+   "pts_away": 124,
+   "box": {
+    "MEM": [
+     {
+      "player": "Cameron Boozer",
+      "min": 28,
+      "pts": 18,
+      "reb": 12,
+      "ast": 12,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cedric Coward",
+      "min": 27,
+      "pts": 17,
+      "reb": 7,
+      "ast": 4,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Jerami Grant",
+      "min": 27,
+      "pts": 2,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jaylen Wells",
+      "min": 25,
+      "pts": 10,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ty Jerome",
+      "min": 24,
+      "pts": 10,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Cam Spencer",
+      "min": 23,
+      "pts": 8,
+      "reb": 6,
+      "ast": 8,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "GG Jackson",
+      "min": 21,
+      "pts": 12,
+      "reb": 7,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zach Edey",
+      "min": 19,
+      "pts": 13,
+      "reb": 7,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Stewart",
+      "min": 16,
+      "pts": 18,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Scotty Pippen Jr.",
+      "min": 14,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Quinten Post",
+      "min": 7,
+      "pts": 10,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Olivier-Maxence Prosper",
+      "min": 3,
+      "pts": 4,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kris Murray",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Taylor Hendricks",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Karim Lopez",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "POR": [
+     {
+      "player": "Deni Avdija",
+      "min": 32,
+      "pts": 24,
+      "reb": 9,
+      "ast": 7,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Damian Lillard",
+      "min": 30,
+      "pts": 9,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Donovan Clingan",
+      "min": 29,
+      "pts": 11,
+      "reb": 8,
+      "ast": 1,
+      "blk": 5,
+      "stl": 1
+     },
+     {
+      "player": "Toumani Camara",
+      "min": 26,
+      "pts": 13,
+      "reb": 2,
+      "ast": 1,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Jrue Holiday",
+      "min": 24,
+      "pts": 6,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ja Morant",
+      "min": 23,
+      "pts": 14,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Scoot Henderson",
+      "min": 19,
+      "pts": 9,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sidy Cissoko",
+      "min": 19,
+      "pts": 4,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Branden Carlson",
+      "min": 12,
+      "pts": 2,
+      "reb": 2,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Micah Potter",
+      "min": 9,
+      "pts": 1,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Vit Krejci",
+      "min": 8,
+      "pts": 2,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "John Tonje",
+      "min": 5,
+      "pts": 5,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Yang Hansen",
+      "min": 5,
+      "pts": 3,
+      "reb": 2,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
