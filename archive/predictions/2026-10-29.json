@@ -123,53 +123,53 @@
    "game_id": "0022600146",
    "kind": "regular",
    "tipoff_utc": "2026-10-30 02:00:00+00:00",
-   "locked_at": "2026-10-30T00:01:08+00:00",
+   "locked_at": "2026-10-30T00:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-30T00:01:04Z",
+   "injuries_timestamp": "2026-10-30T00:30:46Z",
    "neutral": false,
    "p_home": 0.825,
    "margin_home": 11.2,
    "home": {
     "team": "POR",
     "elo": 1556.3,
-    "elo_today": 1594.4,
-    "pulse": 64.9,
+    "elo_today": 1592.3,
+    "pulse": 64.5,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 51.3,
-     "roster": 33.7,
+     "roster": 31.6,
      "players": 0.0,
      "fatigue": 4.4
     },
     "reasons": [
      [
       "Sila súpisky",
-      34
+      32
      ]
     ]
    },
    "away": {
     "team": "MEM",
     "elo": 1380.0,
-    "elo_today": 1358.9,
-    "pulse": 25.6,
+    "elo_today": 1356.7,
+    "pulse": 25.3,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -125.0,
-     "roster": -38.2,
+     "roster": -40.3,
      "players": 0.0,
      "fatigue": 17.1
     },
     "reasons": [
      [
       "Sila súpisky",
-      -38
+      -40
      ],
      [
       "4. zápas výjazdu",
