@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-29T16:06:49+00:00",
+ "generated_at": "2026-10-30T00:58:01+00:00",
  "sport": "nfl",
  "beta": true,
  "model": "nfl-elo-v1",
  "model_qb": "nfl-elo-qb-v1",
- "games_commit": "bacef75dec50984b413f9bb967d33a10f3269cca",
+ "games_commit": "079c4585ab9be4a3d0e7f68f35a2a4c56ff1d753",
  "last_locked": "2026-10-28T19:36:23Z",
  "days": {
   "2026-10-29": [
