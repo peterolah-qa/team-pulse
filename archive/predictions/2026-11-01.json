@@ -5,16 +5,16 @@
    "game_id": "0022600154",
    "kind": "regular",
    "tipoff_utc": "2026-11-01 20:30:00+00:00",
-   "locked_at": "2026-10-31T21:30:49+00:00",
+   "locked_at": "2026-10-31T21:49:09+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-31T21:30:41Z",
+   "injuries_timestamp": "2026-10-31T21:49:00Z",
    "neutral": false,
    "p_home": 0.415,
    "margin_home": -2.5,
    "home": {
     "team": "ORL",
     "elo": 1528.0,
-    "elo_today": 1483.7,
+    "elo_today": 1483.5,
     "pulse": 46.4,
     "tier": "Oslabený",
     "normal_tier": "Stabilný",
@@ -22,7 +22,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 23.0,
-     "roster": 7.9,
+     "roster": 7.8,
      "players": -57.3,
      "fatigue": 5.0
     },
@@ -36,7 +36,7 @@
    "away": {
     "team": "BOS",
     "elo": 1616.3,
-    "elo_today": 1632.4,
+    "elo_today": 1632.2,
     "pulse": 71.2,
     "tier": "Silný",
     "normal_tier": "Stabilný",
@@ -44,7 +44,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 111.3,
-     "roster": 13.4,
+     "roster": 13.2,
      "players": 0.0,
      "fatigue": 2.7
     },
