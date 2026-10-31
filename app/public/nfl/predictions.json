@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-30T15:55:37+00:00",
+ "generated_at": "2026-10-31T00:47:08+00:00",
  "sport": "nfl",
  "beta": true,
  "model": "nfl-elo-v1",
  "model_qb": "nfl-elo-qb-v1",
- "games_commit": "199bd1bd9df1f52bc43e9ebd22ce2872f7aaf3e3",
+ "games_commit": "069aa0170721ace6b2065301273d3b5f6a3f1bbc",
  "last_locked": "2026-10-28T19:36:23Z",
  "days": {
   "2026-11-01": [
@@ -1794,19 +1794,6 @@
   ]
  },
  "results": [
-  {
-   "game_id": "2026_07_NE_CHI",
-   "date": "2026-10-22",
-   "week": 7,
-   "tipoff_utc": "2026-10-23T00:15Z",
-   "kind": "regular",
-   "home": "CHI",
-   "away": "NE",
-   "score_home": 30,
-   "score_away": 24,
-   "p_home": null,
-   "p_home_qb": null
-  },
   {
    "game_id": "2026_07_PIT_NO",
    "date": "2026-10-25",
