@@ -1,15 +1,15 @@
 # Ostrá prevádzka: vyhodnotenie predpovedí
 
-Základná časť: 2026-10-20 – 2026-10-30 · uložené predpovede 81 · s výsledkom 71 · čaká na výsledok 10
+Základná časť: 2026-10-20 – 2026-10-31 · uložené predpovede 88 · s výsledkom 81 · čaká na výsledok 7
 
 Odohrané zápasy bez uloženej predpovede: **0**
 
 | | Ostrá prevádzka | Backtest v1 |
 |:--|--:|--:|
-| Zápasy | 71 | sezóny 2023/24 – 2025/26 |
-| Presnosť | 64,8 % (± 11,1 p. b.) | 67,3 % |
-| Log loss | 0,6365 | 0,5996 |
-| Brier | 0,2230 | 0,2068 |
+| Zápasy | 81 | sezóny 2023/24 – 2025/26 |
+| Presnosť | 63,0 % (± 10,5 p. b.) | 67,3 % |
+| Log loss | 0,6407 | 0,5996 |
+| Brier | 0,2258 | 0,2068 |
 
 Log loss a Brier: nižšie = lepšie. ± je 95 % interval presnosti; pri ~100 zápasoch je asi ±9 p. b., férové porovnanie s backtestom až okolo 500 zápasov.
 
@@ -19,22 +19,32 @@ Keď model dá favoritovi X %, vyhrá favorit naozaj približne X %?
 
 | Pásmo | Zápasy | Predpoveď | Skutočnosť |
 |:--|--:|--:|--:|
-| 50 – 60 % | 14 | 55,7 % | 64,3 % |
-| 60 – 70 % | 23 | 64,4 % | 47,8 % |
-| 70 – 80 % | 17 | 73,6 % | 70,6 % |
-| 80 – 90 % | 16 | 84,2 % | 81,2 % |
+| 50 – 60 % | 16 | 56,1 % | 62,5 % |
+| 60 – 70 % | 28 | 64,4 % | 42,9 % |
+| 70 – 80 % | 18 | 73,9 % | 72,2 % |
+| 80 – 90 % | 18 | 84,1 % | 83,3 % |
 | 90 – 100 % | 1 | 90,3 % | 100,0 % |
 
 ## Podľa istoty
 
 | Istota | Zápasy | Presnosť |
 |:--|--:|--:|
-| vysoká | 71 | 64,8 % |
+| vysoká | 81 | 63,0 % |
 
 ## Posledné zápasy
 
 | Dátum | Zápas | Šanca domácich | Skóre | Tip |
 |:--|:--|--:|:--|:--|
+| 2026-10-30 | DEN @ PHX | 42,9 % | 127 : 120 | ✓ |
+| 2026-10-30 | LAL @ GSW | 40,2 % | 95 : 112 | ✗ |
+| 2026-10-30 | LAC @ MIN | 63,9 % | 101 : 127 | ✓ |
+| 2026-10-30 | HOU @ DAL | 38,1 % | 111 : 116 | ✗ |
+| 2026-10-30 | IND @ MIA | 81,1 % | 125 : 145 | ✓ |
+| 2026-10-30 | ORL @ TOR | 65,6 % | 121 : 114 | ✗ |
+| 2026-10-30 | NYK @ PHI | 37,2 % | 93 : 98 | ✗ |
+| 2026-10-30 | DET @ BKN | 20,8 % | 110 : 94 | ✓ |
+| 2026-10-30 | CHI @ BOS | 85,7 % | 111 : 125 | ✓ |
+| 2026-10-30 | CHA @ WAS | 31,1 % | 79 : 95 | ✗ |
 | 2026-10-29 | MEM @ POR | 82,5 % | 124 : 103 | ✗ |
 | 2026-10-29 | SAC @ NOP | 59,6 % | 120 : 132 | ✓ |
 | 2026-10-29 | CLE @ ATL | 53,2 % | 111 : 114 | ✓ |
@@ -45,16 +55,6 @@ Keď model dá favoritovi X %, vyhrá favorit naozaj približne X %?
 | 2026-10-28 | GSW @ MIN | 68,3 % | 119 : 114 | ✗ |
 | 2026-10-28 | HOU @ MIL | 28,9 % | 132 : 100 | ✓ |
 | 2026-10-28 | NYK @ CHI | 21,8 % | 133 : 127 | ✓ |
-| 2026-10-28 | ORL @ TOR | 60,7 % | 99 : 129 | ✓ |
-| 2026-10-28 | PHI @ IND | 18,8 % | 114 : 109 | ✓ |
-| 2026-10-28 | CHA @ DET | 62,8 % | 89 : 97 | ✓ |
-| 2026-10-28 | WAS @ CLE | 86,5 % | 111 : 121 | ✓ |
-| 2026-10-28 | MIA @ ATL | 66,9 % | 129 : 117 | ✗ |
-| 2026-10-27 | POR @ LAL | 65,7 % | 136 : 129 | ✗ |
-| 2026-10-27 | SAC @ SAS | 90,3 % | 103 : 130 | ✓ |
-| 2026-10-27 | DET @ NYK | 70,1 % | 97 : 111 | ✓ |
-| 2026-10-27 | BKN @ BOS | 87,5 % | 124 : 125 | ✓ |
-| 2026-10-26 | GSW @ DEN | 85,9 % | 134 : 114 | ✗ |
 
 ## Príprava (skúška archívu, mimo G2)
 
