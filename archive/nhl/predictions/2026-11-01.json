@@ -1,0 +1,113 @@
+{
+ "games": {
+  "2026020227": {
+   "game_id": "2026020227",
+   "date": "2026-11-01",
+   "tipoff_utc": "2026-11-01T18:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.71,
+   "tip": "CAR",
+   "home": {
+    "team": "CAR",
+    "elo": 1605.5,
+    "reasons": {}
+   },
+   "away": {
+    "team": "WPG",
+    "elo": 1478.2,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-31T09:15:27+00:00"
+  },
+  "2026020228": {
+   "game_id": "2026020228",
+   "date": "2026-11-01",
+   "tipoff_utc": "2026-11-01T20:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.517,
+   "tip": "WSH",
+   "home": {
+    "team": "WSH",
+    "elo": 1534.7,
+    "reasons": {}
+   },
+   "away": {
+    "team": "MIN",
+    "elo": 1547.8,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-31T09:15:27+00:00"
+  },
+  "2026020229": {
+   "game_id": "2026020229",
+   "date": "2026-11-01",
+   "tipoff_utc": "2026-11-01T21:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.473,
+   "tip": "UTA",
+   "home": {
+    "team": "PHI",
+    "elo": 1476.7,
+    "reasons": {}
+   },
+   "away": {
+    "team": "UTA",
+    "elo": 1517.5,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-31T09:15:27+00:00"
+  },
+  "2026020230": {
+   "game_id": "2026020230",
+   "date": "2026-11-01",
+   "tipoff_utc": "2026-11-01T23:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.523,
+   "tip": "NYR",
+   "home": {
+    "team": "NYR",
+    "elo": 1495.2,
+    "reasons": {}
+   },
+   "away": {
+    "team": "EDM",
+    "elo": 1532.7,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-31T09:15:27+00:00"
+  },
+  "2026020231": {
+   "game_id": "2026020231",
+   "date": "2026-11-01",
+   "tipoff_utc": "2026-11-02T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.525,
+   "tip": "ANA",
+   "home": {
+    "team": "ANA",
+    "elo": 1470.5,
+    "reasons": {}
+   },
+   "away": {
+    "team": "OTT",
+    "elo": 1524.6,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-10-31T09:15:27+00:00"
+  }
+ }
+}
