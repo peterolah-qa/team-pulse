@@ -1,0 +1,246 @@
+{
+ "date": "2026-10-31",
+ "games": {
+  "0022600147": {
+   "game_id": "0022600147",
+   "espn_id": "401909896",
+   "date": "2026-10-31",
+   "kind": "regular",
+   "home": "UTA",
+   "away": "POR",
+   "pts_home": 90,
+   "pts_away": 112,
+   "box": {
+    "POR": [
+     {
+      "player": "Toumani Camara",
+      "min": 31,
+      "pts": 14,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Scoot Henderson",
+      "min": 31,
+      "pts": 14,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Deni Avdija",
+      "min": 30,
+      "pts": 24,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Damian Lillard",
+      "min": 27,
+      "pts": 22,
+      "reb": 5,
+      "ast": 4,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Vit Krejci",
+      "min": 24,
+      "pts": 5,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jrue Holiday",
+      "min": 22,
+      "pts": 14,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Sidy Cissoko",
+      "min": 19,
+      "pts": 1,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Donovan Clingan",
+      "min": 15,
+      "pts": 4,
+      "reb": 9,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Robert Williams III",
+      "min": 14,
+      "pts": 3,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Yang Hansen",
+      "min": 13,
+      "pts": 6,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Chris Youngblood",
+      "min": 7,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Micah Potter",
+      "min": 4,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Branden Carlson",
+      "min": 4,
+      "pts": 0,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "UTA": [
+     {
+      "player": "Ace Bailey",
+      "min": 37,
+      "pts": 9,
+      "reb": 7,
+      "ast": 1,
+      "blk": 3,
+      "stl": 2
+     },
+     {
+      "player": "Darryn Peterson",
+      "min": 36,
+      "pts": 16,
+      "reb": 4,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Lauri Markkanen",
+      "min": 29,
+      "pts": 13,
+      "reb": 6,
+      "ast": 1,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Keyonte George",
+      "min": 29,
+      "pts": 8,
+      "reb": 3,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Isaiah Collier",
+      "min": 20,
+      "pts": 8,
+      "reb": 1,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jaxson Hayes",
+      "min": 20,
+      "pts": 7,
+      "reb": 7,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Brice Sensabaugh",
+      "min": 19,
+      "pts": 12,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Svi Mykhailiuk",
+      "min": 18,
+      "pts": 6,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Okogie",
+      "min": 14,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mo Bamba",
+      "min": 11,
+      "pts": 6,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kyle Filipowski",
+      "min": 6,
+      "pts": 5,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Josh Green",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
