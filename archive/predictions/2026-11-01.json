@@ -5,9 +5,9 @@
    "game_id": "0022600154",
    "kind": "regular",
    "tipoff_utc": "2026-11-01 20:30:00+00:00",
-   "locked_at": "2026-10-31T21:49:09+00:00",
+   "locked_at": "2026-10-31T22:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-10-31T21:49:00Z",
+   "injuries_timestamp": "2026-10-31T22:00:53Z",
    "neutral": false,
    "p_home": 0.415,
    "margin_home": -2.5,
@@ -52,6 +52,65 @@
      [
       "Sila súpisky",
       13
+     ]
+    ]
+   }
+  },
+  "0022600155": {
+   "game_id": "0022600155",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-01 22:00:00+00:00",
+   "locked_at": "2026-10-31T22:01:00+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-10-31T22:00:53Z",
+   "neutral": false,
+   "p_home": 0.631,
+   "margin_home": 3.9,
+   "home": {
+    "team": "IND",
+    "elo": 1371.2,
+    "elo_today": 1300.8,
+    "pulse": 16.0,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -133.8,
+     "roster": 13.1,
+     "players": -88.5,
+     "fatigue": 5.0
+    },
+    "reasons": [
+     [
+      "Bez Tyrese Haliburton, Ivica Zubac",
+      -89
+     ],
+     [
+      "Sila súpisky",
+      13
+     ]
+    ]
+   },
+   "away": {
+    "team": "BKN",
+    "elo": 1289.7,
+    "elo_today": 1271.5,
+    "pulse": 11.1,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -215.3,
+     "roster": -21.8,
+     "players": 0.0,
+     "fatigue": 3.6
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -22
      ]
     ]
    }
