@@ -1,0 +1,192 @@
+{
+ "date": "2026-11-01",
+ "games": {
+  "0022600154": {
+   "game_id": "0022600154",
+   "espn_id": "401909903",
+   "date": "2026-11-01",
+   "kind": "regular",
+   "home": "ORL",
+   "away": "BOS",
+   "pts_home": 97,
+   "pts_away": 108,
+   "box": {
+    "BOS": [
+     {
+      "player": "Jayson Tatum",
+      "min": 34,
+      "pts": 32,
+      "reb": 4,
+      "ast": 7,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Derrick White",
+      "min": 34,
+      "pts": 12,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Paul George",
+      "min": 33,
+      "pts": 17,
+      "reb": 6,
+      "ast": 8,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Neemias Queta",
+      "min": 27,
+      "pts": 8,
+      "reb": 8,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Payton Pritchard",
+      "min": 27,
+      "pts": 7,
+      "reb": 7,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Luka Garza",
+      "min": 21,
+      "pts": 12,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Baylor Scheierman",
+      "min": 20,
+      "pts": 10,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sam Hauser",
+      "min": 17,
+      "pts": 3,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Hugo Gonzalez",
+      "min": 14,
+      "pts": 7,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jordan Walsh",
+      "min": 13,
+      "pts": 0,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "ORL": [
+     {
+      "player": "Desmond Bane",
+      "min": 40,
+      "pts": 19,
+      "reb": 2,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Franz Wagner",
+      "min": 40,
+      "pts": 14,
+      "reb": 6,
+      "ast": 12,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tristan da Silva",
+      "min": 35,
+      "pts": 23,
+      "reb": 10,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Wendell Carter Jr.",
+      "min": 35,
+      "pts": 7,
+      "reb": 10,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Anthony Black",
+      "min": 33,
+      "pts": 23,
+      "reb": 8,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jase Richardson",
+      "min": 26,
+      "pts": 4,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamal Cain",
+      "min": 18,
+      "pts": 5,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nikola Vucevic",
+      "min": 7,
+      "pts": 2,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Goga Bitadze",
+      "min": 5,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
