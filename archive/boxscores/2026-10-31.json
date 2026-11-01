@@ -437,6 +437,238 @@
      }
     ]
    }
+  },
+  "0022600149": {
+   "game_id": "0022600149",
+   "espn_id": "401909898",
+   "date": "2026-10-31",
+   "kind": "regular",
+   "home": "NOP",
+   "away": "ATL",
+   "pts_home": 121,
+   "pts_away": 99,
+   "box": {
+    "ATL": [
+     {
+      "player": "Nickeil Alexander-Walker",
+      "min": 29,
+      "pts": 12,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Luguentz Dort",
+      "min": 29,
+      "pts": 11,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Johnson",
+      "min": 28,
+      "pts": 13,
+      "reb": 7,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Onyeka Okongwu",
+      "min": 28,
+      "pts": 6,
+      "reb": 10,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Dyson Daniels",
+      "min": 27,
+      "pts": 8,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Kingston Flemings",
+      "min": 25,
+      "pts": 12,
+      "reb": 2,
+      "ast": 6,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "CJ McCollum",
+      "min": 24,
+      "pts": 14,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Aaron Wiggins",
+      "min": 23,
+      "pts": 10,
+      "reb": 2,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Asa Newell",
+      "min": 19,
+      "pts": 13,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Corey Kispert",
+      "min": 5,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dorian Finney-Smith",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jock Landale",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "NOP": [
+     {
+      "player": "Jeremiah Fears",
+      "min": 31,
+      "pts": 20,
+      "reb": 5,
+      "ast": 7,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Zion Williamson",
+      "min": 30,
+      "pts": 15,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Trey Murphy III",
+      "min": 29,
+      "pts": 15,
+      "reb": 5,
+      "ast": 5,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Saddiq Bey",
+      "min": 26,
+      "pts": 25,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Herbert Jones",
+      "min": 25,
+      "pts": 11,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Derik Queen",
+      "min": 23,
+      "pts": 8,
+      "reb": 8,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Bennedict Mathurin",
+      "min": 19,
+      "pts": 7,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Karlo Matkovic",
+      "min": 18,
+      "pts": 8,
+      "reb": 10,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Trendon Watford",
+      "min": 18,
+      "pts": 7,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Bryce McGowens",
+      "min": 15,
+      "pts": 3,
+      "reb": 0,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Julian Reese",
+      "min": 3,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "AJ Johnson",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
