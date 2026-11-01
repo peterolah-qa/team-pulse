@@ -241,6 +241,202 @@
      }
     ]
    }
+  },
+  "0022600148": {
+   "game_id": "0022600148",
+   "espn_id": "401909897",
+   "date": "2026-10-31",
+   "kind": "regular",
+   "home": "CHA",
+   "away": "PHI",
+   "pts_home": 104,
+   "pts_away": 109,
+   "box": {
+    "PHI": [
+     {
+      "player": "Tyrese Maxey",
+      "min": 38,
+      "pts": 38,
+      "reb": 4,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jaylen Brown",
+      "min": 38,
+      "pts": 16,
+      "reb": 4,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "VJ Edgecombe",
+      "min": 37,
+      "pts": 10,
+      "reb": 8,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Dean Wade",
+      "min": 30,
+      "pts": 4,
+      "reb": 5,
+      "ast": 10,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Anfernee Simons",
+      "min": 25,
+      "pts": 19,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Adem Bona",
+      "min": 22,
+      "pts": 2,
+      "reb": 5,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Jabari Walker",
+      "min": 19,
+      "pts": 12,
+      "reb": 6,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kentavious Caldwell-Pope",
+      "min": 18,
+      "pts": 3,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Labaron Philon Jr.",
+      "min": 10,
+      "pts": 5,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Justin Edwards",
+      "min": 2,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "CHA": [
+     {
+      "player": "Naz Reid",
+      "min": 36,
+      "pts": 14,
+      "reb": 5,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Dennis Schroder",
+      "min": 35,
+      "pts": 4,
+      "reb": 3,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Brandon Miller",
+      "min": 33,
+      "pts": 24,
+      "reb": 5,
+      "ast": 5,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Grayson Allen",
+      "min": 30,
+      "pts": 27,
+      "reb": 4,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Moussa Diabate",
+      "min": 28,
+      "pts": 10,
+      "reb": 8,
+      "ast": 3,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Royce O'Neale",
+      "min": 23,
+      "pts": 8,
+      "reb": 6,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Kalkbrenner",
+      "min": 19,
+      "pts": 6,
+      "reb": 3,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Sion James",
+      "min": 18,
+      "pts": 4,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tidjane Salaun",
+      "min": 12,
+      "pts": 5,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Christian Anderson",
+      "min": 8,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
