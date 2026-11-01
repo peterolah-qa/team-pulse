@@ -2,7 +2,7 @@
 
 Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené po zápase. Model Elo + únava, v teste 2023/24 – 2025/26 mal presnosť 57,6 %.
 
-**Spolu: 75 z 127 (59,1 %), log loss 0,6653**
+**Spolu: 83 z 137 (60,6 %), log loss 0,6583**
 
 ## Po dňoch
 
@@ -26,13 +26,21 @@ Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené 
 | 28. 10.     |        4 |            4 | 100,0 %    |
 | 29. 10.     |       11 |            6 | 54,5 %     |
 | 30. 10.     |        3 |            2 | 66,7 %     |
+| 31. 10.     |       10 |            8 | 80,0 %     |
 
-## Posledný deň (30. 10.)
+## Posledný deň (31. 10.)
 
 Výsledok je hostia : domáci, pp = po predĺžení, sn = po nájazdoch.
 
 | zápas     | tip   | šanca   | výsledok   |    |
 |:----------|:------|:--------|:-----------|:---|
-| NJD @ VGK | VGK   | 60 %    | 5:2        | ❌  |
-| WPG @ FLA | FLA   | 64 %    | 2:5        | ✅  |
-| SEA @ CGY | CGY   | 52 %    | 2:6        | ✅  |
+| CHI @ BOS | BOS   | 70 %    | 4:5 pp     | ✅  |
+| STL @ DET | DET   | 51 %    | 5:4        | ❌  |
+| TBL @ NSH | TBL   | 58 %    | 4:5 sn     | ❌  |
+| EDM @ NYI | EDM   | 51 %    | 4:0        | ✅  |
+| BUF @ LAK | BUF   | 53 %    | 3:2        | ✅  |
+| OTT @ SJS | OTT   | 56 %    | 5:1        | ✅  |
+| PIT @ MTL | MTL   | 60 %    | 4:5        | ✅  |
+| TOR @ VAN | TOR   | 56 %    | 4:2        | ✅  |
+| CBJ @ DAL | DAL   | 61 %    | 1:3        | ✅  |
+| CGY @ COL | COL   | 73 %    | 2:5        | ✅  |
