@@ -1,0 +1,72 @@
+{
+ "date": "2026-11-02",
+ "games": {
+  "0022600158": {
+   "game_id": "0022600158",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-03 00:00:00+00:00",
+   "locked_at": "2026-11-02T00:01:01+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-02T00:00:55Z",
+   "neutral": false,
+   "p_home": 0.516,
+   "margin_home": 0.5,
+   "home": {
+    "team": "CLE",
+    "elo": 1583.9,
+    "elo_today": 1599.8,
+    "pulse": 65.8,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 78.9,
+     "roster": 27.6,
+     "players": 0.0,
+     "fatigue": -11.7
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      28
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "OKC",
+    "elo": 1660.5,
+    "elo_today": 1665.3,
+    "pulse": 76.7,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 155.5,
+     "roster": 24.6,
+     "players": -36.3,
+     "fatigue": 16.5
+    },
+    "reasons": [
+     [
+      "Bez Chet Holmgren, Jalen Williams",
+      -36
+     ],
+     [
+      "Sila súpisky",
+      25
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ]
+    ]
+   }
+  }
+ }
+}
