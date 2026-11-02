@@ -271,5 +271,13 @@
    "p_podium": 0.000598,
    "p_win_quali": 0.001904
   }
- ]
+ ],
+ "result": {
+  "winner": "max_verstappen",
+  "podium": [
+   "max_verstappen",
+   "hamilton",
+   "antonelli"
+  ]
+ }
 }
