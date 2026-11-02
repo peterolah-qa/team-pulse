@@ -187,6 +187,202 @@
      }
     ]
    }
+  },
+  "0022600155": {
+   "game_id": "0022600155",
+   "espn_id": "401909904",
+   "date": "2026-11-01",
+   "kind": "regular",
+   "home": "IND",
+   "away": "BKN",
+   "pts_home": 90,
+   "pts_away": 98,
+   "box": {
+    "BKN": [
+     {
+      "player": "Julius Randle",
+      "min": 37,
+      "pts": 20,
+      "reb": 5,
+      "ast": 6,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Michael Porter Jr.",
+      "min": 36,
+      "pts": 23,
+      "reb": 9,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Chaney Johnson",
+      "min": 31,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Nolan Traore",
+      "min": 30,
+      "pts": 16,
+      "reb": 2,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Day'Ron Sharpe",
+      "min": 26,
+      "pts": 15,
+      "reb": 13,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Noah Clowney",
+      "min": 24,
+      "pts": 8,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Moritz Wagner",
+      "min": 21,
+      "pts": 14,
+      "reb": 6,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Keon Ellis",
+      "min": 20,
+      "pts": 0,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Terance Mann",
+      "min": 15,
+      "pts": 0,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "IND": [
+     {
+      "player": "Pascal Siakam",
+      "min": 36,
+      "pts": 17,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Andrew Nembhard",
+      "min": 35,
+      "pts": 23,
+      "reb": 3,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Aaron Nesmith",
+      "min": 30,
+      "pts": 11,
+      "reb": 3,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Larry Nance Jr.",
+      "min": 26,
+      "pts": 4,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Quenton Jackson",
+      "min": 24,
+      "pts": 12,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kelly Oubre Jr.",
+      "min": 20,
+      "pts": 11,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jarace Walker",
+      "min": 20,
+      "pts": 6,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Slawson",
+      "min": 18,
+      "pts": 3,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jay Huff",
+      "min": 17,
+      "pts": 0,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Kobe Brown",
+      "min": 15,
+      "pts": 3,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Braden Smith",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
