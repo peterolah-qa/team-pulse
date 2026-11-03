@@ -1890,6 +1890,265 @@
      }
     ]
    }
+  },
+  "0022600167": {
+   "game_id": "0022600167",
+   "espn_id": "401909916",
+   "date": "2026-11-02",
+   "kind": "regular",
+   "home": "HOU",
+   "away": "BOS",
+   "pts_home": 109,
+   "pts_away": 93,
+   "box": {
+    "BOS": [
+     {
+      "player": "Jayson Tatum",
+      "min": 32,
+      "pts": 19,
+      "reb": 6,
+      "ast": 9,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Derrick White",
+      "min": 30,
+      "pts": 7,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Payton Pritchard",
+      "min": 30,
+      "pts": 4,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Baylor Scheierman",
+      "min": 27,
+      "pts": 11,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Neemias Queta",
+      "min": 26,
+      "pts": 16,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sam Hauser",
+      "min": 19,
+      "pts": 2,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Luka Garza",
+      "min": 18,
+      "pts": 14,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Hugo Gonzalez",
+      "min": 16,
+      "pts": 6,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mitchell Robinson",
+      "min": 15,
+      "pts": 4,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jordan Walsh",
+      "min": 12,
+      "pts": 5,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ron Harper Jr.",
+      "min": 7,
+      "pts": 0,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mike Conley",
+      "min": 4,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Chris Cenac Jr.",
+      "min": 2,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dillon Mitchell",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "HOU": [
+     {
+      "player": "Alperen Sengun",
+      "min": 38,
+      "pts": 26,
+      "reb": 7,
+      "ast": 10,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Jabari Smith Jr.",
+      "min": 36,
+      "pts": 14,
+      "reb": 10,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kevin Durant",
+      "min": 33,
+      "pts": 12,
+      "reb": 3,
+      "ast": 3,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Tari Eason",
+      "min": 27,
+      "pts": 13,
+      "reb": 4,
+      "ast": 3,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Fred VanVleet",
+      "min": 27,
+      "pts": 8,
+      "reb": 2,
+      "ast": 9,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Amen Thompson",
+      "min": 25,
+      "pts": 14,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Marcus Smart",
+      "min": 20,
+      "pts": 8,
+      "reb": 4,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Reed Sheppard",
+      "min": 17,
+      "pts": 8,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Oscar Tshiebwe",
+      "min": 7,
+      "pts": 4,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bogdan Bogdanovic",
+      "min": 5,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bruce Thornton",
+      "min": 2,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jae'Sean Tate",
+      "min": 2,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Crawford",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
