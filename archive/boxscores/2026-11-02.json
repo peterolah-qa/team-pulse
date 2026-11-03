@@ -1481,6 +1481,211 @@
     ]
    }
   },
+  "0022600165": {
+   "game_id": "0022600165",
+   "espn_id": "401909914",
+   "date": "2026-11-02",
+   "kind": "regular",
+   "home": "MEM",
+   "away": "NOP",
+   "pts_home": 134,
+   "pts_away": 135,
+   "box": {
+    "NOP": [
+     {
+      "player": "Trey Murphy III",
+      "min": 40,
+      "pts": 18,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jeremiah Fears",
+      "min": 38,
+      "pts": 12,
+      "reb": 4,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Saddiq Bey",
+      "min": 36,
+      "pts": 18,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Zion Williamson",
+      "min": 35,
+      "pts": 25,
+      "reb": 11,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Karlo Matkovic",
+      "min": 29,
+      "pts": 25,
+      "reb": 6,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Herbert Jones",
+      "min": 28,
+      "pts": 9,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Derik Queen",
+      "min": 24,
+      "pts": 20,
+      "reb": 7,
+      "ast": 5,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Trendon Watford",
+      "min": 16,
+      "pts": 4,
+      "reb": 4,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Bennedict Mathurin",
+      "min": 13,
+      "pts": 4,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Bryce McGowens",
+      "min": 6,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "MEM": [
+     {
+      "player": "Cameron Boozer",
+      "min": 38,
+      "pts": 18,
+      "reb": 9,
+      "ast": 5,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Ty Jerome",
+      "min": 37,
+      "pts": 40,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jaylen Wells",
+      "min": 34,
+      "pts": 16,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Cedric Coward",
+      "min": 31,
+      "pts": 10,
+      "reb": 9,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Stewart",
+      "min": 28,
+      "pts": 14,
+      "reb": 5,
+      "ast": 2,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Jerami Grant",
+      "min": 24,
+      "pts": 11,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Cam Spencer",
+      "min": 19,
+      "pts": 13,
+      "reb": 1,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zach Edey",
+      "min": 19,
+      "pts": 6,
+      "reb": 9,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Kris Murray",
+      "min": 19,
+      "pts": 0,
+      "reb": 4,
+      "ast": 1,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "GG Jackson",
+      "min": 16,
+      "pts": 6,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jahmai Mashack",
+      "min": 0,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
+  },
   "0022600166": {
    "game_id": "0022600166",
    "espn_id": "401909915",
