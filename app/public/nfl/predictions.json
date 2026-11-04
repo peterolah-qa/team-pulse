@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-03T17:00:44+00:00",
+ "generated_at": "2026-11-04T01:19:58+00:00",
  "sport": "nfl",
  "beta": true,
  "model": "nfl-elo-v1",
  "model_qb": "nfl-elo-qb-v1",
- "games_commit": "e57d85be0df687783fd1834943fb91893bb43b9f",
+ "games_commit": "10f81a751224e1e222f340fc33e77e84b734b5ea",
  "last_locked": "2026-11-03T17:00:42Z",
  "days": {
   "2026-11-05": [
@@ -2065,19 +2065,6 @@
   ]
  },
  "results": [
-  {
-   "game_id": "2026_07_DAL_PHI",
-   "date": "2026-10-26",
-   "week": 7,
-   "tipoff_utc": "2026-10-27T00:15Z",
-   "kind": "regular",
-   "home": "PHI",
-   "away": "DAL",
-   "score_home": 21,
-   "score_away": 38,
-   "p_home": null,
-   "p_home_qb": null
-  },
   {
    "game_id": "2026_08_CAR_GB",
    "date": "2026-10-29",
