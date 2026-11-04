@@ -5,9 +5,9 @@
    "game_id": "0022600173",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 00:00:00+00:00",
-   "locked_at": "2026-11-04T00:01:06+00:00",
+   "locked_at": "2026-11-04T00:30:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T00:00:59Z",
+   "injuries_timestamp": "2026-11-04T00:30:49Z",
    "neutral": false,
    "p_home": 0.589,
    "margin_home": 2.6,
@@ -64,9 +64,9 @@
    "game_id": "0022600174",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 00:00:00+00:00",
-   "locked_at": "2026-11-04T00:01:06+00:00",
+   "locked_at": "2026-11-04T00:30:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T00:00:59Z",
+   "injuries_timestamp": "2026-11-04T00:30:49Z",
    "neutral": false,
    "p_home": 0.403,
    "margin_home": -2.8,
@@ -106,6 +106,183 @@
      [
       "Bez Jalen Johnson (?)",
       -41
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ]
+    ]
+   }
+  },
+  "0022600175": {
+   "game_id": "0022600175",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-05 00:30:00+00:00",
+   "locked_at": "2026-11-04T00:30:58+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-04T00:30:49Z",
+   "neutral": false,
+   "p_home": 0.811,
+   "margin_home": 10.5,
+   "home": {
+    "team": "BOS",
+    "elo": 1615.8,
+    "elo_today": 1538.2,
+    "pulse": 55.5,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": true,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 110.8,
+     "roster": 11.8,
+     "players": -75.2,
+     "fatigue": -14.1
+    },
+    "reasons": [
+     [
+      "Bez Jayson Tatum (?), Payton Pritchard (?)",
+      -75
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ],
+     [
+      "Sila súpisky",
+      12
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIL",
+    "elo": 1344.2,
+    "elo_today": 1322.5,
+    "pulse": 19.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -160.8,
+     "roster": -33.5,
+     "players": 0.0,
+     "fatigue": 11.8
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -34
+     ]
+    ]
+   }
+  },
+  "0022600176": {
+   "game_id": "0022600176",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-05 00:30:00+00:00",
+   "locked_at": "2026-11-04T00:30:58+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-04T00:30:49Z",
+   "neutral": false,
+   "p_home": 0.345,
+   "margin_home": -4.6,
+   "home": {
+    "team": "BKN",
+    "elo": 1303.0,
+    "elo_today": 1273.0,
+    "pulse": 11.3,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -202.0,
+     "roster": -26.1,
+     "players": 0.0,
+     "fatigue": -4.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -26
+     ]
+    ]
+   },
+   "away": {
+    "team": "CHA",
+    "elo": 1516.7,
+    "elo_today": 1481.3,
+    "pulse": 46.0,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 11.7,
+     "roster": -33.4,
+     "players": -5.8,
+     "fatigue": 3.8
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -33
+     ]
+    ]
+   }
+  },
+  "0022600177": {
+   "game_id": "0022600177",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-05 00:30:00+00:00",
+   "locked_at": "2026-11-04T00:30:58+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-04T00:30:49Z",
+   "neutral": false,
+   "p_home": 0.904,
+   "margin_home": 16.2,
+   "home": {
+    "team": "NYK",
+    "elo": 1685.6,
+    "elo_today": 1724.1,
+    "pulse": 86.5,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 180.6,
+     "roster": 40.9,
+     "players": -4.4,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      41
+     ]
+    ]
+   },
+   "away": {
+    "team": "CHI",
+    "elo": 1358.6,
+    "elo_today": 1349.0,
+    "pulse": 24.0,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -146.4,
+     "roster": -23.7,
+     "players": 0.0,
+     "fatigue": 14.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -24
      ],
      [
       "3. zápas výjazdu",
