@@ -1,6 +1,6 @@
 # Ostrá prevádzka: vyhodnotenie predpovedí
 
-Základná časť: 2026-10-20 – 2026-11-02 · uložené predpovede 107 · s výsledkom 107 · čaká na výsledok 0
+Základná časť: 2026-10-20 – 2026-11-04 · uložené predpovede 121 · s výsledkom 107 · čaká na výsledok 14
 
 Odohrané zápasy bez uloženej predpovede: **0**
 
