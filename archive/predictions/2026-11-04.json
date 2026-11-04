@@ -1,0 +1,118 @@
+{
+ "date": "2026-11-04",
+ "games": {
+  "0022600173": {
+   "game_id": "0022600173",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-05 00:00:00+00:00",
+   "locked_at": "2026-11-04T00:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-04T00:00:59Z",
+   "neutral": false,
+   "p_home": 0.589,
+   "margin_home": 2.6,
+   "home": {
+    "team": "DET",
+    "elo": 1665.8,
+    "elo_today": 1659.4,
+    "pulse": 75.7,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 160.8,
+     "roster": 16.9,
+     "players": -26.8,
+     "fatigue": 3.5
+    },
+    "reasons": [
+     [
+      "Bez Jalen Duren",
+      -27
+     ],
+     [
+      "Sila súpisky",
+      17
+     ]
+    ]
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1571.3,
+    "elo_today": 1665.3,
+    "pulse": 76.7,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 66.3,
+     "roster": 90.2,
+     "players": 0.0,
+     "fatigue": 3.9
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      90
+     ]
+    ]
+   }
+  },
+  "0022600174": {
+   "game_id": "0022600174",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-05 00:00:00+00:00",
+   "locked_at": "2026-11-04T00:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-04T00:00:59Z",
+   "neutral": false,
+   "p_home": 0.403,
+   "margin_home": -2.8,
+   "home": {
+    "team": "WAS",
+    "elo": 1345.7,
+    "elo_today": 1352.4,
+    "pulse": 24.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -159.3,
+     "roster": 2.4,
+     "players": 0.0,
+     "fatigue": 4.2
+    },
+    "reasons": []
+   },
+   "away": {
+    "team": "ATL",
+    "elo": 1539.2,
+    "elo_today": 1510.3,
+    "pulse": 50.9,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 34.2,
+     "roster": -1.2,
+     "players": -41.0,
+     "fatigue": 13.2
+    },
+    "reasons": [
+     [
+      "Bez Jalen Johnson (?)",
+      -41
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ]
+    ]
+   }
+  }
+ }
+}
