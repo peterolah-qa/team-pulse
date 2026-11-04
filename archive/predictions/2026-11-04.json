@@ -5,9 +5,9 @@
    "game_id": "0022600173",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 00:00:00+00:00",
-   "locked_at": "2026-11-04T01:31:01+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T01:30:53Z",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
    "neutral": false,
    "p_home": 0.589,
    "margin_home": 2.6,
@@ -64,9 +64,9 @@
    "game_id": "0022600174",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 00:00:00+00:00",
-   "locked_at": "2026-11-04T01:31:01+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T01:30:53Z",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
    "neutral": false,
    "p_home": 0.403,
    "margin_home": -2.8,
@@ -118,9 +118,9 @@
    "game_id": "0022600175",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 00:30:00+00:00",
-   "locked_at": "2026-11-04T01:31:01+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T01:30:53Z",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
    "neutral": false,
    "p_home": 0.811,
    "margin_home": 10.5,
@@ -181,9 +181,9 @@
    "game_id": "0022600176",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 00:30:00+00:00",
-   "locked_at": "2026-11-04T01:31:01+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T01:30:53Z",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
    "neutral": false,
    "p_home": 0.345,
    "margin_home": -4.6,
@@ -236,9 +236,9 @@
    "game_id": "0022600177",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 00:30:00+00:00",
-   "locked_at": "2026-11-04T01:31:01+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T01:30:53Z",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
    "neutral": false,
    "p_home": 0.904,
    "margin_home": 16.2,
@@ -295,9 +295,9 @@
    "game_id": "0022600178",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 01:00:00+00:00",
-   "locked_at": "2026-11-04T01:31:01+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T01:30:53Z",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
    "neutral": false,
    "p_home": 0.723,
    "margin_home": 6.9,
@@ -354,9 +354,9 @@
    "game_id": "0022600179",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 01:00:00+00:00",
-   "locked_at": "2026-11-04T01:31:01+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T01:30:53Z",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
    "neutral": false,
    "p_home": 0.731,
    "margin_home": 7.2,
@@ -409,9 +409,9 @@
    "game_id": "0022600180",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 01:00:00+00:00",
-   "locked_at": "2026-11-04T01:31:01+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T01:30:53Z",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
    "neutral": false,
    "p_home": 0.662,
    "margin_home": 4.9,
@@ -468,9 +468,9 @@
    "game_id": "0022600181",
    "kind": "regular",
    "tipoff_utc": "2026-11-05 01:30:00+00:00",
-   "locked_at": "2026-11-04T01:31:01+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-04T01:30:53Z",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
    "neutral": false,
    "p_home": 0.745,
    "margin_home": 7.7,
@@ -519,6 +519,136 @@
      [
       "Sila súpisky",
       -11
+     ]
+    ]
+   }
+  },
+  "0022600182": {
+   "game_id": "0022600182",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-05 02:00:00+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
+   "neutral": false,
+   "p_home": 0.726,
+   "margin_home": 7.0,
+   "home": {
+    "team": "DEN",
+    "elo": 1565.5,
+    "elo_today": 1622.7,
+    "pulse": 69.6,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 60.5,
+     "roster": 55.2,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      55
+     ]
+    ]
+   },
+   "away": {
+    "team": "TOR",
+    "elo": 1555.2,
+    "elo_today": 1504.4,
+    "pulse": 49.9,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 50.2,
+     "roster": 35.1,
+     "players": -54.7,
+     "fatigue": -31.2
+    },
+    "reasons": [
+     [
+      "Bez Kawhi Leonard",
+      -55
+     ],
+     [
+      "Hrá vo výške",
+      -40
+     ],
+     [
+      "Sila súpisky",
+      35
+     ]
+    ]
+   }
+  },
+  "0022600183": {
+   "game_id": "0022600183",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-05 02:00:00+00:00",
+   "locked_at": "2026-11-04T02:01:02+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-04T02:00:56Z",
+   "neutral": false,
+   "p_home": 0.473,
+   "margin_home": -0.8,
+   "home": {
+    "team": "PHX",
+    "elo": 1495.3,
+    "elo_today": 1462.6,
+    "pulse": 42.9,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -9.7,
+     "roster": -21.9,
+     "players": 0.0,
+     "fatigue": -10.8
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -22
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "POR",
+    "elo": 1545.6,
+    "elo_today": 1563.1,
+    "pulse": 59.7,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 40.6,
+     "roster": 26.1,
+     "players": -21.7,
+     "fatigue": 13.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      26
+     ],
+     [
+      "Bez Ja Morant",
+      -22
+     ],
+     [
+      "3. zápas výjazdu",
+      14
      ]
     ]
    }
