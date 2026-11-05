@@ -2185,6 +2185,256 @@
      }
     ]
    }
+  },
+  "0022600183": {
+   "game_id": "0022600183",
+   "espn_id": "401909932",
+   "date": "2026-11-04",
+   "kind": "regular",
+   "home": "PHX",
+   "away": "POR",
+   "pts_home": 119,
+   "pts_away": 132,
+   "box": {
+    "POR": [
+     {
+      "player": "Deni Avdija",
+      "min": 35,
+      "pts": 21,
+      "reb": 7,
+      "ast": 12,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Damian Lillard",
+      "min": 33,
+      "pts": 25,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Toumani Camara",
+      "min": 32,
+      "pts": 11,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Donovan Clingan",
+      "min": 29,
+      "pts": 24,
+      "reb": 11,
+      "ast": 1,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "Jrue Holiday",
+      "min": 28,
+      "pts": 15,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Scoot Henderson",
+      "min": 22,
+      "pts": 9,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sidy Cissoko",
+      "min": 21,
+      "pts": 7,
+      "reb": 4,
+      "ast": 4,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Robert Williams III",
+      "min": 16,
+      "pts": 9,
+      "reb": 8,
+      "ast": 1,
+      "blk": 3,
+      "stl": 2
+     },
+     {
+      "player": "Vit Krejci",
+      "min": 12,
+      "pts": 5,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Chris Youngblood",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Branden Carlson",
+      "min": 3,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Micah Potter",
+      "min": 2,
+      "pts": 4,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Yang Hansen",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "PHX": [
+     {
+      "player": "Dillon Brooks",
+      "min": 35,
+      "pts": 15,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Devin Booker",
+      "min": 34,
+      "pts": 33,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jalen Green",
+      "min": 32,
+      "pts": 22,
+      "reb": 2,
+      "ast": 2,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Miles Bridges",
+      "min": 31,
+      "pts": 18,
+      "reb": 7,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Oso Ighodaro",
+      "min": 23,
+      "pts": 9,
+      "reb": 7,
+      "ast": 7,
+      "blk": 3,
+      "stl": 0
+     },
+     {
+      "player": "Collin Gillespie",
+      "min": 23,
+      "pts": 2,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Ryan Dunn",
+      "min": 18,
+      "pts": 2,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Khaman Maluach",
+      "min": 16,
+      "pts": 6,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Luke Kennard",
+      "min": 14,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Duop Reath",
+      "min": 7,
+      "pts": 7,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamaree Bouyea",
+      "min": 3,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Koa Peat",
+      "min": 3,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Pat Spencer",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
