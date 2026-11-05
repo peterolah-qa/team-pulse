@@ -5,16 +5,16 @@
    "game_id": "0022600187",
    "kind": "regular",
    "tipoff_utc": "2026-11-06 02:00:00+00:00",
-   "locked_at": "2026-11-05T03:30:54+00:00",
+   "locked_at": "2026-11-05T04:01:01+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-05T03:30:44Z",
+   "injuries_timestamp": "2026-11-05T04:00:53Z",
    "neutral": false,
    "p_home": 0.561,
    "margin_home": 1.8,
    "home": {
     "team": "PHX",
     "elo": 1495.3,
-    "elo_today": 1426.4,
+    "elo_today": 1426.6,
     "pulse": 36.9,
     "tier": "Kritický",
     "normal_tier": "Oslabený",
@@ -22,7 +22,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -9.7,
-     "roster": -20.9,
+     "roster": -20.7,
      "players": 0.0,
      "fatigue": -48.0
     },
@@ -40,7 +40,7 @@
    "away": {
     "team": "ORL",
     "elo": 1497.5,
-    "elo_today": 1455.0,
+    "elo_today": 1455.1,
     "pulse": 41.7,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
@@ -48,7 +48,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -7.5,
-     "roster": 4.3,
+     "roster": 4.5,
      "players": -47.7,
      "fatigue": 0.8
     },
@@ -64,16 +64,16 @@
    "game_id": "0022600188",
    "kind": "regular",
    "tipoff_utc": "2026-11-06 03:00:00+00:00",
-   "locked_at": "2026-11-05T03:30:54+00:00",
+   "locked_at": "2026-11-05T04:01:01+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-05T03:30:44Z",
+   "injuries_timestamp": "2026-11-05T04:00:53Z",
    "neutral": false,
    "p_home": 0.636,
    "margin_home": 4.0,
    "home": {
     "team": "GSW",
     "elo": 1501.7,
-    "elo_today": 1503.7,
+    "elo_today": 1503.9,
     "pulse": 49.8,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
@@ -81,7 +81,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -3.3,
-     "roster": 20.1,
+     "roster": 20.3,
      "players": -21.0,
      "fatigue": 3.0
     },
@@ -99,7 +99,7 @@
    "away": {
     "team": "MIA",
     "elo": 1493.0,
-    "elo_today": 1469.1,
+    "elo_today": 1469.3,
     "pulse": 44.0,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
@@ -107,7 +107,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -12.0,
-     "roster": 19.5,
+     "roster": 19.7,
      "players": 0.0,
      "fatigue": -43.4
     },
