@@ -5,9 +5,9 @@
    "game_id": "0022600187",
    "kind": "regular",
    "tipoff_utc": "2026-11-06 02:00:00+00:00",
-   "locked_at": "2026-11-05T02:30:53+00:00",
+   "locked_at": "2026-11-05T03:01:04+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-05T02:30:51Z",
+   "injuries_timestamp": "2026-11-05T03:01:00Z",
    "neutral": false,
    "p_home": 0.561,
    "margin_home": 1.8,
@@ -56,6 +56,73 @@
      [
       "Bez Paolo Banchero",
       -48
+     ]
+    ]
+   }
+  },
+  "0022600188": {
+   "game_id": "0022600188",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-06 03:00:00+00:00",
+   "locked_at": "2026-11-05T03:01:04+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-05T03:01:00Z",
+   "neutral": false,
+   "p_home": 0.636,
+   "margin_home": 4.0,
+   "home": {
+    "team": "GSW",
+    "elo": 1501.7,
+    "elo_today": 1503.7,
+    "pulse": 49.8,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -3.3,
+     "roster": 20.1,
+     "players": -21.0,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Bez Jimmy Butler III",
+      -21
+     ],
+     [
+      "Sila súpisky",
+      20
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIA",
+    "elo": 1493.0,
+    "elo_today": 1469.1,
+    "pulse": 44.0,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -12.0,
+     "roster": 19.5,
+     "players": 0.0,
+     "fatigue": -43.4
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Sila súpisky",
+      20
+     ],
+     [
+      "3. zápas výjazdu",
+      14
      ]
     ]
    }
