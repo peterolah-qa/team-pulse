@@ -5,24 +5,24 @@
    "game_id": "0022600187",
    "kind": "regular",
    "tipoff_utc": "2026-11-06 02:00:00+00:00",
-   "locked_at": "2026-11-05T21:01:08+00:00",
+   "locked_at": "2026-11-05T21:30:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-05T21:00:57Z",
+   "injuries_timestamp": "2026-11-05T21:30:55Z",
    "neutral": false,
    "p_home": 0.547,
    "margin_home": 1.4,
    "home": {
     "team": "PHX",
     "elo": 1482.1,
-    "elo_today": 1415.3,
-    "pulse": 35.1,
+    "elo_today": 1413.7,
+    "pulse": 34.8,
     "tier": "Kritický",
     "normal_tier": "Oslabený",
     "dropped": true,
     "confidence": "vysoká",
     "layers": {
      "strength": -22.9,
-     "roster": -18.8,
+     "roster": -20.4,
      "players": 0.0,
      "fatigue": -48.0
     },
@@ -33,22 +33,22 @@
      ],
      [
       "Sila súpisky",
-      -19
+      -20
      ]
     ]
    },
    "away": {
     "team": "ORL",
     "elo": 1497.5,
-    "elo_today": 1455.5,
-    "pulse": 41.7,
+    "elo_today": 1453.9,
+    "pulse": 41.5,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -7.5,
-     "roster": 4.8,
+     "roster": 3.2,
      "players": -47.7,
      "fatigue": 0.8
     },
@@ -64,24 +64,24 @@
    "game_id": "0022600188",
    "kind": "regular",
    "tipoff_utc": "2026-11-06 03:00:00+00:00",
-   "locked_at": "2026-11-05T21:01:08+00:00",
+   "locked_at": "2026-11-05T21:30:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-05T21:00:57Z",
+   "injuries_timestamp": "2026-11-05T21:30:55Z",
    "neutral": false,
    "p_home": 0.629,
    "margin_home": 3.8,
    "home": {
     "team": "GSW",
     "elo": 1501.7,
-    "elo_today": 1504.3,
-    "pulse": 49.9,
+    "elo_today": 1502.6,
+    "pulse": 49.6,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -3.3,
-     "roster": 20.6,
+     "roster": 19.0,
      "players": -21.0,
      "fatigue": 3.0
     },
@@ -92,22 +92,22 @@
      ],
      [
       "Sila súpisky",
-      21
+      19
      ]
     ]
    },
    "away": {
     "team": "MIA",
     "elo": 1498.0,
-    "elo_today": 1476.0,
-    "pulse": 45.2,
+    "elo_today": 1474.4,
+    "pulse": 44.9,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -7.0,
-     "roster": 21.5,
+     "roster": 19.8,
      "players": 0.0,
      "fatigue": -43.4
     },
@@ -118,7 +118,7 @@
      ],
      [
       "Sila súpisky",
-      21
+      20
      ],
      [
       "3. zápas výjazdu",
