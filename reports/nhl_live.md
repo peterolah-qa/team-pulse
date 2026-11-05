@@ -2,7 +2,7 @@
 
 Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené po zápase. Model Elo + únava, v teste 2023/24 – 2025/26 mal presnosť 57,6 %.
 
-**Spolu: 91 z 157 (58,0 %), log loss 0,6618**
+**Spolu: 94 z 161 (58,4 %), log loss 0,6601**
 
 ## Po dňoch
 
@@ -30,21 +30,15 @@ Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené 
 | 1. 11.      |        5 |            2 | 40,0 %     |
 | 2. 11.      |        4 |            2 | 50,0 %     |
 | 3. 11.      |       11 |            4 | 36,4 %     |
+| 4. 11.      |        4 |            3 | 75,0 %     |
 
-## Posledný deň (3. 11.)
+## Posledný deň (4. 11.)
 
 Výsledok je hostia : domáci, pp = po predĺžení, sn = po nájazdoch.
 
 | zápas     | tip   | šanca   | výsledok   |    |
 |:----------|:------|:--------|:-----------|:---|
-| UTA @ TOR | TOR   | 50 %    | 3:2        | ❌  |
-| WPG @ MTL | MTL   | 64 %    | 5:4 pp     | ❌  |
-| DET @ TBL | TBL   | 69 %    | 2:4        | ✅  |
-| STL @ NYR | NYR   | 51 %    | 1:3        | ✅  |
-| MIN @ PHI | MIN   | 56 %    | 4:2        | ✅  |
-| VGK @ PIT | PIT   | 54 %    | 3:2        | ❌  |
-| DAL @ WSH | WSH   | 52 %    | 6:5        | ❌  |
-| COL @ CBJ | COL   | 53 %    | 2:7        | ❌  |
-| EDM @ NJD | EDM   | 51 %    | 3:4 sn     | ❌  |
-| CAR @ NSH | CAR   | 64 %    | 1:4        | ❌  |
-| ANA @ VAN | ANA   | 57 %    | 5:4        | ✅  |
+| OTT @ BUF | BUF   | 56 %    | 2:1        | ❌  |
+| CHI @ FLA | FLA   | 69 %    | 3:5        | ✅  |
+| SJS @ LAK | LAK   | 58 %    | 2:7        | ✅  |
+| CGY @ SEA | SEA   | 53 %    | 1:2 pp     | ✅  |

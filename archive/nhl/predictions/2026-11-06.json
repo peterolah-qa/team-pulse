@@ -1,0 +1,71 @@
+{
+ "games": {
+  "2026020262": {
+   "game_id": "2026020262",
+   "date": "2026-11-06",
+   "tipoff_utc": "2026-11-07T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.643,
+   "tip": "BUF",
+   "home": {
+    "team": "BUF",
+    "elo": 1534.1,
+    "reasons": {}
+   },
+   "away": {
+    "team": "CBJ",
+    "elo": 1500.7,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-05T09:15:27+00:00"
+  },
+  "2026020263": {
+   "game_id": "2026020263",
+   "date": "2026-11-06",
+   "tipoff_utc": "2026-11-07T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.702,
+   "tip": "MIN",
+   "home": {
+    "team": "MIN",
+    "elo": 1556.6,
+    "reasons": {}
+   },
+   "away": {
+    "team": "SJS",
+    "elo": 1433.9,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-05T09:15:27+00:00"
+  },
+  "2026020264": {
+   "game_id": "2026020264",
+   "date": "2026-11-06",
+   "tipoff_utc": "2026-11-07T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.585,
+   "tip": "CGY",
+   "home": {
+    "team": "CGY",
+    "elo": 1463.8,
+    "reasons": {}
+   },
+   "away": {
+    "team": "ANA",
+    "elo": 1477.6,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-05T09:15:27+00:00"
+  }
+ }
+}
