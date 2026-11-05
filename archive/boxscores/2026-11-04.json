@@ -1,0 +1,219 @@
+{
+ "date": "2026-11-04",
+ "games": {
+  "0022600174": {
+   "game_id": "0022600174",
+   "espn_id": "401909923",
+   "date": "2026-11-04",
+   "kind": "regular",
+   "home": "WAS",
+   "away": "ATL",
+   "pts_home": 105,
+   "pts_away": 120,
+   "box": {
+    "ATL": [
+     {
+      "player": "Dyson Daniels",
+      "min": 34,
+      "pts": 8,
+      "reb": 17,
+      "ast": 8,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nickeil Alexander-Walker",
+      "min": 32,
+      "pts": 26,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Onyeka Okongwu",
+      "min": 31,
+      "pts": 14,
+      "reb": 16,
+      "ast": 4,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Luguentz Dort",
+      "min": 31,
+      "pts": 6,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Aaron Wiggins",
+      "min": 29,
+      "pts": 15,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "CJ McCollum",
+      "min": 25,
+      "pts": 15,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Kingston Flemings",
+      "min": 23,
+      "pts": 14,
+      "reb": 3,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zuby Ejiofor",
+      "min": 17,
+      "pts": 11,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Asa Newell",
+      "min": 10,
+      "pts": 2,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Corey Kispert",
+      "min": 8,
+      "pts": 9,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "WAS": [
+     {
+      "player": "Kyshawn George",
+      "min": 35,
+      "pts": 25,
+      "reb": 4,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Trae Young",
+      "min": 34,
+      "pts": 18,
+      "reb": 2,
+      "ast": 6,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "AJ Dybantsa",
+      "min": 32,
+      "pts": 9,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Anthony Davis",
+      "min": 30,
+      "pts": 26,
+      "reb": 10,
+      "ast": 3,
+      "blk": 3,
+      "stl": 0
+     },
+     {
+      "player": "Alex Sarr",
+      "min": 23,
+      "pts": 11,
+      "reb": 9,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Bilal Coulibaly",
+      "min": 23,
+      "pts": 6,
+      "reb": 2,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Bub Carrington",
+      "min": 19,
+      "pts": 0,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tre Johnson",
+      "min": 14,
+      "pts": 3,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Will Riley",
+      "min": 13,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Deandre Ayton",
+      "min": 11,
+      "pts": 5,
+      "reb": 4,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Tre Mann",
+      "min": 3,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Felix Okpara",
+      "min": 3,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
