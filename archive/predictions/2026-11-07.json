@@ -5,24 +5,24 @@
    "game_id": "0022600189",
    "kind": "regular",
    "tipoff_utc": "2026-11-07 22:00:00+00:00",
-   "locked_at": "2026-11-06T22:01:07+00:00",
+   "locked_at": "2026-11-06T22:30:56+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-06T22:01:03Z",
+   "injuries_timestamp": "2026-11-06T22:30:49Z",
    "neutral": true,
    "p_home": 0.201,
    "margin_home": -10.0,
    "home": {
     "team": "IND",
     "elo": 1362.4,
-    "elo_today": 1317.7,
-    "pulse": 18.8,
+    "elo_today": 1318.3,
+    "pulse": 18.9,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -142.6,
-     "roster": 12.7,
+     "roster": 13.2,
      "players": -63.9,
      "fatigue": 6.5
     },
@@ -40,22 +40,22 @@
    "away": {
     "team": "DEN",
     "elo": 1577.0,
-    "elo_today": 1631.5,
-    "pulse": 71.1,
+    "elo_today": 1632.1,
+    "pulse": 71.2,
     "tier": "Silný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 72.0,
-     "roster": 53.3,
+     "roster": 53.9,
      "players": 0.0,
      "fatigue": 1.2
     },
     "reasons": [
      [
       "Sila súpisky",
-      53
+      54
      ]
     ]
    }
