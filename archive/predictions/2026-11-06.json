@@ -5,9 +5,9 @@
    "game_id": "0022600025",
    "kind": "regular",
    "tipoff_utc": "2026-11-07 00:00:00+00:00",
-   "locked_at": "2026-11-06T00:01:12+00:00",
+   "locked_at": "2026-11-06T00:30:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-06T00:01:10Z",
+   "injuries_timestamp": "2026-11-06T00:30:52Z",
    "neutral": false,
    "p_home": 0.811,
    "margin_home": 10.5,
@@ -60,9 +60,9 @@
    "game_id": "0022600026",
    "kind": "regular",
    "tipoff_utc": "2026-11-07 00:00:00+00:00",
-   "locked_at": "2026-11-06T00:01:12+00:00",
+   "locked_at": "2026-11-06T00:30:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-06T00:01:10Z",
+   "injuries_timestamp": "2026-11-06T00:30:52Z",
    "neutral": false,
    "p_home": 0.386,
    "margin_home": -3.3,
@@ -107,6 +107,69 @@
      [
       "Sila súpisky",
       14
+     ]
+    ]
+   }
+  },
+  "0022600027": {
+   "game_id": "0022600027",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-07 00:30:00+00:00",
+   "locked_at": "2026-11-06T00:30:57+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-06T00:30:52Z",
+   "neutral": false,
+   "p_home": 0.459,
+   "margin_home": -1.2,
+   "home": {
+    "team": "CLE",
+    "elo": 1572.5,
+    "elo_today": 1570.0,
+    "pulse": 60.8,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "stredná",
+    "layers": {
+     "strength": 67.5,
+     "roster": 18.5,
+     "players": -11.1,
+     "fatigue": -9.9
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      19
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ],
+     [
+      "Bez Jarrett Allen (?)",
+      -11
+     ]
+    ]
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1584.1,
+    "elo_today": 1682.7,
+    "pulse": 79.6,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 79.1,
+     "roster": 89.2,
+     "players": 0.0,
+     "fatigue": 9.4
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      89
      ]
     ]
    }
