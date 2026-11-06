@@ -64,24 +64,24 @@
    "game_id": "0022600188",
    "kind": "regular",
    "tipoff_utc": "2026-11-06 03:00:00+00:00",
-   "locked_at": "2026-11-06T01:30:53+00:00",
+   "locked_at": "2026-11-06T02:01:06+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-06T01:30:46Z",
+   "injuries_timestamp": "2026-11-06T02:01:03Z",
    "neutral": false,
    "p_home": 0.629,
    "margin_home": 3.8,
    "home": {
     "team": "GSW",
     "elo": 1501.7,
-    "elo_today": 1503.5,
-    "pulse": 49.8,
+    "elo_today": 1504.3,
+    "pulse": 49.9,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -3.3,
-     "roster": 19.9,
+     "roster": 20.6,
      "players": -21.0,
      "fatigue": 3.0
     },
@@ -92,22 +92,22 @@
      ],
      [
       "Sila súpisky",
-      20
+      21
      ]
     ]
    },
    "away": {
     "team": "MIA",
     "elo": 1498.0,
-    "elo_today": 1475.3,
-    "pulse": 45.1,
+    "elo_today": 1476.0,
+    "pulse": 45.2,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -7.0,
-     "roster": 20.7,
+     "roster": 21.5,
      "players": 0.0,
      "fatigue": -43.4
     },
