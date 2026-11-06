@@ -1,0 +1,115 @@
+{
+ "date": "2026-11-06",
+ "games": {
+  "0022600025": {
+   "game_id": "0022600025",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-07 00:00:00+00:00",
+   "locked_at": "2026-11-06T00:01:12+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-06T00:01:10Z",
+   "neutral": false,
+   "p_home": 0.811,
+   "margin_home": 10.5,
+   "home": {
+    "team": "ATL",
+    "elo": 1547.3,
+    "elo_today": 1508.8,
+    "pulse": 50.6,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 42.3,
+     "roster": -0.5,
+     "players": -41.5,
+     "fatigue": 3.6
+    },
+    "reasons": [
+     [
+      "Bez Jalen Johnson (?)",
+      -42
+     ]
+    ]
+   },
+   "away": {
+    "team": "WAS",
+    "elo": 1337.7,
+    "elo_today": 1292.9,
+    "pulse": 14.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": -167.3,
+     "roster": 3.1,
+     "players": -51.6,
+     "fatigue": 3.7
+    },
+    "reasons": [
+     [
+      "Bez Anthony Davis (?)",
+      -52
+     ]
+    ]
+   }
+  },
+  "0022600026": {
+   "game_id": "0022600026",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-07 00:00:00+00:00",
+   "locked_at": "2026-11-06T00:01:12+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-06T00:01:10Z",
+   "neutral": false,
+   "p_home": 0.386,
+   "margin_home": -3.3,
+   "home": {
+    "team": "CHA",
+    "elo": 1500.4,
+    "elo_today": 1461.8,
+    "pulse": 42.8,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -4.6,
+     "roster": -35.2,
+     "players": -6.9,
+     "fatigue": 3.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -35
+     ]
+    ]
+   },
+   "away": {
+    "team": "BOS",
+    "elo": 1617.4,
+    "elo_today": 1634.5,
+    "pulse": 71.6,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 112.4,
+     "roster": 13.7,
+     "players": 0.0,
+     "fatigue": 3.4
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      14
+     ]
+    ]
+   }
+  }
+ }
+}
