@@ -408,9 +408,9 @@
    "game_id": "0022600032",
    "kind": "regular",
    "tipoff_utc": "2026-11-07 03:00:00+00:00",
-   "locked_at": "2026-11-07T01:01:05+00:00",
+   "locked_at": "2026-11-07T01:30:52+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-07T01:01:01Z",
+   "injuries_timestamp": "2026-11-07T01:30:49Z",
    "neutral": false,
    "p_home": 0.67,
    "margin_home": 5.1,
@@ -432,7 +432,7 @@
     "reasons": [
      [
       "Sila súpisky",
-      50
+      51
      ]
     ]
    },
@@ -447,7 +447,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 53.7,
-     "roster": 25.6,
+     "roster": 25.7,
      "players": -20.1,
      "fatigue": 18.2
     },
@@ -471,9 +471,9 @@
    "game_id": "0022600033",
    "kind": "regular",
    "tipoff_utc": "2026-11-07 03:00:00+00:00",
-   "locked_at": "2026-11-07T01:01:05+00:00",
+   "locked_at": "2026-11-07T01:30:52+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-07T01:01:01Z",
+   "injuries_timestamp": "2026-11-07T01:30:49Z",
    "neutral": false,
    "p_home": 0.177,
    "margin_home": -11.1,
@@ -488,7 +488,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -160.8,
-     "roster": -9.7,
+     "roster": -9.6,
      "players": -2.3,
      "fatigue": 2.0
     },
@@ -497,7 +497,7 @@
    "away": {
     "team": "SAS",
     "elo": 1694.9,
-    "elo_today": 1724.2,
+    "elo_today": 1724.3,
     "pulse": 86.5,
     "tier": "Silný",
     "normal_tier": "Silný",
