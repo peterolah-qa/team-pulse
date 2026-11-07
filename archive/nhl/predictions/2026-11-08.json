@@ -1,0 +1,142 @@
+{
+ "games": {
+  "2026020277": {
+   "game_id": "2026020277",
+   "date": "2026-11-08",
+   "tipoff_utc": "2026-11-08T18:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.622,
+   "tip": "BOS",
+   "home": {
+    "team": "BOS",
+    "elo": 1538.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "FLA",
+    "elo": 1516.8,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-07T09:15:26+00:00"
+  },
+  "2026020278": {
+   "game_id": "2026020278",
+   "date": "2026-11-08",
+   "tipoff_utc": "2026-11-08T20:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.541,
+   "tip": "BUF",
+   "home": {
+    "team": "BUF",
+    "elo": 1537.8,
+    "reasons": {}
+   },
+   "away": {
+    "team": "VGK",
+    "elo": 1542.8,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-07T09:15:26+00:00"
+  },
+  "2026020280": {
+   "game_id": "2026020280",
+   "date": "2026-11-08",
+   "tipoff_utc": "2026-11-08T23:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.48,
+   "tip": "TBL",
+   "home": {
+    "team": "WPG",
+    "elo": 1481.5,
+    "reasons": {}
+   },
+   "away": {
+    "team": "TBL",
+    "elo": 1563.6,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-07T09:15:26+00:00"
+  },
+  "2026020279": {
+   "game_id": "2026020279",
+   "date": "2026-11-08",
+   "tipoff_utc": "2026-11-09T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.504,
+   "tip": "TOR",
+   "home": {
+    "team": "TOR",
+    "elo": 1483.0,
+    "reasons": {
+     "back-to-back": -42.5
+    }
+   },
+   "away": {
+    "team": "NJD",
+    "elo": 1514.6,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-07T09:15:26+00:00"
+  },
+  "2026020281": {
+   "game_id": "2026020281",
+   "date": "2026-11-08",
+   "tipoff_utc": "2026-11-09T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.52,
+   "tip": "CGY",
+   "home": {
+    "team": "CGY",
+    "elo": 1459.8,
+    "reasons": {}
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1476.2,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-07T09:15:26+00:00"
+  },
+  "2026020282": {
+   "game_id": "2026020282",
+   "date": "2026-11-08",
+   "tipoff_utc": "2026-11-09T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.572,
+   "tip": "ANA",
+   "home": {
+    "team": "ANA",
+    "elo": 1484.8,
+    "reasons": {
+     "3. zápas za 4 dni": -15.8
+    }
+   },
+   "away": {
+    "team": "PIT",
+    "elo": 1490.7,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-07T09:15:26+00:00"
+  }
+ }
+}
