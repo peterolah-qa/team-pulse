@@ -1,0 +1,64 @@
+{
+ "date": "2026-11-08",
+ "games": {
+  "0022600196": {
+   "game_id": "0022600196",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-08 20:30:00+00:00",
+   "locked_at": "2026-11-07T20:30:55+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-07T20:30:51Z",
+   "neutral": false,
+   "p_home": 0.217,
+   "margin_home": -9.3,
+   "home": {
+    "team": "CHI",
+    "elo": 1355.5,
+    "elo_today": 1330.8,
+    "pulse": 21.0,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -149.5,
+     "roster": -30.9,
+     "players": 0.0,
+     "fatigue": 6.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -31
+     ]
+    ]
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1569.3,
+    "elo_today": 1669.8,
+    "pulse": 77.5,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 64.3,
+     "roster": 87.0,
+     "players": 0.0,
+     "fatigue": 13.6
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      87
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ]
+    ]
+   }
+  }
+ }
+}
