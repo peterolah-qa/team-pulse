@@ -5,53 +5,57 @@
    "game_id": "0022600196",
    "kind": "regular",
    "tipoff_utc": "2026-11-08 20:30:00+00:00",
-   "locked_at": "2026-11-07T23:01:06+00:00",
+   "locked_at": "2026-11-07T23:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-07T23:00:58Z",
+   "injuries_timestamp": "2026-11-07T23:30:42Z",
    "neutral": false,
-   "p_home": 0.217,
-   "margin_home": -9.3,
+   "p_home": 0.253,
+   "margin_home": -7.8,
    "home": {
     "team": "CHI",
     "elo": 1355.5,
-    "elo_today": 1330.9,
-    "pulse": 21.0,
+    "elo_today": 1331.8,
+    "pulse": 21.1,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -149.5,
-     "roster": -30.7,
+     "roster": -29.9,
      "players": 0.0,
      "fatigue": 6.1
     },
     "reasons": [
      [
       "Sila súpisky",
-      -31
+      -30
      ]
     ]
    },
    "away": {
     "team": "PHI",
     "elo": 1569.3,
-    "elo_today": 1669.9,
-    "pulse": 77.5,
+    "elo_today": 1629.6,
+    "pulse": 70.8,
     "tier": "Silný",
     "normal_tier": "Stabilný",
     "dropped": false,
-    "confidence": "vysoká",
+    "confidence": "nízka",
     "layers": {
      "strength": 64.3,
-     "roster": 87.1,
-     "players": 0.0,
+     "roster": 88.0,
+     "players": -41.1,
      "fatigue": 13.6
     },
     "reasons": [
      [
       "Sila súpisky",
-      87
+      88
+     ],
+     [
+      "Bez Joel Embiid (?)",
+      -41
      ],
      [
       "3. zápas výjazdu",
@@ -64,24 +68,24 @@
    "game_id": "0022600197",
    "kind": "regular",
    "tipoff_utc": "2026-11-08 23:00:00+00:00",
-   "locked_at": "2026-11-07T23:01:06+00:00",
+   "locked_at": "2026-11-07T23:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-07T23:00:58Z",
+   "injuries_timestamp": "2026-11-07T23:30:42Z",
    "neutral": false,
    "p_home": 0.686,
    "margin_home": 5.7,
    "home": {
     "team": "DET",
     "elo": 1653.0,
-    "elo_today": 1650.0,
-    "pulse": 74.2,
+    "elo_today": 1650.8,
+    "pulse": 74.3,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 148.0,
-     "roster": 18.9,
+     "roster": 19.7,
      "players": -25.9,
      "fatigue": 4.0
     },
@@ -92,22 +96,22 @@
      ],
      [
       "Sila súpisky",
-      19
+      20
      ]
     ]
    },
    "away": {
     "team": "LAL",
     "elo": 1598.4,
-    "elo_today": 1570.4,
-    "pulse": 60.9,
+    "elo_today": 1571.2,
+    "pulse": 61.0,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "nízka",
     "layers": {
      "strength": 93.4,
-     "roster": 54.3,
+     "roster": 55.1,
      "players": -96.7,
      "fatigue": 14.4
     },
@@ -118,7 +122,7 @@
      ],
      [
       "Sila súpisky",
-      54
+      55
      ],
      [
       "Posun na východ o 3 h",
