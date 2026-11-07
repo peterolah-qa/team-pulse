@@ -1535,6 +1535,202 @@
     ]
    }
   },
+  "0022600032": {
+   "game_id": "0022600032",
+   "espn_id": "401909294",
+   "date": "2026-11-06",
+   "kind": "regular",
+   "home": "LAL",
+   "away": "POR",
+   "pts_home": 124,
+   "pts_away": 118,
+   "box": {
+    "POR": [
+     {
+      "player": "Deni Avdija",
+      "min": 39,
+      "pts": 22,
+      "reb": 9,
+      "ast": 11,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Damian Lillard",
+      "min": 37,
+      "pts": 22,
+      "reb": 0,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jrue Holiday",
+      "min": 31,
+      "pts": 12,
+      "reb": 1,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Toumani Camara",
+      "min": 30,
+      "pts": 18,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Donovan Clingan",
+      "min": 28,
+      "pts": 17,
+      "reb": 11,
+      "ast": 1,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Scoot Henderson",
+      "min": 23,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sidy Cissoko",
+      "min": 22,
+      "pts": 7,
+      "reb": 2,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Robert Williams III",
+      "min": 16,
+      "pts": 9,
+      "reb": 5,
+      "ast": 2,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Chris Youngblood",
+      "min": 11,
+      "pts": 7,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Yang Hansen",
+      "min": 3,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "LAL": [
+     {
+      "player": "Luka Doncic",
+      "min": 38,
+      "pts": 53,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Austin Reaves",
+      "min": 38,
+      "pts": 25,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Walker Kessler",
+      "min": 37,
+      "pts": 16,
+      "reb": 12,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jake LaRavia",
+      "min": 25,
+      "pts": 7,
+      "reb": 8,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Matisse Thybulle",
+      "min": 24,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Ziaire Williams",
+      "min": 20,
+      "pts": 8,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Sandro Mamukelashvili",
+      "min": 20,
+      "pts": 7,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Quentin Grimes",
+      "min": 20,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Collin Sexton",
+      "min": 11,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Adou Thiero",
+      "min": 7,
+      "pts": 4,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
   "0022600033": {
    "game_id": "0022600033",
    "espn_id": "401909295",
