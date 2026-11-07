@@ -5,57 +5,124 @@
    "game_id": "0022600196",
    "kind": "regular",
    "tipoff_utc": "2026-11-08 20:30:00+00:00",
-   "locked_at": "2026-11-07T22:30:52+00:00",
+   "locked_at": "2026-11-07T23:01:06+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-07T22:30:44Z",
+   "injuries_timestamp": "2026-11-07T23:00:58Z",
    "neutral": false,
    "p_home": 0.217,
    "margin_home": -9.3,
    "home": {
     "team": "CHI",
     "elo": 1355.5,
-    "elo_today": 1332.0,
-    "pulse": 21.2,
+    "elo_today": 1330.9,
+    "pulse": 21.0,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -149.5,
-     "roster": -29.6,
+     "roster": -30.7,
      "players": 0.0,
      "fatigue": 6.1
     },
     "reasons": [
      [
       "Sila súpisky",
-      -30
+      -31
      ]
     ]
    },
    "away": {
     "team": "PHI",
     "elo": 1569.3,
-    "elo_today": 1671.0,
-    "pulse": 77.7,
+    "elo_today": 1669.9,
+    "pulse": 77.5,
     "tier": "Silný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 64.3,
-     "roster": 88.2,
+     "roster": 87.1,
      "players": 0.0,
      "fatigue": 13.6
     },
     "reasons": [
      [
       "Sila súpisky",
-      88
+      87
      ],
      [
       "3. zápas výjazdu",
       14
+     ]
+    ]
+   }
+  },
+  "0022600197": {
+   "game_id": "0022600197",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-08 23:00:00+00:00",
+   "locked_at": "2026-11-07T23:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-07T23:00:58Z",
+   "neutral": false,
+   "p_home": 0.686,
+   "margin_home": 5.7,
+   "home": {
+    "team": "DET",
+    "elo": 1653.0,
+    "elo_today": 1650.0,
+    "pulse": 74.2,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 148.0,
+     "roster": 18.9,
+     "players": -25.9,
+     "fatigue": 4.0
+    },
+    "reasons": [
+     [
+      "Bez Jalen Duren",
+      -26
+     ],
+     [
+      "Sila súpisky",
+      19
+     ]
+    ]
+   },
+   "away": {
+    "team": "LAL",
+    "elo": 1598.4,
+    "elo_today": 1570.4,
+    "pulse": 60.9,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 93.4,
+     "roster": 54.3,
+     "players": -96.7,
+     "fatigue": 14.4
+    },
+    "reasons": [
+     [
+      "Bez Luka Dončić (?)",
+      -97
+     ],
+     [
+      "Sila súpisky",
+      54
+     ],
+     [
+      "Posun na východ o 3 h",
+      13
      ]
     ]
    }
