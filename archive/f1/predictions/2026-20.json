@@ -271,5 +271,13 @@
    "p_podium": 0.000455,
    "p_win_quali": 0.001929
   }
- ]
+ ],
+ "result": {
+  "winner": "norris",
+  "podium": [
+   "norris",
+   "max_verstappen",
+   "hadjar"
+  ]
+ }
 }
