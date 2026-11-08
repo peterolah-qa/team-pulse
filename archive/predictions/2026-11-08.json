@@ -5,9 +5,9 @@
    "game_id": "0022600196",
    "kind": "regular",
    "tipoff_utc": "2026-11-08 20:30:00+00:00",
-   "locked_at": "2026-11-08T00:01:07+00:00",
+   "locked_at": "2026-11-08T00:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-08T00:01:00Z",
+   "injuries_timestamp": "2026-11-08T00:30:50Z",
    "neutral": false,
    "p_home": 0.253,
    "margin_home": -7.8,
@@ -68,9 +68,9 @@
    "game_id": "0022600197",
    "kind": "regular",
    "tipoff_utc": "2026-11-08 23:00:00+00:00",
-   "locked_at": "2026-11-08T00:01:07+00:00",
+   "locked_at": "2026-11-08T00:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-08T00:01:00Z",
+   "injuries_timestamp": "2026-11-08T00:30:50Z",
    "neutral": false,
    "p_home": 0.686,
    "margin_home": 5.7,
@@ -135,9 +135,9 @@
    "game_id": "0022600198",
    "kind": "regular",
    "tipoff_utc": "2026-11-09 00:00:00+00:00",
-   "locked_at": "2026-11-08T00:01:07+00:00",
+   "locked_at": "2026-11-08T00:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-08T00:01:00Z",
+   "injuries_timestamp": "2026-11-08T00:30:50Z",
    "neutral": false,
    "p_home": 0.865,
    "margin_home": 13.4,
@@ -190,6 +190,60 @@
      [
       "Sila súpisky",
       -10
+     ]
+    ]
+   }
+  },
+  "0022600199": {
+   "game_id": "0022600199",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-09 00:30:00+00:00",
+   "locked_at": "2026-11-08T00:30:54+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-08T00:30:50Z",
+   "neutral": false,
+   "p_home": 0.788,
+   "margin_home": 9.5,
+   "home": {
+    "team": "DAL",
+    "elo": 1435.8,
+    "elo_today": 1442.4,
+    "pulse": 39.6,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -69.2,
+     "roster": 4.6,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": []
+   },
+   "away": {
+    "team": "BKN",
+    "elo": 1319.4,
+    "elo_today": 1255.1,
+    "pulse": 8.4,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -185.6,
+     "roster": -23.2,
+     "players": 0.0,
+     "fatigue": -41.1
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Sila súpisky",
+      -23
      ]
     ]
    }
