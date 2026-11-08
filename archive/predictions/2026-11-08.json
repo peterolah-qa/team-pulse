@@ -5,9 +5,9 @@
    "game_id": "0022600196",
    "kind": "regular",
    "tipoff_utc": "2026-11-08 20:30:00+00:00",
-   "locked_at": "2026-11-08T00:30:54+00:00",
+   "locked_at": "2026-11-08T01:01:04+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-08T00:30:50Z",
+   "injuries_timestamp": "2026-11-08T01:00:58Z",
    "neutral": false,
    "p_home": 0.253,
    "margin_home": -7.8,
@@ -68,9 +68,9 @@
    "game_id": "0022600197",
    "kind": "regular",
    "tipoff_utc": "2026-11-08 23:00:00+00:00",
-   "locked_at": "2026-11-08T00:30:54+00:00",
+   "locked_at": "2026-11-08T01:01:04+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-08T00:30:50Z",
+   "injuries_timestamp": "2026-11-08T01:00:58Z",
    "neutral": false,
    "p_home": 0.686,
    "margin_home": 5.7,
@@ -135,9 +135,9 @@
    "game_id": "0022600198",
    "kind": "regular",
    "tipoff_utc": "2026-11-09 00:00:00+00:00",
-   "locked_at": "2026-11-08T00:30:54+00:00",
+   "locked_at": "2026-11-08T01:01:04+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-08T00:30:50Z",
+   "injuries_timestamp": "2026-11-08T01:00:58Z",
    "neutral": false,
    "p_home": 0.865,
    "margin_home": 13.4,
@@ -198,9 +198,9 @@
    "game_id": "0022600199",
    "kind": "regular",
    "tipoff_utc": "2026-11-09 00:30:00+00:00",
-   "locked_at": "2026-11-08T00:30:54+00:00",
+   "locked_at": "2026-11-08T01:01:04+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-08T00:30:50Z",
+   "injuries_timestamp": "2026-11-08T01:00:58Z",
    "neutral": false,
    "p_home": 0.788,
    "margin_home": 9.5,
@@ -244,6 +244,61 @@
      [
       "Sila súpisky",
       -23
+     ]
+    ]
+   }
+  },
+  "0022600200": {
+   "game_id": "0022600200",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-09 01:00:00+00:00",
+   "locked_at": "2026-11-08T01:01:04+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-08T01:00:58Z",
+   "neutral": false,
+   "p_home": 0.2,
+   "margin_home": -10.0,
+   "home": {
+    "team": "MIL",
+    "elo": 1335.1,
+    "elo_today": 1306.4,
+    "pulse": 16.9,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -169.9,
+     "roster": -30.8,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -31
+     ]
+    ]
+   },
+   "away": {
+    "team": "BOS",
+    "elo": 1639.5,
+    "elo_today": 1665.4,
+    "pulse": 76.7,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 134.5,
+     "roster": 17.7,
+     "players": 0.0,
+     "fatigue": 8.2
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      18
      ]
     ]
    }
