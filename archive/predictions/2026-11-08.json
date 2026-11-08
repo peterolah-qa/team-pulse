@@ -5,9 +5,9 @@
    "game_id": "0022600196",
    "kind": "regular",
    "tipoff_utc": "2026-11-08 20:30:00+00:00",
-   "locked_at": "2026-11-07T23:30:53+00:00",
+   "locked_at": "2026-11-08T00:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-07T23:30:42Z",
+   "injuries_timestamp": "2026-11-08T00:01:00Z",
    "neutral": false,
    "p_home": 0.253,
    "margin_home": -7.8,
@@ -68,9 +68,9 @@
    "game_id": "0022600197",
    "kind": "regular",
    "tipoff_utc": "2026-11-08 23:00:00+00:00",
-   "locked_at": "2026-11-07T23:30:53+00:00",
+   "locked_at": "2026-11-08T00:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-07T23:30:42Z",
+   "injuries_timestamp": "2026-11-08T00:01:00Z",
    "neutral": false,
    "p_home": 0.686,
    "margin_home": 5.7,
@@ -127,6 +127,69 @@
      [
       "Posun na východ o 3 h",
       13
+     ]
+    ]
+   }
+  },
+  "0022600198": {
+   "game_id": "0022600198",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-09 00:00:00+00:00",
+   "locked_at": "2026-11-08T00:01:07+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-08T00:01:00Z",
+   "neutral": false,
+   "p_home": 0.865,
+   "margin_home": 13.4,
+   "home": {
+    "team": "MIN",
+    "elo": 1619.9,
+    "elo_today": 1582.3,
+    "pulse": 62.9,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 114.9,
+     "roster": -6.4,
+     "players": -36.3,
+     "fatigue": 5.1
+    },
+    "reasons": [
+     [
+      "Bez Anthony Edwards",
+      -36
+     ]
+    ]
+   },
+   "away": {
+    "team": "UTA",
+    "elo": 1299.0,
+    "elo_today": 1284.8,
+    "pulse": 13.3,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": -206.0,
+     "roster": -10.0,
+     "players": -21.5,
+     "fatigue": 17.3
+    },
+    "reasons": [
+     [
+      "Bez Lauri Markkanen (?)",
+      -22
+     ],
+     [
+      "4. zápas výjazdu",
+      19
+     ],
+     [
+      "Sila súpisky",
+      -10
      ]
     ]
    }
