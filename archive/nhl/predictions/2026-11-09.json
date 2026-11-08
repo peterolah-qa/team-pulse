@@ -1,0 +1,71 @@
+{
+ "games": {
+  "2026020283": {
+   "game_id": "2026020283",
+   "date": "2026-11-09",
+   "tipoff_utc": "2026-11-10T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.601,
+   "tip": "EDM",
+   "home": {
+    "team": "EDM",
+    "elo": 1538.5,
+    "reasons": {}
+   },
+   "away": {
+    "team": "NYR",
+    "elo": 1499.0,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-08T09:15:24+00:00"
+  },
+  "2026020284": {
+   "game_id": "2026020284",
+   "date": "2026-11-09",
+   "tipoff_utc": "2026-11-10T02:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.488,
+   "tip": "PHI",
+   "home": {
+    "team": "VAN",
+    "elo": 1394.4,
+    "reasons": {}
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1476.2,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-08T09:15:24+00:00"
+  },
+  "2026020285": {
+   "game_id": "2026020285",
+   "date": "2026-11-09",
+   "tipoff_utc": "2026-11-10T03:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.444,
+   "tip": "NYI",
+   "home": {
+    "team": "SJS",
+    "elo": 1430.0,
+    "reasons": {
+     "3. zápas za 4 dni": -15.8
+    }
+   },
+   "away": {
+    "team": "NYI",
+    "elo": 1483.5,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-08T09:15:24+00:00"
+  }
+ }
+}
