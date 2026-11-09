@@ -374,6 +374,247 @@
      }
     ]
    }
+  },
+  "0022600198": {
+   "game_id": "0022600198",
+   "espn_id": "401909947",
+   "date": "2026-11-08",
+   "kind": "regular",
+   "home": "MIN",
+   "away": "UTA",
+   "pts_home": 115,
+   "pts_away": 100,
+   "box": {
+    "UTA": [
+     {
+      "player": "Darryn Peterson",
+      "min": 35,
+      "pts": 26,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ace Bailey",
+      "min": 32,
+      "pts": 7,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Keyonte George",
+      "min": 30,
+      "pts": 19,
+      "reb": 5,
+      "ast": 8,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jaxson Hayes",
+      "min": 29,
+      "pts": 18,
+      "reb": 6,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Josh Green",
+      "min": 28,
+      "pts": 10,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mo Bamba",
+      "min": 17,
+      "pts": 3,
+      "reb": 3,
+      "ast": 1,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Josh Okogie",
+      "min": 17,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Isaiah Collier",
+      "min": 16,
+      "pts": 6,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kyle Filipowski",
+      "min": 15,
+      "pts": 9,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Brice Sensabaugh",
+      "min": 13,
+      "pts": 2,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Svi Mykhailiuk",
+      "min": 6,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tony Bradley",
+      "min": 2,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "MIN": [
+     {
+      "player": "Jaden McDaniels",
+      "min": 33,
+      "pts": 16,
+      "reb": 6,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Rudy Gobert",
+      "min": 31,
+      "pts": 10,
+      "reb": 15,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ayo Dosunmu",
+      "min": 30,
+      "pts": 26,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "LaMelo Ball",
+      "min": 30,
+      "pts": 24,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jonathan Kuminga",
+      "min": 25,
+      "pts": 4,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Trey Lyles",
+      "min": 21,
+      "pts": 9,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jaylen Clark",
+      "min": 19,
+      "pts": 3,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Terrence Shannon Jr.",
+      "min": 18,
+      "pts": 5,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Joan Beringer",
+      "min": 16,
+      "pts": 4,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Bones Hyland",
+      "min": 13,
+      "pts": 14,
+      "reb": 2,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Cody Williams",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Evans",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Rocco Zikarsky",
+      "min": 2,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
