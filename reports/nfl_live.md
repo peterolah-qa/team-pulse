@@ -2,16 +2,16 @@
 
 Model `nfl-elo-v1` (Elo z brány G0-NFL: K 20, výhoda domáceho 48, prenos 0,6), tipy zamknuté pred výkopom (`team_pulse.nfl.predict`), výsledky z nflverse games.csv (zdroj nflverse / Lee Sharpe). Brána G2 2026-10-29 – 2027-01-10: log loss ≤ 0,6620 (`docs/gate-nfl-G2.md`).
 
-Stav k 2026-11-09 00:52 UTC: zamknutých tipov 29, vyhodnotených 27, čaká na výsledok 2.
+Stav k 2026-11-09 19:47 UTC: zamknutých tipov 29, vyhodnotených 28, čaká na výsledok 1.
 
-**Spolu: 21 z 27 (77,8 %), log loss 0,5193, Brier 0,1699**
+**Spolu: 22 z 28 (78,6 %), log loss 0,5124, Brier 0,1666**
 
 ## Po týždňoch
 
 |   týždeň |   zápasy |   tip vyšiel | presnosť   | log loss   |
 |---------:|---------:|-------------:|:-----------|:-----------|
 |        8 |       14 |           10 | 71,4 %     | 0,5423     |
-|        9 |       13 |           11 | 84,6 %     | 0,4947     |
+|        9 |       14 |           12 | 85,7 %     | 0,4826     |
 
 ## Posledný týždeň (9.)
 
@@ -32,3 +32,4 @@ Výsledok je hostia : domáci.
 | LV @ SF   | SF    | 80 %    | 17:38      | ✅  |
 | ARI @ SEA | SEA   | 82 %    | 3:17       | ✅  |
 | GB @ NE   | NE    | 66 %    | 45:27      | ❌  |
+| TB @ CHI  | CHI   | 72 %    | 24:27      | ✅  |
