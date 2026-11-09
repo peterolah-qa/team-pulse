@@ -1115,6 +1115,452 @@
      }
     ]
    }
+  },
+  "0022600201": {
+   "game_id": "0022600201",
+   "espn_id": "401909950",
+   "date": "2026-11-08",
+   "kind": "regular",
+   "home": "LAC",
+   "away": "NOP",
+   "pts_home": 139,
+   "pts_away": 123,
+   "box": {
+    "NOP": [
+     {
+      "player": "Zion Williamson",
+      "min": 31,
+      "pts": 25,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Trey Murphy III",
+      "min": 30,
+      "pts": 26,
+      "reb": 7,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jeremiah Fears",
+      "min": 29,
+      "pts": 25,
+      "reb": 6,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Dejounte Murray",
+      "min": 28,
+      "pts": 6,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Saddiq Bey",
+      "min": 26,
+      "pts": 13,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Derik Queen",
+      "min": 21,
+      "pts": 8,
+      "reb": 5,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Herbert Jones",
+      "min": 20,
+      "pts": 4,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Karlo Matkovic",
+      "min": 19,
+      "pts": 3,
+      "reb": 3,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Trendon Watford",
+      "min": 17,
+      "pts": 5,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bennedict Mathurin",
+      "min": 9,
+      "pts": 6,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "AJ Johnson",
+      "min": 3,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Julian Reese",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bryce McGowens",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "LAC": [
+     {
+      "player": "Darius Garland",
+      "min": 32,
+      "pts": 24,
+      "reb": 0,
+      "ast": 10,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Derrick Jones Jr.",
+      "min": 29,
+      "pts": 8,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Brook Lopez",
+      "min": 26,
+      "pts": 20,
+      "reb": 7,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Rui Hachimura",
+      "min": 26,
+      "pts": 14,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kris Dunn",
+      "min": 24,
+      "pts": 14,
+      "reb": 5,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kobe Sanders",
+      "min": 22,
+      "pts": 8,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Baba Miller",
+      "min": 20,
+      "pts": 12,
+      "reb": 5,
+      "ast": 4,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Max Strus",
+      "min": 19,
+      "pts": 7,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Keaton Wagler",
+      "min": 18,
+      "pts": 15,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Gradey Dick",
+      "min": 17,
+      "pts": 15,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Nick Martinelli",
+      "min": 2,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jalen Pickett",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cam Christie",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
+  "0022600202": {
+   "game_id": "0022600202",
+   "espn_id": "401909951",
+   "date": "2026-11-08",
+   "kind": "regular",
+   "home": "SAC",
+   "away": "MIA",
+   "pts_home": 108,
+   "pts_away": 114,
+   "box": {
+    "MIA": [
+     {
+      "player": "Davion Mitchell",
+      "min": 40,
+      "pts": 17,
+      "reb": 3,
+      "ast": 11,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Giannis Antetokounmpo",
+      "min": 34,
+      "pts": 29,
+      "reb": 14,
+      "ast": 3,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Bam Adebayo",
+      "min": 34,
+      "pts": 18,
+      "reb": 8,
+      "ast": 4,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Klay Thompson",
+      "min": 32,
+      "pts": 23,
+      "reb": 2,
+      "ast": 4,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Andrew Wiggins",
+      "min": 32,
+      "pts": 6,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Pelle Larsson",
+      "min": 22,
+      "pts": 11,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Bobby Portis",
+      "min": 20,
+      "pts": 4,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Conwell",
+      "min": 19,
+      "pts": 6,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tim Hardaway Jr.",
+      "min": 7,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "SAC": [
+     {
+      "player": "Darius Acuff Jr.",
+      "min": 39,
+      "pts": 32,
+      "reb": 5,
+      "ast": 10,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Precious Achiuwa",
+      "min": 36,
+      "pts": 7,
+      "reb": 14,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "De'Andre Hunter",
+      "min": 31,
+      "pts": 14,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zach LaVine",
+      "min": 25,
+      "pts": 15,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Keegan Murray",
+      "min": 23,
+      "pts": 10,
+      "reb": 1,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Malik Monk",
+      "min": 21,
+      "pts": 9,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Leaky Black",
+      "min": 20,
+      "pts": 6,
+      "reb": 5,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Dylan Cardwell",
+      "min": 18,
+      "pts": 4,
+      "reb": 9,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Daeqwon Plowden",
+      "min": 12,
+      "pts": 6,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Emanuel Sharp",
+      "min": 12,
+      "pts": 5,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jonathan Mogbo",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
