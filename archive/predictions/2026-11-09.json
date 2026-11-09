@@ -5,9 +5,9 @@
    "game_id": "0022600203",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T00:30:54+00:00",
+   "locked_at": "2026-11-09T01:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T00:30:53Z",
+   "injuries_timestamp": "2026-11-09T01:00:55Z",
    "neutral": false,
    "p_home": 0.745,
    "margin_home": 7.8,
@@ -63,9 +63,9 @@
    "game_id": "0022600204",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T00:30:54+00:00",
+   "locked_at": "2026-11-09T01:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T00:30:53Z",
+   "injuries_timestamp": "2026-11-09T01:00:55Z",
    "neutral": false,
    "p_home": 0.415,
    "margin_home": -2.5,
@@ -118,9 +118,9 @@
    "game_id": "0022600205",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T00:30:54+00:00",
+   "locked_at": "2026-11-09T01:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T00:30:53Z",
+   "injuries_timestamp": "2026-11-09T01:00:55Z",
    "neutral": false,
    "p_home": 0.871,
    "margin_home": 13.8,
@@ -185,9 +185,9 @@
    "game_id": "0022600206",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:30:00+00:00",
-   "locked_at": "2026-11-09T00:30:54+00:00",
+   "locked_at": "2026-11-09T01:01:00+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T00:30:53Z",
+   "injuries_timestamp": "2026-11-09T01:00:55Z",
    "neutral": false,
    "p_home": 0.707,
    "margin_home": 6.3,
@@ -240,6 +240,65 @@
      [
       "Sila súpisky",
       -23
+     ]
+    ]
+   }
+  },
+  "0022600207": {
+   "game_id": "0022600207",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-10 01:00:00+00:00",
+   "locked_at": "2026-11-09T01:01:00+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-09T01:00:55Z",
+   "neutral": false,
+   "p_home": 0.681,
+   "margin_home": 5.5,
+   "home": {
+    "team": "DAL",
+    "elo": 1435.8,
+    "elo_today": 1395.0,
+    "pulse": 31.7,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -69.2,
+     "roster": 7.3,
+     "players": 0.0,
+     "fatigue": -48.0
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -43
+     ]
+    ]
+   },
+   "away": {
+    "team": "IND",
+    "elo": 1357.9,
+    "elo_today": 1320.1,
+    "pulse": 19.2,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -147.1,
+     "roster": 16.2,
+     "players": -57.1,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Bez Tyrese Haliburton",
+      -57
+     ],
+     [
+      "Sila súpisky",
+      16
      ]
     ]
    }
