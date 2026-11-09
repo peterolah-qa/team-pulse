@@ -5,9 +5,9 @@
    "game_id": "0022600203",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T00:01:05+00:00",
+   "locked_at": "2026-11-09T00:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T00:00:59Z",
+   "injuries_timestamp": "2026-11-09T00:30:53Z",
    "neutral": false,
    "p_home": 0.745,
    "margin_home": 7.8,
@@ -63,9 +63,9 @@
    "game_id": "0022600204",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T00:01:05+00:00",
+   "locked_at": "2026-11-09T00:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T00:00:59Z",
+   "injuries_timestamp": "2026-11-09T00:30:53Z",
    "neutral": false,
    "p_home": 0.415,
    "margin_home": -2.5,
@@ -118,9 +118,9 @@
    "game_id": "0022600205",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T00:01:05+00:00",
+   "locked_at": "2026-11-09T00:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T00:00:59Z",
+   "injuries_timestamp": "2026-11-09T00:30:53Z",
    "neutral": false,
    "p_home": 0.871,
    "margin_home": 13.8,
@@ -177,6 +177,69 @@
      [
       "3. zápas výjazdu",
       14
+     ]
+    ]
+   }
+  },
+  "0022600206": {
+   "game_id": "0022600206",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-10 00:30:00+00:00",
+   "locked_at": "2026-11-09T00:30:54+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-09T00:30:53Z",
+   "neutral": false,
+   "p_home": 0.707,
+   "margin_home": 6.3,
+   "home": {
+    "team": "TOR",
+    "elo": 1551.1,
+    "elo_today": 1484.6,
+    "pulse": 46.6,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": true,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 46.1,
+     "roster": 41.1,
+     "players": -97.2,
+     "fatigue": -10.5
+    },
+    "reasons": [
+     [
+      "Bez Scottie Barnes (?), Kawhi Leonard",
+      -97
+     ],
+     [
+      "Sila súpisky",
+      41
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "MEM",
+    "elo": 1401.5,
+    "elo_today": 1385.3,
+    "pulse": 30.0,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -103.5,
+     "roster": -23.3,
+     "players": 0.0,
+     "fatigue": 7.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -23
      ]
     ]
    }
