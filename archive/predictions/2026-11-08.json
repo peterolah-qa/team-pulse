@@ -299,9 +299,9 @@
    "game_id": "0022600201",
    "kind": "regular",
    "tipoff_utc": "2026-11-09 02:00:00+00:00",
-   "locked_at": "2026-11-09T01:01:00+00:00",
+   "locked_at": "2026-11-09T01:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:00:55Z",
+   "injuries_timestamp": "2026-11-09T01:30:47Z",
    "neutral": false,
    "p_home": 0.606,
    "margin_home": 3.1,
@@ -349,31 +349,31 @@
    "game_id": "0022600202",
    "kind": "regular",
    "tipoff_utc": "2026-11-09 02:00:00+00:00",
-   "locked_at": "2026-11-09T01:01:00+00:00",
+   "locked_at": "2026-11-09T01:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:00:55Z",
+   "injuries_timestamp": "2026-11-09T01:30:47Z",
    "neutral": false,
-   "p_home": 0.305,
-   "margin_home": -5.9,
+   "p_home": 0.277,
+   "margin_home": -6.9,
    "home": {
     "team": "SAC",
     "elo": 1340.6,
-    "elo_today": 1285.9,
-    "pulse": 13.5,
+    "elo_today": 1257.8,
+    "pulse": 8.8,
     "tier": "Kritický",
     "normal_tier": "Kritický",
-    "dropped": false,
-    "confidence": "nízka",
+    "dropped": true,
+    "confidence": "vysoká",
     "layers": {
      "strength": -164.4,
      "roster": -3.0,
-     "players": -53.7,
+     "players": -81.8,
      "fatigue": 2.0
     },
     "reasons": [
      [
-      "Bez Domantas Sabonis (?), Maxime Raynaud",
-      -54
+      "Bez Domantas Sabonis, Maxime Raynaud",
+      -82
      ]
     ]
    },

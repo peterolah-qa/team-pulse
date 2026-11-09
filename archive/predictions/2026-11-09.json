@@ -5,9 +5,9 @@
    "game_id": "0022600203",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T01:01:00+00:00",
+   "locked_at": "2026-11-09T01:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:00:55Z",
+   "injuries_timestamp": "2026-11-09T01:30:47Z",
    "neutral": false,
    "p_home": 0.745,
    "margin_home": 7.8,
@@ -63,9 +63,9 @@
    "game_id": "0022600204",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T01:01:00+00:00",
+   "locked_at": "2026-11-09T01:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:00:55Z",
+   "injuries_timestamp": "2026-11-09T01:30:47Z",
    "neutral": false,
    "p_home": 0.415,
    "margin_home": -2.5,
@@ -118,9 +118,9 @@
    "game_id": "0022600205",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T01:01:00+00:00",
+   "locked_at": "2026-11-09T01:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:00:55Z",
+   "injuries_timestamp": "2026-11-09T01:30:47Z",
    "neutral": false,
    "p_home": 0.871,
    "margin_home": 13.8,
@@ -185,9 +185,9 @@
    "game_id": "0022600206",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:30:00+00:00",
-   "locked_at": "2026-11-09T01:01:00+00:00",
+   "locked_at": "2026-11-09T01:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:00:55Z",
+   "injuries_timestamp": "2026-11-09T01:30:47Z",
    "neutral": false,
    "p_home": 0.707,
    "margin_home": 6.3,
@@ -248,9 +248,9 @@
    "game_id": "0022600207",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 01:00:00+00:00",
-   "locked_at": "2026-11-09T01:01:00+00:00",
+   "locked_at": "2026-11-09T01:30:54+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:00:55Z",
+   "injuries_timestamp": "2026-11-09T01:30:47Z",
    "neutral": false,
    "p_home": 0.681,
    "margin_home": 5.5,
@@ -299,6 +299,69 @@
      [
       "Sila súpisky",
       16
+     ]
+    ]
+   }
+  },
+  "0022600208": {
+   "game_id": "0022600208",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-10 01:30:00+00:00",
+   "locked_at": "2026-11-09T01:30:54+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-09T01:30:47Z",
+   "neutral": false,
+   "p_home": 0.756,
+   "margin_home": 8.1,
+   "home": {
+    "team": "HOU",
+    "elo": 1612.9,
+    "elo_today": 1661.6,
+    "pulse": 76.1,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 107.9,
+     "roster": 58.4,
+     "players": 0.0,
+     "fatigue": -9.8
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      58
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "DEN",
+    "elo": 1581.5,
+    "elo_today": 1511.9,
+    "pulse": 51.2,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": true,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 76.5,
+     "roster": 56.6,
+     "players": -129.5,
+     "fatigue": 3.4
+    },
+    "reasons": [
+     [
+      "Bez Nikola Jokić (?), Jamal Murray (?)",
+      -129
+     ],
+     [
+      "Sila súpisky",
+      57
      ]
     ]
    }
