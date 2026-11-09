@@ -5,9 +5,9 @@
    "game_id": "0022600203",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T01:54:19+00:00",
+   "locked_at": "2026-11-09T02:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:54:16Z",
+   "injuries_timestamp": "2026-11-09T02:01:06Z",
    "neutral": false,
    "p_home": 0.745,
    "margin_home": 7.8,
@@ -63,9 +63,9 @@
    "game_id": "0022600204",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T01:54:19+00:00",
+   "locked_at": "2026-11-09T02:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:54:16Z",
+   "injuries_timestamp": "2026-11-09T02:01:06Z",
    "neutral": false,
    "p_home": 0.415,
    "margin_home": -2.5,
@@ -118,9 +118,9 @@
    "game_id": "0022600205",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:00:00+00:00",
-   "locked_at": "2026-11-09T01:54:19+00:00",
+   "locked_at": "2026-11-09T02:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:54:16Z",
+   "injuries_timestamp": "2026-11-09T02:01:06Z",
    "neutral": false,
    "p_home": 0.871,
    "margin_home": 13.8,
@@ -185,9 +185,9 @@
    "game_id": "0022600206",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 00:30:00+00:00",
-   "locked_at": "2026-11-09T01:54:19+00:00",
+   "locked_at": "2026-11-09T02:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:54:16Z",
+   "injuries_timestamp": "2026-11-09T02:01:06Z",
    "neutral": false,
    "p_home": 0.707,
    "margin_home": 6.3,
@@ -248,9 +248,9 @@
    "game_id": "0022600207",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 01:00:00+00:00",
-   "locked_at": "2026-11-09T01:54:19+00:00",
+   "locked_at": "2026-11-09T02:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:54:16Z",
+   "injuries_timestamp": "2026-11-09T02:01:06Z",
    "neutral": false,
    "p_home": 0.681,
    "margin_home": 5.5,
@@ -307,9 +307,9 @@
    "game_id": "0022600208",
    "kind": "regular",
    "tipoff_utc": "2026-11-10 01:30:00+00:00",
-   "locked_at": "2026-11-09T01:54:19+00:00",
+   "locked_at": "2026-11-09T02:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-09T01:54:16Z",
+   "injuries_timestamp": "2026-11-09T02:01:06Z",
    "neutral": false,
    "p_home": 0.756,
    "margin_home": 8.1,
@@ -362,6 +362,65 @@
      [
       "Sila súpisky",
       57
+     ]
+    ]
+   }
+  },
+  "0022600209": {
+   "game_id": "0022600209",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-10 02:00:00+00:00",
+   "locked_at": "2026-11-09T02:01:08+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-09T02:01:06Z",
+   "neutral": false,
+   "p_home": 0.288,
+   "margin_home": -6.5,
+   "home": {
+    "team": "PHX",
+    "elo": 1498.8,
+    "elo_today": 1488.4,
+    "pulse": 47.2,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -6.2,
+     "roster": -12.4,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -12
+     ]
+    ]
+   },
+   "away": {
+    "team": "SAS",
+    "elo": 1711.6,
+    "elo_today": 1750.0,
+    "pulse": 90.8,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 206.6,
+     "roster": 32.9,
+     "players": -3.5,
+     "fatigue": 9.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      33
+     ],
+     [
+      "3. zápas výjazdu",
+      14
      ]
     ]
    }
