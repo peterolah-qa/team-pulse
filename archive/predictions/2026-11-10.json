@@ -5,57 +5,120 @@
    "game_id": "0022600211",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 00:30:00+00:00",
-   "locked_at": "2026-11-10T00:30:58+00:00",
+   "locked_at": "2026-11-10T01:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T00:30:49Z",
+   "injuries_timestamp": "2026-11-10T01:01:01Z",
    "neutral": false,
    "p_home": 0.932,
    "margin_home": 18.9,
    "home": {
     "team": "NYK",
     "elo": 1699.0,
-    "elo_today": 1746.4,
-    "pulse": 90.2,
+    "elo_today": 1744.9,
+    "pulse": 90.0,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 194.0,
-     "roster": 47.1,
+     "roster": 45.5,
      "players": -3.8,
      "fatigue": 4.2
     },
     "reasons": [
      [
       "Sila súpisky",
-      47
+      46
      ]
     ]
    },
    "away": {
     "team": "MIL",
     "elo": 1329.5,
-    "elo_today": 1294.6,
-    "pulse": 14.9,
+    "elo_today": 1293.1,
+    "pulse": 14.7,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": -175.5,
-     "roster": -30.0,
+     "roster": -31.5,
      "players": -12.7,
      "fatigue": 7.8
     },
     "reasons": [
      [
       "Sila súpisky",
-      -30
+      -31
      ],
      [
       "Bez Tyler Herro (?)",
       -13
+     ]
+    ]
+   }
+  },
+  "0022600212": {
+   "game_id": "0022600212",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-11 01:00:00+00:00",
+   "locked_at": "2026-11-10T01:01:07+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-10T01:01:01Z",
+   "neutral": false,
+   "p_home": 0.56,
+   "margin_home": 1.7,
+   "home": {
+    "team": "PHI",
+    "elo": 1573.5,
+    "elo_today": 1650.0,
+    "pulse": 74.2,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 68.5,
+     "roster": 87.3,
+     "players": 0.0,
+     "fatigue": -10.8
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      87
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "BOS",
+    "elo": 1645.2,
+    "elo_today": 1679.9,
+    "pulse": 79.1,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 140.2,
+     "roster": 17.4,
+     "players": 0.0,
+     "fatigue": 17.3
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      17
+     ],
+     [
+      "3. zápas výjazdu",
+      14
      ]
     ]
    }
