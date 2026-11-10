@@ -1,0 +1,64 @@
+{
+ "date": "2026-11-10",
+ "games": {
+  "0022600211": {
+   "game_id": "0022600211",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-11 00:30:00+00:00",
+   "locked_at": "2026-11-10T00:30:58+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-10T00:30:49Z",
+   "neutral": false,
+   "p_home": 0.932,
+   "margin_home": 18.9,
+   "home": {
+    "team": "NYK",
+    "elo": 1699.0,
+    "elo_today": 1746.4,
+    "pulse": 90.2,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 194.0,
+     "roster": 47.1,
+     "players": -3.8,
+     "fatigue": 4.2
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      47
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIL",
+    "elo": 1329.5,
+    "elo_today": 1294.6,
+    "pulse": 14.9,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "stredná",
+    "layers": {
+     "strength": -175.5,
+     "roster": -30.0,
+     "players": -12.7,
+     "fatigue": 7.8
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -30
+     ],
+     [
+      "Bez Tyler Herro (?)",
+      -13
+     ]
+    ]
+   }
+  }
+ }
+}
