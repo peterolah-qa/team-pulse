@@ -5,9 +5,9 @@
    "game_id": "0022600211",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 00:30:00+00:00",
-   "locked_at": "2026-11-10T02:30:58+00:00",
+   "locked_at": "2026-11-10T03:01:13+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T02:30:56Z",
+   "injuries_timestamp": "2026-11-10T03:01:05Z",
    "neutral": false,
    "p_home": 0.932,
    "margin_home": 18.9,
@@ -64,9 +64,9 @@
    "game_id": "0022600212",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 01:00:00+00:00",
-   "locked_at": "2026-11-10T02:30:58+00:00",
+   "locked_at": "2026-11-10T03:01:13+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T02:30:56Z",
+   "injuries_timestamp": "2026-11-10T03:01:05Z",
    "neutral": false,
    "p_home": 0.56,
    "margin_home": 1.7,
@@ -127,9 +127,9 @@
    "game_id": "0022600213",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 02:00:00+00:00",
-   "locked_at": "2026-11-10T02:30:58+00:00",
+   "locked_at": "2026-11-10T03:01:13+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T02:30:56Z",
+   "injuries_timestamp": "2026-11-10T03:01:05Z",
    "neutral": false,
    "p_home": 0.563,
    "margin_home": 1.8,
@@ -186,9 +186,9 @@
    "game_id": "0022600214",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 02:00:00+00:00",
-   "locked_at": "2026-11-10T02:30:58+00:00",
+   "locked_at": "2026-11-10T03:01:13+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T02:30:56Z",
+   "injuries_timestamp": "2026-11-10T03:01:05Z",
    "neutral": false,
    "p_home": 0.341,
    "margin_home": -4.8,
@@ -245,6 +245,65 @@
      [
       "5. zápas výjazdu",
       24
+     ]
+    ]
+   }
+  },
+  "0022600215": {
+   "game_id": "0022600215",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-11 03:00:00+00:00",
+   "locked_at": "2026-11-10T03:01:13+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-10T03:01:05Z",
+   "neutral": false,
+   "p_home": 0.4,
+   "margin_home": -2.9,
+   "home": {
+    "team": "SAC",
+    "elo": 1334.9,
+    "elo_today": 1296.9,
+    "pulse": 15.3,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": -170.1,
+     "roster": -0.7,
+     "players": -39.2,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Bez Domantas Sabonis (?), Maxime Raynaud",
+      -39
+     ]
+    ]
+   },
+   "away": {
+    "team": "ORL",
+    "elo": 1481.9,
+    "elo_today": 1457.1,
+    "pulse": 42.0,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -23.1,
+     "roster": 5.8,
+     "players": -44.2,
+     "fatigue": 13.5
+    },
+    "reasons": [
+     [
+      "Bez Paolo Banchero",
+      -44
+     ],
+     [
+      "3. zápas výjazdu",
+      14
      ]
     ]
    }
