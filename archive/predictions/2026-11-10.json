@@ -5,9 +5,9 @@
    "game_id": "0022600211",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 00:30:00+00:00",
-   "locked_at": "2026-11-10T01:30:55+00:00",
+   "locked_at": "2026-11-10T02:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T01:30:51Z",
+   "injuries_timestamp": "2026-11-10T02:00:53Z",
    "neutral": false,
    "p_home": 0.932,
    "margin_home": 18.9,
@@ -64,9 +64,9 @@
    "game_id": "0022600212",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 01:00:00+00:00",
-   "locked_at": "2026-11-10T01:30:55+00:00",
+   "locked_at": "2026-11-10T02:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T01:30:51Z",
+   "injuries_timestamp": "2026-11-10T02:00:53Z",
    "neutral": false,
    "p_home": 0.56,
    "margin_home": 1.7,
@@ -119,6 +119,132 @@
      [
       "3. zápas výjazdu",
       14
+     ]
+    ]
+   }
+  },
+  "0022600213": {
+   "game_id": "0022600213",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-11 02:00:00+00:00",
+   "locked_at": "2026-11-10T02:01:08+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-10T02:00:53Z",
+   "neutral": false,
+   "p_home": 0.563,
+   "margin_home": 1.8,
+   "home": {
+    "team": "PHX",
+    "elo": 1498.8,
+    "elo_today": 1435.8,
+    "pulse": 38.5,
+    "tier": "Kritický",
+    "normal_tier": "Oslabený",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -6.2,
+     "roster": -15.1,
+     "players": 0.0,
+     "fatigue": -48.0
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -43
+     ],
+     [
+      "Sila súpisky",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "LAC",
+    "elo": 1491.3,
+    "elo_today": 1463.5,
+    "pulse": 43.1,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -13.7,
+     "roster": -29.9,
+     "players": -6.3,
+     "fatigue": 8.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -30
+     ]
+    ]
+   }
+  },
+  "0022600214": {
+   "game_id": "0022600214",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-11 02:00:00+00:00",
+   "locked_at": "2026-11-10T02:01:08+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-10T02:00:53Z",
+   "neutral": false,
+   "p_home": 0.341,
+   "margin_home": -4.8,
+   "home": {
+    "team": "UTA",
+    "elo": 1297.1,
+    "elo_today": 1231.9,
+    "pulse": 4.5,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": true,
+    "confidence": "nízka",
+    "layers": {
+     "strength": -207.9,
+     "roster": -11.1,
+     "players": -59.0,
+     "fatigue": 4.9
+    },
+    "reasons": [
+     [
+      "Bez Keyonte George, Lauri Markkanen (?)",
+      -59
+     ],
+     [
+      "Sila súpisky",
+      -11
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIA",
+    "elo": 1491.5,
+    "elo_today": 1443.7,
+    "pulse": 39.8,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": -13.5,
+     "roster": 21.4,
+     "players": -55.6,
+     "fatigue": -13.5
+    },
+    "reasons": [
+     [
+      "Bez Giannis Antetokounmpo (?)",
+      -56
+     ],
+     [
+      "Hrá vo výške",
+      -40
+     ],
+     [
+      "5. zápas výjazdu",
+      24
      ]
     ]
    }
