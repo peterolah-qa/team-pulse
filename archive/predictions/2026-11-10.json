@@ -5,9 +5,9 @@
    "game_id": "0022600211",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 00:30:00+00:00",
-   "locked_at": "2026-11-10T03:30:57+00:00",
+   "locked_at": "2026-11-10T04:01:10+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T03:30:51Z",
+   "injuries_timestamp": "2026-11-10T04:01:06Z",
    "neutral": false,
    "p_home": 0.932,
    "margin_home": 18.9,
@@ -64,9 +64,9 @@
    "game_id": "0022600212",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 01:00:00+00:00",
-   "locked_at": "2026-11-10T03:30:57+00:00",
+   "locked_at": "2026-11-10T04:01:10+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T03:30:51Z",
+   "injuries_timestamp": "2026-11-10T04:01:06Z",
    "neutral": false,
    "p_home": 0.56,
    "margin_home": 1.7,
@@ -127,9 +127,9 @@
    "game_id": "0022600213",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 02:00:00+00:00",
-   "locked_at": "2026-11-10T03:30:57+00:00",
+   "locked_at": "2026-11-10T04:01:10+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T03:30:51Z",
+   "injuries_timestamp": "2026-11-10T04:01:06Z",
    "neutral": false,
    "p_home": 0.563,
    "margin_home": 1.8,
@@ -186,9 +186,9 @@
    "game_id": "0022600214",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 02:00:00+00:00",
-   "locked_at": "2026-11-10T03:30:57+00:00",
+   "locked_at": "2026-11-10T04:01:10+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T03:30:51Z",
+   "injuries_timestamp": "2026-11-10T04:01:06Z",
    "neutral": false,
    "p_home": 0.341,
    "margin_home": -4.8,
@@ -253,9 +253,9 @@
    "game_id": "0022600215",
    "kind": "regular",
    "tipoff_utc": "2026-11-11 03:00:00+00:00",
-   "locked_at": "2026-11-10T03:30:57+00:00",
+   "locked_at": "2026-11-10T04:01:10+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-10T03:30:51Z",
+   "injuries_timestamp": "2026-11-10T04:01:06Z",
    "neutral": false,
    "p_home": 0.4,
    "margin_home": -2.9,
@@ -304,6 +304,69 @@
      [
       "3. zápas výjazdu",
       14
+     ]
+    ]
+   }
+  },
+  "0022600216": {
+   "game_id": "0022600216",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-11 04:00:00+00:00",
+   "locked_at": "2026-11-10T04:01:10+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-10T04:01:06Z",
+   "neutral": false,
+   "p_home": 0.431,
+   "margin_home": -2.0,
+   "home": {
+    "team": "POR",
+    "elo": 1540.7,
+    "elo_today": 1547.8,
+    "pulse": 57.1,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 35.7,
+     "roster": 23.2,
+     "players": -19.0,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      23
+     ],
+     [
+      "Bez Ja Morant",
+      -19
+     ]
+    ]
+   },
+   "away": {
+    "team": "OKC",
+    "elo": 1685.0,
+    "elo_today": 1682.3,
+    "pulse": 79.5,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 180.0,
+     "roster": 25.0,
+     "players": -29.1,
+     "fatigue": 1.5
+    },
+    "reasons": [
+     [
+      "Bez Chet Holmgren, Jalen Williams",
+      -29
+     ],
+     [
+      "Sila súpisky",
+      25
      ]
     ]
    }
