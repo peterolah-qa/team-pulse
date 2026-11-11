@@ -5,9 +5,9 @@
    "game_id": "0022600217",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 00:00:00+00:00",
-   "locked_at": "2026-11-11T02:30:54+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T02:30:50Z",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
    "neutral": false,
    "p_home": 0.538,
    "margin_home": 1.1,
@@ -68,9 +68,9 @@
    "game_id": "0022600218",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 00:00:00+00:00",
-   "locked_at": "2026-11-11T02:30:54+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T02:30:50Z",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
    "neutral": false,
    "p_home": 0.715,
    "margin_home": 6.7,
@@ -127,9 +127,9 @@
    "game_id": "0022600219",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 00:00:00+00:00",
-   "locked_at": "2026-11-11T02:30:54+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T02:30:50Z",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
    "neutral": false,
    "p_home": 0.375,
    "margin_home": -3.7,
@@ -194,9 +194,9 @@
    "game_id": "0022600220",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 01:00:00+00:00",
-   "locked_at": "2026-11-11T02:30:54+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T02:30:50Z",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
    "neutral": false,
    "p_home": 0.14,
    "margin_home": -13.1,
@@ -253,9 +253,9 @@
    "game_id": "0022600221",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 01:00:00+00:00",
-   "locked_at": "2026-11-11T02:30:54+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T02:30:50Z",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
    "neutral": false,
    "p_home": 0.32,
    "margin_home": -5.5,
@@ -308,9 +308,9 @@
    "game_id": "0022600222",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 01:00:00+00:00",
-   "locked_at": "2026-11-11T02:30:54+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T02:30:50Z",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
    "neutral": false,
    "p_home": 0.138,
    "margin_home": -13.2,
@@ -375,9 +375,9 @@
    "game_id": "0022600223",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 01:00:00+00:00",
-   "locked_at": "2026-11-11T02:30:54+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T02:30:50Z",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
    "neutral": false,
    "p_home": 0.668,
    "margin_home": 5.1,
@@ -438,9 +438,9 @@
    "game_id": "0022600224",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 02:00:00+00:00",
-   "locked_at": "2026-11-11T02:30:54+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T02:30:50Z",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
    "neutral": false,
    "p_home": 0.333,
    "margin_home": -5.0,
@@ -509,9 +509,9 @@
    "game_id": "0022600225",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 02:30:00+00:00",
-   "locked_at": "2026-11-11T02:30:54+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T02:30:50Z",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
    "neutral": false,
    "p_home": 0.735,
    "margin_home": 7.4,
@@ -560,6 +560,77 @@
      [
       "Bez Jimmy Butler III",
       -21
+     ]
+    ]
+   }
+  },
+  "0022600226": {
+   "game_id": "0022600226",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-12 03:00:00+00:00",
+   "locked_at": "2026-11-11T03:01:05+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-11T03:00:55Z",
+   "neutral": false,
+   "p_home": 0.427,
+   "margin_home": -2.1,
+   "home": {
+    "team": "POR",
+    "elo": 1540.7,
+    "elo_today": 1501.0,
+    "pulse": 49.3,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 35.7,
+     "roster": 21.4,
+     "players": -19.0,
+     "fatigue": -42.0
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -43
+     ],
+     [
+      "Sila súpisky",
+      21
+     ],
+     [
+      "Bez Ja Morant",
+      -19
+     ]
+    ]
+   },
+   "away": {
+    "team": "OKC",
+    "elo": 1685.0,
+    "elo_today": 1639.3,
+    "pulse": 72.4,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 180.0,
+     "roster": 23.2,
+     "players": -29.1,
+     "fatigue": -39.8
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Bez Chet Holmgren, Jalen Williams",
+      -29
+     ],
+     [
+      "Sila súpisky",
+      23
      ]
     ]
    }

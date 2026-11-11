@@ -1,0 +1,264 @@
+{
+ "date": "2026-11-10",
+ "games": {
+  "0022600211": {
+   "game_id": "0022600211",
+   "espn_id": "401909960",
+   "date": "2026-11-10",
+   "kind": "regular",
+   "home": "NYK",
+   "away": "MIL",
+   "pts_home": 117,
+   "pts_away": 85,
+   "box": {
+    "MIL": [
+     {
+      "player": "Myles Turner",
+      "min": 27,
+      "pts": 3,
+      "reb": 3,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Kyle Kuzma",
+      "min": 26,
+      "pts": 5,
+      "reb": 5,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Brayden Burries",
+      "min": 26,
+      "pts": 3,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jaime Jaquez Jr.",
+      "min": 25,
+      "pts": 16,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ryan Rollins",
+      "min": 24,
+      "pts": 14,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ousmane Dieng",
+      "min": 24,
+      "pts": 8,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kasparas Jakucionis",
+      "min": 23,
+      "pts": 11,
+      "reb": 0,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Nate Ament",
+      "min": 22,
+      "pts": 10,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Kel'el Ware",
+      "min": 17,
+      "pts": 8,
+      "reb": 4,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Jericho Sims",
+      "min": 8,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "AJ Green",
+      "min": 8,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Gary Trent Jr.",
+      "min": 6,
+      "pts": 5,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Bogoljub Markovic",
+      "min": 4,
+      "pts": 0,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "NYK": [
+     {
+      "player": "OG Anunoby",
+      "min": 29,
+      "pts": 19,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jalen Brunson",
+      "min": 28,
+      "pts": 23,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Landry Shamet",
+      "min": 28,
+      "pts": 10,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Karl-Anthony Towns",
+      "min": 27,
+      "pts": 21,
+      "reb": 16,
+      "ast": 3,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Miles McBride",
+      "min": 25,
+      "pts": 8,
+      "reb": 0,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mohamed Diawara",
+      "min": 18,
+      "pts": 5,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mikal Bridges",
+      "min": 17,
+      "pts": 4,
+      "reb": 5,
+      "ast": 1,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Andre Drummond",
+      "min": 16,
+      "pts": 2,
+      "reb": 14,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyler Kolek",
+      "min": 15,
+      "pts": 12,
+      "reb": 3,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jordan Clarkson",
+      "min": 11,
+      "pts": 2,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dalton Knecht",
+      "min": 8,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Pacome Dadiet",
+      "min": 6,
+      "pts": 8,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jose Alvarado",
+      "min": 6,
+      "pts": 0,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "James Wiseman",
+      "min": 5,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
+  }
+ }
+}
