@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-10T17:00:44+00:00",
+ "generated_at": "2026-11-11T01:14:18+00:00",
  "sport": "nfl",
  "beta": true,
  "model": "nfl-elo-v1",
  "model_qb": "nfl-elo-qb-v1",
- "games_commit": "e82c18474ac5629a91275001ee1871b520e3ddae",
+ "games_commit": "d8ee5464f7f1f42d18280157a92da6f3ef713401",
  "last_locked": "2026-11-10T17:00:41Z",
  "days": {
   "2026-11-12": [
@@ -1949,19 +1949,6 @@
  },
  "results": [
   {
-   "game_id": "2026_08_CHI_SEA",
-   "date": "2026-11-02",
-   "week": 8,
-   "tipoff_utc": "2026-11-03T01:15Z",
-   "kind": "regular",
-   "home": "SEA",
-   "away": "CHI",
-   "score_home": 17,
-   "score_away": 34,
-   "p_home": 0.6746,
-   "p_home_qb": null
-  },
-  {
    "game_id": "2026_09_JAX_BAL",
    "date": "2026-11-05",
    "week": 9,
@@ -2092,19 +2079,6 @@
    "p_home_qb": null
   },
   {
-   "game_id": "2026_09_LV_SF",
-   "date": "2026-11-08",
-   "week": 9,
-   "tipoff_utc": "2026-11-08T21:05Z",
-   "kind": "regular",
-   "home": "SF",
-   "away": "LV",
-   "score_home": 38,
-   "score_away": 17,
-   "p_home": 0.7982,
-   "p_home_qb": null
-  },
-  {
    "game_id": "2026_09_ARI_SEA",
    "date": "2026-11-08",
    "week": 9,
@@ -2128,6 +2102,19 @@
    "score_home": 27,
    "score_away": 45,
    "p_home": 0.6575,
+   "p_home_qb": null
+  },
+  {
+   "game_id": "2026_09_LV_SF",
+   "date": "2026-11-08",
+   "week": 9,
+   "tipoff_utc": "2026-11-08T21:25Z",
+   "kind": "regular",
+   "home": "SF",
+   "away": "LV",
+   "score_home": 38,
+   "score_away": 17,
+   "p_home": 0.7982,
    "p_home_qb": null
   },
   {
