@@ -491,6 +491,247 @@
      }
     ]
    }
+  },
+  "0022600213": {
+   "game_id": "0022600213",
+   "espn_id": "401909962",
+   "date": "2026-11-10",
+   "kind": "regular",
+   "home": "PHX",
+   "away": "LAC",
+   "pts_home": 133,
+   "pts_away": 110,
+   "box": {
+    "LAC": [
+     {
+      "player": "Kobe Sanders",
+      "min": 26,
+      "pts": 9,
+      "reb": 3,
+      "ast": 7,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Darius Garland",
+      "min": 25,
+      "pts": 13,
+      "reb": 5,
+      "ast": 6,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Derrick Jones Jr.",
+      "min": 24,
+      "pts": 11,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Rui Hachimura",
+      "min": 23,
+      "pts": 13,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Keaton Wagler",
+      "min": 23,
+      "pts": 11,
+      "reb": 0,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Max Strus",
+      "min": 22,
+      "pts": 12,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Gradey Dick",
+      "min": 19,
+      "pts": 10,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Brook Lopez",
+      "min": 19,
+      "pts": 8,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kris Dunn",
+      "min": 19,
+      "pts": 3,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Baba Miller",
+      "min": 16,
+      "pts": 13,
+      "reb": 4,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Jackson",
+      "min": 16,
+      "pts": 4,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Pickett",
+      "min": 8,
+      "pts": 3,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "PHX": [
+     {
+      "player": "Devin Booker",
+      "min": 29,
+      "pts": 17,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Dunn",
+      "min": 25,
+      "pts": 10,
+      "reb": 8,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Luke Kennard",
+      "min": 22,
+      "pts": 14,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Collin Gillespie",
+      "min": 22,
+      "pts": 12,
+      "reb": 2,
+      "ast": 8,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Khaman Maluach",
+      "min": 22,
+      "pts": 11,
+      "reb": 7,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dillon Brooks",
+      "min": 22,
+      "pts": 8,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Green",
+      "min": 21,
+      "pts": 13,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Oso Ighodaro",
+      "min": 20,
+      "pts": 6,
+      "reb": 8,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Miles Bridges",
+      "min": 18,
+      "pts": 8,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jordan Goodwin",
+      "min": 14,
+      "pts": 18,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Rasheer Fleming",
+      "min": 12,
+      "pts": 4,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamaree Bouyea",
+      "min": 8,
+      "pts": 7,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Koa Peat",
+      "min": 6,
+      "pts": 5,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
