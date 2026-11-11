@@ -259,6 +259,238 @@
      }
     ]
    }
+  },
+  "0022600212": {
+   "game_id": "0022600212",
+   "espn_id": "401909961",
+   "date": "2026-11-10",
+   "kind": "regular",
+   "home": "PHI",
+   "away": "BOS",
+   "pts_home": 101,
+   "pts_away": 123,
+   "box": {
+    "BOS": [
+     {
+      "player": "Jayson Tatum",
+      "min": 32,
+      "pts": 21,
+      "reb": 6,
+      "ast": 4,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Paul George",
+      "min": 30,
+      "pts": 36,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Payton Pritchard",
+      "min": 30,
+      "pts": 18,
+      "reb": 6,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Derrick White",
+      "min": 22,
+      "pts": 5,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Neemias Queta",
+      "min": 22,
+      "pts": 4,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Hugo Gonzalez",
+      "min": 19,
+      "pts": 10,
+      "reb": 2,
+      "ast": 2,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Jordan Walsh",
+      "min": 19,
+      "pts": 8,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Sam Hauser",
+      "min": 18,
+      "pts": 12,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Baylor Scheierman",
+      "min": 18,
+      "pts": 5,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mitchell Robinson",
+      "min": 17,
+      "pts": 2,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Luka Garza",
+      "min": 9,
+      "pts": 2,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ron Harper Jr.",
+      "min": 4,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "PHI": [
+     {
+      "player": "Tyrese Maxey",
+      "min": 34,
+      "pts": 24,
+      "reb": 1,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "VJ Edgecombe",
+      "min": 32,
+      "pts": 8,
+      "reb": 4,
+      "ast": 5,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Joel Embiid",
+      "min": 31,
+      "pts": 16,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "LeBron James",
+      "min": 29,
+      "pts": 11,
+      "reb": 8,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jaylen Brown",
+      "min": 26,
+      "pts": 13,
+      "reb": 5,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Dean Wade",
+      "min": 23,
+      "pts": 8,
+      "reb": 9,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Anfernee Simons",
+      "min": 18,
+      "pts": 17,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kentavious Caldwell-Pope",
+      "min": 16,
+      "pts": 0,
+      "reb": 0,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jabari Walker",
+      "min": 15,
+      "pts": 2,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Labaron Philon Jr.",
+      "min": 6,
+      "pts": 2,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Justin Edwards",
+      "min": 6,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Rayan Rupert",
+      "min": 6,
+      "pts": 0,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
   }
  }
 }
