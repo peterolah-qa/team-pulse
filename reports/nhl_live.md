@@ -2,7 +2,7 @@
 
 Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené po zápase. Model Elo + únava, v teste 2023/24 – 2025/26 mal presnosť 57,6 %.
 
-**Spolu: 119 z 196 (60,7 %), log loss 0,6489**
+**Spolu: 121 z 203 (59,6 %), log loss 0,6496**
 
 ## Po dňoch
 
@@ -36,13 +36,18 @@ Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené 
 | 7. 11.      |       12 |            9 | 75,0 %     |
 | 8. 11.      |        6 |            4 | 66,7 %     |
 | 9. 11.      |        3 |            2 | 66,7 %     |
+| 10. 11.     |        7 |            2 | 28,6 %     |
 
-## Posledný deň (9. 11.)
+## Posledný deň (10. 11.)
 
 Výsledok je hostia : domáci, pp = po predĺžení, sn = po nájazdoch.
 
 | zápas     | tip   | šanca   | výsledok   |    |
 |:----------|:------|:--------|:-----------|:---|
-| NYR @ EDM | EDM   | 60 %    | 1:3        | ✅  |
-| PHI @ VAN | PHI   | 51 %    | 3:1        | ✅  |
-| NYI @ SJS | NYI   | 56 %    | 2:3 sn     | ❌  |
+| COL @ TOR | COL   | 62 %    | 6:3        | ✅  |
+| MIN @ MTL | MTL   | 52 %    | 2:1 pp     | ❌  |
+| WSH @ OTT | OTT   | 54 %    | 3:2 pp     | ❌  |
+| NJD @ WPG | NJD   | 50 %    | 2:4        | ❌  |
+| FLA @ CBJ | CBJ   | 52 %    | 4:1        | ❌  |
+| DET @ STL | STL   | 57 %    | 2:3        | ✅  |
+| NSH @ LAK | LAK   | 51 %    | 3:0        | ❌  |
