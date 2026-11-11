@@ -1,0 +1,194 @@
+{
+ "date": "2026-11-11",
+ "games": {
+  "0022600217": {
+   "game_id": "0022600217",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-12 00:00:00+00:00",
+   "locked_at": "2026-11-11T00:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-11T00:00:59Z",
+   "neutral": false,
+   "p_home": 0.538,
+   "margin_home": 1.1,
+   "home": {
+    "team": "IND",
+    "elo": 1355.1,
+    "elo_today": 1304.0,
+    "pulse": 16.5,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -149.9,
+     "roster": 13.0,
+     "players": -53.6,
+     "fatigue": -10.5
+    },
+    "reasons": [
+     [
+      "Bez Tyrese Haliburton",
+      -54
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ],
+     [
+      "Sila súpisky",
+      13
+     ]
+    ]
+   },
+   "away": {
+    "team": "WAS",
+    "elo": 1330.3,
+    "elo_today": 1352.6,
+    "pulse": 24.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -174.7,
+     "roster": 3.4,
+     "players": 0.0,
+     "fatigue": 18.8
+    },
+    "reasons": [
+     [
+      "4. zápas výjazdu",
+      19
+     ]
+    ]
+   }
+  },
+  "0022600218": {
+   "game_id": "0022600218",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-12 00:00:00+00:00",
+   "locked_at": "2026-11-11T00:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-11T00:00:59Z",
+   "neutral": false,
+   "p_home": 0.715,
+   "margin_home": 6.7,
+   "home": {
+    "team": "NYK",
+    "elo": 1699.0,
+    "elo_today": 1693.7,
+    "pulse": 81.5,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 194.0,
+     "roster": 44.3,
+     "players": -7.5,
+     "fatigue": -42.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      44
+     ],
+     [
+      "2. zápas za 2 dni",
+      -43
+     ]
+    ]
+   },
+   "away": {
+    "team": "CLE",
+    "elo": 1564.1,
+    "elo_today": 1586.2,
+    "pulse": 63.5,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 59.1,
+     "roster": 13.6,
+     "players": 0.0,
+     "fatigue": 8.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      14
+     ]
+    ]
+   }
+  },
+  "0022600219": {
+   "game_id": "0022600219",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-12 00:00:00+00:00",
+   "locked_at": "2026-11-11T00:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-11T00:00:59Z",
+   "neutral": false,
+   "p_home": 0.375,
+   "margin_home": -3.7,
+   "home": {
+    "team": "TOR",
+    "elo": 1524.5,
+    "elo_today": 1440.5,
+    "pulse": 39.2,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": true,
+    "confidence": "stredná",
+    "layers": {
+     "strength": 19.5,
+     "roster": 35.4,
+     "players": -121.4,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Bez Scottie Barnes, Kawhi Leonard",
+      -121
+     ],
+     [
+      "Sila súpisky",
+      35
+     ]
+    ]
+   },
+   "away": {
+    "team": "BOS",
+    "elo": 1645.2,
+    "elo_today": 1622.8,
+    "pulse": 69.6,
+    "tier": "Stabilný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 140.2,
+     "roster": 16.3,
+     "players": 0.0,
+     "fatigue": -38.7
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "4. zápas výjazdu",
+      19
+     ],
+     [
+      "Sila súpisky",
+      16
+     ]
+    ]
+   }
+  }
+ }
+}
