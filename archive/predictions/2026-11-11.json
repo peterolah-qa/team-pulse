@@ -5,9 +5,9 @@
    "game_id": "0022600217",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 00:00:00+00:00",
-   "locked_at": "2026-11-11T01:30:54+00:00",
+   "locked_at": "2026-11-11T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T01:30:49Z",
+   "injuries_timestamp": "2026-11-11T02:01:01Z",
    "neutral": false,
    "p_home": 0.538,
    "margin_home": 1.1,
@@ -68,9 +68,9 @@
    "game_id": "0022600218",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 00:00:00+00:00",
-   "locked_at": "2026-11-11T01:30:54+00:00",
+   "locked_at": "2026-11-11T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T01:30:49Z",
+   "injuries_timestamp": "2026-11-11T02:01:01Z",
    "neutral": false,
    "p_home": 0.715,
    "margin_home": 6.7,
@@ -127,9 +127,9 @@
    "game_id": "0022600219",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 00:00:00+00:00",
-   "locked_at": "2026-11-11T01:30:54+00:00",
+   "locked_at": "2026-11-11T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T01:30:49Z",
+   "injuries_timestamp": "2026-11-11T02:01:01Z",
    "neutral": false,
    "p_home": 0.375,
    "margin_home": -3.7,
@@ -194,9 +194,9 @@
    "game_id": "0022600220",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 01:00:00+00:00",
-   "locked_at": "2026-11-11T01:30:54+00:00",
+   "locked_at": "2026-11-11T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T01:30:49Z",
+   "injuries_timestamp": "2026-11-11T02:01:01Z",
    "neutral": false,
    "p_home": 0.14,
    "margin_home": -13.1,
@@ -253,9 +253,9 @@
    "game_id": "0022600221",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 01:00:00+00:00",
-   "locked_at": "2026-11-11T01:30:54+00:00",
+   "locked_at": "2026-11-11T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T01:30:49Z",
+   "injuries_timestamp": "2026-11-11T02:01:01Z",
    "neutral": false,
    "p_home": 0.32,
    "margin_home": -5.5,
@@ -308,9 +308,9 @@
    "game_id": "0022600222",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 01:00:00+00:00",
-   "locked_at": "2026-11-11T01:30:54+00:00",
+   "locked_at": "2026-11-11T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T01:30:49Z",
+   "injuries_timestamp": "2026-11-11T02:01:01Z",
    "neutral": false,
    "p_home": 0.138,
    "margin_home": -13.2,
@@ -375,9 +375,9 @@
    "game_id": "0022600223",
    "kind": "regular",
    "tipoff_utc": "2026-11-12 01:00:00+00:00",
-   "locked_at": "2026-11-11T01:30:54+00:00",
+   "locked_at": "2026-11-11T02:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-11T01:30:49Z",
+   "injuries_timestamp": "2026-11-11T02:01:01Z",
    "neutral": false,
    "p_home": 0.668,
    "margin_home": 5.1,
@@ -430,6 +430,77 @@
      [
       "3. zápas výjazdu",
       14
+     ]
+    ]
+   }
+  },
+  "0022600224": {
+   "game_id": "0022600224",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-12 02:00:00+00:00",
+   "locked_at": "2026-11-11T02:01:02+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-11T02:01:01Z",
+   "neutral": false,
+   "p_home": 0.333,
+   "margin_home": -5.0,
+   "home": {
+    "team": "UTA",
+    "elo": 1297.1,
+    "elo_today": 1155.3,
+    "pulse": 0.0,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -207.9,
+     "roster": -12.8,
+     "players": -81.0,
+     "fatigue": -48.0
+    },
+    "reasons": [
+     [
+      "Bez Lauri Markkanen, Keyonte George",
+      -81
+     ],
+     [
+      "2. zápas za 2 dni",
+      -43
+     ],
+     [
+      "Sila súpisky",
+      -13
+     ]
+    ]
+   },
+   "away": {
+    "team": "ORL",
+    "elo": 1481.9,
+    "elo_today": 1374.3,
+    "pulse": 28.2,
+    "tier": "Kritický",
+    "normal_tier": "Oslabený",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -23.1,
+     "roster": 4.1,
+     "players": -44.2,
+     "fatigue": -67.4
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Bez Paolo Banchero",
+      -44
+     ],
+     [
+      "Hrá vo výške",
+      -40
      ]
     ]
    }
