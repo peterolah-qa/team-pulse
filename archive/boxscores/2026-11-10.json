@@ -937,6 +937,211 @@
      }
     ]
    }
+  },
+  "0022600215": {
+   "game_id": "0022600215",
+   "espn_id": "401909964",
+   "date": "2026-11-10",
+   "kind": "regular",
+   "home": "SAC",
+   "away": "ORL",
+   "pts_home": 100,
+   "pts_away": 107,
+   "box": {
+    "ORL": [
+     {
+      "player": "Franz Wagner",
+      "min": 38,
+      "pts": 33,
+      "reb": 7,
+      "ast": 7,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Desmond Bane",
+      "min": 36,
+      "pts": 15,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Anthony Black",
+      "min": 33,
+      "pts": 26,
+      "reb": 7,
+      "ast": 5,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Wendell Carter Jr.",
+      "min": 33,
+      "pts": 8,
+      "reb": 11,
+      "ast": 1,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "Alex Morales",
+      "min": 29,
+      "pts": 7,
+      "reb": 8,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamal Cain",
+      "min": 20,
+      "pts": 5,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Nikola Vucevic",
+      "min": 18,
+      "pts": 5,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jase Richardson",
+      "min": 15,
+      "pts": 6,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Goga Bitadze",
+      "min": 15,
+      "pts": 2,
+      "reb": 2,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jevon Carter",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "SAC": [
+     {
+      "player": "Darius Acuff Jr.",
+      "min": 40,
+      "pts": 29,
+      "reb": 4,
+      "ast": 6,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "De'Andre Hunter",
+      "min": 34,
+      "pts": 15,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zach LaVine",
+      "min": 33,
+      "pts": 31,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Dylan Cardwell",
+      "min": 29,
+      "pts": 1,
+      "reb": 12,
+      "ast": 1,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Keegan Murray",
+      "min": 24,
+      "pts": 11,
+      "reb": 2,
+      "ast": 1,
+      "blk": 4,
+      "stl": 0
+     },
+     {
+      "player": "Domantas Sabonis",
+      "min": 24,
+      "pts": 0,
+      "reb": 2,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Emanuel Sharp",
+      "min": 19,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Leaky Black",
+      "min": 18,
+      "pts": 0,
+      "reb": 3,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Precious Achiuwa",
+      "min": 14,
+      "pts": 10,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Malik Monk",
+      "min": 3,
+      "pts": 1,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Daeqwon Plowden",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
