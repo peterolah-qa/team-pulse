@@ -5,9 +5,9 @@
    "game_id": "0022600227",
    "kind": "regular",
    "tipoff_utc": "2026-11-13 00:00:00+00:00",
-   "locked_at": "2026-11-12T01:30:57+00:00",
+   "locked_at": "2026-11-12T02:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-12T01:30:54Z",
+   "injuries_timestamp": "2026-11-12T02:01:01Z",
    "neutral": false,
    "p_home": 0.761,
    "margin_home": 8.4,
@@ -72,9 +72,9 @@
    "game_id": "0022600228",
    "kind": "regular",
    "tipoff_utc": "2026-11-13 00:00:00+00:00",
-   "locked_at": "2026-11-12T01:30:57+00:00",
+   "locked_at": "2026-11-12T02:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-12T01:30:54Z",
+   "injuries_timestamp": "2026-11-12T02:01:01Z",
    "neutral": false,
    "p_home": 0.209,
    "margin_home": -9.6,
@@ -131,9 +131,9 @@
    "game_id": "0022600229",
    "kind": "regular",
    "tipoff_utc": "2026-11-13 01:00:00+00:00",
-   "locked_at": "2026-11-12T01:30:57+00:00",
+   "locked_at": "2026-11-12T02:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-12T01:30:54Z",
+   "injuries_timestamp": "2026-11-12T02:01:01Z",
    "neutral": false,
    "p_home": 0.737,
    "margin_home": 7.4,
@@ -175,6 +175,61 @@
      "fatigue": 2.6
     },
     "reasons": []
+   }
+  },
+  "0022600230": {
+   "game_id": "0022600230",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-13 02:00:00+00:00",
+   "locked_at": "2026-11-12T02:01:07+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-12T02:01:01Z",
+   "neutral": false,
+   "p_home": 0.63,
+   "margin_home": 3.8,
+   "home": {
+    "team": "PHX",
+    "elo": 1501.9,
+    "elo_today": 1479.1,
+    "pulse": 45.7,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -3.1,
+     "roster": -18.8,
+     "players": 0.0,
+     "fatigue": -4.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -19
+     ]
+    ]
+   },
+   "away": {
+    "team": "CHA",
+    "elo": 1491.2,
+    "elo_today": 1449.9,
+    "pulse": 40.8,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -13.8,
+     "roster": -34.0,
+     "players": -8.3,
+     "fatigue": 1.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -34
+     ]
+    ]
    }
   }
  }
