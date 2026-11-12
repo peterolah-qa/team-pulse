@@ -5,16 +5,16 @@
    "game_id": "0022600227",
    "kind": "regular",
    "tipoff_utc": "2026-11-13 00:00:00+00:00",
-   "locked_at": "2026-11-12T00:30:56+00:00",
+   "locked_at": "2026-11-12T01:01:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-12T00:30:52Z",
+   "injuries_timestamp": "2026-11-12T01:00:53Z",
    "neutral": false,
    "p_home": 0.761,
    "margin_home": 8.4,
    "home": {
     "team": "PHI",
     "elo": 1556.1,
-    "elo_today": 1561.6,
+    "elo_today": 1561.4,
     "pulse": 59.4,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
@@ -22,14 +22,14 @@
     "confidence": "nízka",
     "layers": {
      "strength": 51.1,
-     "roster": 84.6,
+     "roster": 84.4,
      "players": -81.1,
      "fatigue": 2.0
     },
     "reasons": [
      [
       "Sila súpisky",
-      85
+      84
      ],
      [
       "Bez Joel Embiid (?), LeBron James (?)",
@@ -40,15 +40,15 @@
    "away": {
     "team": "TOR",
     "elo": 1524.5,
-    "elo_today": 1405.2,
-    "pulse": 33.4,
+    "elo_today": 1405.0,
+    "pulse": 33.3,
     "tier": "Oslabený",
     "normal_tier": "Stabilný",
     "dropped": true,
     "confidence": "vysoká",
     "layers": {
      "strength": 19.5,
-     "roster": 35.9,
+     "roster": 35.6,
      "players": -102.3,
      "fatigue": -52.8
     },
@@ -72,24 +72,24 @@
    "game_id": "0022600228",
    "kind": "regular",
    "tipoff_utc": "2026-11-13 00:00:00+00:00",
-   "locked_at": "2026-11-12T00:30:56+00:00",
+   "locked_at": "2026-11-12T01:01:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-12T00:30:52Z",
+   "injuries_timestamp": "2026-11-12T01:00:53Z",
    "neutral": false,
    "p_home": 0.209,
    "margin_home": -9.6,
    "home": {
     "team": "WAS",
     "elo": 1330.3,
-    "elo_today": 1287.7,
-    "pulse": 13.8,
+    "elo_today": 1287.4,
+    "pulse": 13.7,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -174.7,
-     "roster": 3.9,
+     "roster": 3.7,
      "players": 0.0,
      "fatigue": -46.6
     },
@@ -103,7 +103,7 @@
    "away": {
     "team": "DET",
     "elo": 1644.2,
-    "elo_today": 1635.3,
+    "elo_today": 1635.1,
     "pulse": 71.7,
     "tier": "Silný",
     "normal_tier": "Silný",
@@ -111,7 +111,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 139.2,
-     "roster": 11.6,
+     "roster": 11.4,
      "players": -23.8,
      "fatigue": 3.4
     },
@@ -122,9 +122,59 @@
      ],
      [
       "Sila súpisky",
-      12
+      11
      ]
     ]
+   }
+  },
+  "0022600229": {
+   "game_id": "0022600229",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-13 01:00:00+00:00",
+   "locked_at": "2026-11-12T01:01:03+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-12T01:00:53Z",
+   "neutral": false,
+   "p_home": 0.737,
+   "margin_home": 7.4,
+   "home": {
+    "team": "MIN",
+    "elo": 1621.9,
+    "elo_today": 1587.5,
+    "pulse": 63.8,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 116.9,
+     "roster": -6.2,
+     "players": -32.2,
+     "fatigue": 4.0
+    },
+    "reasons": [
+     [
+      "Bez Anthony Edwards",
+      -32
+     ]
+    ]
+   },
+   "away": {
+    "team": "DAL",
+    "elo": 1449.8,
+    "elo_today": 1457.9,
+    "pulse": 42.2,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -55.2,
+     "roster": 5.5,
+     "players": 0.0,
+     "fatigue": 2.6
+    },
+    "reasons": []
    }
   }
  }
