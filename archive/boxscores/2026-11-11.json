@@ -1989,6 +1989,184 @@
      }
     ]
    }
+  },
+  "0022600226": {
+   "game_id": "0022600226",
+   "espn_id": "401909975",
+   "date": "2026-11-11",
+   "kind": "regular",
+   "home": "POR",
+   "away": "OKC",
+   "pts_home": 118,
+   "pts_away": 108,
+   "box": {
+    "OKC": [
+     {
+      "player": "Shai Gilgeous-Alexander",
+      "min": 36,
+      "pts": 31,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Isaiah Hartenstein",
+      "min": 34,
+      "pts": 20,
+      "reb": 11,
+      "ast": 6,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Aday Mara",
+      "min": 32,
+      "pts": 11,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jared McCain",
+      "min": 31,
+      "pts": 10,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Alex Caruso",
+      "min": 29,
+      "pts": 14,
+      "reb": 7,
+      "ast": 2,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Kenrich Williams",
+      "min": 26,
+      "pts": 11,
+      "reb": 2,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Bennett Stirtz",
+      "min": 25,
+      "pts": 6,
+      "reb": 1,
+      "ast": 1,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Nique Clifford",
+      "min": 16,
+      "pts": 5,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Micah Peavy",
+      "min": 12,
+      "pts": 0,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "POR": [
+     {
+      "player": "Toumani Camara",
+      "min": 38,
+      "pts": 14,
+      "reb": 5,
+      "ast": 3,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Deni Avdija",
+      "min": 35,
+      "pts": 28,
+      "reb": 3,
+      "ast": 6,
+      "blk": 2,
+      "stl": 4
+     },
+     {
+      "player": "Damian Lillard",
+      "min": 32,
+      "pts": 18,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jrue Holiday",
+      "min": 30,
+      "pts": 19,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Donovan Clingan",
+      "min": 30,
+      "pts": 5,
+      "reb": 12,
+      "ast": 2,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "Sidy Cissoko",
+      "min": 29,
+      "pts": 19,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Scoot Henderson",
+      "min": 19,
+      "pts": 5,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Robert Williams III",
+      "min": 17,
+      "pts": 10,
+      "reb": 7,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Branden Carlson",
+      "min": 10,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
