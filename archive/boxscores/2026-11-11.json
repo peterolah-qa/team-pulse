@@ -1739,6 +1739,256 @@
      }
     ]
    }
+  },
+  "0022600225": {
+   "game_id": "0022600225",
+   "espn_id": "401909974",
+   "date": "2026-11-11",
+   "kind": "regular",
+   "home": "HOU",
+   "away": "GSW",
+   "pts_home": 115,
+   "pts_away": 108,
+   "box": {
+    "GSW": [
+     {
+      "player": "Brandin Podziemski",
+      "min": 37,
+      "pts": 22,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Yaxel Lendeborg",
+      "min": 36,
+      "pts": 25,
+      "reb": 10,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Draymond Green",
+      "min": 27,
+      "pts": 7,
+      "reb": 5,
+      "ast": 7,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "De'Anthony Melton",
+      "min": 25,
+      "pts": 11,
+      "reb": 4,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Al Horford",
+      "min": 21,
+      "pts": 2,
+      "reb": 1,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Will Richard",
+      "min": 19,
+      "pts": 9,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Georges Niang",
+      "min": 19,
+      "pts": 5,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "LJ Cryer",
+      "min": 18,
+      "pts": 13,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Charles Bassey",
+      "min": 13,
+      "pts": 7,
+      "reb": 6,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Gui Santos",
+      "min": 12,
+      "pts": 0,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Stephen Curry",
+      "min": 6,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Graham Ike",
+      "min": 4,
+      "pts": 4,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Malevy Leons",
+      "min": 4,
+      "pts": 0,
+      "reb": 3,
+      "ast": 0,
+      "blk": 2,
+      "stl": 0
+     }
+    ],
+    "HOU": [
+     {
+      "player": "Alperen Sengun",
+      "min": 37,
+      "pts": 19,
+      "reb": 13,
+      "ast": 9,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Jabari Smith Jr.",
+      "min": 35,
+      "pts": 14,
+      "reb": 8,
+      "ast": 0,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "Kevin Durant",
+      "min": 34,
+      "pts": 20,
+      "reb": 4,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Fred VanVleet",
+      "min": 30,
+      "pts": 18,
+      "reb": 2,
+      "ast": 6,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Amen Thompson",
+      "min": 29,
+      "pts": 19,
+      "reb": 7,
+      "ast": 4,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Tari Eason",
+      "min": 22,
+      "pts": 6,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Reed Sheppard",
+      "min": 20,
+      "pts": 13,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Marcus Smart",
+      "min": 17,
+      "pts": 6,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bogdan Bogdanovic",
+      "min": 10,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bruce Thornton",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jae'Sean Tate",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Crawford",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Oscar Tshiebwe",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
