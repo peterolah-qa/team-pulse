@@ -1,0 +1,131 @@
+{
+ "date": "2026-11-12",
+ "games": {
+  "0022600227": {
+   "game_id": "0022600227",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-13 00:00:00+00:00",
+   "locked_at": "2026-11-12T00:01:04+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-12T00:00:53Z",
+   "neutral": false,
+   "p_home": 0.761,
+   "margin_home": 8.4,
+   "home": {
+    "team": "PHI",
+    "elo": 1556.1,
+    "elo_today": 1561.6,
+    "pulse": 59.4,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 51.1,
+     "roster": 84.6,
+     "players": -81.1,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      85
+     ],
+     [
+      "Bez Joel Embiid (?), LeBron James (?)",
+      -81
+     ]
+    ]
+   },
+   "away": {
+    "team": "TOR",
+    "elo": 1524.5,
+    "elo_today": 1405.2,
+    "pulse": 33.4,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 19.5,
+     "roster": 35.8,
+     "players": -102.3,
+     "fatigue": -52.8
+    },
+    "reasons": [
+     [
+      "Bez Scottie Barnes, Kawhi Leonard",
+      -102
+     ],
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Sila súpisky",
+      36
+     ]
+    ]
+   }
+  },
+  "0022600228": {
+   "game_id": "0022600228",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-13 00:00:00+00:00",
+   "locked_at": "2026-11-12T00:01:04+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-12T00:00:53Z",
+   "neutral": false,
+   "p_home": 0.209,
+   "margin_home": -9.6,
+   "home": {
+    "team": "WAS",
+    "elo": 1330.3,
+    "elo_today": 1287.6,
+    "pulse": 13.8,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -174.7,
+     "roster": 3.9,
+     "players": 0.0,
+     "fatigue": -46.6
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -43
+     ]
+    ]
+   },
+   "away": {
+    "team": "DET",
+    "elo": 1644.2,
+    "elo_today": 1635.3,
+    "pulse": 71.7,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 139.2,
+     "roster": 11.6,
+     "players": -23.8,
+     "fatigue": 3.4
+    },
+    "reasons": [
+     [
+      "Bez Jalen Duren",
+      -24
+     ],
+     [
+      "Sila súpisky",
+      12
+     ]
+    ]
+   }
+  }
+ }
+}
