@@ -1,0 +1,237 @@
+{
+ "date": "2026-11-12",
+ "games": {
+  "0022600227": {
+   "game_id": "0022600227",
+   "espn_id": "401909976",
+   "date": "2026-11-12",
+   "kind": "regular",
+   "home": "PHI",
+   "away": "TOR",
+   "pts_home": 123,
+   "pts_away": 112,
+   "box": {
+    "TOR": [
+     {
+      "player": "RJ Barrett",
+      "min": 37,
+      "pts": 31,
+      "reb": 14,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Collin Murray-Boyles",
+      "min": 32,
+      "pts": 14,
+      "reb": 0,
+      "ast": 4,
+      "blk": 5,
+      "stl": 1
+     },
+     {
+      "player": "Ja'Kobe Walter",
+      "min": 32,
+      "pts": 6,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Immanuel Quickley",
+      "min": 28,
+      "pts": 26,
+      "reb": 4,
+      "ast": 6,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Jamison Battle",
+      "min": 25,
+      "pts": 13,
+      "reb": 1,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Jakob Poeltl",
+      "min": 25,
+      "pts": 9,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jamal Shead",
+      "min": 22,
+      "pts": 5,
+      "reb": 1,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Alijah Martin",
+      "min": 18,
+      "pts": 7,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Allen Graves",
+      "min": 13,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kyle Anderson",
+      "min": 5,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jaden Bradley",
+      "min": 2,
+      "pts": 1,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Malachi Smith",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "PHI": [
+     {
+      "player": "Jaylen Brown",
+      "min": 36,
+      "pts": 18,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "VJ Edgecombe",
+      "min": 36,
+      "pts": 15,
+      "reb": 8,
+      "ast": 8,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Tyrese Maxey",
+      "min": 35,
+      "pts": 27,
+      "reb": 2,
+      "ast": 8,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Dean Wade",
+      "min": 34,
+      "pts": 6,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Joel Embiid",
+      "min": 28,
+      "pts": 20,
+      "reb": 4,
+      "ast": 3,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Kentavious Caldwell-Pope",
+      "min": 27,
+      "pts": 11,
+      "reb": 4,
+      "ast": 5,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Anfernee Simons",
+      "min": 23,
+      "pts": 17,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jabari Walker",
+      "min": 16,
+      "pts": 9,
+      "reb": 8,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Labaron Philon Jr.",
+      "min": 2,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Justin Edwards",
+      "min": 1,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tacko Fall",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Caleb Love",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
