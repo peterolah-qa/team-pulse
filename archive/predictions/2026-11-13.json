@@ -1,0 +1,127 @@
+{
+ "date": "2026-11-13",
+ "games": {
+  "0022600034": {
+   "game_id": "0022600034",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-14 00:00:00+00:00",
+   "locked_at": "2026-11-13T00:01:52+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-13T00:01:51Z",
+   "neutral": false,
+   "p_home": 0.176,
+   "margin_home": -11.1,
+   "home": {
+    "team": "IND",
+    "elo": 1363.5,
+    "elo_today": 1338.4,
+    "pulse": 22.2,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -141.5,
+     "roster": 19.8,
+     "players": -46.8,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Bez Tyrese Haliburton",
+      -47
+     ],
+     [
+      "Sila súpisky",
+      20
+     ]
+    ]
+   },
+   "away": {
+    "team": "NYK",
+    "elo": 1684.8,
+    "elo_today": 1729.3,
+    "pulse": 87.4,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 179.8,
+     "roster": 48.7,
+     "players": 0.0,
+     "fatigue": -4.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      49
+     ]
+    ]
+   }
+  },
+  "0022600035": {
+   "game_id": "0022600035",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-14 00:00:00+00:00",
+   "locked_at": "2026-11-13T00:01:52+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-13T00:01:51Z",
+   "neutral": false,
+   "p_home": 0.755,
+   "margin_home": 8.1,
+   "home": {
+    "team": "ORL",
+    "elo": 1496.1,
+    "elo_today": 1443.4,
+    "pulse": 39.7,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -8.9,
+     "roster": 11.9,
+     "players": -36.9,
+     "fatigue": -27.8
+    },
+    "reasons": [
+     [
+      "Bez Paolo Banchero",
+      -37
+     ],
+     [
+      "Posun na východ o 2 h",
+      -29
+     ],
+     [
+      "Sila súpisky",
+      12
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIL",
+    "elo": 1322.9,
+    "elo_today": 1294.9,
+    "pulse": 15.0,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -182.1,
+     "roster": -27.5,
+     "players": 0.0,
+     "fatigue": -0.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -28
+     ]
+    ]
+   }
+  }
+ }
+}
