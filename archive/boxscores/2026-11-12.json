@@ -678,6 +678,202 @@
      }
     ]
    }
+  },
+  "0022600230": {
+   "game_id": "0022600230",
+   "espn_id": "401909979",
+   "date": "2026-11-12",
+   "kind": "regular",
+   "home": "PHX",
+   "away": "CHA",
+   "pts_home": 101,
+   "pts_away": 96,
+   "box": {
+    "CHA": [
+     {
+      "player": "Naz Reid",
+      "min": 34,
+      "pts": 16,
+      "reb": 8,
+      "ast": 3,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Grayson Allen",
+      "min": 34,
+      "pts": 14,
+      "reb": 4,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Moussa Diabate",
+      "min": 32,
+      "pts": 7,
+      "reb": 13,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Sion James",
+      "min": 32,
+      "pts": 3,
+      "reb": 7,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Royce O'Neale",
+      "min": 22,
+      "pts": 7,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Coby White",
+      "min": 20,
+      "pts": 21,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Christian Anderson",
+      "min": 18,
+      "pts": 13,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Grant Williams",
+      "min": 16,
+      "pts": 11,
+      "reb": 2,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Tidjane Salaun",
+      "min": 16,
+      "pts": 2,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Kalkbrenner",
+      "min": 16,
+      "pts": 2,
+      "reb": 6,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     }
+    ],
+    "PHX": [
+     {
+      "player": "Devin Booker",
+      "min": 35,
+      "pts": 30,
+      "reb": 1,
+      "ast": 7,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Oso Ighodaro",
+      "min": 32,
+      "pts": 2,
+      "reb": 3,
+      "ast": 7,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Dillon Brooks",
+      "min": 30,
+      "pts": 15,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Collin Gillespie",
+      "min": 27,
+      "pts": 13,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Miles Bridges",
+      "min": 25,
+      "pts": 11,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jordan Goodwin",
+      "min": 24,
+      "pts": 6,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jalen Green",
+      "min": 21,
+      "pts": 12,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Luke Kennard",
+      "min": 21,
+      "pts": 8,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Khaman Maluach",
+      "min": 16,
+      "pts": 4,
+      "reb": 2,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Dunn",
+      "min": 10,
+      "pts": 0,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
   }
  }
 }
