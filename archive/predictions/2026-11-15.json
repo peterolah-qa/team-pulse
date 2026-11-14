@@ -5,9 +5,9 @@
    "game_id": "0022600236",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 18:00:00+00:00",
-   "locked_at": "2026-11-14T22:55:19+00:00",
+   "locked_at": "2026-11-14T23:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-14T22:55:09Z",
+   "injuries_timestamp": "2026-11-14T23:00:59Z",
    "neutral": false,
    "p_home": 0.813,
    "margin_home": 10.6,
@@ -68,9 +68,9 @@
    "game_id": "0022600237",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 21:00:00+00:00",
-   "locked_at": "2026-11-14T22:55:19+00:00",
+   "locked_at": "2026-11-14T23:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-14T22:55:09Z",
+   "injuries_timestamp": "2026-11-14T23:00:59Z",
    "neutral": false,
    "p_home": 0.375,
    "margin_home": -3.7,
@@ -131,9 +131,9 @@
    "game_id": "0022600238",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 21:30:00+00:00",
-   "locked_at": "2026-11-14T22:55:19+00:00",
+   "locked_at": "2026-11-14T23:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-14T22:55:09Z",
+   "injuries_timestamp": "2026-11-14T23:00:59Z",
    "neutral": false,
    "p_home": 0.59,
    "margin_home": 2.6,
@@ -186,9 +186,9 @@
    "game_id": "0022600239",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 22:00:00+00:00",
-   "locked_at": "2026-11-14T22:55:19+00:00",
+   "locked_at": "2026-11-14T23:01:07+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-14T22:55:09Z",
+   "injuries_timestamp": "2026-11-14T23:00:59Z",
    "neutral": false,
    "p_home": 0.122,
    "margin_home": -14.3,
@@ -241,6 +241,124 @@
      [
       "Sila súpisky",
       34
+     ]
+    ]
+   }
+  },
+  "0022600240": {
+   "game_id": "0022600240",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-15 23:00:00+00:00",
+   "locked_at": "2026-11-14T23:01:07+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-14T23:00:59Z",
+   "neutral": false,
+   "p_home": 0.862,
+   "margin_home": 13.2,
+   "home": {
+    "team": "BOS",
+    "elo": 1668.0,
+    "elo_today": 1697.0,
+    "pulse": 82.0,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 163.0,
+     "roster": 23.8,
+     "players": 0.0,
+     "fatigue": 5.2
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      24
+     ]
+    ]
+   },
+   "away": {
+    "team": "DAL",
+    "elo": 1441.0,
+    "elo_today": 1405.4,
+    "pulse": 33.4,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -64.0,
+     "roster": 8.2,
+     "players": 0.0,
+     "fatigue": -43.8
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ]
+    ]
+   }
+  },
+  "0022600241": {
+   "game_id": "0022600241",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-15 23:00:00+00:00",
+   "locked_at": "2026-11-14T23:01:07+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-14T23:00:59Z",
+   "neutral": false,
+   "p_home": 0.293,
+   "margin_home": -6.4,
+   "home": {
+    "team": "TOR",
+    "elo": 1512.0,
+    "elo_today": 1471.4,
+    "pulse": 44.4,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 7.0,
+     "roster": 42.2,
+     "players": -86.8,
+     "fatigue": 4.0
+    },
+    "reasons": [
+     [
+      "Bez Kawhi Leonard, Scottie Barnes",
+      -87
+     ],
+     [
+      "Sila súpisky",
+      42
+     ]
+    ]
+   },
+   "away": {
+    "team": "NYK",
+    "elo": 1675.0,
+    "elo_today": 1728.2,
+    "pulse": 87.2,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 170.0,
+     "roster": 44.6,
+     "players": 0.0,
+     "fatigue": 8.6
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      45
      ]
     ]
    }
