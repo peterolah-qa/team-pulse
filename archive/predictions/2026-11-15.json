@@ -5,9 +5,9 @@
    "game_id": "0022600236",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 18:00:00+00:00",
-   "locked_at": "2026-11-14T21:01:11+00:00",
+   "locked_at": "2026-11-14T21:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-14T21:01:07Z",
+   "injuries_timestamp": "2026-11-14T21:30:46Z",
    "neutral": false,
    "p_home": 0.841,
    "margin_home": 12.0,
@@ -68,9 +68,9 @@
    "game_id": "0022600237",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 21:00:00+00:00",
-   "locked_at": "2026-11-14T21:01:11+00:00",
+   "locked_at": "2026-11-14T21:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-14T21:01:07Z",
+   "injuries_timestamp": "2026-11-14T21:30:46Z",
    "neutral": false,
    "p_home": 0.375,
    "margin_home": -3.7,
@@ -123,6 +123,61 @@
      [
       "Bez Austin Reaves (?)",
       -16
+     ]
+    ]
+   }
+  },
+  "0022600238": {
+   "game_id": "0022600238",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-15 21:30:00+00:00",
+   "locked_at": "2026-11-14T21:30:53+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-14T21:30:46Z",
+   "neutral": false,
+   "p_home": 0.59,
+   "margin_home": 2.6,
+   "home": {
+    "team": "LAC",
+    "elo": 1483.1,
+    "elo_today": 1451.4,
+    "pulse": 41.1,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -21.9,
+     "roster": -27.3,
+     "players": -6.3,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -27
+     ]
+    ]
+   },
+   "away": {
+    "team": "CHA",
+    "elo": 1486.0,
+    "elo_today": 1456.5,
+    "pulse": 41.9,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -19.0,
+     "roster": -31.1,
+     "players": -6.6,
+     "fatigue": 8.2
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -31
      ]
     ]
    }
