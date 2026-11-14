@@ -1052,6 +1052,211 @@
      }
     ]
    }
+  },
+  "0022600039": {
+   "game_id": "0022600039",
+   "espn_id": "401909301",
+   "date": "2026-11-13",
+   "kind": "regular",
+   "home": "HOU",
+   "away": "UTA",
+   "pts_home": 125,
+   "pts_away": 118,
+   "box": {
+    "UTA": [
+     {
+      "player": "Keyonte George",
+      "min": 38,
+      "pts": 27,
+      "reb": 4,
+      "ast": 7,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ace Bailey",
+      "min": 35,
+      "pts": 21,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Darryn Peterson",
+      "min": 34,
+      "pts": 28,
+      "reb": 7,
+      "ast": 2,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Brice Sensabaugh",
+      "min": 27,
+      "pts": 7,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Okogie",
+      "min": 22,
+      "pts": 7,
+      "reb": 2,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Mo Bamba",
+      "min": 20,
+      "pts": 9,
+      "reb": 9,
+      "ast": 1,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Collier",
+      "min": 16,
+      "pts": 3,
+      "reb": 2,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Green",
+      "min": 14,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jaxson Hayes",
+      "min": 13,
+      "pts": 12,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tony Bradley",
+      "min": 12,
+      "pts": 0,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Svi Mykhailiuk",
+      "min": 7,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kyle Filipowski",
+      "min": 2,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "HOU": [
+     {
+      "player": "Amen Thompson",
+      "min": 41,
+      "pts": 12,
+      "reb": 10,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Alperen Sengun",
+      "min": 37,
+      "pts": 43,
+      "reb": 12,
+      "ast": 5,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Fred VanVleet",
+      "min": 34,
+      "pts": 17,
+      "reb": 2,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Kevin Durant",
+      "min": 33,
+      "pts": 22,
+      "reb": 3,
+      "ast": 6,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tari Eason",
+      "min": 33,
+      "pts": 14,
+      "reb": 11,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jabari Smith Jr.",
+      "min": 24,
+      "pts": 6,
+      "reb": 3,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Reed Sheppard",
+      "min": 19,
+      "pts": 0,
+      "reb": 0,
+      "ast": 3,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Bogdan Bogdanovic",
+      "min": 12,
+      "pts": 11,
+      "reb": 1,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Oscar Tshiebwe",
+      "min": 6,
+      "pts": 0,
+      "reb": 5,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
