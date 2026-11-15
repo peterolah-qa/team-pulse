@@ -1,0 +1,48 @@
+{
+ "games": {
+  "2026020331": {
+   "game_id": "2026020331",
+   "date": "2026-11-16",
+   "tipoff_utc": "2026-11-17T00:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.482,
+   "tip": "MTL",
+   "home": {
+    "team": "NYR",
+    "elo": 1503.7,
+    "reasons": {}
+   },
+   "away": {
+    "team": "MTL",
+    "elo": 1542.4,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-15T09:15:27+00:00"
+  },
+  "2026020332": {
+   "game_id": "2026020332",
+   "date": "2026-11-16",
+   "tipoff_utc": "2026-11-17T02:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.743,
+   "tip": "UTA",
+   "home": {
+    "team": "UTA",
+    "elo": 1501.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "VAN",
+    "elo": 1387.3,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-15T09:15:27+00:00"
+  }
+ }
+}
