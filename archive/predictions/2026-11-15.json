@@ -5,12 +5,12 @@
    "game_id": "0022600236",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 18:00:00+00:00",
-   "locked_at": "2026-11-15T16:30:57+00:00",
+   "locked_at": "2026-11-15T17:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-15T16:30:46Z",
+   "injuries_timestamp": "2026-11-15T17:00:58Z",
    "neutral": false,
-   "p_home": 0.817,
-   "margin_home": 10.8,
+   "p_home": 0.821,
+   "margin_home": 11.0,
    "home": {
     "team": "PHI",
     "elo": 1563.2,
@@ -29,7 +29,7 @@
     "reasons": [
      [
       "Sila súpisky",
-      85
+      86
      ],
      [
       "Bez Joel Embiid",
@@ -40,22 +40,22 @@
    "away": {
     "team": "IND",
     "elo": 1373.2,
-    "elo_today": 1348.2,
-    "pulse": 23.9,
+    "elo_today": 1342.9,
+    "pulse": 23.0,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -131.8,
-     "roster": 16.0,
-     "players": -44.7,
+     "roster": 16.1,
+     "players": -50.1,
      "fatigue": 3.7
     },
     "reasons": [
      [
-      "Bez Tyrese Haliburton, Andrew Nembhard (?)",
-      -45
+      "Bez Andrew Nembhard, Tyrese Haliburton",
+      -50
      ],
      [
       "Sila súpisky",
@@ -68,16 +68,16 @@
    "game_id": "0022600237",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 21:00:00+00:00",
-   "locked_at": "2026-11-15T16:30:57+00:00",
+   "locked_at": "2026-11-15T17:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-15T16:30:46Z",
+   "injuries_timestamp": "2026-11-15T17:00:58Z",
    "neutral": false,
    "p_home": 0.394,
    "margin_home": -3.1,
    "home": {
     "team": "PHX",
     "elo": 1507.0,
-    "elo_today": 1496.9,
+    "elo_today": 1497.0,
     "pulse": 48.7,
     "tier": "Oslabený",
     "normal_tier": "Stabilný",
@@ -99,7 +99,7 @@
    "away": {
     "team": "LAL",
     "elo": 1623.8,
-    "elo_today": 1662.5,
+    "elo_today": 1662.6,
     "pulse": 76.3,
     "tier": "Silný",
     "normal_tier": "Stabilný",
@@ -131,16 +131,16 @@
    "game_id": "0022600238",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 21:30:00+00:00",
-   "locked_at": "2026-11-15T16:30:57+00:00",
+   "locked_at": "2026-11-15T17:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-15T16:30:46Z",
+   "injuries_timestamp": "2026-11-15T17:00:58Z",
    "neutral": false,
    "p_home": 0.588,
    "margin_home": 2.6,
    "home": {
     "team": "LAC",
     "elo": 1483.1,
-    "elo_today": 1452.3,
+    "elo_today": 1452.4,
     "pulse": 41.2,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
@@ -162,7 +162,7 @@
    "away": {
     "team": "CHA",
     "elo": 1486.0,
-    "elo_today": 1458.7,
+    "elo_today": 1458.8,
     "pulse": 42.3,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
@@ -186,16 +186,16 @@
    "game_id": "0022600239",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 22:00:00+00:00",
-   "locked_at": "2026-11-15T16:30:57+00:00",
+   "locked_at": "2026-11-15T17:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-15T16:30:46Z",
+   "injuries_timestamp": "2026-11-15T17:00:58Z",
    "neutral": false,
    "p_home": 0.122,
    "margin_home": -14.3,
    "home": {
     "team": "UTA",
     "elo": 1283.4,
-    "elo_today": 1246.9,
+    "elo_today": 1247.0,
     "pulse": 7.0,
     "tier": "Kritický",
     "normal_tier": "Kritický",
@@ -211,17 +211,13 @@
      [
       "Bez Lauri Markkanen",
       -32
-     ],
-     [
-      "Sila súpisky",
-      -10
      ]
     ]
    },
    "away": {
     "team": "SAS",
     "elo": 1731.9,
-    "elo_today": 1725.0,
+    "elo_today": 1725.1,
     "pulse": 86.7,
     "tier": "Silný",
     "normal_tier": "Silný",
@@ -249,16 +245,16 @@
    "game_id": "0022600240",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 23:00:00+00:00",
-   "locked_at": "2026-11-15T16:30:57+00:00",
+   "locked_at": "2026-11-15T17:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-15T16:30:46Z",
+   "injuries_timestamp": "2026-11-15T17:00:58Z",
    "neutral": false,
    "p_home": 0.864,
    "margin_home": 13.4,
    "home": {
     "team": "BOS",
     "elo": 1668.0,
-    "elo_today": 1697.5,
+    "elo_today": 1697.6,
     "pulse": 82.1,
     "tier": "Silný",
     "normal_tier": "Silný",
@@ -281,14 +277,14 @@
     "team": "DAL",
     "elo": 1436.6,
     "elo_today": 1402.1,
-    "pulse": 32.8,
+    "pulse": 32.9,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -68.4,
-     "roster": 9.2,
+     "roster": 9.3,
      "players": 0.0,
      "fatigue": -43.8
     },
@@ -308,16 +304,16 @@
    "game_id": "0022600241",
    "kind": "regular",
    "tipoff_utc": "2026-11-15 23:00:00+00:00",
-   "locked_at": "2026-11-15T16:30:57+00:00",
+   "locked_at": "2026-11-15T17:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-15T16:30:46Z",
+   "injuries_timestamp": "2026-11-15T17:00:58Z",
    "neutral": false,
    "p_home": 0.293,
    "margin_home": -6.4,
    "home": {
     "team": "TOR",
     "elo": 1512.0,
-    "elo_today": 1471.8,
+    "elo_today": 1471.9,
     "pulse": 44.5,
     "tier": "Oslabený",
     "normal_tier": "Stabilný",
@@ -325,7 +321,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 7.0,
-     "roster": 42.6,
+     "roster": 42.7,
      "players": -86.8,
      "fatigue": 4.0
     },
@@ -343,7 +339,7 @@
    "away": {
     "team": "NYK",
     "elo": 1675.0,
-    "elo_today": 1728.6,
+    "elo_today": 1728.7,
     "pulse": 87.3,
     "tier": "Silný",
     "normal_tier": "Silný",
@@ -351,7 +347,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 170.0,
-     "roster": 45.0,
+     "roster": 45.1,
      "players": 0.0,
      "fatigue": 8.6
     },
@@ -367,9 +363,9 @@
    "game_id": "0022600242",
    "kind": "regular",
    "tipoff_utc": "2026-11-16 00:00:00+00:00",
-   "locked_at": "2026-11-15T16:30:57+00:00",
+   "locked_at": "2026-11-15T17:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-15T16:30:46Z",
+   "injuries_timestamp": "2026-11-15T17:00:58Z",
    "neutral": false,
    "p_home": 0.199,
    "margin_home": -10.0,
@@ -377,7 +373,7 @@
     "team": "WAS",
     "elo": 1320.0,
     "elo_today": 1330.1,
-    "pulse": 20.8,
+    "pulse": 20.9,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
@@ -393,7 +389,7 @@
    "away": {
     "team": "HOU",
     "elo": 1625.3,
-    "elo_today": 1690.0,
+    "elo_today": 1690.1,
     "pulse": 80.8,
     "tier": "Silný",
     "normal_tier": "Silný",
@@ -401,7 +397,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 120.3,
-     "roster": 57.8,
+     "roster": 57.9,
      "players": 0.0,
      "fatigue": 6.9
     },
@@ -417,9 +413,9 @@
    "game_id": "0022600243",
    "kind": "regular",
    "tipoff_utc": "2026-11-16 01:00:00+00:00",
-   "locked_at": "2026-11-15T16:30:57+00:00",
+   "locked_at": "2026-11-15T17:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-15T16:30:46Z",
+   "injuries_timestamp": "2026-11-15T17:00:58Z",
    "neutral": false,
    "p_home": 0.307,
    "margin_home": -5.9,
@@ -434,7 +430,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -185.1,
-     "roster": -28.9,
+     "roster": -28.8,
      "players": 0.0,
      "fatigue": 5.1
     },
@@ -448,7 +444,7 @@
    "away": {
     "team": "ATL",
     "elo": 1526.7,
-    "elo_today": 1539.9,
+    "elo_today": 1540.0,
     "pulse": 55.8,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
@@ -456,7 +452,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 21.7,
-     "roster": 3.8,
+     "roster": 3.9,
      "players": 0.0,
      "fatigue": 9.4
     },
@@ -467,9 +463,9 @@
    "game_id": "0022600244",
    "kind": "regular",
    "tipoff_utc": "2026-11-16 02:00:00+00:00",
-   "locked_at": "2026-11-15T16:30:57+00:00",
+   "locked_at": "2026-11-15T17:01:08+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-15T16:30:46Z",
+   "injuries_timestamp": "2026-11-15T17:00:58Z",
    "neutral": false,
    "p_home": 0.209,
    "margin_home": -9.6,
@@ -493,7 +489,7 @@
    "away": {
     "team": "OKC",
     "elo": 1646.6,
-    "elo_today": 1670.9,
+    "elo_today": 1671.0,
     "pulse": 77.7,
     "tier": "Silný",
     "normal_tier": "Silný",
@@ -501,7 +497,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": 141.6,
-     "roster": 24.7,
+     "roster": 24.8,
      "players": -18.5,
      "fatigue": 18.2
     },
