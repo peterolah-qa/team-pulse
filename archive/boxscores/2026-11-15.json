@@ -829,6 +829,256 @@
      }
     ]
    }
+  },
+  "0022600240": {
+   "game_id": "0022600240",
+   "espn_id": "401909989",
+   "date": "2026-11-15",
+   "kind": "regular",
+   "home": "BOS",
+   "away": "DAL",
+   "pts_home": 131,
+   "pts_away": 94,
+   "box": {
+    "DAL": [
+     {
+      "player": "Caleb Martin",
+      "min": 34,
+      "pts": 12,
+      "reb": 5,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Zaccharie Risacher",
+      "min": 27,
+      "pts": 18,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cooper Flagg",
+      "min": 27,
+      "pts": 17,
+      "reb": 3,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Morez Johnson Jr.",
+      "min": 26,
+      "pts": 2,
+      "reb": 6,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "P.J. Washington",
+      "min": 25,
+      "pts": 8,
+      "reb": 5,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Naji Marshall",
+      "min": 23,
+      "pts": 13,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Walter Clayton Jr.",
+      "min": 23,
+      "pts": 13,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Daniel Gafford",
+      "min": 19,
+      "pts": 3,
+      "reb": 4,
+      "ast": 2,
+      "blk": 3,
+      "stl": 0
+     },
+     {
+      "player": "Marcus Sasser",
+      "min": 18,
+      "pts": 5,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tobi Lawal",
+      "min": 9,
+      "pts": 2,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jett Howard",
+      "min": 7,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Moussa Cisse",
+      "min": 4,
+      "pts": 1,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "BOS": [
+     {
+      "player": "Jayson Tatum",
+      "min": 30,
+      "pts": 32,
+      "reb": 6,
+      "ast": 6,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Paul George",
+      "min": 25,
+      "pts": 7,
+      "reb": 7,
+      "ast": 6,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Derrick White",
+      "min": 23,
+      "pts": 16,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jordan Walsh",
+      "min": 21,
+      "pts": 11,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Payton Pritchard",
+      "min": 19,
+      "pts": 10,
+      "reb": 1,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Baylor Scheierman",
+      "min": 18,
+      "pts": 12,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Hugo Gonzalez",
+      "min": 18,
+      "pts": 9,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Neemias Queta",
+      "min": 15,
+      "pts": 8,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Mitchell Robinson",
+      "min": 15,
+      "pts": 0,
+      "reb": 7,
+      "ast": 1,
+      "blk": 3,
+      "stl": 0
+     },
+     {
+      "player": "Luka Garza",
+      "min": 14,
+      "pts": 2,
+      "reb": 3,
+      "ast": 5,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Ron Harper Jr.",
+      "min": 12,
+      "pts": 10,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Devin Carter",
+      "min": 12,
+      "pts": 0,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sam Hauser",
+      "min": 11,
+      "pts": 8,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Chris Cenac Jr.",
+      "min": 7,
+      "pts": 6,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
