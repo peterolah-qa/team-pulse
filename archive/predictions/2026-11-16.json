@@ -5,9 +5,9 @@
    "game_id": "0022600245",
    "kind": "regular",
    "tipoff_utc": "2026-11-17 00:00:00+00:00",
-   "locked_at": "2026-11-16T00:01:06+00:00",
+   "locked_at": "2026-11-16T00:31:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-16T00:01:00Z",
+   "injuries_timestamp": "2026-11-16T00:30:56Z",
    "neutral": false,
    "p_home": 0.771,
    "margin_home": 8.8,
@@ -68,9 +68,9 @@
    "game_id": "0022600246",
    "kind": "regular",
    "tipoff_utc": "2026-11-17 00:00:00+00:00",
-   "locked_at": "2026-11-16T00:01:06+00:00",
+   "locked_at": "2026-11-16T00:31:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-16T00:01:00Z",
+   "injuries_timestamp": "2026-11-16T00:30:56Z",
    "neutral": false,
    "p_home": 0.776,
    "margin_home": 9.0,
@@ -127,9 +127,9 @@
    "game_id": "0022600247",
    "kind": "regular",
    "tipoff_utc": "2026-11-17 00:00:00+00:00",
-   "locked_at": "2026-11-16T00:01:06+00:00",
+   "locked_at": "2026-11-16T00:31:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-16T00:01:00Z",
+   "injuries_timestamp": "2026-11-16T00:30:56Z",
    "neutral": false,
    "p_home": 0.432,
    "margin_home": -2.0,
@@ -178,6 +178,132 @@
      [
       "Bez Ty Jerome",
       -12
+     ]
+    ]
+   }
+  },
+  "0022600248": {
+   "game_id": "0022600248",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-17 00:30:00+00:00",
+   "locked_at": "2026-11-16T00:31:05+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-16T00:30:56Z",
+   "neutral": false,
+   "p_home": 0.291,
+   "margin_home": -6.4,
+   "home": {
+    "team": "BKN",
+    "elo": 1340.0,
+    "elo_today": 1306.7,
+    "pulse": 17.0,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -165.0,
+     "roster": -23.4,
+     "players": 0.0,
+     "fatigue": -9.9
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -23
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1563.2,
+    "elo_today": 1565.7,
+    "pulse": 60.1,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 58.2,
+     "roster": 83.4,
+     "players": -36.4,
+     "fatigue": -44.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      83
+     ],
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Bez Joel Embiid (?)",
+      -36
+     ]
+    ]
+   }
+  },
+  "0022600249": {
+   "game_id": "0022600249",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-17 00:30:00+00:00",
+   "locked_at": "2026-11-16T00:31:05+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-16T00:30:56Z",
+   "neutral": false,
+   "p_home": 0.498,
+   "margin_home": -0.1,
+   "home": {
+    "team": "MIA",
+    "elo": 1529.0,
+    "elo_today": 1551.4,
+    "pulse": 57.7,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 24.0,
+     "roster": 26.4,
+     "players": 0.0,
+     "fatigue": -4.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      26
+     ]
+    ]
+   },
+   "away": {
+    "team": "HOU",
+    "elo": 1625.3,
+    "elo_today": 1631.9,
+    "pulse": 71.1,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 120.3,
+     "roster": 55.8,
+     "players": 0.0,
+     "fatigue": -49.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      56
+     ],
+     [
+      "2. zápas za 2 dni",
+      -49
      ]
     ]
    }
