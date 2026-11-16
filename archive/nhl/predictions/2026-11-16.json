@@ -19,7 +19,7 @@
     "reasons": {}
    },
    "model": "nhl-v1",
-   "locked_at": "2026-11-15T09:15:27+00:00"
+   "locked_at": "2026-11-16T09:15:25+00:00"
   },
   "2026020332": {
    "game_id": "2026020332",
@@ -27,7 +27,7 @@
    "tipoff_utc": "2026-11-17T02:30:00Z",
    "kind": "regular",
    "neutral": false,
-   "p_home": 0.743,
+   "p_home": 0.734,
    "tip": "UTA",
    "home": {
     "team": "UTA",
@@ -36,13 +36,13 @@
    },
    "away": {
     "team": "VAN",
-    "elo": 1387.3,
+    "elo": 1394.9,
     "reasons": {
      "back-to-back": -38.5
     }
    },
    "model": "nhl-v1",
-   "locked_at": "2026-11-15T09:15:27+00:00"
+   "locked_at": "2026-11-16T09:15:25+00:00"
   }
  }
 }
