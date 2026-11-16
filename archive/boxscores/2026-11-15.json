@@ -1730,6 +1730,220 @@
      }
     ]
    }
+  },
+  "0022600244": {
+   "game_id": "0022600244",
+   "espn_id": "401909993",
+   "date": "2026-11-15",
+   "kind": "regular",
+   "home": "SAC",
+   "away": "OKC",
+   "pts_home": 103,
+   "pts_away": 125,
+   "box": {
+    "OKC": [
+     {
+      "player": "Shai Gilgeous-Alexander",
+      "min": 30,
+      "pts": 37,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jared McCain",
+      "min": 30,
+      "pts": 12,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Ajay Mitchell",
+      "min": 27,
+      "pts": 14,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Aday Mara",
+      "min": 26,
+      "pts": 16,
+      "reb": 13,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nique Clifford",
+      "min": 24,
+      "pts": 9,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kenrich Williams",
+      "min": 19,
+      "pts": 10,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Alex Caruso",
+      "min": 18,
+      "pts": 11,
+      "reb": 2,
+      "ast": 3,
+      "blk": 1,
+      "stl": 4
+     },
+     {
+      "player": "Isaiah Hartenstein",
+      "min": 18,
+      "pts": 3,
+      "reb": 11,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bennett Stirtz",
+      "min": 17,
+      "pts": 0,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Nikola Topic",
+      "min": 13,
+      "pts": 8,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Micah Peavy",
+      "min": 13,
+      "pts": 5,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Brooks Barnhizer",
+      "min": 4,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     }
+    ],
+    "SAC": [
+     {
+      "player": "Darius Acuff Jr.",
+      "min": 33,
+      "pts": 26,
+      "reb": 0,
+      "ast": 6,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Malik Monk",
+      "min": 29,
+      "pts": 14,
+      "reb": 1,
+      "ast": 10,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Leaky Black",
+      "min": 29,
+      "pts": 12,
+      "reb": 8,
+      "ast": 2,
+      "blk": 1,
+      "stl": 4
+     },
+     {
+      "player": "Domantas Sabonis",
+      "min": 29,
+      "pts": 11,
+      "reb": 13,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Alex Karaban",
+      "min": 29,
+      "pts": 0,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Daeqwon Plowden",
+      "min": 24,
+      "pts": 13,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Emanuel Sharp",
+      "min": 21,
+      "pts": 9,
+      "reb": 0,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Keegan Murray",
+      "min": 21,
+      "pts": 6,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Dylan Cardwell",
+      "min": 19,
+      "pts": 10,
+      "reb": 6,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mason Plumlee",
+      "min": 5,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
