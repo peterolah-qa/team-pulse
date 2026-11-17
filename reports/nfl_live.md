@@ -2,7 +2,7 @@
 
 Model `nfl-elo-v1` (Elo z brány G0-NFL: K 20, výhoda domáceho 48, prenos 0,6), tipy zamknuté pred výkopom (`team_pulse.nfl.predict`), výsledky z nflverse games.csv (zdroj nflverse / Lee Sharpe). Brána G2 2026-10-29 – 2027-01-10: log loss ≤ 0,6620 (`docs/gate-nfl-G2.md`).
 
-Stav k 2026-11-16 19:34 UTC: zamknutých tipov 43, vyhodnotených 42, čaká na výsledok 1.
+Stav k 2026-11-17 03:51 UTC: zamknutých tipov 43, vyhodnotených 42, čaká na výsledok 1.
 
 **Spolu: 31 z 42 (73,8 %), log loss 0,5286, Brier 0,1744**
 

@@ -2,7 +2,7 @@
 
 Model `nfl-elo-qb-v1` (Elo z G0-NFL + náhradník quarterback −65 Elo), tipy zamknuté pred výkopom (`team_pulse.nfl.predict`), výsledky z nflverse games.csv (zdroj nflverse / Lee Sharpe). Brána G2 2026-11-12 – 2027-01-10: log loss ≤ 0,6602 (`docs/gate-nfl-qb-G2.md`).
 
-Stav k 2026-11-16 19:34 UTC: zamknutých tipov 14, vyhodnotených 13, čaká na výsledok 1.
+Stav k 2026-11-17 03:51 UTC: zamknutých tipov 14, vyhodnotených 13, čaká na výsledok 1.
 
 **Spolu: 9 z 13 (69,2 %), log loss 0,5342, Brier 0,1779**
 
