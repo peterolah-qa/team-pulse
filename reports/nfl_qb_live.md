@@ -2,15 +2,15 @@
 
 Model `nfl-elo-qb-v1` (Elo z G0-NFL + náhradník quarterback −65 Elo), tipy zamknuté pred výkopom (`team_pulse.nfl.predict`), výsledky z nflverse games.csv (zdroj nflverse / Lee Sharpe). Brána G2 2026-11-12 – 2027-01-10: log loss ≤ 0,6602 (`docs/gate-nfl-qb-G2.md`).
 
-Stav k 2026-11-17 03:51 UTC: zamknutých tipov 14, vyhodnotených 13, čaká na výsledok 1.
+Stav k 2026-11-17 18:32 UTC: zamknutých tipov 27, vyhodnotených 14, čaká na výsledok 13.
 
-**Spolu: 9 z 13 (69,2 %), log loss 0,5342, Brier 0,1779**
+**Spolu: 9 z 14 (64,3 %), log loss 0,5649, Brier 0,1926**
 
 ## Po týždňoch
 
 |   týždeň |   zápasy |   tip vyšiel | presnosť   | log loss   |
 |---------:|---------:|-------------:|:-----------|:-----------|
-|       10 |       13 |            9 | 69,2 %     | 0,5342     |
+|       10 |       14 |            9 | 64,3 %     | 0,5649     |
 
 ## Posledný týždeň (10.)
 
@@ -31,3 +31,4 @@ Výsledok je hostia : domáci.
 | SEA @ LV  | SEA   | 63 %    | 21:13      | ✅  |
 | SF @ DAL  | SF    | 66 %    | 46:40      | ✅  |
 | PIT @ CIN | CIN   | 59 %    | 18:38      | ✅  |
+| LAC @ BAL | BAL   | 62 %    | 23:20      | ❌  |
