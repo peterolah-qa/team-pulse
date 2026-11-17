@@ -5,9 +5,9 @@
    "game_id": "0022600253",
    "kind": "regular",
    "tipoff_utc": "2026-11-18 00:30:00+00:00",
-   "locked_at": "2026-11-17T03:31:01+00:00",
+   "locked_at": "2026-11-17T04:01:12+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-17T03:30:55Z",
+   "injuries_timestamp": "2026-11-17T04:01:03Z",
    "neutral": false,
    "p_home": 0.328,
    "margin_home": -5.2,
@@ -68,9 +68,9 @@
    "game_id": "0022600254",
    "kind": "regular",
    "tipoff_utc": "2026-11-18 01:00:00+00:00",
-   "locked_at": "2026-11-17T03:31:01+00:00",
+   "locked_at": "2026-11-17T04:01:12+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-17T03:30:55Z",
+   "injuries_timestamp": "2026-11-17T04:01:03Z",
    "neutral": false,
    "p_home": 0.571,
    "margin_home": 2.1,
@@ -135,9 +135,9 @@
    "game_id": "0022600255",
    "kind": "regular",
    "tipoff_utc": "2026-11-18 01:00:00+00:00",
-   "locked_at": "2026-11-17T03:31:01+00:00",
+   "locked_at": "2026-11-17T04:01:12+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-17T03:30:55Z",
+   "injuries_timestamp": "2026-11-17T04:01:03Z",
    "neutral": false,
    "p_home": 0.726,
    "margin_home": 7.0,
@@ -202,9 +202,9 @@
    "game_id": "0022600257",
    "kind": "regular",
    "tipoff_utc": "2026-11-18 03:30:00+00:00",
-   "locked_at": "2026-11-17T03:31:01+00:00",
+   "locked_at": "2026-11-17T04:01:12+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-17T03:30:55Z",
+   "injuries_timestamp": "2026-11-17T04:01:03Z",
    "neutral": false,
    "p_home": 0.811,
    "margin_home": 10.5,
@@ -249,6 +249,69 @@
      [
       "Bez Lauri Markkanen",
       -29
+     ]
+    ]
+   }
+  },
+  "0022600256": {
+   "game_id": "0022600256",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-18 04:00:00+00:00",
+   "locked_at": "2026-11-17T04:01:12+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-17T04:01:03Z",
+   "neutral": false,
+   "p_home": 0.771,
+   "margin_home": 8.8,
+   "home": {
+    "team": "LAL",
+    "elo": 1631.4,
+    "elo_today": 1625.7,
+    "pulse": 70.1,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 126.4,
+     "roster": 56.5,
+     "players": -65.2,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Bez Walker Kessler, Austin Reaves",
+      -65
+     ],
+     [
+      "Sila súpisky",
+      56
+     ]
+    ]
+   },
+   "away": {
+    "team": "CHA",
+    "elo": 1479.1,
+    "elo_today": 1458.5,
+    "pulse": 42.2,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -25.9,
+     "roster": -29.5,
+     "players": -5.2,
+     "fatigue": 14.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -30
+     ],
+     [
+      "3. zápas výjazdu",
+      14
      ]
     ]
    }
