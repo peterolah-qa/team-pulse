@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-17",
+ "games": {
+  "0022600253": {
+   "game_id": "0022600253",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-18 00:30:00+00:00",
+   "locked_at": "2026-11-17T00:31:04+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-17T00:30:55Z",
+   "neutral": false,
+   "p_home": 0.328,
+   "margin_home": -5.2,
+   "home": {
+    "team": "TOR",
+    "elo": 1507.7,
+    "elo_today": 1515.6,
+    "pulse": 51.8,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 2.7,
+     "roster": 43.8,
+     "players": -37.9,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      44
+     ],
+     [
+      "Bez Kawhi Leonard",
+      -38
+     ]
+    ]
+   },
+   "away": {
+    "team": "NYK",
+    "elo": 1679.3,
+    "elo_today": 1739.7,
+    "pulse": 89.1,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 174.3,
+     "roster": 46.3,
+     "players": 0.0,
+     "fatigue": 14.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      46
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ]
+    ]
+   }
+  }
+ }
+}
