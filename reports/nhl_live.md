@@ -2,7 +2,7 @@
 
 Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené po zápase. Model Elo + únava, v teste 2023/24 – 2025/26 mal presnosť 57,6 %.
 
-**Spolu: 140 z 241 (58,1 %), log loss 0,6591**
+**Spolu: 140 z 243 (57,6 %), log loss 0,6622**
 
 ## Po dňoch
 
@@ -42,15 +42,13 @@ Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené 
 | 13. 11.     |        2 |            1 | 50,0 %     |
 | 14. 11.     |       14 |            5 | 35,7 %     |
 | 15. 11.     |        5 |            3 | 60,0 %     |
+| 16. 11.     |        2 |            0 | 0,0 %      |
 
-## Posledný deň (15. 11.)
+## Posledný deň (16. 11.)
 
 Výsledok je hostia : domáci, pp = po predĺžení, sn = po nájazdoch.
 
 | zápas     | tip   | šanca   | výsledok   |    |
 |:----------|:------|:--------|:-----------|:---|
-| EDM @ PHI | EDM   | 55 %    | 5:2        | ✅  |
-| FLA @ DAL | DAL   | 56 %    | 1:2 pp     | ✅  |
-| CGY @ ANA | ANA   | 57 %    | 1:6        | ✅  |
-| VAN @ VGK | VGK   | 75 %    | 6:3        | ❌  |
-| NSH @ SJS | NSH   | 60 %    | 2:4        | ❌  |
+| MTL @ NYR | MTL   | 52 %    | 1:3        | ❌  |
+| VAN @ UTA | UTA   | 73 %    | 3:2        | ❌  |

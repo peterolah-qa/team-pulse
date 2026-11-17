@@ -1,0 +1,69 @@
+{
+ "games": {
+  "2026020344": {
+   "game_id": "2026020344",
+   "date": "2026-11-18",
+   "tipoff_utc": "2026-11-19T00:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.516,
+   "tip": "DET",
+   "home": {
+    "team": "DET",
+    "elo": 1482.1,
+    "reasons": {}
+   },
+   "away": {
+    "team": "BOS",
+    "elo": 1531.5,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-17T09:43:43+00:00"
+  },
+  "2026020345": {
+   "game_id": "2026020345",
+   "date": "2026-11-18",
+   "tipoff_utc": "2026-11-19T00:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.517,
+   "tip": "NJD",
+   "home": {
+    "team": "NJD",
+    "elo": 1527.7,
+    "reasons": {}
+   },
+   "away": {
+    "team": "MTL",
+    "elo": 1538.4,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-17T09:43:43+00:00"
+  },
+  "2026020346": {
+   "game_id": "2026020346",
+   "date": "2026-11-18",
+   "tipoff_utc": "2026-11-19T03:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.429,
+   "tip": "COL",
+   "home": {
+    "team": "UTA",
+    "elo": 1497.4,
+    "reasons": {}
+   },
+   "away": {
+    "team": "COL",
+    "elo": 1580.9,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-17T09:43:43+00:00"
+  }
+ }
+}
