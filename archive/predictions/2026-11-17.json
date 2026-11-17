@@ -5,9 +5,9 @@
    "game_id": "0022600253",
    "kind": "regular",
    "tipoff_utc": "2026-11-18 00:30:00+00:00",
-   "locked_at": "2026-11-17T03:01:09+00:00",
+   "locked_at": "2026-11-17T03:31:01+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-17T03:01:05Z",
+   "injuries_timestamp": "2026-11-17T03:30:55Z",
    "neutral": false,
    "p_home": 0.328,
    "margin_home": -5.2,
@@ -68,9 +68,9 @@
    "game_id": "0022600254",
    "kind": "regular",
    "tipoff_utc": "2026-11-18 01:00:00+00:00",
-   "locked_at": "2026-11-17T03:01:09+00:00",
+   "locked_at": "2026-11-17T03:31:01+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-17T03:01:05Z",
+   "injuries_timestamp": "2026-11-17T03:30:55Z",
    "neutral": false,
    "p_home": 0.571,
    "margin_home": 2.1,
@@ -135,9 +135,9 @@
    "game_id": "0022600255",
    "kind": "regular",
    "tipoff_utc": "2026-11-18 01:00:00+00:00",
-   "locked_at": "2026-11-17T03:01:09+00:00",
+   "locked_at": "2026-11-17T03:31:01+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-17T03:01:05Z",
+   "injuries_timestamp": "2026-11-17T03:30:55Z",
    "neutral": false,
    "p_home": 0.726,
    "margin_home": 7.0,
@@ -194,6 +194,61 @@
      [
       "3. zápas výjazdu",
       14
+     ]
+    ]
+   }
+  },
+  "0022600257": {
+   "game_id": "0022600257",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-18 03:30:00+00:00",
+   "locked_at": "2026-11-17T03:31:01+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-17T03:30:55Z",
+   "neutral": false,
+   "p_home": 0.811,
+   "margin_home": 10.5,
+   "home": {
+    "team": "LAC",
+    "elo": 1490.0,
+    "elo_today": 1462.4,
+    "pulse": 42.9,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -15.0,
+     "roster": -23.3,
+     "players": -6.3,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -23
+     ]
+    ]
+   },
+   "away": {
+    "team": "UTA",
+    "elo": 1282.0,
+    "elo_today": 1246.6,
+    "pulse": 6.9,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -223.0,
+     "roster": -9.7,
+     "players": -29.3,
+     "fatigue": 3.7
+    },
+    "reasons": [
+     [
+      "Bez Lauri Markkanen",
+      -29
      ]
     ]
    }
