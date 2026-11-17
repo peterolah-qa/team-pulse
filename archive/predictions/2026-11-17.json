@@ -5,9 +5,9 @@
    "game_id": "0022600253",
    "kind": "regular",
    "tipoff_utc": "2026-11-18 00:30:00+00:00",
-   "locked_at": "2026-11-17T00:31:04+00:00",
+   "locked_at": "2026-11-17T01:01:06+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-17T00:30:55Z",
+   "injuries_timestamp": "2026-11-17T01:01:03Z",
    "neutral": false,
    "p_home": 0.328,
    "margin_home": -5.2,
@@ -56,6 +56,140 @@
      [
       "Sila súpisky",
       46
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ]
+    ]
+   }
+  },
+  "0022600254": {
+   "game_id": "0022600254",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-18 01:00:00+00:00",
+   "locked_at": "2026-11-17T01:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-17T01:01:03Z",
+   "neutral": false,
+   "p_home": 0.571,
+   "margin_home": 2.1,
+   "home": {
+    "team": "MIN",
+    "elo": 1604.3,
+    "elo_today": 1531.6,
+    "pulse": 54.4,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 99.3,
+     "roster": -0.3,
+     "players": -24.5,
+     "fatigue": -48.0
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -43
+     ],
+     [
+      "Bez Anthony Edwards",
+      -24
+     ]
+    ]
+   },
+   "away": {
+    "team": "POR",
+    "elo": 1579.2,
+    "elo_today": 1552.3,
+    "pulse": 57.9,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 74.2,
+     "roster": 22.0,
+     "players": -13.8,
+     "fatigue": -35.1
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Sila súpisky",
+      22
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ]
+    ]
+   }
+  },
+  "0022600255": {
+   "game_id": "0022600255",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-18 01:00:00+00:00",
+   "locked_at": "2026-11-17T01:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-17T01:01:03Z",
+   "neutral": false,
+   "p_home": 0.726,
+   "margin_home": 7.0,
+   "home": {
+    "team": "SAS",
+    "elo": 1733.3,
+    "elo_today": 1755.7,
+    "pulse": 91.8,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 228.3,
+     "roster": 35.5,
+     "players": -3.5,
+     "fatigue": -9.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      35
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "DET",
+    "elo": 1625.5,
+    "elo_today": 1637.5,
+    "pulse": 72.1,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 120.5,
+     "roster": 19.6,
+     "players": -19.2,
+     "fatigue": 11.5
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      20
+     ],
+     [
+      "Bez Jalen Duren",
+      -19
      ],
      [
       "3. zápas výjazdu",
