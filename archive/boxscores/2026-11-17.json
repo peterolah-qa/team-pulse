@@ -1,0 +1,210 @@
+{
+ "date": "2026-11-17",
+ "games": {
+  "0022600253": {
+   "game_id": "0022600253",
+   "espn_id": "401910002",
+   "date": "2026-11-17",
+   "kind": "regular",
+   "home": "TOR",
+   "away": "NYK",
+   "pts_home": 102,
+   "pts_away": 111,
+   "box": {
+    "NYK": [
+     {
+      "player": "OG Anunoby",
+      "min": 36,
+      "pts": 16,
+      "reb": 4,
+      "ast": 0,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Karl-Anthony Towns",
+      "min": 36,
+      "pts": 16,
+      "reb": 16,
+      "ast": 8,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jalen Brunson",
+      "min": 34,
+      "pts": 31,
+      "reb": 5,
+      "ast": 5,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Josh Hart",
+      "min": 31,
+      "pts": 5,
+      "reb": 4,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Mikal Bridges",
+      "min": 30,
+      "pts": 17,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Landry Shamet",
+      "min": 24,
+      "pts": 12,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyler Kolek",
+      "min": 13,
+      "pts": 4,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Andre Drummond",
+      "min": 11,
+      "pts": 2,
+      "reb": 8,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Miles McBride",
+      "min": 9,
+      "pts": 3,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jordan Clarkson",
+      "min": 8,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jose Alvarado",
+      "min": 7,
+      "pts": 2,
+      "reb": 0,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "TOR": [
+     {
+      "player": "RJ Barrett",
+      "min": 39,
+      "pts": 22,
+      "reb": 5,
+      "ast": 5,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Scottie Barnes",
+      "min": 34,
+      "pts": 20,
+      "reb": 4,
+      "ast": 2,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Immanuel Quickley",
+      "min": 34,
+      "pts": 14,
+      "reb": 1,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ja'Kobe Walter",
+      "min": 33,
+      "pts": 25,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Collin Murray-Boyles",
+      "min": 33,
+      "pts": 8,
+      "reb": 1,
+      "ast": 3,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "Jamal Shead",
+      "min": 20,
+      "pts": 7,
+      "reb": 0,
+      "ast": 6,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jakob Poeltl",
+      "min": 18,
+      "pts": 3,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Allen Graves",
+      "min": 13,
+      "pts": 3,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Alijah Martin",
+      "min": 8,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jamison Battle",
+      "min": 7,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
