@@ -579,6 +579,220 @@
      }
     ]
    }
+  },
+  "0022600257": {
+   "game_id": "0022600257",
+   "espn_id": "401910006",
+   "date": "2026-11-17",
+   "kind": "regular",
+   "home": "LAC",
+   "away": "UTA",
+   "pts_home": 107,
+   "pts_away": 132,
+   "box": {
+    "UTA": [
+     {
+      "player": "Brice Sensabaugh",
+      "min": 35,
+      "pts": 40,
+      "reb": 11,
+      "ast": 5,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Keyonte George",
+      "min": 35,
+      "pts": 30,
+      "reb": 2,
+      "ast": 11,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Svi Mykhailiuk",
+      "min": 33,
+      "pts": 8,
+      "reb": 7,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mo Bamba",
+      "min": 31,
+      "pts": 15,
+      "reb": 10,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Darryn Peterson",
+      "min": 31,
+      "pts": 13,
+      "reb": 5,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ace Bailey",
+      "min": 23,
+      "pts": 5,
+      "reb": 1,
+      "ast": 4,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Josh Okogie",
+      "min": 22,
+      "pts": 9,
+      "reb": 2,
+      "ast": 4,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Tony Bradley",
+      "min": 17,
+      "pts": 3,
+      "reb": 7,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Green",
+      "min": 13,
+      "pts": 9,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "LAC": [
+     {
+      "player": "Darius Garland",
+      "min": 30,
+      "pts": 20,
+      "reb": 3,
+      "ast": 7,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Derrick Jones Jr.",
+      "min": 28,
+      "pts": 5,
+      "reb": 1,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Rui Hachimura",
+      "min": 27,
+      "pts": 20,
+      "reb": 5,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Kris Dunn",
+      "min": 26,
+      "pts": 2,
+      "reb": 5,
+      "ast": 5,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Brook Lopez",
+      "min": 23,
+      "pts": 23,
+      "reb": 6,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Max Strus",
+      "min": 21,
+      "pts": 3,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Isaiah Jackson",
+      "min": 19,
+      "pts": 8,
+      "reb": 5,
+      "ast": 0,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Keaton Wagler",
+      "min": 18,
+      "pts": 15,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kobe Sanders",
+      "min": 18,
+      "pts": 5,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Gradey Dick",
+      "min": 17,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Baba Miller",
+      "min": 4,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Cam Christie",
+      "min": 4,
+      "pts": 3,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Nick Martinelli",
+      "min": 4,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
