@@ -580,6 +580,220 @@
     ]
    }
   },
+  "0022600256": {
+   "game_id": "0022600256",
+   "espn_id": "401910005",
+   "date": "2026-11-17",
+   "kind": "regular",
+   "home": "LAL",
+   "away": "CHA",
+   "pts_home": 118,
+   "pts_away": 114,
+   "box": {
+    "CHA": [
+     {
+      "player": "Naz Reid",
+      "min": 42,
+      "pts": 23,
+      "reb": 11,
+      "ast": 4,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Moussa Diabate",
+      "min": 38,
+      "pts": 5,
+      "reb": 16,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Royce O'Neale",
+      "min": 34,
+      "pts": 13,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Brandon Miller",
+      "min": 32,
+      "pts": 28,
+      "reb": 2,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Grant Williams",
+      "min": 30,
+      "pts": 12,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Sion James",
+      "min": 30,
+      "pts": 3,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Coby White",
+      "min": 26,
+      "pts": 19,
+      "reb": 3,
+      "ast": 4,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Ryan Kalkbrenner",
+      "min": 14,
+      "pts": 6,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Christian Anderson",
+      "min": 14,
+      "pts": 5,
+      "reb": 1,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Tidjane Salaun",
+      "min": 5,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Liam McNeeley",
+      "min": 0,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "LAL": [
+     {
+      "player": "Quentin Grimes",
+      "min": 42,
+      "pts": 47,
+      "reb": 6,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Luka Doncic",
+      "min": 42,
+      "pts": 36,
+      "reb": 6,
+      "ast": 7,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Matisse Thybulle",
+      "min": 31,
+      "pts": 7,
+      "reb": 6,
+      "ast": 0,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Collin Sexton",
+      "min": 25,
+      "pts": 10,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ziaire Williams",
+      "min": 24,
+      "pts": 0,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jake LaRavia",
+      "min": 23,
+      "pts": 4,
+      "reb": 5,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Sandro Mamukelashvili",
+      "min": 23,
+      "pts": 3,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Carson Cooper",
+      "min": 18,
+      "pts": 3,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kevon Looney",
+      "min": 17,
+      "pts": 4,
+      "reb": 8,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jarred Vanderbilt",
+      "min": 14,
+      "pts": 4,
+      "reb": 7,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Adou Thiero",
+      "min": 6,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     }
+    ]
+   }
+  },
   "0022600257": {
    "game_id": "0022600257",
    "espn_id": "401910006",
