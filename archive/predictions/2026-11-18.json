@@ -5,9 +5,9 @@
    "game_id": "0022600258",
    "kind": "regular",
    "tipoff_utc": "2026-11-19 00:00:00+00:00",
-   "locked_at": "2026-11-18T00:01:03+00:00",
+   "locked_at": "2026-11-18T00:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-18T00:00:59Z",
+   "injuries_timestamp": "2026-11-18T00:30:48Z",
    "neutral": false,
    "p_home": 0.718,
    "margin_home": 6.8,
@@ -68,9 +68,9 @@
    "game_id": "0022600259",
    "kind": "regular",
    "tipoff_utc": "2026-11-19 00:00:00+00:00",
-   "locked_at": "2026-11-18T00:01:03+00:00",
+   "locked_at": "2026-11-18T00:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-18T00:00:59Z",
+   "injuries_timestamp": "2026-11-18T00:30:48Z",
    "neutral": false,
    "p_home": 0.259,
    "margin_home": -7.6,
@@ -135,9 +135,9 @@
    "game_id": "0022600260",
    "kind": "regular",
    "tipoff_utc": "2026-11-19 00:00:00+00:00",
-   "locked_at": "2026-11-18T00:01:03+00:00",
+   "locked_at": "2026-11-18T00:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-18T00:00:59Z",
+   "injuries_timestamp": "2026-11-18T00:30:48Z",
    "neutral": false,
    "p_home": 0.834,
    "margin_home": 11.7,
@@ -194,9 +194,9 @@
    "game_id": "0022600261",
    "kind": "regular",
    "tipoff_utc": "2026-11-19 00:00:00+00:00",
-   "locked_at": "2026-11-18T00:01:03+00:00",
+   "locked_at": "2026-11-18T00:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-18T00:00:59Z",
+   "injuries_timestamp": "2026-11-18T00:30:48Z",
    "neutral": false,
    "p_home": 0.493,
    "margin_home": -0.2,
@@ -251,6 +251,123 @@
       -61
      ]
     ]
+   }
+  },
+  "0022600262": {
+   "game_id": "0022600262",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-19 00:30:00+00:00",
+   "locked_at": "2026-11-18T00:30:53+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-18T00:30:48Z",
+   "neutral": false,
+   "p_home": 0.532,
+   "margin_home": 0.9,
+   "home": {
+    "team": "BKN",
+    "elo": 1334.0,
+    "elo_today": 1315.2,
+    "pulse": 18.4,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -171.0,
+     "roster": -20.9,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -21
+     ]
+    ]
+   },
+   "away": {
+    "team": "CHI",
+    "elo": 1386.0,
+    "elo_today": 1367.7,
+    "pulse": 27.1,
+    "tier": "Kritický",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -119.0,
+     "roster": -31.7,
+     "players": 0.0,
+     "fatigue": 13.4
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -32
+     ],
+     [
+      "3. zápas výjazdu",
+      14
+     ]
+    ]
+   }
+  },
+  "0022600263": {
+   "game_id": "0022600263",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-19 00:30:00+00:00",
+   "locked_at": "2026-11-18T00:30:53+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-18T00:30:48Z",
+   "neutral": false,
+   "p_home": 0.771,
+   "margin_home": 8.8,
+   "home": {
+    "team": "TOR",
+    "elo": 1507.7,
+    "elo_today": 1465.5,
+    "pulse": 43.4,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 2.7,
+     "roster": 43.8,
+     "players": -37.9,
+     "fatigue": -48.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      44
+     ],
+     [
+      "2. zápas za 2 dni",
+      -43
+     ],
+     [
+      "Bez Kawhi Leonard",
+      -38
+     ]
+    ]
+   },
+   "away": {
+    "team": "WAS",
+    "elo": 1302.2,
+    "elo_today": 1298.6,
+    "pulse": 15.6,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -202.8,
+     "roster": 0.0,
+     "players": 0.0,
+     "fatigue": -3.6
+    },
+    "reasons": []
    }
   }
  }
