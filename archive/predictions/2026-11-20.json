@@ -5,9 +5,9 @@
    "game_id": "0022600043",
    "kind": "regular",
    "tipoff_utc": "2026-11-21 00:00:00+00:00",
-   "locked_at": "2026-11-20T00:01:06+00:00",
+   "locked_at": "2026-11-20T00:30:57+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-20T00:01:01Z",
+   "injuries_timestamp": "2026-11-20T00:30:47Z",
    "neutral": false,
    "p_home": 0.67,
    "margin_home": 5.1,
@@ -60,6 +60,195 @@
      [
       "Posun na východ o 3 h",
       13
+     ]
+    ]
+   }
+  },
+  "0022600044": {
+   "game_id": "0022600044",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-21 00:30:00+00:00",
+   "locked_at": "2026-11-20T00:30:57+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-20T00:30:47Z",
+   "neutral": false,
+   "p_home": 0.344,
+   "margin_home": -4.7,
+   "home": {
+    "team": "BKN",
+    "elo": 1310.7,
+    "elo_today": 1290.9,
+    "pulse": 14.3,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -194.3,
+     "roster": -21.9,
+     "players": 0.0,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -22
+     ]
+    ]
+   },
+   "away": {
+    "team": "ORL",
+    "elo": 1512.4,
+    "elo_today": 1500.0,
+    "pulse": 49.2,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 7.4,
+     "roster": 16.6,
+     "players": -32.0,
+     "fatigue": 3.0
+    },
+    "reasons": [
+     [
+      "Bez Paolo Banchero",
+      -32
+     ],
+     [
+      "Sila súpisky",
+      17
+     ]
+    ]
+   }
+  },
+  "0022600045": {
+   "game_id": "0022600045",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-21 00:30:00+00:00",
+   "locked_at": "2026-11-20T00:30:57+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-20T00:30:47Z",
+   "neutral": false,
+   "p_home": 0.795,
+   "margin_home": 9.8,
+   "home": {
+    "team": "CLE",
+    "elo": 1566.6,
+    "elo_today": 1543.4,
+    "pulse": 56.4,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 61.6,
+     "roster": 13.4,
+     "players": -38.6,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Bez Evan Mobley",
+      -39
+     ],
+     [
+      "Sila súpisky",
+      13
+     ]
+    ]
+   },
+   "away": {
+    "team": "IND",
+    "elo": 1364.4,
+    "elo_today": 1348.2,
+    "pulse": 23.9,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -140.6,
+     "roster": 17.0,
+     "players": -37.8,
+     "fatigue": 4.7
+    },
+    "reasons": [
+     [
+      "Bez Tyrese Haliburton, Andrew Nembhard (?)",
+      -38
+     ],
+     [
+      "Sila súpisky",
+      17
+     ]
+    ]
+   }
+  },
+  "0022600046": {
+   "game_id": "0022600046",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-21 00:30:00+00:00",
+   "locked_at": "2026-11-20T00:30:57+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-20T00:30:47Z",
+   "neutral": false,
+   "p_home": 0.728,
+   "margin_home": 7.1,
+   "home": {
+    "team": "DET",
+    "elo": 1650.3,
+    "elo_today": 1585.4,
+    "pulse": 63.4,
+    "tier": "Stabilný",
+    "normal_tier": "Silný",
+    "dropped": true,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 145.3,
+     "roster": 20.5,
+     "players": -69.5,
+     "fatigue": -16.0
+    },
+    "reasons": [
+     [
+      "Bez Jalen Duren, Cade Cunningham (?)",
+      -69
+     ],
+     [
+      "Sila súpisky",
+      20
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "TOR",
+    "elo": 1487.9,
+    "elo_today": 1465.4,
+    "pulse": 43.4,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -17.1,
+     "roster": 43.1,
+     "players": -62.6,
+     "fatigue": -3.0
+    },
+    "reasons": [
+     [
+      "Bez Kawhi Leonard, RJ Barrett",
+      -63
+     ],
+     [
+      "Sila súpisky",
+      43
      ]
     ]
    }
