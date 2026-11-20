@@ -5,9 +5,9 @@
    "game_id": "0022600043",
    "kind": "regular",
    "tipoff_utc": "2026-11-21 00:00:00+00:00",
-   "locked_at": "2026-11-20T02:01:11+00:00",
+   "locked_at": "2026-11-20T02:30:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-20T02:01:05Z",
+   "injuries_timestamp": "2026-11-20T02:30:51Z",
    "neutral": false,
    "p_home": 0.67,
    "margin_home": 5.1,
@@ -68,9 +68,9 @@
    "game_id": "0022600044",
    "kind": "regular",
    "tipoff_utc": "2026-11-21 00:30:00+00:00",
-   "locked_at": "2026-11-20T02:01:11+00:00",
+   "locked_at": "2026-11-20T02:30:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-20T02:01:05Z",
+   "injuries_timestamp": "2026-11-20T02:30:51Z",
    "neutral": false,
    "p_home": 0.344,
    "margin_home": -4.7,
@@ -127,9 +127,9 @@
    "game_id": "0022600045",
    "kind": "regular",
    "tipoff_utc": "2026-11-21 00:30:00+00:00",
-   "locked_at": "2026-11-20T02:01:11+00:00",
+   "locked_at": "2026-11-20T02:30:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-20T02:01:05Z",
+   "injuries_timestamp": "2026-11-20T02:30:51Z",
    "neutral": false,
    "p_home": 0.795,
    "margin_home": 9.8,
@@ -190,9 +190,9 @@
    "game_id": "0022600046",
    "kind": "regular",
    "tipoff_utc": "2026-11-21 00:30:00+00:00",
-   "locked_at": "2026-11-20T02:01:11+00:00",
+   "locked_at": "2026-11-20T02:30:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-20T02:01:05Z",
+   "injuries_timestamp": "2026-11-20T02:30:51Z",
    "neutral": false,
    "p_home": 0.728,
    "margin_home": 7.1,
@@ -257,9 +257,9 @@
    "game_id": "0022600047",
    "kind": "regular",
    "tipoff_utc": "2026-11-21 01:00:00+00:00",
-   "locked_at": "2026-11-20T02:01:11+00:00",
+   "locked_at": "2026-11-20T02:30:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-20T02:01:05Z",
+   "injuries_timestamp": "2026-11-20T02:30:51Z",
    "neutral": false,
    "p_home": 0.662,
    "margin_home": 4.9,
@@ -307,9 +307,9 @@
    "game_id": "0022600048",
    "kind": "regular",
    "tipoff_utc": "2026-11-21 01:00:00+00:00",
-   "locked_at": "2026-11-20T02:01:11+00:00",
+   "locked_at": "2026-11-20T02:30:58+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-20T02:01:05Z",
+   "injuries_timestamp": "2026-11-20T02:30:51Z",
    "neutral": false,
    "p_home": 0.873,
    "margin_home": 13.9,
@@ -358,6 +358,69 @@
      [
       "Bez Trey Murphy III, Dejounte Murray",
       -30
+     ]
+    ]
+   }
+  },
+  "0022600049": {
+   "game_id": "0022600049",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-21 02:30:00+00:00",
+   "locked_at": "2026-11-20T02:30:58+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-20T02:30:51Z",
+   "neutral": false,
+   "p_home": 0.362,
+   "margin_home": -4.1,
+   "home": {
+    "team": "UTA",
+    "elo": 1353.1,
+    "elo_today": 1302.1,
+    "pulse": 16.2,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -151.9,
+     "roster": -5.9,
+     "players": -28.0,
+     "fatigue": -17.0
+    },
+    "reasons": [
+     [
+      "Bez Lauri Markkanen",
+      -28
+     ],
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "PHX",
+    "elo": 1528.1,
+    "elo_today": 1495.7,
+    "pulse": 48.4,
+    "tier": "Oslabený",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 23.1,
+     "roster": -9.5,
+     "players": 0.0,
+     "fatigue": -22.9
+    },
+    "reasons": [
+     [
+      "Hrá vo výške",
+      -40
+     ],
+     [
+      "3. zápas výjazdu",
+      14
      ]
     ]
    }
