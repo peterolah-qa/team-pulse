@@ -2,9 +2,9 @@
 
 Model `nfl-elo-v1` (Elo z brány G0-NFL: K 20, výhoda domáceho 48, prenos 0,6), tipy zamknuté pred výkopom (`team_pulse.nfl.predict`), výsledky z nflverse games.csv (zdroj nflverse / Lee Sharpe). Brána G2 2026-10-29 – 2027-01-10: log loss ≤ 0,6620 (`docs/gate-nfl-G2.md`).
 
-Stav k 2026-11-20 02:18 UTC: zamknutých tipov 56, vyhodnotených 43, čaká na výsledok 13.
+Stav k 2026-11-20 17:46 UTC: zamknutých tipov 56, vyhodnotených 44, čaká na výsledok 12.
 
-**Spolu: 31 z 43 (72,1 %), log loss 0,5445, Brier 0,1818**
+**Spolu: 32 z 44 (72,7 %), log loss 0,5394, Brier 0,1794**
 
 ## Po týždňoch
 
@@ -13,24 +13,12 @@ Stav k 2026-11-20 02:18 UTC: zamknutých tipov 56, vyhodnotených 43, čaká na 
 |        8 |       14 |           10 | 71,4 %     | 0,5423     |
 |        9 |       15 |           12 | 80,0 %     | 0,4975     |
 |       10 |       14 |            9 | 64,3 %     | 0,5970     |
+|       11 |        1 |            1 | 100,0 %    | 0,3235     |
 
-## Posledný týždeň (10.)
+## Posledný týždeň (11.)
 
 Výsledok je hostia : domáci.
 
 | zápas     | tip   | šanca   | výsledok   |    |
 |:----------|:------|:--------|:-----------|:---|
-| WAS @ NYG | NYG   | 65 %    | 24:21      | ❌  |
-| NE @ DET  | DET   | 54 %    | 10:35      | ✅  |
-| BUF @ NYJ | BUF   | 84 %    | 31:12      | ✅  |
-| CAR @ NO  | NO    | 56 %    | 20:17      | ❌  |
-| HOU @ CLE | HOU   | 55 %    | 24:27      | ❌  |
-| JAX @ TEN | JAX   | 83 %    | 40:23      | ✅  |
-| KC @ ATL  | KC    | 60 %    | 35:13      | ✅  |
-| MIA @ IND | IND   | 60 %    | 22:24      | ✅  |
-| MIN @ GB  | GB    | 56 %    | 30:10      | ❌  |
-| LA @ ARI  | LA    | 71 %    | 34:6       | ✅  |
-| SEA @ LV  | SEA   | 71 %    | 21:13      | ✅  |
-| SF @ DAL  | SF    | 66 %    | 46:40      | ✅  |
-| PIT @ CIN | CIN   | 59 %    | 18:38      | ✅  |
-| LAC @ BAL | BAL   | 70 %    | 23:20      | ❌  |
+| IND @ HOU | HOU   | 72 %    | 3:26       | ✅  |
