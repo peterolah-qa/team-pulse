@@ -1,0 +1,300 @@
+{
+ "games": {
+  "2026020359": {
+   "game_id": "2026020359",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-21T18:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.634,
+   "tip": "CAR",
+   "home": {
+    "team": "CAR",
+    "elo": 1610.2,
+    "reasons": {}
+   },
+   "away": {
+    "team": "EDM",
+    "elo": 1550.6,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020360": {
+   "game_id": "2026020360",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-21T20:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.616,
+   "tip": "CGY",
+   "home": {
+    "team": "CGY",
+    "elo": 1457.7,
+    "reasons": {}
+   },
+   "away": {
+    "team": "CHI",
+    "elo": 1403.9,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020361": {
+   "game_id": "2026020361",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-21T23:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.53,
+   "tip": "FLA",
+   "home": {
+    "team": "FLA",
+    "elo": 1516.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "BUF",
+    "elo": 1523.3,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020362": {
+   "game_id": "2026020362",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-21T23:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.546,
+   "tip": "NSH",
+   "home": {
+    "team": "NSH",
+    "elo": 1496.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "PIT",
+    "elo": 1484.1,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020363": {
+   "game_id": "2026020363",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.559,
+   "tip": "BOS",
+   "home": {
+    "team": "BOS",
+    "elo": 1529.7,
+    "reasons": {}
+   },
+   "away": {
+    "team": "WSH",
+    "elo": 1513.3,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020364": {
+   "game_id": "2026020364",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.506,
+   "tip": "TOR",
+   "home": {
+    "team": "TOR",
+    "elo": 1457.4,
+    "reasons": {}
+   },
+   "away": {
+    "team": "CBJ",
+    "elo": 1487.2,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020365": {
+   "game_id": "2026020365",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.612,
+   "tip": "MTL",
+   "home": {
+    "team": "MTL",
+    "elo": 1544.3,
+    "reasons": {
+     "3. zápas za 4 dni": -15.8
+    }
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1479.8,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020366": {
+   "game_id": "2026020366",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.633,
+   "tip": "OTT",
+   "home": {
+    "team": "OTT",
+    "elo": 1533.6,
+    "reasons": {}
+   },
+   "away": {
+    "team": "LAK",
+    "elo": 1471.3,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020367": {
+   "game_id": "2026020367",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.516,
+   "tip": "DET",
+   "home": {
+    "team": "DET",
+    "elo": 1477.7,
+    "reasons": {}
+   },
+   "away": {
+    "team": "NYI",
+    "elo": 1494.0,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020368": {
+   "game_id": "2026020368",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.521,
+   "tip": "STL",
+   "home": {
+    "team": "STL",
+    "elo": 1511.4,
+    "reasons": {}
+   },
+   "away": {
+    "team": "NJD",
+    "elo": 1525.1,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020369": {
+   "game_id": "2026020369",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.491,
+   "tip": "VGK",
+   "home": {
+    "team": "WPG",
+    "elo": 1497.4,
+    "reasons": {}
+   },
+   "away": {
+    "team": "VGK",
+    "elo": 1534.9,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020370": {
+   "game_id": "2026020370",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T02:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.576,
+   "tip": "UTA",
+   "home": {
+    "team": "UTA",
+    "elo": 1502.9,
+    "reasons": {}
+   },
+   "away": {
+    "team": "ANA",
+    "elo": 1477.6,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020371": {
+   "game_id": "2026020371",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T03:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.301,
+   "tip": "MIN",
+   "home": {
+    "team": "VAN",
+    "elo": 1394.8,
+    "reasons": {}
+   },
+   "away": {
+    "team": "MIN",
+    "elo": 1575.1,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  },
+  "2026020372": {
+   "game_id": "2026020372",
+   "date": "2026-11-21",
+   "tipoff_utc": "2026-11-22T03:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.481,
+   "tip": "SEA",
+   "home": {
+    "team": "SJS",
+    "elo": 1433.3,
+    "reasons": {}
+   },
+   "away": {
+    "team": "SEA",
+    "elo": 1467.9,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-20T09:29:15+00:00"
+  }
+ }
+}
