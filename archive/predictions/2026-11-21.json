@@ -5,24 +5,24 @@
    "game_id": "0022600274",
    "kind": "regular",
    "tipoff_utc": "2026-11-21 18:00:00+00:00",
-   "locked_at": "2026-11-20T23:01:02+00:00",
+   "locked_at": "2026-11-20T23:31:05+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-20T23:00:53Z",
+   "injuries_timestamp": "2026-11-20T23:31:03Z",
    "neutral": false,
    "p_home": 0.854,
    "margin_home": 12.8,
    "home": {
     "team": "PHI",
     "elo": 1579.3,
-    "elo_today": 1556.9,
-    "pulse": 58.6,
+    "elo_today": 1557.2,
+    "pulse": 58.7,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "nízka",
     "layers": {
      "strength": 74.3,
-     "roster": 83.6,
+     "roster": 84.0,
      "players": -111.5,
      "fatigue": 5.5
     },
@@ -40,7 +40,7 @@
    "away": {
     "team": "MIL",
     "elo": 1308.5,
-    "elo_today": 1278.0,
+    "elo_today": 1278.4,
     "pulse": 12.2,
     "tier": "Kritický",
     "normal_tier": "Kritický",
@@ -48,14 +48,14 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -196.5,
-     "roster": -30.6,
+     "roster": -30.3,
      "players": 0.0,
      "fatigue": 0.2
     },
     "reasons": [
      [
       "Sila súpisky",
-      -31
+      -30
      ]
     ]
    }
