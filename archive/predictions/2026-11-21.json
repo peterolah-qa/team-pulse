@@ -1,0 +1,64 @@
+{
+ "date": "2026-11-21",
+ "games": {
+  "0022600274": {
+   "game_id": "0022600274",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-21 18:00:00+00:00",
+   "locked_at": "2026-11-20T18:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-20T18:01:04Z",
+   "neutral": false,
+   "p_home": 0.854,
+   "margin_home": 12.8,
+   "home": {
+    "team": "PHI",
+    "elo": 1579.3,
+    "elo_today": 1556.7,
+    "pulse": 58.6,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 74.3,
+     "roster": 83.4,
+     "players": -111.5,
+     "fatigue": 5.5
+    },
+    "reasons": [
+     [
+      "Bez Jaylen Brown, Tyrese Maxey (?)",
+      -111
+     ],
+     [
+      "Sila súpisky",
+      83
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIL",
+    "elo": 1308.5,
+    "elo_today": 1277.8,
+    "pulse": 12.1,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -196.5,
+     "roster": -30.9,
+     "players": 0.0,
+     "fatigue": 0.2
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -31
+     ]
+    ]
+   }
+  }
+ }
+}
