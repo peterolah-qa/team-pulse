@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-20",
+ "games": {
+  "0022600043": {
+   "game_id": "0022600043",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-21 00:00:00+00:00",
+   "locked_at": "2026-11-20T00:01:06+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-20T00:01:01Z",
+   "neutral": false,
+   "p_home": 0.67,
+   "margin_home": 5.1,
+   "home": {
+    "team": "ATL",
+    "elo": 1543.9,
+    "elo_today": 1535.9,
+    "pulse": 55.1,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 38.9,
+     "roster": 2.5,
+     "players": 0.0,
+     "fatigue": -10.5
+    },
+    "reasons": [
+     [
+      "Posun na východ o 1 h",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "CHA",
+    "elo": 1476.7,
+    "elo_today": 1470.5,
+    "pulse": 44.3,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -28.3,
+     "roster": -29.1,
+     "players": -5.1,
+     "fatigue": 28.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -29
+     ],
+     [
+      "4. zápas výjazdu",
+      19
+     ],
+     [
+      "Posun na východ o 3 h",
+      13
+     ]
+    ]
+   }
+  }
+ }
+}
