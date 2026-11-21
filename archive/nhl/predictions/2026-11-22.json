@@ -1,0 +1,127 @@
+{
+ "games": {
+  "2026020373": {
+   "game_id": "2026020373",
+   "date": "2026-11-22",
+   "tipoff_utc": "2026-11-22T17:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.43,
+   "tip": "CAR",
+   "home": {
+    "team": "NYR",
+    "elo": 1507.6,
+    "reasons": {}
+   },
+   "away": {
+    "team": "CAR",
+    "elo": 1610.2,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-21T09:27:50+00:00"
+  },
+  "2026020374": {
+   "game_id": "2026020374",
+   "date": "2026-11-22",
+   "tipoff_utc": "2026-11-22T22:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.671,
+   "tip": "TBL",
+   "home": {
+    "team": "TBL",
+    "elo": 1573.6,
+    "reasons": {}
+   },
+   "away": {
+    "team": "BUF",
+    "elo": 1523.3,
+    "reasons": {
+     "back-to-back": -38.5,
+     "6. zápas výjazdu": -10.8
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-21T09:27:50+00:00"
+  },
+  "2026020375": {
+   "game_id": "2026020375",
+   "date": "2026-11-22",
+   "tipoff_utc": "2026-11-23T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.481,
+   "tip": "EDM",
+   "home": {
+    "team": "STL",
+    "elo": 1511.4,
+    "reasons": {
+     "back-to-back": -42.5,
+     "3. zápas za 4 dni": -15.8
+    }
+   },
+   "away": {
+    "team": "EDM",
+    "elo": 1550.6,
+    "reasons": {
+     "back-to-back": -38.5,
+     "6. zápas výjazdu": -10.8
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-21T09:27:50+00:00"
+  },
+  "2026020376": {
+   "game_id": "2026020376",
+   "date": "2026-11-22",
+   "tipoff_utc": "2026-11-23T00:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.682,
+   "tip": "DAL",
+   "home": {
+    "team": "DAL",
+    "elo": 1549.9,
+    "reasons": {}
+   },
+   "away": {
+    "team": "PIT",
+    "elo": 1484.1,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-21T09:27:50+00:00"
+  },
+  "2026020377": {
+   "game_id": "2026020377",
+   "date": "2026-11-22",
+   "tipoff_utc": "2026-11-23T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.514,
+   "tip": "VAN",
+   "home": {
+    "team": "VAN",
+    "elo": 1394.8,
+    "reasons": {
+     "back-to-back": -42.5,
+     "3. zápas za 4 dni": -15.8
+    }
+   },
+   "away": {
+    "team": "CHI",
+    "elo": 1403.9,
+    "reasons": {
+     "back-to-back": -38.5
+    }
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-21T09:27:50+00:00"
+  }
+ }
+}
