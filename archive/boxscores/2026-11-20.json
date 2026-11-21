@@ -1,0 +1,201 @@
+{
+ "date": "2026-11-20",
+ "games": {
+  "0022600043": {
+   "game_id": "0022600043",
+   "espn_id": "401909305",
+   "date": "2026-11-20",
+   "kind": "regular",
+   "home": "ATL",
+   "away": "CHA",
+   "pts_home": 111,
+   "pts_away": 97,
+   "box": {
+    "CHA": [
+     {
+      "player": "Naz Reid",
+      "min": 39,
+      "pts": 12,
+      "reb": 10,
+      "ast": 3,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Brandon Miller",
+      "min": 33,
+      "pts": 19,
+      "reb": 8,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Sion James",
+      "min": 32,
+      "pts": 9,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Moussa Diabate",
+      "min": 30,
+      "pts": 21,
+      "reb": 15,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Coby White",
+      "min": 26,
+      "pts": 11,
+      "reb": 4,
+      "ast": 9,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Royce O'Neale",
+      "min": 21,
+      "pts": 9,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Christian Anderson",
+      "min": 21,
+      "pts": 4,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Kalkbrenner",
+      "min": 17,
+      "pts": 6,
+      "reb": 6,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tidjane Salaun",
+      "min": 13,
+      "pts": 4,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Liam McNeeley",
+      "min": 7,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "ATL": [
+     {
+      "player": "Jalen Johnson",
+      "min": 36,
+      "pts": 26,
+      "reb": 6,
+      "ast": 6,
+      "blk": 1,
+      "stl": 4
+     },
+     {
+      "player": "Dyson Daniels",
+      "min": 35,
+      "pts": 11,
+      "reb": 8,
+      "ast": 10,
+      "blk": 0,
+      "stl": 4
+     },
+     {
+      "player": "Aaron Wiggins",
+      "min": 34,
+      "pts": 19,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Onyeka Okongwu",
+      "min": 34,
+      "pts": 16,
+      "reb": 7,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Nickeil Alexander-Walker",
+      "min": 32,
+      "pts": 17,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Luguentz Dort",
+      "min": 23,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Corey Kispert",
+      "min": 16,
+      "pts": 7,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Zuby Ejiofor",
+      "min": 14,
+      "pts": 5,
+      "reb": 2,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "RayJ Dennis",
+      "min": 13,
+      "pts": 8,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Dorian Finney-Smith",
+      "min": 3,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
