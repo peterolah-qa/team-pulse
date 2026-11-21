@@ -5,9 +5,9 @@
    "game_id": "0022600274",
    "kind": "regular",
    "tipoff_utc": "2026-11-21 18:00:00+00:00",
-   "locked_at": "2026-11-21T00:31:06+00:00",
+   "locked_at": "2026-11-21T01:01:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-21T00:30:57Z",
+   "injuries_timestamp": "2026-11-21T01:00:58Z",
    "neutral": false,
    "p_home": 0.854,
    "margin_home": 12.8,
@@ -64,9 +64,9 @@
    "game_id": "0022600275",
    "kind": "regular",
    "tipoff_utc": "2026-11-22 00:30:00+00:00",
-   "locked_at": "2026-11-21T00:31:06+00:00",
+   "locked_at": "2026-11-21T01:01:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-21T00:30:57Z",
+   "injuries_timestamp": "2026-11-21T01:00:58Z",
    "neutral": false,
    "p_home": 0.737,
    "margin_home": 7.4,
@@ -103,7 +103,7 @@
    "away": {
     "team": "POR",
     "elo": 1575.0,
-    "elo_today": 1583.7,
+    "elo_today": 1583.8,
     "pulse": 63.1,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
@@ -111,7 +111,7 @@
     "confidence": "nízka",
     "layers": {
      "strength": 70.0,
-     "roster": 21.7,
+     "roster": 21.8,
      "players": -39.6,
      "fatigue": 26.6
     },
@@ -127,6 +127,178 @@
      [
       "Sila súpisky",
       22
+     ]
+    ]
+   }
+  },
+  "0022600276": {
+   "game_id": "0022600276",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-22 01:00:00+00:00",
+   "locked_at": "2026-11-21T01:01:03+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-21T01:00:58Z",
+   "neutral": false,
+   "p_home": 0.635,
+   "margin_home": 4.0,
+   "home": {
+    "team": "DAL",
+    "elo": 1447.9,
+    "elo_today": 1459.0,
+    "pulse": 42.3,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -57.1,
+     "roster": 8.1,
+     "players": 0.0,
+     "fatigue": 3.0
+    },
+    "reasons": []
+   },
+   "away": {
+    "team": "LAC",
+    "elo": 1446.7,
+    "elo_today": 1425.9,
+    "pulse": 36.8,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -58.3,
+     "roster": -23.9,
+     "players": -6.3,
+     "fatigue": 9.4
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -24
+     ]
+    ]
+   }
+  },
+  "0022600277": {
+   "game_id": "0022600277",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-22 01:00:00+00:00",
+   "locked_at": "2026-11-21T01:01:03+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-21T01:00:58Z",
+   "neutral": false,
+   "p_home": 0.77,
+   "margin_home": 8.7,
+   "home": {
+    "team": "MIN",
+    "elo": 1607.6,
+    "elo_today": 1588.6,
+    "pulse": 63.9,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 102.6,
+     "roster": -1.6,
+     "players": -19.3,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Bez Anthony Edwards",
+      -19
+     ]
+    ]
+   },
+   "away": {
+    "team": "MEM",
+    "elo": 1491.0,
+    "elo_today": 1422.5,
+    "pulse": 36.2,
+    "tier": "Kritický",
+    "normal_tier": "Oslabený",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -14.0,
+     "roster": -17.8,
+     "players": -46.6,
+     "fatigue": -4.2
+    },
+    "reasons": [
+     [
+      "Bez Cameron Boozer, Ty Jerome",
+      -47
+     ],
+     [
+      "Sila súpisky",
+      -18
+     ]
+    ]
+   }
+  },
+  "0022600278": {
+   "game_id": "0022600278",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-22 01:00:00+00:00",
+   "locked_at": "2026-11-21T01:01:03+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-21T01:00:58Z",
+   "neutral": false,
+   "p_home": 0.925,
+   "margin_home": 18.1,
+   "home": {
+    "team": "SAS",
+    "elo": 1715.7,
+    "elo_today": 1729.2,
+    "pulse": 87.4,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 210.7,
+     "roster": 29.7,
+     "players": -18.2,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      30
+     ],
+     [
+      "Bez Dylan Harper, Tobias Harris",
+      -18
+     ]
+    ]
+   },
+   "away": {
+    "team": "NOP",
+    "elo": 1362.7,
+    "elo_today": 1300.3,
+    "pulse": 15.9,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -142.3,
+     "roster": -1.5,
+     "players": -12.6,
+     "fatigue": -48.2
+    },
+    "reasons": [
+     [
+      "2. zápas za 2 dni",
+      -49
+     ],
+     [
+      "Bez Dejounte Murray",
+      -13
      ]
     ]
    }
