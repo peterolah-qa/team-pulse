@@ -5,24 +5,24 @@
    "game_id": "0022600280",
    "kind": "regular",
    "tipoff_utc": "2026-11-22 20:30:00+00:00",
-   "locked_at": "2026-11-21T20:30:54+00:00",
+   "locked_at": "2026-11-21T21:01:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-21T20:30:47Z",
+   "injuries_timestamp": "2026-11-21T21:01:01Z",
    "neutral": false,
    "p_home": 0.488,
    "margin_home": -0.4,
    "home": {
     "team": "ATL",
     "elo": 1551.2,
-    "elo_today": 1555.4,
-    "pulse": 58.4,
+    "elo_today": 1556.8,
+    "pulse": 58.6,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 46.2,
-     "roster": 2.2,
+     "roster": 3.6,
      "players": 0.0,
      "fatigue": 2.0
     },
@@ -31,22 +31,22 @@
    "away": {
     "team": "DET",
     "elo": 1639.5,
-    "elo_today": 1644.2,
-    "pulse": 73.2,
+    "elo_today": 1645.6,
+    "pulse": 73.4,
     "tier": "Silný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 134.5,
-     "roster": 20.3,
+     "roster": 21.7,
      "players": -19.2,
      "fatigue": 3.6
     },
     "reasons": [
      [
       "Sila súpisky",
-      20
+      22
      ],
      [
       "Bez Jalen Duren",

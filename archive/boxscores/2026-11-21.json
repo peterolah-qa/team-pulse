@@ -1,0 +1,201 @@
+{
+ "date": "2026-11-21",
+ "games": {
+  "0022600274": {
+   "game_id": "0022600274",
+   "espn_id": "401910023",
+   "date": "2026-11-21",
+   "kind": "regular",
+   "home": "PHI",
+   "away": "MIL",
+   "pts_home": 132,
+   "pts_away": 129,
+   "box": {
+    "MIL": [
+     {
+      "player": "Tyler Herro",
+      "min": 40,
+      "pts": 50,
+      "reb": 11,
+      "ast": 7,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kyle Kuzma",
+      "min": 33,
+      "pts": 12,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Rollins",
+      "min": 28,
+      "pts": 8,
+      "reb": 6,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Brayden Burries",
+      "min": 26,
+      "pts": 26,
+      "reb": 8,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Myles Turner",
+      "min": 26,
+      "pts": 5,
+      "reb": 6,
+      "ast": 5,
+      "blk": 4,
+      "stl": 1
+     },
+     {
+      "player": "Jaime Jaquez Jr.",
+      "min": 25,
+      "pts": 9,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kel'el Ware",
+      "min": 22,
+      "pts": 6,
+      "reb": 8,
+      "ast": 3,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Nate Ament",
+      "min": 14,
+      "pts": 2,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "AJ Green",
+      "min": 12,
+      "pts": 9,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kasparas Jakucionis",
+      "min": 10,
+      "pts": 2,
+      "reb": 3,
+      "ast": 3,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Caris LeVert",
+      "min": 5,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     }
+    ],
+    "PHI": [
+     {
+      "player": "VJ Edgecombe",
+      "min": 38,
+      "pts": 16,
+      "reb": 3,
+      "ast": 6,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Tyrese Maxey",
+      "min": 36,
+      "pts": 17,
+      "reb": 4,
+      "ast": 4,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "LeBron James",
+      "min": 35,
+      "pts": 21,
+      "reb": 6,
+      "ast": 6,
+      "blk": 1,
+      "stl": 3
+     },
+     {
+      "player": "Kentavious Caldwell-Pope",
+      "min": 35,
+      "pts": 11,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Joel Embiid",
+      "min": 34,
+      "pts": 26,
+      "reb": 17,
+      "ast": 9,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Anfernee Simons",
+      "min": 26,
+      "pts": 18,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jabari Walker",
+      "min": 20,
+      "pts": 9,
+      "reb": 7,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dominick Barlow",
+      "min": 11,
+      "pts": 12,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Labaron Philon Jr.",
+      "min": 6,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
