@@ -2,7 +2,7 @@
 
 Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené po zápase. Model Elo + únava, v teste 2023/24 – 2025/26 mal presnosť 57,6 %.
 
-**Spolu: 153 z 269 (56,9 %), log loss 0,6657**
+**Spolu: 161 z 283 (56,9 %), log loss 0,6677**
 
 ## Po dňoch
 
@@ -46,22 +46,25 @@ Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené 
 | 17. 11.     |       11 |            6 | 54,5 %     |
 | 18. 11.     |        3 |            0 | 0,0 %      |
 | 19. 11.     |       12 |            7 | 58,3 %     |
+| 21. 11.     |       14 |            8 | 57,1 %     |
 
-## Posledný deň (19. 11.)
+## Posledný deň (21. 11.)
 
 Výsledok je hostia : domáci, pp = po predĺžení, sn = po nájazdoch.
 
 | zápas     | tip   | šanca   | výsledok   |    |
 |:----------|:------|:--------|:-----------|:---|
-| LAK @ TOR | TOR   | 53 %    | 4:3 sn     | ❌  |
-| PHI @ OTT | OTT   | 62 %    | 6:5 pp     | ❌  |
-| STL @ PIT | STL   | 50 %    | 5:2        | ✅  |
-| BUF @ WSH | WSH   | 55 %    | 6:3        | ❌  |
-| MTL @ CAR | CAR   | 68 %    | 2:1 pp     | ❌  |
-| NYI @ WPG | WPG   | 54 %    | 3:4 pp     | ✅  |
-| EDM @ TBL | TBL   | 57 %    | 1:3        | ✅  |
-| CBJ @ CHI | CBJ   | 56 %    | 4:2        | ✅  |
-| MIN @ CGY | MIN   | 61 %    | 4:1        | ✅  |
-| ANA @ COL | COL   | 62 %    | 0:4        | ✅  |
-| VAN @ SEA | SEA   | 62 %    | 1:5        | ✅  |
-| DAL @ VGK | VGK   | 53 %    | 4:3 sn     | ❌  |
+| EDM @ CAR | CAR   | 63 %    | 4:7        | ✅  |
+| CHI @ CGY | CGY   | 62 %    | 4:3 pp     | ❌  |
+| BUF @ FLA | FLA   | 53 %    | 3:4        | ✅  |
+| PIT @ NSH | NSH   | 55 %    | 3:4        | ✅  |
+| WSH @ BOS | BOS   | 56 %    | 5:7        | ✅  |
+| CBJ @ TOR | TOR   | 51 %    | 4:3        | ❌  |
+| PHI @ MTL | MTL   | 61 %    | 4:3        | ❌  |
+| LAK @ OTT | OTT   | 63 %    | 2:4        | ✅  |
+| NYI @ DET | DET   | 52 %    | 3:2        | ❌  |
+| NJD @ STL | STL   | 52 %    | 6:9        | ✅  |
+| VGK @ WPG | VGK   | 51 %    | 5:4 sn     | ✅  |
+| ANA @ UTA | UTA   | 58 %    | 2:3        | ✅  |
+| MIN @ VAN | MIN   | 70 %    | 3:4 sn     | ❌  |
+| SEA @ SJS | SEA   | 52 %    | 3:4        | ❌  |
