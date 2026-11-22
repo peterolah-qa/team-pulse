@@ -271,5 +271,13 @@
    "p_podium": 0.000478,
    "p_win_quali": 0.001929
   }
- ]
+ ],
+ "result": {
+  "winner": "max_verstappen",
+  "podium": [
+   "max_verstappen",
+   "norris",
+   "piastri"
+  ]
+ }
 }
