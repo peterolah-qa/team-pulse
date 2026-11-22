@@ -1,0 +1,183 @@
+{
+ "date": "2026-11-22",
+ "games": {
+  "0022600280": {
+   "game_id": "0022600280",
+   "espn_id": "401910029",
+   "date": "2026-11-22",
+   "kind": "regular",
+   "home": "ATL",
+   "away": "DET",
+   "pts_home": 107,
+   "pts_away": 97,
+   "box": {
+    "DET": [
+     {
+      "player": "Ausar Thompson",
+      "min": 38,
+      "pts": 18,
+      "reb": 11,
+      "ast": 5,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Daniss Jenkins",
+      "min": 38,
+      "pts": 11,
+      "reb": 5,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Cade Cunningham",
+      "min": 33,
+      "pts": 5,
+      "reb": 4,
+      "ast": 15,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Kevin Huerter",
+      "min": 30,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Isaiah Joe",
+      "min": 26,
+      "pts": 19,
+      "reb": 2,
+      "ast": 3,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Paul Reed",
+      "min": 26,
+      "pts": 16,
+      "reb": 5,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "John Collins",
+      "min": 22,
+      "pts": 18,
+      "reb": 6,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Javonte Green",
+      "min": 18,
+      "pts": 6,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Ronald Holland II",
+      "min": 10,
+      "pts": 2,
+      "reb": 4,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     }
+    ],
+    "ATL": [
+     {
+      "player": "Dyson Daniels",
+      "min": 39,
+      "pts": 5,
+      "reb": 14,
+      "ast": 8,
+      "blk": 3,
+      "stl": 5
+     },
+     {
+      "player": "Luguentz Dort",
+      "min": 31,
+      "pts": 16,
+      "reb": 7,
+      "ast": 1,
+      "blk": 0,
+      "stl": 3
+     },
+     {
+      "player": "Jalen Johnson",
+      "min": 30,
+      "pts": 12,
+      "reb": 11,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Onyeka Okongwu",
+      "min": 29,
+      "pts": 6,
+      "reb": 9,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Nickeil Alexander-Walker",
+      "min": 28,
+      "pts": 27,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kingston Flemings",
+      "min": 27,
+      "pts": 10,
+      "reb": 5,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Corey Kispert",
+      "min": 19,
+      "pts": 18,
+      "reb": 4,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Aaron Wiggins",
+      "min": 19,
+      "pts": 9,
+      "reb": 6,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Zuby Ejiofor",
+      "min": 19,
+      "pts": 4,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
