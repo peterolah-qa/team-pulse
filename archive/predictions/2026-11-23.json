@@ -1,0 +1,131 @@
+{
+ "date": "2026-11-23",
+ "games": {
+  "0022600287": {
+   "game_id": "0022600287",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-24 00:00:00+00:00",
+   "locked_at": "2026-11-23T00:01:13+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-23T00:01:03Z",
+   "neutral": false,
+   "p_home": 0.582,
+   "margin_home": 2.4,
+   "home": {
+    "team": "CHA",
+    "elo": 1469.5,
+    "elo_today": 1440.3,
+    "pulse": 39.2,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -35.5,
+     "roster": -27.6,
+     "players": -5.3,
+     "fatigue": 3.7
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -28
+     ]
+    ]
+   },
+   "away": {
+    "team": "MEM",
+    "elo": 1491.0,
+    "elo_today": 1451.7,
+    "pulse": 41.1,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -14.0,
+     "roster": -15.1,
+     "players": -36.4,
+     "fatigue": 12.1
+    },
+    "reasons": [
+     [
+      "Bez Cameron Boozer",
+      -36
+     ],
+     [
+      "Sila súpisky",
+      -15
+     ]
+    ]
+   }
+  },
+  "0022600288": {
+   "game_id": "0022600288",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-24 00:00:00+00:00",
+   "locked_at": "2026-11-23T00:01:13+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-23T00:01:03Z",
+   "neutral": false,
+   "p_home": 0.615,
+   "margin_home": 3.4,
+   "home": {
+    "team": "PHI",
+    "elo": 1579.3,
+    "elo_today": 1633.8,
+    "pulse": 71.5,
+    "tier": "Silný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 74.3,
+     "roster": 85.7,
+     "players": -33.2,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      86
+     ],
+     [
+      "Bez Jaylen Brown (?)",
+      -33
+     ]
+    ]
+   },
+   "away": {
+    "team": "POR",
+    "elo": 1575.0,
+    "elo_today": 1617.4,
+    "pulse": 68.7,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 70.0,
+     "roster": 24.4,
+     "players": -10.2,
+     "fatigue": 28.2
+    },
+    "reasons": [
+     [
+      "6. zápas výjazdu",
+      28
+     ],
+     [
+      "Sila súpisky",
+      24
+     ],
+     [
+      "Bez Ja Morant",
+      -10
+     ]
+    ]
+   }
+  }
+ }
+}
