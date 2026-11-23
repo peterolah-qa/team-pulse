@@ -1,0 +1,27 @@
+{
+ "games": {
+  "2026020385": {
+   "game_id": "2026020385",
+   "date": "2026-11-24",
+   "tipoff_utc": "2026-11-25T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.532,
+   "tip": "EDM",
+   "home": {
+    "team": "EDM",
+    "elo": 1544.9,
+    "reasons": {
+     "3. zápas za 4 dni": -15.8
+    }
+   },
+   "away": {
+    "team": "VGK",
+    "elo": 1537.3,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-23T10:33:24+00:00"
+  }
+ }
+}
