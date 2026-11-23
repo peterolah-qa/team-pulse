@@ -299,32 +299,28 @@
    "game_id": "0022600285",
    "kind": "regular",
    "tipoff_utc": "2026-11-23 01:00:00+00:00",
-   "locked_at": "2026-11-23T00:01:13+00:00",
+   "locked_at": "2026-11-23T00:31:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-23T00:01:03Z",
+   "injuries_timestamp": "2026-11-23T00:30:55Z",
    "neutral": false,
-   "p_home": 0.84,
-   "margin_home": 12.0,
+   "p_home": 0.878,
+   "margin_home": 14.3,
    "home": {
     "team": "NYK",
     "elo": 1691.3,
-    "elo_today": 1594.9,
-    "pulse": 65.0,
-    "tier": "Stabilný",
+    "elo_today": 1658.5,
+    "pulse": 75.6,
+    "tier": "Silný",
     "normal_tier": "Silný",
-    "dropped": true,
-    "confidence": "nízka",
+    "dropped": false,
+    "confidence": "vysoká",
     "layers": {
      "strength": 186.3,
-     "roster": 55.2,
-     "players": -103.6,
+     "roster": 54.5,
+     "players": -39.4,
      "fatigue": -48.0
     },
     "reasons": [
-     [
-      "Bez Karl-Anthony Towns (?), OG Anunoby",
-      -104
-     ],
      [
       "Sila súpisky",
       55
@@ -332,21 +328,25 @@
      [
       "2. zápas za 2 dni",
       -43
+     ],
+     [
+      "Bez OG Anunoby",
+      -39
      ]
     ]
    },
    "away": {
     "team": "IND",
     "elo": 1361.6,
-    "elo_today": 1337.8,
-    "pulse": 22.1,
+    "elo_today": 1337.1,
+    "pulse": 22.0,
     "tier": "Kritický",
     "normal_tier": "Kritický",
     "dropped": false,
     "confidence": "stredná",
     "layers": {
      "strength": -143.4,
-     "roster": 17.7,
+     "roster": 17.0,
      "players": -50.2,
      "fatigue": 8.7
     },
@@ -357,7 +357,7 @@
      ],
      [
       "Sila súpisky",
-      18
+      17
      ]
     ]
    }
@@ -366,24 +366,24 @@
    "game_id": "0022600286",
    "kind": "regular",
    "tipoff_utc": "2026-11-23 01:30:00+00:00",
-   "locked_at": "2026-11-23T00:01:13+00:00",
+   "locked_at": "2026-11-23T00:31:03+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-23T00:01:03Z",
+   "injuries_timestamp": "2026-11-23T00:30:55Z",
    "neutral": false,
    "p_home": 0.377,
    "margin_home": -3.6,
    "home": {
     "team": "GSW",
     "elo": 1465.8,
-    "elo_today": 1434.0,
-    "pulse": 38.2,
+    "elo_today": 1433.3,
+    "pulse": 38.1,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": -39.2,
-     "roster": 22.1,
+     "roster": 21.4,
      "players": -62.0,
      "fatigue": 8.2
     },
@@ -394,22 +394,22 @@
      ],
      [
       "Sila súpisky",
-      22
+      21
      ]
     ]
    },
    "away": {
     "team": "BOS",
     "elo": 1646.6,
-    "elo_today": 1614.6,
-    "pulse": 68.3,
+    "elo_today": 1613.9,
+    "pulse": 68.2,
     "tier": "Stabilný",
     "normal_tier": "Silný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 141.6,
-     "roster": 19.9,
+     "roster": 19.2,
      "players": -16.8,
      "fatigue": -35.1
     },
@@ -420,7 +420,7 @@
      ],
      [
       "Sila súpisky",
-      20
+      19
      ],
      [
       "Bez Paul George",
