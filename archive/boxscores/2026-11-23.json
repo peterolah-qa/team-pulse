@@ -1740,6 +1740,229 @@
     ]
    }
   },
+  "0022600295": {
+   "game_id": "0022600295",
+   "espn_id": "401910044",
+   "date": "2026-11-23",
+   "kind": "regular",
+   "home": "LAL",
+   "away": "UTA",
+   "pts_home": 109,
+   "pts_away": 94,
+   "box": {
+    "UTA": [
+     {
+      "player": "Ace Bailey",
+      "min": 33,
+      "pts": 18,
+      "reb": 5,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Keyonte George",
+      "min": 33,
+      "pts": 14,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Darryn Peterson",
+      "min": 29,
+      "pts": 13,
+      "reb": 6,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Mo Bamba",
+      "min": 29,
+      "pts": 6,
+      "reb": 7,
+      "ast": 2,
+      "blk": 2,
+      "stl": 0
+     },
+     {
+      "player": "Svi Mykhailiuk",
+      "min": 25,
+      "pts": 4,
+      "reb": 3,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kyle Filipowski",
+      "min": 24,
+      "pts": 21,
+      "reb": 12,
+      "ast": 4,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Josh Green",
+      "min": 19,
+      "pts": 8,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Isaiah Collier",
+      "min": 18,
+      "pts": 4,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Brice Sensabaugh",
+      "min": 17,
+      "pts": 6,
+      "reb": 4,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Josh Okogie",
+      "min": 9,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Harrison Ingram",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jonas Aidoo",
+      "min": 1,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kobe Bufkin",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "LAL": [
+     {
+      "player": "Jake LaRavia",
+      "min": 37,
+      "pts": 15,
+      "reb": 10,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Walker Kessler",
+      "min": 36,
+      "pts": 10,
+      "reb": 12,
+      "ast": 0,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Luka Doncic",
+      "min": 33,
+      "pts": 28,
+      "reb": 4,
+      "ast": 8,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Quentin Grimes",
+      "min": 30,
+      "pts": 9,
+      "reb": 3,
+      "ast": 8,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Matisse Thybulle",
+      "min": 27,
+      "pts": 14,
+      "reb": 4,
+      "ast": 0,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Collin Sexton",
+      "min": 23,
+      "pts": 12,
+      "reb": 2,
+      "ast": 4,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Ziaire Williams",
+      "min": 19,
+      "pts": 9,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Sandro Mamukelashvili",
+      "min": 13,
+      "pts": 2,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jarred Vanderbilt",
+      "min": 12,
+      "pts": 1,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Cameron Carr",
+      "min": 10,
+      "pts": 9,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
+  },
   "0022600296": {
    "game_id": "0022600296",
    "espn_id": "401910045",
