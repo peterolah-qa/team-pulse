@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-25",
+ "games": {
+  "0022600055": {
+   "game_id": "0022600055",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-25 22:00:00+00:00",
+   "locked_at": "2026-11-24T22:01:16+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-24T22:01:05Z",
+   "neutral": false,
+   "p_home": 0.669,
+   "margin_home": 5.1,
+   "home": {
+    "team": "PHI",
+    "elo": 1561.3,
+    "elo_today": 1600.8,
+    "pulse": 66.0,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 56.3,
+     "roster": 78.4,
+     "players": -40.9,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      78
+     ],
+     [
+      "Bez Joel Embiid (?)",
+      -41
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIA",
+    "elo": 1559.5,
+    "elo_today": 1537.0,
+    "pulse": 55.3,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 54.5,
+     "roster": 31.7,
+     "players": -56.4,
+     "fatigue": 2.3
+    },
+    "reasons": [
+     [
+      "Bez Giannis Antetokounmpo (?)",
+      -56
+     ],
+     [
+      "Sila súpisky",
+      32
+     ]
+    ]
+   }
+  }
+ }
+}
