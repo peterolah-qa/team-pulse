@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-24",
+ "games": {
+  "0022600052": {
+   "game_id": "0022600052",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-25 00:00:00+00:00",
+   "locked_at": "2026-11-24T00:01:13+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-24T00:01:11Z",
+   "neutral": false,
+   "p_home": 0.458,
+   "margin_home": -1.2,
+   "home": {
+    "team": "ORL",
+    "elo": 1491.1,
+    "elo_today": 1482.1,
+    "pulse": 46.2,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -13.9,
+     "roster": 18.8,
+     "players": -32.0,
+     "fatigue": 4.2
+    },
+    "reasons": [
+     [
+      "Bez Paolo Banchero",
+      -32
+     ],
+     [
+      "Sila súpisky",
+      19
+     ]
+    ]
+   },
+   "away": {
+    "team": "DET",
+    "elo": 1628.4,
+    "elo_today": 1594.8,
+    "pulse": 65.0,
+    "tier": "Stabilný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 123.4,
+     "roster": 19.6,
+     "players": -61.8,
+     "fatigue": 8.7
+    },
+    "reasons": [
+     [
+      "Bez Jalen Duren, Cade Cunningham (?)",
+      -62
+     ],
+     [
+      "Sila súpisky",
+      20
+     ]
+    ]
+   }
+  }
+ }
+}
