@@ -2,7 +2,7 @@
 
 Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené po zápase. Model Elo + únava, v teste 2023/24 – 2025/26 mal presnosť 57,6 %.
 
-**Spolu: 168 z 295 (56,9 %), log loss 0,6680**
+**Spolu: 168 z 296 (56,8 %), log loss 0,6683**
 
 ## Po dňoch
 
@@ -49,17 +49,12 @@ Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené 
 | 21. 11.     |       14 |            8 | 57,1 %     |
 | 22. 11.     |        5 |            2 | 40,0 %     |
 | 23. 11.     |        7 |            5 | 71,4 %     |
+| 24. 11.     |        1 |            0 | 0,0 %      |
 
-## Posledný deň (23. 11.)
+## Posledný deň (24. 11.)
 
 Výsledok je hostia : domáci, pp = po predĺžení, sn = po nájazdoch.
 
 | zápas     | tip   | šanca   | výsledok   |    |
 |:----------|:------|:--------|:-----------|:---|
-| CBJ @ NJD | NJD   | 59 %    | 2:3        | ✅  |
-| LAK @ MTL | MTL   | 65 %    | 2:1        | ❌  |
-| CGY @ OTT | OTT   | 66 %    | 1:2        | ✅  |
-| TOR @ NYI | NYI   | 60 %    | 4:2        | ❌  |
-| UTA @ WPG | WPG   | 53 %    | 2:4        | ✅  |
-| ANA @ SEA | SEA   | 54 %    | 2:3        | ✅  |
-| MIN @ SJS | MIN   | 64 %    | 5:2        | ✅  |
+| VGK @ EDM | EDM   | 53 %    | 5:3        | ❌  |
