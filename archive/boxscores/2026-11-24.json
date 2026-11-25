@@ -205,6 +205,238 @@
      }
     ]
    }
+  },
+  "0022600053": {
+   "game_id": "0022600053",
+   "espn_id": "401909315",
+   "date": "2026-11-24",
+   "kind": "regular",
+   "home": "WAS",
+   "away": "BOS",
+   "pts_home": 116,
+   "pts_away": 131,
+   "box": {
+    "BOS": [
+     {
+      "player": "Jayson Tatum",
+      "min": 37,
+      "pts": 41,
+      "reb": 6,
+      "ast": 8,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Paul George",
+      "min": 33,
+      "pts": 28,
+      "reb": 4,
+      "ast": 9,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Derrick White",
+      "min": 30,
+      "pts": 6,
+      "reb": 7,
+      "ast": 5,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Payton Pritchard",
+      "min": 28,
+      "pts": 14,
+      "reb": 4,
+      "ast": 2,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Neemias Queta",
+      "min": 25,
+      "pts": 21,
+      "reb": 5,
+      "ast": 2,
+      "blk": 2,
+      "stl": 1
+     },
+     {
+      "player": "Sam Hauser",
+      "min": 22,
+      "pts": 4,
+      "reb": 3,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Baylor Scheierman",
+      "min": 19,
+      "pts": 8,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Luka Garza",
+      "min": 18,
+      "pts": 7,
+      "reb": 4,
+      "ast": 0,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Hugo Gonzalez",
+      "min": 9,
+      "pts": 0,
+      "reb": 5,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Ron Harper Jr.",
+      "min": 8,
+      "pts": 2,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Chris Cenac Jr.",
+      "min": 6,
+      "pts": 0,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jordan Walsh",
+      "min": 5,
+      "pts": 0,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "WAS": [
+     {
+      "player": "AJ Dybantsa",
+      "min": 41,
+      "pts": 20,
+      "reb": 11,
+      "ast": 7,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Kyshawn George",
+      "min": 38,
+      "pts": 24,
+      "reb": 9,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Anthony Davis",
+      "min": 37,
+      "pts": 33,
+      "reb": 13,
+      "ast": 1,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Trae Young",
+      "min": 35,
+      "pts": 17,
+      "reb": 0,
+      "ast": 12,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Alex Sarr",
+      "min": 24,
+      "pts": 7,
+      "reb": 2,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Bilal Coulibaly",
+      "min": 22,
+      "pts": 10,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Khris Middleton",
+      "min": 18,
+      "pts": 0,
+      "reb": 5,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tre Johnson",
+      "min": 8,
+      "pts": 0,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bub Carrington",
+      "min": 7,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Will Riley",
+      "min": 5,
+      "pts": 5,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Deandre Ayton",
+      "min": 5,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tre Mann",
+      "min": 1,
+      "pts": 0,
+      "reb": 0,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
