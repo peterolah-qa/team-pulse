@@ -5,9 +5,9 @@
    "game_id": "0022600055",
    "kind": "regular",
    "tipoff_utc": "2026-11-25 22:00:00+00:00",
-   "locked_at": "2026-11-25T00:30:55+00:00",
+   "locked_at": "2026-11-25T01:01:10+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-25T00:30:52Z",
+   "injuries_timestamp": "2026-11-25T01:01:09Z",
    "neutral": false,
    "p_home": 0.623,
    "margin_home": 3.6,
@@ -68,9 +68,9 @@
    "game_id": "0022600056",
    "kind": "regular",
    "tipoff_utc": "2026-11-26 00:00:00+00:00",
-   "locked_at": "2026-11-25T00:30:55+00:00",
+   "locked_at": "2026-11-25T01:01:10+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-25T00:30:52Z",
+   "injuries_timestamp": "2026-11-25T01:01:09Z",
    "neutral": false,
    "p_home": 0.647,
    "margin_home": 4.4,
@@ -123,9 +123,9 @@
    "game_id": "0022600057",
    "kind": "regular",
    "tipoff_utc": "2026-11-26 00:30:00+00:00",
-   "locked_at": "2026-11-25T00:30:55+00:00",
+   "locked_at": "2026-11-25T01:01:10+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-25T00:30:52Z",
+   "injuries_timestamp": "2026-11-25T01:01:09Z",
    "neutral": false,
    "p_home": 0.717,
    "margin_home": 6.7,
@@ -186,9 +186,9 @@
    "game_id": "0022600058",
    "kind": "regular",
    "tipoff_utc": "2026-11-26 00:30:00+00:00",
-   "locked_at": "2026-11-25T00:30:55+00:00",
+   "locked_at": "2026-11-25T01:01:10+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-25T00:30:52Z",
+   "injuries_timestamp": "2026-11-25T01:01:09Z",
    "neutral": false,
    "p_home": 0.622,
    "margin_home": 3.6,
@@ -236,6 +236,124 @@
     "reasons": [
      [
       "Bez Anthony Edwards",
+      -19
+     ]
+    ]
+   }
+  },
+  "0022600059": {
+   "game_id": "0022600059",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-26 01:00:00+00:00",
+   "locked_at": "2026-11-25T01:01:10+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-25T01:01:09Z",
+   "neutral": false,
+   "p_home": 0.618,
+   "margin_home": 3.5,
+   "home": {
+    "team": "MEM",
+    "elo": 1496.0,
+    "elo_today": 1450.5,
+    "pulse": 40.9,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -9.0,
+     "roster": -15.4,
+     "players": -33.6,
+     "fatigue": 3.5
+    },
+    "reasons": [
+     [
+      "Bez Cameron Boozer",
+      -34
+     ],
+     [
+      "Sila súpisky",
+      -15
+     ]
+    ]
+   },
+   "away": {
+    "team": "LAC",
+    "elo": 1435.0,
+    "elo_today": 1432.0,
+    "pulse": 37.8,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -70.0,
+     "roster": -20.9,
+     "players": 0.0,
+     "fatigue": 17.9
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -21
+     ],
+     [
+      "4. zápas výjazdu",
+      19
+     ]
+    ]
+   }
+  },
+  "0022600060": {
+   "game_id": "0022600060",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-26 01:00:00+00:00",
+   "locked_at": "2026-11-25T01:01:10+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-25T01:01:09Z",
+   "neutral": false,
+   "p_home": 0.606,
+   "margin_home": 3.1,
+   "home": {
+    "team": "MIL",
+    "elo": 1322.0,
+    "elo_today": 1302.3,
+    "pulse": 16.2,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -183.0,
+     "roster": -23.0,
+     "players": 0.0,
+     "fatigue": 3.2
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -23
+     ]
+    ]
+   },
+   "away": {
+    "team": "BKN",
+    "elo": 1304.8,
+    "elo_today": 1294.2,
+    "pulse": 14.9,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -200.2,
+     "roster": -19.4,
+     "players": 0.0,
+     "fatigue": 8.9
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
       -19
      ]
     ]
