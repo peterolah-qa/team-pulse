@@ -414,31 +414,31 @@
    "game_id": "0022600062",
    "kind": "regular",
    "tipoff_utc": "2026-11-26 03:00:00+00:00",
-   "locked_at": "2026-11-26T01:01:09+00:00",
+   "locked_at": "2026-11-26T01:31:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-26T01:01:07Z",
+   "injuries_timestamp": "2026-11-26T01:30:54Z",
    "neutral": false,
-   "p_home": 0.717,
-   "margin_home": 6.7,
+   "p_home": 0.725,
+   "margin_home": 7.0,
    "home": {
     "team": "GSW",
     "elo": 1471.4,
-    "elo_today": 1422.4,
-    "pulse": 36.2,
+    "elo_today": 1430.4,
+    "pulse": 37.6,
     "tier": "Oslabený",
     "normal_tier": "Oslabený",
     "dropped": false,
-    "confidence": "stredná",
+    "confidence": "vysoká",
     "layers": {
      "strength": -33.6,
-     "roster": 18.1,
-     "players": -70.1,
+     "roster": 18.0,
+     "players": -62.0,
      "fatigue": 3.0
     },
     "reasons": [
      [
       "Bez Jimmy Butler III, Stephen Curry",
-      -70
+      -62
      ],
      [
       "Sila súpisky",
@@ -449,7 +449,7 @@
    "away": {
     "team": "SAC",
     "elo": 1312.4,
-    "elo_today": 1313.1,
+    "elo_today": 1313.0,
     "pulse": 18.0,
     "tier": "Kritický",
     "normal_tier": "Kritický",
@@ -457,7 +457,7 @@
     "confidence": "vysoká",
     "layers": {
      "strength": -192.6,
-     "roster": -1.7,
+     "roster": -1.8,
      "players": -2.3,
      "fatigue": 4.7
     },
@@ -468,24 +468,24 @@
    "game_id": "0022600063",
    "kind": "regular",
    "tipoff_utc": "2026-11-26 03:00:00+00:00",
-   "locked_at": "2026-11-26T01:01:09+00:00",
+   "locked_at": "2026-11-26T01:31:02+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-26T01:01:07Z",
+   "injuries_timestamp": "2026-11-26T01:30:54Z",
    "neutral": false,
    "p_home": 0.517,
    "margin_home": 0.5,
    "home": {
     "team": "POR",
     "elo": 1592.2,
-    "elo_today": 1615.2,
-    "pulse": 68.4,
+    "elo_today": 1615.1,
+    "pulse": 68.3,
     "tier": "Stabilný",
     "normal_tier": "Stabilný",
     "dropped": false,
     "confidence": "vysoká",
     "layers": {
      "strength": 87.2,
-     "roster": 24.2,
+     "roster": 24.1,
      "players": -10.2,
      "fatigue": 9.0
     },
@@ -503,7 +503,7 @@
    "away": {
     "team": "SAS",
     "elo": 1720.7,
-    "elo_today": 1679.9,
+    "elo_today": 1679.8,
     "pulse": 79.1,
     "tier": "Silný",
     "normal_tier": "Silný",
@@ -511,7 +511,7 @@
     "confidence": "nízka",
     "layers": {
      "strength": 215.7,
-     "roster": 37.8,
+     "roster": 37.7,
      "players": -87.1,
      "fatigue": 8.5
     },
