@@ -1,0 +1,319 @@
+{
+ "games": {
+  "2026020400": {
+   "game_id": "2026020400",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T18:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.635,
+   "tip": "BOS",
+   "home": {
+    "team": "BOS",
+    "elo": 1528.3,
+    "reasons": {}
+   },
+   "away": {
+    "team": "TOR",
+    "elo": 1459.7,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020401": {
+   "game_id": "2026020401",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T18:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.638,
+   "tip": "NJD",
+   "home": {
+    "team": "NJD",
+    "elo": 1525.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "CGY",
+    "elo": 1458.5,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020402": {
+   "game_id": "2026020402",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T18:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.545,
+   "tip": "NSH",
+   "home": {
+    "team": "NSH",
+    "elo": 1503.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "UTA",
+    "elo": 1504.6,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020403": {
+   "game_id": "2026020403",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T19:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.499,
+   "tip": "DAL",
+   "home": {
+    "team": "STL",
+    "elo": 1515.8,
+    "reasons": {}
+   },
+   "away": {
+    "team": "DAL",
+    "elo": 1546.7,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020404": {
+   "game_id": "2026020404",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T20:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.585,
+   "tip": "TBL",
+   "home": {
+    "team": "TBL",
+    "elo": 1563.3,
+    "reasons": {}
+   },
+   "away": {
+    "team": "OTT",
+    "elo": 1534.2,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020405": {
+   "game_id": "2026020405",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T20:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.664,
+   "tip": "PHI",
+   "home": {
+    "team": "PHI",
+    "elo": 1478.8,
+    "reasons": {}
+   },
+   "away": {
+    "team": "VAN",
+    "elo": 1390.1,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020406": {
+   "game_id": "2026020406",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T20:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.532,
+   "tip": "WSH",
+   "home": {
+    "team": "WSH",
+    "elo": 1514.3,
+    "reasons": {}
+   },
+   "away": {
+    "team": "FLA",
+    "elo": 1521.9,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020407": {
+   "game_id": "2026020407",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T20:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.552,
+   "tip": "CBJ",
+   "home": {
+    "team": "CBJ",
+    "elo": 1485.3,
+    "reasons": {}
+   },
+   "away": {
+    "team": "DET",
+    "elo": 1478.6,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020408": {
+   "game_id": "2026020408",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T21:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.526,
+   "tip": "MIN",
+   "home": {
+    "team": "MIN",
+    "elo": 1571.2,
+    "reasons": {}
+   },
+   "away": {
+    "team": "COL",
+    "elo": 1583.3,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020409": {
+   "game_id": "2026020409",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T21:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.558,
+   "tip": "ANA",
+   "home": {
+    "team": "ANA",
+    "elo": 1478.3,
+    "reasons": {}
+   },
+   "away": {
+    "team": "LAK",
+    "elo": 1471.9,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020410": {
+   "game_id": "2026020410",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T21:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.386,
+   "tip": "VGK",
+   "home": {
+    "team": "SJS",
+    "elo": 1427.7,
+    "reasons": {}
+   },
+   "away": {
+    "team": "VGK",
+    "elo": 1541.6,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020411": {
+   "game_id": "2026020411",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-27T22:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.428,
+   "tip": "NYR",
+   "home": {
+    "team": "CHI",
+    "elo": 1416.9,
+    "reasons": {}
+   },
+   "away": {
+    "team": "NYR",
+    "elo": 1499.8,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020412": {
+   "game_id": "2026020412",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-28T00:30:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.532,
+   "tip": "NYI",
+   "home": {
+    "team": "NYI",
+    "elo": 1494.2,
+    "reasons": {}
+   },
+   "away": {
+    "team": "WPG",
+    "elo": 1503.2,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020413": {
+   "game_id": "2026020413",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-28T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.621,
+   "tip": "BUF",
+   "home": {
+    "team": "BUF",
+    "elo": 1532.0,
+    "reasons": {}
+   },
+   "away": {
+    "team": "PIT",
+    "elo": 1474.8,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  },
+  "2026020414": {
+   "game_id": "2026020414",
+   "date": "2026-11-27",
+   "tipoff_utc": "2026-11-28T01:00:00Z",
+   "kind": "regular",
+   "neutral": false,
+   "p_home": 0.643,
+   "tip": "EDM",
+   "home": {
+    "team": "EDM",
+    "elo": 1540.6,
+    "reasons": {}
+   },
+   "away": {
+    "team": "SEA",
+    "elo": 1462.7,
+    "reasons": {}
+   },
+   "model": "nhl-v1",
+   "locked_at": "2026-11-26T09:15:24+00:00"
+  }
+ }
+}
