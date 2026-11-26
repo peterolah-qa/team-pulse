@@ -392,6 +392,220 @@
      }
     ]
    }
+  },
+  "0022600057": {
+   "game_id": "0022600057",
+   "espn_id": "401909319",
+   "date": "2026-11-25",
+   "kind": "regular",
+   "home": "NYK",
+   "away": "CLE",
+   "pts_home": 121,
+   "pts_away": 102,
+   "box": {
+    "CLE": [
+     {
+      "player": "James Harden",
+      "min": 36,
+      "pts": 28,
+      "reb": 1,
+      "ast": 5,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Donovan Mitchell",
+      "min": 34,
+      "pts": 30,
+      "reb": 4,
+      "ast": 4,
+      "blk": 2,
+      "stl": 4
+     },
+     {
+      "player": "Jarrett Allen",
+      "min": 32,
+      "pts": 10,
+      "reb": 5,
+      "ast": 1,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Jaylon Tyson",
+      "min": 29,
+      "pts": 6,
+      "reb": 6,
+      "ast": 4,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Peyton Watson",
+      "min": 27,
+      "pts": 8,
+      "reb": 5,
+      "ast": 2,
+      "blk": 2,
+      "stl": 2
+     },
+     {
+      "player": "Sam Merrill",
+      "min": 24,
+      "pts": 5,
+      "reb": 1,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Meleek Thomas",
+      "min": 16,
+      "pts": 8,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Thomas Bryant",
+      "min": 16,
+      "pts": 5,
+      "reb": 8,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Tyrese Proctor",
+      "min": 16,
+      "pts": 2,
+      "reb": 3,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mario Hezonja",
+      "min": 10,
+      "pts": 0,
+      "reb": 3,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "NYK": [
+     {
+      "player": "Mikal Bridges",
+      "min": 37,
+      "pts": 19,
+      "reb": 8,
+      "ast": 2,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Jalen Brunson",
+      "min": 36,
+      "pts": 19,
+      "reb": 3,
+      "ast": 5,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Josh Hart",
+      "min": 36,
+      "pts": 15,
+      "reb": 7,
+      "ast": 12,
+      "blk": 2,
+      "stl": 3
+     },
+     {
+      "player": "Karl-Anthony Towns",
+      "min": 33,
+      "pts": 12,
+      "reb": 10,
+      "ast": 7,
+      "blk": 3,
+      "stl": 1
+     },
+     {
+      "player": "Landry Shamet",
+      "min": 30,
+      "pts": 11,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Jose Alvarado",
+      "min": 19,
+      "pts": 21,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Pacome Dadiet",
+      "min": 14,
+      "pts": 7,
+      "reb": 1,
+      "ast": 2,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Tyler Nickel",
+      "min": 9,
+      "pts": 5,
+      "reb": 0,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Andre Drummond",
+      "min": 9,
+      "pts": 3,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Tyler Kolek",
+      "min": 7,
+      "pts": 0,
+      "reb": 1,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "James Wiseman",
+      "min": 6,
+      "pts": 6,
+      "reb": 7,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Mohamed Diawara",
+      "min": 4,
+      "pts": 3,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     }
+    ]
+   }
   }
  }
 }
