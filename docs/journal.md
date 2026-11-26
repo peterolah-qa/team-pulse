@@ -4,6 +4,13 @@
 `reports/*.md`, na boardoch „Team Pulse“ a „Team Pulse – športy“ a v histórii commitov.
 Denník vznikol 13. 10. 2026, staršie záznamy sú doplnené spätne z commitov a brán.
 
+## 26. 11. 2026
+
+- **Oprava zlyhaní Predikcie:** od 25. 11. večer 17 z 40 behov padlo na kroku „Zverejnenie na GitHub Pages“
+  (`Found 0 artifact(s)`), hoci build aj nahratie artefaktu prebehli. Prechodná chyba na strane GitHubu, appka
+  sa aktualizovala len s oneskorením. `predict.yml`: druhý pokus o zverejnenie po 60 s; červená len keď zlyhajú oba.
+  Nezmenené: predikcie, archív, NHL krok, build. NBA G2 a ranná úloha sa nedotknuté.
+
 ## 28. 10. 2026
 
 - **Zhrnutie dňa:** G2-NHL splnená a NHL bez bety; bejzbal navrhnutý, overený a pozastavený (len MLB, bez MLBAM);
