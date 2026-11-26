@@ -1,0 +1,201 @@
+{
+ "date": "2026-11-25",
+ "games": {
+  "0022600055": {
+   "game_id": "0022600055",
+   "espn_id": "401909317",
+   "date": "2026-11-25",
+   "kind": "regular",
+   "home": "PHI",
+   "away": "MIA",
+   "pts_home": 111,
+   "pts_away": 104,
+   "box": {
+    "MIA": [
+     {
+      "player": "Davion Mitchell",
+      "min": 40,
+      "pts": 20,
+      "reb": 4,
+      "ast": 10,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Giannis Antetokounmpo",
+      "min": 36,
+      "pts": 32,
+      "reb": 14,
+      "ast": 4,
+      "blk": 1,
+      "stl": 2
+     },
+     {
+      "player": "Bam Adebayo",
+      "min": 35,
+      "pts": 17,
+      "reb": 11,
+      "ast": 3,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Klay Thompson",
+      "min": 31,
+      "pts": 7,
+      "reb": 0,
+      "ast": 1,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Pelle Larsson",
+      "min": 28,
+      "pts": 8,
+      "reb": 4,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Andrew Wiggins",
+      "min": 24,
+      "pts": 8,
+      "reb": 2,
+      "ast": 2,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Ryan Conwell",
+      "min": 18,
+      "pts": 7,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Bobby Portis",
+      "min": 15,
+      "pts": 5,
+      "reb": 5,
+      "ast": 1,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Simone Fontecchio",
+      "min": 6,
+      "pts": 0,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Myron Gardner",
+      "min": 5,
+      "pts": 0,
+      "reb": 2,
+      "ast": 0,
+      "blk": 0,
+      "stl": 0
+     }
+    ],
+    "PHI": [
+     {
+      "player": "Tyrese Maxey",
+      "min": 37,
+      "pts": 30,
+      "reb": 4,
+      "ast": 6,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "VJ Edgecombe",
+      "min": 36,
+      "pts": 18,
+      "reb": 6,
+      "ast": 5,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "LeBron James",
+      "min": 35,
+      "pts": 25,
+      "reb": 10,
+      "ast": 12,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Kentavious Caldwell-Pope",
+      "min": 28,
+      "pts": 5,
+      "reb": 1,
+      "ast": 3,
+      "blk": 0,
+      "stl": 2
+     },
+     {
+      "player": "Dean Wade",
+      "min": 26,
+      "pts": 5,
+      "reb": 4,
+      "ast": 0,
+      "blk": 1,
+      "stl": 1
+     },
+     {
+      "player": "Jabari Walker",
+      "min": 17,
+      "pts": 7,
+      "reb": 2,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Jaylen Brown",
+      "min": 17,
+      "pts": 6,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 0
+     },
+     {
+      "player": "Dominick Barlow",
+      "min": 16,
+      "pts": 9,
+      "reb": 8,
+      "ast": 0,
+      "blk": 1,
+      "stl": 0
+     },
+     {
+      "player": "Anfernee Simons",
+      "min": 15,
+      "pts": 6,
+      "reb": 1,
+      "ast": 1,
+      "blk": 0,
+      "stl": 1
+     },
+     {
+      "player": "Adem Bona",
+      "min": 13,
+      "pts": 0,
+      "reb": 6,
+      "ast": 0,
+      "blk": 2,
+      "stl": 0
+     }
+    ]
+   }
+  }
+ }
+}
