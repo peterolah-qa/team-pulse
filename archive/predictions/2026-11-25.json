@@ -414,9 +414,9 @@
    "game_id": "0022600062",
    "kind": "regular",
    "tipoff_utc": "2026-11-26 03:00:00+00:00",
-   "locked_at": "2026-11-26T02:01:13+00:00",
+   "locked_at": "2026-11-26T02:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-26T02:01:06Z",
+   "injuries_timestamp": "2026-11-26T02:30:51Z",
    "neutral": false,
    "p_home": 0.725,
    "margin_home": 7.0,
@@ -468,11 +468,11 @@
    "game_id": "0022600063",
    "kind": "regular",
    "tipoff_utc": "2026-11-26 03:00:00+00:00",
-   "locked_at": "2026-11-26T02:01:13+00:00",
+   "locked_at": "2026-11-26T02:30:53+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-26T02:01:06Z",
+   "injuries_timestamp": "2026-11-26T02:30:51Z",
    "neutral": false,
-   "p_home": 0.517,
+   "p_home": 0.518,
    "margin_home": 0.5,
    "home": {
     "team": "POR",
@@ -503,7 +503,7 @@
    "away": {
     "team": "SAS",
     "elo": 1720.7,
-    "elo_today": 1679.8,
+    "elo_today": 1679.3,
     "pulse": 79.1,
     "tier": "Silný",
     "normal_tier": "Silný",
@@ -512,13 +512,13 @@
     "layers": {
      "strength": 215.7,
      "roster": 37.7,
-     "players": -87.1,
+     "players": -87.5,
      "fatigue": 8.5
     },
     "reasons": [
      [
       "Bez Victor Wembanyama (?), Tobias Harris",
-      -87
+      -88
      ],
      [
       "Sila súpisky",
