@@ -84,8 +84,19 @@ jobs:
         with:
           path: app/dist
 
+      # Prechodná chyba GitHubu („Found 0 artifact(s)“, 25. – 26. 11.): build a nahratie prebehli, deploy artefakt
+      # nevidel. Prvý pokus smie zlyhať, druhý po minúte rozhoduje; červená je len keď zlyhajú oba.
       - name: Zverejnenie na GitHub Pages
         id: deploy
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+
+      - name: Pauza pred druhým pokusom o zverejnenie
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 60
+
+      - name: Zverejnenie na GitHub Pages (druhý pokus)
+        if: steps.deploy.outcome == 'failure'
         uses: actions/deploy-pages@v5
 
       - name: Kontrola archívu
