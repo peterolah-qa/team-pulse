@@ -5,9 +5,9 @@
    "game_id": "0022600064",
    "kind": "regular",
    "tipoff_utc": "2026-11-28 00:00:00+00:00",
-   "locked_at": "2026-11-27T00:01:14+00:00",
+   "locked_at": "2026-11-27T00:31:01+00:00",
    "model": "v1",
-   "injuries_timestamp": "2026-11-27T00:01:09Z",
+   "injuries_timestamp": "2026-11-27T00:30:59Z",
    "neutral": false,
    "p_home": 0.787,
    "margin_home": 9.5,
@@ -60,6 +60,191 @@
      [
       "Sila súpisky",
       33
+     ]
+    ]
+   }
+  },
+  "0022600065": {
+   "game_id": "0022600065",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-28 00:30:00+00:00",
+   "locked_at": "2026-11-27T00:31:01+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-27T00:30:59Z",
+   "neutral": false,
+   "p_home": 0.844,
+   "margin_home": 12.2,
+   "home": {
+    "team": "DET",
+    "elo": 1640.1,
+    "elo_today": 1557.7,
+    "pulse": 58.8,
+    "tier": "Stabilný",
+    "normal_tier": "Silný",
+    "dropped": true,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 135.1,
+     "roster": 19.1,
+     "players": -107.3,
+     "fatigue": 5.8
+    },
+    "reasons": [
+     [
+      "Bez Cade Cunningham, Jalen Duren",
+      -107
+     ],
+     [
+      "Sila súpisky",
+      19
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIL",
+    "elo": 1310.7,
+    "elo_today": 1295.7,
+    "pulse": 15.1,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -194.3,
+     "roster": -24.1,
+     "players": 0.0,
+     "fatigue": 9.1
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -24
+     ]
+    ]
+   }
+  },
+  "0022600066": {
+   "game_id": "0022600066",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-28 00:30:00+00:00",
+   "locked_at": "2026-11-27T00:31:01+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-27T00:30:59Z",
+   "neutral": false,
+   "p_home": 0.339,
+   "margin_home": -4.8,
+   "home": {
+    "team": "IND",
+    "elo": 1373.2,
+    "elo_today": 1356.8,
+    "pulse": 25.3,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -131.8,
+     "roster": 12.5,
+     "players": -32.8,
+     "fatigue": 4.0
+    },
+    "reasons": [
+     [
+      "Bez Tyrese Haliburton",
+      -33
+     ],
+     [
+      "Sila súpisky",
+      12
+     ]
+    ]
+   },
+   "away": {
+    "team": "PHI",
+    "elo": 1567.7,
+    "elo_today": 1571.1,
+    "pulse": 61.0,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 62.7,
+     "roster": 77.0,
+     "players": -77.2,
+     "fatigue": 3.7
+    },
+    "reasons": [
+     [
+      "Bez Jaylen Brown, Joel Embiid (?)",
+      -77
+     ],
+     [
+      "Sila súpisky",
+      77
+     ]
+    ]
+   }
+  },
+  "0022600067": {
+   "game_id": "0022600067",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-28 00:30:00+00:00",
+   "locked_at": "2026-11-27T00:31:01+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-27T00:30:59Z",
+   "neutral": false,
+   "p_home": 0.765,
+   "margin_home": 8.5,
+   "home": {
+    "team": "TOR",
+    "elo": 1484.3,
+    "elo_today": 1471.5,
+    "pulse": 44.4,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -20.7,
+     "roster": 44.3,
+     "players": -61.1,
+     "fatigue": 4.0
+    },
+    "reasons": [
+     [
+      "Bez Kawhi Leonard, RJ Barrett",
+      -61
+     ],
+     [
+      "Sila súpisky",
+      44
+     ]
+    ]
+   },
+   "away": {
+    "team": "BKN",
+    "elo": 1316.0,
+    "elo_today": 1311.6,
+    "pulse": 17.8,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -189.0,
+     "roster": -22.1,
+     "players": 0.0,
+     "fatigue": 17.7
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      -22
+     ],
+     [
+      "3. zápas výjazdu",
+      14
      ]
     ]
    }
