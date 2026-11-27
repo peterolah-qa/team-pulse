@@ -1,0 +1,68 @@
+{
+ "date": "2026-11-27",
+ "games": {
+  "0022600064": {
+   "game_id": "0022600064",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-28 00:00:00+00:00",
+   "locked_at": "2026-11-27T00:01:14+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-27T00:01:09Z",
+   "neutral": false,
+   "p_home": 0.787,
+   "margin_home": 9.5,
+   "home": {
+    "team": "NYK",
+    "elo": 1700.4,
+    "elo_today": 1723.2,
+    "pulse": 86.4,
+    "tier": "Silný",
+    "normal_tier": "Silný",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": 195.4,
+     "roster": 52.7,
+     "players": -31.9,
+     "fatigue": 2.0
+    },
+    "reasons": [
+     [
+      "Sila súpisky",
+      53
+     ],
+     [
+      "Bez OG Anunoby",
+      -32
+     ]
+    ]
+   },
+   "away": {
+    "team": "MIA",
+    "elo": 1553.2,
+    "elo_today": 1537.4,
+    "pulse": 55.4,
+    "tier": "Stabilný",
+    "normal_tier": "Stabilný",
+    "dropped": false,
+    "confidence": "nízka",
+    "layers": {
+     "strength": 48.2,
+     "roster": 32.6,
+     "players": -57.7,
+     "fatigue": 9.4
+    },
+    "reasons": [
+     [
+      "Bez Giannis Antetokounmpo (?)",
+      -58
+     ],
+     [
+      "Sila súpisky",
+      33
+     ]
+    ]
+   }
+  }
+ }
+}
