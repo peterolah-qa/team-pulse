@@ -1,0 +1,59 @@
+{
+ "date": "2026-11-28",
+ "games": {
+  "0022600297": {
+   "game_id": "0022600297",
+   "kind": "regular",
+   "tipoff_utc": "2026-11-28 22:00:00+00:00",
+   "locked_at": "2026-11-27T22:01:08+00:00",
+   "model": "v1",
+   "injuries_timestamp": "2026-11-27T22:00:59Z",
+   "neutral": false,
+   "p_home": 0.455,
+   "margin_home": -1.3,
+   "home": {
+    "team": "WAS",
+    "elo": 1344.8,
+    "elo_today": 1355.6,
+    "pulse": 25.1,
+    "tier": "Kritický",
+    "normal_tier": "Kritický",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -160.2,
+     "roster": 6.8,
+     "players": 0.0,
+     "fatigue": 4.0
+    },
+    "reasons": []
+   },
+   "away": {
+    "team": "ORL",
+    "elo": 1479.4,
+    "elo_today": 1470.2,
+    "pulse": 44.2,
+    "tier": "Oslabený",
+    "normal_tier": "Oslabený",
+    "dropped": false,
+    "confidence": "vysoká",
+    "layers": {
+     "strength": -25.6,
+     "roster": 35.8,
+     "players": -47.5,
+     "fatigue": 2.6
+    },
+    "reasons": [
+     [
+      "Bez Paolo Banchero, Kevin Porter Jr.",
+      -47
+     ],
+     [
+      "Sila súpisky",
+      36
+     ]
+    ]
+   }
+  }
+ }
+}
