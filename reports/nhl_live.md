@@ -2,7 +2,7 @@
 
 Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené po zápase. Model Elo + únava, v teste 2023/24 – 2025/26 mal presnosť 57,6 %.
 
-**Spolu: 177 z 310 (57,1 %), log loss 0,6703**
+**Spolu: 179 z 325 (55,1 %), log loss 0,6761**
 
 ## Po dňoch
 
@@ -51,24 +51,26 @@ Tipy zamknuté pred začiatkom zápasu (`team_pulse.nhl.predict`), vyhodnotené 
 | 23. 11.     |        7 |            5 | 71,4 %     |
 | 24. 11.     |        1 |            0 | 0,0 %      |
 | 25. 11.     |       14 |            9 | 64,3 %     |
+| 27. 11.     |       15 |            2 | 13,3 %     |
 
-## Posledný deň (25. 11.)
+## Posledný deň (27. 11.)
 
 Výsledok je hostia : domáci, pp = po predĺžení, sn = po nájazdoch.
 
 | zápas     | tip   | šanca   | výsledok   |    |
 |:----------|:------|:--------|:-----------|:---|
-| WPG @ BOS | BOS   | 58 %    | 4:2        | ❌  |
-| NYR @ BUF | BUF   | 57 %    | 1:5        | ✅  |
-| CAR @ TBL | CAR   | 53 %    | 3:1        | ✅  |
-| OTT @ FLA | FLA   | 50 %    | 3:5        | ✅  |
-| STL @ NYI | NYI   | 50 %    | 2:3 sn     | ✅  |
-| CGY @ PIT | PIT   | 58 %    | 6:3        | ❌  |
-| PHI @ WSH | WSH   | 57 %    | 3:7        | ✅  |
-| NJD @ CBJ | NJD   | 51 %    | 3:2 sn     | ✅  |
-| VAN @ DET | DET   | 64 %    | 1:5        | ✅  |
-| NSH @ DAL | DAL   | 61 %    | 3:1        | ❌  |
-| UTA @ MIN | MIN   | 64 %    | 4:3        | ❌  |
-| MTL @ COL | COL   | 57 %    | 0:6        | ✅  |
-| CHI @ SEA | SEA   | 62 %    | 3:1        | ❌  |
-| SJS @ ANA | ANA   | 60 %    | 0:7        | ✅  |
+| TOR @ BOS | BOS   | 64 %    | 3:1        | ❌  |
+| CGY @ NJD | NJD   | 64 %    | 3:5        | ✅  |
+| UTA @ NSH | NSH   | 55 %    | 6:5 sn     | ❌  |
+| DAL @ STL | DAL   | 50 %    | 3:5        | ❌  |
+| OTT @ TBL | TBL   | 58 %    | 6:2        | ❌  |
+| VAN @ PHI | PHI   | 66 %    | 2:5        | ✅  |
+| FLA @ WSH | WSH   | 53 %    | 3:2        | ❌  |
+| DET @ CBJ | CBJ   | 55 %    | 2:0        | ❌  |
+| COL @ MIN | MIN   | 53 %    | 4:3 sn     | ❌  |
+| LAK @ ANA | ANA   | 56 %    | 5:3        | ❌  |
+| VGK @ SJS | VGK   | 61 %    | 1:4        | ❌  |
+| NYR @ CHI | NYR   | 57 %    | 1:2        | ❌  |
+| WPG @ NYI | NYI   | 53 %    | 3:1        | ❌  |
+| PIT @ BUF | BUF   | 62 %    | 6:3        | ❌  |
+| SEA @ EDM | EDM   | 64 %    | 4:2        | ❌  |
